@@ -1048,6 +1048,34 @@ html, body {
   padding-left: 2px;
 }
 
+.contact-channel-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-card);
+  color: var(--text-primary) !important;
+  padding: 0.45rem 1rem;
+  border-radius: 30px;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+}
+
+.contact-channel-badge:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-gold);
+  color: var(--accent-crimson) !important;
+  box-shadow: 0 4px 12px rgba(179, 127, 25, 0.25);
+}
+
+.contact-icon {
+  font-size: 0.95rem;
+}
+
 /* --------------------------------------------------------------------------
    14. Highly Responsive Multi-Device Breakpoints
    -------------------------------------------------------------------------- */

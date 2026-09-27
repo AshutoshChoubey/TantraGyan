@@ -2,7 +2,9 @@
 ## Tantra Gyan: Complete Vedic Astrology Compendium
 
 > **लेखक एवं ज्योतिषाचार्य:** Ashutosh Kumar Choubey  
-> **आधिकारिक शोध एवं वीडियो मंच:** [YouTube: @worldgyan](https://www.youtube.com/@worldgyan)  
+> **आधिकारिक शोध एवं वीडियो मंच:** [YouTube: @TantraGyan108](https://www.youtube.com/@TantraGyan108)  
+> **ईमेल (Email):** [tantraresearchcenter@gmail.com](mailto:tantraresearchcenter@gmail.com)  
+> **संपर्क / WhatsApp:** [+91 9658476170](tel:+919658476170)  
 > **संस्करण:** डिजिटल ग्रंथ संस्करण (Digital Masterwork Edition 2026)
 
 ---
@@ -90,6 +92,17 @@ python3 -m http.server 8899
 ```
 और ब्राउज़र में जाएं:
 `http://localhost:8899/index.html`
+
+---
+
+## 📞 संपर्क एवं आधिकारिक मंच (Contact & Official Platforms)
+
+| मंच / संपर्क (Platform) | विवरण (Details) | लिंक (Direct Link) |
+| :--- | :--- | :--- |
+| **YouTube Channel** | @TantraGyan108 | [youtube.com/@TantraGyan108](https://www.youtube.com/@TantraGyan108) |
+| **ईमेल (Email)** | tantraresearchcenter@gmail.com | [ईमेल भेजें (Send Mail)](mailto:tantraresearchcenter@gmail.com) |
+| **दूरभाष / WhatsApp** | +91 9658476170 | [कॉल करें (+91 9658476170)](tel:+919658476170) |
+| **शोध मंच** | Tantra Gyan Knowledge Systems | वैदिक ज्योतिष एवं आयुर्वेद-ज्योतिष अनुसंधान |
 
 ---
 *कॉपीराइट © 2026 ज्योतिषाचार्य Ashutosh Kumar Choubey. सर्वाधिकार सुरक्षित।*
