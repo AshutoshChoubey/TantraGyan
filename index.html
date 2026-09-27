@@ -79,16 +79,32 @@
 
     <!-- Toolbar Controls -->
     <div class="toolbar-controls">
-      <!-- Search Input -->
-      <div class="search-box">
+      <!-- Search Input Container with Dropdown Results -->
+      <div class="search-box" id="search-box-container">
         <span class="search-icon">🔍</span>
-        <input type="text" id="book-search" class="search-input" placeholder="खोजें / Search book..." aria-label="Search Book">
-        <span id="search-counter" class="search-count"></span>
+        <input type="text" id="book-search" class="search-input" placeholder="खोजें / Search (e.g. Moon, सूर्य)..." aria-label="Search Book" autocomplete="off">
+        <button type="button" id="search-clear-btn" class="search-clear-btn" title="Clear search" style="display:none;">✕</button>
+        <span id="search-counter" class="search-count" title="Click to view all matching pages"></span>
+        
+        <!-- Live Search Results Dropdown -->
+        <div id="search-dropdown" class="search-dropdown" style="display:none;" role="region" aria-label="Search Results">
+          <div class="search-dropdown-header">
+            <span id="search-dropdown-title" class="search-dropdown-title">🔍 परिणाम (Search Results)</span>
+            <button type="button" id="search-dropdown-close" class="search-dropdown-close" title="Close">✕</button>
+          </div>
+          <div id="search-results-list" class="search-results-list"></div>
+        </div>
       </div>
 
       <!-- TOC Toggle Button -->
       <button class="tool-btn" id="btn-toc-toggle" title="Open Table of Contents (विषय-सूची)">
         <span>📖</span> <span>विषय-सूची</span>
+      </button>
+
+      <!-- Bookmark Button -->
+      <button class="tool-btn" id="btn-bookmark-toggle" title="Saved Bookmarks (सहेजे गए बुकमार्क)">
+        <span>🔖</span> <span id="bookmark-btn-label">बुकमार्क</span>
+        <span id="bookmark-count-badge" class="badge-count" style="display:none;">0</span>
       </button>
 
       <!-- YouTube Channel Link -->
@@ -976,6 +992,32 @@
     </div>
   </div>
 
+  <!-- Bookmark Drawer Modal -->
+  <div class="bookmark-overlay" id="bookmark-overlay" role="dialog" aria-modal="true" aria-labelledby="bookmark-modal-title">
+    <div class="bookmark-modal" id="bookmark-modal">
+      <div class="bookmark-header">
+        <h3 class="bookmark-title" id="bookmark-modal-title">
+          <span>🔖</span> सहेजे गए बुकमार्क (Saved Bookmarks)
+        </h3>
+        <button class="bookmark-close-btn" id="bookmark-close-btn" title="Close Bookmarks">✕</button>
+      </div>
+      <div class="bookmark-action-bar">
+        <button id="btn-bookmark-current" class="btn-bookmark-action">
+          <span id="bookmark-current-icon">➕</span>
+          <span id="bookmark-current-text">वर्तमान पृष्ठ बुकमार्क करें</span>
+        </button>
+      </div>
+      <div class="bookmark-body">
+        <div id="bookmark-list" class="bookmark-list">
+          <!-- Dynamically populated bookmarks -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Toast Notification -->
+  <div id="book-toast" class="book-toast" role="status" aria-live="polite"></div>
+
   <!-- Raw Page Data Repository (Parsed & Rendered Dynamically) -->
   <div id="book-pages-store" style="display:none;" aria-hidden="true">
     
@@ -1003,7 +1045,6 @@
   <div class="cover-author-block">
     <div class="cover-author-label">लेखक एवं ज्योतिषाचार्य (Author & Astrologer)</div>
     <div class="cover-author-name">Ashutosh Kumar Choubey</div>
-    <div class="cover-author-role">Founder, Tantra Gyan Knowledge Systems</div>
     <div style="margin-top:0.75rem;">
       <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="youtube-channel-badge">
         <span class="yt-play-icon">▶</span>
@@ -1028,9 +1069,9 @@
     <div class="author-avatar-badge">🕉️</div>
     <div class="author-bio-text">
       <h3>Ashutosh Kumar Choubey</h3>
-      <div class="author-meta">Vedic Astrologer, Tantra Researcher & Founder of Tantra Gyan</div>
+      <div class="author-meta">Vedic Astrologer & Tantra Researcher</div>
       <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">
-        समर्पित वैदिक ज्योतिषी एवं शोधकर्ता, जिन्होंने शास्त्रीय ज्योतिष ग्रंथों और आधुनिक विश्लेषणात्मक पद्धतियों के समन्वय से 'तंत्र ज्ञान' (Tantra Gyan) ज्ञानकोश की स्थापना की है।
+        समर्पित वैदिक ज्योतिषी एवं शोधकर्ता, जिन्होंने शास्त्रीय ज्योतिष ग्रंथों और आधुनिक विश्लेषणात्मक पद्धतियों के समन्वय से 'तंत्र ज्ञान' (Tantra Gyan) ज्ञानकोश की रचना की है।
       </p>
     </div>
   </div>

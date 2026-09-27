@@ -144,14 +144,13 @@ class BookEngine {
       }, { passive: true });
     }
 
-    // Silk bookmark click to save bookmark
+    // Silk bookmark click to toggle bookmark
     const bookmark = document.querySelector('.silk-bookmark');
     if (bookmark) {
       bookmark.addEventListener('click', () => {
-        try {
-          localStorage.setItem('tantra_book_saved_bookmark', this.currentPage.toString());
-          alert(`Bookmark saved at Page ${this.currentPage}! You can return here anytime.`);
-        } catch (e) {}
+        if (window.bookUI && typeof window.bookUI.toggleBookmark === 'function') {
+          window.bookUI.toggleBookmark(this.currentPage);
+        }
       });
     }
   }
@@ -300,6 +299,26 @@ class BookEngine {
     if (this.nextBtn) {
       this.nextBtn.disabled = this.currentPage >= this.totalPages;
     }
+
+    // Notify BookUI to refresh bookmark state and search highlights
+    if (window.bookUI && typeof window.bookUI.updateBookmarkUI === 'function') {
+      window.bookUI.updateBookmarkUI();
+    }
+    if (window.bookUI && typeof window.bookUI.highlightActiveSearchInPage === 'function') {
+      window.bookUI.highlightActiveSearchInPage();
+    }
+  }
+
+  getCurrentVisiblePages() {
+    if (this.isDualPage) {
+      if (this.currentPage === 1) return [1, 2];
+      const pages = [this.currentPage];
+      if (this.currentPage + 1 <= this.totalPages) {
+        pages.push(this.currentPage + 1);
+      }
+      return pages;
+    }
+    return [this.currentPage];
   }
 
   renderSinglePageContent(container, pageDataNode, pageNum) {

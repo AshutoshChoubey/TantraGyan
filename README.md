@@ -102,7 +102,7 @@ python3 -m http.server 8899
 | **YouTube Channel** | @TantraGyan108 | [youtube.com/@TantraGyan108](https://www.youtube.com/@TantraGyan108) |
 | **ईमेल (Email)** | tantraresearchcenter@gmail.com | [ईमेल भेजें (Send Mail)](mailto:tantraresearchcenter@gmail.com) |
 | **दूरभाष / WhatsApp** | +91 9658476170 | [कॉल करें (+91 9658476170)](tel:+919658476170) |
-| **शोध मंच** | Tantra Gyan Knowledge Systems | वैदिक ज्योतिष एवं आयुर्वेद-ज्योतिष अनुसंधान |
+| **शोध एवं प्रकाशन** | Tantra Gyan | वैदिक ज्योतिष एवं आयुर्वेद-ज्योतिष अनुसंधान |
 
 ---
 *कॉपीराइट © 2026 ज्योतिषाचार्य Ashutosh Kumar Choubey. सर्वाधिकार सुरक्षित।*
