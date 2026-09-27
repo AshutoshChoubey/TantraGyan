@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffd700" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#d4af37" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#996515" stop-opacity="0.2"/>
+    </radialGradient>
+    <linearGradient id="goldLinear" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="35%" stop-color="#d4af37"/>
+      <stop offset="70%" stop-color="#ca8a04"/>
+      <stop offset="100%" stop-color="#854d0e"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Outer Protective Bhupura (Square with 4 gates) -->
+  <rect x="25" y="25" width="450" height="450" fill="none" stroke="url(#goldLinear)" stroke-width="3" rx="8"/>
+  <rect x="35" y="35" width="430" height="430" fill="none" stroke="url(#goldLinear)" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <rect x="45" y="45" width="410" height="410" fill="none" stroke="url(#goldLinear)" stroke-width="2"/>
+
+  <!-- Four Portals / Gates -->
+  <path d="M 220 25 L 220 15 L 280 15 L 280 25" fill="none" stroke="url(#goldLinear)" stroke-width="2"/>
+  <path d="M 220 475 L 220 485 L 280 485 L 280 475" fill="none" stroke="url(#goldLinear)" stroke-width="2"/>
+  <path d="M 25 220 L 15 220 L 15 280 L 25 280" fill="none" stroke="url(#goldLinear)" stroke-width="2"/>
+  <path d="M 475 220 L 485 220 L 485 280 L 475 280" fill="none" stroke="url(#goldLinear)" stroke-width="2"/>
+
+  <!-- Concentric Outer Circles -->
+  <circle cx="250" cy="250" r="185" fill="none" stroke="url(#goldLinear)" stroke-width="2.5"/>
+  <circle cx="250" cy="250" r="175" fill="none" stroke="url(#goldLinear)" stroke-width="1" stroke-dasharray="4,4"/>
+  <circle cx="250" cy="250" r="165" fill="none" stroke="url(#goldLinear)" stroke-width="2"/>
+
+  <!-- 16 Lotus Petals -->
+  <g stroke="url(#goldLinear)" stroke-width="1.5" fill="none" opacity="0.85">
+    <path d="M 250 85 Q 265 125 250 165 Q 235 125 250 85 Z"/>
+    <path d="M 250 415 Q 265 375 250 335 Q 235 375 250 415 Z"/>
+    <path d="M 85 250 Q 125 265 165 250 Q 125 235 85 250 Z"/>
+    <path d="M 415 250 Q 375 265 335 250 Q 375 235 415 250 Z"/>
+    <path d="M 133 133 Q 165 155 189 189 Q 155 165 133 133 Z"/>
+    <path d="M 367 133 Q 335 155 311 189 Q 345 165 367 133 Z"/>
+    <path d="M 133 367 Q 165 345 189 311 Q 155 335 133 367 Z"/>
+    <path d="M 367 367 Q 335 345 311 311 Q 345 335 367 367 Z"/>
+  </g>
+
+  <!-- 8 Inner Lotus Petals -->
+  <circle cx="250" cy="250" r="135" fill="none" stroke="url(#goldLinear)" stroke-width="2"/>
+  <circle cx="250" cy="250" r="125" fill="none" stroke="url(#goldLinear)" stroke-width="1.5" stroke-dasharray="6,3"/>
+
+  <!-- Sacred Intersecting 9 Triangles (Sri Yantra core) -->
+  <!-- 5 Downward Triangles (Shakti) -->
+  <polygon points="250,345 145,160 355,160" fill="none" stroke="url(#goldLinear)" stroke-width="2.2" opacity="0.95"/>
+  <polygon points="250,320 160,185 340,185" fill="none" stroke="url(#goldLinear)" stroke-width="1.8" opacity="0.9"/>
+  <polygon points="250,295 180,210 320,210" fill="none" stroke="url(#goldLinear)" stroke-width="1.8" opacity="0.85"/>
+  <polygon points="250,270 200,230 300,230" fill="none" stroke="url(#goldLinear)" stroke-width="1.5" opacity="0.8"/>
+  <polygon points="250,360 135,140 365,140" fill="none" stroke="url(#goldLinear)" stroke-width="1.5" opacity="0.75"/>
+
+  <!-- 4 Upward Triangles (Shiva) -->
+  <polygon points="250,155 145,340 355,340" fill="none" stroke="url(#goldLinear)" stroke-width="2.2" opacity="0.95"/>
+  <polygon points="250,180 160,315 340,315" fill="none" stroke="url(#goldLinear)" stroke-width="1.8" opacity="0.9"/>
+  <polygon points="250,205 180,290 320,290" fill="none" stroke="url(#goldLinear)" stroke-width="1.8" opacity="0.85"/>
+  <polygon points="250,230 200,270 300,270" fill="none" stroke="url(#goldLinear)" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Central Bindu (Cosmic Origin) -->
+  <circle cx="250" cy="250" r="14" fill="url(#goldGlow)" filter="url(#glow)"/>
+  <circle cx="250" cy="250" r="5" fill="#ffffff"/>
+
+  <!-- Corner Ornamental Symbols (Trishul & Om accents) -->
+  <g fill="url(#goldLinear)" opacity="0.85" font-family="'Cinzel', serif" font-size="18" text-anchor="middle">
+    <text x="60" y="70">🕉</text>
+    <text x="440" y="70">卐</text>
+    <text x="60" y="445">卐</text>
+    <text x="440" y="445">🕉</text>
+  </g>
+</svg>

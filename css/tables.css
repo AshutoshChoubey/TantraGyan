@@ -1,0 +1,439 @@
+/* ==========================================================================
+   TANTRA GYAN - ASTROLOGICAL TABLES & NOTEBOOK RULES STYLING
+   Standard Class Definitions for Easy Maintenance and Future Edits
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Astrological Table Container & Responsive Scrolling
+   -------------------------------------------------------------------------- */
+.astro-table-container {
+  width: 100%;
+  margin: 1.25rem 0 1.75rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--page-border);
+  background: var(--page-bg);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.table-caption-bar {
+  background: var(--page-bg-alt);
+  border-bottom: 1px solid var(--page-border);
+  padding: 0.75rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.table-caption-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.table-ref-badge {
+  font-size: 0.72rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  background: rgba(179, 127, 25, 0.12);
+  color: var(--accent-saffron);
+  border: 1px solid rgba(179, 127, 25, 0.25);
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Custom Scrollbar for Tables */
+.table-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+.table-responsive::-webkit-scrollbar-thumb {
+  background: var(--page-border);
+  border-radius: 3px;
+}
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
+}
+
+/* --------------------------------------------------------------------------
+   2. Core Table Structure
+   -------------------------------------------------------------------------- */
+.astro-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  text-align: left;
+}
+
+.astro-table th {
+  background: var(--page-bg-alt);
+  color: var(--text-heading);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  padding: 0.65rem 0.85rem;
+  border-bottom: 2px solid var(--accent-gold);
+  border-right: 1px solid var(--page-border);
+  white-space: normal;
+  min-width: 95px;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  position: sticky;
+  top: 0;
+  z-index: 4;
+}
+
+.astro-table th:last-child {
+  border-right: none;
+}
+
+.astro-table td {
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid var(--page-border);
+  border-right: 1px solid var(--page-border);
+  color: var(--text-main);
+  vertical-align: top;
+  line-height: 1.5;
+  word-break: normal;
+}
+
+.astro-table td:last-child {
+  border-right: none;
+}
+
+.astro-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.astro-table tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.015);
+}
+
+[data-theme="dark"] .astro-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.astro-table tbody tr:hover {
+  background: rgba(179, 127, 25, 0.06);
+}
+
+/* Emphasized First Column for Topics / Category */
+.astro-table td.col-highlight,
+.astro-table td:first-child {
+  font-weight: 600;
+  color: var(--text-heading);
+  background: rgba(0, 0, 0, 0.01);
+}
+
+@media (max-width: 768px) {
+  .astro-table th {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.76rem;
+    min-width: 80px;
+  }
+  .astro-table td {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.78rem;
+  }
+  .table-caption-bar {
+    padding: 0.5rem 0.75rem;
+  }
+  .table-caption-title {
+    font-size: 0.85rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Notebook Rule Cards & Sutra Blocks
+   -------------------------------------------------------------------------- */
+.rule-card {
+  background: var(--page-bg);
+  border: 1px solid var(--page-border);
+  border-left: 4px solid var(--accent-gold);
+  border-radius: 8px;
+  padding: 1.1rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.rule-card:hover {
+  border-color: var(--accent-gold);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.rule-card.danger {
+  border-left-color: var(--accent-crimson);
+}
+
+.rule-card.success {
+  border-left-color: var(--accent-emerald);
+}
+
+.rule-card.info {
+  border-left-color: var(--accent-indigo);
+}
+
+.rule-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.rule-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.rule-formula-box {
+  background: rgba(179, 127, 25, 0.08);
+  border: 1px dashed var(--accent-gold);
+  border-radius: 6px;
+  padding: 0.65rem 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-saffron);
+  margin: 0.6rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rule-body {
+  font-size: 0.88rem;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.rule-body p {
+  margin-bottom: 0.5rem;
+}
+.rule-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Classical Sanskrit Shloka Block
+   -------------------------------------------------------------------------- */
+.shloka-box {
+  background: rgba(179, 127, 25, 0.05);
+  border: 1px solid var(--accent-gold);
+  border-radius: 8px;
+  padding: 1.1rem;
+  margin: 1.25rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.shloka-box::before {
+  content: '“';
+  position: absolute;
+  top: 4px;
+  left: 12px;
+  font-size: 2.5rem;
+  color: var(--accent-gold);
+  opacity: 0.3;
+  line-height: 1;
+}
+
+.shloka-sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent-crimson);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.shloka-meaning {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.shloka-source {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* --------------------------------------------------------------------------
+   5. Astrological Badges & Chips (Grahas, Rashis, Elements)
+   -------------------------------------------------------------------------- */
+.badge-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* Planet Specific Badges */
+.badge-sun { background: #ffedd5; color: #9a3412; border: 1px solid #fdba74; }
+.badge-moon { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
+.badge-mars { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+.badge-mercury { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+.badge-jupiter { background: #fef9c3; color: #854d0e; border: 1px solid #fde047; }
+.badge-venus { background: #fce7f3; color: #9d174d; border: 1px solid #f9a8d4; }
+.badge-saturn { background: #e2e8f0; color: #1e293b; border: 1px solid #94a3b8; }
+.badge-rahu { background: #ede9fe; color: #5b21b6; border: 1px solid #c4b5fd; }
+.badge-ketu { background: #ffedd5; color: #7c2d12; border: 1px solid #fed7aa; }
+
+[data-theme="dark"] .badge-sun { background: #431407; color: #fdba74; border-color: #9a3412; }
+[data-theme="dark"] .badge-moon { background: #1e293b; color: #e2e8f0; border-color: #475569; }
+[data-theme="dark"] .badge-mars { background: #450a0a; color: #fca5a5; border-color: #991b1b; }
+[data-theme="dark"] .badge-mercury { background: #052e16; color: #86efac; border-color: #166534; }
+[data-theme="dark"] .badge-jupiter { background: #422006; color: #fde047; border-color: #854d0e; }
+[data-theme="dark"] .badge-venus { background: #500724; color: #f9a8d4; border-color: #9d174d; }
+[data-theme="dark"] .badge-saturn { background: #0f172a; color: #94a3b8; border-color: #334155; }
+[data-theme="dark"] .badge-rahu { background: #2e1065; color: #c4b5fd; border-color: #5b21b6; }
+[data-theme="dark"] .badge-ketu { background: #431407; color: #fed7aa; border-color: #7c2d12; }
+
+/* Elements Badges */
+.badge-fire { background: #fee2e2; color: #b91c1c; }
+.badge-earth { background: #fef3c7; color: #92400e; }
+.badge-air { background: #e0f2fe; color: #0369a1; }
+.badge-water { background: #e0e7ff; color: #4338ca; }
+
+/* --------------------------------------------------------------------------
+   6. Medical Astrology Diagnosis & Organ Anatomy Callouts
+   -------------------------------------------------------------------------- */
+.med-diagnosis-box {
+  background: rgba(220, 38, 38, 0.04);
+  border: 1px solid rgba(220, 38, 38, 0.25);
+  border-left: 4px solid var(--accent-crimson);
+  border-radius: 8px;
+  padding: 1.1rem;
+  margin: 1.25rem 0;
+}
+
+.med-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent-crimson);
+  margin-bottom: 0.5rem;
+}
+
+.med-triggers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.med-trigger-item {
+  background: var(--page-bg);
+  border: 1px solid var(--page-border);
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+}
+
+.med-trigger-item strong {
+  display: block;
+  color: var(--text-heading);
+  margin-bottom: 0.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. 27 Nakshatra & 4 Pada Grid
+   -------------------------------------------------------------------------- */
+.nakshatra-card {
+  background: var(--page-bg);
+  border: 1px solid var(--page-border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.nakshatra-meta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--page-border);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.nakshatra-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.padas-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.85rem;
+}
+
+.pada-card {
+  background: var(--page-bg-alt);
+  border: 1px solid var(--page-border);
+  border-radius: 6px;
+  padding: 0.85rem;
+  position: relative;
+}
+
+.pada-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.pada-num {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-crimson);
+}
+
+.pada-navamsha {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+}
+
+.pada-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
