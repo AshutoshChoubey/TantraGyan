@@ -209,7 +209,7 @@ page_2 = """
 """
 pages.append({
     "chapter": "लेखक परिचय • About the Author",
-    "title": "Astrologer Ashutosh Kumar Choubey",
+    "title": "लेखक परिचय — ज्योतिषाचार्य आशुतोष कुमार चौबे",
     "content": page_2
 })
 
@@ -264,7 +264,7 @@ page_3 = """
 """
 pages.append({
     "chapter": "प्रस्तावना • Preface",
-    "title": "ग्रंथ का उद्देश्य एवं दर्शन (Scope of Compendium)",
+    "title": "ग्रंथ का उद्देश्य एवं आधारभूत संरचना",
     "content": page_3
 })
 
@@ -308,7 +308,7 @@ page_4 = """
 """
 pages.append({
     "chapter": "अस्वीकरण • Legal Disclaimer",
-    "title": "वैधानिक सूचना एवं अस्वीकरण",
+    "title": "तांत्रिक अनुशासन, आचार संहिता एवं वैधानिक परामर्श",
     "content": page_4
 })
 
@@ -385,7 +385,7 @@ page_5 = """
 """
 pages.append({
     "chapter": "अनुक्रमणिका • Index",
-    "title": "विषय-सूची (Table of Contents)",
+    "title": "विषय-सूची (सम्पूर्ण ग्रंथ अनुक्रमणिका)",
     "content": page_5
 })
 
@@ -393,21 +393,21 @@ pages.append({
 # CHAPTER 2: Navagraha Karakatva & Classical Raja Yogas (15 Tables)
 # ==============================================================================
 ch2_titles = [
-    "सूर्य देव के संपूर्ण शास्त्रीय कारकत्व (Sun Karakatva & Classical Significations)",
-    "चन्द्रमा के संपूर्ण शास्त्रीय कारकत्व (Moon Karakatva & Classical Significations)",
-    "चन्द्रमा: शास्त्रीय ग्रंथ संदर्भ व फलित सूत्र (Moon: Classical Treatises & Sutras)",
-    "चन्द्रमा: आधुनिक व्यावहारिक फलित व मानसिक विश्लेषण (Moon: Modern Analytical Perspectives)",
-    "मंगल देव के संपूर्ण शास्त्रीय कारकत्व (Mars Karakatva & Classical Significations)",
-    "मंगल देव: शास्त्रीय ग्रंथ संदर्भ व पराक्रम सूत्र (Mars: Classical Treatises & Sutras)",
-    "बृहस्पति (गुरु) के संपूर्ण शास्त्रीय कारकत्व (Jupiter Karakatva & Significations)",
-    "शुक्र देव के संपूर्ण शास्त्रीय कारकत्व (Venus Karakatva & Significations)",
-    "शनि देव के संपूर्ण कारकत्व व कर्म सिद्धांत (Saturn Karakatva & Karmic Principles)",
-    "शनि देव: प्रमुख शास्त्रीय एवं आधुनिक दृष्टिकोण (Saturn: Classical & Modern Perspectives)",
-    "बुध देव के संपूर्ण कारकत्व व बुद्धि-विवेक (Mercury Karakatva & Intellectual Faculties)",
-    "राहु देव के संपूर्ण कारकत्व व मायावी प्रभाव (Rahu Karakatva & Shadow Matrix)",
-    "केतु देव के संपूर्ण कारकत्व व मोक्ष मार्ग (Ketu Karakatva & Spiritual Liberation)",
-    "१७ शास्त्रीय राजयोग एवं पंच महापुरुष योग (17 Classical Raja Yogas & Pancha Mahapurusha)",
-    "१७ शास्त्रीय राजयोग एवं विपरीत राजयोग (17 Classical Raja Yogas & Viparita Raja Yogas)"
+    "सूर्य देव के संपूर्ण शास्त्रीय कारकत्व",
+    "चन्द्रमा के संपूर्ण शास्त्रीय कारकत्व",
+    "चन्द्रमा: शास्त्रीय ग्रंथ संदर्भ व फलित सूत्र",
+    "चन्द्रमा: आधुनिक व्यावहारिक फलित व मानसिक विश्लेषण",
+    "मंगल देव के संपूर्ण शास्त्रीय कारकत्व",
+    "मंगल देव: शास्त्रीय ग्रंथ संदर्भ व पराक्रम सूत्र",
+    "बृहस्पति (गुरु) के संपूर्ण शास्त्रीय कारकत्व",
+    "शुक्र देव के संपूर्ण शास्त्रीय कारकत्व",
+    "शनि देव के संपूर्ण कारकत्व व कर्म सिद्धांत",
+    "शनि देव: प्रमुख शास्त्रीय एवं आधुनिक दृष्टिकोण",
+    "बुध देव के संपूर्ण कारकत्व व बुद्धि-विवेक",
+    "राहु देव के संपूर्ण कारकत्व व मायावी प्रभाव",
+    "केतु देव के संपूर्ण कारकत्व व मोक्ष मार्ग",
+    "१७ शास्त्रीय राजयोग एवं पंच महापुरुष योग (भाग १)",
+    "१७ शास्त्रीय राजयोग एवं विपरीत राजयोग (भाग २)"
 ]
 
 ch2_m = re.search(r'<section\b[^>]*id=[\"\']chapter-2[\"\'][^>]*>(.*?)</section>', raw_content, re.DOTALL)
@@ -416,7 +416,7 @@ if ch2_m:
     ch2_pairs = re.findall(r'(<div class=\"content-block\">.*?</div>)?\s*(<div class=\"table-container\"[^>]*id=\"([^\"]+)\".*?>.*?</div>\s*</div>)', ch2_text, re.DOTALL)
     
     for idx, (cb, tb, tid) in enumerate(ch2_pairs):
-        caption = ch2_titles[idx] if idx < len(ch2_titles) else f"Planetary Karakatva Table {idx+1}"
+        caption = ch2_titles[idx] if idx < len(ch2_titles) else f"नवग्रह कारकत्व तालिका {idx+1}"
         
         # Clean up cb and tb to fit book layout
         cb_clean = sanitize_content_block(cb) if cb else ""
@@ -440,29 +440,29 @@ if ch2_m:
         """
         pages.append({
             "chapter": "Ch 2: नवग्रह कारकत्व व राजयोग",
-            "title": caption[:45],
+            "title": caption,
             "content": content
         })
 
 # ==============================================================================
 ch3_titles = [
-    "ग्रह गति, गोचर अवधि एवं विंशोत्तरी महादशा चक्र (Planetary Motion & Mahadasha)",
-    "ग्रह दृष्टि तालिका एवं शास्त्रीय दृष्टि नियम (Planetary Drishti & Aspect Rules)",
-    "२७ नक्षत्र, विस्तार व राशि सीमा (27 Nakshatras & Degree Spans)",
-    "२७ नक्षत्र, देवता व पद नामाक्षर (Nakshatra Deities & Pada Syllables)",
-    "नक्षत्र, देवता और स्वामी तालिका (Nakshatras, Deities & Rulers)",
-    "नक्षत्र स्वामी व दशा अधिपति (Nakshatra Lords & Dasha Rulers)",
-    "२७ नक्षत्र एवं स्वामी द्विभाषी संदर्भ तालिका (27 Nakshatras & Lords Reference)",
-    "१२ राशियां, स्वामी व तत्व (12 Rashis, Lords & Elements)",
-    "राशियों के गुण, तत्व व स्वभाव (Rashis: Gunas, Elements & Nature)",
-    "राशियों का लिंग वर्गीकरण (Gender Classification of Signs)",
-    "राशियों की ध्रुवता (Polarity of Signs - Positive / Negative)",
-    "अग्नि तत्व राशियां: मेष, सिंह, धनु (Fire Signs - Agni Tattva)",
-    "पृथ्वी तत्व राशियां: वृषभ, कन्या, मकर (Earth Signs - Prithvi Tattva)",
-    "वायु तत्व राशियां: मिथुन, तुला, कुंभ (Air Signs - Vayu Tattva)",
-    "जल तत्व राशियां: कर्क, वृश्चिक, मीन (Water Signs - Jala Tattva)",
-    "तत्व एवं स्वभाव का संयुक्त वर्गीकरण (Combined Element & Mobility Nature)",
-    "चर, स्थिर, द्विस्वभाव व तत्व फलित नियम (Mobility & Element Interpretation Rules)"
+    "ग्रह गति, गोचर अवधि एवं विंशोत्तरी महादशा चक्र",
+    "ग्रह दृष्टि तालिका एवं शास्त्रीय दृष्टि नियम",
+    "२७ नक्षत्र, विस्तार व राशि सीमा तालिका",
+    "२७ नक्षत्र, अधिष्ठाता देवता व पद नामाक्षर",
+    "नक्षत्र, अधिष्ठाता देवता और स्वामी तालिका",
+    "नक्षत्र स्वामी व दशा अधिपति सूत्र",
+    "२७ नक्षत्र एवं स्वामी शास्त्रीय तालिका",
+    "१२ राशियां, स्वामी व पंचमहाभूत तत्व",
+    "राशियों के गुण, तत्व एवं स्वभाव वर्गीकरण",
+    "राशियों का लिंग वर्गीकरण (पुरुष व स्त्री राशियां)",
+    "राशियों की ध्रुवता (धनात्मक एवं ऋणात्मक स्वभाव)",
+    "अग्नि तत्व राशियां: मेष, सिंह, धनु",
+    "पृथ्वी तत्व राशियां: वृषभ, कन्या, मकर",
+    "वायु तत्व राशियां: मिथुन, तुला, कुंभ",
+    "जल तत्व राशियां: कर्क, वृश्चिक, मीन",
+    "तत्व एवं गतिशीलता का संयुक्त वर्गीकरण",
+    "चर, स्थिर, द्विस्वभाव व तत्व फलित नियम"
 ]
 
 ch3_m = re.search(r'<section\b[^>]*id=[\"\']chapter-3[\"\'][^>]*>(.*?)</section>', raw_content, re.DOTALL)
@@ -471,7 +471,7 @@ if ch3_m:
     ch3_pairs = re.findall(r'(<div class=\"content-block\">.*?</div>)?\s*(<div class=\"table-container\"[^>]*id=\"([^\"]+)\".*?>.*?</div>\s*</div>)', ch3_text, re.DOTALL)
     
     for idx, (cb, tb, tid) in enumerate(ch3_pairs):
-        caption = ch3_titles[idx] if idx < len(ch3_titles) else f"Astronomical Motion Table {idx+1}"
+        caption = ch3_titles[idx] if idx < len(ch3_titles) else f"खगोलीय गति तालिका {idx+1}"
         
         cb_clean = sanitize_content_block(cb) if cb else ""
         cb_clean = re.sub(r'<h2[^>]*id=\"Page-3[^\"]*\"[^>]*>.*?</h2>', '', cb_clean)
@@ -526,7 +526,7 @@ if ch3_m:
         """
         pages.append({
             "chapter": "Ch 3: राशि, नक्षत्र एवं ग्रह गति",
-            "title": caption[:45],
+            "title": caption,
             "content": content
         })
 
@@ -549,7 +549,7 @@ if ch4_m:
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 4 • Section 1</div>
-            <h3 class="chapter-heading" style="font-size:1.2rem; color:var(--accent-gold);">दीप्तादि ९ अवस्थाएं: ग्रहों की स्थिति व फल (Deeptadi Avasthas Explained)</h3>
+            <h3 class="chapter-heading" style="font-size:1.2rem; color:var(--accent-gold);">दीप्तादि ९ अवस्थाएं: ग्रहों की स्थिति व फल</h3>
           </div>
           <div class="rule-card">
             <div class="rule-header">
@@ -564,22 +564,22 @@ if ch4_m:
         """
         pages.append({
             "chapter": "Ch 4: भाव एवं राशियों में ग्रह",
-            "title": "दीप्तादि ९ अवस्थाएं (Deeptadi Avasthas)",
+            "title": "दीप्तादि ९ अवस्थाएं: ग्रहों की स्थिति व फल",
             "content": page_4_1
         })
     
     # 4.2 Tables 1 to 6 in Ch4
     ch4_table_titles = [
-        "ग्रहों की नैसर्गिक व तात्कालिक मैत्री वर्गीकरण (Planetary Natural & Temporal Friendship)",
-        "दीप्तादि अवस्थाएं, मूलत्रिकोण व स्वराशि तालिका (Deeptadi Avasthas, Moolatrikona & Own Signs)",
-        "ग्रह अवस्थाओं के व्यावहारिक फलित नियम (Predictive Rules for Planetary States)",
-        "ग्रहों के पांच प्रकार के संबंध (Five Types of Planetary Relationships)",
-        "१२ भावों के स्थिर कारक ग्रह (Fixed Significator Planets for 12 Houses)",
-        "भाव कारक व भावेश का शास्त्रीय अंतर (Bhava Karaka vs Bhavesh Classical Distinction)"
+        "ग्रहों की नैसर्गिक व तात्कालिक मैत्री वर्गीकरण",
+        "दीप्तादि अवस्थाएं, मूलत्रिकोण व स्वराशि तालिका",
+        "ग्रह अवस्थाओं के व्यावहारिक फलित नियम",
+        "ग्रहों के पांच प्रकार के संबंध (पंच संबंध)",
+        "१२ भावों के स्थिर कारक ग्रह",
+        "भाव कारक व भावेश का शास्त्रीय अंतर एवं विश्लेषण"
     ]
     ch4_tables = re.findall(r'(<div class=\"content-block\">.*?</div>)?\s*(<div class=\"table-container\"[^>]*id=\"([^\"]+)\".*?>.*?</div>\s*</div>)', ch4_text, re.DOTALL)
     for idx, (cb, tb, tid) in enumerate(ch4_tables):
-        caption = ch4_table_titles[idx] if idx < len(ch4_table_titles) else f"House & Rashi Table {idx+1}"
+        caption = ch4_table_titles[idx] if idx < len(ch4_table_titles) else f"भाव एवं राशि तालिका {idx+1}"
         cb_clean = sanitize_content_block(cb) if cb else ""
         tb_clean = re.sub(r'<div class=\"table-caption\">.*?</div>', '', tb)
         tb_clean = clean_table_glyphs(tb_clean)
@@ -598,7 +598,7 @@ if ch4_m:
         """
         pages.append({
             "chapter": "Ch 4: भाव एवं राशियों में ग्रह",
-            "title": caption[:45],
+            "title": caption,
             "content": content
         })
     
@@ -638,7 +638,7 @@ if ch4_m:
             <div class="page-inner-content">
               <div class="chapter-header" style="margin-bottom:0.75rem;">
                 <div class="chapter-number">Chapter 4 • Sun in Houses</div>
-                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">सूर्य देव: भाव १ से ६ फल (Surya in Houses 1 to 6)</h3>
+                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">सूर्य देव: भाव १ से ६ फल</h3>
               </div>
               <div class="rule-card">
                 <div class="rule-body" style="font-size:0.85rem; line-height:1.6;">
@@ -649,7 +649,7 @@ if ch4_m:
             """
             pages.append({
                 "chapter": "Ch 4: भाव एवं राशियों में ग्रह",
-                "title": "सूर्य: भाव 1 से 6 फल",
+                "title": "सूर्य देव: भाव १ से ६ फलित विचार",
                 "content": p_sun_1_6
             })
             
@@ -657,7 +657,7 @@ if ch4_m:
             <div class="page-inner-content">
               <div class="chapter-header" style="margin-bottom:0.75rem;">
                 <div class="chapter-number">Chapter 4 • Sun in Houses</div>
-                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">सूर्य देव: भाव ७ से १२ फल (Surya in Houses 7 to 12)</h3>
+                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">सूर्य देव: भाव ७ से १२ फल</h3>
               </div>
               <div class="rule-card">
                 <div class="rule-body" style="font-size:0.85rem; line-height:1.6;">
@@ -668,7 +668,7 @@ if ch4_m:
             """
             pages.append({
                 "chapter": "Ch 4: भाव एवं राशियों में ग्रह",
-                "title": "सूर्य: भाव 7 से 12 फल",
+                "title": "सूर्य देव: भाव ७ से १२ फलित विचार",
                 "content": p_sun_7_12
             })
             
@@ -685,7 +685,7 @@ if ch4_m:
             <div class="page-inner-content">
               <div class="chapter-header" style="margin-bottom:0.75rem;">
                 <div class="chapter-number">Chapter 4 • Sun in Signs</div>
-                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">सूर्य देव: मेष से कन्या राशि फल (Surya in Signs 1 to 6)</h3>
+                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">सूर्य देव: मेष से कन्या राशि फल</h3>
               </div>
               <div class="rule-card">
                 <div class="rule-body" style="font-size:0.85rem; line-height:1.6;">
@@ -696,7 +696,7 @@ if ch4_m:
             """
             pages.append({
                 "chapter": "Ch 4: भाव एवं राशियों में ग्रह",
-                "title": "सूर्य: मेष से कन्या राशि फल",
+                "title": "सूर्य देव: मेष से कन्या राशि फल",
                 "content": p_signs_1_6
             })
             
@@ -704,7 +704,7 @@ if ch4_m:
             <div class="page-inner-content">
               <div class="chapter-header" style="margin-bottom:0.75rem;">
                 <div class="chapter-number">Chapter 4 • Sun in Signs</div>
-                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">सूर्य देव: तुला से मीन राशि फल (Surya in Signs 7 to 12)</h3>
+                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">सूर्य देव: तुला से मीन राशि फल</h3>
               </div>
               <div class="rule-card">
                 <div class="rule-body" style="font-size:0.85rem; line-height:1.6;">
@@ -715,7 +715,7 @@ if ch4_m:
             """
             pages.append({
                 "chapter": "Ch 4: भाव एवं राशियों में ग्रह",
-                "title": "सूर्य: तुला से मीन राशि फल",
+                "title": "सूर्य देव: तुला से मीन राशि फल",
                 "content": p_signs_7_12
             })
 
@@ -723,33 +723,33 @@ if ch4_m:
 # CHAPTER 5: Medical Astrology Analysis (27 Tables)
 # ==============================================================================
 ch5_titles = [
-    "सूर्य देव: शारीरिक अंग व रोग संबंध (Sun: Body Parts & Medical Significations)",
-    "चन्द्रमा: शारीरिक अंग व रोग संबंध (Moon: Body Parts & Medical Significations)",
-    "मंगल देव: शारीरिक अंग व रोग संबंध (Mars: Body Parts & Medical Significations)",
-    "बुध देव: शारीरिक अंग व रोग संबंध (Mercury: Body Parts & Medical Significations)",
-    "बृहस्पति (गुरु): शारीरिक अंग व रोग संबंध (Jupiter: Body Parts & Medical Significations)",
-    "शुक्र देव: शारीरिक अंग व रोग संबंध (Venus: Body Parts & Medical Significations)",
-    "शनि देव: शारीरिक अंग व रोग संबंध (Saturn: Body Parts & Medical Significations)",
-    "राहु देव: शारीरिक अंग व रोग संबंध (Rahu: Body Parts & Medical Significations)",
-    "केतु देव: शारीरिक अंग व रोग संबंध (Ketu: Body Parts & Medical Significations)",
-    "प्रथम भाव (लग्न): शारीरिक अंग व रोग निदान (1st House: Anatomy & Diagnostics)",
-    "द्वितीय भाव: शारीरिक अंग व रोग निदान (2nd House: Anatomy & Diagnostics)",
-    "तृतीय भाव: शारीरिक अंग व रोग निदान (3rd House: Anatomy & Diagnostics)",
-    "चतुर्थ भाव: शारीरिक अंग व रोग निदान (4th House: Anatomy & Diagnostics)",
-    "पंचम भाव: शारीरिक अंग व रोग निदान (5th House: Anatomy & Diagnostics)",
-    "षष्ठ भाव: शारीरिक अंग व रोग निदान (6th House: Anatomy & Diagnostics)",
-    "सप्तम भाव: शारीरिक अंग व रोग निदान (7th House: Anatomy & Diagnostics)",
-    "अष्टम भाव: शारीरिक अंग व रोग निदान (8th House: Anatomy & Diagnostics)",
-    "नवम भाव: शारीरिक अंग व रोग निदान (9th House: Anatomy & Diagnostics)",
-    "दशम भाव: शारीरिक अंग व रोग निदान (10th House: Anatomy & Diagnostics)",
-    "एकादश भाव: शारीरिक अंग व रोग निदान (11th House: Anatomy & Diagnostics)",
-    "द्वादश भाव: शारीरिक अंग व रोग निदान (12th House: Anatomy & Diagnostics)",
-    "१२ भाव, शारीरिक अंग एवं व्याधि समन्वय (12 Houses: Organ & Disease Correlation)",
-    "१२ राशियां, शारीरिक अंग और विशिष्ट रोग (12 Signs: Anatomical Rules & Disorders)",
-    "कैंसर रोग के ज्योतिषीय कारक व मुख्य सूत्र (Astrological Factors & Cancer Etiology)",
-    "सामान्य कैंसर (स्तन व फेफड़े): ज्योतिषीय विश्लेषण (General Cancer: Breast & Lung Diagnostics)",
-    "रक्त कैंसर (ल्यूकीमिया): ग्रह योग व विश्लेषण (Leukemia - Blood Cancer Diagnostics)",
-    "त्वचा कैंसर (मेलानोमा): ग्रह योग व विश्लेषण (Skin Cancer - Melanoma Diagnostics)"
+    "सूर्य देव: शारीरिक अंग व रोग संबंध",
+    "चन्द्रमा: शारीरिक अंग व रोग संबंध",
+    "मंगल देव: शारीरिक अंग व रोग संबंध",
+    "बुध देव: शारीरिक अंग व रोग संबंध",
+    "बृहस्पति (गुरु): शारीरिक अंग व रोग संबंध",
+    "शुक्र देव: शारीरिक अंग व रोग संबंध",
+    "शनि देव: शारीरिक अंग व रोग संबंध",
+    "राहु देव: शारीरिक अंग व रोग संबंध",
+    "केतु देव: शारीरिक अंग व रोग संबंध",
+    "प्रथम भाव (लग्न): शारीरिक अंग व रोग निदान",
+    "द्वितीय भाव: शारीरिक अंग व रोग निदान",
+    "तृतीय भाव: शारीरिक अंग व रोग निदान",
+    "चतुर्थ भाव: शारीरिक अंग व रोग निदान",
+    "पंचम भाव: शारीरिक अंग व रोग निदान",
+    "षष्ठ भाव: शारीरिक अंग व रोग निदान",
+    "सप्तम भाव: शारीरिक अंग व रोग निदान",
+    "अष्टम भाव: शारीरिक अंग व रोग निदान",
+    "नवम भाव: शारीरिक अंग व रोग निदान",
+    "दशम भाव: शारीरिक अंग व रोग निदान",
+    "एकादश भाव: शारीरिक अंग व रोग निदान",
+    "द्वादश भाव: शारीरिक अंग व रोग निदान",
+    "१२ भाव, शारीरिक अंग एवं व्याधि समन्वय तालिका",
+    "१२ राशियां, शारीरिक अंग और विशिष्ट रोग तालिका",
+    "कैंसर (अर्भुद रोग) के ज्योतिषीय कारण व मुख्य बिंदु",
+    "सामान्य कैंसर (स्तन व फेफड़े): ग्रह योग व विश्लेषण",
+    "रक्त कैंसर (ल्यूकीमिया): ज्योतिषीय योग व विश्लेषण",
+    "त्वचा कैंसर (मेलानोमा): ग्रह योग व विश्लेषण"
 ]
 
 ch5_m = re.search(r'<section\b[^>]*id=[\"\']chapter-5[\"\'][^>]*>(.*?)</section>', raw_content, re.DOTALL)
@@ -758,7 +758,7 @@ if ch5_m:
     ch5_pairs = re.findall(r'(<div class=\"content-block\">.*?</div>)?\s*(<div class=\"table-container\"[^>]*id=\"([^\"]+)\".*?>.*?</div>\s*</div>)', ch5_text, re.DOTALL)
     
     for idx, (cb, tb, tid) in enumerate(ch5_pairs):
-        caption = ch5_titles[idx] if idx < len(ch5_titles) else f"Medical Astrology Table {idx+1}"
+        caption = ch5_titles[idx] if idx < len(ch5_titles) else f"चिकित्सा ज्योतिष तालिका {idx+1}"
         cb_clean = sanitize_content_block(cb) if cb else ""
         cb_clean = re.sub(r'<h2[^>]*id=\"Page-5[^\"]*\"[^>]*>.*?</h2>', '', cb_clean)
         
@@ -780,7 +780,7 @@ if ch5_m:
         """
         pages.append({
             "chapter": "Ch 5: मेडिकल व स्वास्थ्य ज्योतिष",
-            "title": caption[:45],
+            "title": caption,
             "content": content
         })
 
@@ -788,17 +788,17 @@ if ch5_m:
 # CHAPTER 6: Nakshatra & Pada Analysis (11 Tables)
 # ==============================================================================
 ch6_titles = [
-    "२७ नक्षत्र, विस्तार व राशि सीमा (27 Nakshatras: Degree Spans & Boundaries)",
-    "२७ नक्षत्र, देवता व पद नामाक्षर (Nakshatra Deities & Pada Syllables)",
-    "नक्षत्र, देवता एवं ग्रह स्वामी तालिका (Nakshatras, Deities & Planetary Lords)",
-    "नक्षत्र स्वामी व दशा अधिपति सूत्र (Nakshatra Lordship & Dasha Sutra)",
-    "२७ नक्षत्र एवं स्वामी द्विभाषी संदर्भ तालिका (27 Nakshatras & Lords Reference)",
-    "आश्लेषा नक्षत्र: ४ पद एवं ग्रह फल (Ashlesha Nakshatra: 4 Padas & Planets)",
-    "पुष्य नक्षत्र: ४ पद एवं नवमांश ग्रह प्रभाव (Pushya Nakshatra: 4 Padas & Navamsha)",
-    "अश्विनी नक्षत्र: ४ पद व नवमांश अधिपति (Ashwini Nakshatra: 4 Padas & Navamsha Lords)",
-    "अश्विनी नक्षत्र: पद ध्वनि व मूल स्वभाव (Ashwini Padas: Phonetics & Characteristics)",
-    "अश्विनी नक्षत्र में ९ ग्रहों का फलित (Planetary Placements in Ashwini Nakshatra)",
-    "अश्विनी नक्षत्र: ४ पद, नवमांश व ग्रह संबंध (Ashwini Padas: Navamsha & Planet Relations)"
+    "२७ नक्षत्र, विस्तार व राशि सीमा विभाजन",
+    "२७ नक्षत्र, देवता व पद नामाक्षर तालिका",
+    "नक्षत्र, देवता एवं ग्रह स्वामी तालिका",
+    "नक्षत्र स्वामी व दशा अधिपति शास्त्रीय सूत्र",
+    "२७ नक्षत्र एवं स्वामी सम्पूर्ण ज्ञानकोश तालिका",
+    "आश्लेषा नक्षत्र: ४ पद एवं ग्रह फल विश्लेषण",
+    "पुष्य नक्षत्र: ४ पद एवं नवमांश ग्रह प्रभाव",
+    "अश्विनी नक्षत्र: ४ पद व नवमांश अधिपति तालिका",
+    "अश्विनी नक्षत्र: पद ध्वनि, प्रतीक व मूल स्वभाव",
+    "अश्विनी नक्षत्र में ९ ग्रहों का फलित विश्लेषण",
+    "अश्विनी नक्षत्र: ४ पद, नवमांश व ग्रह संबंध सारांश"
 ]
 
 ch6_m = re.search(r'<section\b[^>]*id=[\"\']chapter-6[\"\'][^>]*>(.*?)</section>', raw_content, re.DOTALL)
@@ -807,7 +807,7 @@ if ch6_m:
     ch6_pairs = re.findall(r'(<div class=\"content-block\">.*?</div>)?\s*(<div class=\"table-container\"[^>]*id=\"([^\"]+)\".*?>.*?</div>\s*</div>)', ch6_text, re.DOTALL)
     
     for idx, (cb, tb, tid) in enumerate(ch6_pairs):
-        caption = ch6_titles[idx] if idx < len(ch6_titles) else f"Nakshatra Pada Table {idx+1}"
+        caption = ch6_titles[idx] if idx < len(ch6_titles) else f"नक्षत्र पद तालिका {idx+1}"
         cb_clean = sanitize_content_block(cb) if cb else ""
         cb_clean = re.sub(r'<h2[^>]*id=\"Page-6[^\"]*\"[^>]*>.*?</h2>', '', cb_clean)
         
@@ -829,7 +829,7 @@ if ch6_m:
         """
         pages.append({
             "chapter": "Ch 6: नक्षत्र पद व ग्रह विश्लेषण",
-            "title": caption[:45],
+            "title": caption,
             "content": content
         })
 
@@ -884,7 +884,7 @@ colophon_page = """
 """
 pages.append({
     "chapter": "समापन • Colophon",
-    "title": "समापन व मंगल कामना",
+    "title": "समापन पृष्ठ • उपनिषद् मंगल कामना व आधिकारिक संपर्क",
     "content": colophon_page
 })
 
