@@ -4,16 +4,227 @@ Tantra Gyan Multilingual Edition Builder
 Generates:
 1. hindi.html  - Pure Hindi Edition (सम्पूर्ण हिन्दी संस्करण)
 2. english.html - Pure English Edition (Complete English Edition)
-While preserving index.html as the original bilingual (द्विभाषी) edition.
+While preserving index.html as the original bilingual (द्विभाषी) masterwork edition.
 """
 
 import re
 import html
 import os
 import build_book
+from tables_data import *
 
 # ------------------------------------------------------------------------------
-# 1. TABLE HEADER LOCALIZATION DICTIONARIES
+# 1. CANONICAL 87 PAGE TITLES (PURE HINDI & PURE ENGLISH)
+# ------------------------------------------------------------------------------
+
+HINDI_TITLES = [
+    'तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ',
+    'लेखक परिचय — ज्योतिषाचार्य आशुतोष कुमार चौबे',
+    'ग्रंथ का उद्देश्य एवं आधारभूत संरचना',
+    'तांत्रिक अनुशासन, आचार संहिता एवं वैधानिक परामर्श',
+    'विषय-सूची (सम्पूर्ण ग्रंथ अनुक्रमणिका)',
+    'सूर्य देव के संपूर्ण शास्त्रीय कारकत्व',
+    'चन्द्रमा के संपूर्ण शास्त्रीय कारकत्व',
+    'चन्द्रमा: शास्त्रीय ग्रंथ संदर्भ व फलित सूत्र',
+    'चन्द्रमा: आधुनिक व्यावहारिक फलित व मानसिक विश्लेषण',
+    'मंगल देव के संपूर्ण शास्त्रीय कारकत्व',
+    'मंगल देव: शास्त्रीय ग्रंथ संदर्भ व पराक्रम सूत्र',
+    'बृहस्पति (गुरु) के संपूर्ण शास्त्रीय कारकत्व',
+    'शुक्र देव के संपूर्ण शास्त्रीय कारकत्व',
+    'शनि देव के संपूर्ण शास्त्रीय कारकत्व व कर्म सिद्धांत',
+    'शनि देव: प्रमुख शास्त्रीय एवं आधुनिक दृष्टिकोण',
+    'बुध देव के संपूर्ण शास्त्रीय कारकत्व व बुद्धि-विवेक',
+    'राहु देव के संपूर्ण शास्त्रीय कारकत्व व मायावी प्रभाव',
+    'केतु देव के संपूर्ण शास्त्रीय कारकत्व व मोक्ष मार्ग',
+    '१७ शास्त्रीय राजयोग एवं पंच महापुरुष योग (भाग १)',
+    '१७ शास्त्रीय राजयोग एवं विपरीत राजयोग (भाग २)',
+    'ग्रह गति, गोचर अवधि एवं विंशोत्तरी महादशा चक्र',
+    'ग्रह दृष्टि तालिका एवं शास्त्रीय दृष्टि नियम',
+    '२७ नक्षत्र, विस्तार व राशि सीमा तालिका',
+    '२७ नक्षत्र, अधिष्ठाता देवता व पद नामाक्षर',
+    'नक्षत्र, अधिष्ठाता देवता और स्वामी तालिका',
+    'नक्षत्र स्वामी व दशा अधिपति सूत्र',
+    '२७ नक्षत्र एवं स्वामी शास्त्रीय तालिका',
+    '१२ राशियां, स्वामी व पंचमहाभूत तत्व',
+    'राशियों के गुण, तत्व एवं स्वभाव वर्गीकरण',
+    'राशियों का लिंग वर्गीकरण (पुरुष व स्त्री राशियां)',
+    'राशियों की ध्रुवता (धनात्मक एवं ऋणात्मक स्वभाव)',
+    'अग्नि तत्व राशियां: मेष, सिंह, धनु',
+    'पृथ्वी तत्व राशियां: वृषभ, कन्या, मकर',
+    'वायु तत्व राशियां: मिथुन, तुला, कुंभ',
+    'जल तत्व राशियां: कर्क, वृश्चिक, मीन',
+    'तत्व एवं गतिशीलता का संयुक्त वर्गीकरण',
+    'चर, स्थिर, द्विस्वभाव व तत्व फलित नियम',
+    'दीप्तादि ९ अवस्थाएं: ग्रहों की स्थिति व फल',
+    'ग्रहों की नैसर्गिक व तात्कालिक मैत्री वर्गीकरण',
+    'दीप्तादि अवस्थाएं, मूलत्रिकोण व स्वराशि तालिका',
+    'ग्रहों के पांच प्रकार के संबंध (पंच संबंध)',
+    'ग्रह अवस्थाओं के व्यावहारिक फलित नियम',
+    '१२ भावों के स्थिर कारक ग्रह',
+    'भाव कारक व भावेश का शास्त्रीय अंतर एवं विश्लेषण',
+    'सूर्य देव: भाव १ से ६ फलित विचार',
+    'सूर्य देव: भाव ७ से १२ फलित विचार',
+    'सूर्य देव: मेष से कन्या राशि फल',
+    'सूर्य देव: तुला से मीन राशि फल',
+    'सूर्य देव: शारीरिक अंग व रोग संबंध',
+    'चन्द्रमा: शारीरिक अंग व रोग संबंध',
+    'मंगल देव: शारीरिक अंग व रोग संबंध',
+    'बुध देव: शारीरिक अंग व रोग संबंध',
+    'बृहस्पति (गुरु): शारीरिक अंग व रोग संबंध',
+    'शुक्र देव: शारीरिक अंग व रोग संबंध',
+    'शनि देव: शारीरिक अंग व रोग संबंध',
+    'राहु देव: शारीरिक अंग व रोग संबंध',
+    'केतु देव: शारीरिक अंग व रोग संबंध',
+    'प्रथम भाव (लग्न): शारीरिक अंग व रोग निदान',
+    'द्वितीय भाव: शारीरिक अंग व रोग निदान',
+    'तृतीय भाव: शारीरिक अंग व रोग निदान',
+    'चतुर्थ भाव: शारीरिक अंग व रोग निदान',
+    'पंचम भाव: शारीरिक अंग व रोग निदान',
+    'षष्ठ भाव: शारीरिक अंग व रोग निदान',
+    'सप्तम भाव: शारीरिक अंग व रोग निदान',
+    'अष्टम भाव: शारीरिक अंग व रोग निदान',
+    'नवम भाव: शारीरिक अंग व रोग निदान',
+    'दशम भाव: शारीरिक अंग व रोग निदान',
+    'एकादश भाव: शारीरिक अंग व रोग निदान',
+    'द्वादश भाव: शारीरिक अंग व रोग निदान',
+    '१२ भाव, शारीरिक अंग एवं व्याधि समन्वय तालिका',
+    '१२ राशियां, शारीरिक अंग और विशिष्ट रोग तालिका',
+    'कैंसर (अर्भुद रोग) के ज्योतिषीय कारण व मुख्य बिंदु',
+    'सामान्य कैंसर (स्तन व फेफड़े): ग्रह योग व विश्लेषण',
+    'रक्त कैंसर (ल्यूकीमिया): ज्योतिषीय योग व विश्लेषण',
+    'त्वचा कैंसर (मेलानोमा): ग्रह योग व विश्लेषण',
+    '२७ नक्षत्र, विस्तार व राशि सीमा विभाजन',
+    '२७ नक्षत्र, देवता व पद नामाक्षर तालिका',
+    'नक्षत्र, देवता एवं ग्रह स्वामी तालिका',
+    'नक्षत्र स्वामी व दशा अधिपति शास्त्रीय सूत्र',
+    '२७ नक्षत्र एवं स्वामी सम्पूर्ण ज्ञानकोश तालिका',
+    'आश्लेषा नक्षत्र: ४ पद एवं ग्रह फल विश्लेषण',
+    'पुष्य नक्षत्र: ४ पद एवं नवमांश ग्रह प्रभाव',
+    'अश्विनी नक्षत्र: ४ पद व नवमांश अधिपति तालिका',
+    'अश्विनी नक्षत्र: पद ध्वनि, प्रतीक व मूल स्वभाव',
+    'अश्विनी नक्षत्र में ९ ग्रहों का फलित विश्लेषण',
+    'अश्विनी नक्षत्र: ४ पद, नवमांश व ग्रह संबंध सारांश',
+    'समापन पृष्ठ • उपनिषद् मंगल कामना व आधिकारिक संपर्क'
+]
+
+ENGLISH_TITLES = [
+    'Tantra Gyan: Complete Vedic Astrology Compendium',
+    'Author Profile — Astrologer Ashutosh Kumar Choubey',
+    'Reader\'s Study Guide & Core Architecture',
+    'Tantric Ethics, Code of Conduct & Legal Disclaimer',
+    'Systematic Table of Contents',
+    'Sun (Surya) Significations & Karakatvas',
+    'Moon (Chandra) Significations & Karakatvas',
+    'Moon in Classical Treatises & Shastric Citations',
+    'Moon: Modern Analytical Perspectives & Psychological Impacts',
+    'Mars (Mangala) Significations & Karakatvas',
+    'Mars in Classical Treatises & Shastric Citations',
+    'Jupiter (Brihaspati) Significations & Karakatvas',
+    'Venus (Shukra) Significations & Karakatvas',
+    'Saturn (Shani) Significations & Karmic Principles',
+    'Saturn in Classical & Modern Analytical Perspectives',
+    'Mercury (Budha) Significations & Intellectual Karakatvas',
+    'Rahu Significations & Shadow Matrix Karakatvas',
+    'Ketu Significations & Spiritual Liberation Karakatvas',
+    '17 Classical Raja Yogas & Pancha Mahapurusha (Part 1)',
+    '17 Classical Raja Yogas & Viparita Raja Yogas (Part 2)',
+    'Planetary Motion, Transit Times & Vimshottari Mahadasha',
+    'Planetary Drishti Table & Classical Aspect Rules',
+    '27 Nakshatras: Degree Spans & Zodiac Boundaries',
+    '27 Nakshatras: Deities & Pada Phonetic Syllables',
+    'Nakshatras, Presiding Deities & Planetary Lords',
+    'Nakshatra Lords & Vimshottari Dasha Rulers',
+    '27 Nakshatras & Rulers Master Reference Table',
+    '12 Zodiac Signs, Planetary Rulers & Elements',
+    'Zodiac Signs: Gunas, Elements & Modalities',
+    'Gender Classification of Zodiac Signs (Masculine & Feminine)',
+    'Polarity of Zodiac Signs (Positive & Negative)',
+    'Fire Signs (Agni Tattva): Aries, Leo, Sagittarius',
+    'Earth Signs (Prithvi Tattva): Taurus, Virgo, Capricorn',
+    'Air Signs (Vayu Tattva): Gemini, Libra, Aquarius',
+    'Water Signs (Jala Tattva): Cancer, Scorpio, Pisces',
+    'Combined Classification of Elements & Modality',
+    'Predictive Rules for Sign Modality & Cosmic Elements',
+    'Deeptadi 9 States: Planetary Conditions & Potencies',
+    'Planetary Friendship Matrix: Natural & Temporal Relations',
+    'Deeptadi Avasthas, Moolatrikona & Own Sign Matrix',
+    'Five Types of Planetary Relationships (Pancha Sambandha)',
+    'Operational Predictive Principles for Planetary States',
+    'Fixed Karakas (Significators) of the 12 Houses',
+    'Bhava Karaka vs Bhavesha: Core Distinctions & Rules',
+    'Sun in Houses 1 to 6: Classical Interpretations',
+    'Sun in Houses 7 to 12: Classical Interpretations',
+    'Sun in Signs 1 to 6: Aries to Virgo Interpretations',
+    'Sun in Signs 7 to 12: Libra to Pisces Interpretations',
+    'Sun: Anatomical Governance & Pathology',
+    'Moon: Anatomical Governance & Pathology',
+    'Mars: Anatomical Governance & Pathology',
+    'Mercury: Anatomical Governance & Pathology',
+    'Jupiter: Anatomical Governance & Pathology',
+    'Venus: Anatomical Governance & Pathology',
+    'Saturn: Anatomical Governance & Pathology',
+    'Rahu: Anatomical Governance & Pathology',
+    'Ketu: Anatomical Governance & Pathology',
+    '1st House (Lagna): Anatomy & Clinical Pathologies',
+    '2nd House: Anatomy & Clinical Pathologies',
+    '3rd House: Anatomy & Clinical Pathologies',
+    '4th House: Anatomy & Clinical Pathologies',
+    '5th House: Anatomy & Clinical Pathologies',
+    '6th House: Anatomy & Clinical Pathologies',
+    '7th House: Anatomy & Clinical Pathologies',
+    '8th House: Anatomy & Clinical Pathologies',
+    '9th House: Anatomy & Clinical Pathologies',
+    '10th House: Anatomy & Clinical Pathologies',
+    '11th House: Anatomy & Clinical Pathologies',
+    '12th House: Anatomy & Clinical Pathologies',
+    'Astrological Houses vs Body Parts & Disease Matrix',
+    'Zodiac Signs, Anatomical Zones & Specific Ailments',
+    'Oncology in Vedic Astrology: Cellular Pathogenesis & Etiology',
+    'General Carcinoma (Breast & Lung Cancer): Astrological Factors',
+    'Leukemia (Blood Cancer): Astrological Combinations & Analysis',
+    'Cutaneous Malignancies (Skin Cancer): Astrological Diagnostics',
+    '27 Nakshatras: Degree Boundaries & Rashi Spans',
+    '27 Nakshatras: Deities & Pada Phonetic Syllables',
+    'Nakshatras, Presiding Deities & Planetary Lords',
+    'Nakshatra Lordship Classical Sutra & Dasha Sequence',
+    '27 Nakshatras & Planetary Lords Compendium Table',
+    'Ashlesha Nakshatra: 4 Padas & Planetary Influences',
+    'Pushya Nakshatra: 4 Padas & Navamsha Influences',
+    'Ashwini Nakshatra: 4 Padas & Navamsha Lords Table',
+    'Ashwini Padas: Phonetics, Symbolism & Core Characteristics',
+    'Planetary Placements in Ashwini Nakshatra (Sun to Ketu)',
+    'Ashwini Padas: Navamsha & Planetary Relations Synthesis',
+    'Sacred Benediction, Upanishadic Shloka & Official Contact'
+]
+
+def get_chapter_name(page_idx, lang='hindi'):
+    if lang == 'hindi':
+        if page_idx == 0: return "मुखपृष्ठ"
+        if page_idx == 1: return "लेखक परिचय"
+        if page_idx == 2: return "अध्ययन निर्देशिका"
+        if page_idx == 3: return "आचार संहिता"
+        if page_idx == 4: return "अनुक्रमणिका"
+        if 5 <= page_idx <= 19: return "अध्याय २: नवग्रह कारकत्व व राजयोग"
+        if 20 <= page_idx <= 36: return "अध्याय ३: राशि, नक्षत्र एवं ग्रह गति"
+        if 37 <= page_idx <= 47: return "अध्याय ४: भाव एवं राशियों में ग्रह"
+        if 48 <= page_idx <= 74: return "अध्याय ५: आयुर्वेद-ज्योतिष व स्वास्थ्य"
+        if 75 <= page_idx <= 85: return "अध्याय ६: नक्षत्र पद व ग्रह विश्लेषण"
+        return "समापन"
+    else:
+        if page_idx == 0: return "Front Cover"
+        if page_idx == 1: return "Author Profile"
+        if page_idx == 2: return "Study Guide"
+        if page_idx == 3: return "Ethics & Disclaimer"
+        if page_idx == 4: return "Table of Contents"
+        if 5 <= page_idx <= 19: return "Ch 2: Planetary Karakatva & Raja Yogas"
+        if 20 <= page_idx <= 36: return "Ch 3: Signs, Nakshatras & Planetary Motion"
+        if 37 <= page_idx <= 47: return "Ch 4: Planetary States & House Placements"
+        if 48 <= page_idx <= 74: return "Ch 5: Medical Astrology & Diagnostics"
+        if 75 <= page_idx <= 85: return "Ch 6: Nakshatra Padas & Planetary Analysis"
+        return "Sacred Colophon"
+
+# ------------------------------------------------------------------------------
+# 2. TABLE HEADER LOCALIZATION DICTIONARIES
 # ------------------------------------------------------------------------------
 hindi_headers = {
     '#': 'क्र.',
@@ -124,20 +335,20 @@ hindi_headers = {
     'Yoga Name (योग का नाम)': 'योग का नाम',
     'कारक ग्रह (Karaka Planet)': 'कारक ग्रह',
     'गुण': 'गुण',
-    'गुण (Guna / Quality)': 'गुण (सत्व/रज/तम)',
+    'गुण (Guna / Quality)': 'गुण',
     'ग्रंथ (Text)': 'शास्त्रीय ग्रंथ',
     'चन्द्र का संकेतक/कारकत्व (Moon’s Karakatva)': 'चन्द्रमा का कारकत्व',
     'चन्द्र का संकेतक/कारकत्व (Moon’s Significations)': 'चन्द्रमा का कारकत्व',
     'चन्द्र के संदर्भ (Key Mentions)': 'चन्द्रमा के शास्त्रीय संदर्भ',
-    'तत्व (Tatva / Element)': 'तत्व (अग्नि/पृथ्वी/वायु/जल)',
+    'तत्व (Tatva / Element)': 'तत्व',
     'देवता': 'अधिष्ठाता देवता',
-    'ध्रुव (Polarity)': 'ध्रुवता (धनात्मक/ऋणात्मक)',
+    'ध्रुव (Polarity)': 'ध्रुवता',
     'नक्षत्र (हिंदी)': 'नक्षत्र नाम',
-    'नक्षत्र स्वामी (ग्रह)': 'नक्षत्र स्वामी (ग्रह)',
+    'नक्षत्र स्वामी (ग्रह)': 'नक्षत्र स्वामी',
     'प्रतीक': 'प्रतीक चिन्ह',
     'बीमारियाँ (Diseases)': 'रोग एवं स्वास्थ्य विकार',
     'बुध (हिंदी)': 'बुध विवरण',
-    'भाव (Bhava)': 'भाव (स्थान)',
+    'भाव (Bhava)': 'भाव',
     'भाव का नाम (House Name)': 'भाव का नाम',
     'मंगल का संकेतक/कारकत्व (Mars’s Karakatva)': 'मंगल का कारकत्व',
     'मंगल के संदर्भ (Key Mentions)': 'मंगल के शास्त्रीय संदर्भ',
@@ -146,7 +357,7 @@ hindi_headers = {
     'राशियाँ (Rashiyan / Signs)': 'राशियां',
     'राशियाँ (Signs)': 'राशियां',
     'लग्न (Lagna)': 'लग्न भाव',
-    'लिंग (Gender)': 'लिंग (स्त्री/पुरुष)',
+    'लिंग (Gender)': 'लिंग',
     'वर्ण': 'वर्ण',
     'विवरण (हिंदी में)': 'शास्त्रीय विवरण',
     'विवरण (हिन्दी)': 'शास्त्रीय विवरण',
@@ -163,9 +374,9 @@ hindi_headers = {
     'स्रोत (References)': 'शास्त्रीय स्रोत',
     'स्रोत (Source)': 'शास्त्रीय स्रोत',
     'स्वभाव और विशेषताएँ (Nature &amp; Keywords)': 'स्वभाव एवं शास्त्रीय विशेषताएं',
-    'हिन्दी संकेत': 'हिन्दी संकेत',
+    'हिन्दी संकेत': 'शास्त्रीय संकेत',
     '🌐 ग्रह (Planet)': 'ग्रह',
-    '💡 याद करने की ट्रिक': 'स्मरण सूत्र (शास्त्रीय ट्रिक)',
+    '💡 याद करने की ट्रिक': 'स्मरण सूत्र',
     '📜 नक्षत्र (Sanskrit + English)': 'नक्षत्र नाम',
     '🔢 नक्षत्र संख्या': 'नक्षत्र संख्या',
     '🔸 श्रेणी': 'श्रेणी',
@@ -182,7 +393,7 @@ english_headers = {
     'Ashwini Pad': 'Ashwini Pada',
     'Avastha (State)': 'Planetary State (Avastha)',
     'Avg. Time per Rashi': 'Avg. Transit Time per Sign',
-    'Body Parts / Organs (शरीर के अंग / अंग तंत्र)': 'Body Parts & Anatomical Systems',
+    'Body Parts / Organs (शरीर के अंग / अंग तंत्र)': 'Anatomical Organs & Systems',
     'Combination': 'Planetary Combination',
     'Context (संदर्भ)': 'Classical Context',
     'Core Characteristic in Ashwini': 'Core Characteristic in Ashwini',
@@ -196,7 +407,7 @@ english_headers = {
     'Description (विवरण)': 'Classical Description',
     'Devata': 'Presiding Deity',
     'Devata (देवता)': 'Presiding Deity (Devata)',
-    'Diseases (रोग)': 'Associated Diseases & Afflictions',
+    'Diseases (रोग)': 'Associated Pathologies & Afflictions',
     'Dual Sign': 'Dual Sign (Dvisvabhava)',
     'Duality': 'Polarity (Positive / Negative)',
     'Dukhi (Enemy’s Sign)': 'Dukhi (Enemy Sign Placement)',
@@ -308,7 +519,7 @@ english_headers = {
     'विवरण (हिंदी में)': 'Classical Description',
     'विवरण (हिन्दी)': 'Classical Description',
     'विशिष्ट बीमारियाँ (Specific Diseases)': 'Specific Medical Pathologies',
-    'विषय': 'Topic',
+    'विषय': 'Topic / Category',
     'विषय (Category)': 'Category',
     'शनि का वर्णन (संक्षेप में)': 'Saturn Classical Summary',
     'शरीर के अंग (Body Parts)': 'Anatomical Organs',
@@ -330,11 +541,635 @@ english_headers = {
 }
 
 # ------------------------------------------------------------------------------
-# 2. CONTENT LOCALIZATION ENGINES
+# 3. ADVANCED TABLE AND CELL LOCALIZATION ENGINES
 # ------------------------------------------------------------------------------
 
-def localize_html_table(table_html, target_lang='hindi'):
-    """Replaces table headers and cell text according to target language."""
+def filter_table_columns(tbl_html, keep_indices):
+    """Filters table columns by index to remove duplicated parallel language columns."""
+    rows = re.findall(r'<tr[^>]*>.*?</tr>', tbl_html, re.DOTALL)
+    if not rows:
+        return tbl_html
+    new_rows = []
+    for row in rows:
+        cells = re.findall(r'<(t[hd])[^>]*>(.*?)</\1>', row, re.DOTALL)
+        if not cells:
+            continue
+        filtered_cells = [f'<{cells[idx][0]}>{cells[idx][1]}</{cells[idx][0]}>' for idx in keep_indices if idx < len(cells)]
+        new_rows.append('<tr>' + ''.join(filtered_cells) + '</tr>')
+    return '<table class="astro-table">' + ''.join(new_rows) + '</table>'
+
+def clean_cell_text_to_hindi(s):
+    # 1. Replace specific long English sentences and clinical notes first
+    sentence_replacements = [
+        ("Affliction to Lagna or Lagna lord indicates susceptibility to diseases in general.", "लग्न अथवा लग्नेश के पीड़ित होने पर सामान्य स्वास्थ्य में दुर्बलता व रोग प्रकटीकरण होता है।"),
+        ("The planet in Lagna or aspecting Lagna, and Lagna lord's condition are key.", "लग्न में स्थित अथवा लग्न को देखने वाले ग्रह तथा लग्नेश की स्थिति मुख्य रोग प्रवृत्ति तय करती है।"),
+        ("If afflicted, can indicate problems with sustenance leading to weakness.", "यदि यह भाव पीड़ित हो तो पोषण व आहार में बाधा तथा शारीरिक दुर्बलता उत्पन्न होती है।"),
+        ("Courage and vitality impacted by afflictions here.", "यहाँ पाप प्रभाव होने पर पराक्रम, मनोबल एवं जीवन-ऊर्जा क्षीण होती है।"),
+        ("Health of mother can be gauged. Emotional well-being is key.", "माता के स्वास्थ्य तथा जातक के मानसिक व संवेगात्मक स्वास्थ्य का निर्धारण होता है।"),
+        ("Trouble in children", "संतान संबंधी कष्ट"),
+        ("If afflicted, problems in progeny, education and speculative losses can cause mental stress leading to health issues.", "पीड़ित होने पर संतान कष्ट, विद्या में बाधा व आर्थिक हानि से उत्पन्न मानसिक तनाव स्वास्थ्य को बिगाड़ता है।"),
+        ("This is the primary house of ill-health.", "यह रोग, व्याधि व रुग्णता का मुख्य प्राथमिक भाव है।"),
+        ("Business or partnership stress affecting health.", "व्यापारिक व वैवाहिक साझेदारी का तनाव स्वास्थ्य को प्रभावित करता है।"),
+        ("Afflictions indicate serious, long-term health issues or accidents.", "पाप प्रभाव होने पर गंभीर, दीर्घकालिक व्याधियां अथवा दुर्घटना का भय रहता है।"),
+        ("Blessings of elders can improve health. Pilgrimages can cause health issues.", "गुरुजनों के आशीर्वाद से आरोग्य लाभ; तीर्थ यात्राओं में स्वास्थ्य के प्रति सजगता अपेक्षित।"),
+        ("Stress from career and public image can impact health.", "कार्यक्षेत्र की व्यस्तता व प्रतिष्ठा का तनाव शारीरिक स्वास्थ्य पर प्रभाव डालता है।"),
+        ("Financial stress or irregular income can lead to health issues.", "आर्थिक चिंता अथवा अनियमित आय से उत्पन्न मानसिक दबाव शारीरिक व्याधियों का कारण बनता है।"),
+        ("Expenditure on health.", "चिकित्सा व औषधियों पर अत्यधिक व्यय।"),
+        ("Health is generally good if Sun or Jupiter is here and strong; Mars here can give injuries to head", "यदि लग्न में सूर्य या गुरु बलवान हों तो स्वास्थ्य उत्तम रहता है; मंगल स्थित होने पर सिर में चोट या पित्त विकार संभव है।"),
+        ("Unusual joint pains, skin issues related to work environment", "जोड़ों में असामान्य वेदना, कार्य वातावरण से त्वचा रोग"),
+        ("Chronic pain in calves/ankles, hearing issues (left ear)", "पिंडलियों व टखनों में पुराना दर्द, बाएं कान में दुर्बलता"),
+        ("Injuries to ankles/calves, ear infections", "टखनों व पिंडलियों में चोट, कान में संक्रमण"),
+        ("Unusual pains/cramps in legs, sudden hearing issues", "पैरों में असामान्य ऐंठन, अचानक श्रवण दोष"),
+        ("Chronic foot problems, sleep disorders, long hospitalization, depression", "पैरों की पुरानी व्याधियां, अनिद्रा, दीर्घकालिक चिकित्सालय वास, अवसाद"),
+        ("Foot injuries, eye infections (left eye), accidents leading to hospitalization", "पैरों में चोट, बाईं आंख में संक्रमण, अस्पताल में भर्ती होने का योग"),
+        ("Mysterious illnesses leading to hospitalization, addictions, sleep disturbances, phobias", "अस्पताल में भर्ती कराने वाली रहस्यमयी व्याधियां, व्यसन, निद्रा विकार, भय"),
+        ("Moksha karaka, but if afflicted can give peculiar foot/eye issues, detachment leading to self-neglect", "मोक्ष कारक; पीड़ित होने पर पैरों व बाईं आंख में कष्ट, आत्म-उपेक्षा जन्य दुर्बलता")
+    ]
+    for orig_t, repl_t in sentence_replacements:
+        s = s.replace(orig_t, repl_t)
+
+    # 2. Planetary clinical notes regex replacements
+    clinical_patterns = [
+        (r'Saturn in Lagna:?\s*Chronic illness[^\.;]*', 'लग्न में शनि: दीर्घकालिक व्याधियां, शारीरिक दुर्बलता'),
+        (r'Mars in Lagna:?\s*Injuries[^\.;]*', 'लग्न में मंगल: सिर में चोट, पित्त ज्वर, जलन'),
+        (r'Rahu in Lagna:?\s*Mysterious illnesses[^\.;]*', 'लग्न में राहु: अज्ञात व रहस्यमयी व्याधियां, भय'),
+        (r'Weak Lagna lord:?\s*General susceptibility[^\.;]*', 'निर्बल लग्नेश: रोग प्रतिरोधक क्षमता में कमी'),
+        (r'Saturn in 2nd:?\s*Dental issues[^\.;]*', 'द्वितीय में शनि: दंत विकार, वाणी दोष'),
+        (r'Mars in 2nd:?\s*Mouth ulcers[^\.;]*', 'द्वितीय में मंगल: मुख पाक (अल्सर), नेत्र प्रदाह'),
+        (r'Rahu in 2nd:?\s*Unusual facial marks[^\.;]*', 'द्वितीय में राहु: चेहरे पर चिन्ह, वाणी विकार'),
+        (r'Weak 2nd lord[^\.;]*', 'द्वितीयेश निर्बल होने पर पोषण में कमी'),
+        (r'Saturn in 3rd:?\s*Chronic pain[^\.;]*', 'तृतीय में शनि: भुजाओं व कंधों में दर्द'),
+        (r'Mars in 3rd:?\s*Injuries[^\.;]*', 'तृतीय में मंगल: भुजाओं में चोट, कान संक्रमण'),
+        (r'Rahu in 3rd:?\s*Skin issues[^\.;]*', 'तृतीय में राहु: बाहों पर त्वचा विकार, वात नाड़ी दर्द'),
+        (r'Saturn in 4th:?\s*Chronic lung issues[^\.;]*', 'चतुर्थ में शनि: फेफड़ों के पुराने रोग, अवसाद'),
+        (r'Mars in 4th:?\s*Chest inflammation[^\.;]*', 'चतुर्थ में मंगल: वक्ष में प्रदाह, घरेलू तनाव'),
+        (r'Rahu in 4th:?\s*Vague chest pains[^\.;]*', 'चतुर्थ में राहु: अनिर्दिष्ट छाती दर्द, भय'),
+        (r'Saturn in 5th:?\s*Chronic heart issues[^\.;]*', 'पंचम में शनि: मंद पाचन, हृदय विकार, अवसाद'),
+        (r'Mars in 5th:?\s*Heart inflammation[^\.;]*', 'पंचम में मंगल: अम्लपित्त, पित्त ज्वर'),
+        (r'Rahu in 5th:?\s*Sudden heart issues[^\.;]*', 'पंचम में राहु: अचानक हृदय विकार, विषाक्त भोजन'),
+        (r'Saturn in 6th:?\s*Chronic diseases[^\.;]*', 'षष्ठ में शनि: दीर्घकालिक असाध्य रोग, दुर्बलता'),
+        (r'Mars in 6th:?\s*Acute illnesses[^\.;]*', 'षष्ठ में मंगल: तीव्र रोग, प्रदाह, शल्य चिकित्सा, रक्त विकार'),
+        (r'Rahu in 6th:?\s*undiagnosable diseases[^\.;]*', 'षष्ठ में राहु: अनिदानित गूढ़ रोग, विष विकार, भय'),
+        (r'Ketu in 6th:?\s*Diseases due to past karma[^\.;]*', 'षष्ठ में केतु: पूर्व संचित कर्म जन्य रोग, अचानक व्याधि'),
+        (r'Saturn in 7th:?\s*Chronic kidney issues[^\.;]*', 'सप्तम में शनि: गुर्दे के पुराने रोग, यौन दुर्बलता'),
+        (r'Mars in 7th:?\s*UTIs[^\.;]*', 'सप्तम में मंगल: मूत्र मार्ग संक्रमण, जननांग प्रदाह'),
+        (r'Rahu in 7th:?\s*Unusual sexual problems[^\.;]*', 'सप्तम में राहु: असामान्य गुप्त रोग'),
+        (r'Saturn in 8th:?\s*Long,?\s*debilitating[^\.;]*', 'अष्टम में शनि: अति दीर्घकालिक कष्टप्रद व्याधियां'),
+        (r'Mars in 8th:?\s*Accidents[^\.;]*', 'अष्टम में मंगल: दुर्घटनाएं, शल्य चिकित्सा, तीव्र संकट'),
+        (r'Rahu in 8th:?\s*Mysterious incurable diseases[^\.;]*', 'अष्टम में राहु: रहस्यमयी असाध्य रोग, विष विकार'),
+        (r'Ketu in 8th:?\s*Diseases difficult to diagnose[^\.;]*', 'अष्टम में केतु: कठिन निदान वाली व्याधियां, शल्य क्रिया'),
+        (r'Saturn in 9th:?\s*Chronic hip[^\.;]*', 'नवम में शनि: कूल्हे व जांघों में पुराना दर्द'),
+        (r'Mars in 9th:?\s*Injuries to hips[^\.;]*', 'नवम में मंगल: कूल्हे व जांघ में चोट, पित्त ज्वर'),
+        (r'Rahu in 9th:?\s*Unusual problems in hips[^\.;]*', 'नवम में राहु: जांघों में असामान्य कष्ट'),
+        (r'Saturn in 10th:?\s*Chronic knee[^\.;]*', 'दशम में शनि: घुटनों व जोड़ों का पुराना दर्द'),
+        (r'Mars in 10th:?\s*Knee injuries[^\.;]*', 'दशम में मंगल: घुटनों में चोट, जोड़ों में प्रदाह'),
+        (r'Rahu in 10th:?\s*Unusual joint pains[^\.;]*', 'दशम में राहु: जोड़ों में असामान्य वेदना'),
+        (r'Saturn in 11th:?\s*Chronic pain in calves[^\.;]*', 'एकादश में शनि: पिंडलियों व टखनों में पुराना दर्द'),
+        (r'Mars in 11th:?\s*Injuries to ankles[^\.;]*', 'एकादश में मंगल: टखनों व पिंडलियों में चोट'),
+        (r'Rahu in 11th:?\s*Unusual pains[^\.;]*', 'एकादश में राहु: पैरों में असामान्य ऐंठन, श्रवण दोष'),
+        (r'Saturn in 12th:?\s*Chronic foot problems[^\.;]*', 'द्वादश में शनि: पैरों की पुरानी व्याधियां, अनिद्रा'),
+        (r'Mars in 12th:?\s*Foot injuries[^\.;]*', 'द्वादश में मंगल: पैरों में चोट, बाईं आंख में संक्रमण'),
+        (r'Rahu in 12th:?\s*Mysterious illnesses[^\.;]*', 'द्वादश में राहु: अस्पताल वास, रहस्यमयी व्याधियां'),
+        (r'Ketu in 12th:?\s*Moksha karaka[^\.;]*', 'द्वादश में केतु: मोक्ष कारक; पीड़ित होने पर पैरों में कष्ट')
+    ]
+    for pat, repl in clinical_patterns:
+        s = re.sub(pat, repl, s)
+
+    # 3. Clean English inside parentheses (including nested)
+    for _ in range(3):
+        s = re.sub(r"\([A-Za-z0-9\s,\.\-\/\’\':;%&–—]+\)", '', s)
+
+    # 4. Remove compound English like ' - Aries'
+    s = re.sub(r'\s*-\s*[A-Za-z\s]+', '', s)
+
+    # 5. Common terms translation
+    terms = [
+        (r'\bEsoteric\b', 'गूढ़'),
+        (r'\bAthlete\b', 'धावक / खिलाड़ी'),
+        (r'\bSatva\b', 'सत्व'),
+        (r'\bRajas\b', 'रजस'),
+        (r'\bTamas\b', 'तमस'),
+        (r'\bKhana No\b', 'खाना नंबर'),
+        (r'\bParashara\b', 'बृहत्पाराशर होरा शास्त्र'),
+        (r'\bSaravali\b', 'सारावली (कल्याण वर्मा)'),
+        (r'\bPhaladeepika\b|\bPhala Deepika\b', 'फलदीपिका (मन्त्रेश्वर)'),
+        (r'\bJataka Parijata\b', 'जातक पारिजात'),
+        (r'\bBNN Padhati\b|\bBhrigu Nandi Nadi\b|\bBNN\b', 'भृगु नन्दी नाड़ी'),
+        (r'\bLaal Kitab\b|\bLal Kitab\b', 'लाल किताब'),
+        (r'\bModern Research\b|\bResearch\b', 'आधुनिक चिकित्सा शोध'),
+        (r'\bmooltrikona\b', 'मूलत्रिकोण'),
+        (r'\bspecifically\b', 'विशेष रूप से'),
+        (r'\bfrom\b', 'से'),
+        (r'\bto\b', 'तक'),
+        (r'\bsouth\b', 'दक्षिण'),
+        (r'\bCenter\b', 'केंद्र'),
+        (r'\bExalted\b', 'उच्च'),
+        (r'\bDebilitated\b', 'नीच'),
+        (r'\bRule\b', 'सूत्र'),
+        (r'\bSun\b', 'सूर्य'),
+        (r'\bMoon\b', 'चन्द्रमा'),
+        (r'\bMars\b', 'मंगल'),
+        (r'\bMercury\b', 'बुध'),
+        (r'\bJupiter\b', 'गुरु (बृहस्पति)'),
+        (r'\bVenus\b', 'शुक्र'),
+        (r'\bSaturn\b', 'शनि'),
+        (r'\bRahu\b', 'राहु'),
+        (r'\bKetu\b', 'केतु'),
+        (r'\bNone\b', 'कोई नहीं'),
+        (r'\bAries\b', 'मेष'),
+        (r'\bTaurus\b', 'वृष'),
+        (r'\bGemini\b', 'मिथुन'),
+        (r'\bCancer\b', 'कर्क'),
+        (r'\bLeo\b', 'सिंह'),
+        (r'\bVirgo\b', 'कन्या'),
+        (r'\bLibra\b', 'तुला'),
+        (r'\bScorpio\b', 'वृश्चिक'),
+        (r'\bSagittarius\b', 'धनु'),
+        (r'\bCapricorn\b', 'मकर'),
+        (r'\bAquarius\b', 'कुंभ'),
+        (r'\bPisces\b', 'मीन'),
+        (r'\bDeepta\b', 'दीप्त'),
+        (r'\bSwastha\b', 'स्वस्थ'),
+        (r'\bMudit\b|\bMudita\b', 'मुदित'),
+        (r'\bShanta\b', 'शांत'),
+        (r'\bDeena\b', 'दीन'),
+        (r'\bDukhi\b', 'दुःखी'),
+        (r'\bVikala\b', 'विकल'),
+        (r'\bKhala\b', 'खल'),
+        (r'\bKopi\b', 'कोप'),
+        (r'\bCardinal\b', 'चर'),
+        (r'\bFixed\b', 'स्थिर'),
+        (r'\bMutable\b', 'द्विस्वभाव'),
+        (r'\bMovable\b', 'चर'),
+        (r'\bPositive\b', 'धनात्मक'),
+        (r'\bNegative\b', 'ऋणात्मक'),
+        (r'\bMale\b', 'पुरुष'),
+        (r'\bFemale\b', 'स्त्री')
+    ]
+    for pat, repl in terms:
+        s = re.sub(pat, repl, s, flags=re.IGNORECASE)
+
+    # 6. Remove any isolated English words remaining in text (preserving tags)
+    parts = re.split(r'(<[^>]+>)', s)
+    for i in range(len(parts)):
+        if not parts[i].startswith('<'):
+            parts[i] = re.sub(r'\b[A-Za-z]{2,}\b', '', parts[i])
+    s = ''.join(parts)
+
+    # Clean up empty parens and punctuation
+    s = re.sub(r'\(\s*\)', '', s)
+    s = re.sub(r',\s*,', ',', s)
+    s = re.sub(r'^\s*,\s*', '', s)
+    s = re.sub(r'\s*,\s*$', '', s)
+    s = re.sub(r'\s+', ' ', s).strip()
+    return s
+
+
+def clean_cell_text_to_english(s):
+    # 1. Clean compound patterns like 'मेष (Mesha) - Aries' -> 'Aries'
+    s = re.sub(r'[ऀ-ॿ\s]+\(([A-Za-z]+)\)\s*-\s*([A-Za-z]+)', r'', s)
+    # 2. If Hindi (English) -> extract English
+    s = re.sub(r'[ऀ-ॿ\s\/–—\-]+\(([A-Za-z0-9\s,\.\-\/\’\':;%&–—]+)\)', r'', s)
+    # 3. If English (Hindi) -> remove Hindi
+    s = re.sub(r'\s*\([ऀ-ॿ\s,\.\-\/\’\':;%&–—]+\)', '', s)
+
+    # 4. Specific translations
+    translations = [
+        ('शरीर की अग्नि', 'Digestive fire and metabolism'),
+        ('पार्किंसंस रोग', "Parkinson's disease"),
+        ('शरीर का जल संतुलन', 'Fluid and electrolyte balance'),
+        ('शरीर की संरचना ऊतक का अध', 'Cellular skeletal and tissue structure'),
+        ('एड्स', 'Immune deficiency syndromes (AIDS)'),
+        ('चिंता', 'Anxiety and worry'),
+        ('कठोर अनुभव', 'Austere trials and hardships'),
+        ('व्यापार, वाणिज्य, बुध ग्रह संवाद, बातचीत, और संचार का कारक', 'Commerce, accounting, speech, communication, and intellectual exchange'),
+        ('मूल त्रिकोण', 'Moolatrikona'),
+        ('बुध का मूल त्रिकोण कन्या Zodiac Sign में 16 से 20 डिग्री तक होता है।', "Mercury's Moolatrikona is in Virgo from 16° to 20°."),
+        ('Zodiac Sign अधिपत्य', 'Sign Rulership'),
+        ('मूल त्रिकोण Zodiac Sign', 'Moolatrikona Sign'),
+        ('अपः', 'Apas'),
+        ('मस्तिष्क ज्वर', 'Encephalitis'),
+        ('मिर्गी', 'Epilepsy'),
+        ('घेंघा', 'Goitre'),
+        ('फेफड़े', 'Lungs'),
+        ('आंतें', 'Intestines'),
+        ('क्रोहन रोग', "Crohn's Disease"),
+        ('त्वचा', 'Skin'),
+        ('जननांग', 'Genital organs'),
+        ('चेहरे का पक्षाघात', "Bell's Palsy / Facial paralysis"),
+        ('मुँह', 'Mouth'),
+        ('तंत्रिका तंत्र', 'Nervous system'),
+        ('कंधे और बाहों में दर्द', 'Shoulder and arm pain'),
+        ('चोट', 'Injuries'),
+        ('बहनों का', 'Siblings'),
+        ('पेट', 'Stomach'),
+        ('माँ का स्वास्थ्य', "Mother's health"),
+        ('संतान का स्वास्थ्य', "Children's health"),
+        ('बच्चों', 'Progeny'),
+        ('मामा का स्वास्थ्य', "Maternal uncle's health"),
+        ('साथी के स्वास्थ्य संबंधी समस्याएं', "Spouse's health complications"),
+        ('जीवनसाथी का स्वास्थ्य', "Spouse's health"),
+        ('कोशिका पुनर्जनन', 'Cellular regeneration'),
+        ('पिता का स्वास्थ्य', "Father's health"),
+        ('कूल्हे', 'Hips'),
+        ('घुटने', 'Knees'),
+        ('हड्डियाँ', 'Bones'),
+        ('शरीर की आकांक्षाओं और स्वास्थ्य के बीच संबंध', 'Connection between bodily desires and health'),
+        ('निचला पैर', 'Lower legs'),
+        ('शरीर के विषहरण मार्ग', 'Detoxification and lymphatic pathways'),
+        ('से संबंधित अंग', 'governed organs'),
+        ('परिवर्तन गति', 'Rate of Change'),
+        ('भाव हर ~2 घंटे में, राशि हर ~30 दिन', 'House changes every ~2 hrs, Sign every ~30 days'),
+        ('हर 2 घंटे में एक नया लग्न', 'A new Ascendant rises every ~2 hrs'),
+        ('मूल स्रोत', 'Underlying Source'),
+        ('सूर्य की स्थिर गति', 'Apparent solar transit'),
+        ('पृथ्वी का घूर्णन और पूर्व दिशा पर उदय', "Earth's axial rotation & Eastern rising"),
+        ('राशि', 'Zodiac Sign'),
+        ('एक ही दिन में नहीं बदलता', 'Remains in same sign throughout the day'),
+        ('एक दिन में सभी 12 राशियाँ पार करता है', 'Traverses all 12 signs in 24 hours'),
+        ('भाव स्थिति', 'House Placement'),
+        ('बृहत्पाराशर होरा शास्त्र', 'Brihat Parashara Hora Shastra'),
+        ('सारावली', 'Saravali'),
+        ('फलदीपिका', 'Phaladeepika'),
+        ('जातक पारिजात', 'Jataka Parijata'),
+        ('नंदी नाड़ी', 'Nandi Nadi'),
+        ('लाल किताब', 'Lal Kitab'),
+        ('कल्याण वर्मा', 'Kalyan Verma'),
+        ('मन्त्रेश्वर', 'Mantreshwara')
+    ]
+    for hi_t, en_t in translations:
+        s = s.replace(hi_t, en_t)
+
+    # 5. Remove any residual Devanagari characters
+    s = re.sub(r'[ऀ-ॿ]+', '', s)
+
+    # Clean up punctuation and spacing
+    s = re.sub(r'\(\s*\)', '', s)
+    s = re.sub(r',\s*,', ',', s)
+    s = re.sub(r'^\s*,\s*', '', s)
+    s = re.sub(r'\s*,\s*$', '', s)
+    s = re.sub(r'\s+', ' ', s).strip()
+    return s
+
+
+# ------------------------------------------------------------------------------
+# 4. DEDICATED TABLE REPLACEMENTS FOR COMPLETE ACCURACY
+# ------------------------------------------------------------------------------
+
+# English replacements for tables with pure Devanagari in original source
+PAGE_6_EN_TABLE = """
+<table class="astro-table">
+<thead><tr>
+<th>Category</th>
+<th>Sun's Significations (Karakatva)</th>
+<th>Classical References</th>
+</tr></thead><tbody>
+<tr><td class="primary-col"><strong>Body Parts</strong></td><td>Heart, Right eye (males) / Left eye (females), Bones, Cranial structure, Brain vitality</td><td>Brihat Parashara, Saravali, Phaladeepika, Nandi Nadi</td></tr>
+<tr><td class="primary-col"><strong>Disposition</strong></td><td>Self-respect, Soul power (Atma-Bala), Self-awareness, Leadership authority, Regal dignity</td><td>Brihat Parashara, Saravali, Lal Kitab</td></tr>
+<tr><td class="primary-col"><strong>Relations</strong></td><td>Father, Paternal lineage, Sovereign ruler, High administrative officials, King</td><td>Phaladeepika, Jataka Parijata, Lal Kitab</td></tr>
+<tr><td class="primary-col"><strong>Soul / Consciousness</strong></td><td>Paramatman connection, Spiritual consciousness, Life force vitality (Prana-Shakti)</td><td>Brihat Parashara, Saravali</td></tr>
+<tr><td class="primary-col"><strong>Health / Pathology</strong></td><td>Cardiac diseases, Eye afflictions, Osteoporosis, Sunstroke, High pitta fevers</td><td>Brihat Parashara, Phaladeepika</td></tr>
+<tr><td class="primary-col"><strong>Career / Domain</strong></td><td>Administrative services, Civil governance, Executive politics, Medicine, Surgery</td><td>Saravali, Jataka Parijata</td></tr>
+<tr><td class="primary-col"><strong>Metal / Gemstone</strong></td><td>Copper, Gold, Ruby (Manikya)</td><td>Brihat Parashara, Saravali</td></tr>
+<tr><td class="primary-col"><strong>Element / Direction</strong></td><td>Fire element (Agni Tattva), East direction</td><td>Brihat Parashara, Phaladeepika</td></tr>
+<tr><td class="primary-col"><strong>Guna / Caste</strong></td><td>Sattva Guna, Kshatriya Varna</td><td>Brihat Parashara, Saravali</td></tr>
+<tr><td class="primary-col"><strong>Dignity Degrees</strong></td><td>Exalted in Aries (10°), Debilitated in Libra (10°), Moolatrikona in Leo (0-20°)</td><td>Brihat Parashara, Saravali</td></tr>
+</tbody></table>
+"""
+
+PAGE_7_EN_TABLE = """
+<table class="astro-table">
+<thead><tr>
+<th>Category</th>
+<th>Moon's Significations (Karakatva)</th>
+<th>Classical References</th>
+</tr></thead><tbody>
+<tr><td class="primary-col"><strong>Body Parts</strong></td><td>Mind (Manas), Chest, Lungs, Plasma/Fluids, Left eye (males) / Right eye (females), Breast tissue</td><td>Brihat Parashara, Saravali, Phaladeepika, Nandi Nadi</td></tr>
+<tr><td class="primary-col"><strong>Disposition</strong></td><td>Emotional sensitivity, Compassion, Imagination, Maternal instincts, Gentle temperament, Fluctuating moods</td><td>Brihat Parashara, Saravali, Lal Kitab</td></tr>
+<tr><td class="primary-col"><strong>Relations</strong></td><td>Mother, Maternal lineage, Family bonds, Nurturing relationships</td><td>Saravali, Jataka Parijata, Lal Kitab</td></tr>
+<tr><td class="primary-col"><strong>Psyche / Soul</strong></td><td>Emotional psyche, Memory (Smriti), Subconscious mind, Spiritual receptivity</td><td>Brihat Parashara, Saravali</td></tr>
+<tr><td class="primary-col"><strong>Health / Pathology</strong></td><td>Mental depression, Insomnia, Water retention, Pulmonary disorders, Menstrual irregularities</td><td>Brihat Parashara, Phaladeepika</td></tr>
+<tr><td class="primary-col"><strong>Career / Domain</strong></td><td>Dairy, Maritime trade, Nursing, Psychology, Hospitality, Agriculture, Travel</td><td>Saravali, Jataka Parijata</td></tr>
+<tr><td class="primary-col"><strong>Metal / Gemstone</strong></td><td>Silver, Bell metal, Pearl (Moti), Moonstone</td><td>Brihat Parashara, Saravali</td></tr>
+<tr><td class="primary-col"><strong>Element / Direction</strong></td><td>Water element (Jala Tattva), Northwest direction</td><td>Brihat Parashara, Phaladeepika</td></tr>
+<tr><td class="primary-col"><strong>Guna / Caste</strong></td><td>Sattva Guna, Vaishya Varna</td><td>Brihat Parashara, Saravali</td></tr>
+<tr><td class="primary-col"><strong>Dignity Degrees</strong></td><td>Exalted in Taurus (3°), Debilitated in Scorpio (3°), Moolatrikona in Taurus (4-30°)</td><td>Brihat Parashara, Saravali</td></tr>
+</tbody></table>
+"""
+
+PAGE_10_EN_TABLE = """
+<table class="astro-table">
+<thead><tr>
+<th>Category</th>
+<th>Mars's Significations (Karakatva)</th>
+</tr></thead><tbody>
+<tr><td class="primary-col"><strong>Body Parts</strong></td><td>Blood circulation, Bone marrow, Muscular tissues, Hemoglobin, Gallbladder</td></tr>
+<tr><td class="primary-col"><strong>Disposition</strong></td><td>Energetic, Competitive drive, Valor, Unyielding courage, Impulse control, Fiery temper</td></tr>
+<tr><td class="primary-col"><strong>Relations</strong></td><td>Younger siblings (especially brothers), Armed forces, Soldiers, Commander-in-chief</td></tr>
+<tr><td class="primary-col"><strong>Psyche / Energy</strong></td><td>Dynamic drive, Physical endurance, Passion, Initiative, Strategic aggression</td></tr>
+<tr><td class="primary-col"><strong>Health / Pathology</strong></td><td>Hemorrhages, Acute fevers, Surgical cuts, Burns, Blood pressure, Inflammations</td></tr>
+<tr><td class="primary-col"><strong>Career / Domain</strong></td><td>Defense, Police services, Engineering, Surgery, Real estate, Martial arts</td></tr>
+<tr><td class="primary-col"><strong>Metal / Gemstone</strong></td><td>Copper, Red Coral (Moonga)</td></tr>
+<tr><td class="primary-col"><strong>Element / Direction</strong></td><td>Fire element (Agni Tattva), South direction</td></tr>
+<tr><td class="primary-col"><strong>Guna / Caste</strong></td><td>Tamas Guna, Kshatriya Varna</td></tr>
+<tr><td class="primary-col"><strong>Dignity Degrees</strong></td><td>Exalted in Capricorn (28°), Debilitated in Cancer (28°), Moolatrikona in Aries (0-12°)</td></tr>
+</tbody></table>
+"""
+
+PAGE_13_EN_TABLE = """
+<table class="astro-table">
+<thead><tr>
+<th>Category</th>
+<th>Venus's Significations (Karakatva)</th>
+</tr></thead><tbody>
+<tr><td class="primary-col"><strong>Body Parts</strong></td><td>Facial luster, Reproductive organs, Kidneys, Semen/Ovum, Endocrine glands, Skin complexion</td></tr>
+<tr><td class="primary-col"><strong>Disposition</strong></td><td>Gentle, Affectionate, Artistic, Refined charm, Creative imagination, Pursuit of luxury</td></tr>
+<tr><td class="primary-col"><strong>Gender / Nature</strong></td><td>Feminine, Rajas nature, Water element (Jala Tattva)</td></tr>
+<tr><td class="primary-col"><strong>Relations</strong></td><td>Spouse (Wife in male charts), Romantic partners, Artists, Feminine friends</td></tr>
+<tr><td class="primary-col"><strong>Domain / Significator</strong></td><td>Fine arts, Cinema, Poetry, Music, Vehicles, Perfumes, Gems, Conjugal bliss</td></tr>
+<tr><td class="primary-col"><strong>Health / Pathology</strong></td><td>Urinary tract infections, Diabetes, Reproductive infertility, Hormonal imbalances</td></tr>
+<tr><td class="primary-col"><strong>Career / Domain</strong></td><td>Fashion design, Entertainment industry, Luxury commerce, Cosmetology, Diplomacy</td></tr>
+<tr><td class="primary-col"><strong>Metal / Gemstone</strong></td><td>Silver, Platinum, Diamond (Heera), White Sapphire</td></tr>
+<tr><td class="primary-col"><strong>Direction</strong></td><td>Southeast direction (Agneya)</td></tr>
+<tr><td class="primary-col"><strong>Dignity Degrees</strong></td><td>Exalted in Pisces (27°), Debilitated in Virgo (27°), Moolatrikona in Libra (0-15°)</td></tr>
+</tbody></table>
+"""
+
+PAGE_15_EN_TABLE = """
+<table class="astro-table">
+<thead><tr>
+<th>Classical Source</th>
+<th>Saturn's Philosophical & Predictive Description</th>
+</tr></thead><tbody>
+<tr><td class="primary-col"><strong>Brihat Parashara Hora Shastra</strong></td><td>Saturn is tamasic, righteous, dark-complexioned, and the supreme dispenser of karmic fruits.</td></tr>
+<tr><td class="primary-col"><strong>Phaladeepika</strong></td><td>Saturn represents slow perseverance, discipline, austerity, and hard endurance.</td></tr>
+<tr><td class="primary-col"><strong>Saravali</strong></td><td>Saturn is the slowest moving planet yet the most just; distributes the exact harvest of deeds.</td></tr>
+<tr><td class="primary-col"><strong>Jataka Parijata</strong></td><td>Signifies longevity, separation, detachment, humility, and organizational mastery.</td></tr>
+<tr><td class="primary-col"><strong>Lal Kitab</strong></td><td>The divine judge (Nyayadhish); punishes deception and rewards honest, ethical labor.</td></tr>
+<tr><td class="primary-col"><strong>Modern Analytical View</strong></td><td>Represents structural reality, boundaries, accountability, patience, and mature resilience.</td></tr>
+</tbody></table>
+"""
+
+PAGE_18_EN_TABLE = """
+<table class="astro-table">
+<thead><tr>
+<th>Category</th>
+<th>Ketu's Significations (Karakatva)</th>
+</tr></thead><tbody>
+<tr><td class="primary-col"><strong>Body Parts</strong></td><td>Spine (lower sacrum), Muladhara chakra, Nervous tails, Small intestines</td></tr>
+<tr><td class="primary-col"><strong>Disposition / Nature</strong></td><td>Mystical, Introspective, Spiritual, Ascetic, Detached, Fond of silence</td></tr>
+<tr><td class="primary-col"><strong>Relationships</strong></td><td>Friendly with Mercury, Venus, Saturn; Neutral with Jupiter; Inimical with Sun, Moon, Mars</td></tr>
+<tr><td class="primary-col"><strong>Spiritual Domain</strong></td><td>Moksha Karaka (Liberation), Meditation, Occult mastery, Kundalini awakening</td></tr>
+<tr><td class="primary-col"><strong>Health / Pathology</strong></td><td>Unidentified fevers, Epidemics, Skin eruptions, Viral infections, Psychological hallucinations</td></tr>
+<tr><td class="primary-col"><strong>Career / Domain</strong></td><td>Spiritual preceptor, Astrologer, Occult researcher, Software coder, Cryptography</td></tr>
+<tr><td class="primary-col"><strong>Gemstone / Direction</strong></td><td>Cat's Eye (Vaidurya), South-West (or terminal pivot)</td></tr>
+</tbody></table>
+"""
+
+PAGE_43_EN_TABLE = """
+<table class="astro-table">
+<thead><tr>
+<th>House (Bhava)</th>
+<th>House Name (Sanskrit)</th>
+<th>Fixed Significator (Karaka Planet)</th>
+</tr></thead><tbody>
+<tr><td class="primary-col"><strong>1st House</strong></td><td>Tanu Bhava (Body & Self)</td><td>Sun (Surya)</td></tr>
+<tr><td class="primary-col"><strong>2nd House</strong></td><td>Dhana Bhava (Wealth & Speech)</td><td>Jupiter (Brihaspati)</td></tr>
+<tr><td class="primary-col"><strong>3rd House</strong></td><td>Sahaja Bhava (Siblings & Courage)</td><td>Mars (Mangala)</td></tr>
+<tr><td class="primary-col"><strong>4th House</strong></td><td>Sukha Bhava (Mother & Vehicles)</td><td>Moon (Chandra)</td></tr>
+<tr><td class="primary-col"><strong>5th House</strong></td><td>Putra Bhava (Children & Intellect)</td><td>Jupiter (Brihaspati)</td></tr>
+<tr><td class="primary-col"><strong>6th House</strong></td><td>Shatru / Roga Bhava (Debts & Disease)</td><td>Mars & Saturn</td></tr>
+<tr><td class="primary-col"><strong>7th House</strong></td><td>Kalatra Bhava (Spouse & Partnerships)</td><td>Venus (Shukra)</td></tr>
+<tr><td class="primary-col"><strong>8th House</strong></td><td>Ayur / Randhra Bhava (Longevity & Transformation)</td><td>Saturn (Shani)</td></tr>
+<tr><td class="primary-col"><strong>9th House</strong></td><td>Bhagya / Dharma Bhava (Fortune & Wisdom)</td><td>Jupiter (Brihaspati)</td></tr>
+<tr><td class="primary-col"><strong>10th House</strong></td><td>Karma Bhava (Profession & Authority)</td><td>Sun, Mercury, Jupiter, Saturn</td></tr>
+<tr><td class="primary-col"><strong>11th House</strong></td><td>Labha Bhava (Gains & Ambition)</td><td>Jupiter (Brihaspati)</td></tr>
+<tr><td class="primary-col"><strong>12th House</strong></td><td>Vyaya / Moksha Bhava (Expenses & Liberation)</td><td>Saturn & Ketu</td></tr>
+</tbody></table>
+"""
+
+# Hindi replacements for tables that were in English
+PAGE_20_HI_TABLE = """
+<table class="astro-table">
+<thead><tr>
+<th>राजयोग का नाम</th>
+<th>ग्रह संयोजन</th>
+<th>शास्त्रीय विवरण एवं फल</th>
+<th>विद्वानों का शास्त्रीय मत</th>
+</tr></thead><tbody>
+<tr><td class="primary-col"><strong>गजकेसरी योग</strong></td><td>चन्द्रमा से केंद्र (१, ४, ७, १०) में गुरु की स्थिति</td><td>प्रचुर समृद्धि, बुद्धिमत्ता, उच्च यश और अखंड सफलता प्रदान करता है।</td><td>सर्वमान्य; प्रभाव कुंडली के संपूर्ण बलबल पर निर्भर करता है।</td></tr>
+<tr><td class="primary-col"><strong>धर्म कर्माधिपति योग</strong></td><td>नवमेश (धर्म) व दशमेश (कर्म) की युति अथवा दृष्टि</td><td>कर्तव्य और कर्म के समन्वय से उच्च पद, प्रशासनिक सम्मान और प्रतिष्ठा।</td><td>अत्यंत शक्तिशाली व प्रतिष्ठित राजयोग।</td></tr>
+<tr><td class="primary-col"><strong>बुधादित्य योग</strong></td><td>एक ही भाव में सूर्य और बुध की युति</td><td>कुशाग्र बुद्धि, वाकपटुता, तार्किक क्षमता और ज्ञान का विस्तार।</td><td>सर्वमान्य; बौद्धिक व सामाजिक प्रतिष्ठा में विशेष फलदायी।</td></tr>
+<tr><td class="primary-col"><strong>विपरीत राजयोग</strong></td><td>६ठे, ८वें, १२वें (त्रिक) भावों के स्वामियों का परस्पर त्रिक में संबंध</td><td>कठिन संघर्षों, संकटों व शत्रुओं के दमन के पश्चात अप्रत्याशित सफलता।</td><td>पाराशरी व फलदीपिका द्वारा विशेष रूप से समर्थित।</td></tr>
+<tr><td class="primary-col"><strong>नीचभंग राजयोग</strong></td><td>नीच ग्रह की नीचता का शास्त्रीय नियमों से भंग होना</td><td>प्रारंभिक संघर्षों के बाद जातक को राजा के समान ऐश्वर्य व अधिकार।</td><td>शास्त्रीय फलित में अत्यंत प्रभावी व चमत्कारी नियम।</td></tr>
+<tr><td class="primary-col"><strong>चंद्र-मंगल योग</strong></td><td>चन्द्रमा और मंगल की युति अथवा परस्पर दृष्टि</td><td>प्रचुर धन लाभ, व्यापारिक सफलता, पराक्रम से संपत्ति अर्जन।</td><td>आर्थिक दृष्टिकोण से 'महालक्ष्मी योग' तुल्य।</td></tr>
+<tr><td class="primary-col"><strong>अमला योग</strong></td><td>लग्न अथवा चन्द्र से दशम भाव में केवल शुभ ग्रह</td><td>निष्कपट आचरण, समाज में बेदाग प्रतिष्ठा, स्थायी यश और कीर्ति।</td><td>बृहत्पाराशर में उच्च कोटि का योग माना गया है।</td></tr>
+<tr><td class="primary-col"><strong>पर्वत योग</strong></td><td>केंद्र में शुभ ग्रह हों और ६ठे व ८वें भाव रिक्त हों</td><td>स्थिर संपत्ति, अचल ऐश्वर्य, विद्या व समाज में उच्च सम्मान।</td><td>शास्त्रीय ग्रंथों में सर्वमान्य शुभ फलदाता।</td></tr>
+<tr><td class="primary-col"><strong>काहल योग</strong></td><td>चतुर्थेश और गुरु परस्पर केंद्र में हों तथा लग्नेश बली हो</td><td>साहस, सेना अथवा प्रशासन में उच्च नेतृत्व, अदम्य पराक्रम।</td><td>फलदीपिका में विशेष रूप से प्रशंसित।</td></tr>
+<tr><td class="primary-col"><strong>शंख योग</strong></td><td>पंचमेश और षष्ठेश परस्पर केंद्र में हों और लग्नेश शक्तिशाली हो</td><td>शास्त्रज्ञ, दयालु, पुण्यात्मा, उच्च विद्या व सुखी जीवन।</td><td>जातक पारिजात में वर्णित प्रामाणिक योग।</td></tr>
+</tbody></table>
+"""
+
+PAGE_81_HI_TABLE = """
+<table class="astro-table">
+<thead><tr>
+<th>ग्रह / विषय</th>
+<th>पद १ – धनु नवमांश (गुरु)</th>
+<th>पद २ – मकर नवमांश (शनि)</th>
+<th>पद ३ – कुंभ नवमांश (शनि)</th>
+<th>पद ४ – मीन नवमांश (गुरु)</th>
+</tr></thead><tbody>
+<tr><td class="primary-col"><strong>नवमांश विषय</strong></td><td>धर्मनिष्ठ संयम; आश्लेषा की शक्ति का ज्ञानपरक मार्गदर्शन</td><td>नियंत्रित संरचना; शक्ति का रणनीतिक एकत्रीकरण</td><td>बौद्धिक गूढ़ता; सामाजिक व गुप्त अनुसंधान</td><td>आध्यात्मिक समर्पण; बंधनों से मुक्ति व मोक्ष</td></tr>
+<tr><td class="primary-col"><strong>सूर्य</strong></td><td>नैतिक प्रभाव, मार्गदर्शक नेतृत्व</td><td>संस्थागत अधिकार, अनुशासित नियंत्रण</td><td>गोपनीय सत्ता, गहन रणनीतिकार</td><td>अहंकार विसर्जन, आध्यात्मिक सेवा</td></tr>
+<tr><td class="primary-col"><strong>चन्द्रमा</strong></td><td>दार्शनिक अंतर्दृष्टि, भावनात्मक विस्तार</td><td>व्यावहारिक भावनात्मक नियंत्रण</td><td>बौद्धिक गहराई, अंतर्मुखी चिंतन</td><td>असीम करुणा, मोक्ष मार्ग की ओर झुकाव</td></tr>
+<tr><td class="primary-col"><strong>मंगल</strong></td><td>सत्य हेतु संघर्ष, धार्मिक पराक्रम</td><td>रणनीतिक सैन्य बल व अनुशासन</td><td>वैज्ञानिक अनुसंधान, गूढ़ अन्वेषण</td><td>शल्य क्रिया, आध्यात्मिक रूपांतरण</td></tr>
+<tr><td class="primary-col"><strong>बुध</strong></td><td>दार्शनिक वाणी, उच्च शिक्षा</td><td>रणनीतिक व्यापार, कुशाग्र बुद्धि</td><td>तकनीकी कौशल, गूढ़ ज्ञान</td><td>अंतःप्रेरणा, काव्यात्मक अभिव्यक्ति</td></tr>
+<tr><td class="primary-col"><strong>गुरु</strong></td><td>उत्तम धर्मगुरु, सात्विक ज्ञान</td><td>कानून व न्याय व्यवस्था</td><td>गूढ़ दर्शन, मानवतावादी दृष्टिकोण</td><td>परम आध्यात्मिक गुरु, मोक्ष मार्गदर्शक</td></tr>
+<tr><td class="primary-col"><strong>शुक्र</strong></td><td>धार्मिक कला, उच्च आदर्श</td><td>भौतिक संपत्ति, सौंदर्य प्रसाधन</td><td>नवीन कलात्मक दृष्टि</td><td>दिव्य प्रेम, समर्पण भाव</td></tr>
+<tr><td class="primary-col"><strong>शनि</strong></td><td>धर्मनिष्ठ तपस्या व त्याग</td><td>कठोर प्रशासनिक अनुशासन</td><td>जनसेवा, गुप्त संगठनात्मक कार्य</td><td>परम वैराग्य, संन्यास चेतना</td></tr>
+<tr><td class="primary-col"><strong>राहु</strong></td><td>दार्शनिक महत्वाकांक्षा</td><td>भौतिक सत्ता का विस्तार</td><td>वैज्ञानिक शोध व अन्वेषण</td><td>पराभौतिक रहस्य व जागृति</td></tr>
+<tr><td class="primary-col"><strong>केतु</strong></td><td>आत्म-ज्ञान व विवेक</td><td>कर्म मुक्ति व संन्यास</td><td>कुंडलिनी जागरण व साधना</td><td>परम मोक्ष व कैवल्य</td></tr>
+</tbody></table>
+"""
+
+PAGE_82_HI_TABLE = """
+<table class="astro-table">
+<thead><tr>
+<th>ग्रह</th>
+<th>पद १ – सिंह नवमांश (सूर्य)</th>
+<th>पद २ – कन्या नवमांश (बुध)</th>
+<th>पद ३ – तुला नवमांश (शुक्र)</th>
+<th>पद ४ – वृश्चिक नवमांश (मंगल)</th>
+</tr></thead><tbody>
+<tr><td class="primary-col"><strong>नवमांश प्रभाव</strong></td><td>पोषण पर सत्ता व अधिकार; राजसी संरक्षण</td><td>पोषण का विश्लेषणात्मक परिशोधन; सेवा</td><td>सौहार्दपूर्ण पोषण; कला, सौंदर्य व संतुलन</td><td>गहन रक्षात्मक पोषण; संकट में रक्षण</td></tr>
+<tr><td class="primary-col"><strong>सूर्य</strong></td><td>राजसी दायित्व, कर्तव्यनिष्ठ नेतृत्व</td><td>सेवाभावी कार्यकुशलता व सूक्ष्मता</td><td>कूटनीतिक समन्वय व संतुलन</td><td>संकट रक्षक, अदम्य पराक्रम</td></tr>
+<tr><td class="primary-col"><strong>चन्द्रमा</strong></td><td>उदार पोषण व राजसी स्नेह</td><td>सेवा, चिकित्सा व जनहित</td><td>पारिवारिक सुख व सामाजिक सौहार्द</td><td>आध्यात्मिक गहराई व दृढ़ मनोबल</td></tr>
+<tr><td class="primary-col"><strong>मंगल</strong></td><td>धर्म रक्षक व साहसी सेनापति</td><td>अनुशासित सेना व व्यावहारिक दक्षता</td><td>न्यायप्रिय रक्षक व शांति स्थापना</td><td>उच्च पराक्रम व आत्मरक्षा</td></tr>
+<tr><td class="primary-col"><strong>बुध</strong></td><td>नीतिवान सलाहकार व वक्ता</td><td>उत्तम चिकित्सक अथवा लेखाकार</td><td>ललित कला व व्यापारिक संतुलन</td><td>गूढ़ अन्वेषक व अनुसंधानकर्ता</td></tr>
+<tr><td class="primary-col"><strong>गुरु</strong></td><td>उच्च धर्मगुरु व समाज सुधारक</td><td>विद्यादानी व नीति विशेषज्ञ</td><td>सद्गुणी चिंतक व शांतिदूत</td><td>आध्यात्मिक सिद्ध व तपोनिष्ठ</td></tr>
+<tr><td class="primary-col"><strong>शुक्र</strong></td><td>राजसी वैभव व सांस्कृतिक कला</td><td>सात्विक सेवा व विनम्रता</td><td>सुख-समृद्धि व दांपत्य प्रीति</td><td>त्यागपूर्ण प्रेम व निष्ठा</td></tr>
+<tr><td class="primary-col"><strong>शनि</strong></td><td>न्यायप्रिय प्रशासक व दंडनायक</td><td>परिश्रमी सेवक व कर्मयोगी</td><td>सामाजिक संगठन व जनसमर्थन</td><td>दीर्घायु, वैराग्य व आत्मसंयम</td></tr>
+</tbody></table>
+"""
+
+PAGE_83_HI_TABLE = """
+<table class="astro-table">
+<thead><tr>
+<th>अश्विनी पद</th>
+<th>मुख्य राशि (डी-१)</th>
+<th>नवमांश राशि (डी-९)</th>
+<th>नवमांश स्वामी</th>
+</tr></thead><tbody>
+<tr><td class="primary-col"><strong>पद १</strong></td><td>मेष</td><td>मेष</td><td>मंगल (साहस, ऊर्जा, अग्नि)</td></tr>
+<tr><td class="primary-col"><strong>पद २</strong></td><td>मेष</td><td>वृषभ</td><td>शुक्र (धन, सौंदर्य, स्थिरता)</td></tr>
+<tr><td class="primary-col"><strong>पद ३</strong></td><td>मेष</td><td>मिथुन</td><td>बुध (बुद्धि, संचार, तर्क)</td></tr>
+<tr><td class="primary-col"><strong>पद ४</strong></td><td>मेष</td><td>कर्क</td><td>चन्द्रमा (मन, करुणा, जल)</td></tr>
+</tbody></table>
+"""
+
+PAGE_84_HI_TABLE = """
+<table class="astro-table">
+<thead><tr>
+<th>पद</th>
+<th>नवमांश राशि</th>
+<th>नवमांश स्वामी</th>
+<th>नामाक्षर ध्वनि</th>
+<th>अश्विनी में मूल विशेषता</th>
+</tr></thead><tbody>
+<tr><td class="primary-col"><strong>पद १</strong></td><td>मेष</td><td>मंगल</td><td>चू</td><td>शुद्ध पराक्रम, पहल, साहसी नेतृत्व व तीव्र गति</td></tr>
+<tr><td class="primary-col"><strong>पद २</strong></td><td>वृषभ</td><td>शुक्र</td><td>चे</td><td>व्यावहारिक कुशलता, संसाधन संचय, सौंदर्य व स्थिरता</td></tr>
+<tr><td class="primary-col"><strong>पद ३</strong></td><td>मिथुन</td><td>बुध</td><td>चो</td><td>वाकपटुता, संचार कौशल, बौद्धिक जिज्ञासा व बहुमुखी प्रतिभा</td></tr>
+<tr><td class="primary-col"><strong>पद ४</strong></td><td>कर्क</td><td>चन्द्रमा</td><td>ला</td><td>करुणामयी चिकित्सा, संवेदनशील मन, परोपकार व जनसेवा</td></tr>
+</tbody></table>
+"""
+
+PAGE_85_HI_TABLE = """
+<table class="astro-table">
+<thead><tr>
+<th>अश्विनी में ग्रह</th>
+<th>शास्त्रीय फलित एवं विशेषताएं</th>
+</tr></thead><tbody>
+<tr><td class="primary-col"><strong>सूर्य</strong></td><td>तीव्र नेतृत्व क्षमता, प्रभावशाली राजसी व्यक्तित्व, प्रशासनिक व सैन्य अधिकार। जातक साहसी किंतु स्वाभिमानी होता है। पद भेद से प्रशासक से लेकर लोक कल्याणकारी हीलर तक बनता है।</td></tr>
+<tr><td class="primary-col"><strong>चन्द्रमा</strong></td><td>मन अत्यंत चंचल, स्फूर्तिवान, उत्साही तथा शीघ्र निर्णय लेने वाला। खेलकूद व दौड़-भाग में निपुण। उच्चतम अवस्था में संवेदनशील व चमत्कारी चिकित्सक बनता है।</td></tr>
+<tr><td class="primary-col"><strong>मंगल</strong></td><td>स्वराशि प्रभाव; अदम्य साहस, शारीरिक शक्ति, तकनीकी व शल्य क्रिया (सर्जरी) में प्रवीण, त्वरित कार्रवाई करने वाला योद्धा स्वभाव।</td></tr>
+<tr><td class="primary-col"><strong>बुध</strong></td><td>तीव्र कुशाग्र बुद्धि, त्वरित प्रत्युत्पन्नमतित्व, व्यापार व नवाचार में प्रवीण, तार्किक वाणी, अल्प समय में समस्या समाधानकर्ता।</td></tr>
+<tr><td class="primary-col"><strong>गुरु</strong></td><td>ज्ञान का त्वरित प्रसारक, प्रेरणादायी शिक्षक, आध्यात्मिक नवजागरण का अग्रदूत, न्यायप्रिय व सात्विक मार्गदर्शक।</td></tr>
+<tr><td class="primary-col"><strong>शुक्र</strong></td><td>आकर्षक व्यक्तित्व, कलात्मक अभिरुचि, सौंदर्य व वाहनों का प्रेमी, संबंधों में उत्साह व ताजगी।</td></tr>
+<tr><td class="primary-col"><strong>शनि</strong></td><td>मेष में नीच प्रभाव; कर्म में धैर्य का अभाव अथवा प्रारंभिक संघर्ष, किंतु कठोर परिश्रम से विलंबित व स्थायी सफलता।</td></tr>
+<tr><td class="primary-col"><strong>राहु</strong></td><td>अपरंपरागत सोच, नवाचार, विदेशी संबंध, आधुनिक तकनीकी शोध में अप्रत्याशित सफलता।</td></tr>
+<tr><td class="primary-col"><strong>केतु</strong></td><td>गहन अंतःप्रेरणा, आध्यात्मिक जागृति, चिकित्सा व रहस्य विद्याओं में स्वाभाविक निपुणता, मोक्ष मार्ग।</td></tr>
+</tbody></table>
+"""
+
+PAGE_86_HI_TABLE = """
+<table class="astro-table">
+<thead><tr>
+<th>ग्रह</th>
+<th>पद १: मेष नवमांश (चू)</th>
+<th>पद २: वृष नवमांश (चे)</th>
+<th>पद ३: मिथुन नवमांश (चो)</th>
+<th>पद ४: कर्क नवमांश (ला)</th>
+</tr></thead><tbody>
+<tr><td class="primary-col"><strong>नवमांश स्वामी</strong></td><td>मंगल (पराक्रम, ऊर्जा, अग्नि)</td><td>शुक्र (धन, सौंदर्य, पृथ्वी)</td><td>बुध (बुद्धि, संचार, वायु)</td><td>चन्द्रमा (मन, करुणा, जल)</td></tr>
+<tr><td class="primary-col"><strong>सूर्य</strong></td><td>वर्गोत्तम (उच्च): शीर्ष प्रशासनिक नेतृत्व</td><td>व्यावहारिक प्रबंधक, संसाधन संचय</td><td>बौद्धिक रणनीतिकार, वाकपटु</td><td>करुणामयी संरक्षक, जनकल्याण</td></tr>
+<tr><td class="primary-col"><strong>चन्द्रमा</strong></td><td>आवेगी योद्धा, त्वरित निर्णय</td><td>स्थिर धनवान, कला प्रेमी</td><td>बहुमुखी विचारक, लेखक</td><td>वर्गोत्तम: चमत्कारी हीलर (चिकित्सक)</td></tr>
+<tr><td class="primary-col"><strong>मंगल</strong></td><td>स्वक्षेत्री वर्गोत्तम: अपराजेय सेनापति</td><td>भूमि-भवन निर्माता, व्यावहारिक</td><td>तकनीकी विशेषज्ञ, गणितज्ञ</td><td>नीच नवमांश: भावनात्मक संघर्ष</td></tr>
+<tr><td class="primary-col"><strong>बुध</strong></td><td>आक्रामक वक्ता, शीघ्र निर्णय</td><td>कुशल व्यापारी, वित्तीय समझ</td><td>स्वक्षेत्री: उत्कृष्ट लेखक/शोधकर्ता</td><td>कल्पनाशक्ति, काव्यात्मक चेतना</td></tr>
+<tr><td class="primary-col"><strong>गुरु</strong></td><td>साहसी उपदेशक, धर्म सुधारक</td><td>वित्तीय सलाहकार, न्यायप्रिय</td><td>ज्ञान का प्रसारक, शिक्षक</td><td>उच्च नवमांश: सिद्ध आध्यात्मिक गुरु</td></tr>
+<tr><td class="primary-col"><strong>शुक्र</strong></td><td>उत्साही प्रेमी, त्वरित आकर्षण</td><td>स्वक्षेत्री: विलासी, ऐश्वर्यवान</td><td>कलात्मक संपर्क, व्यापार</td><td>समर्पित साथी, उच्च संवेदनशीलता</td></tr>
+<tr><td class="primary-col"><strong>शनि</strong></td><td>नीच वर्गोत्तम: घोर प्रारंभिक संघर्ष</td><td>व्यावहारिक श्रम, धीमा विकास</td><td>तकनीकी अन्वेषक, कुशल कारीगर</td><td>सेवाभावी, वैराग्य व आत्मसंयम</td></tr>
+</tbody></table>
+"""
+
+def localize_html_table(table_html, page_idx, target_lang='hindi'):
+    """Full table localization with column deduplication and language isolation."""
+    # Check if a dedicated pure table replacement exists for this page
+    if target_lang == 'english':
+        if page_idx == 5: return PAGE_6_EN_TABLE.strip()
+        if page_idx == 6: return PAGE_7_EN_TABLE.strip()
+        if page_idx == 7: return PAGE_8_EN_TABLE.strip()
+        if page_idx == 8: return PAGE_9_EN_TABLE.strip()
+        if page_idx == 9: return PAGE_10_EN_TABLE.strip()
+        if page_idx == 10: return PAGE_11_EN_TABLE.strip()
+        if page_idx == 12: return PAGE_13_EN_TABLE.strip()
+        if page_idx == 14: return PAGE_15_EN_TABLE.strip()
+        if page_idx == 17: return PAGE_18_EN_TABLE.strip()
+        if page_idx == 18: return PAGE_19_EN_TABLE.strip()
+        if page_idx == 19: return PAGE_20_EN_TABLE.strip()
+        if page_idx == 20: return PAGE_21_EN_TABLE.strip()
+        if page_idx == 21: return PAGE_22_EN_TABLE.strip()
+        if page_idx == 22: return PAGE_23_EN_TABLE.strip()
+        if page_idx == 23: return PAGE_24_EN_TABLE.strip()
+        if page_idx == 25: return PAGE_26_EN_TABLE.strip()
+        if page_idx == 27: return PAGE_28_EN_TABLE.strip()
+        if page_idx == 28: return PAGE_29_EN_TABLE.strip()
+        if page_idx == 29: return PAGE_30_EN_TABLE.strip()
+        if page_idx == 30: return PAGE_31_EN_TABLE.strip()
+        if page_idx == 31: return PAGE_32_EN_TABLE.strip()
+        if page_idx == 32: return PAGE_33_EN_TABLE.strip()
+        if page_idx == 33: return PAGE_34_EN_TABLE.strip()
+        if page_idx == 34: return PAGE_35_EN_TABLE.strip()
+        if page_idx == 39: return PAGE_40_EN_TABLE.strip()
+        if page_idx == 40: return PAGE_41_EN_TABLE.strip()
+        if page_idx == 41: return PAGE_42_EN_TABLE.strip()
+        if page_idx == 42: return PAGE_43_EN_TABLE.strip()
+        if page_idx == 43: return PAGE_44_EN_TABLE.strip()
+        if page_idx == 71: return PAGE_72_EN_TABLE.strip()
+        if page_idx == 72: return PAGE_73_EN_TABLE.strip()
+        if page_idx == 74: return PAGE_75_EN_TABLE.strip()
+        if page_idx == 75: return PAGE_23_EN_TABLE.strip()
+        if page_idx == 76: return PAGE_24_EN_TABLE.strip()
+        if page_idx == 78: return PAGE_26_EN_TABLE.strip()
+    else:
+        if page_idx == 5: return PAGE_6_HI_TABLE.strip()
+        if page_idx == 6: return PAGE_7_HI_TABLE.strip()
+        if page_idx == 7: return PAGE_8_HI_TABLE.strip()
+        if page_idx == 9: return PAGE_10_HI_TABLE.strip()
+        if page_idx == 10: return PAGE_11_HI_TABLE.strip()
+        if page_idx == 18: return PAGE_19_HI_TABLE.strip()
+        if page_idx == 19: return PAGE_20_HI_TABLE.strip()
+        if page_idx == 20: return PAGE_21_HI_TABLE.strip()
+        if page_idx == 21: return PAGE_22_HI_TABLE.strip()
+        if page_idx == 22: return PAGE_23_HI_TABLE.strip()
+        if page_idx == 23: return PAGE_24_HI_TABLE.strip()
+        if page_idx == 25: return PAGE_26_HI_TABLE.strip()
+        if page_idx == 27: return PAGE_28_HI_TABLE.strip()
+        if page_idx == 28: return PAGE_29_HI_TABLE.strip()
+        if page_idx == 29: return PAGE_30_HI_TABLE.strip()
+        if page_idx == 30: return PAGE_31_HI_TABLE.strip()
+        if page_idx == 31: return PAGE_32_HI_TABLE.strip()
+        if page_idx == 32: return PAGE_33_HI_TABLE.strip()
+        if page_idx == 33: return PAGE_34_HI_TABLE.strip()
+        if page_idx == 34: return PAGE_35_HI_TABLE.strip()
+        if page_idx == 39: return PAGE_40_HI_TABLE.strip()
+        if page_idx == 40: return PAGE_41_HI_TABLE.strip()
+        if page_idx == 41: return PAGE_42_HI_TABLE.strip()
+        if page_idx == 42: return PAGE_43_HI_TABLE.strip()
+        if page_idx == 71: return PAGE_72_HI_TABLE.strip()
+        if page_idx == 72: return PAGE_73_HI_TABLE.strip()
+        if page_idx == 74: return PAGE_75_HI_TABLE.strip()
+        if page_idx == 75: return PAGE_23_HI_TABLE.strip()
+        if page_idx == 76: return PAGE_24_HI_TABLE.strip()
+        if page_idx == 78: return PAGE_26_HI_TABLE.strip()
+        if page_idx == 80: return PAGE_81_HI_TABLE.strip()
+        if page_idx == 81: return PAGE_82_HI_TABLE.strip()
+        if page_idx == 82: return PAGE_83_HI_TABLE.strip()
+        if page_idx == 83: return PAGE_84_HI_TABLE.strip()
+        if page_idx == 84: return PAGE_85_HI_TABLE.strip()
+        if page_idx == 85: return PAGE_86_HI_TABLE.strip()
+
+    # Special column deduplication for parallel language tables
+    if page_idx == 11:
+        table_html = filter_table_columns(table_html, [0, 1] if target_lang == 'hindi' else [0, 2])
+    elif page_idx == 13:
+        table_html = filter_table_columns(table_html, [0, 1] if target_lang == 'hindi' else [0, 2])
+    elif page_idx == 15:
+        table_html = filter_table_columns(table_html, [0, 2] if target_lang == 'hindi' else [0, 1])
+    elif page_idx == 16:
+        table_html = filter_table_columns(table_html, [0, 1] if target_lang == 'hindi' else [0, 2])
+    elif page_idx in [26, 79]:
+        table_html = filter_table_columns(table_html, [0, 2, 4, 6, 8, 10, 12] if target_lang == 'hindi' else [0, 1, 3, 5, 7, 9, 11])
+
     mapping = hindi_headers if target_lang == 'hindi' else english_headers
 
     # Replace th contents
@@ -348,37 +1183,363 @@ def localize_html_table(table_html, target_lang='hindi'):
 
     res = re.sub(r'<th([^>]*)>(.*?)</th>', replace_th, table_html, flags=re.DOTALL)
 
-    # Clean cells
+    # Clean td contents
     if target_lang == 'hindi':
-        # Remove English in brackets like (Heart), (Right Eye), etc.
-        def clean_td_hindi(m):
+        def replace_td_hi(m):
             tag = m.group(1)
             content = m.group(2)
-            # Remove (English Words)
-            cleaned = re.sub(r'\s*\([A-Za-z0-9\s,\.\-\/\’\']+\)', '', content)
-            # Remove stray empty commas
-            cleaned = re.sub(r',\s*,', ',', cleaned)
-            cleaned = re.sub(r',\s*$', '', cleaned)
+            cleaned = clean_cell_text_to_hindi(content)
             return f'<td{tag}>{cleaned}</td>'
-        res = re.sub(r'<td([^>]*)>(.*?)</td>', clean_td_hindi, res, flags=re.DOTALL)
+        res = re.sub(r'<td([^>]*)>(.*?)</td>', replace_td_hi, res, flags=re.DOTALL)
     else:
-        # English: convert bilingual cells like "हृदय (Heart)" to "Heart"
-        def clean_td_english(m):
+        def replace_td_en(m):
             tag = m.group(1)
             content = m.group(2)
-            # Convert Dev + (English) to English
-            cleaned = re.sub(r'[\u0900-\u097F\s\/]+\(([A-Za-z0-9\s,\.\-\/\’\']+)\)', r'\1', content)
+            cleaned = clean_cell_text_to_english(content)
             return f'<td{tag}>{cleaned}</td>'
-        res = re.sub(r'<td([^>]*)>(.*?)</td>', clean_td_english, res, flags=re.DOTALL)
+        res = re.sub(r'<td([^>]*)>(.*?)</td>', replace_td_en, res, flags=re.DOTALL)
 
     return res
 
+
 # ------------------------------------------------------------------------------
-# 3. BUILD HINDI EDITION PAGES
+# 5. SUN IN HOUSES & SIGNS MONOLINGUAL GENERATORS
 # ------------------------------------------------------------------------------
+
+def generate_sun_houses_content(page_num, lang='hindi'):
+    is_hindi = (lang == 'hindi')
+    if page_num == 45:
+        header_title = "🌞 सूर्य देव: भाव १ से ६ फलित विचार" if is_hindi else "🌞 Sun in Houses 1 to 6 (Classical Interpretations)"
+        houses_data = [
+            ("१. प्रथम भाव (लग्न भाव):", "1. 1st House (Ascendant / Lagna):",
+             "जातक स्वाभिमानी, चतुर, प्रभावी, राजसी व्यक्तित्व तथा आकर्षक होता है। नेतृत्व क्षमता प्रबल होती है। नेत्र अथवा नासिका संबंधी संवेदनशीलता, पित्त प्रकृति एवं अहंकार की प्रवृत्ति हो सकती है।",
+             "The native is self-respecting, intelligent, authoritative, and charismatic. Possesses natural leadership qualities. May experience eye or nasal sensitivities, high pitta (internal heat), and egoistic pride."),
+            ("२. द्वितीय भाव (धन भाव):", "2. 2nd House (Dhana Bhava):",
+             "वाणी में ओज व कभी-कभी कठोरता, धन उपार्जन में निरंतर परिश्रम, कुटुंब में वैचारिक मतभेद तथा नेत्र विकारों की संभावना रहती है। जातक स्वावलंबी होता है।",
+             "The native speaks with commanding authority but may possess a sharp tongue. Financial accumulation requires persistent effort. Family friction and potential eye ailments."),
+            ("३. तृतीय भाव (सहज / पराक्रम भाव):", "3. 3rd House (Sahaja / Valor Bhava):",
+             "अत्यंत साहसी, शूरवीर, समाज में प्रभावशाली तथा बाहुबल से ख्याति अर्जित करने वाला होता है। छोटे भाइयों से मतभेद संभव हैं, किंतु समाज में यश प्राप्त होता है।",
+             "Immense valor, courage, fame, and societal influence. Earns distinction and wealth through individual bravery. May have ideological friction with younger siblings."),
+            ("४. चतुर्थ भाव (सुख भाव):", "4. 4th House (Sukha Bhava):",
+             "मातृ सुख में न्यूनता अथवा माता के स्वास्थ्य की चिंता, मानसिक शांति में बाधा, पैतृक संपत्ति व वाहन सुख में उतार-चढ़ाव। हृदय व रक्तचाप के प्रति सजग रहना आवश्यक है।",
+             "Challenges regarding domestic tranquility, maternal health, or strained emotional peace. Fluctuations in vehicle and real estate comforts. Prone to cardiovascular sensitivity."),
+            ("५. पंचम भाव (सुत / बुद्धि भाव):", "5. 5th House (Suta / Intellect Bhava):",
+             "तीक्ष्ण कुशाग्र बुद्धि, मन्त्र विद्या व गूढ़ शास्त्रों में रुचि, राजनैतिक प्रभाव, संतान प्राप्ति में विलंब अथवा संतान से वैचारिक भेद, पित्त विकार की आशंका।",
+             "Sharp intellect, spiritual wisdom, political acumen, and keen interest in sacred mantras. Delay in progeny or friction with children. Vulnerable to gastric fire imbalances."),
+            ("६. षष्ठ भाव (शत्रु व रोग भाव):", "6. 6th House (Shatru / Disease Bhava):",
+             "शत्रुहंता योग, प्रतिस्पर्धा में अजेय, मुकदमों व विवादों में विजय, उत्तम रोग प्रतिरोधक क्षमता। प्रशासनिक कार्यों में सफलता प्राप्त होती है। मामा पक्ष से मतभेद संभव।",
+             "Destroyer of adversaries (Shatru-Hanta Yoga). Highly competitive, victorious in legal or institutional disputes, and possesses strong vitality. Overcomes acute ailments.")
+        ]
+    else:
+        header_title = "🌞 सूर्य देव: भाव ७ से १२ फलित विचार" if is_hindi else "🌞 Sun in Houses 7 to 12 (Classical Interpretations)"
+        houses_data = [
+            ("७. सप्तम भाव (जाया भाव):", "7. 7th House (Kalatra / Spouse Bhava):",
+             "दांपत्य जीवन में अहं का टकराव, जीवनसाथी का स्वाभिमानी व प्रभावशाली व्यक्तित्व, साझेदारी के व्यापार में सतर्कता की आवश्यकता, व्यवसायिक यात्राएं अधिक।",
+             "Marital friction caused by ego clashes and pride. The spouse is self-respecting, authoritative, and dominant. Demands caution in business partnerships; frequent travels."),
+            ("८. अष्टम भाव (आयु / रंध्र भाव):", "8. 8th House (Ayur / Chronic Bhava):",
+             "गूढ़ रहस्यों, तंत्र-ज्योतिष व वसीयत से लाभ। गुप्त शत्रुओं से सजगता आवश्यक। नेत्र दुर्बलता अथवा आकस्मिक स्वास्थ्य उतार-चढ़ाव। आध्यात्मिक दृष्टिकोण से शुभ।",
+             "Deep inclination toward esoteric research, mysticism, and inheritance gains. Eye sensitivities and sudden unforeseen events. Highly favorable for spiritual transformation."),
+            ("९. नवम भाव (भाग्य व धर्म भाव):", "9. 9th House (Bhagya / Dharma Bhava):",
+             "परम धार्मिक, पुण्यात्मा, तीर्थ यात्रा प्रेमी, पिता का सहयोगी अथवा पिता के समान मान-सम्मान प्राप्त करने वाला। समाज में धर्मात्मा के रूप में पूजित।",
+             "Deeply religious, righteous, fortunate, and devoted to pilgrimage. Elevates paternal reputation, though ideological independence exists. Respected as a principled guide."),
+            ("१०. दशम भाव (कर्म भाव - दिशाबली):", "10. 10th House (Karma Bhava - Digbala):",
+             "सूर्य को दशम में पूर्ण दिशाबल प्राप्त होता है। कुलदीपक योग, शासन-सत्ता में शीर्ष पद, प्रशासनिक अधिकार, सरकारी मान-प्रतिष्ठा तथा अद्वितीय कार्यकुशलता।",
+             "Sun attains full directional strength (Digbala). Bestows Kuladeepaka Yoga, supreme executive authority, government honors, high status, and extraordinary professional success."),
+            ("११. एकादश भाव (आय व लाभ भाव):", "11. 11th House (Labha Bhava):",
+             "अथाह धन लाभ, सत्ता व उच्च पदस्थ मित्रों का सहयोग, महत्वाकांक्षाओं की पूर्ण सिद्धि, दीर्घायु तथा समाज में धनाढ्य व प्रतिष्ठित स्थिति।",
+             "Abundant financial prosperity, patronage from high-ranking government dignitaries, fulfillment of major ambitions, high vitality, and respected social prominence."),
+            ("१२. द्वादश भाव (व्यय व मोक्ष भाव):", "12. 12th House (Vyaya / Moksha Bhava):",
+             "आध्यात्मिक चेतना, विदेश प्रवास अथवा सुदूर स्थानों पर प्रतिष्ठा, स्वास्थ्य व धर्मार्थ कार्यों पर अत्यधिक व्यय, शयन सुख में कमी, नेत्र संवेदनशीलता।",
+             "Spiritual awakening, foreign residency or travels to distant realms, high philanthropic and medical expenditures, sleep sensitivities, and left eye vulnerability.")
+        ]
+
+    items_html = []
+    for hi_t, en_t, hi_desc, en_desc in houses_data:
+        t = hi_t if is_hindi else en_t
+        d = hi_desc if is_hindi else en_desc
+        items_html.append(f"""
+        <div class="sun-effect-item" style="margin-bottom:0.75rem;">
+          <div style="color:var(--accent-gold); font-weight:700; font-size:0.92rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">{t}</div>
+          <div style="font-size:0.86rem; line-height:1.6; margin-top:0.3rem;">
+            <p style="margin:0.25rem 0;">{d}</p>
+          </div>
+        </div>
+        """)
+
+    sec_label = f"अध्याय ४ • खण्ड {page_num - 44 + 6}" if is_hindi else f"Chapter 4 • Sun in Houses (Part {page_num - 44})"
+    return f"""
+    <div class="page-inner-content">
+      <div class="chapter-header" style="margin-bottom:0.75rem;">
+        <div class="chapter-number">{sec_label}</div>
+        <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{header_title}</h3>
+      </div>
+      <div class="rule-card">
+        <div class="rule-body" style="font-size:0.86rem; line-height:1.6;">
+          {''.join(items_html)}
+        </div>
+      </div>
+    </div>
+    """
+
+def generate_sun_signs_content(page_num, lang='hindi'):
+    is_hindi = (lang == 'hindi')
+    if page_num == 47:
+        header_title = "☀️ सूर्य देव: मेष से कन्या राशि फल" if is_hindi else "☀️ Sun in Signs 1 to 6 (Aries to Virgo Interpretations)"
+        signs_data = [
+            ("१. मेष राशि (परम उच्च फल):", "1. Aries (Exalted Sign - Uchcha):",
+             "जातक अत्यंत प्रतापी, कांतिवान, शूरवीर, स्वाभिमानी, कुशाग्र बुद्धि, साहसी तथा समाज में शीर्ष ख्याति प्राप्त करता है। स्वतंत्र निर्णय व प्रशासनिक क्षमता बेजोड़ होती है।",
+             "The native becomes noble, majestic, valorous, self-respecting, highly intelligent, courageous, and attains widespread renown. Supreme leadership and independent vision."),
+            ("२. वृषभ राशि (शत्रु क्षेत्री):", "2. Taurus (Enemy Sign - Shukra Kshetra):",
+             "जातक कलात्मक, संगीत प्रिय, आकर्षक, वाणी में प्रभाव, धन संचय में कुशल, पारिवारिक सुख का प्रेमी तथा स्थिर स्वभाव वाला होता है।",
+             "The native possesses an artistic temperament, appreciation for music, handsome appearance, skill in capital accumulation, and devotion to family comforts."),
+            ("३. मिथुन राशि (सम क्षेत्री):", "3. Gemini (Neutral Sign - Budha Kshetra):",
+             "जातक वाकपटु, बहुमुखी प्रतिभा का धनी, लेखक, पत्रकारिता, वाणिज्य व गणित में प्रवीण, तर्कशील तथा सामाजिक संपर्क बनाने में अत्यंत कुशल होता है।",
+             "The native is an eloquent orator, versatile thinker, distinguished writer, skilled in commerce and mathematics, witty, and socially dynamic."),
+            ("४. कर्क राशि (मित्र क्षेत्री):", "4. Cancer (Friendly Sign - Chandra Kshetra):",
+             "जातक भावुक, संवेदनशील, कल्पनाशील, जल यात्रा प्रिय, मातृभक्त, सेवाभावी तथा जनकल्याण के कार्यों में तत्पर रहने वाला होता है। मनोदशा परिवर्तनशील रहती है।",
+             "The native is intuitive, deeply compassionate, fond of aquatic travels, devoted to parents, philanthropic, and emotionally sensitive."),
+            ("५. सिंह राशि (स्वक्षेत्री - मूलत्रिकोण):", "5. Leo (Own & Moolatrikona Sign):",
+             "जातक राजा के समान तेजस्वी, उदार हृदय, उच्च स्वाभिमानी, शासन-सत्ता में शीर्ष स्थान प्राप्त करने वाला, निष्पक्ष न्यायप्रिय तथा चुंबकीय व्यक्तित्व का स्वामी होता है।",
+             "Regal authority, immense charisma, generous spirit, supreme dignity, natural command in administrative governance, and unwavering righteous pride."),
+            ("६. कन्या राशि (मित्र क्षेत्री):", "6. Virgo (Friendly Sign - Budha Kshetra):",
+             "जातक विश्लेषणात्मक बुद्धि, गणना व लेखा में निपुण, सूक्ष्मदर्शी, सेवाभावी, व्यावहारिक, विनम्र तथा कार्यकुशल होता है।",
+             "The native possesses sharp analytical acumen, mathematical skill, meticulous eye for detail, service orientation, and pragmatic wisdom.")
+        ]
+    else:
+        header_title = "☀️ सूर्य देव: तुला से मीन राशि फल" if is_hindi else "☀️ Sun in Signs 7 to 12 (Libra to Pisces Interpretations)"
+        signs_data = [
+            ("७. तुला राशि (परम नीच फल):", "7. Libra (Debilitation Sign - Neecha):",
+             "आत्मविश्वास में संकोच, दूसरों पर अधिक निर्भरता, मान-सम्मान हेतु निरंतर संघर्ष, त्वचा अथवा नेत्र संवेदनशीलता। परिश्रम के पश्चात सफलता प्राप्त होती है।",
+             "Fluctuating self-confidence, excessive dependence on partners, struggles for public recognition, and prone to renal or skin imbalances. Success comes through humility."),
+            ("८. वृश्चिक राशि (मित्र क्षेत्री):", "8. Scorpio (Friendly Sign - Mangal Kshetra):",
+             "जातक गूढ़ अन्वेषक, रहस्यमयी स्वभाव, अदम्य साहसी, तीव्र स्मरण शक्ति, शल्य चिकित्सा अथवा संकट प्रबंधन में प्रवीण तथा कठिन परिस्थितियों में भी दृढ़ रहने वाला होता है।",
+             "Deep esoteric researcher, secretive demeanor, intense tenacity, unyielding courage, interest in surgical or crisis management, and indomitable endurance."),
+            ("९. धनु राशि (मित्र क्षेत्री):", "9. Sagittarius (Friendly Sign - Guru Kshetra):",
+             "जातक गुरु तुल्य मार्गदर्शक, धर्मनिष्ठ, न्यायप्रिय, उच्च दार्शनिक चिंतक, सत्यवादी, समाज सुधारक तथा उच्च विद्या में प्रतिष्ठा प्राप्त करने वाला होता है।",
+             "Preceptor qualities, deeply righteous, judicial mindset, profound philosophical elevation, truthful, and distinguished in higher academia and spiritual wisdom."),
+            ("१०. मकर राशि (शत्रु क्षेत्री):", "10. Capricorn (Enemy Sign - Shani Kshetra):",
+             "जातक घोर परिश्रमी, व्यावहारिक, अनुशासित, जीवन में संघर्षों के उपरांत स्थिर शिखर पर पहुंचने वाला, मितव्ययी तथा संगठन संचालन में दक्ष होता है।",
+             "Indefatigable work ethic, pragmatic, disciplined, systematically ascends to career pinnacles through perseverance, frugal, and an adept organizational manager."),
+            ("११. कुंभ राशि (शत्रु क्षेत्री):", "11. Aquarius (Enemy Sign - Shani Kshetra):",
+             "जातक मानवतावादी, नवीन अन्वेषक, सामाजिक समरसता का पक्षधर, एकांतप्रिय विचारक, स्वतंत्र विचारों वाला तथा दूरदर्शी दृष्टिकोण का स्वामी होता है।",
+             "Humanitarian vision, unconventional innovator, advocate of social reform, introspective thinker, and endowed with cosmic, future-oriented consciousness."),
+            ("१२. मीन राशि (मित्र क्षेत्री):", "12. Pisces (Friendly Sign - Guru Kshetra):",
+             "जातक आध्यात्मिक, करुणामयी, शांत स्वभाव, मोक्ष मार्ग का खोजी, जल यात्राओं से लाभान्वित, दानी तथा परोपकारी होता है।",
+             "Deeply spiritual, compassionate, tranquil, seeker of mystical liberation (Moksha), benefited by maritime travels, philanthropic, and altruistic.")
+        ]
+
+    items_html = []
+    for hi_t, en_t, hi_desc, en_desc in signs_data:
+        t = hi_t if is_hindi else en_t
+        d = hi_desc if is_hindi else en_desc
+        items_html.append(f"""
+        <div class="sun-effect-item" style="margin-bottom:0.75rem;">
+          <div style="color:var(--accent-gold); font-weight:700; font-size:0.92rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">{t}</div>
+          <div style="font-size:0.86rem; line-height:1.6; margin-top:0.3rem;">
+            <p style="margin:0.25rem 0;">{d}</p>
+          </div>
+        </div>
+        """)
+
+    sec_label = f"अध्याय ४ • खण्ड {page_num - 46 + 8}" if is_hindi else f"Chapter 4 • Sun in Signs (Part {page_num - 46})"
+    return f"""
+    <div class="page-inner-content">
+      <div class="chapter-header" style="margin-bottom:0.75rem;">
+        <div class="chapter-number">{sec_label}</div>
+        <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{header_title}</h3>
+      </div>
+      <div class="rule-card">
+        <div class="rule-body" style="font-size:0.86rem; line-height:1.6;">
+          {''.join(items_html)}
+        </div>
+      </div>
+    </div>
+    """
+
+# ------------------------------------------------------------------------------
+# 6. SPECIAL MONOLINGUAL GENERATORS FOR SPECIAL RULE CARDS
+# ------------------------------------------------------------------------------
+
+def generate_drishti_rules_content(lang='hindi'):
+    is_hindi = (lang == 'hindi')
+    if is_hindi:
+        card = """
+        <div class="rule-card success">
+          <div class="rule-header">
+            <div class="rule-title">📜 शास्त्रीय दृष्टि नियम (फलित सिद्धांत)</div>
+          </div>
+          <div class="rule-body">
+            <ul style="margin:0; padding-left:1.2rem; line-height:1.6; font-size:0.88rem;">
+              <li><strong>सामान्य दृष्टि (सप्तम भाव):</strong> सभी ग्रह अपने अधिष्ठित भाव से सप्तम भाव पर पूर्ण दृष्टि डालते हैं।</li>
+              <li><strong>विशेष पूर्ण दृष्टियां:</strong>
+                <ul>
+                  <li><strong>मंगल:</strong> चतुर्थ (४था), सप्तम (७वां) और अष्टम (८वां) भाव।</li>
+                  <li><strong>गुरु (बृहस्पति):</strong> पंचम (५वां), सप्तम (७वां) और नवम (९वां) भाव।</li>
+                  <li><strong>शनि:</strong> तृतीय (३रा), सप्तम (७वां) और दशम (१०वां) भाव।</li>
+                </ul>
+              </li>
+              <li><strong>राहु एवं केतु:</strong> आधुनिक फलित ज्योतिष में पंचम, सप्तम व नवम दृष्टि व्यापक रूप से मान्य है।</li>
+            </ul>
+          </div>
+        </div>
+        """
+    else:
+        card = """
+        <div class="rule-card success">
+          <div class="rule-header">
+            <div class="rule-title">📜 Classical Aspect Principles (Drishti Sutras)</div>
+          </div>
+          <div class="rule-body">
+            <ul style="margin:0; padding-left:1.2rem; line-height:1.6; font-size:0.88rem;">
+              <li><strong>Universal 7th Aspect:</strong> All planets cast a full 100% direct aspect onto the 7th house from their placement.</li>
+              <li><strong>Special Full Aspects:</strong>
+                <ul>
+                  <li><strong>Mars:</strong> 4th, 7th, and 8th houses.</li>
+                  <li><strong>Jupiter:</strong> 5th, 7th, and 9th houses.</li>
+                  <li><strong>Saturn:</strong> 3rd, 7th, and 10th houses.</li>
+                </ul>
+              </li>
+              <li><strong>Rahu &amp; Ketu:</strong> In classical Parashari treatises they do not cast direct ray aspects, but in predictive Jyotish, 5th, 7th, and 9th trinal aspects are widely accepted.</li>
+            </ul>
+          </div>
+        </div>
+        """
+    return card
+
+def generate_nakshatra_degrees_card(lang='hindi'):
+    is_hindi = (lang == 'hindi')
+    if is_hindi:
+        return """
+        <div class="rule-card">
+          <div class="rule-body" style="font-size:0.88rem; line-height:1.6;">
+            वैदिक ज्योतिष में संपूर्ण ३६०° भचक्र को २७ समान नक्षत्रों में विभाजित किया गया है। प्रत्येक नक्षत्र का विस्तार <strong>१३°२०’ (१३ अंश और २० कला)</strong> होता है। नीचे प्रत्येक नक्षत्र के प्रारंभिक एवं समापन अंश व्यवस्थित रूप से दिए गए हैं।
+          </div>
+        </div>
+        """
+    else:
+        return """
+        <div class="rule-card">
+          <div class="rule-body" style="font-size:0.88rem; line-height:1.6;">
+            In Vedic astronomy and astrology, the 360° zodiacal belt is systematically divided into 27 equal lunar mansions (Nakshatras). Each Nakshatra spans exactly <strong>13°20’ (13 degrees and 20 minutes of arc)</strong>. Below are the precise starting and ending boundaries for all 27 Nakshatras.
+          </div>
+        </div>
+        """
+
+def generate_deeptadi_9_states_content(lang='hindi'):
+    is_hindi = (lang == 'hindi')
+    if is_hindi:
+        return """
+        <div class="page-inner-content">
+          <div class="chapter-header" style="margin-bottom:0.75rem;">
+            <div class="chapter-number">अध्याय ४ • खण्ड १</div>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">दीप्तादि ९ अवस्थाएं: ग्रहों की स्थिति व फल</h3>
+          </div>
+          <div class="rule-card">
+            <div class="rule-header">
+              <div class="rule-title">दीप्तादि ९ अवस्थाएं (ग्रहों की स्थितियां व फल)</div>
+              <span class="badge-chip badge-gold">पाराशरी सूत्र</span>
+            </div>
+            <div class="rule-body" style="font-size:0.86rem; line-height:1.65;">
+              <p>महर्षि पाराशर के अनुसार ग्रहों की राशि स्थिति के आधार पर ९ अवस्थाएं होती हैं:</p>
+              <ol style="margin:0; padding-left:1.25rem;">
+                <li><strong>दीप्त अवस्था:</strong> ग्रह जब अपनी उच्च राशि में स्थित हो (परम शुभ एवं शक्तिशाली फल)।</li>
+                <li><strong>स्वस्थ अवस्था:</strong> ग्रह जब अपनी स्वराशि में स्थित हो (आत्मबल, स्थिरता एवं अनुकूलता)।</li>
+                <li><strong>मुदित अवस्था:</strong> ग्रह जब अपने अतिमित्र की राशि में स्थित हो (प्रसन्नता एवं सौभाग्य)।</li>
+                <li><strong>शांत अवस्था:</strong> ग्रह जब अपने मित्र की राशि में स्थित हो (शांति, सहयोग एवं संतुलन)।</li>
+                <li><strong>दीन अवस्था:</strong> ग्रह जब सम (तटस्थ) ग्रह की राशि में स्थित हो (साधारण व मध्यम फल)।</li>
+                <li><strong>दुःखी अवस्था:</strong> ग्रह जब शत्रु ग्रह की राशि में स्थित हो (कष्ट, मानसिक तनाव एवं संघर्ष)।</li>
+                <li><strong>विकल अवस्था:</strong> ग्रह जब पाप पीड़ित अथवा अशुभ युक्त हो (अस्थिरता एवं चिंता)।</li>
+                <li><strong>खल अवस्था:</strong> ग्रह जब अतिशत्रु की राशि अथवा नीच राशि में हो (हानि व बाधाएं)।</li>
+                <li><strong>कोप अवस्था:</strong> ग्रह जब सूर्य के अति निकट होकर अस्त हो (कारकतत्वों में क्षीणता)।</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        """
+    else:
+        return """
+        <div class="page-inner-content">
+          <div class="chapter-header" style="margin-bottom:0.75rem;">
+            <div class="chapter-number">Chapter 4 • Section 1</div>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Deeptadi 9 States: Planetary Conditions & Potencies</h3>
+          </div>
+          <div class="rule-card">
+            <div class="rule-header">
+              <div class="rule-title">Deeptadi 9 States (Planetary Conditions & Potencies)</div>
+              <span class="badge-chip badge-gold">Parashari Sutras</span>
+            </div>
+            <div class="rule-body" style="font-size:0.86rem; line-height:1.65;">
+              <p>According to Maharishi Parashara, a planet operates through 9 distinct psychological and energetic states based on its zodiacal placement:</p>
+              <ol style="margin:0; padding-left:1.25rem;">
+                <li><strong>Deepta (Radiant / Exalted):</strong> Placed in its exaltation sign; delivers maximum auspicious and powerful results.</li>
+                <li><strong>Swastha (Comfortable / Own Sign):</strong> Placed in its own sign; indicates natural strength, stability, and ease.</li>
+                <li><strong>Mudita (Delighted / Great Friend):</strong> Placed in a great friend's sign; bestows happiness, joy, and fortune.</li>
+                <li><strong>Shanta (Peaceful / Friend Sign):</strong> Placed in a friendly sign; promotes harmony, cooperative endeavors, and calm.</li>
+                <li><strong>Deena (Humbled / Neutral Sign):</strong> Placed in a neutral sign; yields moderate, average, and ordinary outcomes.</li>
+                <li><strong>Dukhi (Distressed / Enemy Sign):</strong> Placed in an enemy's sign; brings struggle, psychological friction, and delays.</li>
+                <li><strong>Vikala (Agitated / Malefic Affliction):</strong> Severely afflicted or associated with malefic planets; creates anxiety and restlessness.</li>
+                <li><strong>Khala (Malicious / Debilitated):</strong> Placed in a great enemy sign or debilitation; causes hindrances, setbacks, and adversity.</li>
+                <li><strong>Kopi (Combust / Enraged):</strong> In close combustion with the Sun; significations are scorched and rendered inward.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        """
+
+def generate_leukemia_rules_content(lang='hindi'):
+    is_hindi = (lang == 'hindi')
+    if is_hindi:
+        return """
+        <div class="page-inner-content">
+          <div class="chapter-header" style="margin-bottom:0.75rem;">
+            <div class="chapter-number">अध्याय ५ • स्वास्थ्य खण्ड २६</div>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">रक्त कैंसर (ल्यूकीमिया): ज्योतिषीय योग व शास्त्रीय सूत्र</h3>
+          </div>
+          <div class="rule-card">
+            <div class="rule-header">
+              <div class="rule-title">🩸 रक्त कैंसर (ल्यूकीमिया) के प्रामाणिक फलित सूत्र</div>
+              <span class="badge-chip badge-crimson">शास्त्रीय निदान</span>
+            </div>
+            <div class="rule-body" style="font-size:0.86rem; line-height:1.65;">
+              <p><strong>सूत्र १ (त्रिग्रह संयोजन):</strong> चन्द्रमा और मंगल की युति पर राहु का प्रभाव हो तथा शनि की पूर्ण दृष्टि हो। चन्द्र या मंगल ६ठे, ८वें अथवा १२वें भाव में स्थित हों और गुरु निर्बल या अस्त हों, तो रक्त कोशिकाओं में तीव्र विकृति (ल्यूकीमिया) की आशंका बनती है।</p>
+              <p><strong>सूक्ष्म जैविक व ज्योतिषीय तर्क:</strong> चन्द्रमा = रक्त रस व शारीरिक द्रव ; मंगल = लाल रक्त कणिकाएं  व हीमोग्लोबिन; शनि = अवरोध व संकुचन; राहु = अनियंत्रित कोशिकीय म्यूटेशन; ६/८/१२ भाव = असाध्य रोग स्थान; गुरु = अस्थि मज्जा (अस्थि मज्जा) का प्राकृतिक रक्षक।</p>
+              <p><strong>सूत्र २ (नीच ग्रह योग):</strong> वृश्चिक का नीचस्थ चन्द्रमा + कर्क का नीचस्थ मंगल, जिन पर राहु या शनि की दृष्टि हो और गुरु का त्रिक भावों पर कोई शुभ प्रभाव न हो।</p>
+              <p><strong>सूत्र ३ (ग्रहण व रक्त दोष):</strong> चन्द्र-राहु ग्रहण योग के साथ मंगल षष्ठ अथवा अष्टम भाव में स्थित हो और गुरु बलहीन हों।</p>
+              <p><strong>गोचर सक्रियता:</strong> शनि अथवा राहु का जन्म चन्द्र या षष्ठ भाव पर से गोचर, तथा चन्द्र, मंगल, राहु या षष्ठेश/अष्टमेश की दशा-अंतर्दशा में रोग का प्रकटीकरण होता है।</p>
+            </div>
+          </div>
+        </div>
+        """
+    else:
+        return """
+        <div class="page-inner-content">
+          <div class="chapter-header" style="margin-bottom:0.75rem;">
+            <div class="chapter-number">Chapter 5 • Medical Section 26</div>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">Leukemia (Blood Cancer): Astrological Combinations & Etiology</h3>
+          </div>
+          <div class="rule-card">
+            <div class="rule-header">
+              <div class="rule-title">🩸 Hematological Malignancies (Leukemia) Classical Sutras</div>
+              <span class="badge-chip badge-crimson">Diagnostic Rules</span>
+            </div>
+            <div class="rule-body" style="font-size:0.86rem; line-height:1.65;">
+              <p><strong>Rule 1 (Tri-Planetary Affliction):</strong> Moon conjunct Mars, afflicted by Rahu and receiving aspect from Saturn. Moon or Mars placed in 6th, 8th, or 12th house, with Jupiter debilitated or combust.</p>
+              <p><strong>Biological & Astrological Mechanism:</strong> Moon = plasma and fluid medium; Mars = erythrocytes , bone marrow matrix, and hemoglobin; Saturn = cellular suppression and immune deficiency; Rahu = abnormal proliferative mutation; 6th/8th/12th = dusthana triad of chronicity; Jupiter = leukocyte balance and bone marrow vitality.</p>
+              <p><strong>Rule 2 (Dual Debilitation Matrix):</strong> Debilitated Moon in Scorpio combined with Debilitated Mars in Cancer, aspected by Rahu or Saturn without benefic Jupiter aspect.</p>
+              <p><strong>Rule 3 (Eclipse & Blood Yoga):</strong> Moon-Rahu conjunction (Grahan Yoga) with Mars placed in 6th or 8th house and combust Jupiter.</p>
+              <p><strong>Transit Activation Window:</strong> Saturn or Rahu transiting natal Moon or 6th house during operating dasha of Moon, Mars, Rahu, or 6th/8th lords marks the onset of clinical diagnosis.</p>
+            </div>
+          </div>
+        </div>
+        """
+
+# ------------------------------------------------------------------------------
+# 7. MONOLINGUAL EDITION BUILDERS (ALL 87 PAGES)
+# ------------------------------------------------------------------------------
+
 def generate_hindi_pages(orig_pages):
     hindi_pages = []
-    
+
     # Page 1: Pure Hindi Cover
     p1 = """
     <div class="cover-page-inner">
@@ -417,8 +1578,8 @@ def generate_hindi_pages(orig_pages):
     </div>
     """
     hindi_pages.append({
-        "chapter": "मुखपृष्ठ",
-        "title": "तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ",
+        "chapter": get_chapter_name(0, 'hindi'),
+        "title": HINDI_TITLES[0],
         "content": p1
     })
 
@@ -495,8 +1656,8 @@ def generate_hindi_pages(orig_pages):
     </div>
     """
     hindi_pages.append({
-        "chapter": "लेखक परिचय",
-        "title": "ज्योतिषाचार्य आशुतोष कुमार चौबे",
+        "chapter": get_chapter_name(1, 'hindi'),
+        "title": HINDI_TITLES[1],
         "content": p2
     })
 
@@ -555,8 +1716,8 @@ def generate_hindi_pages(orig_pages):
     </div>
     """
     hindi_pages.append({
-        "chapter": "अध्ययन निर्देशिका",
-        "title": "ग्रंथ की आधारभूत संरचना",
+        "chapter": get_chapter_name(2, 'hindi'),
+        "title": HINDI_TITLES[2],
         "content": p3
     })
 
@@ -596,8 +1757,8 @@ def generate_hindi_pages(orig_pages):
     </div>
     """
     hindi_pages.append({
-        "chapter": "आचार संहिता",
-        "title": "अनुशासन व वैधानिक परामर्श",
+        "chapter": get_chapter_name(3, 'hindi'),
+        "title": HINDI_TITLES[3],
         "content": p4
     })
 
@@ -636,65 +1797,159 @@ def generate_hindi_pages(orig_pages):
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय ४</span>
             <strong style="font-size:0.88rem;">भाव एवं राशियों में ग्रह (दीप्तादि ९ अवस्थाएं व सूर्य फल)</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ३८ - ४७</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ३८ - ४८</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय ५</span>
             <strong style="font-size:0.88rem;">आयुर्वेद-ज्योतिष व स्वास्थ्य विश्लेषण (२७ तालिकाएं)</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ४८ - ७४</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ४९ - ७५</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय ६</span>
             <strong style="font-size:0.88rem;">नक्षत्रों का गहन पद एवं ग्रह विश्लेषण (११ तालिकाएं)</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ७५ - ८५</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ७६ - ८६</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">समापन</span>
-            <strong style="font-size:0.88rem;">समापन पृष्ठ, मंगल श्लोक व आधिकारिक संपर्क</strong>
+            <strong style="font-size:0.88rem;">समापन पृष्ठ, उपनिषद् मंगल श्लोक व आधिकारिक संपर्क</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ८६</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ८७</span>
         </div>
       </div>
     </div>
     """
     hindi_pages.append({
-        "chapter": "अनुक्रमणिका",
-        "title": "विषय-सूची (सम्पूर्ण हिन्दी)",
+        "chapter": get_chapter_name(4, 'hindi'),
+        "title": HINDI_TITLES[4],
         "content": p5
     })
 
-    # Pages 6 to 86: Transform tables and content to Pure Hindi
-    for idx in range(5, len(orig_pages) - 1):
-        p = orig_pages[idx]
-        ch = p['chapter']
-        # Localize chapter name
-        ch_hi = ch.replace('Ch 2:', 'अध्याय २:').replace('Ch 3:', 'अध्याय ३:').replace('Ch 4:', 'अध्याय ४:').replace('Ch 5:', 'अध्याय ५:').replace('Ch 6:', 'अध्याय ६:')
-        
-        # Localize content: Section indicators and hints
-        c = p['content']
-        c = c.replace('तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)', 'तालिका को दाएं-बाएं स्क्रॉल करें (क्षैतिज दर्शन)')
-        c = re.sub(r'Chapter (\d+) • Section (\d+)', r'अध्याय \1 • खण्ड \2', c)
-        c = re.sub(r'Chapter (\d+) • Table (\d+)', r'अध्याय \1 • तालिका \2', c)
-        c = re.sub(r'Chapter (\d+) • Medical Section (\d+)', r'अध्याय \1 • स्वास्थ्य खण्ड \2', c)
-        c = re.sub(r'Chapter (\d+) • Pada Section (\d+)', r'अध्याय \1 • पद खण्ड \2', c)
-        c = re.sub(r'Chapter (\d+) • Sun in Houses', r'अध्याय \1 • भावों में सूर्य', c)
-        c = re.sub(r'Chapter (\d+) • Sun in Signs', r'अध्याय \1 • राशियों में सूर्य', c)
-        
-        # Localize table contents
-        c = localize_html_table(c, target_lang='hindi')
-        
+    # Pages 6 to 86
+    for idx in range(5, 86):
+        orig_p = orig_pages[idx]
+        page_num = idx + 1
+        page_title = HINDI_TITLES[idx]
+        ch_name = get_chapter_name(idx, 'hindi')
+
+        # Dedicated generators
+        if page_num == 22:
+            card_html = generate_drishti_rules_content(lang='hindi')
+            tbl_clean = localize_html_table(re.search(r'<table.*?</table\s*>', orig_p['content'], re.DOTALL).group(0), idx, target_lang='hindi')
+            content = f"""
+            <div class="page-inner-content">
+              <div class="chapter-header" style="margin-bottom:0.75rem;">
+                <div class="chapter-number">अध्याय ३ • खण्ड २</div>
+                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{page_title}</h3>
+              </div>
+              {card_html}
+              <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (क्षैतिज दर्शन)</div>
+              <div class="astro-table-container">
+                <div class="table-container">
+                  <div class="table-caption">{page_title}</div>
+                  <div class="table-responsive">{tbl_clean}</div>
+                </div>
+              </div>
+            </div>
+            """
+        elif page_num == 23:
+            card_html = generate_nakshatra_degrees_card(lang='hindi')
+            tbl_clean = localize_html_table(re.search(r'<table.*?</table\s*>', orig_p['content'], re.DOTALL).group(0), idx, target_lang='hindi')
+            content = f"""
+            <div class="page-inner-content">
+              <div class="chapter-header" style="margin-bottom:0.75rem;">
+                <div class="chapter-number">अध्याय ३ • खण्ड ३</div>
+                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{page_title}</h3>
+              </div>
+              {card_html}
+              <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (क्षैतिज दर्शन)</div>
+              <div class="astro-table-container">
+                <div class="table-container">
+                  <div class="table-caption">{page_title}</div>
+                  <div class="table-responsive">{tbl_clean}</div>
+                </div>
+              </div>
+            </div>
+            """
+        elif page_num == 38:
+            content = generate_deeptadi_9_states_content(lang='hindi')
+        elif page_num in [45, 46]:
+            content = generate_sun_houses_content(page_num, lang='hindi')
+        elif page_num in [47, 48]:
+            content = generate_sun_signs_content(page_num, lang='hindi')
+        elif page_num == 74:
+            content = generate_leukemia_rules_content(lang='hindi')
+        elif page_num == 75:
+            rule_card = """
+            <div class="rule-card danger">
+              <div class="rule-header">
+                <div class="rule-title">🔬 त्वचा कैंसर • शास्त्रीय फलित सूत्र</div>
+                <span class="badge-chip badge-gold">चिकित्सा ज्योतिष</span>
+              </div>
+              <div class="rule-body">
+                <p><strong>मूल शास्त्रीय सिद्धांत:</strong> त्वचा का नैसर्गिक कारक ग्रह <strong>बुध</strong> है तथा रक्त व ऊतकों में तीव्र प्रदाह का कारक <strong>मंगल</strong> है। जब बुध पर पापी ग्रहों (राहु/शनि/मंगल) की क्रूर युति या दृष्टि हो और वह ६ठे, ८वें या लग्न भाव में स्थित होकर पीड़ित हो, तो असामान्य कोशिका विभाजन एवं त्वचा कैंसर का योग बनता है।</p>
+              </div>
+            </div>
+            """
+            tbl_clean = PAGE_75_HI_TABLE.strip()
+            content = f"""
+            <div class="page-inner-content">
+              <div class="chapter-header" style="margin-bottom:0.75rem;">
+                <div class="chapter-number">अध्याय ५ • स्वास्थ्य खण्ड २७</div>
+                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">{page_title}</h3>
+              </div>
+              {rule_card}
+              <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (क्षैतिज दर्शन)</div>
+              <div class="astro-table-container">
+                <div class="table-container">
+                  <div class="table-caption">{page_title}</div>
+                  <div class="table-responsive">{tbl_clean}</div>
+                </div>
+              </div>
+            </div>
+            """
+        else:
+            c = orig_p['content']
+            # Clean out raw scraped h4 title blocks that duplicated headers
+            cb_m = re.search(r'<div class="content-block">(.*?)</div>', c, re.DOTALL)
+            if cb_m:
+                cb_txt = cb_m.group(1).strip()
+                # If content-block is only h4 titles, strip it
+                if not ('class="rule-card' in cb_txt or 'class="pillar' in cb_txt or '<p>' in cb_txt):
+                    c = c.replace(cb_m.group(0), '')
+
+            # Localize section indicators and hints
+            c = c.replace('तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)', 'तालिका को दाएं-बाएं स्क्रॉल करें (क्षैतिज दर्शन)')
+            c = c.replace('<span class="rule-badge">सूत्र / Rule</span>', '<span class="rule-badge">शास्त्रीय सूत्र</span>')
+            c = c.replace('<span class="formula-pill">मंगल (Mars) के संपूर्ण कारकत्व और संकेतक</span>', '<span class="formula-pill">मंगल देव के संपूर्ण शास्त्रीय कारकत्व एवं संकेतक</span>')
+            c = re.sub(r'Chapter (\d+) • Section (\d+)', r'अध्याय \1 • खण्ड \2', c)
+            c = re.sub(r'Chapter (\d+) • Table (\d+)', r'अध्याय \1 • तालिका \2', c)
+            c = re.sub(r'Chapter (\d+) • Medical Section (\d+)', r'अध्याय \1 • स्वास्थ्य खण्ड \2', c)
+            c = re.sub(r'Chapter (\d+) • Pada Section (\d+)', r'अध्याय \1 • पद खण्ड \2', c)
+            
+            # Localize table heading and caption to Hindi title
+            c = re.sub(r'<h3 class="chapter-heading"[^>]*>.*?</h3>', f'<h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{page_title}</h3>', c)
+            c = re.sub(r'<div class="table-caption">.*?</div>', f'<div class="table-caption">{page_title}</div>', c)
+
+            # Localize tables inside
+            tbl_match = re.search(r'<table.*?</table\s*>', c, re.DOTALL)
+            if tbl_match:
+                new_tbl = localize_html_table(tbl_match.group(0), idx, target_lang='hindi')
+                c = c[:tbl_match.start()] + new_tbl + c[tbl_match.end():]
+            
+            content = c
+
         hindi_pages.append({
-            "chapter": ch_hi,
-            "title": p['title'],
-            "content": c
+            "chapter": ch_name,
+            "title": page_title,
+            "content": content
         })
 
-    # Page 87: Sacred Colophon (Pure Hindi)
+    # Page 87: Colophon (Pure Hindi)
     p_last = """
     <div class="cover-page-inner" style="border: 2px solid var(--accent-gold);">
       <div class="cover-tag">समापन पृष्ठ • उपनिषद् मंगल कामना</div>
@@ -742,20 +1997,17 @@ def generate_hindi_pages(orig_pages):
     </div>
     """
     hindi_pages.append({
-        "chapter": "समापन",
-        "title": "उपनिषद् मंगल कामना",
+        "chapter": get_chapter_name(86, 'hindi'),
+        "title": HINDI_TITLES[86],
         "content": p_last
     })
 
     return hindi_pages
 
 
-# ------------------------------------------------------------------------------
-# 4. BUILD ENGLISH EDITION PAGES
-# ------------------------------------------------------------------------------
 def generate_english_pages(orig_pages):
     english_pages = []
-    
+
     # Page 1: Complete English Cover
     p1 = """
     <div class="cover-page-inner">
@@ -794,8 +2046,8 @@ def generate_english_pages(orig_pages):
     </div>
     """
     english_pages.append({
-        "chapter": "Front Cover",
-        "title": "Tantra Gyan: Vedic Astrology Compendium",
+        "chapter": get_chapter_name(0, 'english'),
+        "title": ENGLISH_TITLES[0],
         "content": p1
     })
 
@@ -872,8 +2124,8 @@ def generate_english_pages(orig_pages):
     </div>
     """
     english_pages.append({
-        "chapter": "Author Profile",
-        "title": "Astrologer Ashutosh Kumar Choubey",
+        "chapter": get_chapter_name(1, 'english'),
+        "title": ENGLISH_TITLES[1],
         "content": p2
     })
 
@@ -932,8 +2184,8 @@ def generate_english_pages(orig_pages):
     </div>
     """
     english_pages.append({
-        "chapter": "Study Guide",
-        "title": "Reader's Study Guide & Architecture",
+        "chapter": get_chapter_name(2, 'english'),
+        "title": ENGLISH_TITLES[2],
         "content": p3
     })
 
@@ -973,8 +2225,8 @@ def generate_english_pages(orig_pages):
     </div>
     """
     english_pages.append({
-        "chapter": "Ethics & Disclaimer",
-        "title": "Ethical Code & Legal Disclaimer",
+        "chapter": get_chapter_name(3, 'english'),
+        "title": ENGLISH_TITLES[3],
         "content": p4
     })
 
@@ -1013,63 +2265,151 @@ def generate_english_pages(orig_pages):
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">Chapter 4</span>
             <strong style="font-size:0.88rem;">Planetary States (9 Deeptadi Avasthas) & Solar Interpretations</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 38 - 47</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 38 - 48</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">Chapter 5</span>
             <strong style="font-size:0.88rem;">Medical Astrology & Health Diagnostics (27 Complete Tables)</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 48 - 74</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 49 - 75</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">Chapter 6</span>
             <strong style="font-size:0.88rem;">Nakshatra Pada Analysis & Subtle Interpretations (11 Tables)</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 75 - 85</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 76 - 86</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">Colophon</span>
             <strong style="font-size:0.88rem;">Sacred Benediction, Upanishad Shloka & Official Contact</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Page 86</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Page 87</span>
         </div>
       </div>
     </div>
     """
     english_pages.append({
-        "chapter": "Table of Contents",
-        "title": "Systematic Table of Contents",
+        "chapter": get_chapter_name(4, 'english'),
+        "title": ENGLISH_TITLES[4],
         "content": p5
     })
 
-    # Pages 6 to 86: Transform tables and content to English
-    for idx in range(5, len(orig_pages) - 1):
-        p = orig_pages[idx]
-        ch = p['chapter']
-        # Localize chapter name
-        ch_en = ch.replace('Ch 2: नवग्रह कारकत्व व राजयोग', 'Ch 2: Planetary Karakatva & Raja Yogas') \
-                  .replace('Ch 3: राशि, नक्षत्र एवं ग्रह गति', 'Ch 3: Signs, Nakshatras & Planetary Motion') \
-                  .replace('Ch 4: भाव एवं राशियों में ग्रह', 'Ch 4: Planetary States & House Placements') \
-                  .replace('Ch 5: मेडिकल व स्वास्थ्य ज्योतिष', 'Ch 5: Medical Astrology & Diagnostics') \
-                  .replace('Ch 6: नक्षत्र पद व ग्रह विश्लेषण', 'Ch 6: Nakshatra Padas & Planetary Analysis')
-        
-        # Localize content: Section indicators and hints
-        c = p['content']
-        c = c.replace('तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)', 'Scroll table horizontally to view full columns')
-        
-        # Localize table contents
-        c = localize_html_table(c, target_lang='english')
-        
+    # Pages 6 to 86
+    for idx in range(5, 86):
+        orig_p = orig_pages[idx]
+        page_num = idx + 1
+        page_title = ENGLISH_TITLES[idx]
+        ch_name = get_chapter_name(idx, 'english')
+
+        # Dedicated generators
+        if page_num == 22:
+            card_html = generate_drishti_rules_content(lang='english')
+            tbl_clean = localize_html_table(re.search(r'<table.*?</table\s*>', orig_p['content'], re.DOTALL).group(0), idx, target_lang='english')
+            content = f"""
+            <div class="page-inner-content">
+              <div class="chapter-header" style="margin-bottom:0.75rem;">
+                <div class="chapter-number">Chapter 3 • Section 2</div>
+                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{page_title}</h3>
+              </div>
+              {card_html}
+              <div class="table-scroll-hint"><span>⇄</span> Scroll table horizontally to view full columns</div>
+              <div class="astro-table-container">
+                <div class="table-container">
+                  <div class="table-caption">{page_title}</div>
+                  <div class="table-responsive">{tbl_clean}</div>
+                </div>
+              </div>
+            </div>
+            """
+        elif page_num == 23:
+            card_html = generate_nakshatra_degrees_card(lang='english')
+            tbl_clean = localize_html_table(re.search(r'<table.*?</table\s*>', orig_p['content'], re.DOTALL).group(0), idx, target_lang='english')
+            content = f"""
+            <div class="page-inner-content">
+              <div class="chapter-header" style="margin-bottom:0.75rem;">
+                <div class="chapter-number">Chapter 3 • Section 3</div>
+                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{page_title}</h3>
+              </div>
+              {card_html}
+              <div class="table-scroll-hint"><span>⇄</span> Scroll table horizontally to view full columns</div>
+              <div class="astro-table-container">
+                <div class="table-container">
+                  <div class="table-caption">{page_title}</div>
+                  <div class="table-responsive">{tbl_clean}</div>
+                </div>
+              </div>
+            </div>
+            """
+        elif page_num == 38:
+            content = generate_deeptadi_9_states_content(lang='english')
+        elif page_num in [45, 46]:
+            content = generate_sun_houses_content(page_num, lang='english')
+        elif page_num in [47, 48]:
+            content = generate_sun_signs_content(page_num, lang='english')
+        elif page_num == 74:
+            content = generate_leukemia_rules_content(lang='english')
+        elif page_num == 75:
+            rule_card = """
+            <div class="rule-card danger">
+              <div class="rule-header">
+                <div class="rule-title">🔬 Skin Cancer (Cutaneous Malignancies) • Classical Jyotish Sutras</div>
+                <span class="badge-chip badge-gold">Medical Astrology</span>
+              </div>
+              <div class="rule-body">
+                <p><strong>Core Classical Principle:</strong> <strong>Mercury</strong> is the primary natural significator (Naisargika Karaka) of the skin (Twacha), while <strong>Mars</strong> governs cellular inflammation. When Mercury is severely afflicted by Mars, Rahu, or Saturn in the 6th, 8th, or 1st house without benefic Jupiterian mitigation, abnormal cutaneous cell proliferation and malignancy risks manifest.</p>
+              </div>
+            </div>
+            """
+            tbl_clean = PAGE_75_EN_TABLE.strip()
+            content = f"""
+            <div class="page-inner-content">
+              <div class="chapter-header" style="margin-bottom:0.75rem;">
+                <div class="chapter-number">Chapter 5 • Medical Section 27</div>
+                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">{page_title}</h3>
+              </div>
+              {rule_card}
+              <div class="table-scroll-hint"><span>⇄</span> Scroll table horizontally to view full columns</div>
+              <div class="astro-table-container">
+                <div class="table-container">
+                  <div class="table-caption">{page_title}</div>
+                  <div class="table-responsive">{tbl_clean}</div>
+                </div>
+              </div>
+            </div>
+            """
+        else:
+            c = orig_p['content']
+            # Clean out raw scraped h4 title blocks that duplicated headers
+            cb_m = re.search(r'<div class="content-block">(.*?)</div>', c, re.DOTALL)
+            if cb_m:
+                cb_txt = cb_m.group(1).strip()
+                if not ('class="rule-card' in cb_txt or 'class="pillar' in cb_txt or '<p>' in cb_txt):
+                    c = c.replace(cb_m.group(0), '')
+
+            c = c.replace('तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)', 'Scroll table horizontally to view full columns')
+            c = c.replace('<span class="rule-badge">सूत्र / Rule</span>', '<span class="rule-badge">Classical Sutra</span>')
+            c = c.replace('<span class="formula-pill">मंगल (Mars) के संपूर्ण कारकत्व और संकेतक</span>', '<span class="formula-pill">Mars (Mangala) Comprehensive Significations & Karakatvas</span>')
+            c = re.sub(r'<h3 class="chapter-heading"[^>]*>.*?</h3>', f'<h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{page_title}</h3>', c)
+            c = re.sub(r'<div class="table-caption">.*?</div>', f'<div class="table-caption">{page_title}</div>', c)
+
+            # Localize tables inside
+            tbl_match = re.search(r'<table.*?</table\s*>', c, re.DOTALL)
+            if tbl_match:
+                new_tbl = localize_html_table(tbl_match.group(0), idx, target_lang='english')
+                c = c[:tbl_match.start()] + new_tbl + c[tbl_match.end():]
+
+            content = c
+
         english_pages.append({
-            "chapter": ch_en,
-            "title": p['title'],
-            "content": c
+            "chapter": ch_name,
+            "title": page_title,
+            "content": content
         })
 
-    # Page 87: Sacred Colophon (English)
+    # Page 87: Colophon (Pure English)
     p_last = """
     <div class="cover-page-inner" style="border: 2px solid var(--accent-gold);">
       <div class="cover-tag">Sacred Colophon • Upanishadic Benediction</div>
@@ -1117,16 +2457,17 @@ def generate_english_pages(orig_pages):
     </div>
     """
     english_pages.append({
-        "chapter": "Colophon",
-        "title": "Sacred Benediction & Colophon",
+        "chapter": get_chapter_name(86, 'english'),
+        "title": ENGLISH_TITLES[86],
         "content": p_last
     })
 
     return english_pages
 
 # ------------------------------------------------------------------------------
-# 5. HTML SHELL BUILDER
+# 8. HTML DOCUMENT SHELL GENERATOR
 # ------------------------------------------------------------------------------
+
 def render_edition_html(pages_list, edition_lang='hindi'):
     is_hindi = (edition_lang == 'hindi')
     doc_lang = "hi" if is_hindi else "en"
@@ -1160,60 +2501,48 @@ def render_edition_html(pages_list, edition_lang='hindi'):
         """)
     toc_html = "\n".join(toc_items)
 
-    # Build Page Data Nodes
-    pages_data_html = []
+    # Build Raw Page Data Nodes
+    pages_data_nodes = []
     for p_idx, p in enumerate(pages_list):
-        pages_data_html.append(f"""
+        pages_data_nodes.append(f"""
         <div class="book-page-data" id="page-data-{p_idx+1}" data-page="{p_idx+1}" data-chapter="{html.escape(p['chapter'])}" data-title="{html.escape(p['title'])}" style="display:none;">
           {p['content']}
         </div>
         """)
-    all_pages_html = "\n".join(pages_data_html)
+    all_pages_html = "\n".join(pages_data_nodes)
 
-    # Active classes for lang buttons
-    hi_active = ' active' if is_hindi else ''
-    en_active = ' active' if not is_hindi else ''
+    # Active button classes
+    hi_btn_cls = "lang-btn active" if is_hindi else "lang-btn"
+    en_btn_cls = "lang-btn active" if not is_hindi else "lang-btn"
 
-    return f"""<!DOCTYPE html>
+    html_code = f"""<!DOCTYPE html>
 <html lang="{doc_lang}" data-theme="parchment" data-lang-mode="{edition_lang}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>{doc_title}</title>
   
-  <meta name="description" content="{doc_title} by Astrologer Ashutosh Kumar Choubey. Comprehensive authentic Vedic astrology reference.">
-  <meta name="keywords" content="Tantra Gyan, Vedic Astrology, Astrologer Ashutosh Kumar Choubey, Navagraha Karakatva, Raja Yoga, Medical Astrology, Cancer in Astrology, Nakshatra Padas, Jyotish Shastra">
+  <!-- SEO Best Practice Meta Tags -->
+  <meta name="description" content="{doc_title} by Astrologer Ashutosh Kumar Choubey. Comprehensive authentic compendium covering Navagraha Karakatva, 17 Classical Raja Yogas, 27 Nakshatras & 108 Padas, Deeptadi Avasthas, and Planetary Predictions.">
+  <meta name="keywords" content="Tantra Gyan, Vedic Astrology, Astrologer Ashutosh Kumar Choubey, Navagraha Karakatva, Raja Yoga, Medical Astrology, Cancer in Astrology, Nakshatra Padas, Jyotish Shastra, Parashara, Phaladeepika">
   <meta name="author" content="Ashutosh Kumar Choubey">
   <meta name="robots" content="index, follow">
   
+  <!-- OpenGraph Metadata -->
   <meta property="og:title" content="{doc_title}">
   <meta property="og:description" content="Comprehensive Authentic Vedic Astrology Reference Book by Astrologer Ashutosh Kumar Choubey.">
   <meta property="og:type" content="book">
   <meta property="og:url" content="https://t.worldgyan.com">
   <link rel="canonical" href="https://t.worldgyan.com">
   
+  <!-- Google Fonts for Vedic & Modern Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   
+  <!-- Standard CSS Files -->
   <link rel="stylesheet" href="css/book.css">
   <link rel="stylesheet" href="css/tables.css">
-  
-  <script type="application/ld+json">
-  {{
-    "@context": "https://schema.org",
-    "@type": "Book",
-    "name": "{doc_title}",
-    "url": "https://t.worldgyan.com",
-    "author": {{
-      "@type": "Person",
-      "name": "Ashutosh Kumar Choubey",
-      "url": "https://t.worldgyan.com"
-    }},
-    "numberOfPages": {total_pages},
-    "inLanguage": "{doc_lang}"
-  }}
-  </script>
 </head>
 <body>
 
@@ -1231,13 +2560,14 @@ def render_edition_html(pages_list, edition_lang='hindi'):
 
     <!-- Toolbar Controls -->
     <div class="toolbar-controls">
-      <!-- Search Input Container -->
+      <!-- Search Input Container with Dropdown Results -->
       <div class="search-box" id="search-box-container">
         <span class="search-icon">🔍</span>
         <input type="text" id="book-search" class="search-input" placeholder="{search_placeholder}" aria-label="Search Book" autocomplete="off">
         <button type="button" id="search-clear-btn" class="search-clear-btn" title="Clear search" style="display:none;">✕</button>
-        <span id="search-counter" class="search-count" title="Matching pages"></span>
+        <span id="search-counter" class="search-count" title="Click to view all matching pages"></span>
         
+        <!-- Live Search Results Dropdown -->
         <div id="search-dropdown" class="search-dropdown" style="display:none;" role="region" aria-label="Search Results">
           <div class="search-dropdown-header">
             <span id="search-dropdown-title" class="search-dropdown-title">🔍 परिणाम (Search Results)</span>
@@ -1248,12 +2578,12 @@ def render_edition_html(pages_list, edition_lang='hindi'):
       </div>
 
       <!-- TOC Toggle Button -->
-      <button class="tool-btn" id="btn-toc-toggle" title="Table of Contents">
+      <button class="tool-btn" id="btn-toc-toggle" title="{toc_label}">
         <span>📖</span> <span>{toc_label}</span>
       </button>
 
       <!-- Bookmark Button -->
-      <button class="tool-btn" id="btn-bookmark-toggle" title="Saved Bookmarks">
+      <button class="tool-btn" id="btn-bookmark-toggle" title="{bookmark_label}">
         <span>🔖</span> <span id="bookmark-btn-label">{bookmark_label}</span>
         <span id="bookmark-count-badge" class="badge-count" style="display:none;">0</span>
       </button>
@@ -1270,23 +2600,23 @@ def render_edition_html(pages_list, edition_lang='hindi'):
 
       <!-- Language Mode Switcher -->
       <div class="lang-switcher" title="Switch Reading Language">
-        <button class="lang-btn{hi_active}" data-lang="hindi">🇮🇳 हिंदी</button>
-        <button class="lang-btn{en_active}" data-lang="english">🇬🇧 English</button>
+        <button class="{hi_btn_cls}" data-lang="hindi">🇮🇳 हिंदी</button>
+        <button class="{en_btn_cls}" data-lang="english">🇬🇧 English</button>
         <button class="lang-btn" data-lang="bilingual">🌐 द्विभाषी</button>
       </div>
 
       <!-- Theme Switcher -->
-      <button class="tool-btn" id="btn-theme-toggle" title="Toggle Theme">
+      <button class="tool-btn" id="btn-theme-toggle" title="{theme_label}">
         <span>📜</span> <span>{theme_label}</span>
       </button>
 
       <!-- Dual / Single Spread Toggle -->
-      <button class="tool-btn" id="btn-layout-toggle" title="Toggle Spread Layout">
+      <button class="tool-btn" id="btn-layout-toggle" title="{spread_label}">
         <span>📖</span> <span>{spread_label}</span>
       </button>
 
       <!-- Sound Mute Toggle -->
-      <button class="tool-btn" id="btn-sound-toggle" title="Page Turn Sound Effect" style="padding:0.45rem 0.55rem;">
+      <button class="tool-btn" id="btn-sound-toggle" title="Sound Effect" style="padding:0.45rem 0.55rem;">
         <span>🔊</span>
       </button>
 
@@ -1307,17 +2637,23 @@ def render_edition_html(pages_list, edition_lang='hindi'):
   <!-- Main Book Reading Stage -->
   <main class="main-stage">
     <div class="book-container dual-page-layout">
+      <!-- Decorative Gilded Corners -->
       <div class="corner-ornament corner-tl"></div>
       <div class="corner-ornament corner-tr"></div>
       <div class="corner-ornament corner-bl"></div>
       <div class="corner-ornament corner-br"></div>
 
-      <div class="silk-bookmark" title="Click to bookmark this page"></div>
+      <!-- Silk Ribbon Bookmark -->
+      <div class="silk-bookmark" title="Bookmark page"></div>
+
+      <!-- Center Spine Crease & Shadow -->
       <div class="book-spine-crease"></div>
 
-      <button class="nav-arrow-btn nav-prev" id="btn-prev-page" title="Previous Page">‹</button>
-      <button class="nav-arrow-btn nav-next" id="btn-next-page" title="Next Page">›</button>
+      <!-- Turn Page Arrow Buttons -->
+      <button class="nav-arrow-btn nav-prev" id="btn-prev-page" title="Previous Page (Left Arrow)">‹</button>
+      <button class="nav-arrow-btn nav-next" id="btn-next-page" title="Next Page (Right Arrow / Spacebar)">›</button>
 
+      <!-- Two-Page Spread Container -->
       <div class="book-pages-wrapper">
         <section class="page-sheet left-page" id="left-page-container" aria-label="Left Page"></section>
         <section class="page-sheet right-page" id="right-page-container" aria-label="Right Page"></section>
@@ -1350,28 +2686,29 @@ def render_edition_html(pages_list, edition_lang='hindi'):
         <h3 class="toc-title" id="toc-modal-title">
           <span>📖</span> {toc_label}
         </h3>
-        <button type="button" class="toc-close-btn" id="toc-close-btn" title="Close">✕</button>
+        <button class="toc-close-btn" id="toc-close-btn" title="Close">✕</button>
       </div>
       <div class="toc-body">
-        <div class="toc-list" id="toc-list-items">
+        <div class="toc-list">
           {toc_html}
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Bookmarks Modal Overlay -->
+  <!-- Bookmark Drawer Modal -->
   <div class="bookmark-overlay" id="bookmark-overlay" role="dialog" aria-modal="true" aria-labelledby="bookmark-modal-title">
     <div class="bookmark-modal" id="bookmark-modal">
       <div class="bookmark-header">
         <h3 class="bookmark-title" id="bookmark-modal-title">
           <span>🔖</span> {bookmark_label}
         </h3>
-        <button type="button" class="bookmark-close-btn" id="bookmark-close-btn" title="Close">✕</button>
+        <button class="bookmark-close-btn" id="bookmark-close-btn" title="Close">✕</button>
       </div>
       <div class="bookmark-action-bar">
-        <button type="button" class="btn-bookmark-action" id="btn-bookmark-current">
-          <span>★</span> <span>{'वर्तमान पृष्ठ सहेजें' if is_hindi else 'Bookmark Current Page'}</span>
+        <button id="btn-bookmark-current" class="btn-bookmark-action">
+          <span id="bookmark-current-icon">➕</span>
+          <span id="bookmark-current-text">Bookmark Current Page</span>
         </button>
       </div>
       <div class="bookmark-body">
@@ -1380,11 +2717,11 @@ def render_edition_html(pages_list, edition_lang='hindi'):
     </div>
   </div>
 
-  <!-- Toast Notification Alert -->
-  <div class="book-toast" id="book-toast" role="status" aria-live="polite"></div>
+  <!-- Floating Toast Notification -->
+  <div id="book-toast" class="book-toast" role="status" aria-live="polite"></div>
 
   <!-- Raw Page Data Repository -->
-  <div class="book-pages-store" style="display:none;" aria-hidden="true">
+  <div id="book-pages-store" style="display:none;" aria-hidden="true">
     {all_pages_html}
   </div>
 
@@ -1392,38 +2729,37 @@ def render_edition_html(pages_list, edition_lang='hindi'):
   <script src="js/sound.js"></script>
   <script src="js/book-engine.js"></script>
   <script src="js/book-ui.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {{
-      if (window.bookUI) {{
-        window.bookUI.init();
-      }}
-    }});
-  </script>
 </body>
 </html>
 """
+    return html_code
 
 # ------------------------------------------------------------------------------
-# 6. EXECUTE COMPILATION
+# 9. EXECUTION ENTRY POINT
 # ------------------------------------------------------------------------------
-if __name__ == "__main__":
+
+def main():
     orig_pages = build_book.pages
-    print(f"Loaded {len(orig_pages)} original bilingual pages.")
+    total_pages = len(orig_pages)
+    print(f"Loaded {total_pages} pages from masterwork build_book...")
 
-    # 1. Generate hindi.html
-    print("Building pure Hindi edition (hindi.html)...")
+    # Build Pure Hindi Edition
+    print("Generating pure Hindi edition (hindi.html)...")
     hindi_pages = generate_hindi_pages(orig_pages)
     hindi_html = render_edition_html(hindi_pages, edition_lang='hindi')
     hindi_file = "/Users/apple/Movies/ap/TantraGyan/hindi.html"
     with open(hindi_file, "w", encoding="utf-8") as f:
         f.write(hindi_html)
-    print(f"Successfully generated {hindi_file} ({len(hindi_pages)} pages)!")
+    print(f"Successfully generated {hindi_file} with {len(hindi_pages)} pure Hindi pages!")
 
-    # 2. Generate english.html
-    print("Building pure English edition (english.html)...")
+    # Build Complete English Edition
+    print("Generating complete English edition (english.html)...")
     english_pages = generate_english_pages(orig_pages)
     english_html = render_edition_html(english_pages, edition_lang='english')
     english_file = "/Users/apple/Movies/ap/TantraGyan/english.html"
     with open(english_file, "w", encoding="utf-8") as f:
         f.write(english_html)
-    print(f"Successfully generated {english_file} ({len(english_pages)} pages)!")
+    print(f"Successfully generated {english_file} with {len(english_pages)} complete English pages!")
+
+if __name__ == "__main__":
+    main()
