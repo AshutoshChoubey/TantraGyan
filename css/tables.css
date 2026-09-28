@@ -1,6 +1,6 @@
 /* ==========================================================================
    TANTRA GYAN - ASTROLOGICAL TABLES & NOTEBOOK RULES STYLING
-   Standard Class Definitions for Easy Maintenance and Future Edits
+   World-Class Legible, Standard & High-Contrast Typography System
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -9,7 +9,7 @@
 .astro-table-container {
   width: 100%;
   max-width: 100%;
-  margin: 0.75rem 0 1.5rem 0;
+  margin: 1rem 0 1.6rem 0;
   border-radius: 8px;
   overflow-x: auto;
   overflow-y: hidden;
@@ -18,7 +18,7 @@
   touch-action: pan-x pan-y;
   border: 1px solid var(--page-border);
   background: var(--page-bg);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
   position: relative;
 }
 
@@ -33,40 +33,43 @@
 
 .astro-table-container table,
 .table-container table {
-  min-width: 580px;
+  min-width: 600px;
   width: 100%;
 }
 
 .table-caption-bar {
   background: var(--page-bg-alt);
   border-bottom: 1px solid var(--page-border);
-  padding: 0.75rem 1.1rem;
+  padding: 0.85rem 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .table-caption-title {
   font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--accent-gold);
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  letter-spacing: normal;
+  line-height: 1.4;
 }
 
 .table-ref-badge {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   font-family: var(--font-sans);
   font-weight: 600;
   background: rgba(179, 127, 25, 0.12);
   color: var(--accent-saffron);
-  border: 1px solid rgba(179, 127, 25, 0.25);
-  padding: 0.2rem 0.55rem;
+  border: 1px solid rgba(179, 127, 25, 0.28);
+  padding: 0.25rem 0.65rem;
   border-radius: 20px;
+  letter-spacing: normal;
 }
 
 .table-responsive {
@@ -100,12 +103,13 @@
 }
 
 /* --------------------------------------------------------------------------
-   2. Core Table Structure
+   2. Core Table Structure & High-Legibility Typography
    -------------------------------------------------------------------------- */
 .astro-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.84rem;
+  font-family: var(--font-table);
+  font-size: 0.93rem;
   text-align: left;
 }
 
@@ -114,13 +118,14 @@
   color: var(--text-heading);
   font-family: var(--font-heading);
   font-weight: 700;
-  padding: 0.65rem 0.85rem;
+  padding: 0.8rem 1.05rem;
   border-bottom: 2px solid var(--accent-gold);
   border-right: 1px solid var(--page-border);
   white-space: normal;
   min-width: 95px;
-  font-size: 0.82rem;
-  letter-spacing: 0.02em;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  letter-spacing: normal;
   position: sticky;
   top: 0;
   z-index: 4;
@@ -131,12 +136,13 @@
 }
 
 .astro-table td {
-  padding: 0.6rem 0.85rem;
+  padding: 0.75rem 1.05rem;
   border-bottom: 1px solid var(--page-border);
   border-right: 1px solid var(--page-border);
   color: var(--text-main);
   vertical-align: top;
-  line-height: 1.5;
+  line-height: 1.68;
+  font-size: 0.92rem;
   word-break: normal;
 }
 
@@ -149,40 +155,42 @@
 }
 
 .astro-table tbody tr:nth-child(even) {
-  background: rgba(0, 0, 0, 0.015);
+  background: rgba(0, 0, 0, 0.018);
 }
 
 [data-theme="dark"] .astro-table tbody tr:nth-child(even) {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.025);
 }
 
 .astro-table tbody tr:hover {
-  background: rgba(179, 127, 25, 0.06);
+  background: rgba(179, 127, 25, 0.07);
 }
 
 /* Emphasized First Column for Topics / Category */
 .astro-table td.col-highlight,
 .astro-table td:first-child {
   font-weight: 600;
+  font-size: 0.94rem;
   color: var(--text-heading);
-  background: rgba(0, 0, 0, 0.01);
+  background: rgba(0, 0, 0, 0.015);
 }
 
 @media (max-width: 768px) {
   .astro-table th {
-    padding: 0.5rem 0.65rem;
-    font-size: 0.76rem;
+    padding: 0.65rem 0.8rem;
+    font-size: 0.85rem;
     min-width: 80px;
   }
   .astro-table td {
-    padding: 0.5rem 0.65rem;
-    font-size: 0.78rem;
+    padding: 0.65rem 0.8rem;
+    font-size: 0.86rem;
+    line-height: 1.6;
   }
   .table-caption-bar {
-    padding: 0.5rem 0.75rem;
+    padding: 0.65rem 0.85rem;
   }
   .table-caption-title {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -194,8 +202,8 @@
   border: 1px solid var(--page-border);
   border-left: 4px solid var(--accent-gold);
   border-radius: 8px;
-  padding: 1.1rem;
-  margin: 1rem 0;
+  padding: 1.25rem 1.35rem;
+  margin: 1.25rem 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   transition: all 0.2s ease;
 }
@@ -221,47 +229,56 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.75rem;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
 .rule-title {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 1.08rem;
   font-weight: 700;
   color: var(--text-heading);
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.45rem;
+  letter-spacing: normal;
+  line-height: 1.4;
 }
 
 .rule-formula-box {
   background: rgba(179, 127, 25, 0.08);
   border: 1px dashed var(--accent-gold);
   border-radius: 6px;
-  padding: 0.65rem 0.85rem;
+  padding: 0.75rem 1rem;
   font-family: var(--font-sans);
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--accent-saffron);
-  margin: 0.6rem 0;
+  margin: 0.75rem 0;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  line-height: 1.5;
 }
 
 .rule-body {
-  font-size: 0.88rem;
+  font-family: var(--font-body);
+  font-size: 0.96rem;
   color: var(--text-main);
-  line-height: 1.6;
+  line-height: 1.75;
 }
 
 .rule-body p {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.65rem;
+  line-height: 1.75;
 }
 .rule-body p:last-child {
   margin-bottom: 0;
+}
+.rule-body strong {
+  font-weight: 600;
+  color: var(--text-heading);
 }
 
 /* --------------------------------------------------------------------------
@@ -271,8 +288,8 @@
   background: rgba(179, 127, 25, 0.05);
   border: 1px solid var(--accent-gold);
   border-radius: 8px;
-  padding: 1.1rem;
-  margin: 1.25rem 0;
+  padding: 1.35rem 1.6rem;
+  margin: 1.35rem 0;
   text-align: center;
   position: relative;
 }
@@ -289,29 +306,32 @@
 }
 
 .shloka-sanskrit {
-  font-family: 'Noto Serif Devanagari', serif;
-  font-size: 1.05rem;
+  font-family: var(--font-shloka);
+  font-size: 1.18rem;
   font-weight: 700;
   color: var(--accent-crimson);
-  line-height: 1.7;
-  margin-bottom: 0.5rem;
+  line-height: 1.85;
+  margin-bottom: 0.6rem;
+  letter-spacing: normal;
 }
 
 .shloka-meaning {
-  font-size: 0.86rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  font-style: italic;
-  line-height: 1.5;
+  font-style: normal;
+  line-height: 1.7;
 }
 
 .shloka-source {
   display: block;
-  font-size: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
   color: var(--accent-gold);
   font-weight: 600;
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 
 /* --------------------------------------------------------------------------
@@ -320,12 +340,13 @@
 .badge-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.2rem 0.6rem;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: normal;
   white-space: nowrap;
 }
 
@@ -364,8 +385,8 @@
   border: 1px solid rgba(220, 38, 38, 0.25);
   border-left: 4px solid var(--accent-crimson);
   border-radius: 8px;
-  padding: 1.1rem;
-  margin: 1.25rem 0;
+  padding: 1.25rem 1.35rem;
+  margin: 1.35rem 0;
 }
 
 .med-header {
@@ -373,31 +394,35 @@
   align-items: center;
   gap: 0.5rem;
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 1.08rem;
   font-weight: 700;
   color: var(--accent-crimson);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
+  letter-spacing: normal;
 }
 
 .med-triggers-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.75rem;
-  margin-top: 0.75rem;
+  gap: 0.85rem;
+  margin-top: 0.85rem;
 }
 
 .med-trigger-item {
   background: var(--page-bg);
   border: 1px solid var(--page-border);
-  padding: 0.65rem 0.85rem;
+  padding: 0.75rem 0.95rem;
   border-radius: 6px;
-  font-size: 0.82rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 .med-trigger-item strong {
   display: block;
   color: var(--text-heading);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
 }
 
 /* --------------------------------------------------------------------------
@@ -407,7 +432,7 @@
   background: var(--page-bg);
   border: 1px solid var(--page-border);
   border-radius: 8px;
-  padding: 1.25rem;
+  padding: 1.35rem;
   margin-bottom: 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
@@ -418,29 +443,30 @@
   justify-content: space-between;
   border-bottom: 1px solid var(--page-border);
   padding-bottom: 0.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
 .nakshatra-name {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--accent-gold);
+  letter-spacing: normal;
 }
 
 .padas-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 0.85rem;
+  gap: 0.95rem;
 }
 
 .pada-card {
   background: var(--page-bg-alt);
   border: 1px solid var(--page-border);
   border-radius: 6px;
-  padding: 0.85rem;
+  padding: 0.95rem 1.05rem;
   position: relative;
 }
 
@@ -448,24 +474,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.45rem;
 }
 
 .pada-num {
   font-family: var(--font-heading);
-  font-size: 0.8rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--accent-crimson);
 }
 
 .pada-navamsha {
-  font-size: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--accent-gold);
 }
 
 .pada-desc {
-  font-size: 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
   color: var(--text-secondary);
-  line-height: 1.45;
+  line-height: 1.6;
 }

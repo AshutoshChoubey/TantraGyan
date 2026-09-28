@@ -17,27 +17,32 @@
   --book-gold-glow: rgba(200, 157, 61, 0.4);
   
   --page-bg: #faf6ee;
-  --page-bg-alt: #f4edd9;
-  --page-border: #e2d6b5;
-  --page-gutter-shadow: rgba(43, 29, 12, 0.18);
-  --page-edge-color: #e5dac1;
+  --page-bg-alt: #f3ecdb;
+  --page-border: #ded2b2;
+  --page-gutter-shadow: rgba(43, 29, 12, 0.2);
+  --page-edge-color: #e2d6bc;
   
-  --text-main: #2b1f14;
-  --text-secondary: #574636;
-  --text-muted: #857261;
-  --text-heading: #1c130b;
+  --text-main: #19120a;
+  --text-secondary: #36271a;
+  --text-muted: #594534;
+  --text-heading: #100701;
   
-  --accent-gold: #b37f19;
+  --accent-gold: #9e6917;
   --accent-gold-light: #fef3c7;
-  --accent-saffron: #cf5e14;
-  --accent-crimson: #991b1b;
-  --accent-emerald: #15803d;
-  --accent-indigo: #3730a3;
-  --accent-purple: #7e22ce;
+  --accent-saffron: #c85307;
+  --accent-crimson: #8c1010;
+  --accent-emerald: #136f34;
+  --accent-indigo: #2d268a;
+  --accent-purple: #6b18b5;
 
-  --font-serif: 'Noto Serif Devanagari', 'Cinzel', 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: 'Cinzel', 'Noto Serif Devanagari', serif;
+  /* Standard High-Quality Typography Stack */
+  --font-body: 'Poppins', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Poppins', 'Noto Sans Devanagari', 'Inter', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Noto Serif Devanagari', 'Poppins', Georgia, serif;
+  --font-heading-latin: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
+  --font-serif: 'Noto Serif Devanagari', 'Cormorant Garamond', Georgia, serif;
+  --font-shloka: 'Noto Serif Devanagari', 'Poppins', serif;
+  --font-table: 'Poppins', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif;
   
   --book-width: min(1560px, 95vw);
   --book-height: min(890px, calc(100vh - 128px));
@@ -63,10 +68,10 @@
   --page-gutter-shadow: rgba(0, 0, 0, 0.6);
   --page-edge-color: #1e293b;
   
-  --text-main: #f1f5f9;
-  --text-secondary: #cbd5e1;
+  --text-main: #f8fafc;
+  --text-secondary: #e2e8f0;
   --text-muted: #94a3b8;
-  --text-heading: #f8fafc;
+  --text-heading: #ffffff;
   
   --accent-gold: #f59e0b;
   --accent-gold-light: #312e1e;
@@ -92,8 +97,8 @@
   --page-edge-color: #cbd5e1;
   
   --text-main: #0f172a;
-  --text-secondary: #334155;
-  --text-muted: #64748b;
+  --text-secondary: #1e293b;
+  --text-muted: #475569;
   --text-heading: #020617;
   
   --accent-gold: #b45309;
@@ -120,11 +125,13 @@ html, body {
   overflow-x: hidden;
   background-color: var(--book-bg);
   color: var(--text-main);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: var(--font-scale);
-  line-height: 1.6;
+  line-height: 1.72;
+  letter-spacing: 0.005em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* --------------------------------------------------------------------------
@@ -648,16 +655,15 @@ html, body {
 
 /* Running Page Header */
 .page-header {
-  padding: 0.85rem 2rem 0.5rem 2rem;
+  padding: 0.85rem 2rem 0.55rem 2rem;
   border-bottom: 1px solid var(--page-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
   color: var(--text-muted);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  letter-spacing: normal;
   user-select: none;
   flex-shrink: 0;
 }
@@ -668,19 +674,22 @@ html, body {
   gap: 0.5rem;
   color: var(--accent-gold);
   font-weight: 600;
+  font-family: var(--font-body);
+  letter-spacing: normal;
 }
 
 .page-header-info {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.2rem;
 }
 
 .page-header-subtitle {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   text-transform: none;
-  letter-spacing: 0.02em;
+  letter-spacing: normal;
+  font-weight: 500;
 }
 
 /* Quick In-Page Header & Footer Navigation Pills */
@@ -694,18 +703,18 @@ html, body {
   background: rgba(200, 157, 61, 0.1);
   border: 1px solid rgba(200, 157, 61, 0.35);
   color: var(--accent-gold);
-  padding: 0.22rem 0.6rem;
+  padding: 0.25rem 0.65rem;
   border-radius: 4px;
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.15s ease;
   user-select: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.2rem;
-  line-height: 1.2;
+  gap: 0.25rem;
+  line-height: 1.25;
 }
 
 .page-nav-pill:hover:not([disabled]) {
@@ -728,10 +737,51 @@ html, body {
 /* Page Scrollable Content Area */
 .page-body {
   flex: 1;
-  padding: 1.5rem 2rem 1.25rem 2rem;
+  padding: 1.6rem 2.2rem 1.4rem 2.2rem;
   overflow-y: auto;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  font-family: var(--font-body);
+}
+
+/* Authentic Page & Chapter Typography */
+.page-inner-content {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--text-main);
+}
+
+.page-inner-content p {
+  margin-bottom: 0.75rem;
+  line-height: 1.75;
+}
+
+.chapter-header {
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(200, 157, 61, 0.25);
+}
+
+.chapter-number {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 0.35rem;
+}
+
+.chapter-heading {
+  font-family: var(--font-heading);
+  font-size: 1.35rem !important;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: normal;
+  color: var(--text-heading) !important;
+  margin-top: 0.2rem;
+  margin-bottom: 0.4rem;
 }
 
 /* Custom Scrollbar for Authentic Antique Look */
@@ -751,27 +801,30 @@ html, body {
 
 /* Running Page Footer */
 .page-footer {
-  padding: 0.6rem 2rem;
+  padding: 0.65rem 2rem;
   border-top: 1px solid var(--page-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   user-select: none;
   flex-shrink: 0;
 }
 
 .page-footer-title {
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
+  letter-spacing: normal;
 }
 
 .page-number-display {
+  font-family: var(--font-sans);
   font-weight: 700;
+  font-size: 0.95rem;
   color: var(--accent-gold);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
   padding: 0 0.35rem;
 }
 
@@ -1159,7 +1212,8 @@ html, body {
 
 .toc-title {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.35rem;
+  font-weight: 700;
   color: var(--text-heading);
   display: flex;
   align-items: center;
@@ -1182,7 +1236,7 @@ html, body {
 }
 
 .toc-body {
-  padding: 1rem 1.5rem;
+  padding: 1.1rem 1.5rem;
   overflow-y: auto;
 }
 
@@ -1190,14 +1244,14 @@ html, body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.45rem;
 }
 
 .toc-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.65rem 0.85rem;
+  padding: 0.75rem 0.95rem;
   border-radius: 6px;
   cursor: pointer;
   border: 1px solid transparent;
@@ -1207,7 +1261,7 @@ html, body {
 }
 
 .toc-item:hover {
-  background: rgba(179, 127, 25, 0.08);
+  background: rgba(179, 127, 25, 0.09);
   border-color: var(--accent-gold);
   color: var(--accent-gold);
   transform: translateX(4px);
@@ -1216,29 +1270,33 @@ html, body {
 .toc-item-left {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
 }
 
 .toc-chapter-badge {
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
   font-weight: 700;
   background: var(--accent-gold);
   color: #14110e;
-  padding: 0.2rem 0.5rem;
+  padding: 0.22rem 0.55rem;
   border-radius: 4px;
+  letter-spacing: 0.02em;
 }
 
 .toc-item-title {
-  font-size: 0.92rem;
-  font-weight: 600;
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: normal;
 }
 
 .toc-page-num {
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
   color: var(--accent-gold);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* --------------------------------------------------------------------------

@@ -742,23 +742,35 @@ class BookUIController {
   // ============================================================================
   initFontAndFullscreen() {
     let currentFontScale = 1.0;
+    try {
+      const savedScale = localStorage.getItem('tg_font_scale');
+      if (savedScale) {
+        currentFontScale = parseFloat(savedScale) || 1.0;
+        document.documentElement.style.setProperty('--font-scale', `${currentFontScale}rem`);
+      }
+    } catch (e) {
+      console.warn('Could not read font scale from localStorage:', e);
+    }
+
     const fontDecBtn = document.getElementById('btn-font-dec');
     const fontIncBtn = document.getElementById('btn-font-inc');
 
     if (fontDecBtn) {
       fontDecBtn.addEventListener('click', () => {
         if (currentFontScale > 0.85) {
-          currentFontScale -= 0.05;
+          currentFontScale = Math.round((currentFontScale - 0.05) * 100) / 100;
           document.documentElement.style.setProperty('--font-scale', `${currentFontScale}rem`);
+          try { localStorage.setItem('tg_font_scale', currentFontScale); } catch (e) {}
         }
       });
     }
 
     if (fontIncBtn) {
       fontIncBtn.addEventListener('click', () => {
-        if (currentFontScale < 1.35) {
-          currentFontScale += 0.05;
+        if (currentFontScale < 1.40) {
+          currentFontScale = Math.round((currentFontScale + 0.05) * 100) / 100;
           document.documentElement.style.setProperty('--font-scale', `${currentFontScale}rem`);
+          try { localStorage.setItem('tg_font_scale', currentFontScale); } catch (e) {}
         }
       });
     }
