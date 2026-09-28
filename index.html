@@ -6,7 +6,7 @@
   <title>तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ | Tantra Gyan Complete Vedic Astrology Compendium</title>
   
   <!-- SEO Best Practice Meta Tags -->
-  <meta name="description" content="तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ by Astrologer Ashutosh Kumar Choubey. Comprehensive authentic compendium covering Navagraha Karakatva, 17 Classical Raja Yogas, 27 Nakshatras & 108 Padas, Deeptadi Avasthas, and Complete Medical Astrology & Cancer Analysis.">
+  <meta name="description" content="तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ by Astrologer Ashutosh Kumar Choubey. Comprehensive authentic compendium covering Navagraha Karakatva, 17 Classical Raja Yogas, 27 Nakshatras & 108 Padas, Deeptadi Avasthas, and Planetary Predictions.">
   <meta name="keywords" content="Tantra Gyan, Vedic Astrology, Astrologer Ashutosh Kumar Choubey, Navagraha Karakatva, Raja Yoga, Medical Astrology, Cancer in Astrology, Nakshatra Padas, Jyotish Shastra, Parashara, Phaladeepika">
   <meta name="author" content="Ashutosh Kumar Choubey">
   <meta name="robots" content="index, follow">
@@ -191,9 +191,9 @@
 
   <!-- Bottom Reading Controller Bar -->
   <nav class="bottom-reading-bar" aria-label="Book Navigation Bar">
-    <div style="display:flex; align-items:center; gap:0.5rem;">
-      <button class="tool-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="First Page (Home)">⇤ प्रारंभ</button>
-      <button class="tool-btn" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="Previous Page">‹ पिछला</button>
+    <div style="display:flex; align-items:center; gap:0.35rem;">
+      <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="First Page (Home)">⇤ प्रारंभ</button>
+      <button class="tool-btn nav-step-btn" id="btn-prev-bottom" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="Previous Page">‹ पिछला</button>
     </div>
 
     <div class="slider-container">
@@ -201,9 +201,9 @@
       <span class="page-counter-badge" id="page-counter-badge">Page 1 of 87</span>
     </div>
 
-    <div style="display:flex; align-items:center; gap:0.5rem;">
-      <button class="tool-btn" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="Next Page">अगला ›</button>
-      <button class="tool-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage(87, true);" title="Last Page (End)">अंतिम ⇥</button>
+    <div style="display:flex; align-items:center; gap:0.35rem;">
+      <button class="tool-btn nav-step-btn" id="btn-next-bottom" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="Next Page">अगला ›</button>
+      <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage(87, true);" title="Last Page (End)">अंतिम ⇥</button>
     </div>
   </nav>
 
@@ -402,7 +402,7 @@
     <a href="#page-21" class="toc-item" data-goto="21">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.21</span>
-        <span class="toc-item-title">Graha Movement &amp; Mahadasha का रहस्य | Tra</span>
+        <span class="toc-item-title">ग्रह गति, गोचर अवधि एवं महादशा चक्र (Planetar</span>
       </div>
       <span class="toc-page-num">Ch 3: राशि, नक्षत्र एवं ग्रह गति</span>
     </a>
@@ -411,7 +411,7 @@
     <a href="#page-22" class="toc-item" data-goto="22">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.22</span>
-        <span class="toc-item-title">Planetary Drishti (Aspects) Table | ग्रहों की</span>
+        <span class="toc-item-title">ग्रह दृष्टि तालिका एवं शास्त्रीय नियम (Planet</span>
       </div>
       <span class="toc-page-num">Ch 3: राशि, नक्षत्र एवं ग्रह गति</span>
     </a>
@@ -420,7 +420,7 @@
     <a href="#page-23" class="toc-item" data-goto="23">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.23</span>
-        <span class="toc-item-title">This table lists the 27 Nakshatras with their</span>
+        <span class="toc-item-title">२७ नक्षत्र, विस्तार व राशि सीमा (27 Nakshatra</span>
       </div>
       <span class="toc-page-num">Ch 3: राशि, नक्षत्र एवं ग्रह गति</span>
     </a>
@@ -429,7 +429,7 @@
     <a href="#page-24" class="toc-item" data-goto="24">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.24</span>
-        <span class="toc-item-title">This table outlines the 27 Nakshatras, their </span>
+        <span class="toc-item-title">२७ नक्षत्र, देवता व पद अक्षर (Nakshatra Deiti</span>
       </div>
       <span class="toc-page-num">Ch 3: राशि, नक्षत्र एवं ग्रह गति</span>
     </a>
@@ -438,7 +438,7 @@
     <a href="#page-25" class="toc-item" data-goto="25">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.25</span>
-        <span class="toc-item-title">Nakshatra, Devata and Ruler Table (नक्षत्र, द</span>
+        <span class="toc-item-title">नक्षत्र, देवता और स्वामी तालिका (Nakshatras, </span>
       </div>
       <span class="toc-page-num">Ch 3: राशि, नक्षत्र एवं ग्रह गति</span>
     </a>
@@ -447,7 +447,7 @@
     <a href="#page-26" class="toc-item" data-goto="26">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.26</span>
-        <span class="toc-item-title">Nakshatra Lords Table | याद रखने का आसान तरीक</span>
+        <span class="toc-item-title">नक्षत्र स्वामी व दशा अधिपति (Nakshatra Lords </span>
       </div>
       <span class="toc-page-num">Ch 3: राशि, नक्षत्र एवं ग्रह गति</span>
     </a>
@@ -456,7 +456,7 @@
     <a href="#page-27" class="toc-item" data-goto="27">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.27</span>
-        <span class="toc-item-title">Table 7</span>
+        <span class="toc-item-title">२७ नक्षत्र एवं स्वामी द्विभाषी तालिका (27 Nak</span>
       </div>
       <span class="toc-page-num">Ch 3: राशि, नक्षत्र एवं ग्रह गति</span>
     </a>
@@ -465,7 +465,7 @@
     <a href="#page-28" class="toc-item" data-goto="28">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.28</span>
-        <span class="toc-item-title">About Rashi</span>
+        <span class="toc-item-title">१२ राशियां, स्वामी व तत्व (12 Rashis, Lords &</span>
       </div>
       <span class="toc-page-num">Ch 3: राशि, नक्षत्र एवं ग्रह गति</span>
     </a>
@@ -474,7 +474,7 @@
     <a href="#page-29" class="toc-item" data-goto="29">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.29</span>
-        <span class="toc-item-title">Table 9</span>
+        <span class="toc-item-title">राशियों के गुण, तत्व व स्वभाव (Rashis: Gunas,</span>
       </div>
       <span class="toc-page-num">Ch 3: राशि, नक्षत्र एवं ग्रह गति</span>
     </a>
@@ -483,7 +483,7 @@
     <a href="#page-30" class="toc-item" data-goto="30">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.30</span>
-        <span class="toc-item-title">Table 10</span>
+        <span class="toc-item-title">राशियों का लिंग वर्गीकरण (Gender Classificati</span>
       </div>
       <span class="toc-page-num">Ch 3: राशि, नक्षत्र एवं ग्रह गति</span>
     </a>
@@ -492,7 +492,7 @@
     <a href="#page-31" class="toc-item" data-goto="31">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.31</span>
-        <span class="toc-item-title">Table 11</span>
+        <span class="toc-item-title">राशियों की ध्रुवता (Polarity of Signs - Posit</span>
       </div>
       <span class="toc-page-num">Ch 3: राशि, नक्षत्र एवं ग्रह गति</span>
     </a>
@@ -501,7 +501,7 @@
     <a href="#page-32" class="toc-item" data-goto="32">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.32</span>
-        <span class="toc-item-title">Represents energy, courage, action, impulsive</span>
+        <span class="toc-item-title">अग्नि तत्व राशियां: मेष, सिंह, धनु (Fire Sign</span>
       </div>
       <span class="toc-page-num">Ch 3: राशि, नक्षत्र एवं ग्रह गति</span>
     </a>
@@ -510,7 +510,7 @@
     <a href="#page-33" class="toc-item" data-goto="33">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.33</span>
-        <span class="toc-item-title">Represents practicality, stability, materiali</span>
+        <span class="toc-item-title">पृथ्वी तत्व राशियां: वृषभ, कन्या, मकर (Earth </span>
       </div>
       <span class="toc-page-num">Ch 3: राशि, नक्षत्र एवं ग्रह गति</span>
     </a>
@@ -519,7 +519,7 @@
     <a href="#page-34" class="toc-item" data-goto="34">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.34</span>
-        <span class="toc-item-title">Represents communication, ideas, intellect, r</span>
+        <span class="toc-item-title">वायु तत्व राशियां: मिथुन, तुला, कुंभ (Air Sig</span>
       </div>
       <span class="toc-page-num">Ch 3: राशि, नक्षत्र एवं ग्रह गति</span>
     </a>
@@ -528,7 +528,7 @@
     <a href="#page-35" class="toc-item" data-goto="35">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.35</span>
-        <span class="toc-item-title">Represents emotions, intuition, nurturing, se</span>
+        <span class="toc-item-title">जल तत्व राशियां: कर्क, वृश्चिक, मीन (Water Si</span>
       </div>
       <span class="toc-page-num">Ch 3: राशि, नक्षत्र एवं ग्रह गति</span>
     </a>
@@ -537,7 +537,7 @@
     <a href="#page-36" class="toc-item" data-goto="36">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.36</span>
-        <span class="toc-item-title">🧠 Combined View – Element + Mobility Nature</span>
+        <span class="toc-item-title">तत्व एवं स्वभाव का संयुक्त वर्गीकरण (Combined</span>
       </div>
       <span class="toc-page-num">Ch 3: राशि, नक्षत्र एवं ग्रह गति</span>
     </a>
@@ -546,7 +546,7 @@
     <a href="#page-37" class="toc-item" data-goto="37">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.37</span>
-        <span class="toc-item-title">About planets</span>
+        <span class="toc-item-title">चर, स्थिर, द्विस्वभाव व तत्व फलित नियम (Mobil</span>
       </div>
       <span class="toc-page-num">Ch 3: राशि, नक्षत्र एवं ग्रह गति</span>
     </a>
@@ -656,7 +656,7 @@
         <span class="toc-chapter-badge">P.49</span>
         <span class="toc-item-title">सूर्य (Sun)</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -665,7 +665,7 @@
         <span class="toc-chapter-badge">P.50</span>
         <span class="toc-item-title">चंद्रमा (Moon)</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -674,7 +674,7 @@
         <span class="toc-chapter-badge">P.51</span>
         <span class="toc-item-title">मंगल (Mars)</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -683,7 +683,7 @@
         <span class="toc-chapter-badge">P.52</span>
         <span class="toc-item-title">बुध (Mercury)</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -692,7 +692,7 @@
         <span class="toc-chapter-badge">P.53</span>
         <span class="toc-item-title">गुरु (Jupiter)</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -701,7 +701,7 @@
         <span class="toc-chapter-badge">P.54</span>
         <span class="toc-item-title">शुक्र (Venus)</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -710,7 +710,7 @@
         <span class="toc-chapter-badge">P.55</span>
         <span class="toc-item-title">शनि (Saturn)</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -719,7 +719,7 @@
         <span class="toc-chapter-badge">P.56</span>
         <span class="toc-item-title">राहु (Rahu - North Node of the Moon)</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -728,7 +728,7 @@
         <span class="toc-chapter-badge">P.57</span>
         <span class="toc-item-title">केतु (Ketu - South Node of the Moon)</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -737,7 +737,7 @@
         <span class="toc-chapter-badge">P.58</span>
         <span class="toc-item-title">1. प्रथम भाव (Pratham Bhava) - First House (L</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -746,7 +746,7 @@
         <span class="toc-chapter-badge">P.59</span>
         <span class="toc-item-title">2. द्वितीय भाव (Dwitiya Bhava) - Second House</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -755,7 +755,7 @@
         <span class="toc-chapter-badge">P.60</span>
         <span class="toc-item-title">3. तृतीय भाव (Tritiya Bhava) - Third House (S</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -764,7 +764,7 @@
         <span class="toc-chapter-badge">P.61</span>
         <span class="toc-item-title">4. चतुर्थ भाव (Chaturth Bhava) - Fourth House</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -773,7 +773,7 @@
         <span class="toc-chapter-badge">P.62</span>
         <span class="toc-item-title">5. पंचम भाव (Pancham Bhava) - Fifth House (Pu</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -782,7 +782,7 @@
         <span class="toc-chapter-badge">P.63</span>
         <span class="toc-item-title">6. षष्ठ भाव (Shashth Bhava) - Sixth House (Ro</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -791,7 +791,7 @@
         <span class="toc-chapter-badge">P.64</span>
         <span class="toc-item-title">7. सप्तम भाव (Saptam Bhava) - Seventh House (</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -800,7 +800,7 @@
         <span class="toc-chapter-badge">P.65</span>
         <span class="toc-item-title">8. अष्टम भाव (Ashtam Bhava) - Eighth House (M</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -809,7 +809,7 @@
         <span class="toc-chapter-badge">P.66</span>
         <span class="toc-item-title">9. नवम भाव (Navam Bhava) - Ninth House (Bhagy</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -818,7 +818,7 @@
         <span class="toc-chapter-badge">P.67</span>
         <span class="toc-item-title">10. दशम भाव (Dasham Bhava) - Tenth House (Kar</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -827,7 +827,7 @@
         <span class="toc-chapter-badge">P.68</span>
         <span class="toc-item-title">11. एकादश भाव (Ekadash Bhava) - Eleventh Hous</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -836,7 +836,7 @@
         <span class="toc-chapter-badge">P.69</span>
         <span class="toc-item-title">12. द्वादश भाव (Dwadash Bhava) - Twelfth Hous</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -845,7 +845,7 @@
         <span class="toc-chapter-badge">P.70</span>
         <span class="toc-item-title">)</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -854,7 +854,7 @@
         <span class="toc-chapter-badge">P.71</span>
         <span class="toc-item-title">ज्योतिष और स्वास्थ्य: राशि, शरीर के अंग और वि</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -863,7 +863,7 @@
         <span class="toc-chapter-badge">P.72</span>
         <span class="toc-item-title">Key Points (मुख्य बिंदु)</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -872,7 +872,7 @@
         <span class="toc-chapter-badge">P.73</span>
         <span class="toc-item-title">1. General Cancer (e.g., Breast, Lung) – सामा</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -881,7 +881,7 @@
         <span class="toc-chapter-badge">P.74</span>
         <span class="toc-item-title">2. Leukemia (Blood Cancer) – रक्त कैंसर (ल्यू</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
@@ -890,14 +890,14 @@
         <span class="toc-chapter-badge">P.75</span>
         <span class="toc-item-title">3. Skin Cancer – त्वचा कैंसर</span>
       </div>
-      <span class="toc-page-num">Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर</span>
+      <span class="toc-page-num">Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
     </a>
     
 
     <a href="#page-76" class="toc-item" data-goto="76">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.76</span>
-        <span class="toc-item-title">This table lists the 27 Nakshatras with their</span>
+        <span class="toc-item-title">२७ नक्षत्र, विस्तार व राशि सीमा (27 Nakshatra</span>
       </div>
       <span class="toc-page-num">Ch 6: नक्षत्र पद व ग्रह विश्लेषण</span>
     </a>
@@ -906,7 +906,7 @@
     <a href="#page-77" class="toc-item" data-goto="77">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.77</span>
-        <span class="toc-item-title">This table outlines the 27 Nakshatras, their </span>
+        <span class="toc-item-title">२७ नक्षत्र, देवता व पद नामाक्षर (Nakshatra De</span>
       </div>
       <span class="toc-page-num">Ch 6: नक्षत्र पद व ग्रह विश्लेषण</span>
     </a>
@@ -915,7 +915,7 @@
     <a href="#page-78" class="toc-item" data-goto="78">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.78</span>
-        <span class="toc-item-title">Nakshatra, Devata and Ruler Table (नक्षत्र, द</span>
+        <span class="toc-item-title">नक्षत्र, देवता एवं ग्रह स्वामी तालिका (Naksha</span>
       </div>
       <span class="toc-page-num">Ch 6: नक्षत्र पद व ग्रह विश्लेषण</span>
     </a>
@@ -924,7 +924,7 @@
     <a href="#page-79" class="toc-item" data-goto="79">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.79</span>
-        <span class="toc-item-title">Nakshatra Lords Table | याद रखने का आसान तरीक</span>
+        <span class="toc-item-title">नक्षत्र स्वामी व दशा अधिपति सूत्र (Nakshatra </span>
       </div>
       <span class="toc-page-num">Ch 6: नक्षत्र पद व ग्रह विश्लेषण</span>
     </a>
@@ -933,7 +933,7 @@
     <a href="#page-80" class="toc-item" data-goto="80">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.80</span>
-        <span class="toc-item-title">Table 5</span>
+        <span class="toc-item-title">२७ नक्षत्र एवं स्वामी द्विभाषी तालिका (27 Nak</span>
       </div>
       <span class="toc-page-num">Ch 6: नक्षत्र पद व ग्रह विश्लेषण</span>
     </a>
@@ -942,7 +942,7 @@
     <a href="#page-81" class="toc-item" data-goto="81">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.81</span>
-        <span class="toc-item-title">44 | The Dark &amp; Divine Side of Ashlesha N</span>
+        <span class="toc-item-title">आश्लेषा नक्षत्र: ४ पद एवं ग्रह फल (Ashlesha N</span>
       </div>
       <span class="toc-page-num">Ch 6: नक्षत्र पद व ग्रह विश्लेषण</span>
     </a>
@@ -951,7 +951,7 @@
     <a href="#page-82" class="toc-item" data-goto="82">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.82</span>
-        <span class="toc-item-title">Hidden insecurity masked by responsibility</span>
+        <span class="toc-item-title">पुष्य नक्षत्र: ४ पद एवं नवमांश ग्रह प्रभाव (P</span>
       </div>
       <span class="toc-page-num">Ch 6: नक्षत्र पद व ग्रह विश्लेषण</span>
     </a>
@@ -960,7 +960,7 @@
     <a href="#page-83" class="toc-item" data-goto="83">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.83</span>
-        <span class="toc-item-title">43 | Ashwini Nakshatra Explained: 4 Padas, Na</span>
+        <span class="toc-item-title">अश्विनी नक्षत्र: ४ पद व नवमांश अधिपति (Ashwin</span>
       </div>
       <span class="toc-page-num">Ch 6: नक्षत्र पद व ग्रह विश्लेषण</span>
     </a>
@@ -969,7 +969,7 @@
     <a href="#page-84" class="toc-item" data-goto="84">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.84</span>
-        <span class="toc-item-title">Table 9</span>
+        <span class="toc-item-title">अश्विनी नक्षत्र: पद ध्वनि व मूल स्वभाव (Ashwi</span>
       </div>
       <span class="toc-page-num">Ch 6: नक्षत्र पद व ग्रह विश्लेषण</span>
     </a>
@@ -978,7 +978,7 @@
     <a href="#page-85" class="toc-item" data-goto="85">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.85</span>
-        <span class="toc-item-title">Table 10</span>
+        <span class="toc-item-title">अश्विनी नक्षत्र में ९ ग्रहों का फलित (Planeta</span>
       </div>
       <span class="toc-page-num">Ch 6: नक्षत्र पद व ग्रह विश्लेषण</span>
     </a>
@@ -987,7 +987,7 @@
     <a href="#page-86" class="toc-item" data-goto="86">
       <div class="toc-item-left">
         <span class="toc-chapter-badge">P.86</span>
-        <span class="toc-item-title">Falls in the Cancer Navamsa ruled by the Moon</span>
+        <span class="toc-item-title">अश्विनी नक्षत्र: ४ पद, नवमांश व ग्रह संबंध (A</span>
       </div>
       <span class="toc-page-num">Ch 6: नक्षत्र पद व ग्रह विश्लेषण</span>
     </a>
@@ -1050,9 +1050,9 @@
   <div class="cover-divider"></div>
 
   <p class="cover-subtitle">
-    <strong>नवग्रह कारकत्व, 17 शास्त्रीय राजयोग, 27 नक्षत्र व 108 पद विश्लेषण, दीप्तादि 9 अवस्थाएं, भाव-राशि फल तथा संपूर्ण मेडिकल एस्ट्रोलॉजी व कैंसर रोग निदान।</strong><br>
+    <strong>नवग्रह कारकत्व, 17 शास्त्रीय राजयोग, 27 नक्षत्र व 108 पद विश्लेषण, दीप्तादि 9 अवस्थाएं एवं 12 भाव-राशि फल।</strong><br>
     <span style="font-size:0.85rem; color:var(--text-muted); display:inline-block; margin-top:0.4rem;">
-      Comprehensive Classical Sutras, Astronomical Motion & Empirical Ayur-Jyotish Diagnostics
+      Comprehensive Classical Sutras, Astronomical Motion & Predictive Principles
     </span>
   </p>
 
@@ -1324,6 +1324,7 @@
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);"># Page 2: 2 Each Planets Significations</h3>
           </div>
           <div class="content-block"></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch2-table-1">
 <div class="table-caption"># Page 2: 2 Each Planets Significations</div>
@@ -1434,6 +1435,7 @@
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">🌕 चन्द्र (Chandra) के संपूर्ण कारकत्व और संकेतक (Karakatva and Significators of Moon)</h3>
           </div>
           <div class="content-block"><h4 id="चन्द्र--Chandra--के-संपूर्ण-कारकत्व-और-संकेतक--Karakatva-and-Significators-of-Moon" class="topic-title">🌕 चन्द्र (Chandra) के संपूर्ण कारकत्व और संकेतक (Karakatva and Significators of Moon)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch2-table-2">
 <div class="table-caption">🌕 चन्द्र (Chandra) के संपूर्ण कारकत्व और संकेतक (Karakatva and Significators of Moon)</div>
@@ -1544,6 +1546,7 @@
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">📚 उल्लेखनीय ग्रंथ संदर्भ (Key Classical Text References)</h3>
           </div>
           <div class="content-block"><h4 id="उल्लेखनीय-ग्रंथ-संदर्भ--Key-Classical-Text-References" class="topic-title">📚 उल्लेखनीय ग्रंथ संदर्भ (Key Classical Text References)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch2-table-3">
 <div class="table-caption">📚 उल्लेखनीय ग्रंथ संदर्भ (Key Classical Text References)</div>
@@ -1596,6 +1599,7 @@
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Table 4</h3>
           </div>
           
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch2-table-4">
 <div class="table-caption">Table 4</div>
@@ -1662,6 +1666,7 @@
 <span class="formula-pill">मंगल (Mars) के संपूर्ण कारकत्व और संकेतक</span>
 </div>
 </div></div></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch2-table-5">
 <div class="table-caption">मंगल (Mars) के संपूर्ण कारकत्व और संकेतक</div>
@@ -1755,6 +1760,7 @@
           </div>
           <div class="content-block"><h4 id="" class="topic-title">📚</h4>
 <h4 id="उल्लेखनीय-ग्रंथ-संदर्भ--Key-Classical-Text-References" class="topic-title">उल्लेखनीय ग्रंथ संदर्भ (Key Classical Text References)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch2-table-6">
 <div class="table-caption">उल्लेखनीय ग्रंथ संदर्भ (Key Classical Text References)</div>
@@ -1809,6 +1815,7 @@
           <div class="content-block"><h4 id="Mercury-का-Karakatva---बुद्धि--वाणी--तर्क---बुध-कैसे-देता-है-Logic---Intelligence-in-Astrology" class="topic-title">Mercury का Karakatva 🧠 बुद्धि, वाणी, तर्क | बुध कैसे देता है Logic &amp; Intelligence in Astrology</h4>
 <h4 id="Jupiter-का-Karakatva---Knowledge--Guru--Fortune---बृहस्पति-क्या-दर्शाता-है--Vedic-Astrology" class="topic-title">Jupiter का Karakatva 📚 Knowledge, Guru, Fortune | बृहस्पति क्या दर्शाता है? Vedic Astrology</h4>
 <h4 id="बृहस्पति-का-करकत्व--Significations-of-Jupiter" class="topic-title">🪐 बृहस्पति का करकत्व (Significations of Jupiter)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch2-table-7">
 <div class="table-caption">🪐 बृहस्पति का करकत्व (Significations of Jupiter)</div>
@@ -1916,6 +1923,7 @@
           <div class="content-block"><h4 id="Venus-का-Karakatva---Love--Art--Luxury---शुक्र-किन-चीज़ों-का-कारक-है--Vedic-Astrology-Facts" class="topic-title">Venus का Karakatva 💫 Love, Art, Luxury | शुक्र किन चीज़ों का कारक है? Vedic Astrology Facts</h4>
 <h4 id="" class="topic-title">💫</h4>
 <h4 id="शुक्र--Venus--के-संपूर्ण-कारकत्व-और-संकेतक" class="topic-title">शुक्र (Venus) के संपूर्ण कारकत्व और संकेतक</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch2-table-8">
 <div class="table-caption">शुक्र (Venus) के संपूर्ण कारकत्व और संकेतक</div>
@@ -2013,6 +2021,7 @@
           </div>
           <div class="content-block"><h4 id="Saturn-का-Karakatva---कर्म--बाधा--समय---Shani-s-Deep-Role-in-Karma--Struggles---Time-in-Astrology" class="topic-title">Saturn का Karakatva 🪐 कर्म, बाधा, समय | Shani&#x27;s Deep Role in Karma, Struggles &amp; Time in Astrology</h4>
 <h4 id="शनि-का-कारकत्व--Saturn-Karakatva----कर्म--बाधा--समय" class="topic-title">🪐 शनि का कारकत्व (Saturn Karakatva) – कर्म, बाधा, समय</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch2-table-9">
 <div class="table-caption">🪐 शनि का कारकत्व (Saturn Karakatva) – कर्म, बाधा, समय</div>
@@ -2128,6 +2137,7 @@
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">🪐 शनि के प्रमुख शास्त्रीय एवं आधुनिक दृष्टिकोण</h3>
           </div>
           <div class="content-block"><h4 id="शनि-के-प्रमुख-शास्त्रीय-एवं-आधुनिक-दृष्टिकोण" class="topic-title">🪐 शनि के प्रमुख शास्त्रीय एवं आधुनिक दृष्टिकोण</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch2-table-10">
 <div class="table-caption">🪐 शनि के प्रमुख शास्त्रीय एवं आधुनिक दृष्टिकोण</div>
@@ -2177,6 +2187,7 @@
           </div>
           <div class="content-block"><h4 id="" class="topic-title">🌿</h4>
 <h4 id="बुध-का-Karakatva---बुद्धि--वाणी--तर्क---Mercury-s-Significations-in-Vedic-Astrology" class="topic-title">बुध का Karakatva 🧠 बुद्धि, वाणी, तर्क | Mercury&#x27;s Significations in Vedic Astrology</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch2-table-11">
 <div class="table-caption">बुध का Karakatva 🧠 बुद्धि, वाणी, तर्क | Mercury&#x27;s Significations in Vedic Astrology</div>
@@ -2288,6 +2299,7 @@
           </div>
           <div class="content-block"><h4 id="Rahu-का-Karakatva---भ्रम--विदेश--छल---Rahu-Effects-in-Life--Illusions---Foreign-Link-in-Astrology" class="topic-title">Rahu का Karakatva 🐍 भ्रम, विदेश, छल | Rahu Effects in Life, Illusions &amp; Foreign Link in Astrology</h4>
 <h4 id="राहु-का-कारकत्व--Rahu-s-Significations----हिंदी-व-अंग्रेज़ी-में" class="topic-title">🐍 राहु का कारकत्व (Rahu&#x27;s Significations) — हिंदी व अंग्रेज़ी में</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch2-table-12">
 <div class="table-caption">🐍 राहु का कारकत्व (Rahu&#x27;s Significations) — हिंदी व अंग्रेज़ी में</div>
@@ -2399,6 +2411,7 @@
           </div>
           <div class="content-block"><h4 id="Ketu-का-Karakatva---मोक्ष--रहस्य--त्याग---Ketu-in-Vedic-Astrology---Moksha---Spiritual-Secrets" class="topic-title">Ketu का Karakatva ⚡ मोक्ष, रहस्य, त्याग | Ketu in Vedic Astrology – Moksha &amp; Spiritual Secrets</h4>
 <h4 id="केतु-का-कारकत्व-सारणी--Ketu-s-Karakatva-Summary-in-Hindi" class="topic-title">⚡ केतु का कारकत्व सारणी (Ketu’s Karakatva Summary in Hindi)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch2-table-13">
 <div class="table-caption">⚡ केतु का कारकत्व सारणी (Ketu’s Karakatva Summary in Hindi)</div>
@@ -2488,6 +2501,7 @@
           </div>
           <div class="content-block"><h4 id="Vedic-Raja-and-Panch-Mahapurusha-Yogas" class="topic-title">Vedic Raja and Panch Mahapurusha Yogas</h4>
 <h4 id="वैदिक-राज-योग-और-पंच-महापुरुष-योग" class="topic-title">(वैदिक राज योग और पंच महापुरुष योग)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch2-table-14">
 <div class="table-caption">(वैदिक राज योग और पंच महापुरुष योग)</div>
@@ -2580,6 +2594,7 @@
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Table 15</h3>
           </div>
           
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch2-table-15">
 <div class="table-caption">Table 15</div>
@@ -2700,19 +2715,20 @@
     </div>
     
 
-    <div class="book-page-data" id="page-data-21" data-page="21" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="Graha Movement &amp;amp; Mahadasha का रहस्य | Tra" style="display:none;">
+    <div class="book-page-data" id="page-data-21" data-page="21" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="ग्रह गति, गोचर अवधि एवं महादशा चक्र (Planetar" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 3 • Section 1</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Graha Movement &amp; Mahadasha का रहस्य | Transit Time &amp; Rashi Impact Explained in Hindi</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">ग्रह गति, गोचर अवधि एवं महादशा चक्र (Planetary Motion & Mahadasha)</h3>
           </div>
           <div class="content-block">
-<h4 id="27" class="topic-title">27 | 🪐</h4>
+
 <h4 id="Graha-Movement---Mahadasha-का-रहस्य---Transit-Time---Rashi-Impact-Explained-in-Hindi" class="topic-title">Graha Movement &amp; Mahadasha का रहस्य | Transit Time &amp; Rashi Impact Explained in Hindi</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch3-table-1">
-<div class="table-caption">Graha Movement &amp; Mahadasha का रहस्य | Transit Time &amp; Rashi Impact Explained in Hindi</div>
+<div class="table-caption">ग्रह गति, गोचर अवधि एवं महादशा चक्र (Planetary Motion & Mahadasha)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -2782,24 +2798,37 @@
     </div>
     
 
-    <div class="book-page-data" id="page-data-22" data-page="22" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="Planetary Drishti (Aspects) Table | ग्रहों की" style="display:none;">
+    <div class="book-page-data" id="page-data-22" data-page="22" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="ग्रह दृष्टि तालिका एवं शास्त्रीय नियम (Planet" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 3 • Section 2</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Planetary Drishti (Aspects) Table | ग्रहों की दृष्टि तालिका</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">ग्रह दृष्टि तालिका एवं शास्त्रीय नियम (Planetary Drishti & Aspect Rules)</h3>
           </div>
-          <div class="content-block"><h4 id="28-----Planetary-Drishti-Explained---ग्रहों-की-दृष्टियाँ-कैसे-काम-करती-हैं--Mars--Jupiter--Saturn-Special" class="topic-title">28 | 💫 Planetary Drishti Explained | ग्रहों की दृष्टियाँ कैसे काम करती हैं? Mars, Jupiter, Saturn Special</h4>
-<div class="rule-card">
-<div class="rule-header"><span class="rule-badge">सूत्र / Rule</span> <h4>🔷</h4></div>
-<div class="rule-body">
-<div class="rule-formula">
-<span class="formula-pill">Planetary Drishti (Aspects) Table | ग्रहों की दृष्टि तालिका</span>
-</div>
-</div></div></div>
+          
+            <div class="rule-card success">
+              <div class="rule-header">
+                <div class="rule-title">📜 शास्त्रीय दृष्टि नियम (Classical Aspect Principles)</div>
+              </div>
+              <div class="rule-body">
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.6; font-size:0.88rem;">
+                  <li><strong>सामान्य दृष्टि (7वां भाव):</strong> सभी ग्रह अपने अधिष्ठित भाव से सप्तम भाव पर पूर्ण दृष्टि डालते हैं।</li>
+                  <li><strong>विशेष पूर्ण दृष्टियां:</strong>
+                    <ul>
+                      <li><strong>मंगल (Mars):</strong> 4था, 7वां और 8वां भाव।</li>
+                      <li><strong>गुरु (Jupiter):</strong> 5वां, 7वां और 9वां भाव।</li>
+                      <li><strong>शनि (Saturn):</strong> 3रा, 7वां और 10वां भाव।</li>
+                    </ul>
+                  </li>
+                  <li><strong>राहु एवं केतु:</strong> शास्त्रीय ग्रंथों में दृष्टि नहीं, परंतु आधुनिक फलित ज्योतिष में 5वीं, 7वीं व 9वीं दृष्टि मान्य है।</li>
+                </ul>
+              </div>
+            </div>
+            
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch3-table-2">
-<div class="table-caption">Planetary Drishti (Aspects) Table | ग्रहों की दृष्टि तालिका</div>
+<div class="table-caption">ग्रह दृष्टि तालिका एवं शास्त्रीय नियम (Planetary Drishti & Aspect Rules)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -2869,36 +2898,24 @@
     </div>
     
 
-    <div class="book-page-data" id="page-data-23" data-page="23" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="This table lists the 27 Nakshatras with their" style="display:none;">
+    <div class="book-page-data" id="page-data-23" data-page="23" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="२७ नक्षत्र, विस्तार व राशि सीमा (27 Nakshatra" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 3 • Section 3</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">This table lists the 27 Nakshatras with their starting and ending degrees across the zodiac signs (Rashi) in Vedic astrology. Each Nakshatra spans approximately 13°20’ (13 degrees and 20 minutes), covering the entire 360° zodiac.</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">२७ नक्षत्र, विस्तार व राशि सीमा (27 Nakshatras & Degree Spans)</h3>
           </div>
-          <div class="content-block"><h4 id="Notes" class="topic-title">🔸Notes:</h4>
-<h4 id="All-planets-aspect-the-7th-house" class="topic-title">All planets aspect the 7th house</h4>
-<h4 id="from-their-placement-by-default--opposite-house" class="topic-title">from their placement by default (opposite house).</h4>
-<h4 id="Mars" class="topic-title">Mars</h4>
-<h4 id="" class="topic-title">,</h4>
-<h4 id="Jupiter" class="topic-title">Jupiter</h4>
-<h4 id="and" class="topic-title">, and</h4>
-<h4 id="Saturn" class="topic-title">Saturn</h4>
-<h4 id="have" class="topic-title">have</h4>
-<h4 id="special-full-aspects" class="topic-title">special full aspects</h4>
-<h4 id="on-specific-houses-in-addition-to-7th" class="topic-title">on specific houses in addition to 7th.</h4>
-<h4 id="Rahu-and-Ketu" class="topic-title">Rahu and Ketu</h4>
-<h4 id="do-not-have-physical-aspects-in-classical-texts--but" class="topic-title">do not have physical aspects in classical texts, but</h4>
-<h4 id="many-modern-astrologers" class="topic-title">many modern astrologers</h4>
-<h4 id="assign-them-5th--7th--and-9th-house-drishti" class="topic-title">assign them 5th, 7th, and 9th house drishti.</h4>
-<div class="slide-indicator">Section 29 |</div>
-<h4 id="Title----Nakshatras---Their-Properties--Keywords--and-Lords--27-Nakshatra-Table" class="topic-title">Title: 🌛 Nakshatras – Their Properties, Keywords, and Lords (27 Nakshatra Table)</h4>
-<h4 id="Nakshatra-Secrets---जानिए-27-Nakshatra-के-गुण--देवता--Keywords-और-उनका-Hidden-Meaning---Nakshatra-Lords-Table---याद-रखने-का-आसान-तरीका" class="topic-title">💫 Nakshatra Secrets 🔍 जानिए 27 Nakshatra के गुण, देवता, Keywords और उनका Hidden Meaning | Nakshatra Lords Table | याद रखने का आसान तरीका</h4>
-<h4 id="27-Nakshatra-Lords---Rashi-Degrees-----२७-नक्षत्र-स्वामी-और-राशि-की-डिग्री" class="topic-title">27 Nakshatra Lords &amp; Rashi Degrees 🌌 | २७ नक्षत्र स्वामी और राशि की डिग्री 🔯</h4>
-<h4 id="This-table-lists-the-27-Nakshatras-with-their-starting-and-ending-degrees-across-the-zodiac-signs--Rashi--in-Vedic-astrology--Each-Nakshatra-spans-approximately-13-20---13-degrees-and-20-minutes---covering-the-entire-360--zodiac" class="topic-title">This table lists the 27 Nakshatras with their starting and ending degrees across the zodiac signs (Rashi) in Vedic astrology. Each Nakshatra spans approximately 13°20’ (13 degrees and 20 minutes), covering the entire 360° zodiac.</h4></div>
+          
+            <div class="rule-card">
+              <div class="rule-body" style="font-size:0.88rem; line-height:1.6;">
+                वैदिक ज्योतिष में संपूर्ण 360° भचक्र को 27 समान नक्षत्रों में विभाजित किया गया है। प्रत्येक नक्षत्र का विस्तार <strong>13°20’ (13 अंश और 20 कला)</strong> होता है। नीचे प्रत्येक नक्षत्र के प्रारंभ एवं समापन अंश व्यवस्थित रूप से दिए गए हैं।
+              </div>
+            </div>
+            
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch3-table-3">
-<div class="table-caption">This table lists the 27 Nakshatras with their starting and ending degrees across the zodiac signs (Rashi) in Vedic astrology. Each Nakshatra spans approximately 13°20’ (13 degrees and 20 minutes), covering the entire 360° zodiac.</div>
+<div class="table-caption">२७ नक्षत्र, विस्तार व राशि सीमा (27 Nakshatras & Degree Spans)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -3048,17 +3065,18 @@
     </div>
     
 
-    <div class="book-page-data" id="page-data-24" data-page="24" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="This table outlines the 27 Nakshatras, their " style="display:none;">
+    <div class="book-page-data" id="page-data-24" data-page="24" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="२७ नक्षत्र, देवता व पद अक्षर (Nakshatra Deiti" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 3 • Section 4</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">This table outlines the 27 Nakshatras, their presiding deities (Devatas), and the syllables associated with each of the four Padas (quarters) for naming or astrological purposes.</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">२७ नक्षत्र, देवता व पद अक्षर (Nakshatra Deities & Pada Syllables)</h3>
           </div>
           <div class="content-block"><h4 id="This-table-outlines-the-27-Nakshatras--their-presiding-deities--Devatas---and-the-syllables-associated-with-each-of-the-four-Padas--quarters--for-naming-or-astrological-purposes" class="topic-title">This table outlines the 27 Nakshatras, their presiding deities (Devatas), and the syllables associated with each of the four Padas (quarters) for naming or astrological purposes.</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch3-table-4">
-<div class="table-caption">This table outlines the 27 Nakshatras, their presiding deities (Devatas), and the syllables associated with each of the four Padas (quarters) for naming or astrological purposes.</div>
+<div class="table-caption">२७ नक्षत्र, देवता व पद अक्षर (Nakshatra Deities & Pada Syllables)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -3292,18 +3310,19 @@
     </div>
     
 
-    <div class="book-page-data" id="page-data-25" data-page="25" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="Nakshatra, Devata and Ruler Table (नक्षत्र, द" style="display:none;">
+    <div class="book-page-data" id="page-data-25" data-page="25" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="नक्षत्र, देवता और स्वामी तालिका (Nakshatras, " style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 3 • Section 5</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Nakshatra, Devata and Ruler Table (नक्षत्र, देवता और स्वामी तालिका)</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">नक्षत्र, देवता और स्वामी तालिका (Nakshatras, Deities & Rulers)</h3>
           </div>
           <div class="content-block"><h4 id="" class="topic-title">🌌</h4>
 <h4 id="Nakshatra--Devata-and-Ruler-Table--नक्षत्र--देवता-और-स्वामी-तालिका" class="topic-title">Nakshatra, Devata and Ruler Table (नक्षत्र, देवता और स्वामी तालिका)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch3-table-5">
-<div class="table-caption">Nakshatra, Devata and Ruler Table (नक्षत्र, देवता और स्वामी तालिका)</div>
+<div class="table-caption">नक्षत्र, देवता और स्वामी तालिका (Nakshatras, Deities & Rulers)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -3481,18 +3500,18 @@
     </div>
     
 
-    <div class="book-page-data" id="page-data-26" data-page="26" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="Nakshatra Lords Table | याद रखने का आसान तरीक" style="display:none;">
+    <div class="book-page-data" id="page-data-26" data-page="26" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="नक्षत्र स्वामी व दशा अधिपति (Nakshatra Lords " style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 3 • Section 6</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Nakshatra Lords Table | याद रखने का आसान तरीका</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">नक्षत्र स्वामी व दशा अधिपति (Nakshatra Lords & Dasha Rulers)</h3>
           </div>
-          <div class="content-block"><h4 id="" class="topic-title">📘</h4>
-<h4 id="Nakshatra-Lords-Table---याद-रखने-का-आसान-तरीका" class="topic-title">Nakshatra Lords Table | याद रखने का आसान तरीका</h4></div>
+          <div class="content-block"></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch3-table-6">
-<div class="table-caption">Nakshatra Lords Table | याद रखने का आसान तरीका</div>
+<div class="table-caption">नक्षत्र स्वामी व दशा अधिपति (Nakshatra Lords & Dasha Rulers)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -3562,17 +3581,18 @@
     </div>
     
 
-    <div class="book-page-data" id="page-data-27" data-page="27" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="Table 7" style="display:none;">
+    <div class="book-page-data" id="page-data-27" data-page="27" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="२७ नक्षत्र एवं स्वामी द्विभाषी तालिका (27 Nak" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 3 • Section 7</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Table 7</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">२७ नक्षत्र एवं स्वामी द्विभाषी तालिका (27 Nakshatras & Lords Table)</h3>
           </div>
           
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch3-table-7">
-<div class="table-caption">Table 7</div>
+<div class="table-caption">२७ नक्षत्र एवं स्वामी द्विभाषी तालिका (27 Nakshatras & Lords Table)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -4002,17 +4022,18 @@
     </div>
     
 
-    <div class="book-page-data" id="page-data-28" data-page="28" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="About Rashi" style="display:none;">
+    <div class="book-page-data" id="page-data-28" data-page="28" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="१२ राशियां, स्वामी व तत्व (12 Rashis, Lords &amp;" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 3 • Section 8</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">About Rashi</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">१२ राशियां, स्वामी व तत्व (12 Rashis, Lords & Elements)</h3>
           </div>
           <div class="content-block"><h4 id="About-Rashi" class="topic-title">About Rashi</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch3-table-8">
-<div class="table-caption">About Rashi</div>
+<div class="table-caption">१२ राशियां, स्वामी व तत्व (12 Rashis, Lords & Elements)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -4165,17 +4186,18 @@
     </div>
     
 
-    <div class="book-page-data" id="page-data-29" data-page="29" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="Table 9" style="display:none;">
+    <div class="book-page-data" id="page-data-29" data-page="29" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="राशियों के गुण, तत्व व स्वभाव (Rashis: Gunas," style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 3 • Section 9</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Table 9</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">राशियों के गुण, तत्व व स्वभाव (Rashis: Gunas, Elements & Nature)</h3>
           </div>
           
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch3-table-9">
-<div class="table-caption">Table 9</div>
+<div class="table-caption">राशियों के गुण, तत्व व स्वभाव (Rashis: Gunas, Elements & Nature)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -4209,17 +4231,18 @@
     </div>
     
 
-    <div class="book-page-data" id="page-data-30" data-page="30" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="Table 10" style="display:none;">
+    <div class="book-page-data" id="page-data-30" data-page="30" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="राशियों का लिंग वर्गीकरण (Gender Classificati" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 3 • Section 10</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Table 10</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">राशियों का लिंग वर्गीकरण (Gender Classification of Signs)</h3>
           </div>
           
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch3-table-10">
-<div class="table-caption">Table 10</div>
+<div class="table-caption">राशियों का लिंग वर्गीकरण (Gender Classification of Signs)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -4244,17 +4267,18 @@
     </div>
     
 
-    <div class="book-page-data" id="page-data-31" data-page="31" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="Table 11" style="display:none;">
+    <div class="book-page-data" id="page-data-31" data-page="31" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="राशियों की ध्रुवता (Polarity of Signs - Posit" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 3 • Section 11</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Table 11</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">राशियों की ध्रुवता (Polarity of Signs - Positive / Negative)</h3>
           </div>
           
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch3-table-11">
-<div class="table-caption">Table 11</div>
+<div class="table-caption">राशियों की ध्रुवता (Polarity of Signs - Positive / Negative)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -4279,19 +4303,20 @@
     </div>
     
 
-    <div class="book-page-data" id="page-data-32" data-page="32" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="Represents energy, courage, action, impulsive" style="display:none;">
+    <div class="book-page-data" id="page-data-32" data-page="32" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="अग्नि तत्व राशियां: मेष, सिंह, धनु (Fire Sign" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 3 • Section 12</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Represents energy, courage, action, impulsiveness, leadership.</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">अग्नि तत्व राशियां: मेष, सिंह, धनु (Fire Signs - Agni Tattva)</h3>
           </div>
           <div class="content-block"><h4 id="FIRE-SIGNS--Agni-Tattva---अग्नि-तत्व" class="topic-title">🔥 FIRE SIGNS (Agni Tattva – अग्नि तत्व)</h4>
 <h4 id="Aries-----Leo-----Sagittarius" class="topic-title">Aries ♈ – Leo ♌ – Sagittarius ♐</h4>
 <h4 id="Represents-energy--courage--action--impulsiveness--leadership" class="topic-title">Represents energy, courage, action, impulsiveness, leadership.</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch3-table-12">
-<div class="table-caption">Represents energy, courage, action, impulsiveness, leadership.</div>
+<div class="table-caption">अग्नि तत्व राशियां: मेष, सिंह, धनु (Fire Signs - Agni Tattva)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -4321,19 +4346,20 @@
     </div>
     
 
-    <div class="book-page-data" id="page-data-33" data-page="33" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="Represents practicality, stability, materiali" style="display:none;">
+    <div class="book-page-data" id="page-data-33" data-page="33" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="पृथ्वी तत्व राशियां: वृषभ, कन्या, मकर (Earth " style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 3 • Section 13</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Represents practicality, stability, materialism, structure, hard work.</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">पृथ्वी तत्व राशियां: वृषभ, कन्या, मकर (Earth Signs - Prithvi Tattva)</h3>
           </div>
           <div class="content-block"><h4 id="EARTH-SIGNS--Prithvi-Tattva---पृथ्वी-तत्व" class="topic-title">🌍 EARTH SIGNS (Prithvi Tattva – पृथ्वी तत्व)</h4>
 <h4 id="Taurus-----Virgo-----Capricorn" class="topic-title">Taurus ♉ – Virgo ♍ – Capricorn ♑</h4>
 <h4 id="Represents-practicality--stability--materialism--structure--hard-work" class="topic-title">Represents practicality, stability, materialism, structure, hard work.</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch3-table-13">
-<div class="table-caption">Represents practicality, stability, materialism, structure, hard work.</div>
+<div class="table-caption">पृथ्वी तत्व राशियां: वृषभ, कन्या, मकर (Earth Signs - Prithvi Tattva)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -4363,19 +4389,20 @@
     </div>
     
 
-    <div class="book-page-data" id="page-data-34" data-page="34" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="Represents communication, ideas, intellect, r" style="display:none;">
+    <div class="book-page-data" id="page-data-34" data-page="34" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="वायु तत्व राशियां: मिथुन, तुला, कुंभ (Air Sig" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 3 • Section 14</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Represents communication, ideas, intellect, relationships, movement.</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">वायु तत्व राशियां: मिथुन, तुला, कुंभ (Air Signs - Vayu Tattva)</h3>
           </div>
           <div class="content-block"><h4 id="AIR-SIGNS--Vayu-Tattva---वायु-तत्व" class="topic-title">💨 AIR SIGNS (Vayu Tattva – वायु तत्व)</h4>
 <h4 id="Gemini-----Libra-----Aquarius" class="topic-title">Gemini ♊ – Libra ♎ – Aquarius ♒</h4>
 <h4 id="Represents-communication--ideas--intellect--relationships--movement" class="topic-title">Represents communication, ideas, intellect, relationships, movement.</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch3-table-14">
-<div class="table-caption">Represents communication, ideas, intellect, relationships, movement.</div>
+<div class="table-caption">वायु तत्व राशियां: मिथुन, तुला, कुंभ (Air Signs - Vayu Tattva)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -4405,19 +4432,20 @@
     </div>
     
 
-    <div class="book-page-data" id="page-data-35" data-page="35" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="Represents emotions, intuition, nurturing, se" style="display:none;">
+    <div class="book-page-data" id="page-data-35" data-page="35" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="जल तत्व राशियां: कर्क, वृश्चिक, मीन (Water Si" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 3 • Section 15</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Represents emotions, intuition, nurturing, sensitivity, depth.</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">जल तत्व राशियां: कर्क, वृश्चिक, मीन (Water Signs - Jala Tattva)</h3>
           </div>
           <div class="content-block"><h4 id="WATER-SIGNS--Jala-Tattva---जल-तत्व" class="topic-title">🌊 WATER SIGNS (Jala Tattva – जल तत्व)</h4>
 <h4 id="Cancer-----Scorpio-----Pisces" class="topic-title">Cancer ♋ – Scorpio ♏ – Pisces ♓</h4>
 <h4 id="Represents-emotions--intuition--nurturing--sensitivity--depth" class="topic-title">Represents emotions, intuition, nurturing, sensitivity, depth.</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch3-table-15">
-<div class="table-caption">Represents emotions, intuition, nurturing, sensitivity, depth.</div>
+<div class="table-caption">जल तत्व राशियां: कर्क, वृश्चिक, मीन (Water Signs - Jala Tattva)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -4447,17 +4475,18 @@
     </div>
     
 
-    <div class="book-page-data" id="page-data-36" data-page="36" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="🧠 Combined View – Element + Mobility Nature" style="display:none;">
+    <div class="book-page-data" id="page-data-36" data-page="36" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="तत्व एवं स्वभाव का संयुक्त वर्गीकरण (Combined" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 3 • Section 16</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">🧠 Combined View – Element + Mobility Nature</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">तत्व एवं स्वभाव का संयुक्त वर्गीकरण (Combined Element & Mobility Nature)</h3>
           </div>
           <div class="content-block"><h4 id="Combined-View---Element---Mobility-Nature" class="topic-title">🧠 Combined View – Element + Mobility Nature</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch3-table-16">
-<div class="table-caption">🧠 Combined View – Element + Mobility Nature</div>
+<div class="table-caption">तत्व एवं स्वभाव का संयुक्त वर्गीकरण (Combined Element & Mobility Nature)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -4497,12 +4526,12 @@
     </div>
     
 
-    <div class="book-page-data" id="page-data-37" data-page="37" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="About planets" style="display:none;">
+    <div class="book-page-data" id="page-data-37" data-page="37" data-chapter="Ch 3: राशि, नक्षत्र एवं ग्रह गति" data-title="चर, स्थिर, द्विस्वभाव व तत्व फलित नियम (Mobil" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 3 • Section 17</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">About planets</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">चर, स्थिर, द्विस्वभाव व तत्व फलित नियम (Mobility & Element Interpretation Rules)</h3>
           </div>
           <div class="content-block"><h4 id="Interpretation-Tips" class="topic-title">🔄 Interpretation Tips:</h4>
 <h4 id="Movable---Fire--Aries---Fast-acting--impulsive-leaders" class="topic-title">Movable + Fire (Aries): Fast-acting, impulsive leaders.</h4>
@@ -4512,9 +4541,10 @@
 <h4 id="Fixed---Fire--Leo---Steady-leaders-with-pride" class="topic-title">Fixed + Fire (Leo): Steady leaders with pride.</h4>
 <h4 id="Dual---Water--Pisces---Emotionally-adaptable-and-intuitive" class="topic-title">Dual + Water (Pisces): Emotionally adaptable and intuitive.</h4>
 <h4 id="About-planets" class="topic-title">About planets</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch3-table-17">
-<div class="table-caption">About planets</div>
+<div class="table-caption">चर, स्थिर, द्विस्वभाव व तत्व फलित नियम (Mobility & Element Interpretation Rules)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -4697,7 +4727,7 @@
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">The classification of signs as friend, enemy, neutral, great friend, or great enemy is based on natural planetary relationships, as shown below:</h3>
           </div>
           <div class="content-block"><h2 id="Page-4--4-Planets-in-houses---Rashi" class="section-title">Page 4: 4 Planets in houses &amp; Rashi</h2>
-<div class="slide-indicator">Section 42 |</div>
+
 <h4 id="Deeptadi-Avastha-Explained-----ग्रहों-की-स्थिति-और-9-अवस्थाएं---Planetary-States-in-Astrology" class="topic-title">Deeptadi Avastha Explained 🔯 | ग्रहों की स्थिति और 9 अवस्थाएं | Planetary States in Astrology</h4>
 <h4 id="" class="topic-title">🌟</h4>
 <h4 id="Deeptadi-Avastha---9-Planetary-States-Based-on-Rashi-Placement" class="topic-title">Deeptadi Avastha – 9 Planetary States Based on Rashi Placement</h4>
@@ -4734,6 +4764,7 @@
 <h4 id="9--Combust-with-Sun--Kopi" class="topic-title">9. Combust with Sun: Kopi</h4>
 <h4 id="Natural-Planetary-Relationships" class="topic-title">Natural Planetary Relationships</h4>
 <h4 id="The-classification-of-signs-as-friend--enemy--neutral--great-friend--or-great-enemy-is-based-on-natural-planetary-relationships--as-shown-below" class="topic-title">The classification of signs as friend, enemy, neutral, great friend, or great enemy is based on natural planetary relationships, as shown below:</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch4-table-1">
 <div class="table-caption">The classification of signs as friend, enemy, neutral, great friend, or great enemy is based on natural planetary relationships, as shown below:</div>
@@ -4819,6 +4850,7 @@
 <h4 id="Malefic-Signs--Signs-ruled-by-Mars--Aries--Scorpio--and-Saturn--Capricorn--Aquarius---as-these-are-natural-malefics" class="topic-title">Malefic Signs: Signs ruled by Mars (Aries, Scorpio) and Saturn (Capricorn, Aquarius), as these are natural malefics.</h4>
 <h4 id="Comprehensive-Table" class="topic-title">Comprehensive Table</h4>
 <h4 id="The-following-table-summarizes-the-Deeptadi-Avastha-states-and-Mooltrikona-signs-for-each-planet--based-on-Vedic-astrology-principles" class="topic-title">The following table summarizes the Deeptadi Avastha states and Mooltrikona signs for each planet, based on Vedic astrology principles:</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch4-table-2">
 <div class="table-caption">The following table summarizes the Deeptadi Avastha states and Mooltrikona signs for each planet, based on Vedic astrology principles:</div>
@@ -4969,6 +5001,7 @@
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Table 3</h3>
           </div>
           
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch4-table-3">
 <div class="table-caption">Table 3</div>
@@ -5031,6 +5064,7 @@
           <div class="content-block"><h4 id="" class="topic-title">🪐</h4>
 <h4 id="Graha-Sambandh--Planetary-Relationships" class="topic-title">Graha Sambandh (Planetary Relationships)</h4>
 <h4 id="5-Types" class="topic-title">– 5 Types</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch4-table-4">
 <div class="table-caption">– 5 Types</div>
@@ -5080,8 +5114,9 @@
             <div class="chapter-number">Chapter 4 • Table 5</div>
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">🪐 Bhavon ke Sthir Karak Grah – Fixed House Karakas in Vedic Astrology</h3>
           </div>
-          <div class="content-block"><h4 id="42----Graha-Sambandh-Explained-----ग्रहों-के-5-प्रकार-के-संबंध---Planetary-Relationships-in-Astrology" class="topic-title">42 | &quot;Graha Sambandh Explained 🔯 | ग्रहों के 5 प्रकार के संबंध | Planetary Relationships in Astrology&quot;</h4>
+          <div class="content-block">
 <h4 id="Bhavon-ke-Sthir-Karak-Grah---Fixed-House-Karakas-in-Vedic-Astrology" class="topic-title">🪐 Bhavon ke Sthir Karak Grah – Fixed House Karakas in Vedic Astrology</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch4-table-5">
 <div class="table-caption">🪐 Bhavon ke Sthir Karak Grah – Fixed House Karakas in Vedic Astrology</div>
@@ -5171,8 +5206,9 @@
             <div class="chapter-number">Chapter 4 • Table 6</div>
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">मुख्य अंतर क्या है?</h3>
           </div>
-          <div class="content-block"><h4 id="43----House-Karaka-Planets-in-Vedic-Astrology---भावों-के-स्थिर-कारक-ग्रह---Must-Know-Jyotish-Facts" class="topic-title">43 | &quot;House Karaka Planets in Vedic Astrology | भावों के स्थिर कारक ग्रह | Must-Know Jyotish Facts!&quot;</h4>
+          <div class="content-block">
 <h4 id="मुख्य-अंतर-क्या-है" class="topic-title">मुख्य अंतर क्या है?</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch4-table-6">
 <div class="table-caption">मुख्य अंतर क्या है?</div>
@@ -5219,28 +5255,19 @@
               </div>
               <div class="rule-card">
                 <div class="rule-body" style="font-size:0.85rem; line-height:1.6;">
-                  Sun in 12 Houses (सूर्य के बारह भावों में फल)</h4>
-Section 44 |
-<h4 id="1--1st-House--लग्न---प्रथम-भाव" class="topic-title">1. 1st House (लग्न / प्रथम भाव):</h4>
-<h4 id="The-native-is-self-respecting--intelligent--authoritative--and-attractive" class="topic-title">The native is self-respecting, intelligent, authoritative, and attractive.</h4>
-<h4 id="Suffers-from-eye-issues--nasal-problems--and-may-have-egoistic-tendencies" class="topic-title">Suffers from eye issues, nasal problems, and may have egoistic tendencies.</h4>
-<h4 id="जातक-स्वाभिमानी--चतुर--क्रोधी--प्रभावी--आकर्षक" class="topic-title">(जातक स्वाभिमानी, चतुर, क्रोधी, प्रभावी, आकर्षक)</h4>
-<h4 id="2--2nd-House--द्वितीय-भाव" class="topic-title">2. 2nd House (द्वितीय भाव):</h4>
-<h4 id="The-native-may-have-a-harsh-speech--family-troubles--and-face-eye-issues" class="topic-title">The native may have a harsh speech, family troubles, and face eye issues.</h4>
-<h4 id="वाणी-कठोर--कुटुंब-में-अशांति--नेत्र-दोष" class="topic-title">(वाणी कठोर, कुटुंब में अशांति, नेत्र दोष)</h4>
-<h4 id="3--3rd-House--तृतीय-भाव" class="topic-title">3. 3rd House (तृतीय भाव):</h4>
-<h4 id="Courageous--valiant--famous--influential-in-society--and-earns-name-through-bravery" class="topic-title">Courageous, valiant, famous, influential in society, and earns name through bravery.</h4>
-<h4 id="साहसी--पराक्रमी--प्रसिद्ध--समाज-में-प्रभावशाली" class="topic-title">(साहसी, पराक्रमी, प्रसिद्ध, समाज में प्रभावशाली)</h4>
-<h4 id="4--4th-House--चतुर्थ-भाव" class="topic-title">4. 4th House (चतुर्थ भाव):</h4>
-<h4 id="Trouble-with-mother--less-comfort-and-peace--may-face-losses-in-vehicles-and-property" class="topic-title">Trouble with mother, less comfort and peace, may face losses in vehicles and property.</h4>
-<h4 id="मातृदोष--सुख-शांति-में-कमी--वाहन-व-संपत्ति-हानि" class="topic-title">(मातृदोष, सुख-शांति में कमी, वाहन व संपत्ति हानि)</h4>
-<h4 id="5--5th-House--पंचम-भाव" class="topic-title">5. 5th House (पंचम भाव):</h4>
-<h4 id="Intelligent--spiritual--political-inclination--less-happiness-from-children--risk-of-stomach-disorders" class="topic-title">Intelligent, spiritual, political inclination, less happiness from children, risk of stomach disorders.</h4>
-<h4 id="बुद्धिमान--धार्मिक--राजनैतिक-झुकाव--संतान-से-कष्ट--पेट-रोग" class="topic-title">(बुद्धिमान, धार्मिक, राजनैतिक झुकाव, संतान से कष्ट, पेट रोग)</h4>
-<h4 id="6--6th-House--षष्ठ-भाव" class="topic-title">6. 6th House (षष्ठ भाव):</h4>
-<h4 id="Victorious-over-enemies--competitive--courageous--skilled-in-disputes--may-suffer-from-fever-and-ulcers" class="topic-title">Victorious over enemies, competitive, courageous, skilled in disputes, may suffer from fever and ulcers.</h4>
-<h4 id="शत्रुजयी--विवादों-में-निपुण--साहसी--ज्वर-और-फोड़े-फुंसी-की-आशंका" class="topic-title">(शत्रुजयी, विवादों में निपुण, साहसी, ज्वर और फोड़े-फुंसी की आशंका)</h4>
-<h4 id="7--7th-House--सप्तम-भाव" class="topic-title">
+                  <div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">1. 1st House (लग्न / प्रथम भाव):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">The native is self-respecting, intelligent, authoritative, and attractive.</p>
+<p style=\"margin:0.25rem 0;\">Suffers from eye issues, nasal problems, and may have egoistic tendencies.</p>
+<p style=\"margin:0.25rem 0;\">(जातक स्वाभिमानी, चतुर, क्रोधी, प्रभावी, आकर्षक)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">2. 2nd House (द्वितीय भाव):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">The native may have a harsh speech, family troubles, and face eye issues.</p>
+<p style=\"margin:0.25rem 0;\">(वाणी कठोर, कुटुंब में अशांति, नेत्र दोष)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">3. 3rd House (तृतीय भाव):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">Courageous, valiant, famous, influential in society, and earns name through bravery.</p>
+<p style=\"margin:0.25rem 0;\">(साहसी, पराक्रमी, प्रसिद्ध, समाज में प्रभावशाली)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">4. 4th House (चतुर्थ भाव):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">Trouble with mother, less comfort and peace, may face losses in vehicles and property.</p>
+<p style=\"margin:0.25rem 0;\">(मातृदोष, सुख-शांति में कमी, वाहन व संपत्ति हानि)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">5. 5th House (पंचम भाव):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">Intelligent, spiritual, political inclination, less happiness from children, risk of stomach disorders.</p>
+<p style=\"margin:0.25rem 0;\">(बुद्धिमान, धार्मिक, राजनैतिक झुकाव, संतान से कष्ट, पेट रोग)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">6. 6th House (षष्ठ भाव):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">Victorious over enemies, competitive, courageous, skilled in disputes, may suffer from fever and ulcers.</p>
+<p style=\"margin:0.25rem 0;\">(शत्रुजयी, विवादों में निपुण, साहसी, ज्वर और फोड़े-फुंसी की आशंका)</p></div></div>
                 </div>
               </div>
             </div>
@@ -5257,27 +5284,21 @@ Section 44 |
               </div>
               <div class="rule-card">
                 <div class="rule-body" style="font-size:0.85rem; line-height:1.6;">
-                  7. 7th House (सप्तम भाव):</h4>
-<h4 id="Troubles-in-married-life--ego-clashes-with-spouse--disturbed-marital-peace" class="topic-title">Troubles in married life, ego clashes with spouse, disturbed marital peace.</h4>
-<h4 id="वैवाहिक-जीवन-में-अशांति--दांपत्य-क्लेश--पत्नी-से-अहं-का-टकराव" class="topic-title">(वैवाहिक जीवन में अशांति, दांपत्य क्लेश, पत्नी से अहं का टकराव)</h4>
-<h4 id="8--8th-House--अष्टम-भाव" class="topic-title">8. 8th House (अष्टम भाव):</h4>
-<h4 id="Risk-of-accidents--hidden-enemies--eye-troubles--sudden-events" class="topic-title">Risk of accidents, hidden enemies, eye troubles, sudden events.</h4>
-<h4 id="दुर्घटनाओं-का-भय--छिपे-शत्रु--नेत्र-रोग--अचानक-घटनाएं" class="topic-title">(दुर्घटनाओं का भय, छिपे शत्रु, नेत्र रोग, अचानक घटनाएं)</h4>
-<h4 id="9--9th-House--नवम-भाव" class="topic-title">9. 9th House (नवम भाव):</h4>
-<h4 id="Highly-spiritual--virtuous--lucky--supports-father--famous--noble-deeds" class="topic-title">Highly spiritual, virtuous, lucky, supports father, famous, noble deeds.</h4>
-<h4 id="धार्मिक--पुण्यात्मा--भाग्यशाली--पिता-को-सहयोगी--प्रसिद्ध" class="topic-title">(धार्मिक, पुण्यात्मा, भाग्यशाली, पिता को सहयोगी, प्रसिद्ध)</h4>
-<h4 id="10--10th-House--दशम-भाव" class="topic-title">10. 10th House (दशम भाव):</h4>
-<h4 id="Strong-in-profession--gets-government-support--achieves-high-position--successful-in-career" class="topic-title">Strong in profession, gets government support, achieves high position, successful in career.</h4>
-<h4 id="पेशा-में-प्रबल--सरकारी-सहयोग--उच्च-पद-प्राप्त--करियर-में-सफलता" class="topic-title">(पेशा में प्रबल, सरकारी सहयोग, उच्च पद प्राप्त, करियर में सफलता)</h4>
-<h4 id="11--11th-House--एकादश-भाव" class="topic-title">11. 11th House (एकादश भाव):</h4>
-<h4 id="Rich--politically-connected--gains-from-government--elder-brother-supportive" class="topic-title">Rich, politically connected, gains from government, elder brother supportive.</h4>
-<h4 id="धनवान--राजनैतिक-संबंध--सरकारी-लाभ--बड़े-भाई-का-सहयोग" class="topic-title">(धनवान, राजनैतिक संबंध, सरकारी लाभ, बड़े भाई का सहयोग)</h4>
-<h4 id="12--12th-House--द्वादश-भाव" class="topic-title">12. 12th House (द्वादश भाव):</h4>
-<h4 id="Expenditure-on-health--spiritual-inclination--travels-to-foreign-places--weak-eyesight" class="topic-title">Expenditure on health, spiritual inclination, travels to foreign places, weak eyesight.</h4>
-<h4 id="स्वास्थ्य-पर-खर्च--आध्यात्मिक-प्रवृत्ति--विदेश-यात्रा--नेत्रदोष" class="topic-title">(स्वास्थ्य पर खर्च, आध्यात्मिक प्रवृत्ति, विदेश यात्रा, नेत्रदोष)</h4>
-Section 44 |
-<h4 id="Surya-in-12-Houses---सूर्य-के-भाव-अनुसार-फल---Sun-s-Impact-in-All-Houses-in-Vedic-Astrology" class="topic-title">Surya in 12 Houses 🔥 सूर्य के भाव अनुसार फल | Sun&#x27;s Impact in All Houses in Vedic Astrology</h4>
-<h4 id="Effect-of-Sun-in-12-Zodiac-Signs--12-राशियों-में-सूर्य-का-फल" class="topic-title">☀️
+                  <div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">7. 7th House (सप्तम भाव):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">Troubles in married life, ego clashes with spouse, disturbed marital peace.</p>
+<p style=\"margin:0.25rem 0;\">(वैवाहिक जीवन में अशांति, दांपत्य क्लेश, पत्नी से अहं का टकराव)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">8. 8th House (अष्टम भाव):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">Risk of accidents, hidden enemies, eye troubles, sudden events.</p>
+<p style=\"margin:0.25rem 0;\">(दुर्घटनाओं का भय, छिपे शत्रु, नेत्र रोग, अचानक घटनाएं)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">9. 9th House (नवम भाव):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">Highly spiritual, virtuous, lucky, supports father, famous, noble deeds.</p>
+<p style=\"margin:0.25rem 0;\">(धार्मिक, पुण्यात्मा, भाग्यशाली, पिता को सहयोगी, प्रसिद्ध)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">10. 10th House (दशम भाव):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">Strong in profession, gets government support, achieves high position, successful in career.</p>
+<p style=\"margin:0.25rem 0;\">(पेशा में प्रबल, सरकारी सहयोग, उच्च पद प्राप्त, करियर में सफलता)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">11. 11th House (एकादश भाव):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">Rich, politically connected, gains from government, elder brother supportive.</p>
+<p style=\"margin:0.25rem 0;\">(धनवान, राजनैतिक संबंध, सरकारी लाभ, बड़े भाई का सहयोग)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">12. 12th House (द्वादश भाव):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">Expenditure on health, spiritual inclination, travels to foreign places, weak eyesight.</p>
+<p style=\"margin:0.25rem 0;\">(स्वास्थ्य पर खर्च, आध्यात्मिक प्रवृत्ति, विदेश यात्रा, नेत्रदोष)</p>
+
+<p style=\"margin:0.25rem 0;\">Surya in 12 Houses 🔥 सूर्य के भाव अनुसार फल | Sun&#x27;s Impact in All Houses in Vedic Astrology</p>
+<h4 id="Effect-of-Sun-in-12-Zodiac-Signs--12-राशियों-में-सूर्य-का-फल" class="topic-title">☀️</div></div>
                 </div>
               </div>
             </div>
@@ -5294,26 +5315,18 @@ Section 44 |
               </div>
               <div class="rule-card">
                 <div class="rule-body" style="font-size:0.85rem; line-height:1.6;">
-                  Effect of Sun in 12 Zodiac Signs (12 राशियों में सूर्य का फल)</h4>
-<h4 id="1--Aries--मेष-राशि" class="topic-title">1. Aries (मेष राशि):</h4>
-<h4 id="The-native-becomes-noble--majestic--self-respecting--proud--generous--disciplined--and-leadership-oriented" class="topic-title">The native becomes noble, majestic, self-respecting, proud, generous, disciplined, and leadership-oriented.</h4>
-<h4 id="जातक-उदार--गर्वीले--सूर्यस्वरूप--आत्मसम्मानी--प्रभावी--ख्याति-प्राप्त--अनुशासित-एवं-नेतृत्वशील-होते-हैं" class="topic-title">(जातक उदार, गर्वीले, सूर्यस्वरूप, आत्मसम्मानी, प्रभावी, ख्याति प्राप्त, अनुशासित एवं नेतृत्वशील होते हैं)</h4>
-<h4 id="2--Taurus--वृष-राशि" class="topic-title">2. Taurus (वृष राशि):</h4>
-<h4 id="The-native-is-beautiful--artistic--a-business-minded-speaker--wealthy--self-respecting--and-intelligent" class="topic-title">The native is beautiful, artistic, a business-minded speaker, wealthy, self-respecting, and intelligent.</h4>
-<h4 id="सुंदर--कलाप्रेमी--वक्तृत्व-कला-में-कुशल--धनी--स्वाभिमानी--बुद्धिमान-होते-हैं" class="topic-title">(सुंदर, कलाप्रेमी, वक्तृत्व कला में कुशल, धनी, स्वाभिमानी, बुद्धिमान होते हैं)</h4>
-<h4 id="3--Gemini--मिथुन-राशि" class="topic-title">3. Gemini (मिथुन राशि):</h4>
-<h4 id="The-native-is-a-thinker--writer--curious--intelligent-in-history-and-science--interested-in-learning-and-astrology" class="topic-title">The native is a thinker, writer, curious, intelligent in history and science, interested in learning and astrology.</h4>
-<h4 id="चिंतनशील--लेखक--जिज्ञासु--इतिहासज्ञानी--विज्ञान--विद्या--ज्योतिष-और-सीखने-में-रुचि-रखते-हैं" class="topic-title">(चिंतनशील, लेखक, जिज्ञासु, इतिहासज्ञानी, विज्ञान, विद्या, ज्योतिष और सीखने में रुचि रखते हैं)</h4>
-<h4 id="4--Cancer--कर्क-राशि" class="topic-title">4. Cancer (कर्क राशि):</h4>
-<h4 id="The-native-is-scholarly--spiritual--traditional--cultured--emotionally-deep--and-generous" class="topic-title">The native is scholarly, spiritual, traditional, cultured, emotionally deep, and generous.</h4>
-<h4 id="विद्वान--धार्मिक--परंपरावादी--सभ्य--भावुक-और-उदार" class="topic-title">(विद्वान, धार्मिक, परंपरावादी, सभ्य, भावुक और उदार)</h4>
-<h4 id="5--Leo--सिंह-राशि" class="topic-title">5. Leo (सिंह राशि):</h4>
-<h4 id="The-native-is-influential--leader-like--famous--respected--royal-in-nature--noble--and-high-spirited" class="topic-title">The native is influential, leader-like, famous, respected, royal in nature, noble, and high-spirited.</h4>
-<h4 id="प्रभावशाली--नेतृत्वकारी--प्रसिद्ध--सम्मानित--राजसी-स्वभाव-वाले--उदार-और-उत्साही" class="topic-title">(प्रभावशाली, नेतृत्वकारी, प्रसिद्ध, सम्मानित, राजसी स्वभाव वाले, उदार और उत्साही)</h4>
-<h4 id="6--Virgo--कन्या-राशि" class="topic-title">6. Virgo (कन्या राशि):</h4>
-<h4 id="The-native-is-a-tactician--logical--sharp-minded--skillful-in-analysis--and-a-perfectionist" class="topic-title">The native is a tactician, logical, sharp-minded, skillful in analysis, and a perfectionist.</h4>
-<h4 id="युक्तिवादी--तार्किक--तीव्र-बुद्धि-वाले--विश्लेषण-में-कुशल--शुद्धता-प्रिय" class="topic-title">(युक्तिवादी, तार्किक, तीव्र बुद्धि वाले, विश्लेषण में कुशल, शुद्धता प्रिय)</h4>
-<h4 id="7--Libra--तुला-राशि" class="topic-title">
+                  <div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">1. Aries (मेष राशि):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">The native becomes noble, majestic, self-respecting, proud, generous, disciplined, and leadership-oriented.</p>
+<p style=\"margin:0.25rem 0;\">(जातक उदार, गर्वीले, सूर्यस्वरूप, आत्मसम्मानी, प्रभावी, ख्याति प्राप्त, अनुशासित एवं नेतृत्वशील होते हैं)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">2. Taurus (वृष राशि):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">The native is beautiful, artistic, a business-minded speaker, wealthy, self-respecting, and intelligent.</p>
+<p style=\"margin:0.25rem 0;\">(सुंदर, कलाप्रेमी, वक्तृत्व कला में कुशल, धनी, स्वाभिमानी, बुद्धिमान होते हैं)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">3. Gemini (मिथुन राशि):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">The native is a thinker, writer, curious, intelligent in history and science, interested in learning and astrology.</p>
+<p style=\"margin:0.25rem 0;\">(चिंतनशील, लेखक, जिज्ञासु, इतिहासज्ञानी, विज्ञान, विद्या, ज्योतिष और सीखने में रुचि रखते हैं)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">4. Cancer (कर्क राशि):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">The native is scholarly, spiritual, traditional, cultured, emotionally deep, and generous.</p>
+<p style=\"margin:0.25rem 0;\">(विद्वान, धार्मिक, परंपरावादी, सभ्य, भावुक और उदार)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">5. Leo (सिंह राशि):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">The native is influential, leader-like, famous, respected, royal in nature, noble, and high-spirited.</p>
+<p style=\"margin:0.25rem 0;\">(प्रभावशाली, नेतृत्वकारी, प्रसिद्ध, सम्मानित, राजसी स्वभाव वाले, उदार और उत्साही)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">6. Virgo (कन्या राशि):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">The native is a tactician, logical, sharp-minded, skillful in analysis, and a perfectionist.</p>
+<p style=\"margin:0.25rem 0;\">(युक्तिवादी, तार्किक, तीव्र बुद्धि वाले, विश्लेषण में कुशल, शुद्धता प्रिय)</p></div></div>
                 </div>
               </div>
             </div>
@@ -5330,26 +5343,19 @@ Section 44 |
               </div>
               <div class="rule-card">
                 <div class="rule-body" style="font-size:0.85rem; line-height:1.6;">
-                  7. Libra (तुला राशि):</h4>
-<h4 id="The-native-becomes-diplomatic--justice-loving--balanced--and-peace-oriented--but-may-also-face-indecision" class="topic-title">The native becomes diplomatic, justice-loving, balanced, and peace-oriented, but may also face indecision.</h4>
-<h4 id="राजनयिक--न्यायप्रिय--संतुलित--शांति-प्रेमी--किंतु-निर्णय-लेने-में-असमर्थ" class="topic-title">(राजनयिक, न्यायप्रिय, संतुलित, शांति प्रेमी, किंतु निर्णय लेने में असमर्थ)</h4>
-<h4 id="8--Scorpio--वृश्चिक-राशि" class="topic-title">8. Scorpio (वृश्चिक राशि):</h4>
-<h4 id="The-native-is-secretive--intense--deeply-emotional--bold--investigative--and-may-have-sudden-ups---downs" class="topic-title">The native is secretive, intense, deeply emotional, bold, investigative, and may have sudden ups &amp; downs.</h4>
-<h4 id="गोपनीय-स्वभाव--तीव्र-भावनाएं--साहसी--खोजी-प्रवृत्ति--अचानक-उतार-चढ़ाव-से-युक्त" class="topic-title">(गोपनीय स्वभाव, तीव्र भावनाएं, साहसी, खोजी प्रवृत्ति, अचानक उतार-चढ़ाव से युक्त)</h4>
-<h4 id="9--Sagittarius--धनु-राशि" class="topic-title">9. Sagittarius (धनु राशि):</h4>
-<h4 id="The-native-is-wise--spiritual--noble--idealistic--and-involved-in-teaching--writing--or-religious-work" class="topic-title">The native is wise, spiritual, noble, idealistic, and involved in teaching, writing, or religious work.</h4>
-<h4 id="ज्ञानी--धार्मिक--उदार--आदर्शवादी--शिक्षा--लेखन-व-धार्मिक-कार्यों-में-रुचि" class="topic-title">(ज्ञानी, धार्मिक, उदार, आदर्शवादी, शिक्षा, लेखन व धार्मिक कार्यों में रुचि)</h4>
-<h4 id="10--Capricorn--मकर-राशि" class="topic-title">10. Capricorn (मकर राशि):</h4>
-<h4 id="The-native-is-disciplined--hardworking--ambitious--organized--and-dedicated-to-public-life-and-responsibility" class="topic-title">The native is disciplined, hardworking, ambitious, organized, and dedicated to public life and responsibility.</h4>
-<h4 id="अनुशासित--परिश्रमी--महत्त्वाकांक्षी--व्यवस्थित--सार्वजनिक-जीवन-व-उत्तरदायित्व-में-निपुण" class="topic-title">(अनुशासित, परिश्रमी, महत्त्वाकांक्षी, व्यवस्थित, सार्वजनिक जीवन व उत्तरदायित्व में निपुण)</h4>
-<h4 id="11--Aquarius--कुंभ-राशि" class="topic-title">11. Aquarius (कुंभ राशि):</h4>
-<h4 id="The-native-is-thoughtful--visionary--humanitarian--unconventional--and-a-reformer" class="topic-title">The native is thoughtful, visionary, humanitarian, unconventional, and a reformer.</h4>
-<h4 id="विचारशील--दूरदर्शी--मानवतावादी--परंपराविरोधी--सुधारक" class="topic-title">(विचारशील, दूरदर्शी, मानवतावादी, परंपराविरोधी, सुधारक)</h4>
-<h4 id="12--Pisces--मीन-राशि" class="topic-title">12. Pisces (मीन राशि):</h4>
-<h4 id="The-native-is-intuitive--imaginative--spiritual--artistic--and-compassionate" class="topic-title">The native is intuitive, imaginative, spiritual, artistic, and compassionate.</h4>
-<h4 id="अंतर्दृष्टि-युक्त--कल्पनाशील--आध्यात्मिक--कलात्मक--दयालु" class="topic-title">(अंतर्दृष्टि युक्त, कल्पनाशील, आध्यात्मिक, कलात्मक, दयालु)</h4>
-<h4 id="YouTube-Video-Title--SEO-Optimized--100-Characters" class="topic-title">📽️ YouTube Video Title (SEO-Optimized, 100 Characters):</h4>
-<h4 id="45---Surya-in-12-Rashis---सूर्य-की-12-राशियों-में-स्थिति---Sun-in-Zodiac-Signs-Vedic-Astrology-Explained" class="topic-title">45 | Surya in 12 Rashis 🌞 सूर्य की 12 राशियों में स्थिति | Sun in Zodiac Signs Vedic Astrology Explained</h4>
+                  <div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">7. Libra (तुला राशि):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">The native becomes diplomatic, justice-loving, balanced, and peace-oriented, but may also face indecision.</p>
+<p style=\"margin:0.25rem 0;\">(राजनयिक, न्यायप्रिय, संतुलित, शांति प्रेमी, किंतु निर्णय लेने में असमर्थ)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">8. Scorpio (वृश्चिक राशि):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">The native is secretive, intense, deeply emotional, bold, investigative, and may have sudden ups &amp; downs.</p>
+<p style=\"margin:0.25rem 0;\">(गोपनीय स्वभाव, तीव्र भावनाएं, साहसी, खोजी प्रवृत्ति, अचानक उतार-चढ़ाव से युक्त)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">9. Sagittarius (धनु राशि):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">The native is wise, spiritual, noble, idealistic, and involved in teaching, writing, or religious work.</p>
+<p style=\"margin:0.25rem 0;\">(ज्ञानी, धार्मिक, उदार, आदर्शवादी, शिक्षा, लेखन व धार्मिक कार्यों में रुचि)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">10. Capricorn (मकर राशि):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">The native is disciplined, hardworking, ambitious, organized, and dedicated to public life and responsibility.</p>
+<p style=\"margin:0.25rem 0;\">(अनुशासित, परिश्रमी, महत्त्वाकांक्षी, व्यवस्थित, सार्वजनिक जीवन व उत्तरदायित्व में निपुण)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">11. Aquarius (कुंभ राशि):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">The native is thoughtful, visionary, humanitarian, unconventional, and a reformer.</p>
+<p style=\"margin:0.25rem 0;\">(विचारशील, दूरदर्शी, मानवतावादी, परंपराविरोधी, सुधारक)</p></div></div>
+<div class="sun-effect-item" style="margin-bottom:0.75rem;"><div style="color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;">12. Pisces (मीन राशि):</div><div style="font-size:0.84rem; line-height:1.55; margin-top:0.25rem;"><p style=\"margin:0.25rem 0;\">The native is intuitive, imaginative, spiritual, artistic, and compassionate.</p>
+<p style=\"margin:0.25rem 0;\">(अंतर्दृष्टि युक्त, कल्पनाशील, आध्यात्मिक, कलात्मक, दयालु)</p>
+<p style=\"margin:0.25rem 0;\">📽️ YouTube Video Title (SEO-Optimized, 100 Characters):</p></div></div>
                 </div>
               </div>
             </div>
@@ -5357,7 +5363,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-49" data-page="49" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="सूर्य (Sun)" style="display:none;">
+    <div class="book-page-data" id="page-data-49" data-page="49" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="सूर्य (Sun)" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -5366,6 +5372,7 @@ Section 44 |
           </div>
           <div class="content-block">
 <h4 id="सूर्य--Sun" class="topic-title">सूर्य (Sun)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-1">
 <div class="table-caption">सूर्य (Sun)</div>
@@ -5413,7 +5420,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-50" data-page="50" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="चंद्रमा (Moon)" style="display:none;">
+    <div class="book-page-data" id="page-data-50" data-page="50" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="चंद्रमा (Moon)" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -5421,6 +5428,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">चंद्रमा (Moon)</h3>
           </div>
           <div class="content-block"><h4 id="चंद्रमा--Moon" class="topic-title">चंद्रमा (Moon)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-2">
 <div class="table-caption">चंद्रमा (Moon)</div>
@@ -5468,7 +5476,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-51" data-page="51" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="मंगल (Mars)" style="display:none;">
+    <div class="book-page-data" id="page-data-51" data-page="51" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="मंगल (Mars)" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -5476,6 +5484,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">मंगल (Mars)</h3>
           </div>
           <div class="content-block"><h4 id="मंगल--Mars" class="topic-title">मंगल (Mars)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-3">
 <div class="table-caption">मंगल (Mars)</div>
@@ -5523,7 +5532,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-52" data-page="52" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="बुध (Mercury)" style="display:none;">
+    <div class="book-page-data" id="page-data-52" data-page="52" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="बुध (Mercury)" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -5531,6 +5540,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">बुध (Mercury)</h3>
           </div>
           <div class="content-block"><h4 id="बुध--Mercury" class="topic-title">बुध (Mercury)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-4">
 <div class="table-caption">बुध (Mercury)</div>
@@ -5578,7 +5588,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-53" data-page="53" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="गुरु (Jupiter)" style="display:none;">
+    <div class="book-page-data" id="page-data-53" data-page="53" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="गुरु (Jupiter)" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -5586,6 +5596,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">गुरु (Jupiter)</h3>
           </div>
           <div class="content-block"><h4 id="गुरु--Jupiter" class="topic-title">गुरु (Jupiter)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-5">
 <div class="table-caption">गुरु (Jupiter)</div>
@@ -5633,7 +5644,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-54" data-page="54" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="शुक्र (Venus)" style="display:none;">
+    <div class="book-page-data" id="page-data-54" data-page="54" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="शुक्र (Venus)" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -5641,6 +5652,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">शुक्र (Venus)</h3>
           </div>
           <div class="content-block"><h4 id="शुक्र--Venus" class="topic-title">शुक्र (Venus)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-6">
 <div class="table-caption">शुक्र (Venus)</div>
@@ -5688,7 +5700,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-55" data-page="55" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="शनि (Saturn)" style="display:none;">
+    <div class="book-page-data" id="page-data-55" data-page="55" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="शनि (Saturn)" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -5696,6 +5708,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">शनि (Saturn)</h3>
           </div>
           <div class="content-block"><h4 id="शनि--Saturn" class="topic-title">शनि (Saturn)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-7">
 <div class="table-caption">शनि (Saturn)</div>
@@ -5743,7 +5756,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-56" data-page="56" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="राहु (Rahu - North Node of the Moon)" style="display:none;">
+    <div class="book-page-data" id="page-data-56" data-page="56" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="राहु (Rahu - North Node of the Moon)" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -5751,6 +5764,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">राहु (Rahu - North Node of the Moon)</h3>
           </div>
           <div class="content-block"><h4 id="राहु--Rahu---North-Node-of-the-Moon" class="topic-title">राहु (Rahu - North Node of the Moon)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-8">
 <div class="table-caption">राहु (Rahu - North Node of the Moon)</div>
@@ -5798,7 +5812,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-57" data-page="57" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="केतु (Ketu - South Node of the Moon)" style="display:none;">
+    <div class="book-page-data" id="page-data-57" data-page="57" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="केतु (Ketu - South Node of the Moon)" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -5806,6 +5820,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">केतु (Ketu - South Node of the Moon)</h3>
           </div>
           <div class="content-block"><h4 id="केतु--Ketu---South-Node-of-the-Moon" class="topic-title">केतु (Ketu - South Node of the Moon)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-9">
 <div class="table-caption">केतु (Ketu - South Node of the Moon)</div>
@@ -5853,7 +5868,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-58" data-page="58" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="1. प्रथम भाव (Pratham Bhava) - First House (L" style="display:none;">
+    <div class="book-page-data" id="page-data-58" data-page="58" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="1. प्रथम भाव (Pratham Bhava) - First House (L" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -5862,6 +5877,7 @@ Section 44 |
           </div>
           <div class="content-block"><h4 id="Here-is-the-detailed-list-for-each-House--Bhava" class="topic-title">Here is the detailed list for each House (Bhava):</h4>
 <h4 id="1--प्रथम-भाव--Pratham-Bhava----First-House--Lagna-Tanu-Bhava" class="topic-title">1. प्रथम भाव (Pratham Bhava) - First House (Lagna/Tanu Bhava)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-10">
 <div class="table-caption">1. प्रथम भाव (Pratham Bhava) - First House (Lagna/Tanu Bhava)</div>
@@ -5904,7 +5920,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-59" data-page="59" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="2. द्वितीय भाव (Dwitiya Bhava) - Second House" style="display:none;">
+    <div class="book-page-data" id="page-data-59" data-page="59" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="2. द्वितीय भाव (Dwitiya Bhava) - Second House" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -5912,6 +5928,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">2. द्वितीय भाव (Dwitiya Bhava) - Second House (Dhana/Kutumba Bhava)</h3>
           </div>
           <div class="content-block"><h4 id="2--द्वितीय-भाव--Dwitiya-Bhava----Second-House--Dhana-Kutumba-Bhava" class="topic-title">2. द्वितीय भाव (Dwitiya Bhava) - Second House (Dhana/Kutumba Bhava)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-11">
 <div class="table-caption">2. द्वितीय भाव (Dwitiya Bhava) - Second House (Dhana/Kutumba Bhava)</div>
@@ -5954,7 +5971,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-60" data-page="60" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="3. तृतीय भाव (Tritiya Bhava) - Third House (S" style="display:none;">
+    <div class="book-page-data" id="page-data-60" data-page="60" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="3. तृतीय भाव (Tritiya Bhava) - Third House (S" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -5962,6 +5979,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">3. तृतीय भाव (Tritiya Bhava) - Third House (Sahaja/Bhratru Bhava)</h3>
           </div>
           <div class="content-block"><h4 id="3--तृतीय-भाव--Tritiya-Bhava----Third-House--Sahaja-Bhratru-Bhava" class="topic-title">3. तृतीय भाव (Tritiya Bhava) - Third House (Sahaja/Bhratru Bhava)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-12">
 <div class="table-caption">3. तृतीय भाव (Tritiya Bhava) - Third House (Sahaja/Bhratru Bhava)</div>
@@ -6004,7 +6022,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-61" data-page="61" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="4. चतुर्थ भाव (Chaturth Bhava) - Fourth House" style="display:none;">
+    <div class="book-page-data" id="page-data-61" data-page="61" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="4. चतुर्थ भाव (Chaturth Bhava) - Fourth House" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -6012,6 +6030,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">4. चतुर्थ भाव (Chaturth Bhava) - Fourth House (Sukha/Matru Bhava)</h3>
           </div>
           <div class="content-block"><h4 id="4--चतुर्थ-भाव--Chaturth-Bhava----Fourth-House--Sukha-Matru-Bhava" class="topic-title">4. चतुर्थ भाव (Chaturth Bhava) - Fourth House (Sukha/Matru Bhava)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-13">
 <div class="table-caption">4. चतुर्थ भाव (Chaturth Bhava) - Fourth House (Sukha/Matru Bhava)</div>
@@ -6054,7 +6073,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-62" data-page="62" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="5. पंचम भाव (Pancham Bhava) - Fifth House (Pu" style="display:none;">
+    <div class="book-page-data" id="page-data-62" data-page="62" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="5. पंचम भाव (Pancham Bhava) - Fifth House (Pu" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -6062,6 +6081,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">5. पंचम भाव (Pancham Bhava) - Fifth House (Putra/Vidya Bhava)</h3>
           </div>
           <div class="content-block"><h4 id="5--पंचम-भाव--Pancham-Bhava----Fifth-House--Putra-Vidya-Bhava" class="topic-title">5. पंचम भाव (Pancham Bhava) - Fifth House (Putra/Vidya Bhava)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-14">
 <div class="table-caption">5. पंचम भाव (Pancham Bhava) - Fifth House (Putra/Vidya Bhava)</div>
@@ -6104,7 +6124,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-63" data-page="63" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="6. षष्ठ भाव (Shashth Bhava) - Sixth House (Ro" style="display:none;">
+    <div class="book-page-data" id="page-data-63" data-page="63" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="6. षष्ठ भाव (Shashth Bhava) - Sixth House (Ro" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -6112,6 +6132,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">6. षष्ठ भाव (Shashth Bhava) - Sixth House (Roga/Shatru Bhava)</h3>
           </div>
           <div class="content-block"><h4 id="6--षष्ठ-भाव--Shashth-Bhava----Sixth-House--Roga-Shatru-Bhava" class="topic-title">6. षष्ठ भाव (Shashth Bhava) - Sixth House (Roga/Shatru Bhava)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-15">
 <div class="table-caption">6. षष्ठ भाव (Shashth Bhava) - Sixth House (Roga/Shatru Bhava)</div>
@@ -6154,7 +6175,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-64" data-page="64" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="7. सप्तम भाव (Saptam Bhava) - Seventh House (" style="display:none;">
+    <div class="book-page-data" id="page-data-64" data-page="64" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="7. सप्तम भाव (Saptam Bhava) - Seventh House (" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -6162,6 +6183,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">7. सप्तम भाव (Saptam Bhava) - Seventh House (Kalatra/Jaya Bhava)</h3>
           </div>
           <div class="content-block"><h4 id="7--सप्तम-भाव--Saptam-Bhava----Seventh-House--Kalatra-Jaya-Bhava" class="topic-title">7. सप्तम भाव (Saptam Bhava) - Seventh House (Kalatra/Jaya Bhava)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-16">
 <div class="table-caption">7. सप्तम भाव (Saptam Bhava) - Seventh House (Kalatra/Jaya Bhava)</div>
@@ -6204,7 +6226,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-65" data-page="65" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="8. अष्टम भाव (Ashtam Bhava) - Eighth House (M" style="display:none;">
+    <div class="book-page-data" id="page-data-65" data-page="65" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="8. अष्टम भाव (Ashtam Bhava) - Eighth House (M" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -6212,6 +6234,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">8. अष्टम भाव (Ashtam Bhava) - Eighth House (Mrityu/Ayur Bhava)</h3>
           </div>
           <div class="content-block"><h4 id="8--अष्टम-भाव--Ashtam-Bhava----Eighth-House--Mrityu-Ayur-Bhava" class="topic-title">8. अष्टम भाव (Ashtam Bhava) - Eighth House (Mrityu/Ayur Bhava)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-17">
 <div class="table-caption">8. अष्टम भाव (Ashtam Bhava) - Eighth House (Mrityu/Ayur Bhava)</div>
@@ -6254,7 +6277,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-66" data-page="66" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="9. नवम भाव (Navam Bhava) - Ninth House (Bhagy" style="display:none;">
+    <div class="book-page-data" id="page-data-66" data-page="66" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="9. नवम भाव (Navam Bhava) - Ninth House (Bhagy" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -6262,6 +6285,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">9. नवम भाव (Navam Bhava) - Ninth House (Bhagya/Dharma Bhava)</h3>
           </div>
           <div class="content-block"><h4 id="9--नवम-भाव--Navam-Bhava----Ninth-House--Bhagya-Dharma-Bhava" class="topic-title">9. नवम भाव (Navam Bhava) - Ninth House (Bhagya/Dharma Bhava)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-18">
 <div class="table-caption">9. नवम भाव (Navam Bhava) - Ninth House (Bhagya/Dharma Bhava)</div>
@@ -6304,7 +6328,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-67" data-page="67" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="10. दशम भाव (Dasham Bhava) - Tenth House (Kar" style="display:none;">
+    <div class="book-page-data" id="page-data-67" data-page="67" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="10. दशम भाव (Dasham Bhava) - Tenth House (Kar" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -6312,6 +6336,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">10. दशम भाव (Dasham Bhava) - Tenth House (Karma Bhava)</h3>
           </div>
           <div class="content-block"><h4 id="10--दशम-भाव--Dasham-Bhava----Tenth-House--Karma-Bhava" class="topic-title">10. दशम भाव (Dasham Bhava) - Tenth House (Karma Bhava)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-19">
 <div class="table-caption">10. दशम भाव (Dasham Bhava) - Tenth House (Karma Bhava)</div>
@@ -6354,7 +6379,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-68" data-page="68" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="11. एकादश भाव (Ekadash Bhava) - Eleventh Hous" style="display:none;">
+    <div class="book-page-data" id="page-data-68" data-page="68" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="11. एकादश भाव (Ekadash Bhava) - Eleventh Hous" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -6362,6 +6387,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">11. एकादश भाव (Ekadash Bhava) - Eleventh House (Labha Bhava)</h3>
           </div>
           <div class="content-block"><h4 id="11--एकादश-भाव--Ekadash-Bhava----Eleventh-House--Labha-Bhava" class="topic-title">11. एकादश भाव (Ekadash Bhava) - Eleventh House (Labha Bhava)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-20">
 <div class="table-caption">11. एकादश भाव (Ekadash Bhava) - Eleventh House (Labha Bhava)</div>
@@ -6404,7 +6430,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-69" data-page="69" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="12. द्वादश भाव (Dwadash Bhava) - Twelfth Hous" style="display:none;">
+    <div class="book-page-data" id="page-data-69" data-page="69" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="12. द्वादश भाव (Dwadash Bhava) - Twelfth Hous" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -6412,6 +6438,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">12. द्वादश भाव (Dwadash Bhava) - Twelfth House (Vyaya Bhava)</h3>
           </div>
           <div class="content-block"><h4 id="12--द्वादश-भाव--Dwadash-Bhava----Twelfth-House--Vyaya-Bhava" class="topic-title">12. द्वादश भाव (Dwadash Bhava) - Twelfth House (Vyaya Bhava)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-21">
 <div class="table-caption">12. द्वादश भाव (Dwadash Bhava) - Twelfth House (Vyaya Bhava)</div>
@@ -6454,7 +6481,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-70" data-page="70" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title=")" style="display:none;">
+    <div class="book-page-data" id="page-data-70" data-page="70" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title=")" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -6465,6 +6492,7 @@ Section 44 |
 <h4 id="" class="topic-title">(</h4>
 <h4 id="ज्योतिषीय-भाव-और-संबंधित-शरीर-के-अंग-व-रोग" class="topic-title">ज्योतिषीय भाव और संबंधित शरीर के अंग व रोग</h4>
 <h4 id="" class="topic-title">)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-22">
 <div class="table-caption">)</div>
@@ -6542,7 +6570,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-71" data-page="71" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="ज्योतिष और स्वास्थ्य: राशि, शरीर के अंग और वि" style="display:none;">
+    <div class="book-page-data" id="page-data-71" data-page="71" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="ज्योतिष और स्वास्थ्य: राशि, शरीर के अंग और वि" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -6550,6 +6578,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">ज्योतिष और स्वास्थ्य: राशि, शरीर के अंग और विशिष्ट रोग</h3>
           </div>
           <div class="content-block"><h4 id="ज्योतिष-और-स्वास्थ्य--राशि--शरीर-के-अंग-और-विशिष्ट-रोग" class="topic-title">ज्योतिष और स्वास्थ्य: राशि, शरीर के अंग और विशिष्ट रोग</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-23">
 <div class="table-caption">ज्योतिष और स्वास्थ्य: राशि, शरीर के अंग और विशिष्ट रोग</div>
@@ -6627,7 +6656,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-72" data-page="72" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="Key Points (मुख्य बिंदु)" style="display:none;">
+    <div class="book-page-data" id="page-data-72" data-page="72" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="Key Points (मुख्य बिंदु)" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -6637,6 +6666,7 @@ Section 44 |
           <div class="content-block"><h4 id="Astrological-Analysis-of-Oncological-Disorders-in-Vedic-Astrology--कैंसर-रोग-का-वैदिक-ज्योतिषीय-विश्लेषण" class="topic-title">Astrological Analysis of Oncological Disorders in Vedic Astrology (कैंसर रोग का वैदिक ज्योतिषीय विश्लेषण)</h4>
 <h4 id="" class="topic-title">🔑</h4>
 <h4 id="Key-Points--मुख्य-बिंदु" class="topic-title">Key Points (मुख्य बिंदु)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-24">
 <div class="table-caption">Key Points (मुख्य बिंदु)</div>
@@ -6669,7 +6699,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-73" data-page="73" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="1. General Cancer (e.g., Breast, Lung) – सामा" style="display:none;">
+    <div class="book-page-data" id="page-data-73" data-page="73" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="1. General Cancer (e.g., Breast, Lung) – सामा" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -6677,6 +6707,7 @@ Section 44 |
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">1. General Cancer (e.g., Breast, Lung) – सामान्य कैंसर (स्तन, फेफड़े)</h3>
           </div>
           <div class="content-block"><h4 id="1--General-Cancer--e-g---Breast--Lung----सामान्य-कैंसर--स्तन--फेफड़े" class="topic-title">1. General Cancer (e.g., Breast, Lung) – सामान्य कैंसर (स्तन, फेफड़े)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-25">
 <div class="table-caption">1. General Cancer (e.g., Breast, Lung) – सामान्य कैंसर (स्तन, फेफड़े)</div>
@@ -6749,7 +6780,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-74" data-page="74" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="2. Leukemia (Blood Cancer) – रक्त कैंसर (ल्यू" style="display:none;">
+    <div class="book-page-data" id="page-data-74" data-page="74" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="2. Leukemia (Blood Cancer) – रक्त कैंसर (ल्यू" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -6831,6 +6862,7 @@ Section 44 |
 <div class="outcome-box">2. Leukemia (Blood Cancer) – रक्त कैंसर (ल्यूकीमिया)</div>
 </div>
 </div></div></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-26">
 <div class="table-caption">2. Leukemia (Blood Cancer) – रक्त कैंसर (ल्यूकीमिया)</div>
@@ -6899,7 +6931,7 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-75" data-page="75" data-chapter="Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर" data-title="3. Skin Cancer – त्वचा कैंसर" style="display:none;">
+    <div class="book-page-data" id="page-data-75" data-page="75" data-chapter="Ch 5: मेडिकल व स्वास्थ्य ज्योतिष" data-title="3. Skin Cancer – त्वचा कैंसर" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -7051,6 +7083,7 @@ Section 44 |
 <div class="outcome-box">3. Skin Cancer – त्वचा कैंसर</div>
 </div>
 </div></div></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch5-table-27">
 <div class="table-caption">3. Skin Cancer – त्वचा कैंसर</div>
@@ -7119,18 +7152,19 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-76" data-page="76" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="This table lists the 27 Nakshatras with their" style="display:none;">
+    <div class="book-page-data" id="page-data-76" data-page="76" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="२७ नक्षत्र, विस्तार व राशि सीमा (27 Nakshatra" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 6 • Pada Section 1</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">This table lists the 27 Nakshatras with their starting and ending degrees across the zodiac signs (Rashi) in Vedic astrology. Each Nakshatra spans approximately 13°20’ (13 degrees and 20 minutes), covering the entire 360° zodiac.</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">२७ नक्षत्र, विस्तार व राशि सीमा (27 Nakshatras: Degree Spans)</h3>
           </div>
           <div class="content-block">
 <h4 id="This-table-lists-the-27-Nakshatras-with-their-starting-and-ending-degrees-across-the-zodiac-signs--Rashi--in-Vedic-astrology--Each-Nakshatra-spans-approximately-13-20---13-degrees-and-20-minutes---covering-the-entire-360--zodiac" class="topic-title">This table lists the 27 Nakshatras with their starting and ending degrees across the zodiac signs (Rashi) in Vedic astrology. Each Nakshatra spans approximately 13°20’ (13 degrees and 20 minutes), covering the entire 360° zodiac.</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch6-table-1">
-<div class="table-caption">This table lists the 27 Nakshatras with their starting and ending degrees across the zodiac signs (Rashi) in Vedic astrology. Each Nakshatra spans approximately 13°20’ (13 degrees and 20 minutes), covering the entire 360° zodiac.</div>
+<div class="table-caption">२७ नक्षत्र, विस्तार व राशि सीमा (27 Nakshatras: Degree Spans)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -7280,17 +7314,18 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-77" data-page="77" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="This table outlines the 27 Nakshatras, their " style="display:none;">
+    <div class="book-page-data" id="page-data-77" data-page="77" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="२७ नक्षत्र, देवता व पद नामाक्षर (Nakshatra De" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 6 • Pada Section 2</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">This table outlines the 27 Nakshatras, their presiding deities (Devatas), and the syllables associated with each of the four Padas (quarters) for naming or astrological purposes.</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">२७ नक्षत्र, देवता व पद नामाक्षर (Nakshatra Deities & Pada Syllables)</h3>
           </div>
           <div class="content-block"><h4 id="This-table-outlines-the-27-Nakshatras--their-presiding-deities--Devatas---and-the-syllables-associated-with-each-of-the-four-Padas--quarters--for-naming-or-astrological-purposes" class="topic-title">This table outlines the 27 Nakshatras, their presiding deities (Devatas), and the syllables associated with each of the four Padas (quarters) for naming or astrological purposes.</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch6-table-2">
-<div class="table-caption">This table outlines the 27 Nakshatras, their presiding deities (Devatas), and the syllables associated with each of the four Padas (quarters) for naming or astrological purposes.</div>
+<div class="table-caption">२७ नक्षत्र, देवता व पद नामाक्षर (Nakshatra Deities & Pada Syllables)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -7524,18 +7559,19 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-78" data-page="78" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="Nakshatra, Devata and Ruler Table (नक्षत्र, द" style="display:none;">
+    <div class="book-page-data" id="page-data-78" data-page="78" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="नक्षत्र, देवता एवं ग्रह स्वामी तालिका (Naksha" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 6 • Pada Section 3</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Nakshatra, Devata and Ruler Table (नक्षत्र, देवता और स्वामी तालिका)</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">नक्षत्र, देवता एवं ग्रह स्वामी तालिका (Nakshatra, Devata & Lords)</h3>
           </div>
           <div class="content-block"><h4 id="" class="topic-title">🌌</h4>
 <h4 id="Nakshatra--Devata-and-Ruler-Table--नक्षत्र--देवता-और-स्वामी-तालिका" class="topic-title">Nakshatra, Devata and Ruler Table (नक्षत्र, देवता और स्वामी तालिका)</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch6-table-3">
-<div class="table-caption">Nakshatra, Devata and Ruler Table (नक्षत्र, देवता और स्वामी तालिका)</div>
+<div class="table-caption">नक्षत्र, देवता एवं ग्रह स्वामी तालिका (Nakshatra, Devata & Lords)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -7713,18 +7749,18 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-79" data-page="79" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="Nakshatra Lords Table | याद रखने का आसान तरीक" style="display:none;">
+    <div class="book-page-data" id="page-data-79" data-page="79" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="नक्षत्र स्वामी व दशा अधिपति सूत्र (Nakshatra " style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 6 • Pada Section 4</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Nakshatra Lords Table | याद रखने का आसान तरीका</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">नक्षत्र स्वामी व दशा अधिपति सूत्र (Nakshatra Lordship Classical Sutra)</h3>
           </div>
-          <div class="content-block"><h4 id="" class="topic-title">📘</h4>
-<h4 id="Nakshatra-Lords-Table---याद-रखने-का-आसान-तरीका" class="topic-title">Nakshatra Lords Table | याद रखने का आसान तरीका</h4></div>
+          <div class="content-block"></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch6-table-4">
-<div class="table-caption">Nakshatra Lords Table | याद रखने का आसान तरीका</div>
+<div class="table-caption">नक्षत्र स्वामी व दशा अधिपति सूत्र (Nakshatra Lordship Classical Sutra)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -7794,17 +7830,18 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-80" data-page="80" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="Table 5" style="display:none;">
+    <div class="book-page-data" id="page-data-80" data-page="80" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="२७ नक्षत्र एवं स्वामी द्विभाषी तालिका (27 Nak" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 6 • Pada Section 5</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Table 5</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">२७ नक्षत्र एवं स्वामी द्विभाषी तालिका (27 Nakshatras & Lords Reference)</h3>
           </div>
           
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch6-table-5">
-<div class="table-caption">Table 5</div>
+<div class="table-caption">२७ नक्षत्र एवं स्वामी द्विभाषी तालिका (27 Nakshatras & Lords Reference)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -8234,17 +8271,18 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-81" data-page="81" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="44 | The Dark &amp;amp; Divine Side of Ashlesha N" style="display:none;">
+    <div class="book-page-data" id="page-data-81" data-page="81" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="आश्लेषा नक्षत्र: ४ पद एवं ग्रह फल (Ashlesha N" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 6 • Pada Section 6</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">44 | The Dark &amp; Divine Side of Ashlesha Nakshatra | 4 Padas + Planet Analysis</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">आश्लेषा नक्षत्र: ४ पद एवं ग्रह फल (Ashlesha Nakshatra: 4 Padas & Planet Analysis)</h3>
           </div>
-          <div class="content-block"><h4 id="44---The-Dark---Divine-Side-of-Ashlesha-Nakshatra---4-Padas---Planet-Analysis" class="topic-title">44 | The Dark &amp; Divine Side of Ashlesha Nakshatra | 4 Padas + Planet Analysis</h4></div>
+          <div class="content-block"></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch6-table-6">
-<div class="table-caption">44 | The Dark &amp; Divine Side of Ashlesha Nakshatra | 4 Padas + Planet Analysis</div>
+<div class="table-caption">आश्लेषा नक्षत्र: ४ पद एवं ग्रह फल (Ashlesha Nakshatra: 4 Padas & Planet Analysis)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -8331,14 +8369,14 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-82" data-page="82" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="Hidden insecurity masked by responsibility" style="display:none;">
+    <div class="book-page-data" id="page-data-82" data-page="82" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="पुष्य नक्षत्र: ४ पद एवं नवमांश ग्रह प्रभाव (P" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 6 • Pada Section 7</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Hidden insecurity masked by responsibility</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">पुष्य नक्षत्र: ४ पद एवं नवमांश ग्रह प्रभाव (Pushya Nakshatra: 4 Padas & Planet Analysis)</h3>
           </div>
-          <div class="content-block"><h4 id="45---Pushya-Nakshatra-Complete-Breakdown-----All-Planets--Padas---Navamsa-Explained" class="topic-title">45 | Pushya Nakshatra Complete Breakdown 🔮 | All Planets, Padas &amp; Navamsa Explained</h4>
+          <div class="content-block">
 <h4 id="Fundamental-Attributes" class="topic-title">Fundamental Attributes</h4>
 <h4 id="Sanskrit-Name" class="topic-title">Sanskrit Name:</h4>
 <h4 id="पुष्य" class="topic-title">पुष्य (</h4>
@@ -8399,9 +8437,10 @@ Section 44 |
 <h4 id="Passive-aggressive-tendencies" class="topic-title">Passive-aggressive tendencies</h4>
 <h4 id="Attachment-to-duty-over-self" class="topic-title">Attachment to duty over self</h4>
 <h4 id="Hidden-insecurity-masked-by-responsibility" class="topic-title">Hidden insecurity masked by responsibility</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch6-table-7">
-<div class="table-caption">Hidden insecurity masked by responsibility</div>
+<div class="table-caption">पुष्य नक्षत्र: ४ पद एवं नवमांश ग्रह प्रभाव (Pushya Nakshatra: 4 Padas & Planet Analysis)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -8488,17 +8527,18 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-83" data-page="83" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="43 | Ashwini Nakshatra Explained: 4 Padas, Na" style="display:none;">
+    <div class="book-page-data" id="page-data-83" data-page="83" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="अश्विनी नक्षत्र: ४ पद व नवमांश अधिपति (Ashwin" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 6 • Pada Section 8</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">43 | Ashwini Nakshatra Explained: 4 Padas, Navamsa Lords &amp; Every Planet’s Meaning Ketu‑Ruled Aries</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">अश्विनी नक्षत्र: ४ पद व नवमांश अधिपति (Ashwini Nakshatra: 4 Padas & Navamsha Lords)</h3>
           </div>
-          <div class="content-block"><h4 id="43---Ashwini-Nakshatra-Explained--4-Padas--Navamsa-Lords---Every-Planet-s-Meaning-Ketu-Ruled-Aries" class="topic-title">43 | Ashwini Nakshatra Explained: 4 Padas, Navamsa Lords &amp; Every Planet’s Meaning Ketu‑Ruled Aries</h4></div>
+          <div class="content-block"></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch6-table-8">
-<div class="table-caption">43 | Ashwini Nakshatra Explained: 4 Padas, Navamsa Lords &amp; Every Planet’s Meaning Ketu‑Ruled Aries</div>
+<div class="table-caption">अश्विनी नक्षत्र: ४ पद व नवमांश अधिपति (Ashwini Nakshatra: 4 Padas & Navamsha Lords)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -8538,17 +8578,18 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-84" data-page="84" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="Table 9" style="display:none;">
+    <div class="book-page-data" id="page-data-84" data-page="84" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="अश्विनी नक्षत्र: पद ध्वनि व मूल स्वभाव (Ashwi" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 6 • Pada Section 9</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Table 9</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">अश्विनी नक्षत्र: पद ध्वनि व मूल स्वभाव (Ashwini Padas: Phonetics & Characteristics)</h3>
           </div>
           
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch6-table-9">
-<div class="table-caption">Table 9</div>
+<div class="table-caption">अश्विनी नक्षत्र: पद ध्वनि व मूल स्वभाव (Ashwini Padas: Phonetics & Characteristics)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -8593,17 +8634,18 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-85" data-page="85" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="Table 10" style="display:none;">
+    <div class="book-page-data" id="page-data-85" data-page="85" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="अश्विनी नक्षत्र में ९ ग्रहों का फलित (Planeta" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 6 • Pada Section 10</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Table 10</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">अश्विनी नक्षत्र में ९ ग्रहों का फलित (Planetary Placements in Ashwini)</h3>
           </div>
           
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch6-table-10">
-<div class="table-caption">Table 10</div>
+<div class="table-caption">अश्विनी नक्षत्र में ९ ग्रहों का फलित (Planetary Placements in Ashwini)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>
@@ -8653,12 +8695,12 @@ Section 44 |
     </div>
     
 
-    <div class="book-page-data" id="page-data-86" data-page="86" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="Falls in the Cancer Navamsa ruled by the Moon" style="display:none;">
+    <div class="book-page-data" id="page-data-86" data-page="86" data-chapter="Ch 6: नक्षत्र पद व ग्रह विश्लेषण" data-title="अश्विनी नक्षत्र: ४ पद, नवमांश व ग्रह संबंध (A" style="display:none;">
       
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 6 • Pada Section 11</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">Falls in the Cancer Navamsa ruled by the Moon. It brings out deep medical correlations, representing emotion, healing, and water elements.</h3>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">अश्विनी नक्षत्र: ४ पद, नवमांश व ग्रह संबंध (Ashwini Padas: Navamsha & Planet Relations)</h3>
           </div>
           <div class="content-block"><h4 id="Core-Logic-of-Ashwini" class="topic-title">Core Logic of Ashwini ♈</h4>
 <h4 id="Ashwini-spans-from-0-00--to-13-20--in-the-sign-of-Aries-and-is-ruled-by-the-planet-Ketu--Modern-astrological-research-defines-its-core" class="topic-title">Ashwini spans from 0°00&#x27; to 13°20&#x27; in the sign of Aries and is ruled by the planet Ketu. Modern astrological research defines its core</h4>
@@ -8682,9 +8724,10 @@ Section 44 |
 <h4 id="La" class="topic-title">La</h4>
 <h4 id="" class="topic-title">):</h4>
 <h4 id="Falls-in-the-Cancer-Navamsa-ruled-by-the-Moon--It-brings-out-deep-medical-correlations--representing-emotion--healing--and-water-elements" class="topic-title">Falls in the Cancer Navamsa ruled by the Moon. It brings out deep medical correlations, representing emotion, healing, and water elements.</h4></div>
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
             <div class="table-container" id="ch6-table-11">
-<div class="table-caption">Falls in the Cancer Navamsa ruled by the Moon. It brings out deep medical correlations, representing emotion, healing, and water elements.</div>
+<div class="table-caption">अश्विनी नक्षत्र: ४ पद, नवमांश व ग्रह संबंध (Ashwini Padas: Navamsha & Planet Relations)</div>
 <div class="table-responsive">
 <table class="astro-table">
 <thead><tr>

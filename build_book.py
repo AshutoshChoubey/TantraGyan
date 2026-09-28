@@ -17,7 +17,26 @@ with open(source_file, "r", encoding="utf-8") as f:
 
 # Helper to clean titles
 def clean_text(s):
-    return re.sub(r'<[^>]+>', '', s).strip()
+    s = re.sub(r'<[^>]+>', '', s).strip()
+    s = re.sub(r'^\d+\s*\|\s*', '', s)
+    return s.strip()
+
+def sanitize_content_block(cb_raw):
+    if not cb_raw:
+        return ""
+    # Strip slide indicators like <div class="slide-indicator">Section 29 |</div>
+    s = re.sub(r'<div[^>]*class=[\"\']slide-indicator[\"\'][^>]*>.*?</div>', '', cb_raw, flags=re.DOTALL)
+    # Strip Section XX | text
+    s = re.sub(r'Section\s*\d+\s*\|\s*', '', s)
+    # Strip raw video title headings like 28 | 💫 Planetary Drishti... or 42 | &quot;Graha Sambandh...
+    s = re.sub(r'<h[1-6][^>]*>\s*\d+\s*\|\s*.*?<\/h[1-6]>', '', s, flags=re.DOTALL)
+    # Strip Title: 🌛 Nakshatras...
+    s = re.sub(r'<h[1-6][^>]*>\s*Title:\s*.*?<\/h[1-6]>', '', s, flags=re.DOTALL)
+    # Strip leftover video tags and hashtag descriptions
+    s = re.sub(r'<h[1-6][^>]*>\s*.*?(?:Nakshatra Secrets|Nakshatra Lords Table|Rashi Degrees|Graha Sambandh Explained|House Karaka Planets|Surya in 12 Rashis|Ashlesha Nakshatra|Pushya Nakshatra|Ashwini Nakshatra).*?<\/h[1-6]>', '', s, flags=re.DOTALL)
+    # Clean up empty heading tags
+    s = re.sub(r'<h[1-6][^>]*>\s*<\/h[1-6]>', '', s)
+    return s.strip()
 
 pages = []
 
@@ -40,9 +59,9 @@ page_1 = """
   <div class="cover-divider"></div>
 
   <p class="cover-subtitle">
-    <strong>नवग्रह कारकत्व, 17 शास्त्रीय राजयोग, 27 नक्षत्र व 108 पद विश्लेषण, दीप्तादि 9 अवस्थाएं, भाव-राशि फल तथा संपूर्ण मेडिकल एस्ट्रोलॉजी व कैंसर रोग निदान।</strong><br>
+    <strong>नवग्रह कारकत्व, 17 शास्त्रीय राजयोग, 27 नक्षत्र व 108 पद विश्लेषण, दीप्तादि 9 अवस्थाएं एवं 12 भाव-राशि फल।</strong><br>
     <span style="font-size:0.85rem; color:var(--text-muted); display:inline-block; margin-top:0.4rem;">
-      Comprehensive Classical Sutras, Astronomical Motion & Empirical Ayur-Jyotish Diagnostics
+      Comprehensive Classical Sutras, Astronomical Motion & Predictive Principles
     </span>
   </p>
 
@@ -334,10 +353,11 @@ if ch2_m:
         caption = clean_text(cap_m.group(1)) if cap_m else f"Planetary Karakatva Table {idx+1}"
         
         # Clean up cb and tb to fit book layout
-        cb_clean = cb if cb else ""
+        cb_clean = sanitize_content_block(cb) if cb else ""
         # Remove redunant h2 Page 2 marker
         cb_clean = re.sub(r'<h2[^>]*id=\"Page-2[^\"]*\"[^>]*>.*?</h2>', '', cb_clean)
         
+        tb_clean = re.sub(r'<div class=\"table-caption\">.*?</div>', f'<div class=\"table-caption\">{caption}</div>', tb)
         content = f"""
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -345,8 +365,9 @@ if ch2_m:
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{caption}</h3>
           </div>
           {cb_clean}
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
-            {tb}
+            {tb_clean}
           </div>
         </div>
         """
@@ -357,20 +378,70 @@ if ch2_m:
         })
 
 # ==============================================================================
-# CHAPTER 3: Rashis, Nakshatras & Astronomical Motion (17 Tables)
-# ==============================================================================
+ch3_titles = [
+    "ग्रह गति, गोचर अवधि एवं महादशा चक्र (Planetary Motion & Mahadasha)",
+    "ग्रह दृष्टि तालिका एवं शास्त्रीय नियम (Planetary Drishti & Aspect Rules)",
+    "२७ नक्षत्र, विस्तार व राशि सीमा (27 Nakshatras & Degree Spans)",
+    "२७ नक्षत्र, देवता व पद अक्षर (Nakshatra Deities & Pada Syllables)",
+    "नक्षत्र, देवता और स्वामी तालिका (Nakshatras, Deities & Rulers)",
+    "नक्षत्र स्वामी व दशा अधिपति (Nakshatra Lords & Dasha Rulers)",
+    "२७ नक्षत्र एवं स्वामी द्विभाषी तालिका (27 Nakshatras & Lords Table)",
+    "१२ राशियां, स्वामी व तत्व (12 Rashis, Lords & Elements)",
+    "राशियों के गुण, तत्व व स्वभाव (Rashis: Gunas, Elements & Nature)",
+    "राशियों का लिंग वर्गीकरण (Gender Classification of Signs)",
+    "राशियों की ध्रुवता (Polarity of Signs - Positive / Negative)",
+    "अग्नि तत्व राशियां: मेष, सिंह, धनु (Fire Signs - Agni Tattva)",
+    "पृथ्वी तत्व राशियां: वृषभ, कन्या, मकर (Earth Signs - Prithvi Tattva)",
+    "वायु तत्व राशियां: मिथुन, तुला, कुंभ (Air Signs - Vayu Tattva)",
+    "जल तत्व राशियां: कर्क, वृश्चिक, मीन (Water Signs - Jala Tattva)",
+    "तत्व एवं स्वभाव का संयुक्त वर्गीकरण (Combined Element & Mobility Nature)",
+    "चर, स्थिर, द्विस्वभाव व तत्व फलित नियम (Mobility & Element Interpretation Rules)"
+]
+
 ch3_m = re.search(r'<section\b[^>]*id=[\"\']chapter-3[\"\'][^>]*>(.*?)</section>', raw_content, re.DOTALL)
 if ch3_m:
     ch3_text = ch3_m.group(1)
     ch3_pairs = re.findall(r'(<div class=\"content-block\">.*?</div>)?\s*(<div class=\"table-container\"[^>]*id=\"([^\"]+)\".*?>.*?</div>\s*</div>)', ch3_text, re.DOTALL)
     
     for idx, (cb, tb, tid) in enumerate(ch3_pairs):
-        cap_m = re.search(r'<div class=\"table-caption\">(.*?)</div>', tb, re.DOTALL)
-        caption = clean_text(cap_m.group(1)) if cap_m else f"Astronomical Motion Table {idx+1}"
+        caption = ch3_titles[idx] if idx < len(ch3_titles) else (clean_text(cap_m.group(1)) if cap_m else f"Astronomical Motion Table {idx+1}")
         
-        cb_clean = cb if cb else ""
+        cb_clean = sanitize_content_block(cb) if cb else ""
         cb_clean = re.sub(r'<h2[^>]*id=\"Page-3[^\"]*\"[^>]*>.*?</h2>', '', cb_clean)
         
+        # Section 2: Planetary Drishti Notes cleanly organized
+        if idx == 1:
+            cb_clean = """
+            <div class="rule-card success">
+              <div class="rule-header">
+                <div class="rule-title">📜 शास्त्रीय दृष्टि नियम (Classical Aspect Principles)</div>
+              </div>
+              <div class="rule-body">
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.6; font-size:0.88rem;">
+                  <li><strong>सामान्य दृष्टि (7वां भाव):</strong> सभी ग्रह अपने अधिष्ठित भाव से सप्तम भाव पर पूर्ण दृष्टि डालते हैं।</li>
+                  <li><strong>विशेष पूर्ण दृष्टियां:</strong>
+                    <ul>
+                      <li><strong>मंगल (Mars):</strong> 4था, 7वां और 8वां भाव।</li>
+                      <li><strong>गुरु (Jupiter):</strong> 5वां, 7वां और 9वां भाव।</li>
+                      <li><strong>शनि (Saturn):</strong> 3रा, 7वां और 10वां भाव।</li>
+                    </ul>
+                  </li>
+                  <li><strong>राहु एवं केतु:</strong> शास्त्रीय ग्रंथों में दृष्टि नहीं, परंतु आधुनिक फलित ज्योतिष में 5वीं, 7वीं व 9वीं दृष्टि मान्य है।</li>
+                </ul>
+              </div>
+            </div>
+            """
+        # Section 3: 27 Nakshatras Degree Spans cleanly organized (remove misplaced notes and raw video titles)
+        elif idx == 2:
+            cb_clean = """
+            <div class="rule-card">
+              <div class="rule-body" style="font-size:0.88rem; line-height:1.6;">
+                वैदिक ज्योतिष में संपूर्ण 360° भचक्र को 27 समान नक्षत्रों में विभाजित किया गया है। प्रत्येक नक्षत्र का विस्तार <strong>13°20’ (13 अंश और 20 कला)</strong> होता है। नीचे प्रत्येक नक्षत्र के प्रारंभ एवं समापन अंश व्यवस्थित रूप से दिए गए हैं।
+              </div>
+            </div>
+            """
+        
+        tb_clean = re.sub(r'<div class=\"table-caption\">.*?</div>', f'<div class=\"table-caption\">{caption}</div>', tb)
         content = f"""
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -378,8 +449,9 @@ if ch3_m:
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{caption}</h3>
           </div>
           {cb_clean}
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
-            {tb}
+            {tb_clean}
           </div>
         </div>
         """
@@ -432,7 +504,8 @@ if ch4_m:
     for idx, (cb, tb, tid) in enumerate(ch4_tables):
         cap_m = re.search(r'<div class=\"table-caption\">(.*?)</div>', tb, re.DOTALL)
         caption = clean_text(cap_m.group(1)) if cap_m else f"House & Rashi Table {idx+1}"
-        cb_clean = cb if cb else ""
+        cb_clean = sanitize_content_block(cb) if cb else ""
+        tb_clean = re.sub(r'<div class=\"table-caption\">.*?</div>', f'<div class=\"table-caption\">{caption}</div>', tb)
         content = f"""
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -440,8 +513,9 @@ if ch4_m:
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{caption}</h3>
           </div>
           {cb_clean}
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
-            {tb}
+            {tb_clean}
           </div>
         </div>
         """
@@ -451,16 +525,37 @@ if ch4_m:
             "content": content
         })
     
+    def clean_sun_block(raw_text):
+        s = re.sub(r'<div[^>]*class=[\"\']slide-indicator[\"\'][^>]*>.*?</div>', '', raw_text, flags=re.DOTALL)
+        s = re.sub(r'Section\s*\d+\s*\|\s*', '', s)
+        s = re.sub(r'<h[1-6][^>]*>\s*\d+\s*\|\s*.*?<\/h[1-6]>', '', s, flags=re.DOTALL)
+        s = re.sub(r'<h[1-6][^>]*>.*?(?:Sun in 12 Houses|Effect of Sun in 12 Zodiac Signs).*?<\/h[1-6]>', '', s, flags=re.DOTALL)
+        
+        items = re.split(r'(?=<h4[^>]*>\s*\d+\.\s*)', s)
+        cleaned_items = []
+        for item in items:
+            item = item.strip()
+            if not item:
+                continue
+            m_title = re.search(r'<h4[^>]*>\s*(\d+\.\s*[^<]+)</h4>', item)
+            if m_title:
+                title = m_title.group(1).strip()
+                rest = item[m_title.end():]
+                body = re.sub(r'<h[1-6][^>]*>(.*?)</h[1-6]>', r'<p style=\"margin:0.25rem 0;\">\1</p>', rest, flags=re.DOTALL)
+                body = re.sub(r'</?div[^>]*>', '', body).strip()
+                cleaned_items.append(f'<div class=\"sun-effect-item\" style=\"margin-bottom:0.75rem;\"><div style=\"color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;\">{title}</div><div style=\"font-size:0.84rem; line-height:1.55; margin-top:0.25rem;\">{body}</div></div>')
+        return '\n'.join(cleaned_items)
+
     # 4.3 Sun in 12 Houses (Split into Houses 1-6 and 7-12)
     pos_sun_houses = ch4_text.find('Sun in 12 Houses')
     pos_sun_signs = ch4_text.find('Effect of Sun in 12 Zodiac Signs')
     if pos_sun_houses != -1 and pos_sun_signs != -1:
         sun_houses_raw = ch4_text[pos_sun_houses:pos_sun_signs]
-        
-        pos_7th = sun_houses_raw.find('7. 7th House')
-        if pos_7th != -1:
-            houses_1_6 = re.sub(r'</?div[^>]*>', '', sun_houses_raw[:pos_7th]).strip()
-            houses_7_12 = re.sub(r'</?div[^>]*>', '', sun_houses_raw[pos_7th:]).strip()
+        idx_7th = sun_houses_raw.find('7. 7th House')
+        if idx_7th != -1:
+            pos_7th = sun_houses_raw.rfind('<h4', 0, idx_7th)
+            houses_1_6 = clean_sun_block(sun_houses_raw[:pos_7th])
+            houses_7_12 = clean_sun_block(sun_houses_raw[pos_7th:])
             
             p_sun_1_6 = f"""
             <div class="page-inner-content">
@@ -503,10 +598,11 @@ if ch4_m:
     # 4.4 Sun in 12 Signs (Split into Signs 1-6 and 7-12)
     if pos_sun_signs != -1:
         sun_signs_raw = ch4_text[pos_sun_signs:]
-        pos_libra = sun_signs_raw.find('7. Libra')
-        if pos_libra != -1:
-            signs_1_6 = re.sub(r'</?div[^>]*>', '', sun_signs_raw[:pos_libra]).strip()
-            signs_7_12 = re.sub(r'</?div[^>]*>', '', sun_signs_raw[pos_libra:]).strip()
+        idx_libra = sun_signs_raw.find('7. Libra')
+        if idx_libra != -1:
+            pos_libra = sun_signs_raw.rfind('<h4', 0, idx_libra)
+            signs_1_6 = clean_sun_block(sun_signs_raw[:pos_libra])
+            signs_7_12 = clean_sun_block(sun_signs_raw[pos_libra:])
             
             p_signs_1_6 = f"""
             <div class="page-inner-content">
@@ -547,7 +643,7 @@ if ch4_m:
             })
 
 # ==============================================================================
-# CHAPTER 5: Medical Astrology & Cancer Analysis (27 Tables)
+# CHAPTER 5: Medical Astrology Analysis (27 Tables)
 # ==============================================================================
 ch5_m = re.search(r'<section\b[^>]*id=[\"\']chapter-5[\"\'][^>]*>(.*?)</section>', raw_content, re.DOTALL)
 if ch5_m:
@@ -557,9 +653,10 @@ if ch5_m:
     for idx, (cb, tb, tid) in enumerate(ch5_pairs):
         cap_m = re.search(r'<div class=\"table-caption\">(.*?)</div>', tb, re.DOTALL)
         caption = clean_text(cap_m.group(1)) if cap_m else f"Medical Astrology Table {idx+1}"
-        cb_clean = cb if cb else ""
+        cb_clean = sanitize_content_block(cb) if cb else ""
         cb_clean = re.sub(r'<h2[^>]*id=\"Page-5[^\"]*\"[^>]*>.*?</h2>', '', cb_clean)
         
+        tb_clean = re.sub(r'<div class=\"table-caption\">.*?</div>', f'<div class=\"table-caption\">{caption}</div>', tb)
         content = f"""
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -567,13 +664,14 @@ if ch5_m:
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">{caption}</h3>
           </div>
           {cb_clean}
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
-            {tb}
+            {tb_clean}
           </div>
         </div>
         """
         pages.append({
-            "chapter": "Ch 5: मेडिकल एस्ट्रोलॉजी व कैंसर",
+            "chapter": "Ch 5: मेडिकल व स्वास्थ्य ज्योतिष",
             "title": caption[:45],
             "content": content
         })
@@ -581,17 +679,31 @@ if ch5_m:
 # ==============================================================================
 # CHAPTER 6: Nakshatra & Pada Analysis (11 Tables)
 # ==============================================================================
+ch6_titles = [
+    "२७ नक्षत्र, विस्तार व राशि सीमा (27 Nakshatras: Degree Spans)",
+    "२७ नक्षत्र, देवता व पद नामाक्षर (Nakshatra Deities & Pada Syllables)",
+    "नक्षत्र, देवता एवं ग्रह स्वामी तालिका (Nakshatra, Devata & Lords)",
+    "नक्षत्र स्वामी व दशा अधिपति सूत्र (Nakshatra Lordship Classical Sutra)",
+    "२७ नक्षत्र एवं स्वामी द्विभाषी तालिका (27 Nakshatras & Lords Reference)",
+    "आश्लेषा नक्षत्र: ४ पद एवं ग्रह फल (Ashlesha Nakshatra: 4 Padas & Planet Analysis)",
+    "पुष्य नक्षत्र: ४ पद एवं नवमांश ग्रह प्रभाव (Pushya Nakshatra: 4 Padas & Planet Analysis)",
+    "अश्विनी नक्षत्र: ४ पद व नवमांश अधिपति (Ashwini Nakshatra: 4 Padas & Navamsha Lords)",
+    "अश्विनी नक्षत्र: पद ध्वनि व मूल स्वभाव (Ashwini Padas: Phonetics & Characteristics)",
+    "अश्विनी नक्षत्र में ९ ग्रहों का फलित (Planetary Placements in Ashwini)",
+    "अश्विनी नक्षत्र: ४ पद, नवमांश व ग्रह संबंध (Ashwini Padas: Navamsha & Planet Relations)"
+]
+
 ch6_m = re.search(r'<section\b[^>]*id=[\"\']chapter-6[\"\'][^>]*>(.*?)</section>', raw_content, re.DOTALL)
 if ch6_m:
     ch6_text = ch6_m.group(1)
     ch6_pairs = re.findall(r'(<div class=\"content-block\">.*?</div>)?\s*(<div class=\"table-container\"[^>]*id=\"([^\"]+)\".*?>.*?</div>\s*</div>)', ch6_text, re.DOTALL)
     
     for idx, (cb, tb, tid) in enumerate(ch6_pairs):
-        cap_m = re.search(r'<div class=\"table-caption\">(.*?)</div>', tb, re.DOTALL)
-        caption = clean_text(cap_m.group(1)) if cap_m else f"Nakshatra Pada Table {idx+1}"
-        cb_clean = cb if cb else ""
+        caption = ch6_titles[idx] if idx < len(ch6_titles) else (clean_text(cap_m.group(1)) if cap_m else f"Nakshatra Pada Table {idx+1}")
+        cb_clean = sanitize_content_block(cb) if cb else ""
         cb_clean = re.sub(r'<h2[^>]*id=\"Page-6[^\"]*\"[^>]*>.*?</h2>', '', cb_clean)
         
+        tb_clean = re.sub(r'<div class=\"table-caption\">.*?</div>', f'<div class=\"table-caption\">{caption}</div>', tb)
         content = f"""
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -599,8 +711,9 @@ if ch6_m:
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{caption}</h3>
           </div>
           {cb_clean}
+          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
           <div class="astro-table-container">
-            {tb}
+            {tb_clean}
           </div>
         </div>
         """
@@ -701,7 +814,7 @@ html_template = f"""<!DOCTYPE html>
   <title>तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ | Tantra Gyan Complete Vedic Astrology Compendium</title>
   
   <!-- SEO Best Practice Meta Tags -->
-  <meta name="description" content="तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ by Astrologer Ashutosh Kumar Choubey. Comprehensive authentic compendium covering Navagraha Karakatva, 17 Classical Raja Yogas, 27 Nakshatras & 108 Padas, Deeptadi Avasthas, and Complete Medical Astrology & Cancer Analysis.">
+  <meta name="description" content="तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ by Astrologer Ashutosh Kumar Choubey. Comprehensive authentic compendium covering Navagraha Karakatva, 17 Classical Raja Yogas, 27 Nakshatras & 108 Padas, Deeptadi Avasthas, and Planetary Predictions.">
   <meta name="keywords" content="Tantra Gyan, Vedic Astrology, Astrologer Ashutosh Kumar Choubey, Navagraha Karakatva, Raja Yoga, Medical Astrology, Cancer in Astrology, Nakshatra Padas, Jyotish Shastra, Parashara, Phaladeepika">
   <meta name="author" content="Ashutosh Kumar Choubey">
   <meta name="robots" content="index, follow">
@@ -886,9 +999,9 @@ html_template = f"""<!DOCTYPE html>
 
   <!-- Bottom Reading Controller Bar -->
   <nav class="bottom-reading-bar" aria-label="Book Navigation Bar">
-    <div style="display:flex; align-items:center; gap:0.5rem;">
-      <button class="tool-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="First Page (Home)">⇤ प्रारंभ</button>
-      <button class="tool-btn" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="Previous Page">‹ पिछला</button>
+    <div style="display:flex; align-items:center; gap:0.35rem;">
+      <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="First Page (Home)">⇤ प्रारंभ</button>
+      <button class="tool-btn nav-step-btn" id="btn-prev-bottom" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="Previous Page">‹ पिछला</button>
     </div>
 
     <div class="slider-container">
@@ -896,9 +1009,9 @@ html_template = f"""<!DOCTYPE html>
       <span class="page-counter-badge" id="page-counter-badge">Page 1 of {total_pages}</span>
     </div>
 
-    <div style="display:flex; align-items:center; gap:0.5rem;">
-      <button class="tool-btn" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="Next Page">अगला ›</button>
-      <button class="tool-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage({total_pages}, true);" title="Last Page (End)">अंतिम ⇥</button>
+    <div style="display:flex; align-items:center; gap:0.35rem;">
+      <button class="tool-btn nav-step-btn" id="btn-next-bottom" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="Next Page">अगला ›</button>
+      <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage({total_pages}, true);" title="Last Page (End)">अंतिम ⇥</button>
     </div>
   </nav>
 

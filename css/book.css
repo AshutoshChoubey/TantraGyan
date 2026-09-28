@@ -670,6 +670,61 @@ html, body {
   font-weight: 600;
 }
 
+.page-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.page-header-subtitle {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+/* Quick In-Page Header & Footer Navigation Pills */
+.page-nav-quick {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.page-nav-pill {
+  background: rgba(200, 157, 61, 0.1);
+  border: 1px solid rgba(200, 157, 61, 0.35);
+  color: var(--accent-gold);
+  padding: 0.22rem 0.6rem;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  line-height: 1.2;
+}
+
+.page-nav-pill:hover:not([disabled]) {
+  background: var(--accent-gold);
+  color: #14110e;
+  border-color: var(--accent-gold);
+  transform: translateY(-1px);
+}
+
+.page-nav-pill:active:not([disabled]) {
+  transform: translateY(0);
+}
+
+.page-nav-pill[disabled] {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 /* Page Scrollable Content Area */
 .page-body {
   flex: 1;
@@ -708,10 +763,44 @@ html, body {
   flex-shrink: 0;
 }
 
+.page-footer-title {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
 .page-number-display {
   font-weight: 700;
   color: var(--accent-gold);
   letter-spacing: 0.05em;
+  padding: 0 0.35rem;
+}
+
+/* Table Scroll Hint Pill */
+.table-scroll-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0.6rem 0 0.35rem 0;
+  padding: 0.28rem 0.75rem;
+  font-size: 0.72rem;
+  font-family: var(--font-sans);
+  color: var(--accent-gold);
+  background: rgba(200, 157, 61, 0.08);
+  border: 1px dashed rgba(200, 157, 61, 0.35);
+  border-radius: 20px;
+  text-align: center;
+  user-select: none;
+}
+
+.table-scroll-hint span {
+  font-size: 0.85rem;
+  animation: pulseX 2s infinite ease-in-out;
+}
+
+@keyframes pulseX {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(3px); }
 }
 
 /* --------------------------------------------------------------------------
@@ -1552,50 +1641,105 @@ html, body {
 /* Tablets Portrait & Large Phones (<= 860px) */
 @media (max-width: 860px) {
   .app-header {
-    padding: 0 0.85rem;
-    height: 56px;
+    height: auto;
+    min-height: 84px;
+    padding: 0.4rem 0.75rem 0.5rem 0.75rem;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0.35rem;
   }
   
+  .brand-section {
+    width: 100%;
+    justify-content: space-between;
+  }
+
   .brand-tagline {
     display: none;
   }
 
-  .search-box {
+  .toolbar-controls {
     display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.4rem;
+    padding: 2px 0 4px 0;
+    width: 100%;
+    align-items: center;
+  }
+
+  .toolbar-controls::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tool-btn {
+    flex-shrink: 0;
+    padding: 0.38rem 0.6rem;
+    font-size: 0.76rem;
+    white-space: nowrap;
+  }
+
+  .search-box {
+    flex-shrink: 0;
+    display: inline-flex;
   }
 
   .search-input {
-    width: 130px;
-    padding: 0.35rem 1.8rem 0.35rem 1.8rem;
-    font-size: 0.78rem;
+    width: 125px;
+    padding: 0.35rem 1.6rem 0.35rem 1.7rem;
+    font-size: 0.76rem;
   }
 
   .search-input:focus {
-    width: 180px;
+    width: 165px;
+  }
+
+  .search-dropdown {
+    position: fixed;
+    top: 94px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 94vw;
+    max-width: 440px;
+    max-height: 72vh;
+    z-index: 99999;
+  }
+
+  .lang-switcher {
+    flex-shrink: 0;
+  }
+
+  .lang-btn {
+    padding: 0.25rem 0.45rem;
+    font-size: 0.72rem;
   }
 
   .main-stage {
-    padding: 68px 0.5rem 64px 0.5rem;
+    padding: 94px 0.5rem 60px 0.5rem;
   }
 
   .book-container {
     padding: 6px;
     border-width: 2px;
     border-radius: 8px;
-    min-height: 80vh;
+    min-height: 78vh;
   }
 
   .page-header {
-    padding: 0.5rem 1rem;
-    font-size: 0.78rem;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.76rem;
   }
 
   .page-body {
-    padding: 1rem 0.85rem;
+    padding: 1rem 0.75rem;
   }
 
   .page-footer {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.76rem;
   }
 
   .nav-arrow-btn {
@@ -1616,32 +1760,35 @@ html, body {
 /* Mobile Phones (<= 580px) */
 @media (max-width: 580px) {
   .app-header {
-    padding: 0 0.5rem;
-    height: 52px;
+    min-height: 80px;
+    padding: 0.3rem 0.5rem 0.4rem 0.5rem;
+    gap: 0.25rem;
   }
 
   .brand-name {
     font-size: 0.95rem;
   }
 
+  .brand-logo {
+    width: 30px;
+    height: 30px;
+  }
+
   .toolbar-controls {
-    gap: 0.25rem;
+    gap: 0.3rem;
   }
 
-  .tool-btn {
-    padding: 0.35rem 0.5rem;
-    font-size: 0.75rem;
-  }
-
+  /* Ensure ALL options are visible and accessible in horizontal strip on mobile */
   #btn-layout-toggle,
   #btn-font-dec,
   #btn-font-inc,
-  .yt-header-btn {
-    display: none !important;
+  .yt-header-btn,
+  .website-header-btn {
+    display: inline-flex !important;
   }
 
   .main-stage {
-    padding: 60px 2px 58px 2px;
+    padding: 90px 2px 56px 2px;
   }
 
   .book-container {
@@ -1656,54 +1803,72 @@ html, body {
   }
 
   .silk-bookmark {
-    width: 20px;
-    height: 60px;
-    right: 25px;
+    width: 18px;
+    height: 52px;
+    right: 18px;
   }
 
-  .search-dropdown {
-    width: 290px;
-  }
-
-  /* Move arrows into corners or hide if touch swipe is active */
+  /* Move arrows into corners or hide if touch swipe / pills are active */
   .nav-arrow-btn {
-    display: none !important; /* Rely on bottom bar buttons & swipe */
+    display: none !important;
   }
 
   .page-header {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.72rem;
+    padding: 0.35rem 0.5rem;
+    font-size: 0.7rem;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .page-header-subtitle {
+    display: none;
   }
 
   .page-body {
-    padding: 0.75rem 0.5rem;
+    padding: 0.75rem 0.45rem;
+  }
+
+  .page-footer {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .page-footer-title {
+    display: none;
   }
 
   .cover-title-hindi {
-    font-size: 1.45rem;
+    font-size: 1.38rem;
   }
 
   .cover-title-english {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
   }
 
   .cover-yantra {
-    width: 90px;
-    height: 90px;
-    margin: 0.25rem auto 0.6rem auto;
+    width: 82px;
+    height: 82px;
+    margin: 0.2rem auto 0.5rem auto;
   }
 
   .bottom-reading-bar {
-    height: 48px;
-    padding: 0 0.5rem;
+    height: 50px;
+    padding: 0 0.4rem;
   }
 
   .bottom-reading-bar .tool-btn {
-    padding: 0.3rem 0.45rem;
+    padding: 0.32rem 0.5rem;
     font-size: 0.72rem;
   }
 
   .page-counter-badge {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
+    padding: 0.2rem 0.35rem;
+  }
+
+  .table-scroll-hint {
+    font-size: 0.68rem;
+    padding: 0.2rem 0.5rem;
   }
 }
+

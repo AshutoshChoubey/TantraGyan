@@ -8,12 +8,33 @@
    -------------------------------------------------------------------------- */
 .astro-table-container {
   width: 100%;
-  margin: 1.25rem 0 1.75rem 0;
+  max-width: 100%;
+  margin: 0.75rem 0 1.5rem 0;
   border-radius: 8px;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x pan-y;
   border: 1px solid var(--page-border);
   background: var(--page-bg);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+
+.table-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x pan-y;
+}
+
+.astro-table-container table,
+.table-container table {
+  min-width: 580px;
+  width: 100%;
 }
 
 .table-caption-bar {
@@ -56,13 +77,24 @@
 }
 
 /* Custom Scrollbar for Tables */
+.astro-table-container::-webkit-scrollbar,
+.table-container::-webkit-scrollbar,
 .table-responsive::-webkit-scrollbar {
   height: 6px;
 }
+.astro-table-container::-webkit-scrollbar-track,
+.table-container::-webkit-scrollbar-track,
+.table-responsive::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.04);
+}
+.astro-table-container::-webkit-scrollbar-thumb,
+.table-container::-webkit-scrollbar-thumb,
 .table-responsive::-webkit-scrollbar-thumb {
   background: var(--page-border);
   border-radius: 3px;
 }
+.astro-table-container::-webkit-scrollbar-thumb:hover,
+.table-container::-webkit-scrollbar-thumb:hover,
 .table-responsive::-webkit-scrollbar-thumb:hover {
   background: var(--accent-gold);
 }

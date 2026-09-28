@@ -120,21 +120,41 @@ class BookEngine {
       }
     });
 
-    // Touch swipe navigation for tablets and mobile
+    // Touch swipe navigation for tablets and mobile (Strictly protected against table scrolling)
     let touchStartX = 0;
     let touchStartY = 0;
+    let touchStartTime = 0;
+    let isTableTouch = false;
     const stage = document.querySelector('.main-stage');
     if (stage) {
       stage.addEventListener('touchstart', (e) => {
+        if (!e.changedTouches || !e.changedTouches.length) return;
+        const target = e.target;
+        // If touch began inside any table, table container, or scrollable area, disable page flip
+        isTableTouch = !!(target && target.closest('.astro-table-container, .table-container, table, pre, code, .table-scroll-hint, button, input, select, a, .tool-btn, .page-nav-pill'));
         touchStartX = e.changedTouches[0].screenX;
         touchStartY = e.changedTouches[0].screenY;
+        touchStartTime = Date.now();
       }, { passive: true });
 
       stage.addEventListener('touchend', (e) => {
+        // If touch began on or inside a table or interactive control, NEVER flip page
+        if (isTableTouch) {
+          isTableTouch = false;
+          return;
+        }
+        if (!e.changedTouches || !e.changedTouches.length) return;
+        const target = e.target;
+        if (target && target.closest('.astro-table-container, .table-container, table, pre, code, .table-scroll-hint, button, input, select, a, .tool-btn, .page-nav-pill')) {
+          return;
+        }
+
         const diffX = e.changedTouches[0].screenX - touchStartX;
         const diffY = e.changedTouches[0].screenY - touchStartY;
-        // Minimum horizontal swipe of 50px and mostly horizontal
-        if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY)) {
+        const timeDiff = Date.now() - touchStartTime;
+
+        // Decisive horizontal swipe: fast (< 500ms), at least 65px horizontal, predominantly horizontal
+        if (timeDiff < 500 && Math.abs(diffX) > 65 && Math.abs(diffX) > Math.abs(diffY) * 1.8) {
           if (diffX < 0) {
             this.nextPage();
           } else {
@@ -326,20 +346,40 @@ class BookEngine {
 
     const chapterTitle = pageDataNode.getAttribute('data-chapter') || 'Tantra Gyan';
     const pageHeaderTitle = pageDataNode.getAttribute('data-title') || chapterTitle;
+    const isFirstPage = pageNum <= 1;
+    const isLastPage = pageNum >= this.totalPages;
 
     container.innerHTML = `
       <div class="page-header">
-        <span class="page-header-title">
-          <span style="color:var(--accent-gold);">☸</span> ${chapterTitle}
-        </span>
-        <span style="font-size:0.75rem; color:var(--text-muted);">${pageHeaderTitle}</span>
+        <div class="page-header-info">
+          <span class="page-header-title">
+            <span style="color:var(--accent-gold);">☸</span> ${chapterTitle}
+          </span>
+          <span class="page-header-subtitle">${pageHeaderTitle}</span>
+        </div>
+        <div class="page-nav-quick top-quick-nav">
+          <button type="button" class="page-nav-pill prev-pill" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="पिछला पृष्ठ (Previous Page)" ${isFirstPage ? 'disabled style="opacity:0.3; pointer-events:none;"' : ''}>
+            ‹ पिछला
+          </button>
+          <button type="button" class="page-nav-pill next-pill" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="अगला पृष्ठ (Next Page)" ${isLastPage ? 'disabled style="opacity:0.3; pointer-events:none;"' : ''}>
+            अगला ›
+          </button>
+        </div>
       </div>
       <div class="page-body">
         ${pageDataNode.innerHTML}
       </div>
       <div class="page-footer">
-        <span style="color:var(--text-muted); font-size:0.75rem;">तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ</span>
-        <span class="page-number-display">Page ${pageNum}</span>
+        <span class="page-footer-title">तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ</span>
+        <div class="page-nav-quick bottom-quick-nav">
+          <button type="button" class="page-nav-pill prev-pill" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="पिछला पृष्ठ (Previous Page)" ${isFirstPage ? 'disabled style="opacity:0.3; pointer-events:none;"' : ''}>
+            ‹ पिछला
+          </button>
+          <span class="page-number-display">Page ${pageNum}</span>
+          <button type="button" class="page-nav-pill next-pill" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="अगला पृष्ठ (Next Page)" ${isLastPage ? 'disabled style="opacity:0.3; pointer-events:none;"' : ''}>
+            अगला ›
+          </button>
+        </div>
       </div>
     `;
   }
