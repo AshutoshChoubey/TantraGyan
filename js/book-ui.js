@@ -624,19 +624,53 @@ class BookUIController {
   }
 
   // ============================================================================
-  // 5. Language Mode Switcher
+  // 5. Language Mode Switcher (Seamlessly Switches Between File Editions)
   // ============================================================================
   initLanguageMode() {
     const langBtns = document.querySelectorAll('.lang-btn');
-    try {
-      const savedLang = localStorage.getItem('tantra_book_lang') || 'bilingual';
-      this.setLanguageMode(savedLang);
-    } catch (e) {}
+    
+    // Determine active edition from filename or HTML attribute
+    const currentPath = window.location.pathname;
+    const currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
+    
+    let activeMode = 'bilingual';
+    if (currentFile.includes('hindi')) {
+      activeMode = 'hindi';
+    } else if (currentFile.includes('english')) {
+      activeMode = 'english';
+    } else {
+      activeMode = document.documentElement.getAttribute('data-lang-mode') || 'bilingual';
+    }
+
+    this.setLanguageMode(activeMode);
 
     langBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const mode = btn.getAttribute('data-lang');
-        this.setLanguageMode(mode);
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetMode = btn.getAttribute('data-lang');
+        const currentPage = (window.bookEngine && window.bookEngine.currentPage) ? window.bookEngine.currentPage : 1;
+
+        let targetFile = 'index.html';
+        if (targetMode === 'hindi') {
+          targetFile = 'hindi.html';
+        } else if (targetMode === 'english') {
+          targetFile = 'english.html';
+        } else {
+          targetFile = 'index.html';
+        }
+
+        const path = window.location.pathname;
+        const thisFile = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+
+        if (thisFile !== targetFile) {
+          try {
+            localStorage.setItem('tantra_book_page', currentPage.toString());
+            localStorage.setItem('tantra_book_lang', targetMode);
+          } catch (err) {}
+          window.location.href = `${targetFile}#page-${currentPage}`;
+        } else {
+          this.setLanguageMode(targetMode);
+        }
       });
     });
   }

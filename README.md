@@ -57,17 +57,20 @@
 
 ```
 TantraGyan/
-├── index.html          # पूर्ण ग्रंथ (87 पृष्ठ, SEO Meta Tags, Schema.org Book JSON-LD)
+├── index.html          # मूल द्विभाषी संस्करण (Original Bilingual Masterwork Edition - 87 Pages)
+├── hindi.html          # सम्पूर्ण हिन्दी संस्करण (Pure Hindi Dedicated Edition - 87 Pages)
+├── english.html        # सम्पूर्ण अंग्रेज़ी संस्करण (Complete English Dedicated Edition - 87 Pages)
 ├── css/
 │   ├── book.css        # 3D ग्रंथ पृष्ठ, स्पाइन, रिबन बुकमार्क, थीम एवं रिस्पॉन्सिव लेआउट
 │   └── tables.css      # ज्योतिषीय सारणियों, सूत्र कार्डों, ग्रह बैज व श्लोक बॉक्स की स्टाइलिंग
 ├── js/
 │   ├── sound.js        # Web Audio API द्वारा वास्तविक पृष्ठ-पलटने की ध्वनि (Zero Dependency)
 │   ├── book-engine.js  # दो-पृष्ठ (Dual Spread) व एकल-पृष्ठ (Single Page) इंजन, कीबोर्ड व टच नेविगेशन
-│   └── book-ui.js      # विषय-सूची (TOC), थीम स्विच, द्विभाषी फिल्टर, ज़ूम व सर्च इंजन
+│   └── book-ui.js      # विषय-सूची (TOC), संस्करण स्विच (Hindi / English / Bilingual), सर्च व बुकमार्क
 ├── assets/
 │   └── yantra.svg      # स्वर्ण श्री यंत्र / मंडला सदिश ग्राफिक
-├── build_book.py       # संकलन एवं पृष्ठ विभाजन स्क्रिप्ट
+├── build_book.py       # द्विभाषी ग्रंथ संकलन स्क्रिप्ट
+├── build_multilingual.py # त्रि-संस्करण (Hindi / English) संकलन इंजन
 └── README.md           # दस्तावेज़ीकरण
 ```
 
