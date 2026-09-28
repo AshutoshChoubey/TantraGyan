@@ -370,7 +370,7 @@ class BookEngine {
         ${pageDataNode.innerHTML}
       </div>
       <div class="page-footer">
-        <span class="page-footer-title">तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ</span>
+        <span class="page-footer-title">${document.documentElement.lang === 'en' ? 'Complete Vedic Astrology Compendium Simplified' : 'वैदिक ज्योतिष महाग्रंथ सरलीकृत'}</span>
         <div class="page-nav-quick bottom-quick-nav">
           <button type="button" class="page-nav-pill prev-pill" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="पिछला पृष्ठ (Previous Page)" ${isFirstPage ? 'disabled style="opacity:0.3; pointer-events:none;"' : ''}>
             ‹ पिछला

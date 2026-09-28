@@ -15,11 +15,52 @@ target_file = "/Users/apple/Movies/ap/TantraGyan/index.html"
 with open(source_file, "r", encoding="utf-8") as f:
     raw_content = f.read()
 
-# Helper to clean titles
+# Constants and helpers for clean, glyph-safe book rendering
+SCROLL_HINT_HTML = '<div class="table-scroll-hint"><svg class="scroll-hint-icon" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M3 12h18"/></svg>तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>'
+
 def clean_text(s):
     s = re.sub(r'<[^>]+>', '', s).strip()
     s = re.sub(r'^\d+\s*\|\s*', '', s)
+    # Remove symbols and emojis that might cause box tofu on mobile
+    s = re.sub(r'[☿♃♄☊☋♀♂♈♉♊♋♌♍♎♏♐♑♒♓⇄⛶\ufe0f]', '', s)
+    s = re.sub(r'[\U00010000-\U0010ffff]', '', s)
     return s.strip()
+
+def clean_table_glyphs(tb_html):
+    if not tb_html:
+        return ""
+    # Replace astrological symbols with clean text
+    replacements = [
+        ('☿', 'बुध (Mercury)'),
+        ('♃', 'गुरु (Jupiter)'),
+        ('♄', 'शनि (Saturn)'),
+        ('☊', 'राहु (Rahu)'),
+        ('☋', 'केतु (Ketu)'),
+        ('♀', 'शुक्र (Venus)'),
+        ('♂', 'मंगल (Mars)'),
+        ('☉', 'सूर्य (Sun)'),
+        ('☽', 'चन्द्र (Moon)'),
+        ('♈', 'मेष (Aries)'),
+        ('♉', 'वृषभ (Taurus)'),
+        ('♊', 'मिथुन (Gemini)'),
+        ('♋', 'कर्क (Cancer)'),
+        ('♌', 'सिंह (Leo)'),
+        ('♍', 'कन्या (Virgo)'),
+        ('♎', 'तुला (Libra)'),
+        ('♏', 'वृश्चिक (Scorpio)'),
+        ('♐', 'धनु (Sagittarius)'),
+        ('♑', 'मकर (Capricorn)'),
+        ('♒', 'कुंभ (Aquarius)'),
+        ('♓', 'मीन (Pisces)'),
+        ('⇄', ''),
+        ('⛶', ''),
+        ('\ufe0f', '')
+    ]
+    for orig, rep in replacements:
+        tb_html = tb_html.replace(orig, rep)
+    # Strip SMP emojis that cause box tofu on mobile
+    tb_html = re.sub(r'[\U00010000-\U0010ffff]', '', tb_html)
+    return tb_html
 
 def sanitize_content_block(cb_raw):
     if not cb_raw:
@@ -28,14 +69,18 @@ def sanitize_content_block(cb_raw):
     s = re.sub(r'<div[^>]*class=[\"\']slide-indicator[\"\'][^>]*>.*?</div>', '', cb_raw, flags=re.DOTALL)
     # Strip Section XX | text
     s = re.sub(r'Section\s*\d+\s*\|\s*', '', s)
-    # Strip raw video title headings like 28 | 💫 Planetary Drishti... or 42 | &quot;Graha Sambandh...
-    s = re.sub(r'<h[1-6][^>]*>\s*\d+\s*\|\s*.*?<\/h[1-6]>', '', s, flags=re.DOTALL)
-    # Strip Title: 🌛 Nakshatras...
-    s = re.sub(r'<h[1-6][^>]*>\s*Title:\s*.*?<\/h[1-6]>', '', s, flags=re.DOTALL)
-    # Strip leftover video tags and hashtag descriptions
-    s = re.sub(r'<h[1-6][^>]*>\s*.*?(?:Nakshatra Secrets|Nakshatra Lords Table|Rashi Degrees|Graha Sambandh Explained|House Karaka Planets|Surya in 12 Rashis|Ashlesha Nakshatra|Pushya Nakshatra|Ashwini Nakshatra).*?<\/h[1-6]>', '', s, flags=re.DOTALL)
-    # Clean up empty heading tags
-    s = re.sub(r'<h[1-6][^>]*>\s*<\/h[1-6]>', '', s)
+    # Strip all scraped headings to eliminate stacked duplicate titles
+    s = re.sub(r'<h[1-6][^>]*>.*?</h[1-6]>', '', s, flags=re.DOTALL)
+    # Strip empty divs and paragraphs
+    s = re.sub(r'<div[^>]*>\s*</div>', '', s)
+    s = re.sub(r'<p>\s*</p>', '', s)
+    # Strip formula pills that merely repeat section titles
+    s = re.sub(r'<span class="rule-badge">.*?</span>', '', s)
+    s = re.sub(r'<span class="formula-pill">.*?</span>', '', s)
+    # Check if there is actual non-heading content left
+    text_content = re.sub(r'<[^>]+>', '', s).strip()
+    if not text_content or len(text_content) < 30:
+        return ""
     return s.strip()
 
 pages = []
@@ -47,14 +92,14 @@ pages = []
 # PAGE 1: Grand Book Cover
 page_1 = """
 <div class="cover-page-inner">
-  <div class="cover-tag">प्रामाणिक वैदिक ज्योतिष महाग्रंथ • Digital Edition 2026</div>
+  <div class="cover-tag">तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center) • Digital Edition 2026</div>
   
   <div class="cover-yantra">
     <img src="assets/yantra.svg" alt="Sacred Sri Yantra Emblem" width="130" height="130" style="filter: drop-shadow(0 4px 15px rgba(200, 157, 61, 0.45));">
   </div>
 
-  <h1 class="cover-title-hindi">तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ</h1>
-  <h2 class="cover-title-english">Tantra Gyan: Complete Vedic Astrology Compendium</h2>
+  <h1 class="cover-title-hindi">वैदिक ज्योतिष महाग्रंथ सरलीकृत</h1>
+  <h2 class="cover-title-english">Complete Vedic Astrology Compendium Simplified</h2>
 
   <div class="cover-divider"></div>
 
@@ -83,7 +128,7 @@ page_1 = """
 """
 pages.append({
     "chapter": "मुखपृष्ठ • Cover",
-    "title": "तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ",
+    "title": "वैदिक ज्योतिष महाग्रंथ सरलीकृत",
     "content": page_1
 })
 
@@ -177,7 +222,7 @@ page_3 = """
   </div>
 
   <p style="font-size:0.9rem; line-height:1.6; margin-bottom:1rem;">
-    वैदिक ज्योतिष का ज्ञान अनंत सागर की भांति विस्तृत है। साधारण जिज्ञासु और गंभीर अभ्यासकर्ता प्रायः बिखरे हुए सूत्रों, परस्पर विरोधी मतों और जटिल संस्कृत टीकाओं में उलझ जाते हैं। <strong>तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ</strong> को एक <em>"हाई-डेंसिटी प्रेक्टिशनर नोटबुक" (Concise Practitioner Notebook)</em> के रूप में तैयार किया गया है।
+    वैदिक ज्योतिष का ज्ञान अनंत सागर की भांति विस्तृत है। साधारण जिज्ञासु और गंभीर अभ्यासकर्ता प्रायः बिखरे हुए सूत्रों, परस्पर विरोधी मतों और जटिल संस्कृत टीकाओं में उलझ जाते हैं। <strong>वैदिक ज्योतिष महाग्रंथ सरलीकृत</strong> को एक <em>"हाई-डेंसिटी प्रेक्टिशनर नोटबुक" (Concise Practitioner Notebook)</em> के रूप में तैयार किया गया है।
   </p>
 
   <div class="pillar-grid">
@@ -347,21 +392,39 @@ pages.append({
 # ==============================================================================
 # CHAPTER 2: Navagraha Karakatva & Classical Raja Yogas (15 Tables)
 # ==============================================================================
+ch2_titles = [
+    "सूर्य देव के संपूर्ण शास्त्रीय कारकत्व (Sun Karakatva & Classical Significations)",
+    "चन्द्रमा के संपूर्ण शास्त्रीय कारकत्व (Moon Karakatva & Classical Significations)",
+    "चन्द्रमा: शास्त्रीय ग्रंथ संदर्भ व फलित सूत्र (Moon: Classical Treatises & Sutras)",
+    "चन्द्रमा: आधुनिक व्यावहारिक फलित व मानसिक विश्लेषण (Moon: Modern Analytical Perspectives)",
+    "मंगल देव के संपूर्ण शास्त्रीय कारकत्व (Mars Karakatva & Classical Significations)",
+    "मंगल देव: शास्त्रीय ग्रंथ संदर्भ व पराक्रम सूत्र (Mars: Classical Treatises & Sutras)",
+    "बृहस्पति (गुरु) के संपूर्ण शास्त्रीय कारकत्व (Jupiter Karakatva & Significations)",
+    "शुक्र देव के संपूर्ण शास्त्रीय कारकत्व (Venus Karakatva & Significations)",
+    "शनि देव के संपूर्ण कारकत्व व कर्म सिद्धांत (Saturn Karakatva & Karmic Principles)",
+    "शनि देव: प्रमुख शास्त्रीय एवं आधुनिक दृष्टिकोण (Saturn: Classical & Modern Perspectives)",
+    "बुध देव के संपूर्ण कारकत्व व बुद्धि-विवेक (Mercury Karakatva & Intellectual Faculties)",
+    "राहु देव के संपूर्ण कारकत्व व मायावी प्रभाव (Rahu Karakatva & Shadow Matrix)",
+    "केतु देव के संपूर्ण कारकत्व व मोक्ष मार्ग (Ketu Karakatva & Spiritual Liberation)",
+    "१७ शास्त्रीय राजयोग एवं पंच महापुरुष योग (17 Classical Raja Yogas & Pancha Mahapurusha)",
+    "१७ शास्त्रीय राजयोग एवं विपरीत राजयोग (17 Classical Raja Yogas & Viparita Raja Yogas)"
+]
+
 ch2_m = re.search(r'<section\b[^>]*id=[\"\']chapter-2[\"\'][^>]*>(.*?)</section>', raw_content, re.DOTALL)
 if ch2_m:
     ch2_text = ch2_m.group(1)
     ch2_pairs = re.findall(r'(<div class=\"content-block\">.*?</div>)?\s*(<div class=\"table-container\"[^>]*id=\"([^\"]+)\".*?>.*?</div>\s*</div>)', ch2_text, re.DOTALL)
     
     for idx, (cb, tb, tid) in enumerate(ch2_pairs):
-        cap_m = re.search(r'<div class=\"table-caption\">(.*?)</div>', tb, re.DOTALL)
-        caption = clean_text(cap_m.group(1)) if cap_m else f"Planetary Karakatva Table {idx+1}"
+        caption = ch2_titles[idx] if idx < len(ch2_titles) else f"Planetary Karakatva Table {idx+1}"
         
         # Clean up cb and tb to fit book layout
         cb_clean = sanitize_content_block(cb) if cb else ""
-        # Remove redunant h2 Page 2 marker
         cb_clean = re.sub(r'<h2[^>]*id=\"Page-2[^\"]*\"[^>]*>.*?</h2>', '', cb_clean)
         
-        tb_clean = re.sub(r'<div class=\"table-caption\">.*?</div>', f'<div class=\"table-caption\">{caption}</div>', tb)
+        # Eliminate stacked duplicate title bar
+        tb_clean = re.sub(r'<div class=\"table-caption\">.*?</div>', '', tb)
+        tb_clean = clean_table_glyphs(tb_clean)
         content = f"""
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -369,7 +432,7 @@ if ch2_m:
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{caption}</h3>
           </div>
           {cb_clean}
-          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
+          {SCROLL_HINT_HTML}
           <div class="astro-table-container">
             {tb_clean}
           </div>
@@ -383,13 +446,13 @@ if ch2_m:
 
 # ==============================================================================
 ch3_titles = [
-    "ग्रह गति, गोचर अवधि एवं महादशा चक्र (Planetary Motion & Mahadasha)",
-    "ग्रह दृष्टि तालिका एवं शास्त्रीय नियम (Planetary Drishti & Aspect Rules)",
+    "ग्रह गति, गोचर अवधि एवं विंशोत्तरी महादशा चक्र (Planetary Motion & Mahadasha)",
+    "ग्रह दृष्टि तालिका एवं शास्त्रीय दृष्टि नियम (Planetary Drishti & Aspect Rules)",
     "२७ नक्षत्र, विस्तार व राशि सीमा (27 Nakshatras & Degree Spans)",
-    "२७ नक्षत्र, देवता व पद अक्षर (Nakshatra Deities & Pada Syllables)",
+    "२७ नक्षत्र, देवता व पद नामाक्षर (Nakshatra Deities & Pada Syllables)",
     "नक्षत्र, देवता और स्वामी तालिका (Nakshatras, Deities & Rulers)",
     "नक्षत्र स्वामी व दशा अधिपति (Nakshatra Lords & Dasha Rulers)",
-    "२७ नक्षत्र एवं स्वामी द्विभाषी तालिका (27 Nakshatras & Lords Table)",
+    "२७ नक्षत्र एवं स्वामी द्विभाषी संदर्भ तालिका (27 Nakshatras & Lords Reference)",
     "१२ राशियां, स्वामी व तत्व (12 Rashis, Lords & Elements)",
     "राशियों के गुण, तत्व व स्वभाव (Rashis: Gunas, Elements & Nature)",
     "राशियों का लिंग वर्गीकरण (Gender Classification of Signs)",
@@ -408,7 +471,7 @@ if ch3_m:
     ch3_pairs = re.findall(r'(<div class=\"content-block\">.*?</div>)?\s*(<div class=\"table-container\"[^>]*id=\"([^\"]+)\".*?>.*?</div>\s*</div>)', ch3_text, re.DOTALL)
     
     for idx, (cb, tb, tid) in enumerate(ch3_pairs):
-        caption = ch3_titles[idx] if idx < len(ch3_titles) else (clean_text(cap_m.group(1)) if cap_m else f"Astronomical Motion Table {idx+1}")
+        caption = ch3_titles[idx] if idx < len(ch3_titles) else f"Astronomical Motion Table {idx+1}"
         
         cb_clean = sanitize_content_block(cb) if cb else ""
         cb_clean = re.sub(r'<h2[^>]*id=\"Page-3[^\"]*\"[^>]*>.*?</h2>', '', cb_clean)
@@ -435,7 +498,7 @@ if ch3_m:
               </div>
             </div>
             """
-        # Section 3: 27 Nakshatras Degree Spans cleanly organized (remove misplaced notes and raw video titles)
+        # Section 3: 27 Nakshatras Degree Spans cleanly organized
         elif idx == 2:
             cb_clean = """
             <div class="rule-card">
@@ -445,7 +508,9 @@ if ch3_m:
             </div>
             """
         
-        tb_clean = re.sub(r'<div class=\"table-caption\">.*?</div>', f'<div class=\"table-caption\">{caption}</div>', tb)
+        # Eliminate stacked duplicate title bar
+        tb_clean = re.sub(r'<div class=\"table-caption\">.*?</div>', '', tb)
+        tb_clean = clean_table_glyphs(tb_clean)
         content = f"""
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -453,7 +518,7 @@ if ch3_m:
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{caption}</h3>
           </div>
           {cb_clean}
-          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
+          {SCROLL_HINT_HTML}
           <div class="astro-table-container">
             {tb_clean}
           </div>
@@ -484,11 +549,11 @@ if ch4_m:
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
             <div class="chapter-number">Chapter 4 • Section 1</div>
-            <h3 class="chapter-heading" style="font-size:1.2rem; color:var(--accent-gold);">Deeptadi Avastha Explained 🔯 | ग्रहों की स्थिति और 9 अवस्थाएं</h3>
+            <h3 class="chapter-heading" style="font-size:1.2rem; color:var(--accent-gold);">दीप्तादि ९ अवस्थाएं: ग्रहों की स्थिति व फल (Deeptadi Avasthas Explained)</h3>
           </div>
           <div class="rule-card">
             <div class="rule-header">
-              <div class="rule-title">दीप्तादि 9 अवस्थाएं (Nine Planetary States)</div>
+              <div class="rule-title">दीप्तादि ९ अवस्थाएं (Nine Planetary States)</div>
               <span class="badge-chip badge-gold">पाराशरी सूत्र</span>
             </div>
             <div class="rule-body" style="font-size:0.86rem; line-height:1.65;">
@@ -499,17 +564,25 @@ if ch4_m:
         """
         pages.append({
             "chapter": "Ch 4: भाव एवं राशियों में ग्रह",
-            "title": "दीप्तादि 9 अवस्थाएं (Deeptadi Avasthas)",
+            "title": "दीप्तादि ९ अवस्थाएं (Deeptadi Avasthas)",
             "content": page_4_1
         })
     
     # 4.2 Tables 1 to 6 in Ch4
+    ch4_table_titles = [
+        "ग्रहों की नैसर्गिक व तात्कालिक मैत्री वर्गीकरण (Planetary Natural & Temporal Friendship)",
+        "दीप्तादि अवस्थाएं, मूलत्रिकोण व स्वराशि तालिका (Deeptadi Avasthas, Moolatrikona & Own Signs)",
+        "ग्रह अवस्थाओं के व्यावहारिक फलित नियम (Predictive Rules for Planetary States)",
+        "ग्रहों के पांच प्रकार के संबंध (Five Types of Planetary Relationships)",
+        "१२ भावों के स्थिर कारक ग्रह (Fixed Significator Planets for 12 Houses)",
+        "भाव कारक व भावेश का शास्त्रीय अंतर (Bhava Karaka vs Bhavesh Classical Distinction)"
+    ]
     ch4_tables = re.findall(r'(<div class=\"content-block\">.*?</div>)?\s*(<div class=\"table-container\"[^>]*id=\"([^\"]+)\".*?>.*?</div>\s*</div>)', ch4_text, re.DOTALL)
     for idx, (cb, tb, tid) in enumerate(ch4_tables):
-        cap_m = re.search(r'<div class=\"table-caption\">(.*?)</div>', tb, re.DOTALL)
-        caption = clean_text(cap_m.group(1)) if cap_m else f"House & Rashi Table {idx+1}"
+        caption = ch4_table_titles[idx] if idx < len(ch4_table_titles) else f"House & Rashi Table {idx+1}"
         cb_clean = sanitize_content_block(cb) if cb else ""
-        tb_clean = re.sub(r'<div class=\"table-caption\">.*?</div>', f'<div class=\"table-caption\">{caption}</div>', tb)
+        tb_clean = re.sub(r'<div class=\"table-caption\">.*?</div>', '', tb)
+        tb_clean = clean_table_glyphs(tb_clean)
         content = f"""
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -517,7 +590,7 @@ if ch4_m:
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{caption}</h3>
           </div>
           {cb_clean}
-          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
+          {SCROLL_HINT_HTML}
           <div class="astro-table-container">
             {tb_clean}
           </div>
@@ -565,7 +638,7 @@ if ch4_m:
             <div class="page-inner-content">
               <div class="chapter-header" style="margin-bottom:0.75rem;">
                 <div class="chapter-number">Chapter 4 • Sun in Houses</div>
-                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">🌞 Surya in 12 Houses (Part 1: भाव 1 से 6)</h3>
+                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">सूर्य देव: भाव १ से ६ फल (Surya in Houses 1 to 6)</h3>
               </div>
               <div class="rule-card">
                 <div class="rule-body" style="font-size:0.85rem; line-height:1.6;">
@@ -584,7 +657,7 @@ if ch4_m:
             <div class="page-inner-content">
               <div class="chapter-header" style="margin-bottom:0.75rem;">
                 <div class="chapter-number">Chapter 4 • Sun in Houses</div>
-                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">🌞 Surya in 12 Houses (Part 2: भाव 7 से 12)</h3>
+                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">सूर्य देव: भाव ७ से १२ फल (Surya in Houses 7 to 12)</h3>
               </div>
               <div class="rule-card">
                 <div class="rule-body" style="font-size:0.85rem; line-height:1.6;">
@@ -612,7 +685,7 @@ if ch4_m:
             <div class="page-inner-content">
               <div class="chapter-header" style="margin-bottom:0.75rem;">
                 <div class="chapter-number">Chapter 4 • Sun in Signs</div>
-                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">☀️ Surya in 12 Signs (Part 1: मेष से कन्या)</h3>
+                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">सूर्य देव: मेष से कन्या राशि फल (Surya in Signs 1 to 6)</h3>
               </div>
               <div class="rule-card">
                 <div class="rule-body" style="font-size:0.85rem; line-height:1.6;">
@@ -631,7 +704,7 @@ if ch4_m:
             <div class="page-inner-content">
               <div class="chapter-header" style="margin-bottom:0.75rem;">
                 <div class="chapter-number">Chapter 4 • Sun in Signs</div>
-                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">☀️ Surya in 12 Signs (Part 2: तुला से मीन)</h3>
+                <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">सूर्य देव: तुला से मीन राशि फल (Surya in Signs 7 to 12)</h3>
               </div>
               <div class="rule-card">
                 <div class="rule-body" style="font-size:0.85rem; line-height:1.6;">
@@ -649,18 +722,49 @@ if ch4_m:
 # ==============================================================================
 # CHAPTER 5: Medical Astrology Analysis (27 Tables)
 # ==============================================================================
+ch5_titles = [
+    "सूर्य देव: शारीरिक अंग व रोग संबंध (Sun: Body Parts & Medical Significations)",
+    "चन्द्रमा: शारीरिक अंग व रोग संबंध (Moon: Body Parts & Medical Significations)",
+    "मंगल देव: शारीरिक अंग व रोग संबंध (Mars: Body Parts & Medical Significations)",
+    "बुध देव: शारीरिक अंग व रोग संबंध (Mercury: Body Parts & Medical Significations)",
+    "बृहस्पति (गुरु): शारीरिक अंग व रोग संबंध (Jupiter: Body Parts & Medical Significations)",
+    "शुक्र देव: शारीरिक अंग व रोग संबंध (Venus: Body Parts & Medical Significations)",
+    "शनि देव: शारीरिक अंग व रोग संबंध (Saturn: Body Parts & Medical Significations)",
+    "राहु देव: शारीरिक अंग व रोग संबंध (Rahu: Body Parts & Medical Significations)",
+    "केतु देव: शारीरिक अंग व रोग संबंध (Ketu: Body Parts & Medical Significations)",
+    "प्रथम भाव (लग्न): शारीरिक अंग व रोग निदान (1st House: Anatomy & Diagnostics)",
+    "द्वितीय भाव: शारीरिक अंग व रोग निदान (2nd House: Anatomy & Diagnostics)",
+    "तृतीय भाव: शारीरिक अंग व रोग निदान (3rd House: Anatomy & Diagnostics)",
+    "चतुर्थ भाव: शारीरिक अंग व रोग निदान (4th House: Anatomy & Diagnostics)",
+    "पंचम भाव: शारीरिक अंग व रोग निदान (5th House: Anatomy & Diagnostics)",
+    "षष्ठ भाव: शारीरिक अंग व रोग निदान (6th House: Anatomy & Diagnostics)",
+    "सप्तम भाव: शारीरिक अंग व रोग निदान (7th House: Anatomy & Diagnostics)",
+    "अष्टम भाव: शारीरिक अंग व रोग निदान (8th House: Anatomy & Diagnostics)",
+    "नवम भाव: शारीरिक अंग व रोग निदान (9th House: Anatomy & Diagnostics)",
+    "दशम भाव: शारीरिक अंग व रोग निदान (10th House: Anatomy & Diagnostics)",
+    "एकादश भाव: शारीरिक अंग व रोग निदान (11th House: Anatomy & Diagnostics)",
+    "द्वादश भाव: शारीरिक अंग व रोग निदान (12th House: Anatomy & Diagnostics)",
+    "१२ भाव, शारीरिक अंग एवं व्याधि समन्वय (12 Houses: Organ & Disease Correlation)",
+    "१२ राशियां, शारीरिक अंग और विशिष्ट रोग (12 Signs: Anatomical Rules & Disorders)",
+    "कैंसर रोग के ज्योतिषीय कारक व मुख्य सूत्र (Astrological Factors & Cancer Etiology)",
+    "सामान्य कैंसर (स्तन व फेफड़े): ज्योतिषीय विश्लेषण (General Cancer: Breast & Lung Diagnostics)",
+    "रक्त कैंसर (ल्यूकीमिया): ग्रह योग व विश्लेषण (Leukemia - Blood Cancer Diagnostics)",
+    "त्वचा कैंसर (मेलानोमा): ग्रह योग व विश्लेषण (Skin Cancer - Melanoma Diagnostics)"
+]
+
 ch5_m = re.search(r'<section\b[^>]*id=[\"\']chapter-5[\"\'][^>]*>(.*?)</section>', raw_content, re.DOTALL)
 if ch5_m:
     ch5_text = ch5_m.group(1)
     ch5_pairs = re.findall(r'(<div class=\"content-block\">.*?</div>)?\s*(<div class=\"table-container\"[^>]*id=\"([^\"]+)\".*?>.*?</div>\s*</div>)', ch5_text, re.DOTALL)
     
     for idx, (cb, tb, tid) in enumerate(ch5_pairs):
-        cap_m = re.search(r'<div class=\"table-caption\">(.*?)</div>', tb, re.DOTALL)
-        caption = clean_text(cap_m.group(1)) if cap_m else f"Medical Astrology Table {idx+1}"
+        caption = ch5_titles[idx] if idx < len(ch5_titles) else f"Medical Astrology Table {idx+1}"
         cb_clean = sanitize_content_block(cb) if cb else ""
         cb_clean = re.sub(r'<h2[^>]*id=\"Page-5[^\"]*\"[^>]*>.*?</h2>', '', cb_clean)
         
-        tb_clean = re.sub(r'<div class=\"table-caption\">.*?</div>', f'<div class=\"table-caption\">{caption}</div>', tb)
+        # Eliminate stacked duplicate title bar
+        tb_clean = re.sub(r'<div class=\"table-caption\">.*?</div>', '', tb)
+        tb_clean = clean_table_glyphs(tb_clean)
         content = f"""
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -668,7 +772,7 @@ if ch5_m:
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">{caption}</h3>
           </div>
           {cb_clean}
-          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
+          {SCROLL_HINT_HTML}
           <div class="astro-table-container">
             {tb_clean}
           </div>
@@ -684,16 +788,16 @@ if ch5_m:
 # CHAPTER 6: Nakshatra & Pada Analysis (11 Tables)
 # ==============================================================================
 ch6_titles = [
-    "२७ नक्षत्र, विस्तार व राशि सीमा (27 Nakshatras: Degree Spans)",
+    "२७ नक्षत्र, विस्तार व राशि सीमा (27 Nakshatras: Degree Spans & Boundaries)",
     "२७ नक्षत्र, देवता व पद नामाक्षर (Nakshatra Deities & Pada Syllables)",
-    "नक्षत्र, देवता एवं ग्रह स्वामी तालिका (Nakshatra, Devata & Lords)",
-    "नक्षत्र स्वामी व दशा अधिपति सूत्र (Nakshatra Lordship Classical Sutra)",
-    "२७ नक्षत्र एवं स्वामी द्विभाषी तालिका (27 Nakshatras & Lords Reference)",
-    "आश्लेषा नक्षत्र: ४ पद एवं ग्रह फल (Ashlesha Nakshatra: 4 Padas & Planet Analysis)",
-    "पुष्य नक्षत्र: ४ पद एवं नवमांश ग्रह प्रभाव (Pushya Nakshatra: 4 Padas & Planet Analysis)",
+    "नक्षत्र, देवता एवं ग्रह स्वामी तालिका (Nakshatras, Deities & Planetary Lords)",
+    "नक्षत्र स्वामी व दशा अधिपति सूत्र (Nakshatra Lordship & Dasha Sutra)",
+    "२७ नक्षत्र एवं स्वामी द्विभाषी संदर्भ तालिका (27 Nakshatras & Lords Reference)",
+    "आश्लेषा नक्षत्र: ४ पद एवं ग्रह फल (Ashlesha Nakshatra: 4 Padas & Planets)",
+    "पुष्य नक्षत्र: ४ पद एवं नवमांश ग्रह प्रभाव (Pushya Nakshatra: 4 Padas & Navamsha)",
     "अश्विनी नक्षत्र: ४ पद व नवमांश अधिपति (Ashwini Nakshatra: 4 Padas & Navamsha Lords)",
     "अश्विनी नक्षत्र: पद ध्वनि व मूल स्वभाव (Ashwini Padas: Phonetics & Characteristics)",
-    "अश्विनी नक्षत्र में ९ ग्रहों का फलित (Planetary Placements in Ashwini)",
+    "अश्विनी नक्षत्र में ९ ग्रहों का फलित (Planetary Placements in Ashwini Nakshatra)",
     "अश्विनी नक्षत्र: ४ पद, नवमांश व ग्रह संबंध (Ashwini Padas: Navamsha & Planet Relations)"
 ]
 
@@ -703,11 +807,13 @@ if ch6_m:
     ch6_pairs = re.findall(r'(<div class=\"content-block\">.*?</div>)?\s*(<div class=\"table-container\"[^>]*id=\"([^\"]+)\".*?>.*?</div>\s*</div>)', ch6_text, re.DOTALL)
     
     for idx, (cb, tb, tid) in enumerate(ch6_pairs):
-        caption = ch6_titles[idx] if idx < len(ch6_titles) else (clean_text(cap_m.group(1)) if cap_m else f"Nakshatra Pada Table {idx+1}")
+        caption = ch6_titles[idx] if idx < len(ch6_titles) else f"Nakshatra Pada Table {idx+1}"
         cb_clean = sanitize_content_block(cb) if cb else ""
         cb_clean = re.sub(r'<h2[^>]*id=\"Page-6[^\"]*\"[^>]*>.*?</h2>', '', cb_clean)
         
-        tb_clean = re.sub(r'<div class=\"table-caption\">.*?</div>', f'<div class=\"table-caption\">{caption}</div>', tb)
+        # Eliminate stacked duplicate title bar
+        tb_clean = re.sub(r'<div class=\"table-caption\">.*?</div>', '', tb)
+        tb_clean = clean_table_glyphs(tb_clean)
         content = f"""
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -715,7 +821,7 @@ if ch6_m:
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{caption}</h3>
           </div>
           {cb_clean}
-          <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)</div>
+          {SCROLL_HINT_HTML}
           <div class="astro-table-container">
             {tb_clean}
           </div>
@@ -753,7 +859,7 @@ colophon_page = """
   </div>
 
   <div class="cover-author-block" style="margin-top:auto;">
-    <div class="cover-author-label">Tantra Gyan Sacred Publication</div>
+    <div class="cover-author-label">तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)</div>
     <div class="cover-author-name">ज्योतिषाचार्य Ashutosh Kumar Choubey</div>
     <div class="cover-author-role">Copyright © 2026. All rights reserved.</div>
     <div style="margin-top:0.85rem; display:flex; flex-direction:column; align-items:center; gap:0.6rem;">
@@ -815,16 +921,16 @@ html_template = f"""<!DOCTYPE html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ | Tantra Gyan Complete Vedic Astrology Compendium</title>
+  <title>वैदिक ज्योतिष महाग्रंथ सरलीकृत | Complete Vedic Astrology Compendium Simplified</title>
   
   <!-- SEO Best Practice Meta Tags -->
-  <meta name="description" content="तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ by Astrologer Ashutosh Kumar Choubey. Comprehensive authentic compendium covering Navagraha Karakatva, 17 Classical Raja Yogas, 27 Nakshatras & 108 Padas, Deeptadi Avasthas, and Planetary Predictions.">
+  <meta name="description" content="वैदिक ज्योतिष महाग्रंथ सरलीकृत by Astrologer Ashutosh Kumar Choubey, Published by Tantra Gyan Research Center. Comprehensive authentic compendium covering Navagraha Karakatva, 17 Classical Raja Yogas, 27 Nakshatras & 108 Padas, Deeptadi Avasthas, and Planetary Predictions.">
   <meta name="keywords" content="Tantra Gyan, Vedic Astrology, Astrologer Ashutosh Kumar Choubey, Navagraha Karakatva, Raja Yoga, Medical Astrology, Cancer in Astrology, Nakshatra Padas, Jyotish Shastra, Parashara, Phaladeepika">
   <meta name="author" content="Ashutosh Kumar Choubey">
   <meta name="robots" content="index, follow">
   
   <!-- OpenGraph Metadata -->
-  <meta property="og:title" content="तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ | Tantra Gyan Complete Vedic Astrology Compendium">
+  <meta property="og:title" content="वैदिक ज्योतिष महाग्रंथ सरलीकृत | Complete Vedic Astrology Compendium Simplified">
   <meta property="og:description" content="Comprehensive Authentic Vedic Astrology Reference Book by Astrologer Ashutosh Kumar Choubey.">
   <meta property="og:type" content="book">
   <meta property="og:url" content="https://t.worldgyan.com">
@@ -844,8 +950,8 @@ html_template = f"""<!DOCTYPE html>
   {{
     "@context": "https://schema.org",
     "@type": "Book",
-    "name": "तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ (Tantra Gyan: Complete Vedic Astrology Compendium)",
-    "alternateName": "Tantra Gyan Complete Vedic Astrology Compendium",
+    "name": "वैदिक ज्योतिष महाग्रंथ सरलीकृत (Complete Vedic Astrology Compendium Simplified)",
+    "alternateName": "Complete Vedic Astrology Compendium Simplified",
     "url": "https://t.worldgyan.com",
     "author": {{
       "@type": "Person",
@@ -861,7 +967,7 @@ html_template = f"""<!DOCTYPE html>
     }},
     "publisher": {{
       "@type": "Organization",
-      "name": "Tantra Gyan",
+      "name": "तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)",
       "url": "https://t.worldgyan.com",
       "sameAs": [
         "https://www.youtube.com/@TantraGyan108"
@@ -965,7 +1071,7 @@ html_template = f"""<!DOCTYPE html>
       <button class="tool-btn" id="btn-font-inc" title="Increase Font Size" style="padding:0.45rem 0.6rem;">A+</button>
 
       <!-- Fullscreen -->
-      <button class="tool-btn" id="btn-fullscreen" title="Toggle Fullscreen" style="padding:0.45rem 0.6rem;">⛶</button>
+      <button class="tool-btn" id="btn-fullscreen" title="Toggle Fullscreen" style="padding:0.45rem 0.6rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>
     </div>
   </header>
 
@@ -1004,7 +1110,7 @@ html_template = f"""<!DOCTYPE html>
   <!-- Bottom Reading Controller Bar -->
   <nav class="bottom-reading-bar" aria-label="Book Navigation Bar">
     <div style="display:flex; align-items:center; gap:0.35rem;">
-      <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="First Page (Home)">⇤ प्रारंभ</button>
+      <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="First Page (Home)">« प्रारंभ</button>
       <button class="tool-btn nav-step-btn" id="btn-prev-bottom" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="Previous Page">‹ पिछला</button>
     </div>
 
@@ -1015,7 +1121,7 @@ html_template = f"""<!DOCTYPE html>
 
     <div style="display:flex; align-items:center; gap:0.35rem;">
       <button class="tool-btn nav-step-btn" id="btn-next-bottom" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="Next Page">अगला ›</button>
-      <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage({total_pages}, true);" title="Last Page (End)">अंतिम ⇥</button>
+      <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage({total_pages}, true);" title="Last Page (End)">अंतिम »</button>
     </div>
   </nav>
 

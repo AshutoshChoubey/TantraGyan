@@ -18,7 +18,7 @@ from tables_data import *
 # ------------------------------------------------------------------------------
 
 HINDI_TITLES = [
-    'तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ',
+    'वैदिक ज्योतिष महाग्रंथ सरलीकृत',
     'लेखक परिचय — ज्योतिषाचार्य आशुतोष कुमार चौबे',
     'ग्रंथ का उद्देश्य एवं आधारभूत संरचना',
     'तांत्रिक अनुशासन, आचार संहिता एवं वैधानिक परामर्श',
@@ -108,7 +108,7 @@ HINDI_TITLES = [
 ]
 
 ENGLISH_TITLES = [
-    'Tantra Gyan: Complete Vedic Astrology Compendium',
+    'Complete Vedic Astrology Compendium Simplified',
     'Author Profile — Astrologer Ashutosh Kumar Choubey',
     'Reader\'s Study Guide & Core Architecture',
     'Tantric Ethics, Code of Conduct & Legal Disclaimer',
@@ -1082,124 +1082,19 @@ PAGE_86_HI_TABLE = """
 """
 
 def localize_html_table(table_html, page_idx, target_lang='hindi'):
-    """Full table localization with column deduplication and language isolation."""
-    # Check if a dedicated pure table replacement exists for this page
-    if target_lang == 'english':
-        if page_idx == 5: return PAGE_6_EN_TABLE.strip()
-        if page_idx == 6: return PAGE_7_EN_TABLE.strip()
-        if page_idx == 7: return PAGE_8_EN_TABLE.strip()
-        if page_idx == 8: return PAGE_9_EN_TABLE.strip()
-        if page_idx == 9: return PAGE_10_EN_TABLE.strip()
-        if page_idx == 10: return PAGE_11_EN_TABLE.strip()
-        if page_idx == 12: return PAGE_13_EN_TABLE.strip()
-        if page_idx == 14: return PAGE_15_EN_TABLE.strip()
-        if page_idx == 17: return PAGE_18_EN_TABLE.strip()
-        if page_idx == 18: return PAGE_19_EN_TABLE.strip()
-        if page_idx == 19: return PAGE_20_EN_TABLE.strip()
-        if page_idx == 20: return PAGE_21_EN_TABLE.strip()
-        if page_idx == 21: return PAGE_22_EN_TABLE.strip()
-        if page_idx == 22: return PAGE_23_EN_TABLE.strip()
-        if page_idx == 23: return PAGE_24_EN_TABLE.strip()
-        if page_idx == 25: return PAGE_26_EN_TABLE.strip()
-        if page_idx == 27: return PAGE_28_EN_TABLE.strip()
-        if page_idx == 28: return PAGE_29_EN_TABLE.strip()
-        if page_idx == 29: return PAGE_30_EN_TABLE.strip()
-        if page_idx == 30: return PAGE_31_EN_TABLE.strip()
-        if page_idx == 31: return PAGE_32_EN_TABLE.strip()
-        if page_idx == 32: return PAGE_33_EN_TABLE.strip()
-        if page_idx == 33: return PAGE_34_EN_TABLE.strip()
-        if page_idx == 34: return PAGE_35_EN_TABLE.strip()
-        if page_idx == 39: return PAGE_40_EN_TABLE.strip()
-        if page_idx == 40: return PAGE_41_EN_TABLE.strip()
-        if page_idx == 41: return PAGE_42_EN_TABLE.strip()
-        if page_idx == 42: return PAGE_43_EN_TABLE.strip()
-        if page_idx == 43: return PAGE_44_EN_TABLE.strip()
-        if page_idx == 71: return PAGE_72_EN_TABLE.strip()
-        if page_idx == 72: return PAGE_73_EN_TABLE.strip()
-        if page_idx == 74: return PAGE_75_EN_TABLE.strip()
-        if page_idx == 75: return PAGE_23_EN_TABLE.strip()
-        if page_idx == 76: return PAGE_24_EN_TABLE.strip()
-        if page_idx == 78: return PAGE_26_EN_TABLE.strip()
-    else:
-        if page_idx == 5: return PAGE_6_HI_TABLE.strip()
-        if page_idx == 6: return PAGE_7_HI_TABLE.strip()
-        if page_idx == 7: return PAGE_8_HI_TABLE.strip()
-        if page_idx == 9: return PAGE_10_HI_TABLE.strip()
-        if page_idx == 10: return PAGE_11_HI_TABLE.strip()
-        if page_idx == 18: return PAGE_19_HI_TABLE.strip()
-        if page_idx == 19: return PAGE_20_HI_TABLE.strip()
-        if page_idx == 20: return PAGE_21_HI_TABLE.strip()
-        if page_idx == 21: return PAGE_22_HI_TABLE.strip()
-        if page_idx == 22: return PAGE_23_HI_TABLE.strip()
-        if page_idx == 23: return PAGE_24_HI_TABLE.strip()
-        if page_idx == 25: return PAGE_26_HI_TABLE.strip()
-        if page_idx == 27: return PAGE_28_HI_TABLE.strip()
-        if page_idx == 28: return PAGE_29_HI_TABLE.strip()
-        if page_idx == 29: return PAGE_30_HI_TABLE.strip()
-        if page_idx == 30: return PAGE_31_HI_TABLE.strip()
-        if page_idx == 31: return PAGE_32_HI_TABLE.strip()
-        if page_idx == 32: return PAGE_33_HI_TABLE.strip()
-        if page_idx == 33: return PAGE_34_HI_TABLE.strip()
-        if page_idx == 34: return PAGE_35_HI_TABLE.strip()
-        if page_idx == 39: return PAGE_40_HI_TABLE.strip()
-        if page_idx == 40: return PAGE_41_HI_TABLE.strip()
-        if page_idx == 41: return PAGE_42_HI_TABLE.strip()
-        if page_idx == 42: return PAGE_43_HI_TABLE.strip()
-        if page_idx == 71: return PAGE_72_HI_TABLE.strip()
-        if page_idx == 72: return PAGE_73_HI_TABLE.strip()
-        if page_idx == 74: return PAGE_75_HI_TABLE.strip()
-        if page_idx == 75: return PAGE_23_HI_TABLE.strip()
-        if page_idx == 76: return PAGE_24_HI_TABLE.strip()
-        if page_idx == 78: return PAGE_26_HI_TABLE.strip()
-        if page_idx == 80: return PAGE_81_HI_TABLE.strip()
-        if page_idx == 81: return PAGE_82_HI_TABLE.strip()
-        if page_idx == 82: return PAGE_83_HI_TABLE.strip()
-        if page_idx == 83: return PAGE_84_HI_TABLE.strip()
-        if page_idx == 84: return PAGE_85_HI_TABLE.strip()
-        if page_idx == 85: return PAGE_86_HI_TABLE.strip()
-
-    # Special column deduplication for parallel language tables
-    if page_idx == 11:
-        table_html = filter_table_columns(table_html, [0, 1] if target_lang == 'hindi' else [0, 2])
-    elif page_idx == 13:
-        table_html = filter_table_columns(table_html, [0, 1] if target_lang == 'hindi' else [0, 2])
-    elif page_idx == 15:
-        table_html = filter_table_columns(table_html, [0, 2] if target_lang == 'hindi' else [0, 1])
-    elif page_idx == 16:
-        table_html = filter_table_columns(table_html, [0, 1] if target_lang == 'hindi' else [0, 2])
-    elif page_idx in [26, 79]:
-        table_html = filter_table_columns(table_html, [0, 2, 4, 6, 8, 10, 12] if target_lang == 'hindi' else [0, 1, 3, 5, 7, 9, 11])
-
-    mapping = hindi_headers if target_lang == 'hindi' else english_headers
-
-    # Replace th contents
-    def replace_th(m):
-        full_tag = m.group(1)
-        inner = m.group(2)
-        clean_inner = re.sub(r'<[^>]+>', ' ', inner).strip()
-        clean_inner = re.sub(r'\s+', ' ', clean_inner)
-        new_text = mapping.get(clean_inner, inner)
-        return f'<th{full_tag}>{new_text}</th>'
-
-    res = re.sub(r'<th([^>]*)>(.*?)</th>', replace_th, table_html, flags=re.DOTALL)
-
-    # Clean td contents
-    if target_lang == 'hindi':
-        def replace_td_hi(m):
-            tag = m.group(1)
-            content = m.group(2)
-            cleaned = clean_cell_text_to_hindi(content)
-            return f'<td{tag}>{cleaned}</td>'
-        res = re.sub(r'<td([^>]*)>(.*?)</td>', replace_td_hi, res, flags=re.DOTALL)
-    else:
-        def replace_td_en(m):
-            tag = m.group(1)
-            content = m.group(2)
-            cleaned = clean_cell_text_to_english(content)
-            return f'<td{tag}>{cleaned}</td>'
-        res = re.sub(r'<td([^>]*)>(.*?)</td>', replace_td_en, res, flags=re.DOTALL)
-
-    return res
+    """Full table localization using pure pre-compiled tables from tables_data."""
+    p_num = page_idx + 1
+    suffix = 'HI' if target_lang == 'hindi' else 'EN'
+    var_name = f'PAGE_{p_num}_{suffix}_TABLE'
+    if var_name in globals() and globals()[var_name]:
+        return globals()[var_name].strip()
+    # Check duplicate Nakshatra block (Pages 76-80 duplicate Ch 3 Pages 23-27)
+    if 76 <= p_num <= 80:
+        mapped_p = p_num - 53
+        mapped_var = f'PAGE_{mapped_p}_{suffix}_TABLE'
+        if mapped_var in globals() and globals()[mapped_var]:
+            return globals()[mapped_var].strip()
+    return table_html
 
 
 # ------------------------------------------------------------------------------
@@ -1543,13 +1438,13 @@ def generate_hindi_pages(orig_pages):
     # Page 1: Pure Hindi Cover
     p1 = """
     <div class="cover-page-inner">
-      <div class="cover-tag">प्रामाणिक वैदिक ज्योतिष महाग्रंथ • डिजिटल संस्करण २०२६ • सम्पूर्ण हिन्दी संस्करण</div>
+      <div class="cover-tag">तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center) • डिजिटल संस्करण २०२६ • सम्पूर्ण हिन्दी संस्करण</div>
       
       <div class="cover-yantra">
         <img src="assets/yantra.svg" alt="Sacred Sri Yantra Emblem" width="130" height="130" style="filter: drop-shadow(0 4px 15px rgba(200, 157, 61, 0.45));">
       </div>
 
-      <h1 class="cover-title-hindi" style="font-size:2.2rem; margin-bottom:0.75rem;">तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ</h1>
+      <h1 class="cover-title-hindi" style="font-size:2.2rem; margin-bottom:0.75rem;">वैदिक ज्योतिष महाग्रंथ सरलीकृत</h1>
       <h2 class="cover-title-english" style="font-size:1.05rem; color:var(--accent-gold); font-family:var(--font-heading); letter-spacing:0.04em;">सम्पूर्ण प्रामाणिक शास्त्रीय फलित ज्ञानकोश</h2>
 
       <div class="cover-divider"></div>
@@ -1847,12 +1742,9 @@ def generate_hindi_pages(orig_pages):
                 <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{page_title}</h3>
               </div>
               {card_html}
-              <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (क्षैतिज दर्शन)</div>
+              <div class="table-scroll-hint"><svg class="scroll-hint-icon" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M3 12h18"/></svg>तालिका को दाएं-बाएं स्क्रॉल करें (क्षैतिज दर्शन)</div>
               <div class="astro-table-container">
-                <div class="table-container">
-                  <div class="table-caption">{page_title}</div>
-                  <div class="table-responsive">{tbl_clean}</div>
-                </div>
+                {tbl_clean}
               </div>
             </div>
             """
@@ -1866,12 +1758,9 @@ def generate_hindi_pages(orig_pages):
                 <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{page_title}</h3>
               </div>
               {card_html}
-              <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (क्षैतिज दर्शन)</div>
+              <div class="table-scroll-hint"><svg class="scroll-hint-icon" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M3 12h18"/></svg>तालिका को दाएं-बाएं स्क्रॉल करें (क्षैतिज दर्शन)</div>
               <div class="astro-table-container">
-                <div class="table-container">
-                  <div class="table-caption">{page_title}</div>
-                  <div class="table-responsive">{tbl_clean}</div>
-                </div>
+                {tbl_clean}
               </div>
             </div>
             """
@@ -1903,12 +1792,9 @@ def generate_hindi_pages(orig_pages):
                 <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">{page_title}</h3>
               </div>
               {rule_card}
-              <div class="table-scroll-hint"><span>⇄</span> तालिका को दाएं-बाएं स्क्रॉल करें (क्षैतिज दर्शन)</div>
+              <div class="table-scroll-hint"><svg class="scroll-hint-icon" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M3 12h18"/></svg>तालिका को दाएं-बाएं स्क्रॉल करें (क्षैतिज दर्शन)</div>
               <div class="astro-table-container">
-                <div class="table-container">
-                  <div class="table-caption">{page_title}</div>
-                  <div class="table-responsive">{tbl_clean}</div>
-                </div>
+                {tbl_clean}
               </div>
             </div>
             """
@@ -1931,9 +1817,9 @@ def generate_hindi_pages(orig_pages):
             c = re.sub(r'Chapter (\d+) • Medical Section (\d+)', r'अध्याय \1 • स्वास्थ्य खण्ड \2', c)
             c = re.sub(r'Chapter (\d+) • Pada Section (\d+)', r'अध्याय \1 • पद खण्ड \2', c)
             
-            # Localize table heading and caption to Hindi title
+            # Localize table heading and eliminate duplicate table captions
             c = re.sub(r'<h3 class="chapter-heading"[^>]*>.*?</h3>', f'<h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{page_title}</h3>', c)
-            c = re.sub(r'<div class="table-caption">.*?</div>', f'<div class="table-caption">{page_title}</div>', c)
+            c = re.sub(r'<div class="table-caption">.*?</div>', '', c)
 
             # Localize tables inside
             tbl_match = re.search(r'<table.*?</table\s*>', c, re.DOTALL)
@@ -1973,7 +1859,7 @@ def generate_hindi_pages(orig_pages):
       </div>
 
       <div class="cover-author-block" style="margin-top:auto;">
-        <div class="cover-author-label">तंत्र ज्ञान संस्थान • सर्वाधिकार सुरक्षित</div>
+        <div class="cover-author-label">तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center) • सर्वाधिकार सुरक्षित</div>
         <div class="cover-author-name">ज्योतिषाचार्य आशुतोष कुमार चौबे</div>
         <div class="cover-author-role">कॉपीराइट © २०२६. All rights reserved.</div>
         <div style="margin-top:0.85rem; display:flex; flex-direction:column; align-items:center; gap:0.6rem;">
@@ -2011,13 +1897,13 @@ def generate_english_pages(orig_pages):
     # Page 1: Complete English Cover
     p1 = """
     <div class="cover-page-inner">
-      <div class="cover-tag">Authentic Vedic Astrology Compendium • Digital Edition 2026 • English Edition</div>
+      <div class="cover-tag">Tantra Gyan Research Center (तंत्र ज्ञान शोध संस्थान) • Digital Edition 2026 • English Edition</div>
       
       <div class="cover-yantra">
         <img src="assets/yantra.svg" alt="Sacred Sri Yantra Emblem" width="130" height="130" style="filter: drop-shadow(0 4px 15px rgba(200, 157, 61, 0.45));">
       </div>
 
-      <h1 class="cover-title-hindi" style="font-size:2.1rem; margin-bottom:0.75rem; font-family:var(--font-heading); color:var(--accent-gold);">Tantra Gyan: Complete Vedic Astrology Compendium</h1>
+      <h1 class="cover-title-hindi" style="font-size:2.1rem; margin-bottom:0.75rem; font-family:var(--font-heading); color:var(--accent-gold);">Complete Vedic Astrology Compendium Simplified</h1>
       <h2 class="cover-title-english" style="font-size:1.05rem; color:var(--text-heading); letter-spacing:0.04em;">Authoritative Classical Sutras, Astronomical Motion & Predictive Principles</h2>
 
       <div class="cover-divider"></div>
@@ -2315,12 +2201,9 @@ def generate_english_pages(orig_pages):
                 <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{page_title}</h3>
               </div>
               {card_html}
-              <div class="table-scroll-hint"><span>⇄</span> Scroll table horizontally to view full columns</div>
+              <div class="table-scroll-hint"><svg class="scroll-hint-icon" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M3 12h18"/></svg>Scroll table horizontally to view full columns</div>
               <div class="astro-table-container">
-                <div class="table-container">
-                  <div class="table-caption">{page_title}</div>
-                  <div class="table-responsive">{tbl_clean}</div>
-                </div>
+                {tbl_clean}
               </div>
             </div>
             """
@@ -2334,12 +2217,9 @@ def generate_english_pages(orig_pages):
                 <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{page_title}</h3>
               </div>
               {card_html}
-              <div class="table-scroll-hint"><span>⇄</span> Scroll table horizontally to view full columns</div>
+              <div class="table-scroll-hint"><svg class="scroll-hint-icon" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M3 12h18"/></svg>Scroll table horizontally to view full columns</div>
               <div class="astro-table-container">
-                <div class="table-container">
-                  <div class="table-caption">{page_title}</div>
-                  <div class="table-responsive">{tbl_clean}</div>
-                </div>
+                {tbl_clean}
               </div>
             </div>
             """
@@ -2371,12 +2251,9 @@ def generate_english_pages(orig_pages):
                 <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">{page_title}</h3>
               </div>
               {rule_card}
-              <div class="table-scroll-hint"><span>⇄</span> Scroll table horizontally to view full columns</div>
+              <div class="table-scroll-hint"><svg class="scroll-hint-icon" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M3 12h18"/></svg>Scroll table horizontally to view full columns</div>
               <div class="astro-table-container">
-                <div class="table-container">
-                  <div class="table-caption">{page_title}</div>
-                  <div class="table-responsive">{tbl_clean}</div>
-                </div>
+                {tbl_clean}
               </div>
             </div>
             """
@@ -2390,10 +2267,11 @@ def generate_english_pages(orig_pages):
                     c = c.replace(cb_m.group(0), '')
 
             c = c.replace('तालिका को दाएं-बाएं स्क्रॉल करें (Scroll table horizontally)', 'Scroll table horizontally to view full columns')
+            c = c.replace('तालिका को दाएं-बाएं स्क्रॉल करें (क्षैतिज दर्शन)', 'Scroll table horizontally to view full columns')
             c = c.replace('<span class="rule-badge">सूत्र / Rule</span>', '<span class="rule-badge">Classical Sutra</span>')
             c = c.replace('<span class="formula-pill">मंगल (Mars) के संपूर्ण कारकत्व और संकेतक</span>', '<span class="formula-pill">Mars (Mangala) Comprehensive Significations & Karakatvas</span>')
             c = re.sub(r'<h3 class="chapter-heading"[^>]*>.*?</h3>', f'<h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{page_title}</h3>', c)
-            c = re.sub(r'<div class="table-caption">.*?</div>', f'<div class="table-caption">{page_title}</div>', c)
+            c = re.sub(r'<div class="table-caption">.*?</div>', '', c)
 
             # Localize tables inside
             tbl_match = re.search(r'<table.*?</table\s*>', c, re.DOTALL)
@@ -2433,7 +2311,7 @@ def generate_english_pages(orig_pages):
       </div>
 
       <div class="cover-author-block" style="margin-top:auto;">
-        <div class="cover-author-label">Tantra Gyan Sacred Publication</div>
+        <div class="cover-author-label">Tantra Gyan Research Center (तंत्र ज्ञान शोध संस्थान) • All Rights Reserved</div>
         <div class="cover-author-name">Astrologer Ashutosh Kumar Choubey</div>
         <div class="cover-author-role">Copyright © 2026. All rights reserved.</div>
         <div style="margin-top:0.85rem; display:flex; flex-direction:column; align-items:center; gap:0.6rem;">
@@ -2471,7 +2349,7 @@ def generate_english_pages(orig_pages):
 def render_edition_html(pages_list, edition_lang='hindi'):
     is_hindi = (edition_lang == 'hindi')
     doc_lang = "hi" if is_hindi else "en"
-    doc_title = "तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ (सम्पूर्ण हिन्दी संस्करण)" if is_hindi else "Tantra Gyan: Complete Vedic Astrology Compendium (English Edition)"
+    doc_title = "वैदिक ज्योतिष महाग्रंथ सरलीकृत (सम्पूर्ण हिन्दी संस्करण)" if is_hindi else "Complete Vedic Astrology Compendium Simplified (English Edition)"
     
     brand_sub = "सम्पूर्ण हिन्दी संस्करण" if is_hindi else "Complete English Edition"
     search_placeholder = "ग्रंथ में खोजें (उदा. सूर्य, मंगल, गजकेसरी, पुष्य)..." if is_hindi else "Search compendium (e.g. Sun, Mars, Raja Yoga, Pushya)..."
@@ -2553,7 +2431,7 @@ def render_edition_html(pages_list, edition_lang='hindi'):
         <img src="assets/yantra.svg" alt="Tantra Gyan Mandala" width="34" height="34">
       </div>
       <div class="brand-titles">
-        <span class="brand-name">तंत्र ज्ञान <span>Tantra Gyan</span></span>
+        <span class="brand-name">तंत्र ज्ञान शोध संस्थान <span>Tantra Gyan</span></span>
         <span class="brand-tagline">{brand_sub}</span>
       </div>
     </a>
@@ -2625,7 +2503,7 @@ def render_edition_html(pages_list, edition_lang='hindi'):
       <button class="tool-btn" id="btn-font-inc" title="Increase Font Size" style="padding:0.45rem 0.6rem;">A+</button>
 
       <!-- Fullscreen -->
-      <button class="tool-btn" id="btn-fullscreen" title="Toggle Fullscreen" style="padding:0.45rem 0.6rem;">⛶</button>
+      <button class="tool-btn" id="btn-fullscreen" title="Toggle Fullscreen" style="padding:0.45rem 0.6rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>
     </div>
   </header>
 
@@ -2664,7 +2542,7 @@ def render_edition_html(pages_list, edition_lang='hindi'):
   <!-- Bottom Reading Controller Bar -->
   <nav class="bottom-reading-bar" aria-label="Book Navigation Bar">
     <div style="display:flex; align-items:center; gap:0.35rem;">
-      <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="First Page">⇤ {btn_first_title}</button>
+      <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="First Page">« {btn_first_title}</button>
       <button class="tool-btn nav-step-btn" id="btn-prev-bottom" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="Previous Page">{btn_prev_title}</button>
     </div>
 
@@ -2675,7 +2553,7 @@ def render_edition_html(pages_list, edition_lang='hindi'):
 
     <div style="display:flex; align-items:center; gap:0.35rem;">
       <button class="tool-btn nav-step-btn" id="btn-next-bottom" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="Next Page">{btn_next_title}</button>
-      <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage({total_pages}, true);" title="Last Page">{btn_last_title} ⇥</button>
+      <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage({total_pages}, true);" title="Last Page">{btn_last_title} »</button>
     </div>
   </nav>
 

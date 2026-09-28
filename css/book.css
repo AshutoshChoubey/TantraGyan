@@ -793,8 +793,14 @@ html, body {
   user-select: none;
 }
 
-.table-scroll-hint span {
+.table-scroll-hint span,
+.table-scroll-hint svg.scroll-hint-icon {
   font-size: 0.85rem;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  vertical-align: middle;
+  stroke: currentColor;
   animation: pulseX 2s infinite ease-in-out;
 }
 
