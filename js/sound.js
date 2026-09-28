@@ -154,6 +154,25 @@ class BookSoundEngine {
       thudGain.gain.linearRampToValueAtTime(this.volume * 0.42, now + 0.40);
       thudGain.gain.exponentialRampToValueAtTime(0.001, now + duration);
 
+      // Directional Spatial Stereo Panning (Opposite stereo trajectory)
+      let panner = null;
+      if (this.audioCtx.createStereoPanner) {
+        try {
+          panner = this.audioCtx.createStereoPanner();
+          if (direction === 'next') {
+            // Sweeps from Right (+0.35) across spine to Left (-0.35)
+            panner.pan.setValueAtTime(0.35, now);
+            panner.pan.linearRampToValueAtTime(-0.35, now + duration);
+          } else {
+            // Sweeps from Left (-0.35) across spine to Right (+0.35)
+            panner.pan.setValueAtTime(-0.35, now);
+            panner.pan.linearRampToValueAtTime(0.35, now + duration);
+          }
+        } catch (pe) {
+          panner = null;
+        }
+      }
+
       // Master output limiter
       const masterGain = this.audioCtx.createGain();
       masterGain.gain.setValueAtTime(1.0, now);
@@ -171,7 +190,12 @@ class BookSoundEngine {
       thudFilter.connect(thudGain);
       thudGain.connect(masterGain);
 
-      masterGain.connect(this.audioCtx.destination);
+      if (panner) {
+        masterGain.connect(panner);
+        panner.connect(this.audioCtx.destination);
+      } else {
+        masterGain.connect(this.audioCtx.destination);
+      }
 
       // Start sound sources
       noiseSource.start(now);

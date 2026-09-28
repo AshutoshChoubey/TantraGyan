@@ -1571,13 +1571,13 @@ html, body {
   animation: flipSingleForward 0.52s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
 }
 
-/* Single Page (Mobile & Tablet): Backward Turn */
+/* Single Page (Mobile & Tablet): Backward Turn (Peeled in from spine on left) */
 .single-page-layout .book-flipper-leaf.single-flip-backward,
 .book-flipper-leaf.single-flip-backward {
   left: 0;
   width: 100%;
-  transform-origin: right center;
-  -webkit-transform-origin: right center;
+  transform-origin: left center;
+  -webkit-transform-origin: left center;
   animation: flipSingleBackward 0.52s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
 }
 
@@ -1629,12 +1629,39 @@ html, body {
   opacity: 0;
 }
 
-.flipper-face-front .flipper-lighting-layer {
-  animation: frontLighting 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+/* Dual Forward Lighting */
+.dual-flip-forward .flipper-face-front .flipper-lighting-layer {
+  animation: frontLightingForward 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
 }
 
-.flipper-face-back .flipper-lighting-layer {
-  animation: backLighting 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+.dual-flip-forward .flipper-face-back .flipper-lighting-layer {
+  animation: backLightingForward 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+}
+
+/* Dual Backward Lighting (Opposite Direction & Spine Position) */
+.dual-flip-backward .flipper-face-front .flipper-lighting-layer {
+  animation: frontLightingBackward 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+}
+
+.dual-flip-backward .flipper-face-back .flipper-lighting-layer {
+  animation: backLightingBackward 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+}
+
+/* Single Page Lighting */
+.single-flip-forward .flipper-face-front .flipper-lighting-layer {
+  animation: frontLightingForward 0.52s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+}
+
+.single-flip-forward .flipper-face-back .flipper-lighting-layer {
+  animation: backLightingForward 0.52s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+}
+
+.single-flip-backward .flipper-face-back .flipper-lighting-layer {
+  animation: singleBackLightingBackward 0.52s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+}
+
+.single-flip-backward .flipper-face-front .flipper-lighting-layer {
+  animation: singleFrontLightingBackward 0.52s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
 }
 
 /* Dynamic Underlying Page Shadow */
@@ -1649,11 +1676,15 @@ html, body {
 
 .dual-flip-forward-shadow {
   left: 50%;
+  transform-origin: left center;
+  -webkit-transform-origin: left center;
   animation: underShadowForward 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
 }
 
 .dual-flip-backward-shadow {
   right: 50%;
+  transform-origin: right center;
+  -webkit-transform-origin: right center;
   animation: underShadowBackward 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
 }
 
@@ -1745,7 +1776,24 @@ html, body {
   }
 }
 
-/* Front Face Lighting */
+/* Forward Front Face Lighting (Right to Left across Spine) */
+@keyframes frontLightingForward {
+  0% {
+    opacity: 0;
+    background: transparent;
+  }
+  35% {
+    opacity: 0.65;
+    background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.2) 35%, rgba(0,0,0,0.12) 75%, rgba(0,0,0,0.28) 100%);
+  }
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes frontLighting {
   0% {
     opacity: 0;
@@ -1763,7 +1811,24 @@ html, body {
   }
 }
 
-/* Back Face Lighting */
+/* Forward Back Face Lighting (Lands on Left) */
+@keyframes backLightingForward {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.75;
+    background: linear-gradient(-90deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.2) 35%, rgba(0,0,0,0.12) 75%, rgba(0,0,0,0.28) 100%);
+  }
+  75% {
+    opacity: 0.45;
+    background: linear-gradient(-90deg, rgba(0,0,0,0.2) 0%, rgba(255,255,255,0.12) 50%, rgba(0,0,0,0.08) 100%);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes backLighting {
   0% {
     opacity: 0;
@@ -1775,6 +1840,76 @@ html, body {
   75% {
     opacity: 0.45;
     background: linear-gradient(-90deg, rgba(0,0,0,0.2) 0%, rgba(255,255,255,0.12) 50%, rgba(0,0,0,0.08) 100%);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Backward Front Face Lighting (Left to Right across Spine - Spine Crease on Right) */
+@keyframes frontLightingBackward {
+  0% {
+    opacity: 0;
+    background: transparent;
+  }
+  35% {
+    opacity: 0.65;
+    background: linear-gradient(-90deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.2) 35%, rgba(0,0,0,0.12) 75%, rgba(0,0,0,0.28) 100%);
+  }
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Backward Back Face Lighting (Lands on Right - Spine Crease on Left) */
+@keyframes backLightingBackward {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.75;
+    background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.2) 35%, rgba(0,0,0,0.12) 75%, rgba(0,0,0,0.28) 100%);
+  }
+  75% {
+    opacity: 0.45;
+    background: linear-gradient(90deg, rgba(0,0,0,0.2) 0%, rgba(255,255,255,0.12) 50%, rgba(0,0,0,0.08) 100%);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Single Page Backward: Back face visible 0% to 50% */
+@keyframes singleBackLightingBackward {
+  0% {
+    opacity: 0.65;
+    background: linear-gradient(90deg, rgba(0,0,0,0.22) 0%, rgba(255,255,255,0.18) 40%, rgba(0,0,0,0.08) 100%);
+  }
+  35% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Single Page Backward: Front face visible 50% to 100% */
+@keyframes singleFrontLightingBackward {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.65;
+    background: linear-gradient(90deg, rgba(0,0,0,0.25) 0%, rgba(255,255,255,0.22) 30%, rgba(0,0,0,0.08) 100%);
+  }
+  75% {
+    opacity: 0.35;
   }
   100% {
     opacity: 0;

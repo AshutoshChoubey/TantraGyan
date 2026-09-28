@@ -387,16 +387,32 @@ class BookEngine {
   goToPage(pageNum, playSound = false) {
     if (pageNum < 1) pageNum = 1;
     if (pageNum > this.totalPages) pageNum = this.totalPages;
-    if (pageNum === this.currentPage && !playSound) return;
 
-    if (playSound && !this.isAnimating) {
-      const dir = (pageNum >= this.currentPage) ? 'forward' : 'backward';
-      this.flip3D(dir, pageNum);
+    if (this.isDualPage) {
+      const currStart = (this.currentPage % 2 === 0) ? this.currentPage - 1 : this.currentPage;
+      const targetStart = (pageNum % 2 === 0) ? pageNum - 1 : pageNum;
+      if (currStart === targetStart) {
+        this.currentPage = pageNum;
+        this.onPageChanged();
+        return;
+      }
+      if (playSound && !this.isAnimating) {
+        const dir = (targetStart > currStart) ? 'forward' : 'backward';
+        this.flip3D(dir, targetStart);
+        return;
+      }
     } else {
-      this.currentPage = pageNum;
-      this.render();
-      this.onPageChanged();
+      if (pageNum === this.currentPage) return;
+      if (playSound && !this.isAnimating) {
+        const dir = (pageNum > this.currentPage) ? 'forward' : 'backward';
+        this.flip3D(dir, pageNum);
+        return;
+      }
     }
+
+    this.currentPage = pageNum;
+    this.render();
+    this.onPageChanged();
   }
 
   render() {
