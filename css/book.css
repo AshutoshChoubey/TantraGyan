@@ -279,6 +279,41 @@ html, body {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* Font Zoom Segmented Control for Clean Toolbar */
+.font-zoom-group {
+  display: inline-flex;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(200, 157, 61, 0.3);
+  border-radius: 6px;
+  padding: 2px;
+  gap: 2px;
+}
+
+[data-theme="light"] .font-zoom-group {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.font-zoom-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 0.35rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+  line-height: 1;
+}
+
+.font-zoom-btn:hover {
+  background: rgba(200, 157, 61, 0.2);
+  color: var(--accent-gold);
+}
+
 /* Search Input Container & Controls */
 .search-box {
   position: relative;
@@ -533,14 +568,13 @@ html, body {
 .book-container::before {
   content: '';
   position: absolute;
-  top: 4px;
-  left: 4px;
-  right: 4px;
-  bottom: 4px;
-  border: 1px dashed var(--book-gold-trim);
-  border-radius: 8px;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 1px solid rgba(200, 157, 61, 0.3);
+  border-radius: 9px;
   pointer-events: none;
-  opacity: 0.6;
 }
 
 .corner-ornament {
@@ -828,33 +862,38 @@ html, body {
   padding: 0 0.35rem;
 }
 
-/* Table Scroll Hint Pill */
+/* Table Scroll Hint: Sleek mobile-only micro-indicator, hidden on desktop for clean reading */
 .table-scroll-hint {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  margin: 0.6rem 0 0.35rem 0;
-  padding: 0.28rem 0.75rem;
-  font-size: 0.72rem;
-  font-family: var(--font-sans);
-  color: var(--accent-gold);
-  background: rgba(200, 157, 61, 0.08);
-  border: 1px dashed rgba(200, 157, 61, 0.35);
-  border-radius: 20px;
-  text-align: center;
-  user-select: none;
+  display: none;
 }
 
-.table-scroll-hint span,
-.table-scroll-hint svg.scroll-hint-icon {
-  font-size: 0.85rem;
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-  vertical-align: middle;
-  stroke: currentColor;
-  animation: pulseX 2s infinite ease-in-out;
+@media (max-width: 860px) {
+  .table-scroll-hint {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    margin: 0.35rem auto 0.2rem auto;
+    padding: 0.22rem 0.65rem;
+    font-size: 0.74rem;
+    font-family: var(--font-sans);
+    color: var(--accent-gold);
+    background: rgba(200, 157, 61, 0.08);
+    border: 1px dashed rgba(200, 157, 61, 0.3);
+    border-radius: 20px;
+    text-align: center;
+    user-select: none;
+  }
+  
+  .table-scroll-hint svg.scroll-hint-icon {
+    font-size: 0.82rem;
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    vertical-align: middle;
+    stroke: currentColor;
+    animation: pulseX 2s infinite ease-in-out;
+  }
 }
 
 @keyframes pulseX {
@@ -906,6 +945,18 @@ html, body {
   pointer-events: none;
 }
 
+[data-theme="light"] .nav-arrow-btn {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .nav-arrow-btn:hover {
+  background: var(--accent-gold);
+  color: #ffffff;
+}
+
 /* Bottom Reading Controller Bar */
 .bottom-reading-bar {
   position: fixed;
@@ -914,7 +965,8 @@ html, body {
   right: 0;
   height: 52px;
   background: rgba(18, 14, 11, 0.94);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid rgba(200, 157, 61, 0.25);
   display: flex;
   align-items: center;
@@ -923,8 +975,13 @@ html, body {
   z-index: 1000;
 }
 
+[data-theme="dark"] .bottom-reading-bar {
+  background: rgba(10, 14, 23, 0.95);
+  border-top: 1px solid rgba(217, 119, 6, 0.25);
+}
+
 [data-theme="light"] .bottom-reading-bar {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   border-top: 1px solid #cbd5e1;
 }
 
@@ -1244,6 +1301,35 @@ html, body {
   list-style: none;
   display: flex;
   flex-direction: column;
+  gap: 0.35rem;
+}
+
+/* TOC Chapter Group Header for Clean Organization */
+.toc-chapter-header {
+  position: sticky;
+  top: -1px;
+  z-index: 10;
+  background: var(--page-bg);
+  padding: 0.85rem 0.5rem 0.45rem 0.5rem;
+  margin-top: 0.65rem;
+  border-bottom: 1px solid rgba(200, 157, 61, 0.25);
+  display: flex;
+  align-items: center;
+}
+
+.toc-chapter-header:first-child {
+  margin-top: 0;
+  padding-top: 0.2rem;
+}
+
+.toc-chapter-pill {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  letter-spacing: normal;
+  display: inline-flex;
+  align-items: center;
   gap: 0.45rem;
 }
 
@@ -1251,7 +1337,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 0.95rem;
+  padding: 0.65rem 0.85rem;
   border-radius: 6px;
   cursor: pointer;
   border: 1px solid transparent;
@@ -1271,32 +1357,127 @@ html, body {
   display: flex;
   align-items: center;
   gap: 0.85rem;
+  flex: 1;
+  min-width: 0;
 }
 
-.toc-chapter-badge {
+.toc-page-badge {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
+  background: rgba(179, 127, 25, 0.1);
+  color: var(--accent-gold);
+  border: 1px solid rgba(179, 127, 25, 0.28);
+  padding: 0.18rem 0.55rem;
+  border-radius: 4px;
+  min-width: 44px;
+  text-align: center;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.toc-item:hover .toc-page-badge {
   background: var(--accent-gold);
   color: #14110e;
-  padding: 0.22rem 0.55rem;
-  border-radius: 4px;
-  letter-spacing: 0.02em;
+  border-color: var(--accent-gold);
 }
 
 .toc-item-title {
   font-family: var(--font-body);
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   font-weight: 500;
   line-height: 1.45;
   letter-spacing: normal;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.toc-page-num {
-  font-family: var(--font-sans);
-  font-size: 0.88rem;
-  color: var(--accent-gold);
+.toc-item-arrow {
+  color: var(--text-muted);
+  font-size: 1.15rem;
   font-weight: 600;
+  padding-left: 0.5rem;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.toc-item:hover .toc-item-arrow {
+  color: var(--accent-gold);
+  transform: translateX(3px);
+}
+
+/* Page 5 In-Book Index Clean Cards */
+.index-grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+}
+
+.index-card {
+  background: var(--page-bg);
+  border: 1px solid var(--page-border);
+  border-left: 4px solid var(--accent-gold);
+  border-radius: 8px;
+  padding: 0.75rem 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+}
+
+.index-card:hover {
+  background: var(--page-bg-alt);
+  border-color: var(--accent-gold);
+  transform: translateX(3px);
+  box-shadow: 0 3px 10px rgba(179, 127, 25, 0.12);
+}
+
+.index-card-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.index-chapter-badge {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: rgba(179, 127, 25, 0.12);
+  color: var(--accent-gold);
+  border: 1px solid rgba(179, 127, 25, 0.3);
+  padding: 0.22rem 0.55rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.index-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.index-card-title {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.index-card-desc {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.index-page-range {
+  font-family: var(--font-sans);
+  color: var(--accent-gold);
+  font-size: 0.84rem;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 /* --------------------------------------------------------------------------

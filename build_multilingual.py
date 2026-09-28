@@ -2365,16 +2365,25 @@ def render_edition_html(pages_list, edition_lang='hindi'):
 
     total_pages = len(pages_list)
 
-    # Build TOC HTML
+    # Build TOC HTML (Grouped cleanly by Chapter)
     toc_items = []
+    current_chapter = None
     for p_idx, p in enumerate(pages_list):
+        ch_raw = p['chapter'].split('•')[0].strip()
+        if ch_raw != current_chapter:
+            current_chapter = ch_raw
+            toc_items.append(f"""
+            <div class="toc-chapter-header">
+              <span class="toc-chapter-pill">📌 {current_chapter}</span>
+            </div>
+            """)
         toc_items.append(f"""
         <a href="#page-{p_idx+1}" class="toc-item" data-goto="{p_idx+1}">
           <div class="toc-item-left">
-            <span class="toc-chapter-badge">P.{p_idx+1}</span>
+            <span class="toc-page-badge">P.{p_idx+1}</span>
             <span class="toc-item-title">{p['title']}</span>
           </div>
-          <span class="toc-page-num">{p['chapter'].split('•')[0].strip()}</span>
+          <span class="toc-item-arrow">›</span>
         </a>
         """)
     toc_html = "\n".join(toc_items)
@@ -2498,9 +2507,11 @@ def render_edition_html(pages_list, edition_lang='hindi'):
         <span>🔊</span>
       </button>
 
-      <!-- Font Zoom -->
-      <button class="tool-btn" id="btn-font-dec" title="Decrease Font Size" style="padding:0.45rem 0.6rem;">A-</button>
-      <button class="tool-btn" id="btn-font-inc" title="Increase Font Size" style="padding:0.45rem 0.6rem;">A+</button>
+      <!-- Font Zoom Segmented Control -->
+      <div class="font-zoom-group" title="Adjust Text Size">
+        <button class="font-zoom-btn" id="btn-font-dec" title="Decrease Font Size">A−</button>
+        <button class="font-zoom-btn" id="btn-font-inc" title="Increase Font Size">A+</button>
+      </div>
 
       <!-- Fullscreen -->
       <button class="tool-btn" id="btn-fullscreen" title="Toggle Fullscreen" style="padding:0.45rem 0.6rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>

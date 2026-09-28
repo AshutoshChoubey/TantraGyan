@@ -315,71 +315,92 @@ pages.append({
 # PAGE 5: Table of Contents (Index)
 page_5 = """
 <div class="page-inner-content">
-  <div class="chapter-header" style="margin-bottom:1rem;">
+  <div class="chapter-header" style="margin-bottom:1.2rem;">
     <div class="chapter-number">Index & Navigation</div>
     <h2 class="chapter-heading" style="font-size:1.4rem; color:var(--accent-gold);">विषय-सूची — Table of Contents</h2>
   </div>
 
-  <div style="display:flex; flex-direction:column; gap:0.65rem;">
-    <div style="background:var(--page-bg-alt); border:1px solid var(--page-border); border-radius:6px; padding:0.65rem 0.85rem; display:flex; justify-content:space-between; align-items:center;">
-      <div>
-        <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">Ch 1</span>
-        <strong style="font-size:0.88rem;">प्रस्तावना, लेखक परिचय एवं वैधानिक सूचना</strong>
+  <div class="index-grid-container">
+    <div class="index-card" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);">
+      <div class="index-card-left">
+        <span class="index-chapter-badge">Ch 1</span>
+        <div class="index-card-info">
+          <strong class="index-card-title">प्रस्तावना, लेखक परिचय एवं वैधानिक सूचना</strong>
+          <span class="index-card-desc">Front Matter, Author Profile & Guidelines</span>
+        </div>
       </div>
-      <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 1 - 5</span>
+      <span class="index-page-range">Pages 1 - 5</span>
     </div>
 
-    <div style="background:var(--page-bg-alt); border:1px solid var(--page-border); border-radius:6px; padding:0.65rem 0.85rem; display:flex; justify-content:space-between; align-items:center;">
-      <div>
-        <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">Ch 2</span>
-        <strong style="font-size:0.88rem;">नवग्रह कारकत्व एवं 17 शास्त्रीय राजयोग</strong>
+    <div class="index-card" onclick="if(window.bookEngine) window.bookEngine.goToPage(6, true);">
+      <div class="index-card-left">
+        <span class="index-chapter-badge">Ch 2</span>
+        <div class="index-card-info">
+          <strong class="index-card-title">नवग्रह कारकत्व एवं 17 शास्त्रीय राजयोग</strong>
+          <span class="index-card-desc">Navagraha Karakatva & Classical Raja Yogas</span>
+        </div>
       </div>
-      <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 6 - 20</span>
+      <span class="index-page-range">Pages 6 - 20</span>
     </div>
 
-    <div style="background:var(--page-bg-alt); border:1px solid var(--page-border); border-radius:6px; padding:0.65rem 0.85rem; display:flex; justify-content:space-between; align-items:center;">
-      <div>
-        <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">Ch 3</span>
-        <strong style="font-size:0.88rem;">राशि, नक्षत्र, ग्रह गति एवं विंशोत्तरी महादशा</strong>
+    <div class="index-card" onclick="if(window.bookEngine) window.bookEngine.goToPage(21, true);">
+      <div class="index-card-left">
+        <span class="index-chapter-badge">Ch 3</span>
+        <div class="index-card-info">
+          <strong class="index-card-title">राशि, नक्षत्र, ग्रह गति एवं विंशोत्तरी महादशा</strong>
+          <span class="index-card-desc">Zodiac Signs, 27 Nakshatras & Vimshottari Dasha</span>
+        </div>
       </div>
-      <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 21 - 37</span>
+      <span class="index-page-range">Pages 21 - 37</span>
     </div>
 
-    <div style="background:var(--page-bg-alt); border:1px solid var(--page-border); border-radius:6px; padding:0.65rem 0.85rem; display:flex; justify-content:space-between; align-items:center;">
-      <div>
-        <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">Ch 4</span>
-        <strong style="font-size:0.88rem;">भाव एवं राशियों में ग्रहों का प्रभाव (दीप्तादि 9 अवस्थाएं व सूर्य फल)</strong>
+    <div class="index-card" onclick="if(window.bookEngine) window.bookEngine.goToPage(38, true);">
+      <div class="index-card-left">
+        <span class="index-chapter-badge">Ch 4</span>
+        <div class="index-card-info">
+          <strong class="index-card-title">भाव एवं राशियों में ग्रहों का प्रभाव (दीप्तादि 9 अवस्थाएं)</strong>
+          <span class="index-card-desc">12 Houses, Planetary States & Operational Rules</span>
+        </div>
       </div>
-      <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 38 - 47</span>
+      <span class="index-page-range">Pages 38 - 47</span>
     </div>
 
-    <div style="background:var(--page-bg-alt); border:1px solid var(--page-border); border-radius:6px; padding:0.65rem 0.85rem; display:flex; justify-content:space-between; align-items:center;">
-      <div>
-        <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">Ch 5</span>
-        <strong style="font-size:0.88rem;">मेडिकल एस्ट्रोलॉजी एवं कैंसर रोग विश्लेषण (27 संपूर्ण तालिकाएं)</strong>
+    <div class="index-card" onclick="if(window.bookEngine) window.bookEngine.goToPage(48, true);">
+      <div class="index-card-left">
+        <span class="index-chapter-badge">Ch 5</span>
+        <div class="index-card-info">
+          <strong class="index-card-title">मेडिकल एस्ट्रोलॉजी एवं कैंसर रोग विश्लेषण (27 संपूर्ण तालिकाएं)</strong>
+          <span class="index-card-desc">Medical Astrology & Organ Pathology Reference</span>
+        </div>
       </div>
-      <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 48 - 74</span>
+      <span class="index-page-range">Pages 48 - 74</span>
     </div>
 
-    <div style="background:var(--page-bg-alt); border:1px solid var(--page-border); border-radius:6px; padding:0.65rem 0.85rem; display:flex; justify-content:space-between; align-items:center;">
-      <div>
-        <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">Ch 6</span>
-        <strong style="font-size:0.88rem;">नक्षत्रों का गहन पद एवं ग्रह विश्लेषण (अश्विनी, आश्लेषा, पुष्य)</strong>
+    <div class="index-card" onclick="if(window.bookEngine) window.bookEngine.goToPage(75, true);">
+      <div class="index-card-left">
+        <span class="index-chapter-badge">Ch 6</span>
+        <div class="index-card-info">
+          <strong class="index-card-title">नक्षत्रों का गहन पद एवं ग्रह विश्लेषण (अश्विनी, आश्लेषा, पुष्य)</strong>
+          <span class="index-card-desc">Deep Pada Matrices & Degrees Reference</span>
+        </div>
       </div>
-      <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 75 - 85</span>
+      <span class="index-page-range">Pages 75 - 85</span>
     </div>
 
-    <div style="background:var(--page-bg-alt); border:1px solid var(--page-border); border-radius:6px; padding:0.65rem 0.85rem; display:flex; justify-content:space-between; align-items:center;">
-      <div>
-        <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">Colophon</span>
-        <strong style="font-size:0.88rem;">समापन पृष्ठ, मंगल श्लोक व संपर्क</strong>
+    <div class="index-card" onclick="if(window.bookEngine) window.bookEngine.goToPage(86, true);">
+      <div class="index-card-left">
+        <span class="index-chapter-badge">Colophon</span>
+        <div class="index-card-info">
+          <strong class="index-card-title">समापन पृष्ठ, मंगल श्लोक व आधिकारिक संपर्क</strong>
+          <span class="index-card-desc">Benediction, Upanishad Shloka & Contacts</span>
+        </div>
       </div>
-      <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Page 86</span>
+      <span class="index-page-range">Page 86</span>
     </div>
   </div>
 
-  <div style="margin-top:1.25rem; font-size:0.82rem; color:var(--text-muted); text-align:center;">
-    💡 <em>संकेत: किसी भी पृष्ठ पर सीधे जाने हेतु ऊपरी टूलबार के <strong>📖 विषय-सूची</strong> बटन का उपयोग करें या नीचे स्लाइडर को खिसकाएं।</em>
+  <div style="margin-top:1.15rem; font-size:0.84rem; color:var(--text-muted); text-align:center;">
+    💡 <em>संकेत: किसी भी अध्याय कार्ड पर क्लिक करके सीधे उस पृष्ठ पर जा सकते हैं, या शीर्ष टूलबार के <strong>📖 विषय-सूची</strong> बटन से संपूर्ण सूची देखें।</em>
   </div>
 </div>
 """
@@ -891,16 +912,25 @@ pages.append({
 total_pages = len(pages)
 print(f"Total compiled pages: {total_pages}")
 
-# Build TOC Items HTML
+# Build TOC Items HTML (Grouped cleanly by Chapter)
 toc_items_html = []
+current_chapter = None
 for p_idx, p in enumerate(pages):
+    ch_raw = p['chapter'].split('•')[0].strip()
+    if ch_raw != current_chapter:
+        current_chapter = ch_raw
+        toc_items_html.append(f"""
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 {current_chapter}</span>
+        </div>
+        """)
     toc_items_html.append(f"""
     <a href="#page-{p_idx+1}" class="toc-item" data-goto="{p_idx+1}">
       <div class="toc-item-left">
-        <span class="toc-chapter-badge">P.{p_idx+1}</span>
+        <span class="toc-page-badge">P.{p_idx+1}</span>
         <span class="toc-item-title">{p['title']}</span>
       </div>
-      <span class="toc-page-num">{p['chapter'].split('•')[0].strip()}</span>
+      <span class="toc-item-arrow">›</span>
     </a>
     """)
 toc_html = "\n".join(toc_items_html)
@@ -1066,9 +1096,11 @@ html_template = f"""<!DOCTYPE html>
         <span>🔊</span>
       </button>
 
-      <!-- Font Zoom -->
-      <button class="tool-btn" id="btn-font-dec" title="Decrease Font Size" style="padding:0.45rem 0.6rem;">A-</button>
-      <button class="tool-btn" id="btn-font-inc" title="Increase Font Size" style="padding:0.45rem 0.6rem;">A+</button>
+      <!-- Font Zoom Segmented Control -->
+      <div class="font-zoom-group" title="Adjust Text Size">
+        <button class="font-zoom-btn" id="btn-font-dec" title="Decrease Font Size">A−</button>
+        <button class="font-zoom-btn" id="btn-font-inc" title="Increase Font Size">A+</button>
+      </div>
 
       <!-- Fullscreen -->
       <button class="tool-btn" id="btn-fullscreen" title="Toggle Fullscreen" style="padding:0.45rem 0.6rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>
