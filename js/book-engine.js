@@ -1,7 +1,10 @@
 /**
- * Tantra Gyan Vedic Astrology Book - Core Flip Engine
- * Controls realistic two-page book spreads, page turns, keyboard/touch navigation,
- * and page progress tracking.
+ * Tantra Gyan Vedic Astrology Book - Core 3D Flip Engine
+ * Features:
+ * - True 3D physical book page turning animation with perspective, paper curl & lighting
+ * - Dual-page desktop spread and single-page mobile/tablet mode
+ * - Perfectly synchronized procedural physical paper sound effects
+ * - Smooth touch swipe, keyboard, slider, and TOC navigation
  */
 
 class BookEngine {
@@ -42,7 +45,7 @@ class BookEngine {
 
     // Check saved page or URL hash
     let startPage = 1;
-    if (window.location.hash) {
+    if (typeof window !== 'undefined' && window.location && window.location.hash) {
       const match = window.location.hash.match(/#page-(\d+)/);
       if (match && parseInt(match[1])) {
         startPage = parseInt(match[1]);
@@ -66,7 +69,7 @@ class BookEngine {
     // Bind event listeners
     this.bindEvents();
 
-    // Render initial page
+    // Render initial page without sound or animation
     this.goToPage(startPage, false);
   }
 
@@ -103,7 +106,7 @@ class BookEngine {
     // Keyboard navigation
     window.addEventListener('keydown', (e) => {
       // Don't intercept if user is typing in search input
-      if (e.target && e.target.tagName === 'INPUT') return;
+      if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
 
       if (e.key === 'ArrowRight' || e.key === 'PageDown' || (e.key === ' ' && !e.shiftKey)) {
         e.preventDefault();
@@ -113,10 +116,10 @@ class BookEngine {
         this.prevPage();
       } else if (e.key === 'Home') {
         e.preventDefault();
-        this.goToPage(1);
+        this.goToPage(1, true);
       } else if (e.key === 'End') {
         e.preventDefault();
-        this.goToPage(this.totalPages);
+        this.goToPage(this.totalPages, true);
       }
     });
 
@@ -153,8 +156,8 @@ class BookEngine {
         const diffY = e.changedTouches[0].screenY - touchStartY;
         const timeDiff = Date.now() - touchStartTime;
 
-        // Decisive horizontal swipe: fast (< 500ms), at least 65px horizontal, predominantly horizontal
-        if (timeDiff < 500 && Math.abs(diffX) > 65 && Math.abs(diffX) > Math.abs(diffY) * 1.8) {
+        // Decisive horizontal swipe: fast (< 500ms), at least 60px horizontal, predominantly horizontal
+        if (timeDiff < 500 && Math.abs(diffX) > 60 && Math.abs(diffX) > Math.abs(diffY) * 1.6) {
           if (diffX < 0) {
             this.nextPage();
           } else {
@@ -177,113 +180,257 @@ class BookEngine {
 
   nextPage() {
     if (this.isAnimating) return;
-    const step = this.isDualPage ? 2 : 1;
-    if (this.currentPage + step <= this.totalPages) {
-      this.flipAnimation('forward', () => {
-        this.goToPage(this.currentPage + step, true, 'next');
-      });
-    } else if (this.currentPage < this.totalPages) {
-      this.flipAnimation('forward', () => {
-        this.goToPage(this.totalPages, true, 'next');
-      });
+    if (this.isDualPage) {
+      const currStart = (this.currentPage % 2 === 0) ? this.currentPage - 1 : this.currentPage;
+      const targetStart = currStart + 2;
+      if (targetStart <= this.totalPages) {
+        this.flip3D('forward', targetStart);
+      }
+    } else {
+      if (this.currentPage < this.totalPages) {
+        this.flip3D('forward', this.currentPage + 1);
+      }
     }
   }
 
   prevPage() {
     if (this.isAnimating) return;
-    const step = this.isDualPage ? 2 : 1;
-    if (this.currentPage - step >= 1) {
-      this.flipAnimation('backward', () => {
-        this.goToPage(this.currentPage - step, true, 'prev');
-      });
-    } else if (this.currentPage > 1) {
-      this.flipAnimation('backward', () => {
-        this.goToPage(1, true, 'prev');
-      });
-    }
-  }
-
-  flipAnimation(direction, callback) {
-    this.isAnimating = true;
-    const wrapper = document.querySelector('.book-pages-wrapper');
-    if (wrapper) {
-      const animClass = direction === 'forward' ? 'page-flip-anim-forward' : 'page-flip-anim-backward';
-      wrapper.classList.add(animClass);
-      setTimeout(() => {
-        wrapper.classList.remove(animClass);
-        callback();
-        this.isAnimating = false;
-      }, 250);
+    if (this.isDualPage) {
+      const currStart = (this.currentPage % 2 === 0) ? this.currentPage - 1 : this.currentPage;
+      const targetStart = currStart - 2;
+      if (targetStart >= 1) {
+        this.flip3D('backward', targetStart);
+      }
     } else {
-      callback();
-      this.isAnimating = false;
+      if (this.currentPage > 1) {
+        this.flip3D('backward', this.currentPage - 1);
+      }
     }
   }
 
-  goToPage(pageNum, playSound = false, soundDir = 'next') {
+  /**
+   * Executes a realistic physical 3D page turn
+   * @param {string} direction - 'forward' or 'backward'
+   * @param {number} targetPage - destination page number
+   */
+  flip3D(direction, targetPage) {
+    if (this.isAnimating) return;
+    this.isAnimating = true;
+
+    // Trigger procedural audio instantly at the exact start of the turn
+    if (window.bookSound) {
+      window.bookSound.playPageTurn(direction === 'forward' ? 'next' : 'prev');
+    }
+
+    const wrapper = document.querySelector('.book-pages-wrapper');
+    if (!wrapper) {
+      this.currentPage = targetPage;
+      this.render();
+      this.onPageChanged();
+      this.isAnimating = false;
+      return;
+    }
+
+    // Clean up any lingering flipper nodes
+    wrapper.querySelectorAll('.book-flipper-leaf, .flipper-under-shadow').forEach(el => el.remove());
+
+    if (this.isDualPage) {
+      this.performDualPageFlip(direction, targetPage, wrapper);
+    } else {
+      this.performSinglePageFlip(direction, targetPage, wrapper);
+    }
+  }
+
+  performDualPageFlip(direction, targetPage, wrapper) {
+    const currStart = (this.currentPage % 2 === 0) ? this.currentPage - 1 : this.currentPage;
+    const currL = currStart;
+    const currR = currStart + 1;
+
+    const targetStart = (targetPage % 2 === 0) ? targetPage - 1 : targetPage;
+    const targetL = targetStart;
+    const targetR = targetStart + 1;
+
+    if (direction === 'forward') {
+      // The turning sheet is the Right Page (currR), flipping over to Left (targetL)
+      // Underneath, right container immediately reveals targetR
+      if (this.rightPageEl) {
+        this.renderSinglePageContent(this.rightPageEl, this.pages[targetR - 1], targetR);
+      }
+
+      // Create 3D Flipper Leaf
+      const flipper = document.createElement('div');
+      flipper.className = 'book-flipper-leaf dual-flip-forward';
+      flipper.innerHTML = `
+        <div class="flipper-face flipper-face-front page-sheet right-page">
+          ${this.getPageHTML(currR)}
+          <div class="flipper-lighting-layer"></div>
+        </div>
+        <div class="flipper-face flipper-face-back page-sheet left-page">
+          ${this.getPageHTML(targetL)}
+          <div class="flipper-lighting-layer"></div>
+        </div>
+      `;
+
+      const shadow = document.createElement('div');
+      shadow.className = 'flipper-under-shadow dual-flip-forward-shadow';
+
+      wrapper.appendChild(shadow);
+      wrapper.appendChild(flipper);
+
+      setTimeout(() => {
+        flipper.remove();
+        shadow.remove();
+        this.currentPage = targetPage;
+        this.renderSpread(targetL, targetR);
+        this.onPageChanged();
+        this.isAnimating = false;
+      }, 540);
+
+    } else {
+      // Backward: The turning sheet is the Left Page (currL), flipping over to Right (targetR)
+      // Underneath, left container immediately reveals targetL
+      if (this.leftPageEl) {
+        this.renderSinglePageContent(this.leftPageEl, this.pages[targetL - 1], targetL);
+      }
+
+      // Create 3D Flipper Leaf
+      const flipper = document.createElement('div');
+      flipper.className = 'book-flipper-leaf dual-flip-backward';
+      flipper.innerHTML = `
+        <div class="flipper-face flipper-face-front page-sheet left-page">
+          ${this.getPageHTML(currL)}
+          <div class="flipper-lighting-layer"></div>
+        </div>
+        <div class="flipper-face flipper-face-back page-sheet right-page">
+          ${this.getPageHTML(targetR)}
+          <div class="flipper-lighting-layer"></div>
+        </div>
+      `;
+
+      const shadow = document.createElement('div');
+      shadow.className = 'flipper-under-shadow dual-flip-backward-shadow';
+
+      wrapper.appendChild(shadow);
+      wrapper.appendChild(flipper);
+
+      setTimeout(() => {
+        flipper.remove();
+        shadow.remove();
+        this.currentPage = targetPage;
+        this.renderSpread(targetL, targetR);
+        this.onPageChanged();
+        this.isAnimating = false;
+      }, 540);
+    }
+  }
+
+  performSinglePageFlip(direction, targetPage, wrapper) {
+    const currP = this.currentPage;
+    const targetP = targetPage;
+
+    if (direction === 'forward') {
+      // Underneath, right container immediately reveals target page
+      if (this.rightPageEl) {
+        this.renderSinglePageContent(this.rightPageEl, this.pages[targetP - 1], targetP);
+      }
+
+      const flipper = document.createElement('div');
+      flipper.className = 'book-flipper-leaf single-flip-forward';
+      flipper.innerHTML = `
+        <div class="flipper-face flipper-face-front page-sheet">
+          ${this.getPageHTML(currP)}
+          <div class="flipper-lighting-layer"></div>
+        </div>
+        <div class="flipper-face flipper-face-back page-sheet">
+          <div class="page-sheet-back-parchment"></div>
+          <div class="flipper-lighting-layer"></div>
+        </div>
+      `;
+
+      wrapper.appendChild(flipper);
+
+      setTimeout(() => {
+        flipper.remove();
+        this.currentPage = targetP;
+        this.onPageChanged();
+        this.isAnimating = false;
+      }, 520);
+
+    } else {
+      const flipper = document.createElement('div');
+      flipper.className = 'book-flipper-leaf single-flip-backward';
+      flipper.innerHTML = `
+        <div class="flipper-face flipper-face-front page-sheet">
+          ${this.getPageHTML(targetP)}
+          <div class="flipper-lighting-layer"></div>
+        </div>
+        <div class="flipper-face flipper-face-back page-sheet">
+          <div class="page-sheet-back-parchment"></div>
+          <div class="flipper-lighting-layer"></div>
+        </div>
+      `;
+
+      wrapper.appendChild(flipper);
+
+      setTimeout(() => {
+        flipper.remove();
+        if (this.rightPageEl) {
+          this.renderSinglePageContent(this.rightPageEl, this.pages[targetP - 1], targetP);
+        }
+        this.currentPage = targetP;
+        this.onPageChanged();
+        this.isAnimating = false;
+      }, 520);
+    }
+  }
+
+  goToPage(pageNum, playSound = false) {
     if (pageNum < 1) pageNum = 1;
     if (pageNum > this.totalPages) pageNum = this.totalPages;
+    if (pageNum === this.currentPage && !playSound) return;
 
-    // In dual-page mode, if on cover (page 1), show cover alone or with blank/preface
-    // Keep page alignments natural: odd page on right or left
-    if (this.isDualPage && pageNum > 1 && pageNum % 2 !== 0) {
-      // align to even page for spread: e.g. 2 & 3, 4 & 5
-      pageNum = pageNum - 1;
+    if (playSound && !this.isAnimating) {
+      const dir = (pageNum >= this.currentPage) ? 'forward' : 'backward';
+      this.flip3D(dir, pageNum);
+    } else {
+      this.currentPage = pageNum;
+      this.render();
+      this.onPageChanged();
     }
-
-    this.currentPage = pageNum;
-
-    // Play synthesized realistic paper sound
-    if (playSound && window.bookSound) {
-      window.bookSound.playPageTurn(soundDir);
-    }
-
-    this.render();
-
-    // Update URL hash and localStorage
-    try {
-      history.replaceState(null, null, `#page-${this.currentPage}`);
-      localStorage.setItem('tantra_book_page', this.currentPage.toString());
-    } catch (e) {}
   }
 
   render() {
     if (!this.pages.length) return;
 
-    // Dual page mode
     if (this.isDualPage) {
-      if (this.currentPage === 1) {
-        // Front Cover spread: Left is inside front or intro, right is cover
-        this.renderSinglePageContent(this.leftPageEl, this.pages[0], 1);
-        if (this.pages[1]) {
-          this.renderSinglePageContent(this.rightPageEl, this.pages[1], 2);
-        } else {
-          this.clearPage(this.rightPageEl);
-        }
-      } else {
-        const leftIdx = this.currentPage - 1;
-        const rightIdx = this.currentPage;
-
-        if (this.pages[leftIdx]) {
-          this.renderSinglePageContent(this.leftPageEl, this.pages[leftIdx], this.currentPage);
-        } else {
-          this.clearPage(this.leftPageEl);
-        }
-
-        if (this.pages[rightIdx]) {
-          this.renderSinglePageContent(this.rightPageEl, this.pages[rightIdx], this.currentPage + 1);
-        } else {
-          this.clearPage(this.rightPageEl);
-        }
-      }
+      const spreadStart = (this.currentPage % 2 === 0) ? this.currentPage - 1 : this.currentPage;
+      this.renderSpread(spreadStart, spreadStart + 1);
     } else {
-      // Single Page Mode: Only render to right page container
-      const idx = this.currentPage - 1;
-      if (this.pages[idx]) {
-        this.renderSinglePageContent(this.rightPageEl, this.pages[idx], this.currentPage);
+      if (this.rightPageEl && this.pages[this.currentPage - 1]) {
+        this.renderSinglePageContent(this.rightPageEl, this.pages[this.currentPage - 1], this.currentPage);
       }
     }
+    this.onPageChanged();
+  }
 
+  renderSpread(leftNum, rightNum) {
+    if (this.leftPageEl) {
+      if (leftNum >= 1 && leftNum <= this.totalPages) {
+        this.renderSinglePageContent(this.leftPageEl, this.pages[leftNum - 1], leftNum);
+      } else {
+        this.clearPage(this.leftPageEl);
+      }
+    }
+    if (this.rightPageEl) {
+      if (rightNum >= 1 && rightNum <= this.totalPages) {
+        this.renderSinglePageContent(this.rightPageEl, this.pages[rightNum - 1], rightNum);
+      } else {
+        this.clearPage(this.rightPageEl);
+      }
+    }
+  }
+
+  onPageChanged() {
     // Scroll page body back to top on page change
     if (this.leftPageEl) {
       const b1 = this.leftPageEl.querySelector('.page-body');
@@ -299,8 +446,13 @@ class BookEngine {
       this.slider.value = this.currentPage;
     }
     if (this.counter) {
-      if (this.isDualPage && this.currentPage < this.totalPages) {
-        this.counter.textContent = `Page ${this.currentPage}-${this.currentPage + 1} of ${this.totalPages}`;
+      if (this.isDualPage) {
+        const spreadStart = (this.currentPage % 2 === 0) ? this.currentPage - 1 : this.currentPage;
+        if (spreadStart < this.totalPages) {
+          this.counter.textContent = `Page ${spreadStart}-${spreadStart + 1} of ${this.totalPages}`;
+        } else {
+          this.counter.textContent = `Page ${spreadStart} of ${this.totalPages}`;
+        }
       } else {
         this.counter.textContent = `Page ${this.currentPage} of ${this.totalPages}`;
       }
@@ -320,6 +472,12 @@ class BookEngine {
       this.nextBtn.disabled = this.currentPage >= this.totalPages;
     }
 
+    // Update URL hash and localStorage
+    try {
+      history.replaceState(null, null, `#page-${this.currentPage}`);
+      localStorage.setItem('tantra_book_page', this.currentPage.toString());
+    } catch (e) {}
+
     // Notify BookUI to refresh bookmark state and search highlights
     if (window.bookUI && typeof window.bookUI.updateBookmarkUI === 'function') {
       window.bookUI.updateBookmarkUI();
@@ -331,25 +489,44 @@ class BookEngine {
 
   getCurrentVisiblePages() {
     if (this.isDualPage) {
-      if (this.currentPage === 1) return [1, 2];
-      const pages = [this.currentPage];
-      if (this.currentPage + 1 <= this.totalPages) {
-        pages.push(this.currentPage + 1);
+      const spreadStart = (this.currentPage % 2 === 0) ? this.currentPage - 1 : this.currentPage;
+      const pages = [spreadStart];
+      if (spreadStart + 1 <= this.totalPages) {
+        pages.push(spreadStart + 1);
       }
       return pages;
     }
     return [this.currentPage];
   }
 
-  renderSinglePageContent(container, pageDataNode, pageNum) {
-    if (!container || !pageDataNode) return;
+  getPageHTML(pageNum) {
+    if (pageNum < 1 || pageNum > this.totalPages) {
+      return `
+        <div class="page-header">
+          <span class="page-header-title">☸ Tantra Gyan</span>
+        </div>
+        <div class="page-body" style="display:flex; align-items:center; justify-content:center; opacity:0.35;">
+          <p style="font-style:italic; font-family:var(--font-heading);">ॐ नमः शिवाय</p>
+        </div>
+        <div class="page-footer">
+          <span></span>
+          <span class="page-number-display"></span>
+        </div>
+      `;
+    }
 
-    const chapterTitle = pageDataNode.getAttribute('data-chapter') || 'Tantra Gyan';
-    const pageHeaderTitle = pageDataNode.getAttribute('data-title') || chapterTitle;
+    const node = this.pages[pageNum - 1];
+    if (!node) return '';
+
+    const chapterTitle = node.getAttribute('data-chapter') || 'Tantra Gyan';
+    const pageHeaderTitle = node.getAttribute('data-title') || chapterTitle;
     const isFirstPage = pageNum <= 1;
     const isLastPage = pageNum >= this.totalPages;
+    const footerTitle = document.documentElement.lang === 'en'
+      ? 'Complete Vedic Astrology Compendium Simplified'
+      : 'वैदिक ज्योतिष महाग्रंथ सरलीकृत';
 
-    container.innerHTML = `
+    return `
       <div class="page-header">
         <div class="page-header-info">
           <span class="page-header-title">
@@ -367,10 +544,10 @@ class BookEngine {
         </div>
       </div>
       <div class="page-body">
-        ${pageDataNode.innerHTML}
+        ${node.innerHTML}
       </div>
       <div class="page-footer">
-        <span class="page-footer-title">${document.documentElement.lang === 'en' ? 'Complete Vedic Astrology Compendium Simplified' : 'वैदिक ज्योतिष महाग्रंथ सरलीकृत'}</span>
+        <span class="page-footer-title">${footerTitle}</span>
         <div class="page-nav-quick bottom-quick-nav">
           <button type="button" class="page-nav-pill prev-pill" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="पिछला पृष्ठ (Previous Page)" ${isFirstPage ? 'disabled style="opacity:0.3; pointer-events:none;"' : ''}>
             ‹ पिछला
@@ -384,14 +561,19 @@ class BookEngine {
     `;
   }
 
+  renderSinglePageContent(container, pageDataNode, pageNum) {
+    if (!container) return;
+    container.innerHTML = this.getPageHTML(pageNum);
+  }
+
   clearPage(container) {
     if (!container) return;
     container.innerHTML = `
       <div class="page-header">
         <span class="page-header-title">☸ Tantra Gyan</span>
       </div>
-      <div class="page-body" style="display:flex; align-items:center; justify-content:center; opacity:0.3;">
-        <p style="font-style:italic;">ॐ नमः शिवाय</p>
+      <div class="page-body" style="display:flex; align-items:center; justify-content:center; opacity:0.35;">
+        <p style="font-style:italic; font-family:var(--font-heading);">ॐ नमः शिवाय</p>
       </div>
       <div class="page-footer">
         <span></span>

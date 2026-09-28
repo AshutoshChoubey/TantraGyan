@@ -1522,26 +1522,296 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   12. 3D Page Flip Animation States
+   12. Authentic 3D Physical Book Page Flip Engine
    -------------------------------------------------------------------------- */
-.page-flip-anim-forward {
-  animation: flipForward 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+.book-pages-wrapper {
+  perspective: 2500px;
+  -webkit-perspective: 2500px;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
 }
 
-.page-flip-anim-backward {
-  animation: flipBackward 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+/* 3D Flipper Leaf Container */
+.book-flipper-leaf {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  pointer-events: none;
+  z-index: 90;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  will-change: transform, box-shadow;
 }
 
-@keyframes flipForward {
-  0% { transform: rotateY(0deg); opacity: 1; }
-  50% { transform: rotateY(-35deg) scale(0.98); opacity: 0.7; }
-  100% { transform: rotateY(0deg); opacity: 1; }
+/* Dual Page: Forward Turn (Right page flips over to Left) */
+.dual-page-layout .book-flipper-leaf.dual-flip-forward {
+  left: 50%;
+  width: 50%;
+  transform-origin: left center;
+  -webkit-transform-origin: left center;
+  animation: flipDualForward 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
 }
 
-@keyframes flipBackward {
-  0% { transform: rotateY(0deg); opacity: 1; }
-  50% { transform: rotateY(35deg) scale(0.98); opacity: 0.7; }
-  100% { transform: rotateY(0deg); opacity: 1; }
+/* Dual Page: Backward Turn (Left page flips over to Right) */
+.dual-page-layout .book-flipper-leaf.dual-flip-backward {
+  left: 0;
+  width: 50%;
+  transform-origin: right center;
+  -webkit-transform-origin: right center;
+  animation: flipDualBackward 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+}
+
+/* Single Page (Mobile & Tablet): Forward Turn */
+.single-page-layout .book-flipper-leaf.single-flip-forward,
+.book-flipper-leaf.single-flip-forward {
+  left: 0;
+  width: 100%;
+  transform-origin: left center;
+  -webkit-transform-origin: left center;
+  animation: flipSingleForward 0.52s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+}
+
+/* Single Page (Mobile & Tablet): Backward Turn */
+.single-page-layout .book-flipper-leaf.single-flip-backward,
+.book-flipper-leaf.single-flip-backward {
+  left: 0;
+  width: 100%;
+  transform-origin: right center;
+  -webkit-transform-origin: right center;
+  animation: flipSingleBackward 0.52s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+}
+
+/* Flipper Faces */
+.flipper-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.flipper-face-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.dual-flip-forward .flipper-face-back {
+  z-index: 1;
+  transform: rotateY(180deg);
+}
+
+.dual-flip-backward .flipper-face-back {
+  z-index: 1;
+  transform: rotateY(-180deg);
+}
+
+.single-flip-forward .flipper-face-back,
+.single-flip-backward .flipper-face-back {
+  z-index: 1;
+  transform: rotateY(180deg);
+  background: var(--page-bg-alt);
+}
+
+/* Dynamic Paper Lighting / Curl Highlights */
+.flipper-lighting-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 25;
+  opacity: 0;
+}
+
+.flipper-face-front .flipper-lighting-layer {
+  animation: frontLighting 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+}
+
+.flipper-face-back .flipper-lighting-layer {
+  animation: backLighting 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+}
+
+/* Dynamic Underlying Page Shadow */
+.flipper-under-shadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  pointer-events: none;
+  z-index: 40;
+}
+
+.dual-flip-forward-shadow {
+  left: 50%;
+  animation: underShadowForward 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+}
+
+.dual-flip-backward-shadow {
+  right: 50%;
+  animation: underShadowBackward 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+}
+
+/* 3D Keyframes for Dual Forward Flip (Right to Left) */
+@keyframes flipDualForward {
+  0% {
+    transform: rotateY(0deg) translateZ(0);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  25% {
+    transform: rotateY(-48deg) translateZ(16px) skewY(1.4deg);
+    box-shadow: -12px 6px 28px rgba(0, 0, 0, 0.28);
+  }
+  50% {
+    transform: rotateY(-90deg) translateZ(30px) skewY(0deg);
+    box-shadow: 0 12px 38px rgba(0, 0, 0, 0.35);
+  }
+  75% {
+    transform: rotateY(-132deg) translateZ(16px) skewY(-1.4deg);
+    box-shadow: 12px 6px 28px rgba(0, 0, 0, 0.28);
+  }
+  100% {
+    transform: rotateY(-180deg) translateZ(0);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/* 3D Keyframes for Dual Backward Flip (Left to Right) */
+@keyframes flipDualBackward {
+  0% {
+    transform: rotateY(0deg) translateZ(0);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  25% {
+    transform: rotateY(48deg) translateZ(16px) skewY(-1.4deg);
+    box-shadow: 12px 6px 28px rgba(0, 0, 0, 0.28);
+  }
+  50% {
+    transform: rotateY(90deg) translateZ(30px) skewY(0deg);
+    box-shadow: 0 12px 38px rgba(0, 0, 0, 0.35);
+  }
+  75% {
+    transform: rotateY(132deg) translateZ(16px) skewY(1.4deg);
+    box-shadow: -12px 6px 28px rgba(0, 0, 0, 0.28);
+  }
+  100% {
+    transform: rotateY(180deg) translateZ(0);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/* 3D Keyframes for Single Page Forward Flip */
+@keyframes flipSingleForward {
+  0% {
+    transform: rotateY(0deg);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  30% {
+    transform: rotateY(-42deg) skewY(1.5deg);
+    box-shadow: -16px 6px 32px rgba(0, 0, 0, 0.32);
+  }
+  65% {
+    transform: rotateY(-105deg) skewY(0.5deg);
+    box-shadow: -8px 6px 24px rgba(0, 0, 0, 0.24);
+  }
+  100% {
+    transform: rotateY(-180deg);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/* 3D Keyframes for Single Page Backward Flip */
+@keyframes flipSingleBackward {
+  0% {
+    transform: rotateY(-180deg);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  35% {
+    transform: rotateY(-105deg) skewY(-0.5deg);
+    box-shadow: 8px 6px 24px rgba(0, 0, 0, 0.24);
+  }
+  70% {
+    transform: rotateY(-42deg) skewY(-1.5deg);
+    box-shadow: 16px 6px 32px rgba(0, 0, 0, 0.32);
+  }
+  100% {
+    transform: rotateY(0deg);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/* Front Face Lighting */
+@keyframes frontLighting {
+  0% {
+    opacity: 0;
+    background: transparent;
+  }
+  35% {
+    opacity: 0.65;
+    background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.2) 35%, rgba(0,0,0,0.12) 75%, rgba(0,0,0,0.28) 100%);
+  }
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Back Face Lighting */
+@keyframes backLighting {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.75;
+    background: linear-gradient(-90deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.2) 35%, rgba(0,0,0,0.12) 75%, rgba(0,0,0,0.28) 100%);
+  }
+  75% {
+    opacity: 0.45;
+    background: linear-gradient(-90deg, rgba(0,0,0,0.2) 0%, rgba(255,255,255,0.12) 50%, rgba(0,0,0,0.08) 100%);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Underlying Page Cast Shadow */
+@keyframes underShadowForward {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  35% {
+    transform: scaleX(1);
+    opacity: 0.55;
+    background: linear-gradient(90deg, rgba(0,0,0,0.4) 0%, transparent 100%);
+  }
+  100% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes underShadowBackward {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  35% {
+    transform: scaleX(1);
+    opacity: 0.55;
+    background: linear-gradient(-90deg, rgba(0,0,0,0.4) 0%, transparent 100%);
+  }
+  100% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
 }
 
 /* --------------------------------------------------------------------------
