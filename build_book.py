@@ -627,7 +627,7 @@ if ch4_m:
         s = re.sub(r'<div[^>]*class=[\"\']slide-indicator[\"\'][^>]*>.*?</div>', '', raw_text, flags=re.DOTALL)
         s = re.sub(r'Section\s*\d+\s*\|\s*', '', s)
         s = re.sub(r'<h[1-6][^>]*>\s*\d+\s*\|\s*.*?<\/h[1-6]>', '', s, flags=re.DOTALL)
-        s = re.sub(r'<h[1-6][^>]*>.*?(?:Sun in 12 Houses|Effect of Sun in 12 Zodiac Signs).*?<\/h[1-6]>', '', s, flags=re.DOTALL)
+        s = re.sub(r'<h[1-6][^>]*>.*?(?:Surya in 12|Sun in 12 Houses|Effect of Sun|YouTube Video Title|SEO-Optimized|Sun[\'&#x27;]*s Impact|Zodiac Signs Vedic Astrology).*?<\/h[1-6]>', '', s, flags=re.DOTALL | re.IGNORECASE)
         
         items = re.split(r'(?=<h4[^>]*>\s*\d+\.\s*)', s)
         cleaned_items = []
@@ -638,17 +638,32 @@ if ch4_m:
             m_title = re.search(r'<h4[^>]*>\s*(\d+\.\s*[^<]+)</h4>', item)
             if m_title:
                 title = m_title.group(1).strip()
+                title = re.sub(r'[☀️🌞🔥📽️]', '', title).strip()
                 rest = item[m_title.end():]
+                rest = re.sub(r'<h[1-6][^>]*>.*?(?:Surya in 12|Sun in 12 Houses|Effect of Sun|YouTube Video Title|SEO-Optimized|Sun[\'&#x27;]*s Impact|Zodiac Signs Vedic Astrology).*?<\/h[1-6]>', '', rest, flags=re.DOTALL | re.IGNORECASE)
                 body = re.sub(r'<h[1-6][^>]*>(.*?)</h[1-6]>', r'<p style=\"margin:0.25rem 0;\">\1</p>', rest, flags=re.DOTALL)
+                body = re.sub(r'<p[^>]*>.*?(?:Surya in 12|YouTube Video Title|SEO-Optimized|Sun[\'&#x27;]*s Impact).*?</p>', '', body, flags=re.DOTALL | re.IGNORECASE)
+                body = re.sub(r'[☀️🌞🔥📽️]', '', body)
                 body = re.sub(r'</?div[^>]*>', '', body).strip()
                 cleaned_items.append(f'<div class=\"sun-effect-item\" style=\"margin-bottom:0.75rem;\"><div style=\"color:var(--accent-gold); font-weight:700; font-size:0.9rem; border-bottom:1px dashed var(--page-border); padding-bottom:3px;\">{title}</div><div style=\"font-size:0.84rem; line-height:1.55; margin-top:0.25rem;\">{body}</div></div>')
         return '\n'.join(cleaned_items)
 
     # 4.3 Sun in 12 Houses (Split into Houses 1-6 and 7-12)
-    pos_sun_houses = ch4_text.find('Sun in 12 Houses')
-    pos_sun_signs = ch4_text.find('Effect of Sun in 12 Zodiac Signs')
-    if pos_sun_houses != -1 and pos_sun_signs != -1:
-        sun_houses_raw = ch4_text[pos_sun_houses:pos_sun_signs]
+    pos_1st_house = ch4_text.find('1. 1st House')
+    pos_houses_start = ch4_text.rfind('<h4', 0, pos_1st_house) if pos_1st_house != -1 else -1
+
+    idx_surya_houses = ch4_text.find('Surya in 12 Houses')
+    if idx_surya_houses != -1:
+        pos_houses_end = ch4_text.rfind('<div class="slide-indicator"', 0, idx_surya_houses)
+        if pos_houses_end == -1:
+            pos_houses_end = ch4_text.rfind('<h4', 0, idx_surya_houses)
+    else:
+        pos_houses_end = ch4_text.find('Effect of Sun in 12 Zodiac Signs')
+        if pos_houses_end != -1:
+            pos_houses_end = ch4_text.rfind('<h4', 0, pos_houses_end)
+
+    if pos_houses_start != -1 and pos_houses_end != -1:
+        sun_houses_raw = ch4_text[pos_houses_start:pos_houses_end]
         idx_7th = sun_houses_raw.find('7. 7th House')
         if idx_7th != -1:
             pos_7th = sun_houses_raw.rfind('<h4', 0, idx_7th)
@@ -694,8 +709,17 @@ if ch4_m:
             })
             
     # 4.4 Sun in 12 Signs (Split into Signs 1-6 and 7-12)
-    if pos_sun_signs != -1:
-        sun_signs_raw = ch4_text[pos_sun_signs:]
+    pos_1st_sign = ch4_text.find('1. Aries')
+    pos_signs_start = ch4_text.rfind('<h4', 0, pos_1st_sign) if pos_1st_sign != -1 else -1
+
+    pos_yt = ch4_text.find('YouTube Video Title')
+    if pos_yt != -1:
+        pos_signs_end = ch4_text.rfind('<h4', 0, pos_yt)
+    else:
+        pos_signs_end = len(ch4_text)
+
+    if pos_signs_start != -1:
+        sun_signs_raw = ch4_text[pos_signs_start:pos_signs_end]
         idx_libra = sun_signs_raw.find('7. Libra')
         if idx_libra != -1:
             pos_libra = sun_signs_raw.rfind('<h4', 0, idx_libra)

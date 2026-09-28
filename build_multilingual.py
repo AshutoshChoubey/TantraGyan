@@ -1104,7 +1104,7 @@ def localize_html_table(table_html, page_idx, target_lang='hindi'):
 def generate_sun_houses_content(page_num, lang='hindi'):
     is_hindi = (lang == 'hindi')
     if page_num == 45:
-        header_title = "🌞 सूर्य देव: भाव १ से ६ फलित विचार" if is_hindi else "🌞 Sun in Houses 1 to 6 (Classical Interpretations)"
+        header_title = "सूर्य देव: भाव १ से ६ फलित विचार" if is_hindi else "Sun in Houses 1 to 6 (Classical Interpretations)"
         houses_data = [
             ("१. प्रथम भाव (लग्न भाव):", "1. 1st House (Ascendant / Lagna):",
              "जातक स्वाभिमानी, चतुर, प्रभावी, राजसी व्यक्तित्व तथा आकर्षक होता है। नेतृत्व क्षमता प्रबल होती है। नेत्र अथवा नासिका संबंधी संवेदनशीलता, पित्त प्रकृति एवं अहंकार की प्रवृत्ति हो सकती है।",
@@ -1126,7 +1126,7 @@ def generate_sun_houses_content(page_num, lang='hindi'):
              "Destroyer of adversaries (Shatru-Hanta Yoga). Highly competitive, victorious in legal or institutional disputes, and possesses strong vitality. Overcomes acute ailments.")
         ]
     else:
-        header_title = "🌞 सूर्य देव: भाव ७ से १२ फलित विचार" if is_hindi else "🌞 Sun in Houses 7 to 12 (Classical Interpretations)"
+        header_title = "सूर्य देव: भाव ७ से १२ फलित विचार" if is_hindi else "Sun in Houses 7 to 12 (Classical Interpretations)"
         houses_data = [
             ("७. सप्तम भाव (जाया भाव):", "7. 7th House (Kalatra / Spouse Bhava):",
              "दांपत्य जीवन में अहं का टकराव, जीवनसाथी का स्वाभिमानी व प्रभावशाली व्यक्तित्व, साझेदारी के व्यापार में सतर्कता की आवश्यकता, व्यवसायिक यात्राएं अधिक।",
@@ -1179,7 +1179,7 @@ def generate_sun_houses_content(page_num, lang='hindi'):
 def generate_sun_signs_content(page_num, lang='hindi'):
     is_hindi = (lang == 'hindi')
     if page_num == 47:
-        header_title = "☀️ सूर्य देव: मेष से कन्या राशि फल" if is_hindi else "☀️ Sun in Signs 1 to 6 (Aries to Virgo Interpretations)"
+        header_title = "सूर्य देव: मेष से कन्या राशि फल" if is_hindi else "Sun in Signs 1 to 6 (Aries to Virgo Interpretations)"
         signs_data = [
             ("१. मेष राशि (परम उच्च फल):", "1. Aries (Exalted Sign - Uchcha):",
              "जातक अत्यंत प्रतापी, कांतिवान, शूरवीर, स्वाभिमानी, कुशाग्र बुद्धि, साहसी तथा समाज में शीर्ष ख्याति प्राप्त करता है। स्वतंत्र निर्णय व प्रशासनिक क्षमता बेजोड़ होती है।",
@@ -1201,7 +1201,7 @@ def generate_sun_signs_content(page_num, lang='hindi'):
              "The native possesses sharp analytical acumen, mathematical skill, meticulous eye for detail, service orientation, and pragmatic wisdom.")
         ]
     else:
-        header_title = "☀️ सूर्य देव: तुला से मीन राशि फल" if is_hindi else "☀️ Sun in Signs 7 to 12 (Libra to Pisces Interpretations)"
+        header_title = "सूर्य देव: तुला से मीन राशि फल" if is_hindi else "Sun in Signs 7 to 12 (Libra to Pisces Interpretations)"
         signs_data = [
             ("७. तुला राशि (परम नीच फल):", "7. Libra (Debilitation Sign - Neecha):",
              "आत्मविश्वास में संकोच, दूसरों पर अधिक निर्भरता, मान-सम्मान हेतु निरंतर संघर्ष, त्वचा अथवा नेत्र संवेदनशीलता। परिश्रम के पश्चात सफलता प्राप्त होती है।",
