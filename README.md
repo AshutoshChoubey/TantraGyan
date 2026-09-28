@@ -2,6 +2,7 @@
 ## Tantra Gyan: Complete Vedic Astrology Compendium
 
 > **लेखक एवं ज्योतिषाचार्य:** Ashutosh Kumar Choubey  
+> **आधिकारिक वेबसाइट (Website):** [t.worldgyan.com](https://t.worldgyan.com)  
 > **आधिकारिक शोध एवं वीडियो मंच:** [YouTube: @TantraGyan108](https://www.youtube.com/@TantraGyan108)  
 > **ईमेल (Email):** [tantraresearchcenter@gmail.com](mailto:tantraresearchcenter@gmail.com)  
 > **संपर्क / WhatsApp:** [+91 9658476170](tel:+919658476170)  
@@ -99,6 +100,7 @@ python3 -m http.server 8899
 
 | मंच / संपर्क (Platform) | विवरण (Details) | लिंक (Direct Link) |
 | :--- | :--- | :--- |
+| **आधिकारिक वेबसाइट** | t.worldgyan.com | [t.worldgyan.com](https://t.worldgyan.com) |
 | **YouTube Channel** | @TantraGyan108 | [youtube.com/@TantraGyan108](https://www.youtube.com/@TantraGyan108) |
 | **ईमेल (Email)** | tantraresearchcenter@gmail.com | [ईमेल भेजें (Send Mail)](mailto:tantraresearchcenter@gmail.com) |
 | **दूरभाष / WhatsApp** | +91 9658476170 | [कॉल करें (+91 9658476170)](tel:+919658476170) |

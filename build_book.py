@@ -49,8 +49,12 @@ page_1 = """
   <div class="cover-author-block">
     <div class="cover-author-label">लेखक एवं ज्योतिषाचार्य (Author & Astrologer)</div>
     <div class="cover-author-name">Ashutosh Kumar Choubey</div>
-    <div style="margin-top:0.75rem;">
-      <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="youtube-channel-badge">
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.6rem; margin-top:0.75rem;">
+      <a href="https://t.worldgyan.com" target="_blank" rel="noopener" class="contact-channel-badge" style="border-color:var(--accent-gold); color:var(--accent-gold) !important; font-weight:700;">
+        <span class="contact-icon">🌐</span>
+        <span><strong>t.worldgyan.com</strong></span>
+      </a>
+      <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="youtube-channel-badge" style="margin-top:0;">
         <span class="yt-play-icon">▶</span>
         <span>YouTube: <strong>@TantraGyan108</strong></span>
       </a>
@@ -113,8 +117,12 @@ page_2 = """
   </div>
 
   <div style="margin-top:1.25rem; padding:1.1rem; border:1px dashed var(--accent-gold); border-radius:10px; background:rgba(179,127,25,0.06); text-align:center;">
-    <strong style="color:var(--text-heading); font-size:0.92rem;">आधिकारिक शोध एवं संपर्क मंच (Official Channels & Contact):</strong><br>
+    <strong style="color:var(--text-heading); font-size:0.92rem;">आधिकारिक शोध, वेबसाइट एवं संपर्क मंच (Official Channels):</strong><br>
     <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.6rem; margin-top:0.75rem;">
+      <a href="https://t.worldgyan.com" target="_blank" rel="noopener" class="contact-channel-badge" style="border-color:var(--accent-gold); color:var(--accent-gold) !important; font-weight:700;">
+        <span class="contact-icon">🌐</span>
+        <span>वेबसाइट: <strong>t.worldgyan.com</strong></span>
+      </a>
       <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="youtube-channel-badge" style="margin-top:0;">
         <span class="yt-play-icon">▶</span>
         <span>YouTube: <strong>@TantraGyan108</strong></span>
@@ -632,10 +640,16 @@ colophon_page = """
     <div class="cover-author-name">ज्योतिषाचार्य Ashutosh Kumar Choubey</div>
     <div class="cover-author-role">Copyright © 2026. All rights reserved.</div>
     <div style="margin-top:0.85rem; display:flex; flex-direction:column; align-items:center; gap:0.6rem;">
-      <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="youtube-channel-badge" style="margin-top:0;">
-        <span class="yt-play-icon">▶</span>
-        <span>YouTube: <strong>@TantraGyan108</strong></span>
-      </a>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.6rem;">
+        <a href="https://t.worldgyan.com" target="_blank" rel="noopener" class="contact-channel-badge" style="border-color:var(--accent-gold); color:var(--accent-gold) !important; font-weight:700;">
+          <span class="contact-icon">🌐</span>
+          <span><strong>t.worldgyan.com</strong></span>
+        </a>
+        <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="youtube-channel-badge" style="margin-top:0;">
+          <span class="yt-play-icon">▶</span>
+          <span>YouTube: <strong>@TantraGyan108</strong></span>
+        </a>
+      </div>
       <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.8rem; font-size:0.86rem; margin-top:0.25rem;">
         <a href="mailto:tantraresearchcenter@gmail.com" style="color:var(--text-secondary); text-decoration:none; font-weight:600;">✉️ tantraresearchcenter@gmail.com</a>
         <span style="color:var(--border-color);">•</span>
@@ -696,7 +710,8 @@ html_template = f"""<!DOCTYPE html>
   <meta property="og:title" content="तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ | Tantra Gyan Complete Vedic Astrology Compendium">
   <meta property="og:description" content="Comprehensive Authentic Vedic Astrology Reference Book by Astrologer Ashutosh Kumar Choubey.">
   <meta property="og:type" content="book">
-  <meta property="og:url" content="https://www.youtube.com/@TantraGyan108">
+  <meta property="og:url" content="https://t.worldgyan.com">
+  <link rel="canonical" href="https://t.worldgyan.com">
   
   <!-- Google Fonts for Vedic & Modern Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -714,18 +729,26 @@ html_template = f"""<!DOCTYPE html>
     "@type": "Book",
     "name": "तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ (Tantra Gyan: Complete Vedic Astrology Compendium)",
     "alternateName": "Tantra Gyan Complete Vedic Astrology Compendium",
+    "url": "https://t.worldgyan.com",
     "author": {{
       "@type": "Person",
       "name": "Ashutosh Kumar Choubey",
       "jobTitle": "Vedic Astrologer & Researcher",
-      "url": "https://www.youtube.com/@TantraGyan108",
+      "url": "https://t.worldgyan.com",
+      "sameAs": [
+        "https://www.youtube.com/@TantraGyan108",
+        "https://t.worldgyan.com"
+      ],
       "email": "tantraresearchcenter@gmail.com",
       "telephone": "+919658476170"
     }},
     "publisher": {{
       "@type": "Organization",
       "name": "Tantra Gyan",
-      "url": "https://www.youtube.com/@TantraGyan108",
+      "url": "https://t.worldgyan.com",
+      "sameAs": [
+        "https://www.youtube.com/@TantraGyan108"
+      ],
       "email": "tantraresearchcenter@gmail.com",
       "telephone": "+919658476170"
     }},
@@ -787,6 +810,11 @@ html_template = f"""<!DOCTYPE html>
         <span>🔖</span> <span id="bookmark-btn-label">बुकमार्क</span>
         <span id="bookmark-count-badge" class="badge-count" style="display:none;">0</span>
       </button>
+
+      <!-- Official Website Link -->
+      <a href="https://t.worldgyan.com" target="_blank" rel="noopener" class="tool-btn website-header-btn" title="Website: t.worldgyan.com" style="color:var(--accent-gold); font-weight:700; border-color:rgba(200,157,61,0.4); text-decoration:none;">
+        <span style="font-size:0.95rem;">🌐</span> <span>t.worldgyan.com</span>
+      </a>
 
       <!-- YouTube Channel Link -->
       <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="tool-btn yt-header-btn" title="YouTube: @TantraGyan108" style="color:#ef4444; font-weight:700; border-color:rgba(239,68,68,0.4); text-decoration:none;">
