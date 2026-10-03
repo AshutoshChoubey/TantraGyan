@@ -710,6 +710,48 @@ html, body {
   display: block !important;
 }
 
+/* Closed Front Cover Mode (Book Closed at Start) */
+.book-container.cover-closed-front .left-page {
+  display: none !important;
+}
+
+.book-container.cover-closed-front .right-page {
+  display: flex !important;
+  flex: 0 1 560px !important;
+  width: 560px !important;
+  max-width: 95% !important;
+  margin: 0 auto !important;
+  border-left: 5px solid var(--accent-gold) !important;
+  border-radius: 4px var(--page-radius) var(--page-radius) 4px !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), inset 15px 0 25px rgba(0, 0, 0, 0.12) !important;
+  cursor: pointer;
+}
+
+.book-container.cover-closed-front .book-spine-crease {
+  display: none !important;
+}
+
+/* Closed Back Cover Mode (Book Closed at End) */
+.book-container.cover-closed-back .right-page {
+  display: none !important;
+}
+
+.book-container.cover-closed-back .left-page {
+  display: flex !important;
+  flex: 0 1 560px !important;
+  width: 560px !important;
+  max-width: 95% !important;
+  margin: 0 auto !important;
+  border-right: 5px solid var(--accent-gold) !important;
+  border-radius: var(--page-radius) 4px 4px var(--page-radius) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), inset -15px 0 25px rgba(0, 0, 0, 0.12) !important;
+  cursor: pointer;
+}
+
+.book-container.cover-closed-back .book-spine-crease {
+  display: none !important;
+}
+
 /* Left Page inner gradient (gutter shadow on right side) */
 .page-sheet.left-page {
   border-right: 1px solid var(--page-border);
@@ -1083,101 +1125,249 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   8. Front Cover Page & Back Cover Styling
+   8. Front Cover Page, Auspicious Invocation & Back Cover Styling
    -------------------------------------------------------------------------- */
+.cover-page-wrapper {
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
 .cover-page-inner {
+  height: 100%;
   min-height: 100%;
-  height: auto;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2rem 1.25rem;
-  gap: 0.75rem;
+  padding: 2.2rem 1.75rem;
+  gap: 0.85rem;
   background: radial-gradient(circle at 50% 45%, var(--page-bg) 0%, var(--page-bg-alt) 100%);
-  border: 2px solid var(--accent-gold);
-  border-radius: 4px;
+  border: 3px double var(--accent-gold);
+  border-radius: 6px;
   position: relative;
   max-width: 100%;
   word-break: break-word;
 }
 
+.cover-ornament-corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: var(--accent-gold);
+  border-style: solid;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.cover-ornament-corner.top-left {
+  top: 10px;
+  left: 10px;
+  border-width: 2px 0 0 2px;
+}
+
+.cover-ornament-corner.top-right {
+  top: 10px;
+  right: 10px;
+  border-width: 2px 2px 0 0;
+}
+
+.cover-ornament-corner.bottom-left {
+  bottom: 10px;
+  left: 10px;
+  border-width: 0 0 2px 2px;
+}
+
+.cover-ornament-corner.bottom-right {
+  bottom: 10px;
+  right: 10px;
+  border-width: 0 2px 2px 0;
+}
+
 .cover-yantra {
-  width: 130px;
-  height: 130px;
-  margin: 0.25rem auto 0.5rem auto;
-  filter: drop-shadow(0 4px 15px rgba(179, 127, 25, 0.4));
+  width: 135px;
+  height: 135px;
+  margin: 0.25rem auto 0.4rem auto;
+  filter: drop-shadow(0 6px 18px rgba(179, 127, 25, 0.45));
 }
 
-.cover-tag {
-  font-family: var(--font-heading);
-  font-size: clamp(0.7rem, 2vw, 0.82rem);
-  letter-spacing: 0.08em;
-  color: var(--accent-gold);
-  text-transform: uppercase;
-  border: 1px solid var(--accent-gold);
-  padding: 0.3rem 0.85rem;
-  border-radius: 30px;
-  margin-bottom: 0.5rem;
-  max-width: 95%;
-  word-break: break-word;
-}
-
-/* Language Badge styling (replaces problematic flag emojis) */
-.lang-code-tag {
-  display: inline-block;
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  padding: 1px 4px;
-  border-radius: 3px;
-  background: rgba(200, 157, 61, 0.2);
-  color: var(--accent-gold);
-  border: 1px solid rgba(200, 157, 61, 0.35);
-  margin-right: 4px;
-  vertical-align: middle;
-  line-height: 1.2;
+.cover-yantra img {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .cover-title-hindi {
   font-family: 'Noto Serif Devanagari', serif;
-  font-size: 2.1rem;
+  font-size: clamp(1.8rem, 3.8vw, 2.35rem);
   font-weight: 800;
   color: var(--accent-crimson);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.2rem;
   line-height: 1.25;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.02em;
 }
 
 .cover-title-english {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   font-weight: 700;
   color: var(--accent-gold);
-  letter-spacing: 0.06em;
-  margin-bottom: 1.25rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
 }
 
-.cover-divider {
-  width: 120px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
-  margin: 0.5rem auto 1.25rem auto;
+.cover-divider-flourish {
+  color: var(--accent-gold);
+  font-size: 1.25rem;
+  letter-spacing: 0.5rem;
+  margin: 0.35rem auto;
+  opacity: 0.9;
 }
 
-.cover-subtitle {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
+.cover-subtitle-minimal {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 700;
+  color: var(--text-heading);
   max-width: 480px;
-  margin: 0 auto 1.5rem auto;
-  line-height: 1.6;
+  line-height: 1.5;
+  margin: 0.25rem auto;
 }
 
-.cover-author-block {
+.cover-footer-brand {
   margin-top: auto;
-  padding-top: 1rem;
+  padding-top: 0.85rem;
+}
+
+.cover-tag {
+  font-family: var(--font-heading);
+  font-size: clamp(0.72rem, 1.8vw, 0.84rem);
+  letter-spacing: 0.08em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  border: 1px solid var(--accent-gold);
+  padding: 0.35rem 1rem;
+  border-radius: 30px;
+  background: rgba(200, 157, 61, 0.08);
+}
+
+/* Auspicious Invocation (मंगलाचरण) Page Styling */
+.invocation-page-inner {
+  height: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.5rem 1.85rem;
+  gap: 1.2rem;
+  background: radial-gradient(circle at 50% 40%, var(--page-bg) 0%, var(--page-bg-alt) 100%);
+  border: 1px solid rgba(200, 157, 61, 0.3);
+  border-radius: 6px;
+  position: relative;
+}
+
+.invocation-icon-emblem {
+  width: 105px;
+  height: 105px;
+  margin: 0 auto 0.25rem auto;
+  filter: drop-shadow(0 6px 20px rgba(200, 157, 61, 0.45));
+}
+
+.invocation-icon-emblem img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.invocation-mantra {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: clamp(1.65rem, 3.5vw, 2.35rem);
+  font-weight: 800;
+  color: var(--accent-crimson);
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  text-shadow: 0 2px 8px rgba(185, 28, 28, 0.15);
+}
+
+.invocation-shloka {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  font-weight: 600;
+  color: var(--accent-gold);
+  line-height: 1.75;
+  padding: 0.85rem 1.25rem;
+  border-top: 1px solid rgba(200, 157, 61, 0.25);
+  border-bottom: 1px solid rgba(200, 157, 61, 0.25);
+  max-width: 90%;
+  margin: 0.25rem auto;
+}
+
+.invocation-meaning {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 88%;
+}
+
+.invocation-footer {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  letter-spacing: 0.08em;
+  margin-top: 0.5rem;
+}
+
+/* Grand Back Cover Page Styling */
+.back-cover-inner {
+  height: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.2rem 1.75rem;
+  gap: 0.85rem;
+  background: radial-gradient(circle at 50% 45%, var(--page-bg) 0%, var(--page-bg-alt) 100%);
+  border: 3px double var(--accent-gold);
+  border-radius: 6px;
+  position: relative;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.back-cover-title {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: clamp(1.4rem, 2.8vw, 1.85rem);
+  font-weight: 800;
+  color: var(--accent-crimson);
+  line-height: 1.3;
+}
+
+.back-cover-subtitle {
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+}
+
+.back-cover-colophon {
+  margin-top: auto;
+  padding-top: 0.85rem;
   border-top: 1px solid var(--page-border);
   width: 100%;
 }

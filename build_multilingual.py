@@ -19,6 +19,7 @@ from tables_data import *
 
 HINDI_TITLES = [
     'वैदिक ज्योतिष महाग्रंथ सरलीकृत',
+    'मंगलाचरण — ॐ गं गणपतये नमः',
     'लेखक परिचय — ज्योतिषाचार्य आशुतोष कुमार चौबे',
     'ग्रंथ का उद्देश्य एवं आधारभूत संरचना',
     'तांत्रिक अनुशासन, आचार संहिता एवं वैधानिक परामर्श',
@@ -33,9 +34,9 @@ HINDI_TITLES = [
     'शुक्र देव के संपूर्ण शास्त्रीय कारकत्व',
     'शनि देव के संपूर्ण शास्त्रीय कारकत्व व कर्म सिद्धांत',
     'शनि देव: प्रमुख शास्त्रीय एवं आधुनिक दृष्टिकोण',
-    'बुध देव के संपूर्ण शास्त्रीय कारकत्व व बुद्धि-विवेक',
-    'राहु देव के संपूर्ण शास्त्रीय कारकत्व व मायावी प्रभाव',
-    'केतु देव के संपूर्ण शास्त्रीय कारकत्व व मोक्ष मार्ग',
+    'बुध देव के संपूर्ण कारकत्व व बुद्धि-विवेक',
+    'राहु देव के संपूर्ण कारकत्व व मायावी प्रभाव',
+    'केतु देव के संपूर्ण कारकत्व व मोक्ष मार्ग',
     '१७ शास्त्रीय राजयोग एवं पंच महापुरुष योग (भाग १)',
     '१७ शास्त्रीय राजयोग एवं विपरीत राजयोग (भाग २)',
     'ग्रह गति, गोचर अवधि एवं विंशोत्तरी महादशा चक्र',
@@ -58,8 +59,8 @@ HINDI_TITLES = [
     'दीप्तादि ९ अवस्थाएं: ग्रहों की स्थिति व फल',
     'ग्रहों की नैसर्गिक व तात्कालिक मैत्री वर्गीकरण',
     'दीप्तादि अवस्थाएं, मूलत्रिकोण व स्वराशि तालिका',
-    'ग्रहों के पांच प्रकार के संबंध (पंच संबंध)',
     'ग्रह अवस्थाओं के व्यावहारिक फलित नियम',
+    'ग्रहों के पांच प्रकार के संबंध (पंच संबंध)',
     '१२ भावों के स्थिर कारक ग्रह',
     'भाव कारक व भावेश का शास्त्रीय अंतर एवं विश्लेषण',
     'सूर्य देव: भाव १ से ६ फलित विचार',
@@ -104,11 +105,12 @@ HINDI_TITLES = [
     'अश्विनी नक्षत्र: पद ध्वनि, प्रतीक व मूल स्वभाव',
     'अश्विनी नक्षत्र में ९ ग्रहों का फलित विश्लेषण',
     'अश्विनी नक्षत्र: ४ पद, नवमांश व ग्रह संबंध सारांश',
-    'समापन पृष्ठ • उपनिषद् मंगल कामना व आधिकारिक संपर्क'
+    'समापन पृष्ठ • उपसंहार व वैदिक मंगल कामना'
 ]
 
 ENGLISH_TITLES = [
     'Complete Vedic Astrology Compendium Simplified',
+    'Auspicious Invocation — Om Gam Ganapataye Namah',
     'Author Profile — Astrologer Ashutosh Kumar Choubey',
     'Reader\'s Study Guide & Core Architecture',
     'Tantric Ethics, Code of Conduct & Legal Disclaimer',
@@ -148,8 +150,8 @@ ENGLISH_TITLES = [
     'Deeptadi 9 States: Planetary Conditions & Potencies',
     'Planetary Friendship Matrix: Natural & Temporal Relations',
     'Deeptadi Avasthas, Moolatrikona & Own Sign Matrix',
-    'Five Types of Planetary Relationships (Pancha Sambandha)',
     'Operational Predictive Principles for Planetary States',
+    'Five Types of Planetary Relationships (Pancha Sambandha)',
     'Fixed Karakas (Significators) of the 12 Houses',
     'Bhava Karaka vs Bhavesha: Core Distinctions & Rules',
     'Sun in Houses 1 to 6: Classical Interpretations',
@@ -194,34 +196,36 @@ ENGLISH_TITLES = [
     'Ashwini Padas: Phonetics, Symbolism & Core Characteristics',
     'Planetary Placements in Ashwini Nakshatra (Sun to Ketu)',
     'Ashwini Padas: Navamsha & Planetary Relations Synthesis',
-    'Sacred Benediction, Upanishadic Shloka & Official Contact'
+    'Closing Epilogue • Vedic Peace Benediction & Back Cover'
 ]
 
 def get_chapter_name(page_idx, lang='hindi'):
     if lang == 'hindi':
-        if page_idx == 0: return "मुखपृष्ठ"
-        if page_idx == 1: return "लेखक परिचय"
-        if page_idx == 2: return "अध्ययन निर्देशिका"
-        if page_idx == 3: return "आचार संहिता"
-        if page_idx == 4: return "अनुक्रमणिका"
-        if 5 <= page_idx <= 19: return "अध्याय २: नवग्रह कारकत्व व राजयोग"
-        if 20 <= page_idx <= 36: return "अध्याय ३: राशि, नक्षत्र एवं ग्रह गति"
-        if 37 <= page_idx <= 47: return "अध्याय ४: भाव एवं राशियों में ग्रह"
-        if 48 <= page_idx <= 74: return "अध्याय ५: आयुर्वेद-ज्योतिष व स्वास्थ्य"
-        if 75 <= page_idx <= 85: return "अध्याय ६: नक्षत्र पद व ग्रह विश्लेषण"
-        return "समापन"
+        if page_idx == 0: return "मुखपृष्ठ • Cover"
+        if page_idx == 1: return "मंगलाचरण • Invocation"
+        if page_idx == 2: return "लेखक परिचय • About the Author"
+        if page_idx == 3: return "अध्ययन निर्देशिका • Study Guide"
+        if page_idx == 4: return "आचार संहिता • Code of Conduct"
+        if page_idx == 5: return "अनुक्रमणिका • Index"
+        if 6 <= page_idx <= 20: return "अध्याय २: नवग्रह कारकत्व व राजयोग"
+        if 21 <= page_idx <= 37: return "अध्याय ३: राशि, नक्षत्र एवं ग्रह गति"
+        if 38 <= page_idx <= 48: return "अध्याय ४: भाव एवं राशियों में ग्रह"
+        if 49 <= page_idx <= 75: return "अध्याय ५: आयुर्वेद-ज्योतिष व स्वास्थ्य"
+        if 76 <= page_idx <= 86: return "अध्याय ६: नक्षत्र पद व ग्रह विश्लेषण"
+        return "उपसंहार • Back Cover"
     else:
         if page_idx == 0: return "Front Cover"
-        if page_idx == 1: return "Author Profile"
-        if page_idx == 2: return "Study Guide"
-        if page_idx == 3: return "Ethics & Disclaimer"
-        if page_idx == 4: return "Table of Contents"
-        if 5 <= page_idx <= 19: return "Ch 2: Planetary Karakatva & Raja Yogas"
-        if 20 <= page_idx <= 36: return "Ch 3: Signs, Nakshatras & Planetary Motion"
-        if 37 <= page_idx <= 47: return "Ch 4: Planetary States & House Placements"
-        if 48 <= page_idx <= 74: return "Ch 5: Medical Astrology & Diagnostics"
-        if 75 <= page_idx <= 85: return "Ch 6: Nakshatra Padas & Planetary Analysis"
-        return "Sacred Colophon"
+        if page_idx == 1: return "Auspicious Invocation"
+        if page_idx == 2: return "Author Profile"
+        if page_idx == 3: return "Study Guide"
+        if page_idx == 4: return "Ethics & Disclaimer"
+        if page_idx == 5: return "Table of Contents"
+        if 6 <= page_idx <= 20: return "Ch 2: Planetary Karakatva & Raja Yogas"
+        if 21 <= page_idx <= 37: return "Ch 3: Signs, Nakshatras & Planetary Motion"
+        if 38 <= page_idx <= 48: return "Ch 4: Planetary States & House Placements"
+        if 49 <= page_idx <= 75: return "Ch 5: Medical Astrology & Diagnostics"
+        if 76 <= page_idx <= 86: return "Ch 6: Nakshatra Padas & Planetary Analysis"
+        return "Back Cover • Epilogue"
 
 # ------------------------------------------------------------------------------
 # 2. TABLE HEADER LOCALIZATION DICTIONARIES
@@ -1103,7 +1107,7 @@ def localize_html_table(table_html, page_idx, target_lang='hindi'):
 
 def generate_sun_houses_content(page_num, lang='hindi'):
     is_hindi = (lang == 'hindi')
-    if page_num == 45:
+    if page_num == 46:
         header_title = "सूर्य देव: भाव १ से ६ फलित विचार" if is_hindi else "Sun in Houses 1 to 6 (Classical Interpretations)"
         houses_data = [
             ("१. प्रथम भाव (लग्न भाव):", "1. 1st House (Ascendant / Lagna):",
@@ -1161,7 +1165,7 @@ def generate_sun_houses_content(page_num, lang='hindi'):
         </div>
         """)
 
-    sec_label = f"अध्याय ४ • खण्ड {page_num - 44 + 6}" if is_hindi else f"Chapter 4 • Sun in Houses (Part {page_num - 44})"
+    sec_label = f"अध्याय ४ • खण्ड {page_num - 45 + 6}" if is_hindi else f"Chapter 4 • Sun in Houses (Part {page_num - 45})"
     return f"""
     <div class="page-inner-content">
       <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -1178,7 +1182,7 @@ def generate_sun_houses_content(page_num, lang='hindi'):
 
 def generate_sun_signs_content(page_num, lang='hindi'):
     is_hindi = (lang == 'hindi')
-    if page_num == 47:
+    if page_num == 48:
         header_title = "सूर्य देव: मेष से कन्या राशि फल" if is_hindi else "Sun in Signs 1 to 6 (Aries to Virgo Interpretations)"
         signs_data = [
             ("१. मेष राशि (परम उच्च फल):", "1. Aries (Exalted Sign - Uchcha):",
@@ -1236,7 +1240,7 @@ def generate_sun_signs_content(page_num, lang='hindi'):
         </div>
         """)
 
-    sec_label = f"अध्याय ४ • खण्ड {page_num - 46 + 8}" if is_hindi else f"Chapter 4 • Sun in Signs (Part {page_num - 46})"
+    sec_label = f"अध्याय ४ • खण्ड {page_num - 47 + 8}" if is_hindi else f"Chapter 4 • Sun in Signs (Part {page_num - 47})"
     return f"""
     <div class="page-inner-content">
       <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -1435,40 +1439,27 @@ def generate_leukemia_rules_content(lang='hindi'):
 def generate_hindi_pages(orig_pages):
     hindi_pages = []
 
-    # Page 1: Pure Hindi Cover
+    # Page 1: Pure Hindi Cover (Minimalist)
     p1 = """
     <div class="cover-page-inner">
-      <div class="cover-tag">तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center) • डिजिटल संस्करण २०२६ • सम्पूर्ण हिन्दी संस्करण</div>
-      
+      <div class="cover-ornament-corner top-left"></div>
+      <div class="cover-ornament-corner top-right"></div>
+      <div class="cover-ornament-corner bottom-left"></div>
+      <div class="cover-ornament-corner bottom-right"></div>
+
       <div class="cover-yantra">
-        <img src="assets/yantra.svg" alt="Sacred Sri Yantra Emblem" width="130" height="130" style="filter: drop-shadow(0 4px 15px rgba(200, 157, 61, 0.45));">
+        <img src="assets/yantra.svg" alt="Sacred Sri Yantra Emblem" width="135" height="135">
       </div>
 
-      <h1 class="cover-title-hindi" style="font-size:2.2rem; margin-bottom:0.75rem;">वैदिक ज्योतिष महाग्रंथ सरलीकृत</h1>
-      <h2 class="cover-title-english" style="font-size:1.05rem; color:var(--accent-gold); font-family:var(--font-heading); letter-spacing:0.04em;">सम्पूर्ण प्रामाणिक शास्त्रीय फलित ज्ञानकोश</h2>
+      <h1 class="cover-title-hindi">वैदिक ज्योतिष महाग्रंथ सरलीकृत</h1>
+      <div class="cover-title-english">सम्पूर्ण प्रामाणिक शास्त्रीय फलित ज्ञानकोश</div>
 
-      <div class="cover-divider"></div>
+      <div class="cover-divider-flourish">⚜ ☸ ⚜</div>
 
-      <p class="cover-subtitle">
-        <strong>नवग्रह कारकत्व, १७ शास्त्रीय राजयोग, २७ नक्षत्र व १०८ पद विश्लेषण, दीप्तादि ९ अवस्थाएं एवं १२ भाव-राशि फल।</strong><br>
-        <span style="font-size:0.85rem; color:var(--text-muted); display:inline-block; margin-top:0.4rem;">
-          बृहत् शास्त्रीय सूत्र, खगोल गणित एवं फलित सिद्धांतों का अद्वितीय संग्रह
-        </span>
-      </p>
+      <div class="cover-subtitle-minimal">बृहत् शास्त्रीय सूत्र, खगोल गणित एवं फलित सिद्धांतों का अद्वितीय संग्रह</div>
 
-      <div class="cover-author-block">
-        <div class="cover-author-label">लेखक एवं ज्योतिषाचार्य</div>
-        <div class="cover-author-name">ज्योतिषाचार्य आशुतोष कुमार चौबे</div>
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.6rem; margin-top:0.75rem;">
-          <a href="https://t.worldgyan.com" target="_blank" rel="noopener" class="contact-channel-badge" style="border-color:var(--accent-gold); color:var(--accent-gold) !important; font-weight:700;">
-            <span class="contact-icon">🌐</span>
-            <span>वेबसाइट: <strong>t.worldgyan.com</strong></span>
-          </a>
-          <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="youtube-channel-badge" style="margin-top:0;">
-            <span class="yt-play-icon">▶</span>
-            <span>यूट्यूब मंच: <strong>@TantraGyan108</strong></span>
-          </a>
-        </div>
+      <div class="cover-footer-brand">
+        <div class="cover-tag">तंत्र ज्ञान शोध संस्थान • २०२६ • सम्पूर्ण हिन्दी संस्करण</div>
       </div>
     </div>
     """
@@ -1478,7 +1469,36 @@ def generate_hindi_pages(orig_pages):
         "content": p1
     })
 
-    # Page 2: Author Profile (Pure Hindi)
+    # Page 2: Auspicious Invocation (मंगलाचरण — ॐ गं गणपतये नमः)
+    p_invoc = """
+    <div class="invocation-page-inner">
+      <div class="invocation-icon-emblem">
+        <img src="assets/ganesha.svg" alt="श्री गणेश पावन प्रतीक" width="105" height="105">
+      </div>
+
+      <div class="invocation-mantra">॥ ॐ गं गणपतये नमः ॥</div>
+
+      <div class="invocation-shloka">
+        वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>
+        निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
+      </div>
+
+      <div class="invocation-meaning">
+        <em>"हे वक्रतुंड, विशालकाय, करोड़ों सूर्यों के समान तेजस्वी प्रभु श्री गणेश! कृपा करके हमारे इस शास्त्रीय ग्रन्थ व साधना के समस्त विघ्नों को सदा के लिए दूर करें।"</em>
+      </div>
+
+      <div class="cover-divider-flourish" style="margin: 0.5rem auto;">☸ ॐ ☸</div>
+
+      <div class="invocation-footer">॥ शुभं भवतु • सर्व मंगल मांगल्ये ॥</div>
+    </div>
+    """
+    hindi_pages.append({
+        "chapter": get_chapter_name(1, 'hindi'),
+        "title": HINDI_TITLES[1],
+        "content": p_invoc
+    })
+
+    # Page 3: Author Profile (Pure Hindi)
     p2 = """
     <div class="page-inner-content">
       <div class="chapter-header" style="margin-bottom:1.25rem;">
@@ -1551,12 +1571,12 @@ def generate_hindi_pages(orig_pages):
     </div>
     """
     hindi_pages.append({
-        "chapter": get_chapter_name(1, 'hindi'),
-        "title": HINDI_TITLES[1],
+        "chapter": get_chapter_name(2, 'hindi'),
+        "title": HINDI_TITLES[2],
         "content": p2
     })
 
-    # Page 3: Study Guide (Pure Hindi)
+    # Page 4: Study Guide (Pure Hindi)
     p3 = """
     <div class="page-inner-content">
       <div class="chapter-header" style="margin-bottom:1.25rem;">
@@ -1611,12 +1631,12 @@ def generate_hindi_pages(orig_pages):
     </div>
     """
     hindi_pages.append({
-        "chapter": get_chapter_name(2, 'hindi'),
-        "title": HINDI_TITLES[2],
+        "chapter": get_chapter_name(3, 'hindi'),
+        "title": HINDI_TITLES[3],
         "content": p3
     })
 
-    # Page 4: Discipline & Disclaimer (Pure Hindi)
+    # Page 5: Discipline & Disclaimer (Pure Hindi)
     p4 = """
     <div class="page-inner-content">
       <div class="chapter-header" style="margin-bottom:1.25rem;">
@@ -1652,12 +1672,12 @@ def generate_hindi_pages(orig_pages):
     </div>
     """
     hindi_pages.append({
-        "chapter": get_chapter_name(3, 'hindi'),
-        "title": HINDI_TITLES[3],
+        "chapter": get_chapter_name(4, 'hindi'),
+        "title": HINDI_TITLES[4],
         "content": p4
     })
 
-    # Page 5: Table of Contents (Pure Hindi)
+    # Page 6: Table of Contents (Pure Hindi)
     p5 = """
     <div class="page-inner-content">
       <div class="chapter-header" style="margin-bottom:1rem;">
@@ -1669,70 +1689,70 @@ def generate_hindi_pages(orig_pages):
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय १</span>
-            <strong style="font-size:0.88rem;">प्रस्तावना, लेखक परिचय, अध्ययन निर्देशिका व आचार संहिता</strong>
+            <strong style="font-size:0.88rem;">प्रस्तावना, मंगलाचरण, लेखक परिचय, अध्ययन निर्देशिका व आचार संहिता</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ १ - ५</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ १ - ६</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय २</span>
             <strong style="font-size:0.88rem;">नवग्रह कारकत्व एवं १७ शास्त्रीय राजयोग</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ६ - २०</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ७ - २१</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय ३</span>
             <strong style="font-size:0.88rem;">राशि, नक्षत्र, ग्रह गति एवं विंशोत्तरी महादशा चक्र</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ २१ - ३७</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ २२ - ३८</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय ४</span>
             <strong style="font-size:0.88rem;">भाव एवं राशियों में ग्रह (दीप्तादि ९ अवस्थाएं व सूर्य फल)</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ३८ - ४८</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ३९ - ४९</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय ५</span>
             <strong style="font-size:0.88rem;">आयुर्वेद-ज्योतिष व स्वास्थ्य विश्लेषण (२७ तालिकाएं)</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ४९ - ७५</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ५० - ७६</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय ६</span>
             <strong style="font-size:0.88rem;">नक्षत्रों का गहन पद एवं ग्रह विश्लेषण (११ तालिकाएं)</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ७६ - ८६</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ७७ - ८७</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">समापन</span>
             <strong style="font-size:0.88rem;">समापन पृष्ठ, उपनिषद् मंगल श्लोक व आधिकारिक संपर्क</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ८७</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ८८</span>
         </div>
       </div>
     </div>
     """
     hindi_pages.append({
-        "chapter": get_chapter_name(4, 'hindi'),
-        "title": HINDI_TITLES[4],
+        "chapter": get_chapter_name(5, 'hindi'),
+        "title": HINDI_TITLES[5],
         "content": p5
     })
 
-    # Pages 6 to 86
-    for idx in range(5, 86):
+    # Pages 7 to 87 (Indices 6 to 86)
+    for idx in range(6, 87):
         orig_p = orig_pages[idx]
         page_num = idx + 1
         page_title = HINDI_TITLES[idx]
         ch_name = get_chapter_name(idx, 'hindi')
 
         # Dedicated generators
-        if page_num == 22:
+        if page_num == 23:
             card_html = generate_drishti_rules_content(lang='hindi')
             tbl_clean = localize_html_table(re.search(r'<table.*?</table\s*>', orig_p['content'], re.DOTALL).group(0), idx, target_lang='hindi')
             content = f"""
@@ -1748,7 +1768,7 @@ def generate_hindi_pages(orig_pages):
               </div>
             </div>
             """
-        elif page_num == 23:
+        elif page_num == 24:
             card_html = generate_nakshatra_degrees_card(lang='hindi')
             tbl_clean = localize_html_table(re.search(r'<table.*?</table\s*>', orig_p['content'], re.DOTALL).group(0), idx, target_lang='hindi')
             content = f"""
@@ -1764,15 +1784,15 @@ def generate_hindi_pages(orig_pages):
               </div>
             </div>
             """
-        elif page_num == 38:
+        elif page_num == 39:
             content = generate_deeptadi_9_states_content(lang='hindi')
-        elif page_num in [45, 46]:
+        elif page_num in [46, 47]:
             content = generate_sun_houses_content(page_num, lang='hindi')
-        elif page_num in [47, 48]:
+        elif page_num in [48, 49]:
             content = generate_sun_signs_content(page_num, lang='hindi')
-        elif page_num == 74:
-            content = generate_leukemia_rules_content(lang='hindi')
         elif page_num == 75:
+            content = generate_leukemia_rules_content(lang='hindi')
+        elif page_num == 76:
             rule_card = """
             <div class="rule-card danger">
               <div class="rule-header">
@@ -1784,7 +1804,8 @@ def generate_hindi_pages(orig_pages):
               </div>
             </div>
             """
-            tbl_clean = PAGE_75_HI_TABLE.strip()
+            tbl_match = re.search(r'<table.*?</table\s*>', orig_p['content'], re.DOTALL)
+            tbl_clean = localize_html_table(tbl_match.group(0), idx, target_lang='hindi') if tbl_match else ""
             content = f"""
             <div class="page-inner-content">
               <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -1835,56 +1856,49 @@ def generate_hindi_pages(orig_pages):
             "content": content
         })
 
-    # Page 87: Colophon (Pure Hindi)
+    # Page 88: Grand Back Cover (Pure Hindi)
     p_last = """
-    <div class="cover-page-inner" style="border: 2px solid var(--accent-gold);">
-      <div class="cover-tag">समापन पृष्ठ • उपनिषद् मंगल कामना</div>
+    <div class="back-cover-inner">
+      <div class="cover-ornament-corner top-left"></div>
+      <div class="cover-ornament-corner top-right"></div>
+      <div class="cover-ornament-corner bottom-left"></div>
+      <div class="cover-ornament-corner bottom-right"></div>
 
-      <div class="shloka-box" style="margin:1.5rem 0; width:100%;">
-        <div class="shloka-sanskrit">
-          ॐ असतो मा सद्गमय । तमसो मा ज्योतिर्गमय ।<br>
-          मृत्योर्मा अमृतं गमय । ॐ शान्तिः शान्तिः शान्तिः ॥
-        </div>
-        <div class="shloka-meaning">
-          "हे ईश्वर, हमें असत्य से सत्य की ओर, अंधकार से दिव्य प्रकाश की ओर, तथा नश्वरता से अमरता की ओर ले चलिए। तीनों तापों की शांति हो।"
-        </div>
-        <span class="shloka-source">बृहदारण्यकोपनिषद् (१.३.२८)</span>
+      <div class="cover-yantra" style="width:110px; height:110px; margin-bottom:0.35rem;">
+        <img src="assets/yantra.svg" alt="Tantra Gyan Sacred Seal" width="110" height="110">
       </div>
 
-      <div style="max-width:500px; margin:1rem auto; font-size:0.88rem; line-height:1.6; color:var(--text-secondary);">
-        <p>
-          यह महाग्रंथ वैदिक ज्योतिष, खगोल गणित एवं शास्त्रीय सिद्धांतों का सारगर्भित संकलन है। 
-          आशा है कि यह ग्रंथ सभी जिज्ञासुओं, शोधार्थियों एवं अभ्यासकर्ताओं के लिए एक विश्वसनीय मार्गदर्शक सिद्ध होगा।
-        </p>
+      <div class="back-cover-title">वैदिक ज्योतिष महाग्रंथ सरलीकृत</div>
+      <div class="back-cover-subtitle">सम्पूर्ण प्रामाणिक शास्त्रीय फलित ज्ञानकोश</div>
+
+      <div class="invocation-shloka" style="margin: 0.75rem auto; max-width: 90%;">
+        ॥ असतो मा सद्गमय। तमसो मा ज्योतिर्गमय। मृत्योर्मा अमृतं गमय॥<br>
+        ॥ ॐ पूर्णमदः पूर्णमिदं पूर्णात्पूर्णमुदच्यते। पूर्णस्य पूर्णमादाय पूर्णमेवावशिष्यते॥<br>
+        ॥ ॐ शान्तिः शान्तिः शान्तिः ॥
       </div>
 
-      <div class="cover-author-block" style="margin-top:auto;">
-        <div class="cover-author-label">तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center) • सर्वाधिकार सुरक्षित</div>
-        <div class="cover-author-name">ज्योतिषाचार्य आशुतोष कुमार चौबे</div>
-        <div class="cover-author-role">कॉपीराइट © २०२६. All rights reserved.</div>
-        <div style="margin-top:0.85rem; display:flex; flex-direction:column; align-items:center; gap:0.6rem;">
-          <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.6rem;">
-            <a href="https://t.worldgyan.com" target="_blank" rel="noopener" class="contact-channel-badge" style="border-color:var(--accent-gold); color:var(--accent-gold) !important; font-weight:700;">
-              <span class="contact-icon">🌐</span>
-              <span>वेबसाइट: <strong>t.worldgyan.com</strong></span>
-            </a>
-            <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="youtube-channel-badge" style="margin-top:0;">
-              <span class="yt-play-icon">▶</span>
-              <span>यूट्यूब: <strong>@TantraGyan108</strong></span>
-            </a>
-          </div>
-          <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.8rem; font-size:0.86rem; margin-top:0.25rem;">
-            <a href="mailto:tantraresearchcenter@gmail.com" style="color:var(--text-secondary); text-decoration:none; font-weight:600;">✉️ tantraresearchcenter@gmail.com</a>
-            <span style="color:var(--border-color);">•</span>
-            <a href="tel:+919658476170" style="color:var(--text-secondary); text-decoration:none; font-weight:600;">📞 +91 9658476170</a>
-          </div>
-        </div>
+      <div class="back-cover-colophon">
+        <div style="font-weight:700; color:var(--accent-gold); font-size:0.95rem; margin-bottom:0.25rem;">तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)</div>
+        <div style="color:var(--text-secondary); font-size:0.85rem;">लेखक एवं ज्योतिषाचार्य: <strong>ज्योतिषाचार्य आशुतोष कुमार चौबे</strong></div>
+        <div style="font-size:0.8rem; color:var(--text-muted); margin-top:0.35rem;">सर्वाधिकार सुरक्षित © २०२६. All rights reserved.</div>
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.6rem; margin-top:0.4rem;">
+        <span class="contact-channel-badge" style="border-color:var(--accent-gold); color:var(--accent-gold) !important; font-size:0.82rem;">
+          <span class="contact-icon">🌐</span> <strong>t.worldgyan.com</strong>
+        </span>
+        <span class="youtube-channel-badge" style="margin-top:0; font-size:0.82rem;">
+          <span class="yt-play-icon">▶</span> <strong>@TantraGyan108</strong>
+        </span>
+        <span class="contact-channel-badge" style="font-size:0.82rem;">
+          <span class="contact-icon">✉️</span> <strong>tantraresearchcenter@gmail.com</strong>
+        </span>
       </div>
     </div>
     """
     hindi_pages.append({
-        "chapter": get_chapter_name(86, 'hindi'),
-        "title": HINDI_TITLES[86],
+        "chapter": get_chapter_name(87, 'hindi'),
+        "title": HINDI_TITLES[87],
         "content": p_last
     })
 
@@ -1894,40 +1908,27 @@ def generate_hindi_pages(orig_pages):
 def generate_english_pages(orig_pages):
     english_pages = []
 
-    # Page 1: Complete English Cover
+    # Page 1: Complete English Cover (Minimalist)
     p1 = """
     <div class="cover-page-inner">
-      <div class="cover-tag">Tantra Gyan Research Center (तंत्र ज्ञान शोध संस्थान) • Digital Edition 2026 • English Edition</div>
-      
+      <div class="cover-ornament-corner top-left"></div>
+      <div class="cover-ornament-corner top-right"></div>
+      <div class="cover-ornament-corner bottom-left"></div>
+      <div class="cover-ornament-corner bottom-right"></div>
+
       <div class="cover-yantra">
-        <img src="assets/yantra.svg" alt="Sacred Sri Yantra Emblem" width="130" height="130" style="filter: drop-shadow(0 4px 15px rgba(200, 157, 61, 0.45));">
+        <img src="assets/yantra.svg" alt="Sacred Sri Yantra Emblem" width="135" height="135">
       </div>
 
-      <h1 class="cover-title-hindi" style="font-size:2.1rem; margin-bottom:0.75rem; font-family:var(--font-heading); color:var(--accent-gold);">Complete Vedic Astrology Compendium Simplified</h1>
-      <h2 class="cover-title-english" style="font-size:1.05rem; color:var(--text-heading); letter-spacing:0.04em;">Authoritative Classical Sutras, Astronomical Motion & Predictive Principles</h2>
+      <h1 class="cover-title-hindi" style="font-family:var(--font-heading); font-size:2.05rem;">Complete Vedic Astrology Compendium</h1>
+      <div class="cover-title-english">Authoritative Classical Principles & Predictive Synthesis</div>
 
-      <div class="cover-divider"></div>
+      <div class="cover-divider-flourish">⚜ ☸ ⚜</div>
 
-      <p class="cover-subtitle">
-        <strong>Navagraha Karakatva, 17 Classical Raja Yogas, 27 Nakshatras & 108 Pada Analysis, 9 Deeptadi Avasthas, and Comprehensive House-Sign Interpretations.</strong><br>
-        <span style="font-size:0.85rem; color:var(--text-muted); display:inline-block; margin-top:0.4rem;">
-          A High-Density Master Reference for Modern Practitioners and Scholars
-        </span>
-      </p>
+      <div class="cover-subtitle-minimal">Master Reference of Navagraha Karakatva, Raja Yogas, Nakshatra Padas & Medical Astrology</div>
 
-      <div class="cover-author-block">
-        <div class="cover-author-label">Author & Astrologer</div>
-        <div class="cover-author-name">Astrologer Ashutosh Kumar Choubey</div>
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.6rem; margin-top:0.75rem;">
-          <a href="https://t.worldgyan.com" target="_blank" rel="noopener" class="contact-channel-badge" style="border-color:var(--accent-gold); color:var(--accent-gold) !important; font-weight:700;">
-            <span class="contact-icon">🌐</span>
-            <span>Website: <strong>t.worldgyan.com</strong></span>
-          </a>
-          <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="youtube-channel-badge" style="margin-top:0;">
-            <span class="yt-play-icon">▶</span>
-            <span>YouTube: <strong>@TantraGyan108</strong></span>
-          </a>
-        </div>
+      <div class="cover-footer-brand">
+        <div class="cover-tag">Tantra Gyan Research Center • 2026 • English Edition</div>
       </div>
     </div>
     """
@@ -1935,6 +1936,35 @@ def generate_english_pages(orig_pages):
         "chapter": get_chapter_name(0, 'english'),
         "title": ENGLISH_TITLES[0],
         "content": p1
+    })
+
+    # Page 2: Auspicious Invocation (मंगलाचरण — ॐ गं गणपतये नमः)
+    p_invoc = """
+    <div class="invocation-page-inner">
+      <div class="invocation-icon-emblem">
+        <img src="assets/ganesha.svg" alt="Lord Shree Ganesha Emblem" width="105" height="105">
+      </div>
+
+      <div class="invocation-mantra">॥ Oṁ Gaṁ Gaṇapataye Namaḥ ॥</div>
+
+      <div class="invocation-shloka">
+        वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>
+        निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
+      </div>
+
+      <div class="invocation-meaning">
+        <em>"O Lord Ganesha of curved trunk and immense cosmic form, whose brilliance radiates as ten million suns, please dispel all impediments from our sacred study and endeavors forever."</em>
+      </div>
+
+      <div class="cover-divider-flourish" style="margin: 0.5rem auto;">☸ ॐ ☸</div>
+
+      <div class="invocation-footer">॥ Śubhaṁ Bhavatu • Universal Auspiciousness & Peace ॥</div>
+    </div>
+    """
+    english_pages.append({
+        "chapter": get_chapter_name(1, 'english'),
+        "title": ENGLISH_TITLES[1],
+        "content": p_invoc
     })
 
     # Page 2: Author Profile (English)
@@ -2010,8 +2040,8 @@ def generate_english_pages(orig_pages):
     </div>
     """
     english_pages.append({
-        "chapter": get_chapter_name(1, 'english'),
-        "title": ENGLISH_TITLES[1],
+        "chapter": get_chapter_name(2, 'english'),
+        "title": ENGLISH_TITLES[2],
         "content": p2
     })
 
@@ -2070,8 +2100,8 @@ def generate_english_pages(orig_pages):
     </div>
     """
     english_pages.append({
-        "chapter": get_chapter_name(2, 'english'),
-        "title": ENGLISH_TITLES[2],
+        "chapter": get_chapter_name(3, 'english'),
+        "title": ENGLISH_TITLES[3],
         "content": p3
     })
 
@@ -2111,8 +2141,8 @@ def generate_english_pages(orig_pages):
     </div>
     """
     english_pages.append({
-        "chapter": get_chapter_name(3, 'english'),
-        "title": ENGLISH_TITLES[3],
+        "chapter": get_chapter_name(4, 'english'),
+        "title": ENGLISH_TITLES[4],
         "content": p4
     })
 
@@ -2128,70 +2158,70 @@ def generate_english_pages(orig_pages):
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">Chapter 1</span>
-            <strong style="font-size:0.88rem;">Preface, Author Profile, Study Guide & Ethical Code</strong>
+            <strong style="font-size:0.88rem;">Preface, Invocation, Author Profile, Study Guide & Ethical Code</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 1 - 5</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 1 - 6</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">Chapter 2</span>
             <strong style="font-size:0.88rem;">Planetary Karakatva & 17 Classical Raja Yogas</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 6 - 20</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 7 - 21</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">Chapter 3</span>
             <strong style="font-size:0.88rem;">Zodiac Signs, 27 Nakshatras & Vimshottari Mahadasha</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 21 - 37</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 22 - 38</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">Chapter 4</span>
             <strong style="font-size:0.88rem;">Planetary States (9 Deeptadi Avasthas) & Solar Interpretations</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 38 - 48</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 39 - 49</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">Chapter 5</span>
             <strong style="font-size:0.88rem;">Medical Astrology & Health Diagnostics (27 Complete Tables)</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 49 - 75</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 50 - 76</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">Chapter 6</span>
             <strong style="font-size:0.88rem;">Nakshatra Pada Analysis & Subtle Interpretations (11 Tables)</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 76 - 86</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Pages 77 - 87</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">Colophon</span>
             <strong style="font-size:0.88rem;">Sacred Benediction, Upanishad Shloka & Official Contact</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Page 87</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">Page 88</span>
         </div>
       </div>
     </div>
     """
     english_pages.append({
-        "chapter": get_chapter_name(4, 'english'),
-        "title": ENGLISH_TITLES[4],
+        "chapter": get_chapter_name(5, 'english'),
+        "title": ENGLISH_TITLES[5],
         "content": p5
     })
 
-    # Pages 6 to 86
-    for idx in range(5, 86):
+    # Pages 7 to 87 (Indices 6 to 86)
+    for idx in range(6, 87):
         orig_p = orig_pages[idx]
         page_num = idx + 1
         page_title = ENGLISH_TITLES[idx]
         ch_name = get_chapter_name(idx, 'english')
 
         # Dedicated generators
-        if page_num == 22:
+        if page_num == 23:
             card_html = generate_drishti_rules_content(lang='english')
             tbl_clean = localize_html_table(re.search(r'<table.*?</table\s*>', orig_p['content'], re.DOTALL).group(0), idx, target_lang='english')
             content = f"""
@@ -2207,7 +2237,7 @@ def generate_english_pages(orig_pages):
               </div>
             </div>
             """
-        elif page_num == 23:
+        elif page_num == 24:
             card_html = generate_nakshatra_degrees_card(lang='english')
             tbl_clean = localize_html_table(re.search(r'<table.*?</table\s*>', orig_p['content'], re.DOTALL).group(0), idx, target_lang='english')
             content = f"""
@@ -2223,15 +2253,15 @@ def generate_english_pages(orig_pages):
               </div>
             </div>
             """
-        elif page_num == 38:
+        elif page_num == 39:
             content = generate_deeptadi_9_states_content(lang='english')
-        elif page_num in [45, 46]:
+        elif page_num in [46, 47]:
             content = generate_sun_houses_content(page_num, lang='english')
-        elif page_num in [47, 48]:
+        elif page_num in [48, 49]:
             content = generate_sun_signs_content(page_num, lang='english')
-        elif page_num == 74:
-            content = generate_leukemia_rules_content(lang='english')
         elif page_num == 75:
+            content = generate_leukemia_rules_content(lang='english')
+        elif page_num == 76:
             rule_card = """
             <div class="rule-card danger">
               <div class="rule-header">
@@ -2243,7 +2273,8 @@ def generate_english_pages(orig_pages):
               </div>
             </div>
             """
-            tbl_clean = PAGE_75_EN_TABLE.strip()
+            tbl_match = re.search(r'<table.*?</table\s*>', orig_p['content'], re.DOTALL)
+            tbl_clean = localize_html_table(tbl_match.group(0), idx, target_lang='english') if tbl_match else ""
             content = f"""
             <div class="page-inner-content">
               <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -2287,56 +2318,49 @@ def generate_english_pages(orig_pages):
             "content": content
         })
 
-    # Page 87: Colophon (Pure English)
+    # Page 88: Grand Back Cover (English Edition)
     p_last = """
-    <div class="cover-page-inner" style="border: 2px solid var(--accent-gold);">
-      <div class="cover-tag">Sacred Colophon • Upanishadic Benediction</div>
+    <div class="back-cover-inner">
+      <div class="cover-ornament-corner top-left"></div>
+      <div class="cover-ornament-corner top-right"></div>
+      <div class="cover-ornament-corner bottom-left"></div>
+      <div class="cover-ornament-corner bottom-right"></div>
 
-      <div class="shloka-box" style="margin:1.5rem 0; width:100%;">
-        <div class="shloka-sanskrit">
-          Om Asato Ma Sadgamaya | Tamaso Ma Jyotirgamaya |<br>
-          Mrityorma Amritam Gamaya | Om Shantih Shantih Shantih ||
-        </div>
-        <div class="shloka-meaning">
-          "Lead me from falsehood to eternal truth, from darkness to cosmic radiant light, from mortality to spiritual immortality. Om Peace, Peace, Peace."
-        </div>
-        <span class="shloka-source">Brihadaranyaka Upanishad (1.3.28)</span>
+      <div class="cover-yantra" style="width:110px; height:110px; margin-bottom:0.35rem;">
+        <img src="assets/yantra.svg" alt="Tantra Gyan Sacred Seal" width="110" height="110">
       </div>
 
-      <div style="max-width:500px; margin:1rem auto; font-size:0.88rem; line-height:1.6; color:var(--text-secondary);">
-        <p>
-          This monumental compendium synthesizes authoritative Vedic astronomy, mathematical precision, and classical predictive shastras.
-          May this sacred work illuminate the path for all dedicated practitioners, researchers, and seekers of truth.
-        </p>
+      <div class="back-cover-title">Complete Vedic Astrology Compendium</div>
+      <div class="back-cover-subtitle">Authoritative Classical Predictive Knowledge Base</div>
+
+      <div class="invocation-shloka" style="margin: 0.75rem auto; max-width: 90%;">
+        ॥ Asato Mā Sad-Gamaya | Tamaso Mā Jyotir-Gamaya | Mṛtyor-Mā'mṛtaṁ Gamaya ॥<br>
+        ॥ Oṁ Pūrṇam-Adaḥ Pūrṇam-Idaṁ Pūrṇāt-Pūrṇam-Udacyate | Pūrṇasya Pūrṇam-Ādāya Pūrṇam-Evāvaśiṣyate ॥<br>
+        ॥ Oṁ Śāntiḥ Śāntiḥ Śāntiḥ ॥
       </div>
 
-      <div class="cover-author-block" style="margin-top:auto;">
-        <div class="cover-author-label">Tantra Gyan Research Center (तंत्र ज्ञान शोध संस्थान) • All Rights Reserved</div>
-        <div class="cover-author-name">Astrologer Ashutosh Kumar Choubey</div>
-        <div class="cover-author-role">Copyright © 2026. All rights reserved.</div>
-        <div style="margin-top:0.85rem; display:flex; flex-direction:column; align-items:center; gap:0.6rem;">
-          <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.6rem;">
-            <a href="https://t.worldgyan.com" target="_blank" rel="noopener" class="contact-channel-badge" style="border-color:var(--accent-gold); color:var(--accent-gold) !important; font-weight:700;">
-              <span class="contact-icon">🌐</span>
-              <span>Website: <strong>t.worldgyan.com</strong></span>
-            </a>
-            <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="youtube-channel-badge" style="margin-top:0;">
-              <span class="yt-play-icon">▶</span>
-              <span>YouTube: <strong>@TantraGyan108</strong></span>
-            </a>
-          </div>
-          <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.8rem; font-size:0.86rem; margin-top:0.25rem;">
-            <a href="mailto:tantraresearchcenter@gmail.com" style="color:var(--text-secondary); text-decoration:none; font-weight:600;">✉️ tantraresearchcenter@gmail.com</a>
-            <span style="color:var(--border-color);">•</span>
-            <a href="tel:+919658476170" style="color:var(--text-secondary); text-decoration:none; font-weight:600;">📞 +91 9658476170</a>
-          </div>
-        </div>
+      <div class="back-cover-colophon">
+        <div style="font-weight:700; color:var(--accent-gold); font-size:0.95rem; margin-bottom:0.25rem;">Tantra Gyan Research Center (तंत्र ज्ञान शोध संस्थान)</div>
+        <div style="color:var(--text-secondary); font-size:0.85rem;">Author & Vedic Astrologer: <strong>Astrologer Ashutosh Kumar Choubey</strong></div>
+        <div style="font-size:0.8rem; color:var(--text-muted); margin-top:0.35rem;">Copyright © 2026. All rights reserved.</div>
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.6rem; margin-top:0.4rem;">
+        <span class="contact-channel-badge" style="border-color:var(--accent-gold); color:var(--accent-gold) !important; font-size:0.82rem;">
+          <span class="contact-icon">🌐</span> <strong>t.worldgyan.com</strong>
+        </span>
+        <span class="youtube-channel-badge" style="margin-top:0; font-size:0.82rem;">
+          <span class="yt-play-icon">▶</span> <strong>@TantraGyan108</strong>
+        </span>
+        <span class="contact-channel-badge" style="font-size:0.82rem;">
+          <span class="contact-icon">✉️</span> <strong>tantraresearchcenter@gmail.com</strong>
+        </span>
       </div>
     </div>
     """
     english_pages.append({
-        "chapter": get_chapter_name(86, 'english'),
-        "title": ENGLISH_TITLES[86],
+        "chapter": get_chapter_name(87, 'english'),
+        "title": ENGLISH_TITLES[87],
         "content": p_last
     })
 
@@ -2400,39 +2424,10 @@ def render_edition_html(pages_list, edition_lang='hindi'):
 
     ft_title = 'Complete Vedic Astrology Compendium Simplified' if not is_hindi else 'वैदिक ज्योतिष महाग्रंथ सरलीकृत'
 
-    initial_left_html = f"""
-        <div class="page-header">
-          <div class="page-header-info">
-            <span class="page-header-title">
-              <span class="chapter-wheel">☸</span> {pages_list[0]['chapter']}
-            </span>
-            <span class="page-header-subtitle">{pages_list[0]['title']}</span>
-          </div>
-        </div>
-        <div class="page-body">
-          {pages_list[0]['content']}
-        </div>
-        <div class="page-footer">
-          <span class="page-footer-title">{ft_title}</span>
-          <span class="page-number-display">Page 1 of {total_pages}</span>
-        </div>
-    """
-
+    initial_left_html = ""
     initial_right_html = f"""
-        <div class="page-header">
-          <div class="page-header-info">
-            <span class="page-header-title">
-              <span class="chapter-wheel">☸</span> {pages_list[1]['chapter']}
-            </span>
-            <span class="page-header-subtitle">{pages_list[1]['title']}</span>
-          </div>
-        </div>
-        <div class="page-body">
-          {pages_list[1]['content']}
-        </div>
-        <div class="page-footer">
-          <span class="page-footer-title">{ft_title}</span>
-          <span class="page-number-display">Page 2 of {total_pages}</span>
+        <div class="page-body cover-page-wrapper">
+          {pages_list[0]['content']}
         </div>
     """
 
@@ -2569,7 +2564,7 @@ def render_edition_html(pages_list, edition_lang='hindi'):
 
   <!-- Main Book Reading Stage -->
   <main class="main-stage">
-    <div class="book-container dual-page-layout">
+    <div class="book-container cover-closed-front">
       <!-- Decorative Gilded Corners -->
       <div class="corner-ornament corner-tl"></div>
       <div class="corner-ornament corner-tr"></div>

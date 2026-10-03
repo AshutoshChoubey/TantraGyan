@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="divineGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.8"/>
+      <stop offset="45%" stop-color="#eab308" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ca8a04" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ganeshaGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="25%" stop-color="#fde047"/>
+      <stop offset="55%" stop-color="#d97706"/>
+      <stop offset="85%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+    <linearGradient id="vermilionGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+    <filter id="shadowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#b45309" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Aura Background -->
+  <circle cx="200" cy="200" r="185" fill="url(#divineGlow)"/>
+
+  <!-- Ornate Outer Rings -->
+  <circle cx="200" cy="200" r="175" fill="none" stroke="url(#ganeshaGold)" stroke-width="2.5"/>
+  <circle cx="200" cy="200" r="165" fill="none" stroke="url(#ganeshaGold)" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <circle cx="200" cy="200" r="155" fill="none" stroke="url(#ganeshaGold)" stroke-width="2"/>
+
+  <!-- 8 Sacred Petals Frame -->
+  <g stroke="url(#ganeshaGold)" stroke-width="1.8" fill="none" opacity="0.75">
+    <path d="M 200 45 Q 212 90 200 135 Q 188 90 200 45 Z"/>
+    <path d="M 200 355 Q 212 310 200 265 Q 188 310 200 355 Z"/>
+    <path d="M 45 200 Q 90 212 135 200 Q 90 188 45 200 Z"/>
+    <path d="M 355 200 Q 310 212 265 200 Q 310 188 355 200 Z"/>
+    <path d="M 90 90 Q 125 125 155 155 Q 125 125 90 90 Z"/>
+    <path d="M 310 90 Q 275 125 245 155 Q 275 125 310 90 Z"/>
+    <path d="M 90 310 Q 125 275 155 245 Q 125 275 90 310 Z"/>
+    <path d="M 310 310 Q 275 275 245 245 Q 275 275 310 310 Z"/>
+  </g>
+
+  <!-- Sacred Stylized Ganesha / Om Iconography -->
+  <g filter="url(#shadowFilter)">
+    <!-- Crown / Mukut -->
+    <path d="M 175 110 L 200 70 L 225 110 Q 200 102 175 110 Z" fill="url(#ganeshaGold)" stroke="#78350f" stroke-width="1"/>
+    <circle cx="200" cy="65" r="4.5" fill="#fde047"/>
+
+    <!-- Sacred Tilak / Tripundra -->
+    <path d="M 185 118 Q 200 115 215 118" stroke="url(#ganeshaGold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 187 124 Q 200 121 213 124" stroke="url(#ganeshaGold)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="200" cy="132" rx="3.5" ry="6" fill="url(#vermilionGrad)"/>
+
+    <!-- Lord Ganesha Head / Ear Left -->
+    <path d="M 172 135 C 130 135 115 170 140 195 C 160 210 175 195 175 185" fill="none" stroke="url(#ganeshaGold)" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Lord Ganesha Ear Right & Tusk -->
+    <path d="M 228 135 C 270 135 285 170 260 195 C 240 210 225 195 225 185" fill="none" stroke="url(#ganeshaGold)" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Sacred Trunk (Vakratunda) curving graciously into an auspicious Om -->
+    <path d="M 190 145 C 190 185 185 215 195 245 C 205 270 235 275 245 255 C 255 235 235 215 215 225" fill="none" stroke="url(#ganeshaGold)" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Modak / Laddu in Hand -->
+    <circle cx="252" cy="245" r="7" fill="url(#ganeshaGold)"/>
+    <circle cx="252" cy="245" r="3.5" fill="url(#vermilionGrad)"/>
+
+    <!-- Auspicious Eyes -->
+    <ellipse cx="183" cy="148" rx="2.5" ry="1.5" fill="#78350f"/>
+    <ellipse cx="217" cy="148" rx="2.5" ry="1.5" fill="#78350f"/>
+  </g>
+
+  <!-- Sacred Devanagari Inscription Accent -->
+  <text x="200" y="325" font-family="'Noto Serif Devanagari', serif" font-size="19" font-weight="700" fill="url(#ganeshaGold)" text-anchor="middle" letter-spacing="3">॥ श्री गणेशाय नमः ॥</text>
+</svg>

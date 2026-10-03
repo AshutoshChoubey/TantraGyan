@@ -89,40 +89,27 @@ pages = []
 # FRONT MATTER PAGES (1 to 5)
 # ==============================================================================
 
-# PAGE 1: Grand Book Cover
+# PAGE 1: Minimalistic Grand Book Cover
 page_1 = """
 <div class="cover-page-inner">
-  <div class="cover-tag">तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center) • Digital Edition 2026</div>
-  
+  <div class="cover-ornament-corner top-left"></div>
+  <div class="cover-ornament-corner top-right"></div>
+  <div class="cover-ornament-corner bottom-left"></div>
+  <div class="cover-ornament-corner bottom-right"></div>
+
   <div class="cover-yantra">
-    <img src="assets/yantra.svg" alt="Sacred Sri Yantra Emblem" width="130" height="130" style="filter: drop-shadow(0 4px 15px rgba(200, 157, 61, 0.45));">
+    <img src="assets/yantra.svg" alt="Sacred Sri Yantra Emblem" width="135" height="135">
   </div>
 
   <h1 class="cover-title-hindi">वैदिक ज्योतिष महाग्रंथ सरलीकृत</h1>
-  <h2 class="cover-title-english">Complete Vedic Astrology Compendium Simplified</h2>
+  <div class="cover-title-english">Complete Vedic Astrology Compendium Simplified</div>
 
-  <div class="cover-divider"></div>
+  <div class="cover-divider-flourish">⚜ ☸ ⚜</div>
 
-  <p class="cover-subtitle">
-    <strong>नवग्रह कारकत्व, 17 शास्त्रीय राजयोग, 27 नक्षत्र व 108 पद विश्लेषण, दीप्तादि 9 अवस्थाएं एवं 12 भाव-राशि फल।</strong><br>
-    <span style="font-size:0.85rem; color:var(--text-muted); display:inline-block; margin-top:0.4rem;">
-      Comprehensive Classical Sutras, Astronomical Motion & Predictive Principles
-    </span>
-  </p>
+  <div class="cover-subtitle-minimal">सम्पूर्ण प्रामाणिक शास्त्रीय फलित ज्ञानकोश</div>
 
-  <div class="cover-author-block">
-    <div class="cover-author-label">लेखक एवं ज्योतिषाचार्य (Author & Astrologer)</div>
-    <div class="cover-author-name">Ashutosh Kumar Choubey</div>
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.6rem; margin-top:0.75rem;">
-      <a href="https://t.worldgyan.com" target="_blank" rel="noopener" class="contact-channel-badge" style="border-color:var(--accent-gold); color:var(--accent-gold) !important; font-weight:700;">
-        <span class="contact-icon">🌐</span>
-        <span><strong>t.worldgyan.com</strong></span>
-      </a>
-      <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="youtube-channel-badge" style="margin-top:0;">
-        <span class="yt-play-icon">▶</span>
-        <span>YouTube: <strong>@TantraGyan108</strong></span>
-      </a>
-    </div>
+  <div class="cover-footer-brand">
+    <div class="cover-tag">तंत्र ज्ञान शोध संस्थान • 2026</div>
   </div>
 </div>
 """
@@ -130,6 +117,38 @@ pages.append({
     "chapter": "मुखपृष्ठ • Cover",
     "title": "वैदिक ज्योतिष महाग्रंथ सरलीकृत",
     "content": page_1
+})
+
+# PAGE 2: Auspicious Invocation (मंगलाचरण — ॐ गं गणपतये नमः)
+page_invocation = """
+<div class="invocation-page-inner">
+  <div class="invocation-icon-emblem">
+    <img src="assets/ganesha.svg" alt="Shree Ganesha Sacred Emblem" width="105" height="105">
+  </div>
+
+  <div class="invocation-mantra">॥ ॐ गं गणपतये नमः ॥</div>
+
+  <div class="invocation-shloka">
+    वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>
+    निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
+  </div>
+
+  <div class="invocation-meaning">
+    <em>"हे वक्रतुंड, विशालकाय, करोड़ों सूर्यों के समान तेजस्वी प्रभु श्री गणेश! कृपा करके हमारे इस शास्त्रीय ग्रन्थ व साधना के समस्त विघ्नों को सदा के लिए दूर करें।"</em>
+    <span class="invocation-en-meaning" style="display:block; margin-top:0.4rem; font-size:0.86rem; color:var(--text-muted);">
+      "O Lord Ganesha of curved trunk and immense brilliance, radiant as ten million suns, remove all obstacles from our endeavors always."
+    </span>
+  </div>
+
+  <div class="cover-divider-flourish" style="margin: 0.5rem auto;">☸ ॐ ☸</div>
+
+  <div class="invocation-footer">॥ शुभं भवतु • सर्व मंगल मांगल्ये ॥</div>
+</div>
+"""
+pages.append({
+    "chapter": "मंगलाचरण • Invocation",
+    "title": "मंगलाचरण — ॐ गं गणपतये नमः",
+    "content": page_invocation
 })
 
 # PAGE 2: About the Author (Astrologer Ashutosh Kumar Choubey)
@@ -879,58 +898,51 @@ if ch6_m:
         })
 
 # ==============================================================================
-# BACK MATTER (Colophon & Sacred Benediction)
+# BACK MATTER: PAGE 88: Grand Back Cover (उपसंहार • Closing Back Cover)
 # ==============================================================================
-colophon_page = """
-<div class="cover-page-inner" style="border: 2px solid var(--accent-gold);">
-  <div class="cover-tag">समापन पृष्ठ • Sacred Colophon</div>
+page_back_cover = """
+<div class="back-cover-inner">
+  <div class="cover-ornament-corner top-left"></div>
+  <div class="cover-ornament-corner top-right"></div>
+  <div class="cover-ornament-corner bottom-left"></div>
+  <div class="cover-ornament-corner bottom-right"></div>
 
-  <div class="shloka-box" style="margin:1.5rem 0; width:100%;">
-    <div class="shloka-sanskrit">
-      ॐ असतो मा सद्गमय । तमसो मा ज्योतिर्गमय ।<br>
-      मृत्योर्मा अमृतं गमय । ॐ शान्तिः शान्तिः शान्तिः ॥
-    </div>
-    <div class="shloka-meaning">
-      "Lead me from falsehood to truth, from darkness to cosmic light, from mortality to spiritual immortality."
-    </div>
-    <span class="shloka-source">बृहदारण्यकोपनिषद् (Brihadaranyaka Upanishad)</span>
+  <div class="cover-yantra" style="width:110px; height:110px; margin-bottom:0.35rem;">
+    <img src="assets/yantra.svg" alt="Tantra Gyan Sacred Seal" width="110" height="110">
   </div>
 
-  <div style="max-width:500px; margin:1rem auto; font-size:0.88rem; line-height:1.6; color:var(--text-secondary);">
-    <p>
-      यह महाग्रंथ वैदिक ज्योतिष, खगोल गणित एवं आयुर्वेद-ज्योतिष का सारगर्भित संकलन है। 
-      आशा है कि यह ग्रंथ सभी ज्योतिष प्रेमियों, शोधार्थियों एवं अभ्यासकर्ताओं के लिए एक विश्वसनीय मार्गदर्शक सिद्ध होगा।
-    </p>
+  <div class="back-cover-title">वैदिक ज्योतिष महाग्रंथ सरलीकृत</div>
+  <div class="back-cover-subtitle">सम्पूर्ण प्रामाणिक शास्त्रीय फलित ज्ञानकोश</div>
+
+  <div class="invocation-shloka" style="margin: 0.75rem auto; max-width: 90%;">
+    ॥ असतो मा सद्गमय। तमसो मा ज्योतिर्गमय। मृत्योर्मा अमृतं गमय॥<br>
+    ॥ ॐ पूर्णमदः पूर्णमिदं पूर्णात्पूर्णमुदच्यते। पूर्णस्य पूर्णमादाय पूर्णमेवावशिष्यते॥<br>
+    ॥ ॐ शान्तिः शान्तिः शान्तिः ॥
   </div>
 
-  <div class="cover-author-block" style="margin-top:auto;">
-    <div class="cover-author-label">तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)</div>
-    <div class="cover-author-name">ज्योतिषाचार्य Ashutosh Kumar Choubey</div>
-    <div class="cover-author-role">Copyright © 2026. All rights reserved.</div>
-    <div style="margin-top:0.85rem; display:flex; flex-direction:column; align-items:center; gap:0.6rem;">
-      <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.6rem;">
-        <a href="https://t.worldgyan.com" target="_blank" rel="noopener" class="contact-channel-badge" style="border-color:var(--accent-gold); color:var(--accent-gold) !important; font-weight:700;">
-          <span class="contact-icon">🌐</span>
-          <span><strong>t.worldgyan.com</strong></span>
-        </a>
-        <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="youtube-channel-badge" style="margin-top:0;">
-          <span class="yt-play-icon">▶</span>
-          <span>YouTube: <strong>@TantraGyan108</strong></span>
-        </a>
-      </div>
-      <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.8rem; font-size:0.86rem; margin-top:0.25rem;">
-        <a href="mailto:tantraresearchcenter@gmail.com" style="color:var(--text-secondary); text-decoration:none; font-weight:600;">✉️ tantraresearchcenter@gmail.com</a>
-        <span style="color:var(--border-color);">•</span>
-        <a href="tel:+919658476170" style="color:var(--text-secondary); text-decoration:none; font-weight:600;">📞 +91 9658476170</a>
-      </div>
-    </div>
+  <div class="back-cover-colophon">
+    <div style="font-weight:700; color:var(--accent-gold); font-size:0.95rem; margin-bottom:0.25rem;">तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)</div>
+    <div style="color:var(--text-secondary); font-size:0.85rem;">लेखक एवं ज्योतिषाचार्य: <strong>Ashutosh Kumar Choubey</strong></div>
+    <div style="font-size:0.8rem; color:var(--text-muted); margin-top:0.35rem;">Copyright © 2026. All rights reserved.</div>
+  </div>
+
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.6rem; margin-top:0.4rem;">
+    <span class="contact-channel-badge" style="border-color:var(--accent-gold); color:var(--accent-gold) !important; font-size:0.82rem;">
+      <span class="contact-icon">🌐</span> <strong>t.worldgyan.com</strong>
+    </span>
+    <span class="youtube-channel-badge" style="margin-top:0; font-size:0.82rem;">
+      <span class="yt-play-icon">▶</span> <strong>@TantraGyan108</strong>
+    </span>
+    <span class="contact-channel-badge" style="font-size:0.82rem;">
+      <span class="contact-icon">✉️</span> <strong>tantraresearchcenter@gmail.com</strong>
+    </span>
   </div>
 </div>
 """
 pages.append({
-    "chapter": "समापन • Colophon",
-    "title": "समापन पृष्ठ • उपनिषद् मंगल कामना व आधिकारिक संपर्क",
-    "content": colophon_page
+    "chapter": "उपसंहार • Back Cover",
+    "title": "समापन पृष्ठ • उपसंहार व वैदिक मंगल कामना",
+    "content": page_back_cover
 })
 
 total_pages = len(pages)
@@ -973,6 +985,12 @@ def make_initial_sheet_markup(pageNum, pageData, totalPages):
     ch = pageData["chapter"]
     ti = pageData["title"]
     co = pageData["content"]
+    if pageNum == 1 or pageNum == totalPages:
+        return f"""
+        <div class="page-body cover-page-wrapper">
+          {co}
+        </div>
+        """
     return f"""
         <div class="page-header">
           <div class="page-header-info">
@@ -991,8 +1009,8 @@ def make_initial_sheet_markup(pageNum, pageData, totalPages):
         </div>
     """
 
-initial_left_html = make_initial_sheet_markup(1, pages[0], total_pages)
-initial_right_html = make_initial_sheet_markup(2, pages[1], total_pages)
+initial_left_html = ""
+initial_right_html = make_initial_sheet_markup(1, pages[0], total_pages)
 
 # Final HTML Template
 html_template = f"""<!DOCTYPE html>
@@ -1169,7 +1187,7 @@ html_template = f"""<!DOCTYPE html>
 
   <!-- Main Book Reading Stage -->
   <main class="main-stage">
-    <div class="book-container dual-page-layout">
+    <div class="book-container cover-closed-front">
       <!-- Decorative Gilded Corners -->
       <div class="corner-ornament corner-tl"></div>
       <div class="corner-ornament corner-tr"></div>

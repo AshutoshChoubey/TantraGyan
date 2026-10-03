@@ -85,15 +85,25 @@ class BookEngine {
   updateSpreadMode() {
     const forcedSingle = document.documentElement.classList.contains('single-mode-active');
     this.isDualPage = window.innerWidth > 1080 && !forcedSingle;
+    this.updateSpreadLayoutClasses();
+  }
+
+  updateSpreadLayoutClasses() {
     const bookContainer = document.querySelector('.book-container');
-    if (bookContainer) {
-      if (this.isDualPage) {
-        bookContainer.classList.add('dual-page-layout');
-        bookContainer.classList.remove('single-page-layout');
-      } else {
-        bookContainer.classList.remove('dual-page-layout');
-        bookContainer.classList.add('single-page-layout');
-      }
+    if (!bookContainer) return;
+    bookContainer.classList.remove('dual-page-layout', 'single-page-layout', 'cover-closed-front', 'cover-closed-back');
+
+    if (!this.isDualPage) {
+      bookContainer.classList.add('single-page-layout');
+      return;
+    }
+
+    if (this.currentPage === 1) {
+      bookContainer.classList.add('cover-closed-front');
+    } else if (this.currentPage === this.totalPages) {
+      bookContainer.classList.add('cover-closed-back');
+    } else {
+      bookContainer.classList.add('dual-page-layout');
     }
   }
 
@@ -105,9 +115,27 @@ class BookEngine {
       this.nextBtn.addEventListener('click', () => this.nextPage());
     }
 
+    // Clicking on closed cover cards opens/turns page
+    if (this.rightPageEl) {
+      this.rightPageEl.addEventListener('click', (e) => {
+        const bookContainer = document.querySelector('.book-container');
+        if (bookContainer && bookContainer.classList.contains('cover-closed-front')) {
+          this.nextPage();
+        }
+      });
+    }
+    if (this.leftPageEl) {
+      this.leftPageEl.addEventListener('click', (e) => {
+        const bookContainer = document.querySelector('.book-container');
+        if (bookContainer && bookContainer.classList.contains('cover-closed-back')) {
+          this.prevPage();
+        }
+      });
+    }
+
     if (this.slider) {
       this.slider.addEventListener('input', (e) => {
-        const p = parseInt(e.target.value);
+        const p = parseInt(e.target.value, 10);
         this.goToPage(p, true);
       });
     }
@@ -189,30 +217,55 @@ class BookEngine {
 
   nextPage() {
     if (this.isAnimating) return;
-    if (this.isDualPage) {
-      const currStart = (this.currentPage % 2 === 0) ? this.currentPage - 1 : this.currentPage;
-      const targetStart = currStart + 2;
-      if (targetStart <= this.totalPages) {
-        this.flip3D('forward', targetStart);
-      }
-    } else {
+    if (!this.isDualPage) {
       if (this.currentPage < this.totalPages) {
         this.flip3D('forward', this.currentPage + 1);
+      }
+      return;
+    }
+
+    // Dual-page mode navigation
+    if (this.currentPage <= 1) {
+      // From closed Front Cover, open to first inside spread [2, 3]
+      this.flip3D('forward', 2);
+    } else if (this.currentPage >= this.totalPages) {
+      // Already at closed Back Cover
+      return;
+    } else {
+      const currL = (this.currentPage % 2 === 0) ? this.currentPage : this.currentPage - 1;
+      const nextL = currL + 2;
+      if (nextL >= this.totalPages) {
+        // Close book to Back Cover
+        this.flip3D('forward', this.totalPages);
+      } else {
+        this.flip3D('forward', nextL);
       }
     }
   }
 
   prevPage() {
     if (this.isAnimating) return;
-    if (this.isDualPage) {
-      const currStart = (this.currentPage % 2 === 0) ? this.currentPage - 1 : this.currentPage;
-      const targetStart = currStart - 2;
-      if (targetStart >= 1) {
-        this.flip3D('backward', targetStart);
-      }
-    } else {
+    if (!this.isDualPage) {
       if (this.currentPage > 1) {
         this.flip3D('backward', this.currentPage - 1);
+      }
+      return;
+    }
+
+    // Dual-page mode navigation
+    if (this.currentPage <= 1) {
+      return;
+    } else if (this.currentPage >= this.totalPages) {
+      // Reopen from Back Cover to last inside spread [totalPages - 2, totalPages - 1] (e.g. [86, 87])
+      this.flip3D('backward', this.totalPages - 2);
+    } else {
+      const currL = (this.currentPage % 2 === 0) ? this.currentPage : this.currentPage - 1;
+      const prevL = currL - 2;
+      if (prevL < 2) {
+        // Close book to Front Cover
+        this.flip3D('backward', 1);
+      } else {
+        this.flip3D('backward', prevL);
       }
     }
   }
@@ -235,7 +288,6 @@ class BookEngine {
     if (!wrapper) {
       this.currentPage = targetPage;
       this.render();
-      this.onPageChanged();
       this.isAnimating = false;
       return;
     }
@@ -244,6 +296,19 @@ class BookEngine {
     wrapper.querySelectorAll('.book-flipper-leaf, .flipper-under-shadow').forEach(el => el.remove());
 
     if (this.isDualPage) {
+      // If entering or leaving a cover state (page 1 or totalPages), render smoothly with state switch
+      const isEnteringCover = (targetPage === 1 || targetPage === this.totalPages);
+      const isLeavingCover = (this.currentPage === 1 || this.currentPage === this.totalPages);
+
+      if (isEnteringCover || isLeavingCover) {
+        this.currentPage = targetPage;
+        this.render();
+        setTimeout(() => {
+          this.isAnimating = false;
+        }, 320);
+        return;
+      }
+
       this.performDualPageFlip(direction, targetPage, wrapper);
     } else {
       this.performSinglePageFlip(direction, targetPage, wrapper);
@@ -251,13 +316,11 @@ class BookEngine {
   }
 
   performDualPageFlip(direction, targetPage, wrapper) {
-    const currStart = (this.currentPage % 2 === 0) ? this.currentPage - 1 : this.currentPage;
-    const currL = currStart;
-    const currR = currStart + 1;
+    const currL = (this.currentPage % 2 === 0) ? this.currentPage : this.currentPage - 1;
+    const currR = currL + 1;
 
-    const targetStart = (targetPage % 2 === 0) ? targetPage - 1 : targetPage;
-    const targetL = targetStart;
-    const targetR = targetStart + 1;
+    const targetL = (targetPage % 2 === 0) ? targetPage : targetPage - 1;
+    const targetR = targetL + 1;
 
     if (direction === 'forward') {
       // The turning sheet is the Right Page (currR), flipping over to Left (targetL)
@@ -290,8 +353,7 @@ class BookEngine {
         flipper.remove();
         shadow.remove();
         this.currentPage = targetPage;
-        this.renderSpread(targetL, targetR);
-        this.onPageChanged();
+        this.render();
         this.isAnimating = false;
       }, 540);
 
@@ -326,8 +388,7 @@ class BookEngine {
         flipper.remove();
         shadow.remove();
         this.currentPage = targetPage;
-        this.renderSpread(targetL, targetR);
-        this.onPageChanged();
+        this.render();
         this.isAnimating = false;
       }, 540);
     }
@@ -361,7 +422,7 @@ class BookEngine {
       setTimeout(() => {
         flipper.remove();
         this.currentPage = targetP;
-        this.onPageChanged();
+        this.render();
         this.isAnimating = false;
       }, 520);
 
@@ -383,11 +444,8 @@ class BookEngine {
 
       setTimeout(() => {
         flipper.remove();
-        if (this.rightPageEl) {
-          this.renderSinglePageContent(this.rightPageEl, this.pages[targetP - 1], targetP);
-        }
         this.currentPage = targetP;
-        this.onPageChanged();
+        this.render();
         this.isAnimating = false;
       }, 520);
     }
@@ -397,26 +455,26 @@ class BookEngine {
     if (pageNum < 1) pageNum = 1;
     if (pageNum > this.totalPages) pageNum = this.totalPages;
 
-    const hasLeftBody = !!(this.leftPageEl && this.leftPageEl.querySelector('.page-body'));
-    const hasRightBody = !!(this.rightPageEl && this.rightPageEl.querySelector('.page-body'));
-    const isSpreadProperlyRendered = this.isDualPage ? (hasLeftBody && hasRightBody) : hasRightBody;
-
     if (this.isDualPage) {
-      const currStart = (this.currentPage && this.currentPage % 2 === 0) ? this.currentPage - 1 : (this.currentPage || 1);
-      const targetStart = (pageNum % 2 === 0) ? pageNum - 1 : pageNum;
-      if (isSpreadProperlyRendered && this.currentPage && currStart === targetStart) {
-        this.currentPage = pageNum;
-        this.onPageChanged();
-        return;
+      if (this.currentPage === 1 && pageNum === 1) return;
+      if (this.currentPage === this.totalPages && pageNum === this.totalPages) return;
+      if (this.currentPage >= 2 && this.currentPage < this.totalPages && pageNum >= 2 && pageNum < this.totalPages) {
+        const currL = (this.currentPage % 2 === 0) ? this.currentPage : this.currentPage - 1;
+        const targetL = (pageNum % 2 === 0) ? pageNum : pageNum - 1;
+        if (currL === targetL) {
+          this.currentPage = pageNum;
+          this.onPageChanged();
+          return;
+        }
       }
-      if (isSpreadProperlyRendered && playSound && !this.isAnimating) {
-        const dir = (targetStart > currStart) ? 'forward' : 'backward';
-        this.flip3D(dir, targetStart);
+      if (playSound && !this.isAnimating) {
+        const dir = (pageNum > (this.currentPage || 1)) ? 'forward' : 'backward';
+        this.flip3D(dir, pageNum);
         return;
       }
     } else {
-      if (isSpreadProperlyRendered && pageNum === this.currentPage) return;
-      if (isSpreadProperlyRendered && playSound && !this.isAnimating) {
+      if (pageNum === this.currentPage) return;
+      if (playSound && !this.isAnimating) {
         const dir = (pageNum > (this.currentPage || 1)) ? 'forward' : 'backward';
         this.flip3D(dir, pageNum);
         return;
@@ -425,19 +483,43 @@ class BookEngine {
 
     this.currentPage = pageNum;
     this.render();
-    this.onPageChanged();
   }
 
   render() {
     if (!this.pages || !this.pages.length) return;
+    this.updateSpreadLayoutClasses();
 
     if (this.isDualPage) {
-      const spreadStart = (this.currentPage && this.currentPage % 2 === 0) ? this.currentPage - 1 : (this.currentPage || 1);
-      this.renderSpread(spreadStart, spreadStart + 1);
+      if (this.currentPage === 1) {
+        // Closed Front Cover: page 1 on right container, left container hidden
+        if (this.rightPageEl) {
+          this.renderSinglePageContent(this.rightPageEl, this.pages[0], 1);
+        }
+        if (this.leftPageEl) {
+          this.clearPage(this.leftPageEl);
+        }
+      } else if (this.currentPage === this.totalPages) {
+        // Closed Back Cover: last page on left container, right container hidden
+        if (this.leftPageEl) {
+          this.renderSinglePageContent(this.leftPageEl, this.pages[this.totalPages - 1], this.totalPages);
+        }
+        if (this.rightPageEl) {
+          this.clearPage(this.rightPageEl);
+        }
+      } else {
+        // Open two-page spread [leftNum, rightNum]
+        const leftNum = (this.currentPage % 2 === 0) ? this.currentPage : this.currentPage - 1;
+        const rightNum = leftNum + 1;
+        this.renderSpread(leftNum, rightNum);
+      }
     } else {
+      // Single Page Mode
       const activeNum = this.currentPage || 1;
       if (this.rightPageEl && this.pages[activeNum - 1]) {
         this.renderSinglePageContent(this.rightPageEl, this.pages[activeNum - 1], activeNum);
+      }
+      if (this.leftPageEl) {
+        this.clearPage(this.leftPageEl);
       }
     }
     this.onPageChanged();
@@ -471,20 +553,32 @@ class BookEngine {
       if (b2) b2.scrollTop = 0;
     }
 
-    // Update Slider and Counter
+    // Update Slider
     if (this.slider) {
       this.slider.value = this.currentPage;
     }
+
+    // Update Counter badge
     if (this.counter) {
+      const isEn = document.documentElement.lang === 'en';
       if (this.isDualPage) {
-        const spreadStart = (this.currentPage % 2 === 0) ? this.currentPage - 1 : this.currentPage;
-        if (spreadStart < this.totalPages) {
-          this.counter.textContent = `Page ${spreadStart}-${spreadStart + 1} of ${this.totalPages}`;
+        if (this.currentPage === 1) {
+          this.counter.textContent = isEn ? `Front Cover • Page 1 of ${this.totalPages}` : `मुखपृष्ठ • Cover (पृष्ठ १ / ${this.totalPages})`;
+        } else if (this.currentPage === this.totalPages) {
+          this.counter.textContent = isEn ? `Back Cover • Page ${this.totalPages} of ${this.totalPages}` : `समापन • Back Cover (पृष्ठ ${this.totalPages} / ${this.totalPages})`;
         } else {
-          this.counter.textContent = `Page ${spreadStart} of ${this.totalPages}`;
+          const leftNum = (this.currentPage % 2 === 0) ? this.currentPage : this.currentPage - 1;
+          const rightNum = leftNum + 1;
+          this.counter.textContent = isEn ? `Pages ${leftNum}–${rightNum} of ${this.totalPages}` : `पृष्ठ ${leftNum}–${rightNum} / ${this.totalPages}`;
         }
       } else {
-        this.counter.textContent = `Page ${this.currentPage} of ${this.totalPages}`;
+        if (this.currentPage === 1) {
+          this.counter.textContent = isEn ? `Front Cover • Page 1 of ${this.totalPages}` : `मुखपृष्ठ • Cover (पृष्ठ १ / ${this.totalPages})`;
+        } else if (this.currentPage === this.totalPages) {
+          this.counter.textContent = isEn ? `Back Cover • Page ${this.totalPages} of ${this.totalPages}` : `समापन • Back Cover (पृष्ठ ${this.totalPages} / ${this.totalPages})`;
+        } else {
+          this.counter.textContent = isEn ? `Page ${this.currentPage} of ${this.totalPages}` : `पृष्ठ ${this.currentPage} / ${this.totalPages}`;
+        }
       }
     }
 
@@ -495,12 +589,15 @@ class BookEngine {
     }
 
     // Update Button Disabled States
-    if (this.prevBtn) {
-      this.prevBtn.disabled = this.currentPage <= 1;
-    }
-    if (this.nextBtn) {
-      this.nextBtn.disabled = this.currentPage >= this.totalPages;
-    }
+    const atStart = this.currentPage <= 1;
+    const atEnd = this.currentPage >= this.totalPages;
+    if (this.prevBtn) this.prevBtn.disabled = atStart;
+    if (this.nextBtn) this.nextBtn.disabled = atEnd;
+
+    const btnPrevBottom = document.getElementById('btn-prev-bottom');
+    if (btnPrevBottom) btnPrevBottom.disabled = atStart;
+    const btnNextBottom = document.getElementById('btn-next-bottom');
+    if (btnNextBottom) btnNextBottom.disabled = atEnd;
 
     // Update URL hash and localStorage
     try {
@@ -519,10 +616,12 @@ class BookEngine {
 
   getCurrentVisiblePages() {
     if (this.isDualPage) {
-      const spreadStart = (this.currentPage % 2 === 0) ? this.currentPage - 1 : this.currentPage;
-      const pages = [spreadStart];
-      if (spreadStart + 1 <= this.totalPages) {
-        pages.push(spreadStart + 1);
+      if (this.currentPage === 1) return [1];
+      if (this.currentPage === this.totalPages) return [this.totalPages];
+      const leftNum = (this.currentPage % 2 === 0) ? this.currentPage : this.currentPage - 1;
+      const pages = [leftNum];
+      if (leftNum + 1 <= this.totalPages) {
+        pages.push(leftNum + 1);
       }
       return pages;
     }
@@ -548,10 +647,17 @@ class BookEngine {
     const node = this.pages[pageNum - 1];
     if (!node) return '';
 
+    // Cover Pages (Front Cover = 1, Back Cover = totalPages) do NOT have running header/footer
+    if (pageNum === 1 || pageNum === this.totalPages) {
+      return `
+        <div class="page-body cover-page-wrapper">
+          ${node.innerHTML}
+        </div>
+      `;
+    }
+
     const chapterTitle = node.getAttribute('data-chapter') || 'Tantra Gyan';
     const pageHeaderTitle = node.getAttribute('data-title') || chapterTitle;
-    const isFirstPage = pageNum <= 1;
-    const isLastPage = pageNum >= this.totalPages;
     const footerTitle = document.documentElement.lang === 'en'
       ? 'Complete Vedic Astrology Compendium Simplified'
       : 'वैदिक ज्योतिष महाग्रंथ सरलीकृत';
@@ -581,10 +687,22 @@ class BookEngine {
   }
 
   checkAndRepairSpread() {
-    const hasLeftBody = !!(this.leftPageEl && this.leftPageEl.querySelector('.page-body'));
-    const hasRightBody = !!(this.rightPageEl && this.rightPageEl.querySelector('.page-body'));
-    if ((this.isDualPage && (!hasLeftBody || !hasRightBody)) || (!this.isDualPage && !hasRightBody)) {
-      this.render();
+    if (!this.pages || !this.pages.length) return;
+    if (this.isDualPage) {
+      if (this.currentPage === 1) {
+        const hasRight = !!(this.rightPageEl && this.rightPageEl.querySelector('.page-body'));
+        if (!hasRight) this.render();
+      } else if (this.currentPage === this.totalPages) {
+        const hasLeft = !!(this.leftPageEl && this.leftPageEl.querySelector('.page-body'));
+        if (!hasLeft) this.render();
+      } else {
+        const hasLeft = !!(this.leftPageEl && this.leftPageEl.querySelector('.page-body'));
+        const hasRight = !!(this.rightPageEl && this.rightPageEl.querySelector('.page-body'));
+        if (!hasLeft || !hasRight) this.render();
+      }
+    } else {
+      const hasRight = !!(this.rightPageEl && this.rightPageEl.querySelector('.page-body'));
+      if (!hasRight) this.render();
     }
   }
 
