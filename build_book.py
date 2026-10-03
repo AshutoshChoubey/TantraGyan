@@ -1102,11 +1102,8 @@ html_template = f"""<!DOCTYPE html>
         </div>
       </a>
 
-      <!-- Mobile Header Actions (Fullscreen & Gear Icon) -->
+      <!-- Mobile Header Actions (Gear Settings Icon) -->
       <div class="mobile-header-actions">
-        <button class="tool-btn mobile-action-btn mobile-fullscreen-btn" id="btn-fullscreen-mobile" title="Toggle Fullscreen" aria-label="Toggle Fullscreen">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
-        </button>
         <button class="tool-btn mobile-action-btn mobile-gear-btn" id="btn-settings-toggle" title="Settings & Options (सेटिंग्स और विकल्प)" aria-label="Open Settings">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;">
             <circle cx="12" cy="12" r="3"></circle>
@@ -1233,28 +1230,27 @@ html_template = f"""<!DOCTYPE html>
     </div>
   </main>
 
-  <!-- Bottom Reading Controller Bar -->
+  <!-- Bottom Reading Controller Bar (Exact 2-Line Mobile Layout) -->
   <nav class="bottom-reading-bar" aria-label="Book Navigation Bar">
-    <!-- Row 1 (Mobile): Page Slider across full width -->
-    <div class="bottom-slider-area">
+    <!-- Line 1: Slider spanning full width across top -->
+    <div class="bottom-slider-row">
       <input type="range" id="page-slider" class="page-slider" min="1" max="{total_pages}" value="1" aria-label="Page Position">
     </div>
 
-    <!-- Row 2 (Mobile): Page Counter Badge directly below slider -->
-    <div class="bottom-counter-area">
-      <span class="page-counter-badge" id="page-counter-badge">मुखपृष्ठ • Cover (पृष्ठ १ / {total_pages})</span>
-    </div>
-
-    <!-- Row 3 (Mobile): Navigation Buttons -->
-    <div class="bottom-nav-area">
+    <!-- Line 2: Single combined controls row: [«][‹]  [Counter Badge]  [›][»] -->
+    <div class="bottom-controls-row">
       <div class="nav-group-left">
-        <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="First Page (Home)">« प्रारंभ</button>
-        <button class="tool-btn nav-step-btn" id="btn-prev-bottom" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="Previous Page">‹ पिछला</button>
+        <button class="tool-btn nav-edge-btn" id="btn-first-bottom" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="First Page (Home)" disabled>«<span class="nav-btn-text"> प्रारंभ</span></button>
+        <button class="tool-btn nav-step-btn" id="btn-prev-bottom" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="Previous Page" disabled>‹<span class="nav-btn-text"> पिछला</span></button>
+      </div>
+
+      <div class="bottom-counter-container">
+        <span class="page-counter-badge" id="page-counter-badge">मुखपृष्ठ • Cover (१ / {total_pages})</span>
       </div>
 
       <div class="nav-group-right">
-        <button class="tool-btn nav-step-btn" id="btn-next-bottom" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="Next Page">अगला ›</button>
-        <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage({total_pages}, true);" title="Last Page (End)">अंतिम »</button>
+        <button class="tool-btn nav-step-btn" id="btn-next-bottom" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="Next Page"><span class="nav-btn-text">अगला </span>›</button>
+        <button class="tool-btn nav-edge-btn" id="btn-last-bottom" onclick="if(window.bookEngine) window.bookEngine.goToPage({total_pages}, true);" title="Last Page (End)"><span class="nav-btn-text">अंतिम </span>»</button>
       </div>
     </div>
   </nav>
@@ -1346,6 +1342,10 @@ html_template = f"""<!DOCTYPE html>
         <div class="settings-section">
           <div class="settings-section-title">पठन अनुभव (Appearance & Sound)</div>
           <div class="settings-grid">
+            <button class="settings-action-btn" id="settings-btn-fullscreen">
+              <span class="settings-btn-icon">⛶</span>
+              <span class="settings-btn-label">फुलस्क्रीन: <strong id="settings-fs-label">चालू करें</strong></span>
+            </button>
             <button class="settings-action-btn" id="settings-btn-theme">
               <span class="settings-btn-icon">📜</span>
               <span class="settings-btn-label">थीम: <strong id="settings-theme-label">भोजपत्र</strong></span>

@@ -2383,8 +2383,8 @@ def render_edition_html(pages_list, edition_lang='hindi'):
     spread_label = "दो पृष्ठ" if is_hindi else "Two Pages"
     
     btn_first_title = "प्रारंभ" if is_hindi else "First"
-    btn_prev_title = "‹ पिछला" if is_hindi else "‹ Prev"
-    btn_next_title = "अगला ›" if is_hindi else "Next ›"
+    btn_prev_title = "पिछला" if is_hindi else "Prev"
+    btn_next_title = "अगला" if is_hindi else "Next"
     btn_last_title = "अंतिम" if is_hindi else "Last"
 
     total_pages = len(pages_list)
@@ -2436,7 +2436,7 @@ def render_edition_html(pages_list, edition_lang='hindi'):
     en_btn_cls = "lang-btn active" if not is_hindi else "lang-btn"
     hi_opt_cls = "settings-opt-btn active" if is_hindi else "settings-opt-btn"
     en_opt_cls = "settings-opt-btn active" if not is_hindi else "settings-opt-btn"
-    page_counter_initial = f"मुखपृष्ठ • Cover (पृष्ठ १ / {total_pages})" if is_hindi else f"Front Cover • Page 1 of {total_pages}"
+    page_counter_initial = f"मुखपृष्ठ • Cover (१ / {total_pages})" if is_hindi else f"Cover • 1 / {total_pages}"
 
     settings_title = "सेटिंग्स और विकल्प (Settings)" if is_hindi else "Settings & Options (सेटिंग्स)"
     settings_nav_title = "नेविगेशन और अध्ययन (Navigation & Study)" if is_hindi else "Navigation & Reading"
@@ -2444,6 +2444,7 @@ def render_edition_html(pages_list, edition_lang='hindi'):
     settings_bm_btn = f"बुकमार्क ({bookmark_label})" if is_hindi else "Bookmarks"
     settings_lang_title = "भाषा चयन (Language Mode)" if is_hindi else "Language Mode"
     settings_appear_title = "पठन अनुभव (Appearance & Sound)" if is_hindi else "Appearance & Sound"
+    settings_fs_btn = "फुलस्क्रीन: <strong id='settings-fs-label'>चालू करें</strong>" if is_hindi else "Fullscreen: <strong id='settings-fs-label'>Toggle</strong>"
     settings_theme_btn = f"थीम: <strong id='settings-theme-label'>{theme_label}</strong>" if is_hindi else f"Theme: <strong id='settings-theme-label'>{theme_label}</strong>"
     settings_layout_btn = f"दृश्य: <strong id='settings-layout-label'>{spread_label}</strong>" if is_hindi else f"View: <strong id='settings-layout-label'>{spread_label}</strong>"
     settings_sound_btn = "ध्वनि: <strong id='settings-sound-label'>चालू</strong>" if is_hindi else "Sound: <strong id='settings-sound-label'>On</strong>"
@@ -2494,11 +2495,8 @@ def render_edition_html(pages_list, edition_lang='hindi'):
         </div>
       </a>
 
-      <!-- Mobile Header Actions (Fullscreen & Gear Icon) -->
+      <!-- Mobile Header Actions (Gear Settings Icon) -->
       <div class="mobile-header-actions">
-        <button class="tool-btn mobile-action-btn mobile-fullscreen-btn" id="btn-fullscreen-mobile" title="Toggle Fullscreen" aria-label="Toggle Fullscreen">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
-        </button>
         <button class="tool-btn mobile-action-btn mobile-gear-btn" id="btn-settings-toggle" title="Settings & Options (सेटिंग्स और विकल्प)" aria-label="Open Settings">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;">
             <circle cx="12" cy="12" r="3"></circle>
@@ -2625,28 +2623,27 @@ def render_edition_html(pages_list, edition_lang='hindi'):
     </div>
   </main>
 
-  <!-- Bottom Reading Controller Bar -->
+  <!-- Bottom Reading Controller Bar (Exact 2-Line Mobile Layout) -->
   <nav class="bottom-reading-bar" aria-label="Book Navigation Bar">
-    <!-- Row 1 (Mobile): Page Slider across full width -->
-    <div class="bottom-slider-area">
+    <!-- Line 1: Slider spanning full width across top -->
+    <div class="bottom-slider-row">
       <input type="range" id="page-slider" class="page-slider" min="1" max="{total_pages}" value="1" aria-label="Page Position">
     </div>
 
-    <!-- Row 2 (Mobile): Page Counter Badge directly below slider -->
-    <div class="bottom-counter-area">
-      <span class="page-counter-badge" id="page-counter-badge">{page_counter_initial}</span>
-    </div>
-
-    <!-- Row 3 (Mobile): Navigation Buttons -->
-    <div class="bottom-nav-area">
+    <!-- Line 2: Single combined controls row: [«][‹]  [Counter Badge]  [›][»] -->
+    <div class="bottom-controls-row">
       <div class="nav-group-left">
-        <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="First Page">« {btn_first_title}</button>
-        <button class="tool-btn nav-step-btn" id="btn-prev-bottom" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="Previous Page">{btn_prev_title}</button>
+        <button class="tool-btn nav-edge-btn" id="btn-first-bottom" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="First Page" disabled>«<span class="nav-btn-text"> {btn_first_title}</span></button>
+        <button class="tool-btn nav-step-btn" id="btn-prev-bottom" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="Previous Page" disabled>‹<span class="nav-btn-text"> {btn_prev_title}</span></button>
+      </div>
+
+      <div class="bottom-counter-container">
+        <span class="page-counter-badge" id="page-counter-badge">{page_counter_initial}</span>
       </div>
 
       <div class="nav-group-right">
-        <button class="tool-btn nav-step-btn" id="btn-next-bottom" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="Next Page">{btn_next_title}</button>
-        <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage({total_pages}, true);" title="Last Page">{btn_last_title} »</button>
+        <button class="tool-btn nav-step-btn" id="btn-next-bottom" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="Next Page"><span class="nav-btn-text">{btn_next_title} </span>›</button>
+        <button class="tool-btn nav-edge-btn" id="btn-last-bottom" onclick="if(window.bookEngine) window.bookEngine.goToPage({total_pages}, true);" title="Last Page"><span class="nav-btn-text">{btn_last_title} </span>»</button>
       </div>
     </div>
   </nav>
@@ -2736,6 +2733,10 @@ def render_edition_html(pages_list, edition_lang='hindi'):
         <div class="settings-section">
           <div class="settings-section-title">{settings_appear_title}</div>
           <div class="settings-grid">
+            <button class="settings-action-btn" id="settings-btn-fullscreen">
+              <span class="settings-btn-icon">⛶</span>
+              <span class="settings-btn-label">{settings_fs_btn}</span>
+            </button>
             <button class="settings-action-btn" id="settings-btn-theme">
               <span class="settings-btn-icon">📜</span>
               <span class="settings-btn-label">{settings_theme_btn}</span>

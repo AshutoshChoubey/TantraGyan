@@ -807,8 +807,8 @@ class BookUIController {
       });
     }
 
-    // Fullscreen Toggle for Desktop & Mobile
-    const fullscreenBtns = document.querySelectorAll('#btn-fullscreen, #btn-fullscreen-mobile, .mobile-fullscreen-btn');
+    // Fullscreen Toggle for Desktop Toolbar
+    const fullscreenBtns = document.querySelectorAll('#btn-fullscreen');
     const updateFsIcons = (isFs) => {
       const icon = isFs
         ? '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14h6m0 0v6m0-6L3 21m17-7h-6m0 0v6m0-6l7 7M10 4v6m0 0H4m6 0L3 3m10 7h6m-6 0V4m0 6l7-7"/></svg>'
@@ -849,6 +849,7 @@ class BookUIController {
       document.addEventListener(evt, () => {
         const isFs = !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
         updateFsIcons(isFs);
+        this.syncSettingsDrawerLabels();
       });
     });
   }
@@ -980,6 +981,34 @@ class BookUIController {
         });
       }
 
+      // Quick Action: Fullscreen inside Settings Modal
+      const settingsFsBtn = document.getElementById('settings-btn-fullscreen');
+      if (settingsFsBtn) {
+        settingsFsBtn.addEventListener('click', () => {
+          const docEl = document.documentElement;
+          const isFs = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+          
+          if (!isFs) {
+            if (docEl.requestFullscreen) {
+              docEl.requestFullscreen().catch(err => {
+                this.showToast('ℹ️ इस डिवाइस/ब्राउज़र में वेब फुलस्क्रीन समर्थित नहीं है।');
+              });
+            } else if (docEl.webkitRequestFullscreen) {
+              docEl.webkitRequestFullscreen();
+            } else {
+              this.showToast('ℹ️ iPhone Safari वेब फुलस्क्रीन समर्थित नहीं करता। पूर्ण स्क्रीन अनुभव हेतु Share → "Add to Home Screen" करें।', 4000);
+            }
+          } else {
+            if (document.exitFullscreen) {
+              document.exitFullscreen().catch(err => console.warn(err));
+            } else if (document.webkitExitFullscreen) {
+              document.webkitExitFullscreen();
+            }
+          }
+          this.syncSettingsDrawerLabels();
+        });
+      }
+
       // Quick Action: Font Zoom
       const settingsFontDec = document.getElementById('settings-font-dec');
       const settingsFontInc = document.getElementById('settings-font-inc');
@@ -1033,6 +1062,13 @@ class BookUIController {
     const soundLabel = document.getElementById('settings-sound-label');
     if (soundLabel && window.bookSound) {
       soundLabel.textContent = window.bookSound.isMuted ? 'म्यूट (Off)' : 'चालू (On)';
+    }
+
+    // Sync Fullscreen Label
+    const fsLabel = document.getElementById('settings-fs-label');
+    if (fsLabel) {
+      const isFs = !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+      fsLabel.textContent = isFs ? 'बंद करें (Exit)' : 'चालू करें (Enter)';
     }
 
     // Sync Bookmark Badge

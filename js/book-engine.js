@@ -558,26 +558,26 @@ class BookEngine {
       this.slider.value = this.currentPage;
     }
 
-    // Update Counter badge
+    // Update Counter badge (Compact font/text so it fits beside buttons on a single line)
     if (this.counter) {
       const isEn = document.documentElement.lang === 'en';
       if (this.isDualPage) {
         if (this.currentPage === 1) {
-          this.counter.textContent = isEn ? `Front Cover • Page 1 of ${this.totalPages}` : `मुखपृष्ठ • Cover (पृष्ठ १ / ${this.totalPages})`;
-        } else if (this.currentPage === this.totalPages) {
-          this.counter.textContent = isEn ? `Back Cover • Page ${this.totalPages} of ${this.totalPages}` : `समापन • Back Cover (पृष्ठ ${this.totalPages} / ${this.totalPages})`;
+          this.counter.textContent = isEn ? `Cover • 1 / ${this.totalPages}` : `मुखपृष्ठ • Cover (१ / ${this.totalPages})`;
+        } else if (this.currentPage >= this.totalPages) {
+          this.counter.textContent = isEn ? `Back Cover • ${this.totalPages} / ${this.totalPages}` : `समापन • Back (${this.totalPages} / ${this.totalPages})`;
         } else {
           const leftNum = (this.currentPage % 2 === 0) ? this.currentPage : this.currentPage - 1;
-          const rightNum = leftNum + 1;
-          this.counter.textContent = isEn ? `Pages ${leftNum}–${rightNum} of ${this.totalPages}` : `पृष्ठ ${leftNum}–${rightNum} / ${this.totalPages}`;
+          const rightNum = Math.min(leftNum + 1, this.totalPages);
+          this.counter.textContent = isEn ? `Pages ${leftNum}–${rightNum} / ${this.totalPages}` : `पृष्ठ ${leftNum}–${rightNum} / ${this.totalPages}`;
         }
       } else {
         if (this.currentPage === 1) {
-          this.counter.textContent = isEn ? `Front Cover • Page 1 of ${this.totalPages}` : `मुखपृष्ठ • Cover (पृष्ठ १ / ${this.totalPages})`;
-        } else if (this.currentPage === this.totalPages) {
-          this.counter.textContent = isEn ? `Back Cover • Page ${this.totalPages} of ${this.totalPages}` : `समापन • Back Cover (पृष्ठ ${this.totalPages} / ${this.totalPages})`;
+          this.counter.textContent = isEn ? `Cover • 1 / ${this.totalPages}` : `मुखपृष्ठ • Cover (१ / ${this.totalPages})`;
+        } else if (this.currentPage >= this.totalPages) {
+          this.counter.textContent = isEn ? `Back Cover • ${this.totalPages} / ${this.totalPages}` : `समापन • Back (${this.totalPages} / ${this.totalPages})`;
         } else {
-          this.counter.textContent = isEn ? `Page ${this.currentPage} of ${this.totalPages}` : `पृष्ठ ${this.currentPage} / ${this.totalPages}`;
+          this.counter.textContent = isEn ? `Page ${this.currentPage} / ${this.totalPages}` : `पृष्ठ ${this.currentPage} / ${this.totalPages}`;
         }
       }
     }
@@ -588,16 +588,20 @@ class BookEngine {
       this.progressFill.style.width = `${pct}%`;
     }
 
-    // Update Button Disabled States
+    // Update Button Disabled States (All 4 Bottom Navigation Buttons)
     const atStart = this.currentPage <= 1;
     const atEnd = this.currentPage >= this.totalPages;
     if (this.prevBtn) this.prevBtn.disabled = atStart;
     if (this.nextBtn) this.nextBtn.disabled = atEnd;
 
+    const btnFirstBottom = document.getElementById('btn-first-bottom');
+    if (btnFirstBottom) btnFirstBottom.disabled = atStart;
     const btnPrevBottom = document.getElementById('btn-prev-bottom');
     if (btnPrevBottom) btnPrevBottom.disabled = atStart;
     const btnNextBottom = document.getElementById('btn-next-bottom');
     if (btnNextBottom) btnNextBottom.disabled = atEnd;
+    const btnLastBottom = document.getElementById('btn-last-bottom');
+    if (btnLastBottom) btnLastBottom.disabled = atEnd;
 
     // Update URL hash and localStorage
     try {
