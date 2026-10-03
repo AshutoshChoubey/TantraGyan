@@ -208,6 +208,78 @@ class BookSoundEngine {
     }
   }
 
+  /**
+   * Generates a deep, rich physical hardcover book opening sound
+   */
+  playBookOpen() {
+    if (this.isMuted) return;
+    this.init();
+    if (!this.audioCtx) return;
+
+    try {
+      const now = this.audioCtx.currentTime;
+      const duration = 0.65;
+      
+      // Resonant leather/spine opening sweep
+      const osc = this.audioCtx.createOscillator();
+      const oscGain = this.audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(50, now);
+      osc.frequency.exponentialRampToValueAtTime(115, now + 0.22);
+      osc.frequency.exponentialRampToValueAtTime(42, now + duration);
+
+      oscGain.gain.setValueAtTime(0.001, now);
+      oscGain.gain.linearRampToValueAtTime(this.volume * 0.42, now + 0.12);
+      oscGain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+
+      osc.connect(oscGain);
+      oscGain.connect(this.audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + duration);
+
+      // Organic paper rustle layer
+      this.playPageTurn('next');
+    } catch (e) {
+      console.warn('Audio open error:', e);
+    }
+  }
+
+  /**
+   * Generates a deep, satisfying hardcover book closing thud and snap
+   */
+  playBookClose() {
+    if (this.isMuted) return;
+    this.init();
+    if (!this.audioCtx) return;
+
+    try {
+      const now = this.audioCtx.currentTime;
+      const duration = 0.65;
+      
+      // Initial swing paper whoosh
+      this.playPageTurn('prev');
+
+      // Heavy settling impact at close (around 460ms into the 650ms animation)
+      const impactTime = now + 0.46;
+      const thudOsc = this.audioCtx.createOscillator();
+      const thudGain = this.audioCtx.createGain();
+      thudOsc.type = 'triangle';
+      thudOsc.frequency.setValueAtTime(90, impactTime);
+      thudOsc.frequency.exponentialRampToValueAtTime(35, impactTime + 0.18);
+
+      thudGain.gain.setValueAtTime(0.001, impactTime);
+      thudGain.gain.linearRampToValueAtTime(this.volume * 0.65, impactTime + 0.02);
+      thudGain.gain.exponentialRampToValueAtTime(0.001, impactTime + 0.18);
+
+      thudOsc.connect(thudGain);
+      thudGain.connect(this.audioCtx.destination);
+      thudOsc.start(impactTime);
+      thudOsc.stop(impactTime + 0.18);
+    } catch (e) {
+      console.warn('Audio close error:', e);
+    }
+  }
+
   toggleMute() {
     this.isMuted = !this.isMuted;
     try {

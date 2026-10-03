@@ -279,11 +279,6 @@ class BookEngine {
     if (this.isAnimating) return;
     this.isAnimating = true;
 
-    // Trigger procedural audio instantly at the exact start of the turn
-    if (window.bookSound) {
-      window.bookSound.playPageTurn(direction === 'forward' ? 'next' : 'prev');
-    }
-
     const wrapper = document.querySelector('.book-pages-wrapper');
     if (!wrapper) {
       this.currentPage = targetPage;
@@ -296,23 +291,445 @@ class BookEngine {
     wrapper.querySelectorAll('.book-flipper-leaf, .flipper-under-shadow').forEach(el => el.remove());
 
     if (this.isDualPage) {
-      // If entering or leaving a cover state (page 1 or totalPages), render smoothly with state switch
-      const isEnteringCover = (targetPage === 1 || targetPage === this.totalPages);
-      const isLeavingCover = (this.currentPage === 1 || this.currentPage === this.totalPages);
-
-      if (isEnteringCover || isLeavingCover) {
-        this.currentPage = targetPage;
-        this.render();
-        setTimeout(() => {
-          this.isAnimating = false;
-        }, 320);
+      // 1. Opening Book from Front Cover (Page 1 -> Spread 2-3)
+      if (this.currentPage === 1 && direction === 'forward') {
+        this.performBookOpen(targetPage, wrapper);
         return;
       }
 
+      // 2. Closing Book to Front Cover (Spread 2-3 -> Page 1)
+      if (targetPage === 1 && direction === 'backward') {
+        this.performBookCloseFront(wrapper);
+        return;
+      }
+
+      // 3. Closing Book to Back Cover (Spread -> Page 88)
+      if (targetPage >= this.totalPages && direction === 'forward') {
+        this.performBookCloseBack(wrapper);
+        return;
+      }
+
+      // 4. Re-opening Book from Back Cover (Page 88 -> Spread)
+      if (this.currentPage >= this.totalPages && direction === 'backward') {
+        this.performBookOpenBack(targetPage, wrapper);
+        return;
+      }
+
+      // Standard interior dual-page flip
+      if (window.bookSound) {
+        window.bookSound.playPageTurn(direction === 'forward' ? 'next' : 'prev');
+      }
       this.performDualPageFlip(direction, targetPage, wrapper);
     } else {
+      // Single Page Mode (Mobile / Tablet)
+      // 1. Opening Book from Front Cover (Page 1 -> Page 2)
+      if (this.currentPage === 1 && direction === 'forward') {
+        this.performSingleCoverOpen(targetPage, wrapper);
+        return;
+      }
+
+      // 2. Closing Book to Front Cover (Page 2 -> Page 1)
+      if (targetPage === 1 && direction === 'backward') {
+        this.performSingleCoverClose(wrapper);
+        return;
+      }
+
+      // 3. Closing Book to Back Cover (Page 87 -> Page 88)
+      if (targetPage >= this.totalPages && direction === 'forward') {
+        this.performSingleCoverCloseBack(wrapper);
+        return;
+      }
+
+      // 4. Reopening Book from Back Cover (Page 88 -> Page 87)
+      if (this.currentPage >= this.totalPages && direction === 'backward') {
+        this.performSingleCoverOpenBack(targetPage, wrapper);
+        return;
+      }
+
+      // Standard single page flip
+      if (window.bookSound) {
+        window.bookSound.playPageTurn(direction === 'forward' ? 'next' : 'prev');
+      }
       this.performSinglePageFlip(direction, targetPage, wrapper);
     }
+  }
+
+  /**
+   * Real 3D physical hardcover book opening (Front Cover -> Inside Spread)
+   */
+  performBookOpen(targetPage, wrapper) {
+    const bookContainer = document.querySelector('.book-container');
+    if (window.bookSound && window.bookSound.playBookOpen) {
+      window.bookSound.playBookOpen();
+    } else if (window.bookSound) {
+      window.bookSound.playPageTurn('next');
+    }
+
+    // Step 1: Pre-render inside spread underneath
+    if (bookContainer) {
+      bookContainer.classList.remove('cover-closed-front', 'cover-closed-back');
+      bookContainer.classList.add('dual-page-layout');
+    }
+
+    if (this.leftPageEl) {
+      this.renderSinglePageContent(this.leftPageEl, this.pages[1], 2);
+    }
+    if (this.rightPageEl) {
+      this.renderSinglePageContent(this.rightPageEl, this.pages[2], 3);
+    }
+
+    // Step 2: 3D Heavy Cover Leaf (swings from 0deg on right to -180deg on left)
+    const flipper = document.createElement('div');
+    flipper.className = 'book-flipper-leaf book-cover-flipper book-open-forward';
+    flipper.innerHTML = `
+      <div class="flipper-face flipper-face-front page-sheet right-page">
+        ${this.getPageHTML(1)}
+        <div class="flipper-lighting-layer"></div>
+      </div>
+      <div class="flipper-face flipper-face-back page-sheet left-page">
+        ${this.getPageHTML(2)}
+        <div class="flipper-lighting-layer"></div>
+      </div>
+    `;
+
+    const shadow = document.createElement('div');
+    shadow.className = 'flipper-under-shadow book-open-shadow';
+
+    wrapper.appendChild(shadow);
+    wrapper.appendChild(flipper);
+
+    setTimeout(() => {
+      flipper.remove();
+      shadow.remove();
+      this.currentPage = targetPage;
+      this.render();
+      this.onPageChanged();
+      this.isAnimating = false;
+    }, 650);
+  }
+
+  /**
+   * Real 3D physical hardcover book closing (Inside Spread -> Front Cover)
+   */
+  performBookCloseFront(wrapper) {
+    const bookContainer = document.querySelector('.book-container');
+    if (window.bookSound && window.bookSound.playBookClose) {
+      window.bookSound.playBookClose();
+    } else if (window.bookSound) {
+      window.bookSound.playPageTurn('prev');
+    }
+
+    if (bookContainer) {
+      bookContainer.classList.add('book-animating-close-front');
+    }
+
+    if (this.rightPageEl) {
+      this.renderSinglePageContent(this.rightPageEl, this.pages[0], 1);
+    }
+
+    // 3D Cover Leaf swings from -180deg on left to 0deg on right
+    const flipper = document.createElement('div');
+    flipper.className = 'book-flipper-leaf book-cover-flipper book-close-backward';
+    flipper.innerHTML = `
+      <div class="flipper-face flipper-face-front page-sheet left-page">
+        ${this.getPageHTML(2)}
+        <div class="flipper-lighting-layer"></div>
+      </div>
+      <div class="flipper-face flipper-face-back page-sheet right-page">
+        ${this.getPageHTML(1)}
+        <div class="flipper-lighting-layer"></div>
+      </div>
+    `;
+
+    const shadow = document.createElement('div');
+    shadow.className = 'flipper-under-shadow book-close-shadow';
+
+    wrapper.appendChild(shadow);
+    wrapper.appendChild(flipper);
+
+    setTimeout(() => {
+      if (bookContainer) {
+        bookContainer.classList.remove('dual-page-layout');
+        bookContainer.classList.add('cover-closed-front');
+      }
+    }, 320);
+
+    setTimeout(() => {
+      flipper.remove();
+      shadow.remove();
+      if (bookContainer) {
+        bookContainer.classList.remove('book-animating-close-front');
+      }
+      this.currentPage = 1;
+      this.render();
+      this.onPageChanged();
+      this.isAnimating = false;
+    }, 650);
+  }
+
+  /**
+   * Real 3D physical book closing to Back Cover
+   */
+  performBookCloseBack(wrapper) {
+    const bookContainer = document.querySelector('.book-container');
+    if (window.bookSound && window.bookSound.playBookClose) {
+      window.bookSound.playBookClose();
+    } else if (window.bookSound) {
+      window.bookSound.playPageTurn('next');
+    }
+
+    if (bookContainer) {
+      bookContainer.classList.add('book-animating-close-back');
+    }
+
+    if (this.leftPageEl) {
+      this.renderSinglePageContent(this.leftPageEl, this.pages[this.totalPages - 1], this.totalPages);
+    }
+
+    const flipper = document.createElement('div');
+    flipper.className = 'book-flipper-leaf book-cover-flipper book-close-forward';
+    flipper.innerHTML = `
+      <div class="flipper-face flipper-face-front page-sheet right-page">
+        ${this.getPageHTML(this.totalPages - 1)}
+        <div class="flipper-lighting-layer"></div>
+      </div>
+      <div class="flipper-face flipper-face-back page-sheet left-page">
+        ${this.getPageHTML(this.totalPages)}
+        <div class="flipper-lighting-layer"></div>
+      </div>
+    `;
+
+    const shadow = document.createElement('div');
+    shadow.className = 'flipper-under-shadow book-open-shadow';
+
+    wrapper.appendChild(shadow);
+    wrapper.appendChild(flipper);
+
+    setTimeout(() => {
+      if (bookContainer) {
+        bookContainer.classList.remove('dual-page-layout');
+        bookContainer.classList.add('cover-closed-back');
+      }
+    }, 320);
+
+    setTimeout(() => {
+      flipper.remove();
+      shadow.remove();
+      if (bookContainer) {
+        bookContainer.classList.remove('book-animating-close-back');
+      }
+      this.currentPage = this.totalPages;
+      this.render();
+      this.onPageChanged();
+      this.isAnimating = false;
+    }, 650);
+  }
+
+  /**
+   * Real 3D physical book reopening from Back Cover
+   */
+  performBookOpenBack(targetPage, wrapper) {
+    const bookContainer = document.querySelector('.book-container');
+    if (window.bookSound && window.bookSound.playBookOpen) {
+      window.bookSound.playBookOpen();
+    } else if (window.bookSound) {
+      window.bookSound.playPageTurn('prev');
+    }
+
+    if (bookContainer) {
+      bookContainer.classList.remove('cover-closed-front', 'cover-closed-back');
+      bookContainer.classList.add('dual-page-layout');
+    }
+
+    const targetL = this.totalPages - 2;
+    const targetR = this.totalPages - 1;
+
+    if (this.leftPageEl) {
+      this.renderSinglePageContent(this.leftPageEl, this.pages[targetL - 1], targetL);
+    }
+    if (this.rightPageEl) {
+      this.renderSinglePageContent(this.rightPageEl, this.pages[targetR - 1], targetR);
+    }
+
+    const flipper = document.createElement('div');
+    flipper.className = 'book-flipper-leaf book-cover-flipper book-open-backward';
+    flipper.innerHTML = `
+      <div class="flipper-face flipper-face-front page-sheet left-page">
+        ${this.getPageHTML(this.totalPages)}
+        <div class="flipper-lighting-layer"></div>
+      </div>
+      <div class="flipper-face flipper-face-back page-sheet right-page">
+        ${this.getPageHTML(targetR)}
+        <div class="flipper-lighting-layer"></div>
+      </div>
+    `;
+
+    const shadow = document.createElement('div');
+    shadow.className = 'flipper-under-shadow book-close-shadow';
+
+    wrapper.appendChild(shadow);
+    wrapper.appendChild(flipper);
+
+    setTimeout(() => {
+      flipper.remove();
+      shadow.remove();
+      this.currentPage = targetPage;
+      this.render();
+      this.onPageChanged();
+      this.isAnimating = false;
+    }, 650);
+  }
+
+  /**
+   * Single-page (mobile) book cover opening animation
+   */
+  performSingleCoverOpen(targetPage, wrapper) {
+    if (window.bookSound && window.bookSound.playBookOpen) {
+      window.bookSound.playBookOpen();
+    } else if (window.bookSound) {
+      window.bookSound.playPageTurn('next');
+    }
+
+    if (this.rightPageEl) {
+      this.renderSinglePageContent(this.rightPageEl, this.pages[targetPage - 1], targetPage);
+    }
+
+    const flipper = document.createElement('div');
+    flipper.className = 'book-flipper-leaf single-cover-open';
+    flipper.innerHTML = `
+      <div class="flipper-face flipper-face-front page-sheet">
+        ${this.getPageHTML(1)}
+        <div class="flipper-lighting-layer"></div>
+      </div>
+      <div class="flipper-face flipper-face-back page-sheet">
+        <div class="page-sheet-back-parchment"></div>
+        <div class="flipper-lighting-layer"></div>
+      </div>
+    `;
+
+    wrapper.appendChild(flipper);
+
+    setTimeout(() => {
+      flipper.remove();
+      this.currentPage = targetPage;
+      this.render();
+      this.onPageChanged();
+      this.isAnimating = false;
+    }, 620);
+  }
+
+  /**
+   * Single-page (mobile) book cover closing animation
+   */
+  performSingleCoverClose(wrapper) {
+    if (window.bookSound && window.bookSound.playBookClose) {
+      window.bookSound.playBookClose();
+    } else if (window.bookSound) {
+      window.bookSound.playPageTurn('prev');
+    }
+
+    if (this.rightPageEl) {
+      this.renderSinglePageContent(this.rightPageEl, this.pages[0], 1);
+    }
+
+    const flipper = document.createElement('div');
+    flipper.className = 'book-flipper-leaf single-cover-close';
+    flipper.innerHTML = `
+      <div class="flipper-face flipper-face-front page-sheet">
+        ${this.getPageHTML(2)}
+        <div class="flipper-lighting-layer"></div>
+      </div>
+      <div class="flipper-face flipper-face-back page-sheet">
+        ${this.getPageHTML(1)}
+        <div class="flipper-lighting-layer"></div>
+      </div>
+    `;
+
+    wrapper.appendChild(flipper);
+
+    setTimeout(() => {
+      flipper.remove();
+      this.currentPage = 1;
+      this.render();
+      this.onPageChanged();
+      this.isAnimating = false;
+    }, 620);
+  }
+
+  /**
+   * Single-page (mobile) closing to Back Cover
+   */
+  performSingleCoverCloseBack(wrapper) {
+    if (window.bookSound && window.bookSound.playBookClose) {
+      window.bookSound.playBookClose();
+    } else if (window.bookSound) {
+      window.bookSound.playPageTurn('next');
+    }
+
+    if (this.rightPageEl) {
+      this.renderSinglePageContent(this.rightPageEl, this.pages[this.totalPages - 1], this.totalPages);
+    }
+
+    const flipper = document.createElement('div');
+    flipper.className = 'book-flipper-leaf single-cover-open';
+    flipper.innerHTML = `
+      <div class="flipper-face flipper-face-front page-sheet">
+        ${this.getPageHTML(this.totalPages - 1)}
+        <div class="flipper-lighting-layer"></div>
+      </div>
+      <div class="flipper-face flipper-face-back page-sheet">
+        ${this.getPageHTML(this.totalPages)}
+        <div class="flipper-lighting-layer"></div>
+      </div>
+    `;
+
+    wrapper.appendChild(flipper);
+
+    setTimeout(() => {
+      flipper.remove();
+      this.currentPage = this.totalPages;
+      this.render();
+      this.onPageChanged();
+      this.isAnimating = false;
+    }, 620);
+  }
+
+  /**
+   * Single-page (mobile) reopening from Back Cover
+   */
+  performSingleCoverOpenBack(targetPage, wrapper) {
+    if (window.bookSound && window.bookSound.playBookOpen) {
+      window.bookSound.playBookOpen();
+    } else if (window.bookSound) {
+      window.bookSound.playPageTurn('prev');
+    }
+
+    if (this.rightPageEl) {
+      this.renderSinglePageContent(this.rightPageEl, this.pages[targetPage - 1], targetPage);
+    }
+
+    const flipper = document.createElement('div');
+    flipper.className = 'book-flipper-leaf single-cover-close';
+    flipper.innerHTML = `
+      <div class="flipper-face flipper-face-front page-sheet">
+        ${this.getPageHTML(this.totalPages)}
+        <div class="flipper-lighting-layer"></div>
+      </div>
+      <div class="flipper-face flipper-face-back page-sheet">
+        ${this.getPageHTML(targetPage)}
+        <div class="flipper-lighting-layer"></div>
+      </div>
+    `;
+
+    wrapper.appendChild(flipper);
+
+    setTimeout(() => {
+      flipper.remove();
+      this.currentPage = targetPage;
+      this.render();
+      this.onPageChanged();
+      this.isAnimating = false;
+    }, 620);
   }
 
   performDualPageFlip(direction, targetPage, wrapper) {
