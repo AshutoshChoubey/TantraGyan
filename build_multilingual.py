@@ -2438,18 +2438,18 @@ def render_edition_html(pages_list, edition_lang='hindi'):
     en_opt_cls = "settings-opt-btn active" if not is_hindi else "settings-opt-btn"
     page_counter_initial = f"मुखपृष्ठ • Cover (१ / {total_pages})" if is_hindi else f"Cover • 1 / {total_pages}"
 
-    settings_title = "सेटिंग्स और विकल्प (Settings)" if is_hindi else "Settings & Options (सेटिंग्स)"
-    settings_nav_title = "नेविगेशन और अध्ययन (Navigation & Study)" if is_hindi else "Navigation & Reading"
-    settings_toc_btn = f"विषय-सूची ({toc_label})" if is_hindi else "Table of Contents"
-    settings_bm_btn = f"बुकमार्क ({bookmark_label})" if is_hindi else "Bookmarks"
-    settings_lang_title = "भाषा चयन (Language Mode)" if is_hindi else "Language Mode"
-    settings_appear_title = "पठन अनुभव (Appearance & Sound)" if is_hindi else "Appearance & Sound"
-    settings_fs_btn = "फुलस्क्रीन: <strong id='settings-fs-label'>चालू करें</strong>" if is_hindi else "Fullscreen: <strong id='settings-fs-label'>Toggle</strong>"
+    settings_title = "सेटिंग्स और विकल्प" if is_hindi else "Settings & Options"
+    settings_nav_title = "नेविगेशन और अध्ययन" if is_hindi else "Navigation & Reading"
+    settings_toc_btn = "विषय-सूची" if is_hindi else "Contents"
+    settings_bm_btn = "बुकमार्क" if is_hindi else "Bookmarks"
+    settings_lang_title = "भाषा चयन" if is_hindi else "Language Mode"
+    settings_appear_title = "पठन अनुभव" if is_hindi else "Appearance & Reading"
+    settings_fs_btn = "फुलस्क्रीन: <strong id='settings-fs-label'>चालू करें</strong>" if is_hindi else "Fullscreen: <strong id='settings-fs-label'>Enter</strong>"
     settings_theme_btn = f"थीम: <strong id='settings-theme-label'>{theme_label}</strong>" if is_hindi else f"Theme: <strong id='settings-theme-label'>{theme_label}</strong>"
     settings_layout_btn = f"दृश्य: <strong id='settings-layout-label'>{spread_label}</strong>" if is_hindi else f"View: <strong id='settings-layout-label'>{spread_label}</strong>"
     settings_sound_btn = "ध्वनि: <strong id='settings-sound-label'>चालू</strong>" if is_hindi else "Sound: <strong id='settings-sound-label'>On</strong>"
     settings_font_label = "🔤 फॉन्ट आकार:" if is_hindi else "🔤 Font Size:"
-    settings_links_title = "आधिकारिक संपर्क (Official Links)" if is_hindi else "Official Links"
+    settings_links_title = "आधिकारिक संपर्क" if is_hindi else "Official Links"
 
     html_code = f"""<!DOCTYPE html>
 <html lang="{doc_lang}" data-theme="parchment" data-lang-mode="{edition_lang}">
@@ -2544,21 +2544,16 @@ def render_edition_html(pages_list, edition_lang='hindi'):
         <span id="bookmark-count-badge" class="badge-count" style="display:none;">0</span>
       </button>
 
-      <!-- Official Website Link -->
-      <a href="https://t.worldgyan.com" target="_blank" rel="noopener" class="tool-btn website-header-btn" title="Website: t.worldgyan.com" style="color:var(--accent-gold); font-weight:700; border-color:rgba(200,157,61,0.4); text-decoration:none;">
-        <span style="font-size:0.95rem;">🌐</span> <span>t.worldgyan.com</span>
-      </a>
-
-      <!-- YouTube Channel Link -->
-      <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="tool-btn yt-header-btn" title="YouTube: @TantraGyan108" style="color:#ef4444; font-weight:700; border-color:rgba(239,68,68,0.4); text-decoration:none;">
-        <span style="font-size:0.95rem;">▶</span> <span>@TantraGyan108</span>
+      <!-- YouTube Channel Link (Sleek Compact Icon) -->
+      <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="tool-btn yt-header-btn" title="YouTube: @TantraGyan108" aria-label="YouTube Channel @TantraGyan108" style="padding:0.42rem 0.58rem; color:#ef4444; border-color:rgba(239,68,68,0.4); text-decoration:none;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#ef4444" style="vertical-align:middle; display:inline-block;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
       </a>
 
       <!-- Language Mode Switcher -->
       <div class="lang-switcher" title="Switch Reading Language">
-        <button class="{hi_btn_cls}" data-lang="hindi"><span class="lang-code-tag">HI</span> { 'हिंदी' if is_hindi else 'Hindi' }</button>
-        <button class="{en_btn_cls}" data-lang="english"><span class="lang-code-tag">EN</span> English</button>
-        <button class="lang-btn" data-lang="bilingual"><span class="lang-code-tag">ALL</span> { 'द्विभाषी' if is_hindi else 'Bilingual' }</button>
+        <button class="{hi_btn_cls}" data-lang="hindi">हिंदी</button>
+        <button class="{en_btn_cls}" data-lang="english">English</button>
+        <button class="lang-btn" data-lang="bilingual">{ 'द्विभाषी' if is_hindi else 'Bilingual' }</button>
       </div>
 
       <!-- Theme Switcher -->
@@ -2633,8 +2628,8 @@ def render_edition_html(pages_list, edition_lang='hindi'):
     <!-- Line 2: Single combined controls row: [«][‹]  [Counter Badge]  [›][»] -->
     <div class="bottom-controls-row">
       <div class="nav-group-left">
-        <button class="tool-btn nav-edge-btn" id="btn-first-bottom" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="First Page" disabled>«<span class="nav-btn-text"> {btn_first_title}</span></button>
-        <button class="tool-btn nav-step-btn" id="btn-prev-bottom" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="Previous Page" disabled>‹<span class="nav-btn-text"> {btn_prev_title}</span></button>
+        <button class="tool-btn nav-edge-btn" id="btn-first-bottom" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="{ 'प्रथम पृष्ठ' if is_hindi else 'First Page' }" disabled>«<span class="nav-btn-text"> {btn_first_title}</span></button>
+        <button class="tool-btn nav-step-btn" id="btn-prev-bottom" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="{ 'पिछला पृष्ठ' if is_hindi else 'Previous Page' }" disabled>‹<span class="nav-btn-text"> {btn_prev_title}</span></button>
       </div>
 
       <div class="bottom-counter-container">
@@ -2642,8 +2637,8 @@ def render_edition_html(pages_list, edition_lang='hindi'):
       </div>
 
       <div class="nav-group-right">
-        <button class="tool-btn nav-step-btn" id="btn-next-bottom" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="Next Page"><span class="nav-btn-text">{btn_next_title} </span>›</button>
-        <button class="tool-btn nav-edge-btn" id="btn-last-bottom" onclick="if(window.bookEngine) window.bookEngine.goToPage({total_pages}, true);" title="Last Page"><span class="nav-btn-text">{btn_last_title} </span>»</button>
+        <button class="tool-btn nav-step-btn" id="btn-next-bottom" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="{ 'अगला पृष्ठ' if is_hindi else 'Next Page' }"><span class="nav-btn-text">{btn_next_title} </span>›</button>
+        <button class="tool-btn nav-edge-btn" id="btn-last-bottom" onclick="if(window.bookEngine) window.bookEngine.goToPage({total_pages}, true);" title="{ 'अंतिम पृष्ठ' if is_hindi else 'Last Page' }"><span class="nav-btn-text">{btn_last_title} </span>»</button>
       </div>
     </div>
   </nav>
@@ -2723,9 +2718,9 @@ def render_edition_html(pages_list, edition_lang='hindi'):
         <div class="settings-section">
           <div class="settings-section-title">{settings_lang_title}</div>
           <div class="settings-lang-row">
-            <button class="{hi_opt_cls}" data-lang="hindi"><span class="lang-code-tag">HI</span> { 'हिंदी' if is_hindi else 'Hindi' }</button>
-            <button class="{en_opt_cls}" data-lang="english"><span class="lang-code-tag">EN</span> English</button>
-            <button class="settings-opt-btn" data-lang="bilingual"><span class="lang-code-tag">ALL</span> { 'द्विभाषी' if is_hindi else 'Bilingual' }</button>
+            <button class="{hi_opt_cls}" data-lang="hindi">हिंदी</button>
+            <button class="{en_opt_cls}" data-lang="english">English</button>
+            <button class="settings-opt-btn" data-lang="bilingual">{ 'द्विभाषी' if is_hindi else 'Bilingual' }</button>
           </div>
         </div>
 

@@ -104,7 +104,7 @@
         <span class="search-icon" aria-hidden="true">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </span>
-        <input type="text" id="book-search" class="search-input" placeholder="खोजें / Search (e.g. Moon, सूर्य)..." aria-label="Search Book" autocomplete="off">
+        <input type="text" id="book-search" class="search-input" placeholder="Search in Book / खोजें (e.g. Moon, सूर्य)..." aria-label="Search Book" autocomplete="off">
         <button type="button" id="search-clear-btn" class="search-clear-btn" title="Clear search" aria-label="Clear search" style="display:none;">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
@@ -114,7 +114,7 @@
       <!-- Live Search Results Dropdown -->
       <div id="search-dropdown" class="search-dropdown" style="display:none;" role="region" aria-label="Search Results">
         <div class="search-dropdown-header">
-          <span id="search-dropdown-title" class="search-dropdown-title">परिणाम (Search Results)</span>
+          <span id="search-dropdown-title" class="search-dropdown-title">Search Results (परिणाम)</span>
           <button type="button" id="search-dropdown-close" class="search-dropdown-close" title="Close" aria-label="Close search">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
           </button>
@@ -126,41 +126,36 @@
     <!-- Toolbar Controls (Desktop Only - Hidden on Mobile) -->
     <div class="toolbar-controls desktop-tools">
       <!-- TOC Toggle Button -->
-      <button class="tool-btn" id="btn-toc-toggle" title="Open Table of Contents (विषय-सूची)">
-        <span>📖</span> <span>विषय-सूची</span>
+      <button class="tool-btn" id="btn-toc-toggle" title="विषय-सूची (Table of Contents)">
+        <span>📖</span> <span>Contents</span>
       </button>
 
       <!-- Bookmark Button -->
-      <button class="tool-btn" id="btn-bookmark-toggle" title="Saved Bookmarks (सहेजे गए बुकमार्क)">
-        <span>🔖</span> <span id="bookmark-btn-label">बुकमार्क</span>
+      <button class="tool-btn" id="btn-bookmark-toggle" title="सहेजे गए बुकमार्क (Saved Bookmarks)">
+        <span>🔖</span> <span id="bookmark-btn-label">Bookmarks</span>
         <span id="bookmark-count-badge" class="badge-count" style="display:none;">0</span>
       </button>
 
-      <!-- Official Website Link -->
-      <a href="https://t.worldgyan.com" target="_blank" rel="noopener" class="tool-btn website-header-btn" title="Website: t.worldgyan.com" style="color:var(--accent-gold); font-weight:700; border-color:rgba(200,157,61,0.4); text-decoration:none;">
-        <span style="font-size:0.95rem;">🌐</span> <span>t.worldgyan.com</span>
-      </a>
-
-      <!-- YouTube Channel Link -->
-      <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="tool-btn yt-header-btn" title="YouTube: @TantraGyan108" style="color:#ef4444; font-weight:700; border-color:rgba(239,68,68,0.4); text-decoration:none;">
-        <span style="font-size:0.95rem;">▶</span> <span>@TantraGyan108</span>
+      <!-- YouTube Channel Link (Sleek Compact Icon) -->
+      <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="tool-btn yt-header-btn" title="YouTube: @TantraGyan108" aria-label="YouTube Channel @TantraGyan108" style="padding:0.42rem 0.58rem; color:#ef4444; border-color:rgba(239,68,68,0.4); text-decoration:none;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#ef4444" style="vertical-align:middle; display:inline-block;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
       </a>
 
       <!-- Language Mode Switcher -->
       <div class="lang-switcher" title="Switch Reading Language">
-        <button class="lang-btn" data-lang="hindi"><span class="lang-code-tag">HI</span> हिंदी</button>
-        <button class="lang-btn" data-lang="english"><span class="lang-code-tag">EN</span> English</button>
-        <button class="lang-btn active" data-lang="bilingual"><span class="lang-code-tag">ALL</span> द्विभाषी</button>
+        <button class="lang-btn" data-lang="hindi">हिंदी</button>
+        <button class="lang-btn" data-lang="english">English</button>
+        <button class="lang-btn active" data-lang="bilingual">द्विभाषी</button>
       </div>
 
       <!-- Theme Switcher -->
-      <button class="tool-btn" id="btn-theme-toggle" title="Toggle Theme (भोजपत्र / रात्रि / श्वेत)">
-        <span>📜</span> <span>भोजपत्र</span>
+      <button class="tool-btn" id="btn-theme-toggle" title="थीम (Theme: Parchment / Dark / Light)">
+        <span>📜</span> <span>Parchment</span>
       </button>
 
       <!-- Dual / Single Spread Toggle -->
-      <button class="tool-btn" id="btn-layout-toggle" title="Toggle Spread Layout (दो पृष्ठ / एकल पृष्ठ)">
-        <span>📖</span> <span>दो पृष्ठ</span>
+      <button class="tool-btn" id="btn-layout-toggle" title="दृश्य (View: Two Pages / Single Page)">
+        <span>📖</span> <span>Two Pages</span>
       </button>
 
       <!-- Sound Mute Toggle -->
@@ -251,17 +246,17 @@
     <!-- Line 2: Single combined controls row: [«][‹]  [Counter Badge]  [›][»] -->
     <div class="bottom-controls-row">
       <div class="nav-group-left">
-        <button class="tool-btn nav-edge-btn" id="btn-first-bottom" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="First Page (Home)" disabled>«<span class="nav-btn-text"> प्रारंभ</span></button>
-        <button class="tool-btn nav-step-btn" id="btn-prev-bottom" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="Previous Page" disabled>‹<span class="nav-btn-text"> पिछला</span></button>
+        <button class="tool-btn nav-edge-btn" id="btn-first-bottom" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="प्रारंभ (First Page)" disabled>«<span class="nav-btn-text"> First</span></button>
+        <button class="tool-btn nav-step-btn" id="btn-prev-bottom" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="पिछला (Previous Page)" disabled>‹<span class="nav-btn-text"> Prev</span></button>
       </div>
 
       <div class="bottom-counter-container">
-        <span class="page-counter-badge" id="page-counter-badge">मुखपृष्ठ • Cover (१ / 88)</span>
+        <span class="page-counter-badge" id="page-counter-badge">Cover • 1 / 88</span>
       </div>
 
       <div class="nav-group-right">
-        <button class="tool-btn nav-step-btn" id="btn-next-bottom" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="Next Page"><span class="nav-btn-text">अगला </span>›</button>
-        <button class="tool-btn nav-edge-btn" id="btn-last-bottom" onclick="if(window.bookEngine) window.bookEngine.goToPage(88, true);" title="Last Page (End)"><span class="nav-btn-text">अंतिम </span>»</button>
+        <button class="tool-btn nav-step-btn" id="btn-next-bottom" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="अगला (Next Page)"><span class="nav-btn-text">Next </span>›</button>
+        <button class="tool-btn nav-edge-btn" id="btn-last-bottom" onclick="if(window.bookEngine) window.bookEngine.goToPage(88, true);" title="अंतिम (Last Page)"><span class="nav-btn-text">Last </span>»</button>
       </div>
     </div>
   </nav>
@@ -1176,15 +1171,15 @@
       <div class="settings-body">
         <!-- Section: Navigation & Highlights -->
         <div class="settings-section">
-          <div class="settings-section-title">नेविगेशन और अध्ययन (Navigation & Study)</div>
+          <div class="settings-section-title">Navigation & Reading (नेविगेशन)</div>
           <div class="settings-grid">
             <button class="settings-action-btn" id="settings-btn-toc">
               <span class="settings-btn-icon">📖</span>
-              <span class="settings-btn-label">विषय-सूची (Index)</span>
+              <span class="settings-btn-label">Contents (विषय-सूची)</span>
             </button>
             <button class="settings-action-btn" id="settings-btn-bookmark">
               <span class="settings-btn-icon">🔖</span>
-              <span class="settings-btn-label">बुकमार्क</span>
+              <span class="settings-btn-label">Bookmarks (बुकमार्क)</span>
               <span id="settings-bookmark-badge" class="badge-count" style="display:none;">0</span>
             </button>
           </div>
@@ -1192,36 +1187,36 @@
 
         <!-- Section: Language Switcher -->
         <div class="settings-section">
-          <div class="settings-section-title">भाषा चयन (Language Mode)</div>
+          <div class="settings-section-title">Language Mode (भाषा)</div>
           <div class="settings-lang-row">
-            <button class="settings-opt-btn" data-lang="hindi"><span class="lang-code-tag">HI</span> हिंदी</button>
-            <button class="settings-opt-btn" data-lang="english"><span class="lang-code-tag">EN</span> English</button>
-            <button class="settings-opt-btn active" data-lang="bilingual"><span class="lang-code-tag">ALL</span> द्विभाषी</button>
+            <button class="settings-opt-btn" data-lang="hindi">हिंदी</button>
+            <button class="settings-opt-btn" data-lang="english">English</button>
+            <button class="settings-opt-btn active" data-lang="bilingual">द्विभाषी (Bilingual)</button>
           </div>
         </div>
 
         <!-- Section: Appearance & Reading -->
         <div class="settings-section">
-          <div class="settings-section-title">पठन अनुभव (Appearance & Sound)</div>
+          <div class="settings-section-title">Appearance & Reading (पठन अनुभव)</div>
           <div class="settings-grid">
             <button class="settings-action-btn" id="settings-btn-fullscreen">
               <span class="settings-btn-icon">⛶</span>
-              <span class="settings-btn-label">फुलस्क्रीन: <strong id="settings-fs-label">चालू करें</strong></span>
+              <span class="settings-btn-label">Fullscreen: <strong id="settings-fs-label">Enter</strong></span>
             </button>
             <button class="settings-action-btn" id="settings-btn-theme">
               <span class="settings-btn-icon">📜</span>
-              <span class="settings-btn-label">थीम: <strong id="settings-theme-label">भोजपत्र</strong></span>
+              <span class="settings-btn-label">Theme: <strong id="settings-theme-label">Parchment</strong></span>
             </button>
             <button class="settings-action-btn" id="settings-btn-layout">
               <span class="settings-btn-icon">📄</span>
-              <span class="settings-btn-label">दृश्य: <strong id="settings-layout-label">एकल पृष्ठ</strong></span>
+              <span class="settings-btn-label">View: <strong id="settings-layout-label">Two Pages</strong></span>
             </button>
             <button class="settings-action-btn" id="settings-btn-sound">
               <span class="settings-btn-icon">🔊</span>
-              <span class="settings-btn-label">ध्वनि: <strong id="settings-sound-label">चालू</strong></span>
+              <span class="settings-btn-label">Sound: <strong id="settings-sound-label">On</strong></span>
             </button>
             <div class="settings-font-row">
-              <span class="settings-font-title">🔤 फॉन्ट आकार:</span>
+              <span class="settings-font-title">🔤 Font Size:</span>
               <div class="font-zoom-group">
                 <button class="font-zoom-btn" id="settings-font-dec" title="Decrease Font">A−</button>
                 <button class="font-zoom-btn" id="settings-font-inc" title="Increase Font">A+</button>

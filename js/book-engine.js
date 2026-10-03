@@ -560,24 +560,26 @@ class BookEngine {
 
     // Update Counter badge (Compact font/text so it fits beside buttons on a single line)
     if (this.counter) {
-      const isEn = document.documentElement.lang === 'en';
+      const langMode = document.documentElement.getAttribute('data-lang-mode') || 'bilingual';
+      const isPureHindi = (langMode === 'hindi');
+
       if (this.isDualPage) {
         if (this.currentPage === 1) {
-          this.counter.textContent = isEn ? `Cover • 1 / ${this.totalPages}` : `मुखपृष्ठ • Cover (१ / ${this.totalPages})`;
+          this.counter.textContent = isPureHindi ? `मुखपृष्ठ • Cover (१ / ${this.totalPages})` : `Cover • 1 / ${this.totalPages}`;
         } else if (this.currentPage >= this.totalPages) {
-          this.counter.textContent = isEn ? `Back Cover • ${this.totalPages} / ${this.totalPages}` : `समापन • Back (${this.totalPages} / ${this.totalPages})`;
+          this.counter.textContent = isPureHindi ? `समापन • Back (${this.totalPages} / ${this.totalPages})` : `Back Cover • ${this.totalPages} / ${this.totalPages}`;
         } else {
           const leftNum = (this.currentPage % 2 === 0) ? this.currentPage : this.currentPage - 1;
           const rightNum = Math.min(leftNum + 1, this.totalPages);
-          this.counter.textContent = isEn ? `Pages ${leftNum}–${rightNum} / ${this.totalPages}` : `पृष्ठ ${leftNum}–${rightNum} / ${this.totalPages}`;
+          this.counter.textContent = isPureHindi ? `पृष्ठ ${leftNum}–${rightNum} / ${this.totalPages}` : `Pages ${leftNum}–${rightNum} / ${this.totalPages}`;
         }
       } else {
         if (this.currentPage === 1) {
-          this.counter.textContent = isEn ? `Cover • 1 / ${this.totalPages}` : `मुखपृष्ठ • Cover (१ / ${this.totalPages})`;
+          this.counter.textContent = isPureHindi ? `मुखपृष्ठ • Cover (१ / ${this.totalPages})` : `Cover • 1 / ${this.totalPages}`;
         } else if (this.currentPage >= this.totalPages) {
-          this.counter.textContent = isEn ? `Back Cover • ${this.totalPages} / ${this.totalPages}` : `समापन • Back (${this.totalPages} / ${this.totalPages})`;
+          this.counter.textContent = isPureHindi ? `समापन • Back (${this.totalPages} / ${this.totalPages})` : `Back Cover • ${this.totalPages} / ${this.totalPages}`;
         } else {
-          this.counter.textContent = isEn ? `Page ${this.currentPage} / ${this.totalPages}` : `पृष्ठ ${this.currentPage} / ${this.totalPages}`;
+          this.counter.textContent = isPureHindi ? `पृष्ठ ${this.currentPage} / ${this.totalPages}` : `Page ${this.currentPage} / ${this.totalPages}`;
         }
       }
     }

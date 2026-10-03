@@ -1042,33 +1042,54 @@ class BookUIController {
   }
 
   syncSettingsDrawerLabels() {
+    const langMode = document.documentElement.getAttribute('data-lang-mode') || 'bilingual';
+    const isPureHindi = (langMode === 'hindi');
+
     // Sync Theme Label
     const currentTheme = document.documentElement.getAttribute('data-theme') || 'parchment';
     const themeLabel = document.getElementById('settings-theme-label');
     if (themeLabel) {
-      if (currentTheme === 'dark') themeLabel.textContent = 'रात्रि (Dark)';
-      else if (currentTheme === 'light') themeLabel.textContent = 'श्वेत (Light)';
-      else themeLabel.textContent = 'भोजपत्र (Classic)';
+      if (isPureHindi) {
+        if (currentTheme === 'dark') themeLabel.textContent = 'रात्रि';
+        else if (currentTheme === 'light') themeLabel.textContent = 'श्वेत';
+        else themeLabel.textContent = 'भोजपत्र';
+      } else {
+        if (currentTheme === 'dark') themeLabel.textContent = 'Night';
+        else if (currentTheme === 'light') themeLabel.textContent = 'Day';
+        else themeLabel.textContent = 'Parchment';
+      }
     }
 
     // Sync Layout Label
     const isSingle = document.documentElement.classList.contains('single-mode-active');
     const layoutLabel = document.getElementById('settings-layout-label');
     if (layoutLabel) {
-      layoutLabel.textContent = isSingle ? 'एकल पृष्ठ (Single)' : 'दो पृष्ठ (Spread)';
+      if (isPureHindi) {
+        layoutLabel.textContent = isSingle ? 'एकल पृष्ठ' : 'दो पृष्ठ';
+      } else {
+        layoutLabel.textContent = isSingle ? 'Single Page' : 'Two Pages';
+      }
     }
 
     // Sync Sound Label
     const soundLabel = document.getElementById('settings-sound-label');
     if (soundLabel && window.bookSound) {
-      soundLabel.textContent = window.bookSound.isMuted ? 'म्यूट (Off)' : 'चालू (On)';
+      if (isPureHindi) {
+        soundLabel.textContent = window.bookSound.isMuted ? 'म्यूट' : 'चालू';
+      } else {
+        soundLabel.textContent = window.bookSound.isMuted ? 'Off' : 'On';
+      }
     }
 
     // Sync Fullscreen Label
     const fsLabel = document.getElementById('settings-fs-label');
     if (fsLabel) {
       const isFs = !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
-      fsLabel.textContent = isFs ? 'बंद करें (Exit)' : 'चालू करें (Enter)';
+      if (isPureHindi) {
+        fsLabel.textContent = isFs ? 'बंद करें' : 'चालू करें';
+      } else {
+        fsLabel.textContent = isFs ? 'Exit' : 'Enter';
+      }
     }
 
     // Sync Bookmark Badge

@@ -730,19 +730,31 @@ html, body {
 }
 
 /* Closed Front Cover Mode (Book Closed at Start) */
+.book-container.cover-closed-front,
+.book-container.cover-closed-back {
+  max-width: 580px !important;
+  margin: 0 auto;
+}
+
+.book-container.cover-closed-front .book-pages-wrapper,
+.book-container.cover-closed-back .book-pages-wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
 .book-container.cover-closed-front .left-page {
   display: none !important;
 }
 
 .book-container.cover-closed-front .right-page {
   display: flex !important;
-  flex: 0 1 560px !important;
-  width: 560px !important;
-  max-width: 95% !important;
-  margin: 0 auto !important;
-  border-left: 5px solid var(--accent-gold) !important;
-  border-radius: 4px var(--page-radius) var(--page-radius) 4px !important;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), inset 15px 0 25px rgba(0, 0, 0, 0.12) !important;
+  flex: 1 1 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  border-left: none !important;
+  border-radius: var(--page-radius) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35) !important;
   cursor: pointer;
 }
 
@@ -757,13 +769,13 @@ html, body {
 
 .book-container.cover-closed-back .left-page {
   display: flex !important;
-  flex: 0 1 560px !important;
-  width: 560px !important;
-  max-width: 95% !important;
-  margin: 0 auto !important;
-  border-right: 5px solid var(--accent-gold) !important;
-  border-radius: var(--page-radius) 4px 4px var(--page-radius) !important;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), inset -15px 0 25px rgba(0, 0, 0, 0.12) !important;
+  flex: 1 1 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  border-right: none !important;
+  border-radius: var(--page-radius) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35) !important;
   cursor: pointer;
 }
 
