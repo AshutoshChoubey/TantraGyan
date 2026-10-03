@@ -24,8 +24,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   
   <!-- Standard CSS Files -->
-  <link rel="stylesheet" href="css/book.css">
-  <link rel="stylesheet" href="css/tables.css">
+  <link rel="stylesheet" href="css/book.css?v=3.3">
+  <link rel="stylesheet" href="css/tables.css?v=3.3">
 </head>
 <body>
 
@@ -45,16 +45,22 @@
     <div class="toolbar-controls">
       <!-- Search Input Container with Dropdown Results -->
       <div class="search-box" id="search-box-container">
-        <span class="search-icon">🔍</span>
+        <span class="search-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
         <input type="text" id="book-search" class="search-input" placeholder="ग्रंथ में खोजें (उदा. सूर्य, मंगल, गजकेसरी, पुष्य)..." aria-label="Search Book" autocomplete="off">
-        <button type="button" id="search-clear-btn" class="search-clear-btn" title="Clear search" style="display:none;">✕</button>
+        <button type="button" id="search-clear-btn" class="search-clear-btn" title="Clear search" aria-label="Clear search" style="display:none;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
         <span id="search-counter" class="search-count" title="Click to view all matching pages"></span>
         
         <!-- Live Search Results Dropdown -->
         <div id="search-dropdown" class="search-dropdown" style="display:none;" role="region" aria-label="Search Results">
           <div class="search-dropdown-header">
-            <span id="search-dropdown-title" class="search-dropdown-title">🔍 परिणाम (Search Results)</span>
-            <button type="button" id="search-dropdown-close" class="search-dropdown-close" title="Close">✕</button>
+            <span id="search-dropdown-title" class="search-dropdown-title"> परिणाम (Search Results)</span>
+            <button type="button" id="search-dropdown-close" class="search-dropdown-close" title="Close" aria-label="Close search">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
           </div>
           <div id="search-results-list" class="search-results-list"></div>
         </div>
@@ -83,9 +89,9 @@
 
       <!-- Language Mode Switcher -->
       <div class="lang-switcher" title="Switch Reading Language">
-        <button class="lang-btn active" data-lang="hindi">🇮🇳 हिंदी</button>
-        <button class="lang-btn" data-lang="english">🇬🇧 English</button>
-        <button class="lang-btn" data-lang="bilingual">🌐 द्विभाषी</button>
+        <button class="lang-btn active" data-lang="hindi"><span class="lang-code-tag">HI</span> हिंदी</button>
+        <button class="lang-btn" data-lang="english"><span class="lang-code-tag">EN</span> English</button>
+        <button class="lang-btn" data-lang="bilingual"><span class="lang-code-tag">ALL</span> द्विभाषी</button>
       </div>
 
       <!-- Theme Switcher -->
@@ -140,8 +146,149 @@
 
       <!-- Two-Page Spread Container -->
       <div class="book-pages-wrapper">
-        <section class="page-sheet left-page" id="left-page-container" aria-label="Left Page"></section>
-        <section class="page-sheet right-page" id="right-page-container" aria-label="Right Page"></section>
+        <section class="page-sheet left-page" id="left-page-container" aria-label="Left Page">
+
+        <div class="page-header">
+          <div class="page-header-info">
+            <span class="page-header-title">
+              <span class="chapter-wheel">☸</span> मुखपृष्ठ
+            </span>
+            <span class="page-header-subtitle">वैदिक ज्योतिष महाग्रंथ सरलीकृत</span>
+          </div>
+        </div>
+        <div class="page-body">
+          
+    <div class="cover-page-inner">
+      <div class="cover-tag">तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center) • डिजिटल संस्करण २०२६ • सम्पूर्ण हिन्दी संस्करण</div>
+      
+      <div class="cover-yantra">
+        <img src="assets/yantra.svg" alt="Sacred Sri Yantra Emblem" width="130" height="130" style="filter: drop-shadow(0 4px 15px rgba(200, 157, 61, 0.45));">
+      </div>
+
+      <h1 class="cover-title-hindi" style="font-size:2.2rem; margin-bottom:0.75rem;">वैदिक ज्योतिष महाग्रंथ सरलीकृत</h1>
+      <h2 class="cover-title-english" style="font-size:1.05rem; color:var(--accent-gold); font-family:var(--font-heading); letter-spacing:0.04em;">सम्पूर्ण प्रामाणिक शास्त्रीय फलित ज्ञानकोश</h2>
+
+      <div class="cover-divider"></div>
+
+      <p class="cover-subtitle">
+        <strong>नवग्रह कारकत्व, १७ शास्त्रीय राजयोग, २७ नक्षत्र व १०८ पद विश्लेषण, दीप्तादि ९ अवस्थाएं एवं १२ भाव-राशि फल।</strong><br>
+        <span style="font-size:0.85rem; color:var(--text-muted); display:inline-block; margin-top:0.4rem;">
+          बृहत् शास्त्रीय सूत्र, खगोल गणित एवं फलित सिद्धांतों का अद्वितीय संग्रह
+        </span>
+      </p>
+
+      <div class="cover-author-block">
+        <div class="cover-author-label">लेखक एवं ज्योतिषाचार्य</div>
+        <div class="cover-author-name">ज्योतिषाचार्य आशुतोष कुमार चौबे</div>
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.6rem; margin-top:0.75rem;">
+          <a href="https://t.worldgyan.com" target="_blank" rel="noopener" class="contact-channel-badge" style="border-color:var(--accent-gold); color:var(--accent-gold) !important; font-weight:700;">
+            <span class="contact-icon">🌐</span>
+            <span>वेबसाइट: <strong>t.worldgyan.com</strong></span>
+          </a>
+          <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="youtube-channel-badge" style="margin-top:0;">
+            <span class="yt-play-icon">▶</span>
+            <span>यूट्यूब मंच: <strong>@TantraGyan108</strong></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+        </div>
+        <div class="page-footer">
+          <span class="page-footer-title">वैदिक ज्योतिष महाग्रंथ सरलीकृत</span>
+          <span class="page-number-display">Page 1 of 87</span>
+        </div>
+    
+        </section>
+        <section class="page-sheet right-page" id="right-page-container" aria-label="Right Page">
+
+        <div class="page-header">
+          <div class="page-header-info">
+            <span class="page-header-title">
+              <span class="chapter-wheel">☸</span> लेखक परिचय
+            </span>
+            <span class="page-header-subtitle">लेखक परिचय — ज्योतिषाचार्य आशुतोष कुमार चौबे</span>
+          </div>
+        </div>
+        <div class="page-body">
+          
+    <div class="page-inner-content">
+      <div class="chapter-header" style="margin-bottom:1.25rem;">
+        <div class="chapter-number">लेखक परिचय</div>
+        <h2 class="chapter-heading" style="font-size:1.4rem; color:var(--accent-crimson);">लेखक परिचय — ज्योतिषाचार्य आशुतोष कुमार चौबे</h2>
+      </div>
+
+      <div class="author-profile-box">
+        <div class="author-avatar-badge">🕉️</div>
+        <div class="author-bio-text">
+          <h3>आशुतोष कुमार चौबे</h3>
+          <div class="author-meta">वैदिक ज्योतिषी एवं तंत्र शोधकर्ता</div>
+          <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">
+            समर्पित वैदिक ज्योतिषी एवं शोधकर्ता, जिन्होंने शास्त्रीय ज्योतिष ग्रंथों और आधुनिक विश्लेषणात्मक पद्धतियों के समन्वय से 'तंत्र ज्ञान' ज्ञानकोश की रचना की है।
+          </p>
+        </div>
+      </div>
+
+      <div class="rule-card">
+        <div class="rule-header">
+          <div class="rule-title">📜 शोध दृष्टि एवं शास्त्रीय परंपरा</div>
+          <span class="badge-chip badge-gold">प्रामाणिक दृष्टिकोण</span>
+        </div>
+        <div class="rule-body">
+          <p>
+            <strong>ज्योतिषाचार्य आशुतोष कुमार चौबे</strong> का मुख्य ध्येय प्राचीन वैदिक ज्ञान को अंधविश्वास, भय एवं रूढ़िवादिता से मुक्त करके एक तार्किक, वैज्ञानिक तथा व्यावहारिक सूत्रबद्ध पद्धति के रूप में प्रस्तुत करना है।
+          </p>
+          <p>
+            इन्होंने <em>बृहत्पाराशर होरा शास्त्र, सारावली (कल्याण वर्मा), फलदीपिका (मन्त्रेश्वर), जातक पारिजात, नंदी नाड़ी</em> तथा <em>लाल किताब</em> जैसे मूर्धन्य ग्रंथों का गहन अध्ययन करके उनके रहस्यों को वर्तमान संदर्भ में सत्यापनीय नियमों के रूप में रूपांतरित किया है।
+          </p>
+        </div>
+      </div>
+
+      <div class="rule-card success">
+        <div class="rule-header">
+          <div class="rule-title">🎯 फलित ज्योतिष दर्शन एवं कर्म सिद्धांत</div>
+          <span class="badge-chip badge-gold">मार्गदर्शक दृष्टि</span>
+        </div>
+        <div class="rule-body">
+          <p>
+            आशुतोष जी का मानना है कि जन्मकुण्डली केवल भविष्य की घटनाओं का पूर्वानुमान नहीं, बल्कि मनुष्य के संचित कर्मों और प्रारब्ध का एक सूक्ष्म खगोलीय मानचित्र है।
+          </p>
+          <p>
+            ग्रह दशाओं, गोचर और भाव-कारकत्व के वैज्ञानिक विश्लेषण से व्यक्ति अपनी स्वाभाविक शक्तियों, चुनौतियों और जीवन के उचित समय को पहचान सकता है। इनका ध्येय प्रत्येक जिज्ञासु को अंधविश्वास से परे आत्म-निरीक्षण, सही कर्म-निर्णय और चेतना के उत्थान के लिए सक्षम बनाना है।
+          </p>
+          <p style="font-size:0.84rem; color:var(--text-muted); margin-top:0.4rem;">
+            <em>"ज्योतिष भाग्य के प्रति असहाय समर्पण नहीं, बल्कि आत्म-बोध और कर्म सुधार का प्रकाश स्तंभ है।"</em>
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top:1.25rem; padding:1.1rem; border:1px dashed var(--accent-gold); border-radius:10px; background:rgba(179,127,25,0.06); text-align:center;">
+        <strong style="color:var(--text-heading); font-size:0.92rem;">आधिकारिक शोध, वेबसाइट एवं संपर्क मंच:</strong><br>
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.6rem; margin-top:0.75rem;">
+          <a href="https://t.worldgyan.com" target="_blank" rel="noopener" class="contact-channel-badge" style="border-color:var(--accent-gold); color:var(--accent-gold) !important; font-weight:700;">
+            <span class="contact-icon">🌐</span>
+            <span>वेबसाइट: <strong>t.worldgyan.com</strong></span>
+          </a>
+          <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="youtube-channel-badge" style="margin-top:0;">
+            <span class="yt-play-icon">▶</span>
+            <span>यूट्यूब: <strong>@TantraGyan108</strong></span>
+          </a>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.8rem; font-size:0.82rem; margin-top:0.6rem;">
+          <a href="mailto:tantraresearchcenter@gmail.com" style="color:var(--text-secondary); text-decoration:none;">✉️ tantraresearchcenter@gmail.com</a>
+          <span style="color:var(--border-color);">•</span>
+          <a href="tel:+919658476170" style="color:var(--text-secondary); text-decoration:none;">📞 +91 9658476170</a>
+        </div>
+      </div>
+    </div>
+    
+        </div>
+        <div class="page-footer">
+          <span class="page-footer-title">वैदिक ज्योतिष महाग्रंथ सरलीकृत</span>
+          <span class="page-number-display">Page 2 of 87</span>
+        </div>
+    
+        </section>
       </div>
     </div>
   </main>
@@ -171,7 +318,9 @@
         <h3 class="toc-title" id="toc-modal-title">
           <span>📖</span> विषय-सूची
         </h3>
-        <button class="toc-close-btn" id="toc-close-btn" title="Close">✕</button>
+        <button class="toc-close-btn" id="toc-close-btn" title="Close" aria-label="Close Table of Contents">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
       </div>
       <div class="toc-body">
         <div class="toc-list">
@@ -1025,7 +1174,9 @@
         <h3 class="bookmark-title" id="bookmark-modal-title">
           <span>🔖</span> बुकमार्क
         </h3>
-        <button class="bookmark-close-btn" id="bookmark-close-btn" title="Close">✕</button>
+        <button class="bookmark-close-btn" id="bookmark-close-btn" title="Close" aria-label="Close Bookmarks">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
       </div>
       <div class="bookmark-action-bar">
         <button id="btn-bookmark-current" class="btn-bookmark-action">
@@ -4366,8 +4517,8 @@
   </div>
 
   <!-- Scripts -->
-  <script src="js/sound.js"></script>
-  <script src="js/book-engine.js"></script>
-  <script src="js/book-ui.js"></script>
+  <script src="js/sound.js?v=3.3"></script>
+  <script src="js/book-engine.js?v=3.3"></script>
+  <script src="js/book-ui.js?v=3.3"></script>
 </body>
 </html>

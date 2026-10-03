@@ -9,7 +9,7 @@
 
 class BookEngine {
   constructor() {
-    this.currentPage = 1;
+    this.currentPage = null;
     this.totalPages = 0;
     this.isDualPage = window.innerWidth > 1080;
     this.isAnimating = false;
@@ -23,9 +23,13 @@ class BookEngine {
     this.slider = null;
     this.counter = null;
     this.progressFill = null;
+    this.isInitialized = false;
   }
 
   init() {
+    if (this.isInitialized) return;
+    this.isInitialized = true;
+
     // Collect all page elements defined in DOM
     const rawPages = document.querySelectorAll('.book-page-data');
     this.pages = Array.from(rawPages);
@@ -47,17 +51,20 @@ class BookEngine {
     let startPage = 1;
     if (typeof window !== 'undefined' && window.location && window.location.hash) {
       const match = window.location.hash.match(/#page-(\d+)/);
-      if (match && parseInt(match[1])) {
-        startPage = parseInt(match[1]);
+      if (match && parseInt(match[1], 10)) {
+        startPage = parseInt(match[1], 10);
       }
     } else {
       try {
         const saved = localStorage.getItem('tantra_book_page');
-        if (saved) startPage = parseInt(saved);
+        if (saved) {
+          const p = parseInt(saved, 10);
+          if (!isNaN(p) && p >= 1) startPage = p;
+        }
       } catch (e) {}
     }
 
-    startPage = Math.max(1, Math.min(this.totalPages, startPage));
+    startPage = Math.max(1, Math.min(this.totalPages || 1, startPage));
 
     // Handle responsive spread mode
     this.updateSpreadMode();
@@ -69,8 +76,10 @@ class BookEngine {
     // Bind event listeners
     this.bindEvents();
 
-    // Render initial page without sound or animation
-    this.goToPage(startPage, false);
+    // Render initial page with 100% guarantee across all devices
+    this.currentPage = startPage;
+    this.render();
+    this.onPageChanged();
   }
 
   updateSpreadMode() {
@@ -388,23 +397,27 @@ class BookEngine {
     if (pageNum < 1) pageNum = 1;
     if (pageNum > this.totalPages) pageNum = this.totalPages;
 
+    const hasLeftBody = !!(this.leftPageEl && this.leftPageEl.querySelector('.page-body'));
+    const hasRightBody = !!(this.rightPageEl && this.rightPageEl.querySelector('.page-body'));
+    const isSpreadProperlyRendered = this.isDualPage ? (hasLeftBody && hasRightBody) : hasRightBody;
+
     if (this.isDualPage) {
-      const currStart = (this.currentPage % 2 === 0) ? this.currentPage - 1 : this.currentPage;
+      const currStart = (this.currentPage && this.currentPage % 2 === 0) ? this.currentPage - 1 : (this.currentPage || 1);
       const targetStart = (pageNum % 2 === 0) ? pageNum - 1 : pageNum;
-      if (currStart === targetStart) {
+      if (isSpreadProperlyRendered && this.currentPage && currStart === targetStart) {
         this.currentPage = pageNum;
         this.onPageChanged();
         return;
       }
-      if (playSound && !this.isAnimating) {
+      if (isSpreadProperlyRendered && playSound && !this.isAnimating) {
         const dir = (targetStart > currStart) ? 'forward' : 'backward';
         this.flip3D(dir, targetStart);
         return;
       }
     } else {
-      if (pageNum === this.currentPage) return;
-      if (playSound && !this.isAnimating) {
-        const dir = (pageNum > this.currentPage) ? 'forward' : 'backward';
+      if (isSpreadProperlyRendered && pageNum === this.currentPage) return;
+      if (isSpreadProperlyRendered && playSound && !this.isAnimating) {
+        const dir = (pageNum > (this.currentPage || 1)) ? 'forward' : 'backward';
         this.flip3D(dir, pageNum);
         return;
       }
@@ -416,14 +429,15 @@ class BookEngine {
   }
 
   render() {
-    if (!this.pages.length) return;
+    if (!this.pages || !this.pages.length) return;
 
     if (this.isDualPage) {
-      const spreadStart = (this.currentPage % 2 === 0) ? this.currentPage - 1 : this.currentPage;
+      const spreadStart = (this.currentPage && this.currentPage % 2 === 0) ? this.currentPage - 1 : (this.currentPage || 1);
       this.renderSpread(spreadStart, spreadStart + 1);
     } else {
-      if (this.rightPageEl && this.pages[this.currentPage - 1]) {
-        this.renderSinglePageContent(this.rightPageEl, this.pages[this.currentPage - 1], this.currentPage);
+      const activeNum = this.currentPage || 1;
+      if (this.rightPageEl && this.pages[activeNum - 1]) {
+        this.renderSinglePageContent(this.rightPageEl, this.pages[activeNum - 1], activeNum);
       }
     }
     this.onPageChanged();
@@ -550,29 +564,13 @@ class BookEngine {
           </span>
           <span class="page-header-subtitle">${pageHeaderTitle}</span>
         </div>
-        <div class="page-nav-quick top-quick-nav">
-          <button type="button" class="page-nav-pill prev-pill" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="पिछला पृष्ठ (Previous Page)" ${isFirstPage ? 'disabled style="opacity:0.3; pointer-events:none;"' : ''}>
-            ‹ पिछला
-          </button>
-          <button type="button" class="page-nav-pill next-pill" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="अगला पृष्ठ (Next Page)" ${isLastPage ? 'disabled style="opacity:0.3; pointer-events:none;"' : ''}>
-            अगला ›
-          </button>
-        </div>
       </div>
       <div class="page-body">
         ${node.innerHTML}
       </div>
       <div class="page-footer">
         <span class="page-footer-title">${footerTitle}</span>
-        <div class="page-nav-quick bottom-quick-nav">
-          <button type="button" class="page-nav-pill prev-pill" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="पिछला पृष्ठ (Previous Page)" ${isFirstPage ? 'disabled style="opacity:0.3; pointer-events:none;"' : ''}>
-            ‹ पिछला
-          </button>
-          <span class="page-number-display">Page ${pageNum}</span>
-          <button type="button" class="page-nav-pill next-pill" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="अगला पृष्ठ (Next Page)" ${isLastPage ? 'disabled style="opacity:0.3; pointer-events:none;"' : ''}>
-            अगला ›
-          </button>
-        </div>
+        <span class="page-number-display">Page ${pageNum} of ${this.totalPages}</span>
       </div>
     `;
   }
@@ -582,14 +580,24 @@ class BookEngine {
     container.innerHTML = this.getPageHTML(pageNum);
   }
 
+  checkAndRepairSpread() {
+    const hasLeftBody = !!(this.leftPageEl && this.leftPageEl.querySelector('.page-body'));
+    const hasRightBody = !!(this.rightPageEl && this.rightPageEl.querySelector('.page-body'));
+    if ((this.isDualPage && (!hasLeftBody || !hasRightBody)) || (!this.isDualPage && !hasRightBody)) {
+      this.render();
+    }
+  }
+
   clearPage(container) {
     if (!container) return;
     container.innerHTML = `
       <div class="page-header">
-        <span class="page-header-title">☸ Tantra Gyan</span>
+        <div class="page-header-info">
+          <span class="page-header-title" style="opacity:0.4;">☸ Tantra Gyan</span>
+        </div>
       </div>
-      <div class="page-body" style="display:flex; align-items:center; justify-content:center; opacity:0.35;">
-        <p style="font-style:italic; font-family:var(--font-heading);">ॐ नमः शिवाय</p>
+      <div class="page-body" style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; opacity:0.6; min-height:0;">
+        <p style="font-style:italic; font-family:var(--font-heading); font-size:1.15rem; color:var(--accent-gold);">ॐ नमः शिवाय</p>
       </div>
       <div class="page-footer">
         <span></span>
@@ -601,3 +609,30 @@ class BookEngine {
 
 // Global book engine instance
 window.bookEngine = new BookEngine();
+
+// Auto-boot BookEngine across all browsers and environments
+function bootBookEngine() {
+  if (window.bookEngine && !window.bookEngine.isInitialized) {
+    window.bookEngine.init();
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', bootBookEngine);
+} else {
+  // Document is already interactive or complete
+  bootBookEngine();
+}
+
+window.addEventListener('load', () => {
+  bootBookEngine();
+  if (window.bookEngine) {
+    window.bookEngine.checkAndRepairSpread();
+  }
+});
+
+window.addEventListener('pageshow', () => {
+  if (window.bookEngine) {
+    window.bookEngine.checkAndRepairSpread();
+  }
+});

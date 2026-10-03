@@ -19,9 +19,13 @@ class BookUIController {
     this.bookmarks = [];
     this.toastTimeout = null;
     this.searchTimeout = null;
+    this.isInitialized = false;
   }
 
   init() {
+    if (this.isInitialized) return;
+    this.isInitialized = true;
+
     // 1. Initialize Engine & Sound
     if (window.bookEngine) {
       window.bookEngine.init();
@@ -856,6 +860,17 @@ class BookUIController {
 // Global UI instance initialized upon DOM loading
 window.bookUI = new BookUIController();
 
-document.addEventListener('DOMContentLoaded', () => {
-  window.bookUI.init();
-});
+function bootBookUI() {
+  if (window.bookUI && !window.bookUI.isInitialized) {
+    window.bookUI.init();
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', bootBookUI);
+} else {
+  // Document is already interactive or complete
+  bootBookUI();
+}
+
+window.addEventListener('load', bootBookUI);

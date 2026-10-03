@@ -969,6 +969,31 @@ for p_idx, p in enumerate(pages):
     """)
 all_pages_html = "\n".join(pages_data_html)
 
+def make_initial_sheet_markup(pageNum, pageData, totalPages):
+    ch = pageData["chapter"]
+    ti = pageData["title"]
+    co = pageData["content"]
+    return f"""
+        <div class="page-header">
+          <div class="page-header-info">
+            <span class="page-header-title">
+              <span class="chapter-wheel">☸</span> {ch}
+            </span>
+            <span class="page-header-subtitle">{ti}</span>
+          </div>
+        </div>
+        <div class="page-body">
+          {co}
+        </div>
+        <div class="page-footer">
+          <span class="page-footer-title">वैदिक ज्योतिष महाग्रंथ सरलीकृत</span>
+          <span class="page-number-display">Page {pageNum} of {totalPages}</span>
+        </div>
+    """
+
+initial_left_html = make_initial_sheet_markup(1, pages[0], total_pages)
+initial_right_html = make_initial_sheet_markup(2, pages[1], total_pages)
+
 # Final HTML Template
 html_template = f"""<!DOCTYPE html>
 <html lang="hi" data-theme="parchment" data-lang-mode="bilingual">
@@ -996,8 +1021,8 @@ html_template = f"""<!DOCTYPE html>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   
   <!-- Standard CSS Files for Maximum Maintainability -->
-  <link rel="stylesheet" href="css/book.css">
-  <link rel="stylesheet" href="css/tables.css">
+  <link rel="stylesheet" href="css/book.css?v=3.3">
+  <link rel="stylesheet" href="css/tables.css?v=3.3">
   
   <!-- Schema.org JSON-LD Educational Book Structured Data -->
   <script type="application/ld+json">
@@ -1062,16 +1087,22 @@ html_template = f"""<!DOCTYPE html>
     <div class="toolbar-controls">
       <!-- Search Input Container with Dropdown Results -->
       <div class="search-box" id="search-box-container">
-        <span class="search-icon">🔍</span>
+        <span class="search-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
         <input type="text" id="book-search" class="search-input" placeholder="खोजें / Search (e.g. Moon, सूर्य)..." aria-label="Search Book" autocomplete="off">
-        <button type="button" id="search-clear-btn" class="search-clear-btn" title="Clear search" style="display:none;">✕</button>
+        <button type="button" id="search-clear-btn" class="search-clear-btn" title="Clear search" aria-label="Clear search" style="display:none;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
         <span id="search-counter" class="search-count" title="Click to view all matching pages"></span>
         
         <!-- Live Search Results Dropdown -->
         <div id="search-dropdown" class="search-dropdown" style="display:none;" role="region" aria-label="Search Results">
           <div class="search-dropdown-header">
-            <span id="search-dropdown-title" class="search-dropdown-title">🔍 परिणाम (Search Results)</span>
-            <button type="button" id="search-dropdown-close" class="search-dropdown-close" title="Close">✕</button>
+            <span id="search-dropdown-title" class="search-dropdown-title">परिणाम (Search Results)</span>
+            <button type="button" id="search-dropdown-close" class="search-dropdown-close" title="Close" aria-label="Close search">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
           </div>
           <div id="search-results-list" class="search-results-list"></div>
         </div>
@@ -1100,9 +1131,9 @@ html_template = f"""<!DOCTYPE html>
 
       <!-- Language Mode Switcher -->
       <div class="lang-switcher" title="Switch Reading Language">
-        <button class="lang-btn" data-lang="hindi">🇮🇳 हिंदी</button>
-        <button class="lang-btn" data-lang="english">🇬🇧 English</button>
-        <button class="lang-btn active" data-lang="bilingual">🌐 द्विभाषी</button>
+        <button class="lang-btn" data-lang="hindi"><span class="lang-code-tag">HI</span> हिंदी</button>
+        <button class="lang-btn" data-lang="english"><span class="lang-code-tag">EN</span> English</button>
+        <button class="lang-btn active" data-lang="bilingual"><span class="lang-code-tag">ALL</span> द्विभाषी</button>
       </div>
 
       <!-- Theme Switcher -->
@@ -1157,8 +1188,12 @@ html_template = f"""<!DOCTYPE html>
 
       <!-- Two-Page Spread Container -->
       <div class="book-pages-wrapper">
-        <section class="page-sheet left-page" id="left-page-container" aria-label="Left Page"></section>
-        <section class="page-sheet right-page" id="right-page-container" aria-label="Right Page"></section>
+        <section class="page-sheet left-page" id="left-page-container" aria-label="Left Page">
+{initial_left_html}
+        </section>
+        <section class="page-sheet right-page" id="right-page-container" aria-label="Right Page">
+{initial_right_html}
+        </section>
       </div>
     </div>
   </main>
@@ -1188,7 +1223,9 @@ html_template = f"""<!DOCTYPE html>
         <h3 class="toc-title" id="toc-modal-title">
           <span>📖</span> विषय-सूची (Table of Contents)
         </h3>
-        <button class="toc-close-btn" id="toc-close-btn" title="Close Index">✕</button>
+        <button class="toc-close-btn" id="toc-close-btn" title="Close Index" aria-label="Close Table of Contents">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
       </div>
       <div class="toc-body">
         <div class="toc-list">
@@ -1205,7 +1242,9 @@ html_template = f"""<!DOCTYPE html>
         <h3 class="bookmark-title" id="bookmark-modal-title">
           <span>🔖</span> सहेजे गए बुकमार्क (Saved Bookmarks)
         </h3>
-        <button class="bookmark-close-btn" id="bookmark-close-btn" title="Close Bookmarks">✕</button>
+        <button class="bookmark-close-btn" id="bookmark-close-btn" title="Close Bookmarks" aria-label="Close Bookmarks">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
       </div>
       <div class="bookmark-action-bar">
         <button id="btn-bookmark-current" class="btn-bookmark-action">
@@ -1230,9 +1269,9 @@ html_template = f"""<!DOCTYPE html>
   </div>
 
   <!-- Scripts -->
-  <script src="js/sound.js"></script>
-  <script src="js/book-engine.js"></script>
-  <script src="js/book-ui.js"></script>
+  <script src="js/sound.js?v=3.3"></script>
+  <script src="js/book-engine.js?v=3.3"></script>
+  <script src="js/book-ui.js?v=3.3"></script>
 </body>
 </html>
 """
