@@ -2434,6 +2434,21 @@ def render_edition_html(pages_list, edition_lang='hindi'):
     # Active button classes
     hi_btn_cls = "lang-btn active" if is_hindi else "lang-btn"
     en_btn_cls = "lang-btn active" if not is_hindi else "lang-btn"
+    hi_opt_cls = "settings-opt-btn active" if is_hindi else "settings-opt-btn"
+    en_opt_cls = "settings-opt-btn active" if not is_hindi else "settings-opt-btn"
+    page_counter_initial = f"मुखपृष्ठ • Cover (पृष्ठ १ / {total_pages})" if is_hindi else f"Front Cover • Page 1 of {total_pages}"
+
+    settings_title = "सेटिंग्स और विकल्प (Settings)" if is_hindi else "Settings & Options (सेटिंग्स)"
+    settings_nav_title = "नेविगेशन और अध्ययन (Navigation & Study)" if is_hindi else "Navigation & Reading"
+    settings_toc_btn = f"विषय-सूची ({toc_label})" if is_hindi else "Table of Contents"
+    settings_bm_btn = f"बुकमार्क ({bookmark_label})" if is_hindi else "Bookmarks"
+    settings_lang_title = "भाषा चयन (Language Mode)" if is_hindi else "Language Mode"
+    settings_appear_title = "पठन अनुभव (Appearance & Sound)" if is_hindi else "Appearance & Sound"
+    settings_theme_btn = f"थीम: <strong id='settings-theme-label'>{theme_label}</strong>" if is_hindi else f"Theme: <strong id='settings-theme-label'>{theme_label}</strong>"
+    settings_layout_btn = f"दृश्य: <strong id='settings-layout-label'>{spread_label}</strong>" if is_hindi else f"View: <strong id='settings-layout-label'>{spread_label}</strong>"
+    settings_sound_btn = "ध्वनि: <strong id='settings-sound-label'>चालू</strong>" if is_hindi else "Sound: <strong id='settings-sound-label'>On</strong>"
+    settings_font_label = "🔤 फॉन्ट आकार:" if is_hindi else "🔤 Font Size:"
+    settings_links_title = "आधिकारिक संपर्क (Official Links)" if is_hindi else "Official Links"
 
     html_code = f"""<!DOCTYPE html>
 <html lang="{doc_lang}" data-theme="parchment" data-lang-mode="{edition_lang}">
@@ -2468,20 +2483,34 @@ def render_edition_html(pages_list, edition_lang='hindi'):
 
   <!-- Floating Book App Header -->
   <header class="app-header">
-    <a href="#page-1" class="brand-section" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);">
-      <div class="brand-logo">
-        <img src="assets/yantra.svg" alt="Tantra Gyan Mandala" width="34" height="34">
-      </div>
-      <div class="brand-titles">
-        <span class="brand-name">तंत्र ज्ञान शोध संस्थान <span>Tantra Gyan</span></span>
-        <span class="brand-tagline">{brand_sub}</span>
-      </div>
-    </a>
+    <div class="header-top-row">
+      <a href="#page-1" class="brand-section" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true); return false;" title="तंत्र ज्ञान (Tantra Gyan) - Home">
+        <div class="brand-logo">
+          <img src="assets/yantra.svg" alt="Tantra Gyan Mandala" width="34" height="34">
+        </div>
+        <div class="brand-titles">
+          <span class="brand-name">तंत्र ज्ञान शोध संस्थान <span>Tantra Gyan</span></span>
+          <span class="brand-tagline">{brand_sub}</span>
+        </div>
+      </a>
 
-    <!-- Toolbar Controls -->
-    <div class="toolbar-controls">
-      <!-- Search Input Container with Dropdown Results -->
-      <div class="search-box" id="search-box-container">
+      <!-- Mobile Header Actions (Fullscreen & Gear Icon) -->
+      <div class="mobile-header-actions">
+        <button class="tool-btn mobile-action-btn mobile-fullscreen-btn" id="btn-fullscreen-mobile" title="Toggle Fullscreen" aria-label="Toggle Fullscreen">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        </button>
+        <button class="tool-btn mobile-action-btn mobile-gear-btn" id="btn-settings-toggle" title="Settings & Options (सेटिंग्स और विकल्प)" aria-label="Open Settings">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Input Container with Dropdown Results -->
+    <div class="search-box" id="search-box-container">
+      <div class="search-input-wrapper">
         <span class="search-icon" aria-hidden="true">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </span>
@@ -2489,20 +2518,23 @@ def render_edition_html(pages_list, edition_lang='hindi'):
         <button type="button" id="search-clear-btn" class="search-clear-btn" title="Clear search" aria-label="Clear search" style="display:none;">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
-        <span id="search-counter" class="search-count" title="Click to view all matching pages"></span>
-        
-        <!-- Live Search Results Dropdown -->
-        <div id="search-dropdown" class="search-dropdown" style="display:none;" role="region" aria-label="Search Results">
-          <div class="search-dropdown-header">
-            <span id="search-dropdown-title" class="search-dropdown-title"> परिणाम (Search Results)</span>
-            <button type="button" id="search-dropdown-close" class="search-dropdown-close" title="Close" aria-label="Close search">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-            </button>
-          </div>
-          <div id="search-results-list" class="search-results-list"></div>
-        </div>
       </div>
+      <span id="search-counter" class="search-count" style="display:none;" title="Click to view all matching pages"></span>
+      
+      <!-- Live Search Results Dropdown -->
+      <div id="search-dropdown" class="search-dropdown" style="display:none;" role="region" aria-label="Search Results">
+        <div class="search-dropdown-header">
+          <span id="search-dropdown-title" class="search-dropdown-title"> परिणाम (Search Results)</span>
+          <button type="button" id="search-dropdown-close" class="search-dropdown-close" title="Close" aria-label="Close search">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+        <div id="search-results-list" class="search-results-list"></div>
+      </div>
+    </div>
 
+    <!-- Toolbar Controls (Desktop Only - Hidden on Mobile) -->
+    <div class="toolbar-controls desktop-tools">
       <!-- TOC Toggle Button -->
       <button class="tool-btn" id="btn-toc-toggle" title="{toc_label}">
         <span>📖</span> <span>{toc_label}</span>
@@ -2595,19 +2627,27 @@ def render_edition_html(pages_list, edition_lang='hindi'):
 
   <!-- Bottom Reading Controller Bar -->
   <nav class="bottom-reading-bar" aria-label="Book Navigation Bar">
-    <div style="display:flex; align-items:center; gap:0.35rem;">
-      <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="First Page">« {btn_first_title}</button>
-      <button class="tool-btn nav-step-btn" id="btn-prev-bottom" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="Previous Page">{btn_prev_title}</button>
-    </div>
-
-    <div class="slider-container">
+    <!-- Row 1 (Mobile): Page Slider across full width -->
+    <div class="bottom-slider-area">
       <input type="range" id="page-slider" class="page-slider" min="1" max="{total_pages}" value="1" aria-label="Page Position">
-      <span class="page-counter-badge" id="page-counter-badge">Page 1 of {total_pages}</span>
     </div>
 
-    <div style="display:flex; align-items:center; gap:0.35rem;">
-      <button class="tool-btn nav-step-btn" id="btn-next-bottom" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="Next Page">{btn_next_title}</button>
-      <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage({total_pages}, true);" title="Last Page">{btn_last_title} »</button>
+    <!-- Row 2 (Mobile): Page Counter Badge directly below slider -->
+    <div class="bottom-counter-area">
+      <span class="page-counter-badge" id="page-counter-badge">{page_counter_initial}</span>
+    </div>
+
+    <!-- Row 3 (Mobile): Navigation Buttons -->
+    <div class="bottom-nav-area">
+      <div class="nav-group-left">
+        <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="First Page">« {btn_first_title}</button>
+        <button class="tool-btn nav-step-btn" id="btn-prev-bottom" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="Previous Page">{btn_prev_title}</button>
+      </div>
+
+      <div class="nav-group-right">
+        <button class="tool-btn nav-step-btn" id="btn-next-bottom" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="Next Page">{btn_next_title}</button>
+        <button class="tool-btn nav-edge-btn" onclick="if(window.bookEngine) window.bookEngine.goToPage({total_pages}, true);" title="Last Page">{btn_last_title} »</button>
+      </div>
     </div>
   </nav>
 
@@ -2649,6 +2689,89 @@ def render_edition_html(pages_list, edition_lang='hindi'):
       </div>
       <div class="bookmark-body">
         <div id="bookmark-list" class="bookmark-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Settings Drawer Modal (⚙️) -->
+  <div class="settings-overlay" id="settings-overlay" role="dialog" aria-modal="true" aria-labelledby="settings-modal-title">
+    <div class="settings-modal" id="settings-modal">
+      <div class="settings-header">
+        <h3 class="settings-title" id="settings-modal-title">
+          <span>⚙️</span> {settings_title}
+        </h3>
+        <button class="settings-close-btn" id="settings-close-btn" title="Close" aria-label="Close Settings">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <div class="settings-body">
+        <!-- Section: Navigation & Highlights -->
+        <div class="settings-section">
+          <div class="settings-section-title">{settings_nav_title}</div>
+          <div class="settings-grid">
+            <button class="settings-action-btn" id="settings-btn-toc">
+              <span class="settings-btn-icon">📖</span>
+              <span class="settings-btn-label">{settings_toc_btn}</span>
+            </button>
+            <button class="settings-action-btn" id="settings-btn-bookmark">
+              <span class="settings-btn-icon">🔖</span>
+              <span class="settings-btn-label">{settings_bm_btn}</span>
+              <span id="settings-bookmark-badge" class="badge-count" style="display:none;">0</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Section: Language Switcher -->
+        <div class="settings-section">
+          <div class="settings-section-title">{settings_lang_title}</div>
+          <div class="settings-lang-row">
+            <button class="{hi_opt_cls}" data-lang="hindi"><span class="lang-code-tag">HI</span> { 'हिंदी' if is_hindi else 'Hindi' }</button>
+            <button class="{en_opt_cls}" data-lang="english"><span class="lang-code-tag">EN</span> English</button>
+            <button class="settings-opt-btn" data-lang="bilingual"><span class="lang-code-tag">ALL</span> { 'द्विभाषी' if is_hindi else 'Bilingual' }</button>
+          </div>
+        </div>
+
+        <!-- Section: Appearance & Reading -->
+        <div class="settings-section">
+          <div class="settings-section-title">{settings_appear_title}</div>
+          <div class="settings-grid">
+            <button class="settings-action-btn" id="settings-btn-theme">
+              <span class="settings-btn-icon">📜</span>
+              <span class="settings-btn-label">{settings_theme_btn}</span>
+            </button>
+            <button class="settings-action-btn" id="settings-btn-layout">
+              <span class="settings-btn-icon">📄</span>
+              <span class="settings-btn-label">{settings_layout_btn}</span>
+            </button>
+            <button class="settings-action-btn" id="settings-btn-sound">
+              <span class="settings-btn-icon">🔊</span>
+              <span class="settings-btn-label">{settings_sound_btn}</span>
+            </button>
+            <div class="settings-font-row">
+              <span class="settings-font-title">{settings_font_label}</span>
+              <div class="font-zoom-group">
+                <button class="font-zoom-btn" id="settings-font-dec" title="Decrease Font">A−</button>
+                <button class="font-zoom-btn" id="settings-font-inc" title="Increase Font">A+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section: Official Links -->
+        <div class="settings-section">
+          <div class="settings-section-title">{settings_links_title}</div>
+          <div class="settings-grid">
+            <a href="https://t.worldgyan.com" target="_blank" rel="noopener" class="settings-action-btn" style="color:var(--accent-gold); text-decoration:none;">
+              <span class="settings-btn-icon">🌐</span>
+              <span class="settings-btn-label">t.worldgyan.com</span>
+            </a>
+            <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="settings-action-btn" style="color:#ef4444; text-decoration:none;">
+              <span class="settings-btn-icon">▶</span>
+              <span class="settings-btn-label">@TantraGyan108</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

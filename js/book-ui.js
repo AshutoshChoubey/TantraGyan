@@ -55,6 +55,9 @@ class BookUIController {
     // 9. Initialize Table of Contents Modal
     this.initTOC();
 
+    // 10. Initialize Mobile Settings Drawer Modal (⚙️)
+    this.initSettingsDrawer();
+
     // Initial update of bookmark UI state
     this.updateBookmarkUI();
   }
@@ -229,11 +232,16 @@ class BookUIController {
         : 'वर्तमान पृष्ठ बुकमार्क करें (Click to bookmark page)';
     }
 
-    // 2. Update Bookmark Count Badge in Toolbar
+    // 2. Update Bookmark Count Badge in Toolbar & Settings Drawer
     const countBadge = document.getElementById('bookmark-count-badge');
     if (countBadge) {
       countBadge.textContent = this.bookmarks.length.toString();
       countBadge.style.display = this.bookmarks.length > 0 ? 'inline-block' : 'none';
+    }
+    const settingsCountBadge = document.getElementById('settings-bookmark-badge');
+    if (settingsCountBadge) {
+      settingsCountBadge.textContent = this.bookmarks.length.toString();
+      settingsCountBadge.style.display = this.bookmarks.length > 0 ? 'inline-block' : 'none';
     }
 
     // 3. Update Modal Button
@@ -323,17 +331,28 @@ class BookUIController {
 
     if (!searchInput) return;
 
+    // Ensure hidden initially
+    if (searchClearBtn) searchClearBtn.style.display = 'none';
+    if (searchCounter) {
+      searchCounter.textContent = '';
+      searchCounter.style.display = 'none';
+    }
+    if (searchDropdown) searchDropdown.style.display = 'none';
+
     // Real-time input typing with debounce
     searchInput.addEventListener('input', (e) => {
       clearTimeout(this.searchTimeout);
       const query = e.target.value.trim();
 
       if (searchClearBtn) {
-        searchClearBtn.style.display = query ? 'block' : 'none';
+        searchClearBtn.style.display = e.target.value.length > 0 ? 'flex' : 'none';
       }
 
       if (!query || query.length < 2) {
-        if (searchCounter) searchCounter.textContent = '';
+        if (searchCounter) {
+          searchCounter.textContent = '';
+          searchCounter.style.display = 'none';
+        }
         if (searchDropdown) searchDropdown.style.display = 'none';
         this.activeSearchQuery = '';
         this.clearPageHighlights();
@@ -362,7 +381,10 @@ class BookUIController {
       searchClearBtn.addEventListener('click', () => {
         searchInput.value = '';
         searchClearBtn.style.display = 'none';
-        if (searchCounter) searchCounter.textContent = '';
+        if (searchCounter) {
+          searchCounter.textContent = '';
+          searchCounter.style.display = 'none';
+        }
         if (searchDropdown) searchDropdown.style.display = 'none';
         this.activeSearchQuery = '';
         this.clearPageHighlights();
@@ -443,9 +465,11 @@ class BookUIController {
       if (matches.length > 0) {
         searchCounter.textContent = `${matches.length} परिणाम`;
         searchCounter.title = `${matches.length} matching pages found. Click to view results list.`;
+        searchCounter.style.display = 'inline-flex';
       } else {
         searchCounter.textContent = '0 परिणाम';
         searchCounter.title = 'No matches found.';
+        searchCounter.style.display = 'inline-flex';
       }
     }
 
@@ -625,6 +649,7 @@ class BookUIController {
       themeBtn.innerHTML = '<span>📜</span> <span>भोजपत्र</span>';
       themeBtn.title = 'Switch to Dark Theme';
     }
+    this.syncSettingsDrawerLabels();
   }
 
   // ============================================================================
@@ -682,6 +707,9 @@ class BookUIController {
   setLanguageMode(mode) {
     document.documentElement.setAttribute('data-lang-mode', mode);
     document.querySelectorAll('.lang-btn').forEach(b => {
+      b.classList.toggle('active', b.getAttribute('data-lang') === mode);
+    });
+    document.querySelectorAll('.settings-opt-btn').forEach(b => {
       b.classList.toggle('active', b.getAttribute('data-lang') === mode);
     });
     try {
@@ -779,22 +807,50 @@ class BookUIController {
       });
     }
 
-    const fullscreenBtn = document.getElementById('btn-fullscreen');
-    if (fullscreenBtn) {
-      fullscreenBtn.addEventListener('click', () => {
-        if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen().catch(err => {
-            console.warn('Fullscreen request failed:', err);
-          });
-          fullscreenBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14h6m0 0v6m0-6L3 21m17-7h-6m0 0v6m0-6l7 7M10 4v6m0 0H4m6 0L3 3m10 7h6m-6 0V4m0 6l7-7"/></svg>';
+    // Fullscreen Toggle for Desktop & Mobile
+    const fullscreenBtns = document.querySelectorAll('#btn-fullscreen, #btn-fullscreen-mobile, .mobile-fullscreen-btn');
+    const updateFsIcons = (isFs) => {
+      const icon = isFs
+        ? '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14h6m0 0v6m0-6L3 21m17-7h-6m0 0v6m0-6l7 7M10 4v6m0 0H4m6 0L3 3m10 7h6m-6 0V4m0 6l7-7"/></svg>'
+        : '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>';
+      fullscreenBtns.forEach(b => {
+        b.innerHTML = icon;
+        b.title = isFs ? 'Exit Fullscreen' : 'Toggle Fullscreen';
+      });
+    };
+
+    fullscreenBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isFs = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+        if (!isFs) {
+          const docEl = document.documentElement;
+          if (docEl.requestFullscreen) {
+            docEl.requestFullscreen().catch(err => console.warn('Fullscreen request failed:', err));
+          } else if (docEl.webkitRequestFullscreen) {
+            docEl.webkitRequestFullscreen();
+          } else if (docEl.webkitEnterFullscreen) {
+            docEl.webkitEnterFullscreen();
+          } else if (docEl.msRequestFullscreen) {
+            docEl.msRequestFullscreen();
+          }
         } else {
           if (document.exitFullscreen) {
-            document.exitFullscreen();
-            fullscreenBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>';
+            document.exitFullscreen().catch(err => console.warn('Exit fullscreen failed:', err));
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
           }
         }
       });
-    }
+    });
+
+    ['fullscreenchange', 'webkitfullscreenchange', 'mozfullscreenchange', 'MSFullscreenChange'].forEach(evt => {
+      document.addEventListener(evt, () => {
+        const isFs = !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+        updateFsIcons(isFs);
+      });
+    });
   }
 
   // ============================================================================
@@ -840,6 +896,162 @@ class BookUIController {
         });
       });
     }
+  }
+
+  // ============================================================================
+  // 10. Mobile Settings Drawer Modal (⚙️)
+  // ============================================================================
+  initSettingsDrawer() {
+    const settingsToggleBtn = document.getElementById('btn-settings-toggle');
+    const settingsOverlay = document.getElementById('settings-overlay');
+    const settingsCloseBtn = document.getElementById('settings-close-btn');
+
+    if (settingsToggleBtn && settingsOverlay) {
+      settingsToggleBtn.addEventListener('click', () => {
+        settingsOverlay.classList.add('active');
+        this.syncSettingsDrawerLabels();
+      });
+
+      if (settingsCloseBtn) {
+        settingsCloseBtn.addEventListener('click', () => {
+          settingsOverlay.classList.remove('active');
+        });
+      }
+
+      settingsOverlay.addEventListener('click', (e) => {
+        if (e.target === settingsOverlay) {
+          settingsOverlay.classList.remove('active');
+        }
+      });
+
+      // Quick Action: TOC
+      const settingsTocBtn = document.getElementById('settings-btn-toc');
+      if (settingsTocBtn) {
+        settingsTocBtn.addEventListener('click', () => {
+          settingsOverlay.classList.remove('active');
+          const tocBtn = document.getElementById('btn-toc-toggle');
+          if (tocBtn) tocBtn.click();
+        });
+      }
+
+      // Quick Action: Bookmarks
+      const settingsBookmarkBtn = document.getElementById('settings-btn-bookmark');
+      if (settingsBookmarkBtn) {
+        settingsBookmarkBtn.addEventListener('click', () => {
+          settingsOverlay.classList.remove('active');
+          const bmBtn = document.getElementById('btn-bookmark-toggle');
+          if (bmBtn) bmBtn.click();
+        });
+      }
+
+      // Quick Action: Theme Toggle
+      const settingsThemeBtn = document.getElementById('settings-btn-theme');
+      if (settingsThemeBtn) {
+        settingsThemeBtn.addEventListener('click', () => {
+          const mainThemeBtn = document.getElementById('btn-theme-toggle');
+          if (mainThemeBtn) {
+            mainThemeBtn.click();
+            this.syncSettingsDrawerLabels();
+          }
+        });
+      }
+
+      // Quick Action: Layout Toggle
+      const settingsLayoutBtn = document.getElementById('settings-btn-layout');
+      if (settingsLayoutBtn) {
+        settingsLayoutBtn.addEventListener('click', () => {
+          const mainLayoutBtn = document.getElementById('btn-layout-toggle');
+          if (mainLayoutBtn) {
+            mainLayoutBtn.click();
+            this.syncSettingsDrawerLabels();
+          }
+        });
+      }
+
+      // Quick Action: Sound Toggle
+      const settingsSoundBtn = document.getElementById('settings-btn-sound');
+      if (settingsSoundBtn) {
+        settingsSoundBtn.addEventListener('click', () => {
+          const mainSoundBtn = document.getElementById('btn-sound-toggle');
+          if (mainSoundBtn) {
+            mainSoundBtn.click();
+            this.syncSettingsDrawerLabels();
+          }
+        });
+      }
+
+      // Quick Action: Font Zoom
+      const settingsFontDec = document.getElementById('settings-font-dec');
+      const settingsFontInc = document.getElementById('settings-font-inc');
+      if (settingsFontDec) {
+        settingsFontDec.addEventListener('click', () => {
+          const dec = document.getElementById('btn-font-dec');
+          if (dec) dec.click();
+        });
+      }
+      if (settingsFontInc) {
+        settingsFontInc.addEventListener('click', () => {
+          const inc = document.getElementById('btn-font-inc');
+          if (inc) inc.click();
+        });
+      }
+
+      // Settings Language Option Buttons
+      const settingsLangBtns = document.querySelectorAll('.settings-opt-btn');
+      settingsLangBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetLang = btn.getAttribute('data-lang');
+          const matchingToolbarBtn = document.querySelector(`.lang-btn[data-lang="${targetLang}"]`);
+          if (matchingToolbarBtn) {
+            settingsOverlay.classList.remove('active');
+            matchingToolbarBtn.click();
+          }
+        });
+      });
+    }
+  }
+
+  syncSettingsDrawerLabels() {
+    // Sync Theme Label
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'parchment';
+    const themeLabel = document.getElementById('settings-theme-label');
+    if (themeLabel) {
+      if (currentTheme === 'dark') themeLabel.textContent = 'रात्रि (Dark)';
+      else if (currentTheme === 'light') themeLabel.textContent = 'श्वेत (Light)';
+      else themeLabel.textContent = 'भोजपत्र (Classic)';
+    }
+
+    // Sync Layout Label
+    const isSingle = document.documentElement.classList.contains('single-mode-active');
+    const layoutLabel = document.getElementById('settings-layout-label');
+    if (layoutLabel) {
+      layoutLabel.textContent = isSingle ? 'एकल पृष्ठ (Single)' : 'दो पृष्ठ (Spread)';
+    }
+
+    // Sync Sound Label
+    const soundLabel = document.getElementById('settings-sound-label');
+    if (soundLabel && window.bookSound) {
+      soundLabel.textContent = window.bookSound.isMuted ? 'म्यूट (Off)' : 'चालू (On)';
+    }
+
+    // Sync Bookmark Badge
+    const bmBadge = document.getElementById('settings-bookmark-badge');
+    const saved = this.getBookmarks ? this.getBookmarks() : (this.bookmarks || []);
+    if (bmBadge) {
+      if (saved.length > 0) {
+        bmBadge.textContent = saved.length.toString();
+        bmBadge.style.display = 'inline-block';
+      } else {
+        bmBadge.style.display = 'none';
+      }
+    }
+
+    // Sync Language Buttons
+    const currentLang = document.documentElement.getAttribute('data-lang-mode') || 'bilingual';
+    document.querySelectorAll('.settings-opt-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === currentLang);
+    });
   }
 
   escapeHtml(text) {
