@@ -1085,8 +1085,8 @@ html_template = f"""<!DOCTYPE html>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   
   <!-- Standard CSS Files for Maximum Maintainability -->
-  <link rel="stylesheet" href="css/book.css?v=3.7">
-  <link rel="stylesheet" href="css/tables.css?v=3.7">
+  <link rel="stylesheet" href="css/book.css?v=3.8">
+  <link rel="stylesheet" href="css/tables.css?v=3.8">
   
   <!-- Schema.org JSON-LD Educational Book Structured Data -->
   <script type="application/ld+json">
@@ -1149,9 +1149,9 @@ html_template = f"""<!DOCTYPE html>
       </a>
 
       <!-- Mobile Search Trigger Pill (Inside header-top-row on mobile, hidden on desktop) -->
-      <button type="button" class="mobile-search-trigger-btn" id="mobile-search-trigger" aria-label="खोजें / Search">
+      <button type="button" class="mobile-search-trigger-btn" id="mobile-search-trigger" aria-label="Search">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <span>खोजें</span>
+        <span>Search</span>
       </button>
 
       <!-- Mobile Header Actions (Gear Settings Icon) -->
@@ -1463,10 +1463,10 @@ html_template = f"""<!DOCTYPE html>
   </div>
 
   <!-- Scripts -->
-  <script src="js/sounds-data.js?v=3.7"></script>
-  <script src="js/sound.js?v=3.7"></script>
-  <script src="js/book-engine.js?v=3.7"></script>
-  <script src="js/book-ui.js?v=3.7"></script>
+  <script src="js/sounds-data.js?v=3.8"></script>
+  <script src="js/sound.js?v=3.8"></script>
+  <script src="js/book-engine.js?v=3.8"></script>
+  <script src="js/book-ui.js?v=3.8"></script>
 </body>
 </html>
 """

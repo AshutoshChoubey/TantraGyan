@@ -4030,15 +4030,24 @@ html, body {
     margin: 0.2rem auto 0.4rem auto;
   }
 
-  /* Compact button icons on phones to preserve room for center badge */
+  /* Compact button labels on mobile phones */
   .nav-btn-text {
-    display: none;
+    display: inline !important;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
   }
 
   .bottom-reading-bar .tool-btn {
-    padding: 0.28rem 0.42rem;
-    font-size: 0.76rem;
-    min-height: 28px;
+    padding: 0.2rem 0.32rem;
+    font-size: 0.68rem;
+    min-height: 26px;
+    gap: 0.12rem;
+  }
+
+  .nav-group-left,
+  .nav-group-right {
+    gap: 0.18rem;
   }
 
   .page-counter-badge {
@@ -4095,13 +4104,25 @@ html, body {
     padding: 0.35rem 2rem 0.35rem 1.8rem;
   }
 
+  .nav-btn-text {
+    display: inline !important;
+    font-size: 0.55rem;
+  }
+
   .bottom-reading-bar .tool-btn {
-    padding: 0.25rem 0.4rem;
-    font-size: 0.68rem;
+    padding: 0.16rem 0.24rem;
+    font-size: 0.62rem;
+    gap: 0.1rem;
+  }
+
+  .nav-group-left,
+  .nav-group-right {
+    gap: 0.12rem;
   }
 
   .page-counter-badge {
-    font-size: 0.72rem;
+    font-size: 0.64rem;
+    padding: 0.1rem 0.25rem;
   }
 
   .page-body {
