@@ -847,19 +847,20 @@ html, body {
   display: block !important;
 }
 
-/* Closed Front Cover Mode (Book Closed at Start) */
+/* Closed Front Cover Mode (Book Closed at Start) - Completely Stable & Solid (No Shaking) */
 .book-container.cover-closed-front,
 .book-container.cover-closed-back {
   max-width: 600px !important;
   margin: 0 auto;
-  animation: cosmicBookLevitation 5.2s ease-in-out infinite alternate;
+  transform: none !important;
+  animation: none !important;
   box-shadow: 
-    0 30px 65px -12px rgba(0, 0, 0, 0.88),
-    0 0 50px rgba(147, 51, 234, 0.22),
-    0 0 80px rgba(217, 119, 6, 0.2) !important;
+    0 24px 60px -10px rgba(0, 0, 0, 0.85),
+    0 0 50px rgba(147, 51, 234, 0.18),
+    0 0 80px rgba(217, 119, 6, 0.16) !important;
 }
 
-/* While book is in active cover open/close animations, freeze levitation */
+/* While book is in active cover open/close animations */
 .book-container.book-opening,
 .book-container.book-closing-front,
 .book-container.book-closing-back,
@@ -882,54 +883,6 @@ html, body {
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
-}
-
-/* Floating Levitating Book Animation Keyframes */
-@keyframes cosmicBookLevitation {
-  0% {
-    transform: translateY(0px) rotateX(1deg) rotateZ(0deg);
-    box-shadow: 
-      0 26px 50px -12px rgba(0, 0, 0, 0.88),
-      0 0 40px rgba(147, 51, 234, 0.2),
-      0 0 60px rgba(217, 119, 6, 0.16);
-  }
-  50% {
-    transform: translateY(-16px) rotateX(-0.5deg) rotateZ(0.3deg);
-    box-shadow: 
-      0 44px 80px -15px rgba(0, 0, 0, 0.78),
-      0 0 70px rgba(147, 51, 234, 0.32),
-      0 0 100px rgba(217, 119, 6, 0.28);
-  }
-  100% {
-    transform: translateY(-8px) rotateX(0.5deg) rotateZ(-0.2deg);
-    box-shadow: 
-      0 34px 62px -12px rgba(0, 0, 0, 0.84),
-      0 0 50px rgba(147, 51, 234, 0.25),
-      0 0 75px rgba(217, 119, 6, 0.22);
-  }
-}
-
-/* Initial Load Manifestation from Cosmic Void */
-.book-container.cosmic-manifest {
-  animation: cosmicBookManifest 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
-}
-
-@keyframes cosmicBookManifest {
-  0% {
-    opacity: 0;
-    transform: translateY(50px) scale(0.86) rotateX(8deg);
-    filter: blur(14px) brightness(1.8);
-  }
-  65% {
-    opacity: 0.96;
-    transform: translateY(-18px) scale(1.02) rotateX(-1deg);
-    filter: blur(0px) brightness(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px) scale(1) rotateX(1deg);
-    filter: blur(0px) brightness(1);
-  }
 }
 
 .book-container.cover-closed-front .book-pages-wrapper,
@@ -3536,13 +3489,20 @@ html, body {
   }
 
   .app-header {
-    height: auto;
-    min-height: 84px;
-    padding: 0.45rem 0.75rem 0.5rem 0.75rem;
+    height: 56px;
+    min-height: 56px;
+    padding: 0.35rem 0.85rem;
+    display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
-    gap: 0.4rem;
+    transition: height 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .app-header.search-expanded {
+    height: 104px;
+    min-height: 104px;
+    padding: 0.45rem 0.85rem 0.55rem 0.85rem;
   }
 
   .header-top-row {
@@ -3550,31 +3510,57 @@ html, body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    gap: 0.5rem;
+    flex-wrap: wrap;
   }
   
   .brand-section {
+    order: 1;
     width: auto;
     justify-content: flex-start;
-    flex: 1;
+    flex: 0 1 auto;
     min-width: 0;
+    gap: 0.45rem;
+  }
+
+  .brand-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .brand-logo img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .brand-name {
+    font-size: 0.98rem;
+    white-space: nowrap;
+  }
+
+  .brand-name span {
+    display: none;
   }
 
   .brand-tagline {
     display: none;
   }
 
+  /* Gear Icon button on the right */
   .mobile-header-actions {
+    order: 3;
     display: flex !important;
     align-items: center;
     gap: 0.45rem;
     flex-shrink: 0;
+    margin-left: 0;
   }
 
   .mobile-action-btn {
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    padding: 0.42rem 0.65rem;
+    padding: 0.4rem 0.6rem;
     font-size: 0.88rem;
     min-height: 34px;
     background: rgba(200, 157, 61, 0.12);
@@ -3597,17 +3583,21 @@ html, body {
     display: none !important;
   }
 
-  /* Search Box at the top */
+  /* Search Box (Positioned before gear icon on mobile) */
   .search-box {
-    width: 100%;
-    margin: 0;
+    order: 2;
+    width: 130px;
+    height: 35px;
+    margin: 0 0 0 auto;
     display: flex;
     align-items: center;
-    gap: 0.45rem;
+    gap: 0.35rem;
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   .search-input-wrapper {
     flex: 1;
+    height: 35px;
     position: relative;
     display: flex;
     align-items: center;
@@ -3615,15 +3605,65 @@ html, body {
 
   .search-input {
     width: 100% !important;
-    font-size: 0.82rem;
-    padding: 0.42rem 2.2rem 0.42rem 2.1rem;
-    background: rgba(0, 0, 0, 0.4);
+    height: 35px;
+    font-size: 0.78rem;
+    padding: 0.25rem 0.5rem 0.25rem 1.85rem;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(200, 157, 61, 0.35);
     border-radius: 18px;
+    color: var(--text-main);
+    cursor: pointer;
   }
 
-  .search-input:focus {
-    width: 100% !important;
-    background: rgba(0, 0, 0, 0.65);
+  .search-input::placeholder {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+  }
+
+  .search-icon {
+    left: 0.55rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Search Expanded State on Mobile (Wraps below brand and gear icon) */
+  .app-header.search-expanded .search-box {
+    order: 4;
+    width: 100%;
+    height: 38px;
+    margin-top: 0.35rem;
+  }
+
+  .app-header.search-expanded .search-input {
+    height: 38px;
+    font-size: 0.88rem;
+    padding: 0.45rem 3.8rem 0.45rem 2.2rem;
+    background: rgba(0, 0, 0, 0.75);
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 15px rgba(200, 157, 61, 0.25);
+    cursor: text;
+  }
+
+  .search-close-mobile-btn {
+    display: none;
+    position: absolute;
+    right: 0.45rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(200, 157, 61, 0.15);
+    border: 1px solid rgba(200, 157, 61, 0.4);
+    color: var(--accent-gold);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+  }
+
+  .app-header.search-expanded .search-close-mobile-btn {
+    display: flex !important;
   }
 
   .search-clear-btn {
@@ -3631,6 +3671,10 @@ html, body {
     right: 0.55rem;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  .app-header.search-expanded .search-clear-btn {
+    right: 2.45rem;
   }
 
   .search-count {
@@ -3641,20 +3685,24 @@ html, body {
 
   .search-dropdown {
     position: fixed;
-    top: 92px;
+    top: 106px;
     left: 50%;
     transform: translateX(-50%);
     width: 94vw;
     max-width: 440px;
-    max-height: 72vh;
+    max-height: 70vh;
     z-index: 99999;
   }
 
   .main-stage {
-    padding: 92px 0.5rem 68px 0.5rem !important;
+    padding: 66px 0.5rem 64px 0.5rem !important;
     min-height: 100vh;
     height: 100vh;
     box-sizing: border-box;
+  }
+
+  .app-header.search-expanded ~ .main-stage {
+    padding-top: 112px !important;
   }
 
   .book-container {

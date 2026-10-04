@@ -402,6 +402,46 @@ class BookUIController {
       });
     }
 
+    const header = document.querySelector('.app-header');
+    const searchCloseMobileBtn = document.getElementById('search-close-mobile-btn');
+
+    const expandSearchMobile = () => {
+      if (window.innerWidth <= 860 && header) {
+        header.classList.add('search-expanded');
+      }
+    };
+
+    const collapseSearchMobile = () => {
+      if (header) {
+        header.classList.remove('search-expanded');
+      }
+      if (searchDropdown) {
+        searchDropdown.style.display = 'none';
+      }
+    };
+
+    // Expand mobile search on focus or click
+    searchInput.addEventListener('focus', expandSearchMobile);
+    searchInput.addEventListener('click', expandSearchMobile);
+
+    // Mobile Close Button
+    if (searchCloseMobileBtn) {
+      searchCloseMobileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        searchInput.value = '';
+        if (searchClearBtn) searchClearBtn.style.display = 'none';
+        if (searchCounter) {
+          searchCounter.textContent = '';
+          searchCounter.style.display = 'none';
+        }
+        if (searchDropdown) searchDropdown.style.display = 'none';
+        this.activeSearchQuery = '';
+        this.clearPageHighlights();
+        collapseSearchMobile();
+        searchInput.blur();
+      });
+    }
+
     // Close Dropdown Button
     if (searchDropdownClose && searchDropdown) {
       searchDropdownClose.addEventListener('click', () => {
@@ -409,11 +449,14 @@ class BookUIController {
       });
     }
 
-    // Click Outside to Close Search Dropdown
+    // Click Outside to Close Search Dropdown & Collapse Mobile Search
     document.addEventListener('click', (e) => {
       const container = document.getElementById('search-box-container');
-      if (container && !container.contains(e.target) && searchDropdown) {
-        searchDropdown.style.display = 'none';
+      if (container && !container.contains(e.target)) {
+        if (searchDropdown) searchDropdown.style.display = 'none';
+        if (window.innerWidth <= 860 && !searchInput.value.trim()) {
+          collapseSearchMobile();
+        }
       }
     });
   }

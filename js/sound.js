@@ -13,7 +13,9 @@ class BookSoundEngine {
     this.isMuted = false;
     this.volume = 0.75;
     this.initialized = false;
+    this.unlocked = false;
     this.variationIndex = 0;
+    this.silentAudio = null;
 
     // Check saved audio preference
     try {
@@ -25,27 +27,55 @@ class BookSoundEngine {
       console.warn('Storage not accessible for audio settings');
     }
 
-    // Auto-warm AudioContext on first touch/click anywhere on document
-    const unlockAudio = () => {
-      this.init();
-      document.removeEventListener('pointerdown', unlockAudio);
-      document.removeEventListener('keydown', unlockAudio);
+    // Auto-warm and unlock AudioContext on any user interaction across all mobile & desktop browsers
+    const unlockHandler = () => {
+      this.unlockIOSAudio();
     };
-    document.addEventListener('pointerdown', unlockAudio, { passive: true });
-    document.addEventListener('keydown', unlockAudio, { passive: true });
+
+    ['touchstart', 'touchend', 'click', 'pointerdown', 'keydown'].forEach(evt => {
+      document.addEventListener(evt, unlockHandler, { passive: true });
+      window.addEventListener(evt, unlockHandler, { passive: true });
+    });
+  }
+
+  unlockIOSAudio() {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!this.audioCtx && AudioContextClass) {
+      try {
+        this.audioCtx = new AudioContextClass();
+        this.initialized = true;
+      } catch (e) {}
+    }
+
+    if (this.audioCtx) {
+      if (this.audioCtx.state === 'suspended') {
+        this.audioCtx.resume();
+      }
+
+      if (!this.unlocked) {
+        try {
+          // Play a 1-sample silent buffer directly to force iOS Safari to power on audio hardware
+          const buffer = this.audioCtx.createBuffer(1, 1, 22050);
+          const source = this.audioCtx.createBufferSource();
+          source.buffer = buffer;
+          source.connect(this.audioCtx.destination);
+          source.start(0);
+          this.unlocked = true;
+        } catch (e) {}
+      }
+    }
+
+    // Play tiny silent audio snippet to configure iOS system audio session to playback category
+    try {
+      if (!this.silentAudio) {
+        this.silentAudio = new Audio('data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA');
+        this.silentAudio.play().catch(() => {});
+      }
+    } catch (e) {}
   }
 
   init() {
-    if (!this.initialized) {
-      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-      if (AudioContextClass) {
-        this.audioCtx = new AudioContextClass();
-        this.initialized = true;
-      }
-    }
-    if (this.audioCtx && this.audioCtx.state === 'suspended') {
-      this.audioCtx.resume();
-    }
+    this.unlockIOSAudio();
   }
 
   /**
@@ -58,7 +88,7 @@ class BookSoundEngine {
     if (!this.audioCtx) return;
 
     try {
-      const now = this.audioCtx.currentTime;
+      const now = Math.max(this.audioCtx.currentTime, 0.005);
       const duration = 0.52; // 520ms natural flip, matching 540ms 3D leaf turn
 
       // Organic variation factor (shifts pitch & filter characteristics slightly)
@@ -154,9 +184,11 @@ class BookSoundEngine {
       thudGain.gain.linearRampToValueAtTime(this.volume * 0.42, now + 0.40);
       thudGain.gain.exponentialRampToValueAtTime(0.001, now + duration);
 
-      // Directional Spatial Stereo Panning (Opposite stereo trajectory)
+      const isMobileDevice = window.innerWidth <= 860 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+      // Directional Spatial Stereo Panning (Desktop only)
       let panner = null;
-      if (this.audioCtx.createStereoPanner) {
+      if (!isMobileDevice && this.audioCtx.createStereoPanner) {
         try {
           panner = this.audioCtx.createStereoPanner();
           if (direction === 'next') {

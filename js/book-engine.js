@@ -80,17 +80,6 @@ class BookEngine {
     this.currentPage = startPage;
     this.render();
     this.onPageChanged();
-
-    // Cosmic manifestation entrance on initial load at cover
-    if (this.currentPage === 1) {
-      const bookContainer = document.querySelector('.book-container');
-      if (bookContainer) {
-        bookContainer.classList.add('cosmic-manifest');
-        setTimeout(() => {
-          bookContainer.classList.remove('cosmic-manifest');
-        }, 1600);
-      }
-    }
   }
 
   updateSpreadMode() {
