@@ -557,6 +557,7 @@ html, body {
   height: 3px;
   background: rgba(200, 157, 61, 0.15);
   z-index: 999;
+  transition: top 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .reading-progress-fill {
@@ -3550,7 +3551,16 @@ html, body {
 @media (max-width: 860px) {
   :root {
     --book-width: 100%;
-    --book-height: calc(100vh - 112px);
+    --book-height: calc(100vh - 118px);
+  }
+
+  .reading-progress-track {
+    top: 46px;
+    height: 3px;
+  }
+
+  .app-header.search-expanded ~ .reading-progress-track {
+    top: 94px;
   }
 
   .app-header {
@@ -3782,19 +3792,19 @@ html, body {
   }
 
   .main-stage {
-    padding: 50px 0.5rem 58px 0.5rem !important;
+    padding: 55px 0.5rem 58px 0.5rem !important;
     min-height: 100vh;
     height: 100vh;
     box-sizing: border-box;
   }
 
   .app-header.search-expanded ~ .main-stage {
-    padding-top: 98px !important;
+    padding-top: 103px !important;
   }
 
   .book-container {
     height: 100%;
-    max-height: calc(100vh - 112px);
+    max-height: calc(100vh - 118px);
     min-height: 0;
     padding: 6px;
     border-width: 2px;
@@ -3911,7 +3921,17 @@ html, body {
 @media (max-width: 580px) {
   :root {
     --book-width: 100%;
-    --book-height: calc(100vh - 106px);
+    --book-height: calc(100vh - 112px);
+  }
+
+  .reading-progress-track {
+    top: 44px;
+    height: 3px;
+    background: rgba(200, 157, 61, 0.2);
+  }
+
+  .app-header.search-expanded ~ .reading-progress-track {
+    top: 88px;
   }
 
   .app-header {
@@ -3937,19 +3957,19 @@ html, body {
   }
 
   .main-stage {
-    padding: 48px 4px 54px 4px !important;
+    padding: 53px 4px 54px 4px !important;
     min-height: 100vh;
     height: 100vh;
     box-sizing: border-box;
   }
 
   .app-header.search-expanded ~ .main-stage {
-    padding-top: 92px !important;
+    padding-top: 97px !important;
   }
 
   .book-container {
     height: 100%;
-    max-height: calc(100vh - 106px);
+    max-height: calc(100vh - 112px);
     min-height: 0;
     padding: 4px;
     border-width: 1px;
@@ -4034,10 +4054,27 @@ html, body {
 
 /* Foldable Phones Closed Screen & Ultra-Compact Devices (<= 340px) */
 @media (max-width: 340px) {
+  .reading-progress-track {
+    top: 42px;
+  }
+
+  .app-header.search-expanded ~ .reading-progress-track {
+    top: 84px;
+  }
+
   .app-header {
     padding: 0.2rem 0.4rem;
     height: 42px;
     min-height: 42px;
+  }
+
+  .main-stage {
+    padding: 50px 3px 52px 3px !important;
+  }
+
+  .book-container {
+    height: 100%;
+    max-height: calc(100vh - 108px);
   }
 
   .brand-logo img {

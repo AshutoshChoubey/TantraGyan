@@ -1085,8 +1085,8 @@ html_template = f"""<!DOCTYPE html>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   
   <!-- Standard CSS Files for Maximum Maintainability -->
-  <link rel="stylesheet" href="css/book.css?v=3.6">
-  <link rel="stylesheet" href="css/tables.css?v=3.6">
+  <link rel="stylesheet" href="css/book.css?v=3.7">
+  <link rel="stylesheet" href="css/tables.css?v=3.7">
   
   <!-- Schema.org JSON-LD Educational Book Structured Data -->
   <script type="application/ld+json">
@@ -1463,10 +1463,10 @@ html_template = f"""<!DOCTYPE html>
   </div>
 
   <!-- Scripts -->
-  <script src="js/sounds-data.js?v=3.6"></script>
-  <script src="js/sound.js?v=3.6"></script>
-  <script src="js/book-engine.js?v=3.6"></script>
-  <script src="js/book-ui.js?v=3.6"></script>
+  <script src="js/sounds-data.js?v=3.7"></script>
+  <script src="js/sound.js?v=3.7"></script>
+  <script src="js/book-engine.js?v=3.7"></script>
+  <script src="js/book-ui.js?v=3.7"></script>
 </body>
 </html>
 """

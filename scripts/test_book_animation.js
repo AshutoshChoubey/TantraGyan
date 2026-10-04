@@ -100,8 +100,8 @@ console.log('PASS: js/sound.js swell and peak envelope verified.');
 // 4. Verify all HTML files and page counts
 ['index.html', 'hindi.html', 'english.html'].forEach(file => {
   const html = fs.readFileSync(path.join(rootDir, file), 'utf-8');
-  if (!html.includes('book.css?v=3.6') || !html.includes('book-engine.js?v=3.6')) {
-    console.error(`FAIL: ${file} missing asset v=3.6`);
+  if (!html.includes('book.css?v=3.7') || !html.includes('book-engine.js?v=3.7')) {
+    console.error(`FAIL: ${file} missing asset v=3.7`);
     process.exit(1);
   }
   const pageMatches = html.match(/class="book-page-data"/g) || [];
@@ -109,7 +109,7 @@ console.log('PASS: js/sound.js swell and peak envelope verified.');
     console.error(`FAIL: ${file} does not contain 88 pages (found ${pageMatches.length})`);
     process.exit(1);
   }
-  console.log(`PASS: ${file} verified (88 pages, v=3.6 assets).`);
+  console.log(`PASS: ${file} verified (88 pages, v=3.7 assets).`);
 });
 
 console.log('\n--- ALL VERIFICATION TESTS PASSED SUCCESSFULLY! ---');
