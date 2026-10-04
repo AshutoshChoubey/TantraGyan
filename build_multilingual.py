@@ -2387,8 +2387,10 @@ def render_edition_html(pages_list, edition_lang='hindi'):
     doc_lang = "hi" if is_hindi else "en"
     doc_title = "वैदिक ज्योतिष महाग्रंथ सरलीकृत (सम्पूर्ण हिन्दी संस्करण)" if is_hindi else "Complete Vedic Astrology Compendium Simplified (English Edition)"
     
+    brand_main = "तंत्र ज्ञान शोध संस्थान" if is_hindi else "Tantra Gyan"
     brand_sub = "सम्पूर्ण हिन्दी संस्करण" if is_hindi else "Complete English Edition"
     search_placeholder = "ग्रंथ में खोजें (उदा. सूर्य, मंगल, गजकेसरी, पुष्य)..." if is_hindi else "Search compendium (e.g. Sun, Mars, Raja Yoga, Pushya)..."
+    search_btn_text = "खोजें" if is_hindi else "Search"
     toc_label = "विषय-सूची" if is_hindi else "Contents"
     bookmark_label = "बुकमार्क" if is_hindi else "Bookmarks"
     theme_label = "भोजपत्र" if is_hindi else "Parchment"
@@ -2502,15 +2504,15 @@ def render_edition_html(pages_list, edition_lang='hindi'):
           <img src="assets/yantra.svg" alt="Tantra Gyan Mandala" width="34" height="34">
         </div>
         <div class="brand-titles">
-          <span class="brand-name">तंत्र ज्ञान शोध संस्थान <span>Tantra Gyan</span></span>
+          <span class="brand-name">{brand_main}</span>
           <span class="brand-tagline">{brand_sub}</span>
         </div>
       </a>
 
       <!-- Mobile Search Trigger Pill (Inside header-top-row on mobile, hidden on desktop) -->
-      <button type="button" class="mobile-search-trigger-btn" id="mobile-search-trigger" aria-label="खोजें / Search">
+      <button type="button" class="mobile-search-trigger-btn" id="mobile-search-trigger" aria-label="{ 'खोजें' if is_hindi else 'Search' }">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <span>खोजें</span>
+        <span>{search_btn_text}</span>
       </button>
 
       <!-- Mobile Header Actions (Gear Settings Icon) -->

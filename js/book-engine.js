@@ -326,7 +326,7 @@ class BookEngine {
         this.render();
         this.onPageChanged();
       }
-    }, 700);
+    }, 500);
 
     const wrapper = document.querySelector('.book-pages-wrapper');
     if (!wrapper) {
@@ -468,7 +468,7 @@ class BookEngine {
       this.render();
       this.onPageChanged();
       this.clearAnimLock();
-    }, 650);
+    }, 400);
   }
 
   /**
@@ -527,7 +527,7 @@ class BookEngine {
       this.render();
       this.onPageChanged();
       this.clearAnimLock();
-    }, 650);
+    }, 400);
   }
 
   /**
@@ -580,7 +580,7 @@ class BookEngine {
       this.render();
       this.onPageChanged();
       this.clearAnimLock();
-    }, 650);
+    }, 400);
   }
 
   /**
@@ -641,7 +641,7 @@ class BookEngine {
       this.render();
       this.onPageChanged();
       this.clearAnimLock();
-    }, 650);
+    }, 400);
   }
 
   /**
@@ -679,7 +679,7 @@ class BookEngine {
       this.render();
       this.onPageChanged();
       this.clearAnimLock();
-    }, 620);
+    }, 380);
   }
 
   /**
@@ -717,7 +717,7 @@ class BookEngine {
       this.render();
       this.onPageChanged();
       this.clearAnimLock();
-    }, 620);
+    }, 380);
   }
 
   /**
@@ -755,7 +755,7 @@ class BookEngine {
       this.render();
       this.onPageChanged();
       this.clearAnimLock();
-    }, 620);
+    }, 380);
   }
 
   /**
@@ -793,7 +793,7 @@ class BookEngine {
       this.render();
       this.onPageChanged();
       this.clearAnimLock();
-    }, 620);
+    }, 380);
   }
 
   performDualPageFlip(direction, targetPage, wrapper) {
@@ -837,7 +837,7 @@ class BookEngine {
         this.render();
         this.onPageChanged();
         this.clearAnimLock();
-      }, 540);
+      }, 340);
 
     } else {
       // Backward: The turning sheet is the Left Page (currL), flipping over to Right (targetR)
@@ -873,7 +873,7 @@ class BookEngine {
         this.render();
         this.onPageChanged();
         this.clearAnimLock();
-      }, 540);
+      }, 340);
     }
   }
 
@@ -908,7 +908,7 @@ class BookEngine {
         this.render();
         this.onPageChanged();
         this.clearAnimLock();
-      }, 520);
+      }, 320);
 
     } else {
       const flipper = document.createElement('div');
@@ -932,7 +932,7 @@ class BookEngine {
         this.render();
         this.onPageChanged();
         this.clearAnimLock();
-      }, 520);
+      }, 320);
     }
   }
 
@@ -1153,13 +1153,18 @@ class BookEngine {
       ? 'Complete Vedic Astrology Compendium Simplified'
       : 'वैदिक ज्योतिष महाग्रंथ सरलीकृत';
 
+    const hasDifferentSubtitle = pageHeaderTitle && pageHeaderTitle.trim() !== chapterTitle.trim();
+    const subtitleHTML = hasDifferentSubtitle
+      ? `<span class="page-header-sep" aria-hidden="true">•</span><span class="page-header-subtitle">${pageHeaderTitle}</span>`
+      : '';
+
     return `
       <div class="page-header">
         <div class="page-header-info">
           <span class="page-header-title">
             <span style="color:var(--accent-gold);">☸</span> ${chapterTitle}
           </span>
-          <span class="page-header-subtitle">${pageHeaderTitle}</span>
+          ${subtitleHTML}
         </div>
       </div>
       <div class="page-body">

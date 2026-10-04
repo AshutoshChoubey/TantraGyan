@@ -997,13 +997,14 @@ def make_initial_sheet_markup(pageNum, pageData, totalPages):
           {co}
         </div>
         """
+    subtitle_part = f'<span class="page-header-sep" aria-hidden="true">•</span><span class="page-header-subtitle">{ti}</span>' if ti and ti.strip() != ch.strip() else ''
     return f"""
         <div class="page-header">
           <div class="page-header-info">
             <span class="page-header-title">
               <span class="chapter-wheel">☸</span> {ch}
             </span>
-            <span class="page-header-subtitle">{ti}</span>
+            {subtitle_part}
           </div>
         </div>
         <div class="page-body">

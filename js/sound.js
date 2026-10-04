@@ -138,23 +138,27 @@ class BookSoundEngine {
     if (this.isMuted) return;
     this.unlockAllAudio();
 
-    // 1. Instant native audio clip - guaranteed to play on iPhone 15 Plus and mobile browsers
     const clipKey = direction === 'prev' ? 'bwd' : 'fwd';
-    this.playNativeClip(clipKey);
+    const isContextActive = this.audioCtx && this.audioCtx.state === 'running';
 
-    // 2. Synthesized Web Audio API paper turn for rich layered spatial ambience
+    // If Web Audio API isn't active/unlocked yet, play the pre-rendered smooth paper rustle clip
+    if (!isContextActive) {
+      this.playNativeClip(clipKey);
+    }
+
+    // Synthesized Web Audio API paper turn for rich layered spatial ambience
     if (!this.audioCtx) return;
 
     try {
       const now = Math.max(this.audioCtx.currentTime, 0.005);
-      const duration = 0.52; // 520ms natural flip, matching 540ms 3D leaf turn
+      const duration = 0.34; // 340ms snappy flip, matching 340ms 3D leaf turn
 
       // Organic variation factor (shifts pitch & filter characteristics slightly)
       this.variationIndex = (this.variationIndex + 1) % 3;
       const variations = [
-        { freqMult: 1.0,  qMult: 1.0,  thudPitch: 75, frictionCutoff: 3400 },
-        { freqMult: 1.08, qMult: 1.15, thudPitch: 82, frictionCutoff: 3800 },
-        { freqMult: 0.94, qMult: 0.92, thudPitch: 68, frictionCutoff: 3100 }
+        { freqMult: 1.0,  qMult: 1.0,  thudPitch: 72, frictionCutoff: 3200 },
+        { freqMult: 1.08, qMult: 1.15, thudPitch: 78, frictionCutoff: 3600 },
+        { freqMult: 0.94, qMult: 0.92, thudPitch: 66, frictionCutoff: 2900 }
       ];
       const curVar = variations[this.variationIndex];
 
@@ -171,59 +175,61 @@ class BookSoundEngine {
         const white = Math.random() * 2 - 1;
         // Pink noise filter integration
         lastOut = (lastOut + (0.02 * white)) / 1.02;
-        // Granular paper micro-flutter amplitude modulation (around 32Hz-55Hz)
+        // Granular paper micro-flutter amplitude modulation (around 38Hz-48Hz)
         const t = i / this.audioCtx.sampleRate;
-        const flutter = 0.72 + 0.28 * Math.sin(2 * Math.PI * 38 * t + Math.sin(2 * Math.PI * 11 * t));
-        output[i] = (lastOut * 2.8 + white * 0.45) * flutter;
+        const flutter = 0.74 + 0.26 * mathSin(2 * Math.PI * 42 * t + 0.8 * mathSin(2 * Math.PI * 14 * t));
+        output[i] = (lastOut * 2.6 + white * 0.35) * flutter;
       }
+
+      function mathSin(val) { return Math.sin(val); }
 
       const noiseSource = this.audioCtx.createBufferSource();
       noiseSource.buffer = noiseBuffer;
 
       // ----------------------------------------------------------------------
-      // 2. Layer A: High-Frequency Edge Separation Rustle (0 to 140ms)
+      // 2. Layer A: High-Frequency Edge Separation Rustle (0 to 120ms)
       // ----------------------------------------------------------------------
       const frictionFilter = this.audioCtx.createBiquadFilter();
       frictionFilter.type = 'highpass';
       frictionFilter.frequency.setValueAtTime(curVar.frictionCutoff, now);
-      frictionFilter.Q.setValueAtTime(1.2, now);
+      frictionFilter.Q.setValueAtTime(1.1, now);
 
       const frictionGain = this.audioCtx.createGain();
-      frictionGain.gain.setValueAtTime(0.001, now);
-      // Fast tactile grab & lift attack
-      frictionGain.gain.linearRampToValueAtTime(this.volume * 0.45, now + 0.025);
+      frictionGain.gain.setValueAtTime(0.0001, now);
+      // Fast tactile grab & lift attack with smooth ramp (no transient click)
+      frictionGain.gain.linearRampToValueAtTime(this.volume * 0.40, now + 0.02);
       // Gentle flutter decay
-      frictionGain.gain.exponentialRampToValueAtTime(this.volume * 0.15, now + 0.12);
-      frictionGain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
+      frictionGain.gain.exponentialRampToValueAtTime(this.volume * 0.12, now + 0.09);
+      frictionGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.16);
 
       // ----------------------------------------------------------------------
-      // 3. Layer B: Aerodynamic Resonant Body Swish & Air Displacement (0 to 450ms)
+      // 3. Layer B: Aerodynamic Resonant Body Swish & Air Displacement (0 to 320ms)
       // ----------------------------------------------------------------------
       const bodyFilter = this.audioCtx.createBiquadFilter();
       bodyFilter.type = 'bandpass';
-      bodyFilter.Q.setValueAtTime(3.2 * curVar.qMult, now);
+      bodyFilter.Q.setValueAtTime(2.8 * curVar.qMult, now);
 
       if (direction === 'next') {
         // Page moves right to left: starts high, opens cavity, lowers pitch
-        bodyFilter.frequency.setValueAtTime(2100 * curVar.freqMult, now);
-        bodyFilter.frequency.exponentialRampToValueAtTime(1150 * curVar.freqMult, now + 0.24);
-        bodyFilter.frequency.exponentialRampToValueAtTime(420 * curVar.freqMult, now + 0.46);
+        bodyFilter.frequency.setValueAtTime(2300 * curVar.freqMult, now);
+        bodyFilter.frequency.exponentialRampToValueAtTime(1200 * curVar.freqMult, now + 0.15);
+        bodyFilter.frequency.exponentialRampToValueAtTime(450 * curVar.freqMult, now + 0.30);
       } else {
         // Page moves left to right
         bodyFilter.frequency.setValueAtTime(650 * curVar.freqMult, now);
-        bodyFilter.frequency.exponentialRampToValueAtTime(1600 * curVar.freqMult, now + 0.22);
-        bodyFilter.frequency.exponentialRampToValueAtTime(460 * curVar.freqMult, now + 0.46);
+        bodyFilter.frequency.exponentialRampToValueAtTime(1700 * curVar.freqMult, now + 0.15);
+        bodyFilter.frequency.exponentialRampToValueAtTime(480 * curVar.freqMult, now + 0.30);
       }
 
       const bodyGain = this.audioCtx.createGain();
-      bodyGain.gain.setValueAtTime(0.001, now);
-      bodyGain.gain.linearRampToValueAtTime(this.volume * 0.75, now + 0.07);
-      bodyGain.gain.linearRampToValueAtTime(this.volume * 0.85, now + 0.22);
-      bodyGain.gain.exponentialRampToValueAtTime(0.01, now + 0.46);
-      bodyGain.gain.linearRampToValueAtTime(0.0001, now + 0.50);
+      bodyGain.gain.setValueAtTime(0.0001, now);
+      bodyGain.gain.linearRampToValueAtTime(this.volume * 0.70, now + 0.04);
+      bodyGain.gain.linearRampToValueAtTime(this.volume * 0.80, now + 0.14);
+      bodyGain.gain.exponentialRampToValueAtTime(0.01, now + 0.30);
+      bodyGain.gain.linearRampToValueAtTime(0.0001, now + 0.34);
 
       // ----------------------------------------------------------------------
-      // 4. Layer C: Soft Paper Landing Impact & Air Puff (380ms to 520ms)
+      // 4. Layer C: Soft Paper Landing Impact & Air Puff (220ms to 340ms)
       // ----------------------------------------------------------------------
       const thudOsc = this.audioCtx.createOscillator();
       const thudGain = this.audioCtx.createGain();
@@ -231,16 +237,16 @@ class BookSoundEngine {
 
       thudOsc.type = 'sine';
       thudFilter.type = 'lowpass';
-      thudFilter.frequency.setValueAtTime(180, now + 0.36);
+      thudFilter.frequency.setValueAtTime(160, now + 0.22);
 
-      thudOsc.frequency.setValueAtTime(curVar.thudPitch, now + 0.36);
-      thudOsc.frequency.exponentialRampToValueAtTime(36, now + duration);
+      thudOsc.frequency.setValueAtTime(curVar.thudPitch, now + 0.22);
+      thudOsc.frequency.exponentialRampToValueAtTime(34, now + duration);
 
       thudGain.gain.setValueAtTime(0.0001, now);
-      thudGain.gain.setValueAtTime(0.0001, now + 0.36);
+      thudGain.gain.setValueAtTime(0.0001, now + 0.22);
       // Soft cushion arrival
-      thudGain.gain.linearRampToValueAtTime(this.volume * 0.42, now + 0.40);
-      thudGain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+      thudGain.gain.linearRampToValueAtTime(this.volume * 0.35, now + 0.25);
+      thudGain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
 
       const isMobileDevice = window.innerWidth <= 860 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
@@ -290,7 +296,7 @@ class BookSoundEngine {
       // Start sound sources
       noiseSource.start(now);
       noiseSource.stop(now + duration);
-      thudOsc.start(now + 0.36);
+      thudOsc.start(now + 0.22);
       thudOsc.stop(now + duration);
 
     } catch (e) {
@@ -308,7 +314,7 @@ class BookSoundEngine {
 
     try {
       const now = this.audioCtx.currentTime;
-      const duration = 1.4;
+      const duration = 1.2;
       
       const osc1 = this.audioCtx.createOscillator();
       const osc2 = this.audioCtx.createOscillator();
@@ -329,7 +335,7 @@ class BookSoundEngine {
       filter.frequency.setValueAtTime(750, now);
 
       gain.gain.setValueAtTime(0.0001, now);
-      gain.gain.linearRampToValueAtTime(this.volume * 0.28, now + 0.25);
+      gain.gain.linearRampToValueAtTime(this.volume * 0.28, now + 0.20);
       gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
 
       osc1.connect(filter);
@@ -353,27 +359,28 @@ class BookSoundEngine {
     if (this.isMuted) return;
     this.unlockAllAudio();
 
-    // 1. Instant native audio clip for book opening
-    this.playNativeClip('open');
+    const isContextActive = this.audioCtx && this.audioCtx.state === 'running';
+    if (!isContextActive) {
+      this.playNativeClip('open');
+    }
 
-    // 2. Synthesized Web Audio API resonant overtone
     if (!this.audioCtx) return;
 
     try {
       const now = this.audioCtx.currentTime;
-      const duration = 0.65;
+      const duration = 0.40;
       
       // Resonant leather/spine opening sweep
       const osc = this.audioCtx.createOscillator();
       const oscGain = this.audioCtx.createGain();
       osc.type = 'sine';
-      osc.frequency.setValueAtTime(50, now);
-      osc.frequency.exponentialRampToValueAtTime(115, now + 0.22);
+      osc.frequency.setValueAtTime(52, now);
+      osc.frequency.exponentialRampToValueAtTime(115, now + 0.16);
       osc.frequency.exponentialRampToValueAtTime(42, now + duration);
 
-      oscGain.gain.setValueAtTime(0.001, now);
-      oscGain.gain.linearRampToValueAtTime(this.volume * 0.42, now + 0.12);
-      oscGain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+      oscGain.gain.setValueAtTime(0.0001, now);
+      oscGain.gain.linearRampToValueAtTime(this.volume * 0.40, now + 0.08);
+      oscGain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
 
       osc.connect(oscGain);
       oscGain.connect(this.audioCtx.destination);
@@ -394,31 +401,32 @@ class BookSoundEngine {
     if (this.isMuted) return;
     this.unlockAllAudio();
 
-    // 1. Instant native audio clip for book closing
-    this.playNativeClip('close');
+    const isContextActive = this.audioCtx && this.audioCtx.state === 'running';
+    if (!isContextActive) {
+      this.playNativeClip('close');
+    }
 
-    // 2. Synthesized Web Audio API impact thud
     if (!this.audioCtx) return;
 
     try {
       const now = this.audioCtx.currentTime;
       
-      // Heavy settling impact at close (around 460ms into the 650ms animation)
-      const impactTime = now + 0.46;
+      // Settling impact at close (around 270ms into the 400ms animation)
+      const impactTime = now + 0.27;
       const thudOsc = this.audioCtx.createOscillator();
       const thudGain = this.audioCtx.createGain();
       thudOsc.type = 'triangle';
-      thudOsc.frequency.setValueAtTime(90, impactTime);
-      thudOsc.frequency.exponentialRampToValueAtTime(35, impactTime + 0.18);
+      thudOsc.frequency.setValueAtTime(88, impactTime);
+      thudOsc.frequency.exponentialRampToValueAtTime(35, impactTime + 0.13);
 
-      thudGain.gain.setValueAtTime(0.001, impactTime);
-      thudGain.gain.linearRampToValueAtTime(this.volume * 0.65, impactTime + 0.02);
-      thudGain.gain.exponentialRampToValueAtTime(0.001, impactTime + 0.18);
+      thudGain.gain.setValueAtTime(0.0001, impactTime);
+      thudGain.gain.linearRampToValueAtTime(this.volume * 0.60, impactTime + 0.02);
+      thudGain.gain.exponentialRampToValueAtTime(0.0001, impactTime + 0.13);
 
       thudOsc.connect(thudGain);
       thudGain.connect(this.audioCtx.destination);
       thudOsc.start(impactTime);
-      thudOsc.stop(impactTime + 0.18);
+      thudOsc.stop(impactTime + 0.13);
     } catch (e) {
       console.warn('Audio close error:', e);
     }

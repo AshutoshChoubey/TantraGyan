@@ -961,7 +961,7 @@ html, body {
 
 /* Running Page Header */
 .page-header {
-  padding: 0.85rem 2rem 0.55rem 2rem;
+  padding: 0.65rem 2rem 0.5rem 2rem;
   border-bottom: 1px solid var(--page-border);
   display: flex;
   align-items: center;
@@ -972,30 +972,47 @@ html, body {
   letter-spacing: normal;
   user-select: none;
   flex-shrink: 0;
-}
-
-.page-header-title {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--accent-gold);
-  font-weight: 600;
-  font-family: var(--font-body);
-  letter-spacing: normal;
+  min-height: 38px;
 }
 
 .page-header-info {
   display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.page-header-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+  font-family: var(--font-body);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.page-header-sep {
+  color: var(--accent-gold);
+  opacity: 0.55;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin: 0 0.15rem;
 }
 
 .page-header-subtitle {
-  font-size: 0.8rem;
+  font-size: 0.84rem;
   color: var(--text-muted);
-  text-transform: none;
-  letter-spacing: normal;
   font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 /* Quick In-Page Header & Footer Navigation Pills */
@@ -2586,7 +2603,7 @@ html, body {
   width: 50%;
   transform-origin: left center;
   -webkit-transform-origin: left center;
-  animation: flipDualForward 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+  animation: flipDualForward 0.34s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Dual Page: Backward Turn (Left page flips over to Right) */
@@ -2595,7 +2612,7 @@ html, body {
   width: 50%;
   transform-origin: right center;
   -webkit-transform-origin: right center;
-  animation: flipDualBackward 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+  animation: flipDualBackward 0.34s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Single Page (Mobile & Tablet): Forward Turn */
@@ -2605,7 +2622,7 @@ html, body {
   width: 100%;
   transform-origin: left center;
   -webkit-transform-origin: left center;
-  animation: flipSingleForward 0.52s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+  animation: flipSingleForward 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Single Page (Mobile & Tablet): Backward Turn (Peeled in from spine on left) */
@@ -2615,7 +2632,7 @@ html, body {
   width: 100%;
   transform-origin: left center;
   -webkit-transform-origin: left center;
-  animation: flipSingleBackward 0.52s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+  animation: flipSingleBackward 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Flipper Faces */
@@ -2668,37 +2685,37 @@ html, body {
 
 /* Dual Forward Lighting */
 .dual-flip-forward .flipper-face-front .flipper-lighting-layer {
-  animation: frontLightingForward 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+  animation: frontLightingForward 0.34s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .dual-flip-forward .flipper-face-back .flipper-lighting-layer {
-  animation: backLightingForward 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+  animation: backLightingForward 0.34s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Dual Backward Lighting (Opposite Direction & Spine Position) */
 .dual-flip-backward .flipper-face-front .flipper-lighting-layer {
-  animation: frontLightingBackward 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+  animation: frontLightingBackward 0.34s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .dual-flip-backward .flipper-face-back .flipper-lighting-layer {
-  animation: backLightingBackward 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+  animation: backLightingBackward 0.34s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Single Page Lighting */
 .single-flip-forward .flipper-face-front .flipper-lighting-layer {
-  animation: frontLightingForward 0.52s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+  animation: frontLightingForward 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .single-flip-forward .flipper-face-back .flipper-lighting-layer {
-  animation: backLightingForward 0.52s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+  animation: backLightingForward 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .single-flip-backward .flipper-face-back .flipper-lighting-layer {
-  animation: singleBackLightingBackward 0.52s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+  animation: singleBackLightingBackward 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .single-flip-backward .flipper-face-front .flipper-lighting-layer {
-  animation: singleFrontLightingBackward 0.52s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+  animation: singleFrontLightingBackward 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Dynamic Underlying Page Shadow */
@@ -2715,14 +2732,14 @@ html, body {
   left: 50%;
   transform-origin: left center;
   -webkit-transform-origin: left center;
-  animation: underShadowForward 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+  animation: underShadowForward 0.34s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .dual-flip-backward-shadow {
   right: 50%;
   transform-origin: right center;
   -webkit-transform-origin: right center;
-  animation: underShadowBackward 0.54s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+  animation: underShadowBackward 0.34s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* 3D Keyframes for Dual Forward Flip (Right to Left) */
@@ -2996,7 +3013,7 @@ html, body {
   width: 50%;
   transform-origin: left center;
   -webkit-transform-origin: left center;
-  animation: bookOpenForward 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: bookOpenForward 0.40s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   z-index: 100;
 }
 
@@ -3040,7 +3057,7 @@ html, body {
   width: 50%;
   transform-origin: right center;
   -webkit-transform-origin: right center;
-  animation: bookCloseBackward 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: bookCloseBackward 0.40s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   z-index: 100;
 }
 
@@ -3084,7 +3101,7 @@ html, body {
   width: 50%;
   transform-origin: left center;
   -webkit-transform-origin: left center;
-  animation: bookOpenForward 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: bookOpenForward 0.40s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   z-index: 100;
 }
 
@@ -3105,7 +3122,7 @@ html, body {
   width: 50%;
   transform-origin: right center;
   -webkit-transform-origin: right center;
-  animation: bookCloseBackward 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: bookCloseBackward 0.40s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   z-index: 100;
 }
 
@@ -3126,7 +3143,7 @@ html, body {
   width: 100%;
   transform-origin: left center;
   -webkit-transform-origin: left center;
-  animation: singleCoverOpen 0.62s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: singleCoverOpen 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   z-index: 100;
 }
 
@@ -3167,7 +3184,7 @@ html, body {
   width: 100%;
   transform-origin: left center;
   -webkit-transform-origin: left center;
-  animation: singleCoverClose 0.62s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: singleCoverClose 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   z-index: 100;
 }
 
@@ -3305,7 +3322,7 @@ html, body {
   z-index: 40;
   transform-origin: left center;
   -webkit-transform-origin: left center;
-  animation: bookOpenUnderShadow 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: bookOpenUnderShadow 0.40s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes bookOpenUnderShadow {
@@ -3341,7 +3358,7 @@ html, body {
   z-index: 40;
   transform-origin: right center;
   -webkit-transform-origin: right center;
-  animation: bookCloseUnderShadow 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: bookCloseUnderShadow 0.40s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes bookCloseUnderShadow {
@@ -3559,6 +3576,16 @@ html, body {
 
   .brand-tagline {
     display: none;
+  }
+
+  /* Hide Fullscreen button on mobile (unsupported on iOS Safari) */
+  #settings-btn-fullscreen,
+  #btn-fullscreen,
+  .tool-btn#btn-fullscreen,
+  /* Hide Spread / Layout toggle on mobile (phone screen is strictly single page) */
+  #settings-btn-layout,
+  #btn-layout-toggle {
+    display: none !important;
   }
 
   /* Mobile Search Pill Button (Trigger before gear) */
