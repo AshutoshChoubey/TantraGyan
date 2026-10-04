@@ -326,7 +326,7 @@ class BookEngine {
         this.render();
         this.onPageChanged();
       }
-    }, 500);
+    }, 800);
 
     const wrapper = document.querySelector('.book-pages-wrapper');
     if (!wrapper) {
@@ -468,7 +468,7 @@ class BookEngine {
       this.render();
       this.onPageChanged();
       this.clearAnimLock();
-    }, 400);
+    }, 650);
   }
 
   /**
@@ -527,7 +527,7 @@ class BookEngine {
       this.render();
       this.onPageChanged();
       this.clearAnimLock();
-    }, 400);
+    }, 650);
   }
 
   /**
@@ -580,7 +580,7 @@ class BookEngine {
       this.render();
       this.onPageChanged();
       this.clearAnimLock();
-    }, 400);
+    }, 650);
   }
 
   /**
@@ -641,7 +641,7 @@ class BookEngine {
       this.render();
       this.onPageChanged();
       this.clearAnimLock();
-    }, 400);
+    }, 650);
   }
 
   /**
@@ -679,7 +679,7 @@ class BookEngine {
       this.render();
       this.onPageChanged();
       this.clearAnimLock();
-    }, 380);
+    }, 620);
   }
 
   /**
@@ -717,7 +717,7 @@ class BookEngine {
       this.render();
       this.onPageChanged();
       this.clearAnimLock();
-    }, 380);
+    }, 620);
   }
 
   /**
@@ -755,7 +755,7 @@ class BookEngine {
       this.render();
       this.onPageChanged();
       this.clearAnimLock();
-    }, 380);
+    }, 620);
   }
 
   /**
@@ -793,7 +793,7 @@ class BookEngine {
       this.render();
       this.onPageChanged();
       this.clearAnimLock();
-    }, 380);
+    }, 620);
   }
 
   performDualPageFlip(direction, targetPage, wrapper) {
@@ -837,7 +837,7 @@ class BookEngine {
         this.render();
         this.onPageChanged();
         this.clearAnimLock();
-      }, 340);
+      }, 560);
 
     } else {
       // Backward: The turning sheet is the Left Page (currL), flipping over to Right (targetR)
@@ -873,7 +873,7 @@ class BookEngine {
         this.render();
         this.onPageChanged();
         this.clearAnimLock();
-      }, 340);
+      }, 560);
     }
   }
 
@@ -908,7 +908,7 @@ class BookEngine {
         this.render();
         this.onPageChanged();
         this.clearAnimLock();
-      }, 320);
+      }, 520);
 
     } else {
       const flipper = document.createElement('div');
@@ -932,7 +932,7 @@ class BookEngine {
         this.render();
         this.onPageChanged();
         this.clearAnimLock();
-      }, 320);
+      }, 520);
     }
   }
 
