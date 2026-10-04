@@ -165,6 +165,19 @@ html, body {
   border-bottom: 1px solid #cbd5e1;
 }
 
+.header-top-row {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-search-trigger-btn {
+  display: none !important;
+}
+
+.mobile-header-actions {
+  display: none !important;
+}
+
 .brand-section {
   display: flex;
   align-items: center;
@@ -3491,7 +3504,7 @@ html, body {
   .app-header {
     height: 56px;
     min-height: 56px;
-    padding: 0.35rem 0.85rem;
+    padding: 0 0.85rem;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -3510,22 +3523,22 @@ html, body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    height: 42px;
     gap: 0.5rem;
-    flex-wrap: wrap;
   }
   
   .brand-section {
-    order: 1;
-    width: auto;
-    justify-content: flex-start;
-    flex: 0 1 auto;
-    min-width: 0;
+    display: flex;
+    align-items: center;
     gap: 0.45rem;
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .brand-logo {
     width: 30px;
     height: 30px;
+    flex-shrink: 0;
   }
 
   .brand-logo img {
@@ -3536,6 +3549,8 @@ html, body {
   .brand-name {
     font-size: 0.98rem;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .brand-name span {
@@ -3546,14 +3561,44 @@ html, body {
     display: none;
   }
 
+  /* Mobile Search Pill Button (Trigger before gear) */
+  .mobile-search-trigger-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.65rem;
+    font-size: 0.78rem;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    color: var(--accent-gold);
+    background: rgba(200, 157, 61, 0.12);
+    border: 1px solid rgba(200, 157, 61, 0.4);
+    border-radius: 16px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-search-trigger-btn:hover,
+  .mobile-search-trigger-btn:active {
+    background: rgba(200, 157, 61, 0.25);
+    border-color: var(--accent-gold);
+  }
+
+  .app-header.search-expanded .mobile-search-trigger-btn {
+    background: var(--accent-gold);
+    color: #14110e;
+  }
+
   /* Gear Icon button on the right */
   .mobile-header-actions {
-    order: 3;
     display: flex !important;
     align-items: center;
     gap: 0.45rem;
     flex-shrink: 0;
-    margin-left: 0;
+    margin-left: 0.25rem;
   }
 
   .mobile-action-btn {
@@ -3583,69 +3628,57 @@ html, body {
     display: none !important;
   }
 
-  /* Search Box (Positioned before gear icon on mobile) */
+  /* Mobile Search Box (Hidden by default, expands below brand + gear) */
   .search-box {
-    order: 2;
-    width: 130px;
-    height: 35px;
-    margin: 0 0 0 auto;
-    display: flex;
+    display: none !important;
+    width: 100%;
+    height: 38px;
+    margin: 0;
+    margin-top: 0.35rem;
     align-items: center;
     gap: 0.35rem;
-    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .app-header.search-expanded .search-box {
+    display: flex !important;
+    animation: searchSlideDown 0.2s ease-out forwards;
   }
 
   .search-input-wrapper {
     flex: 1;
-    height: 35px;
+    height: 38px;
     position: relative;
     display: flex;
     align-items: center;
+    width: 100%;
   }
 
   .search-input {
     width: 100% !important;
-    height: 35px;
-    font-size: 0.78rem;
-    padding: 0.25rem 0.5rem 0.25rem 1.85rem;
-    background: rgba(0, 0, 0, 0.45);
-    border: 1px solid rgba(200, 157, 61, 0.35);
-    border-radius: 18px;
-    color: var(--text-main);
-    cursor: pointer;
-  }
-
-  .search-input::placeholder {
-    font-size: 0.76rem;
-    color: var(--text-muted);
-  }
-
-  .search-icon {
-    left: 0.55rem;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  /* Search Expanded State on Mobile (Wraps below brand and gear icon) */
-  .app-header.search-expanded .search-box {
-    order: 4;
-    width: 100%;
-    height: 38px;
-    margin-top: 0.35rem;
-  }
-
-  .app-header.search-expanded .search-input {
     height: 38px;
     font-size: 0.88rem;
-    padding: 0.45rem 3.8rem 0.45rem 2.2rem;
-    background: rgba(0, 0, 0, 0.75);
-    border-color: var(--accent-gold);
+    padding: 0.4rem 3.6rem 0.4rem 2.2rem;
+    background: rgba(0, 0, 0, 0.65);
+    border: 1px solid var(--accent-gold);
+    border-radius: 20px;
+    color: var(--text-main);
     box-shadow: 0 0 15px rgba(200, 157, 61, 0.25);
     cursor: text;
   }
 
+  .search-input::placeholder {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  .search-icon {
+    left: 0.65rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
   .search-close-mobile-btn {
-    display: none;
+    display: flex !important;
     position: absolute;
     right: 0.45rem;
     top: 50%;
@@ -3662,19 +3695,11 @@ html, body {
     z-index: 5;
   }
 
-  .app-header.search-expanded .search-close-mobile-btn {
-    display: flex !important;
-  }
-
   .search-clear-btn {
     position: absolute;
-    right: 0.55rem;
+    right: 2.35rem;
     top: 50%;
     transform: translateY(-50%);
-  }
-
-  .app-header.search-expanded .search-clear-btn {
-    right: 2.45rem;
   }
 
   .search-count {

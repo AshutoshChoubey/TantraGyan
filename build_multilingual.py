@@ -2507,33 +2507,11 @@ def render_edition_html(pages_list, edition_lang='hindi'):
         </div>
       </a>
 
-      <!-- Search Input Container with Dropdown Results (Positioned before gear icon on mobile) -->
-      <div class="search-box" id="search-box-container">
-        <div class="search-input-wrapper">
-          <span class="search-icon" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          </span>
-          <input type="text" id="book-search" class="search-input" placeholder="{search_placeholder}" aria-label="Search Book" autocomplete="off">
-          <button type="button" id="search-clear-btn" class="search-clear-btn" title="Clear search" aria-label="Clear search" style="display:none;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-          </button>
-          <button type="button" id="search-close-mobile-btn" class="search-close-mobile-btn" title="Close search" aria-label="Close search" style="display:none;">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-          </button>
-        </div>
-        <span id="search-counter" class="search-count" style="display:none;" title="Click to view all matching pages"></span>
-        
-        <!-- Live Search Results Dropdown -->
-        <div id="search-dropdown" class="search-dropdown" style="display:none;" role="region" aria-label="Search Results">
-          <div class="search-dropdown-header">
-            <span id="search-dropdown-title" class="search-dropdown-title"> परिणाम (Search Results)</span>
-            <button type="button" id="search-dropdown-close" class="search-dropdown-close" title="Close" aria-label="Close search">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-            </button>
-          </div>
-          <div id="search-results-list" class="search-results-list"></div>
-        </div>
-      </div>
+      <!-- Mobile Search Trigger Pill (Inside header-top-row on mobile, hidden on desktop) -->
+      <button type="button" class="mobile-search-trigger-btn" id="mobile-search-trigger" aria-label="खोजें / Search">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <span>खोजें</span>
+      </button>
 
       <!-- Mobile Header Actions (Gear Settings Icon) -->
       <div class="mobile-header-actions">
@@ -2543,6 +2521,34 @@ def render_edition_html(pages_list, edition_lang='hindi'):
             <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
           </svg>
         </button>
+      </div>
+    </div>
+
+    <!-- Search Input Container with Dropdown Results (Centered on Desktop) -->
+    <div class="search-box" id="search-box-container">
+      <div class="search-input-wrapper">
+        <span class="search-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
+        <input type="text" id="book-search" class="search-input" placeholder="{search_placeholder}" aria-label="Search Book" autocomplete="off">
+        <button type="button" id="search-clear-btn" class="search-clear-btn" title="Clear search" aria-label="Clear search" style="display:none;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <button type="button" id="search-close-mobile-btn" class="search-close-mobile-btn" title="Close search" aria-label="Close search" style="display:none;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <span id="search-counter" class="search-count" style="display:none;" title="Click to view all matching pages"></span>
+      
+      <!-- Live Search Results Dropdown -->
+      <div id="search-dropdown" class="search-dropdown" style="display:none;" role="region" aria-label="Search Results">
+        <div class="search-dropdown-header">
+          <span id="search-dropdown-title" class="search-dropdown-title"> परिणाम (Search Results)</span>
+          <button type="button" id="search-dropdown-close" class="search-dropdown-close" title="Close" aria-label="Close search">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+        <div id="search-results-list" class="search-results-list"></div>
       </div>
     </div>
 
@@ -2814,6 +2820,7 @@ def render_edition_html(pages_list, edition_lang='hindi'):
   </div>
 
   <!-- Scripts -->
+  <script src="js/sounds-data.js?v=3.4"></script>
   <script src="js/sound.js?v=3.4"></script>
   <script src="js/book-engine.js?v=3.4"></script>
   <script src="js/book-ui.js?v=3.4"></script>

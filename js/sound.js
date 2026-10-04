@@ -11,11 +11,12 @@ class BookSoundEngine {
   constructor() {
     this.audioCtx = null;
     this.isMuted = false;
-    this.volume = 0.75;
+    this.volume = 0.85;
     this.initialized = false;
     this.unlocked = false;
     this.variationIndex = 0;
     this.silentAudio = null;
+    this.audioPool = {};
 
     // Check saved audio preference
     try {
@@ -27,9 +28,11 @@ class BookSoundEngine {
       console.warn('Storage not accessible for audio settings');
     }
 
-    // Auto-warm and unlock AudioContext on any user interaction across all mobile & desktop browsers
+    this.initAudioPool();
+
+    // Auto-warm and unlock AudioContext and HTML5 audio on any user interaction across all mobile & desktop browsers
     const unlockHandler = () => {
-      this.unlockIOSAudio();
+      this.unlockAllAudio();
     };
 
     ['touchstart', 'touchend', 'click', 'pointerdown', 'keydown'].forEach(evt => {
@@ -38,7 +41,51 @@ class BookSoundEngine {
     });
   }
 
-  unlockIOSAudio() {
+  initAudioPool() {
+    if (typeof window !== 'undefined' && window.BOOK_SOUND_DATA) {
+      ['fwd', 'bwd', 'open', 'close'].forEach(key => {
+        if (window.BOOK_SOUND_DATA[key]) {
+          try {
+            // Create a pool of 2 HTML5 audio elements per sound to allow overlapping turns
+            this.audioPool[key] = [
+              new Audio(window.BOOK_SOUND_DATA[key]),
+              new Audio(window.BOOK_SOUND_DATA[key])
+            ];
+            this.audioPool[key].forEach(a => {
+              a.preload = 'auto';
+              a.volume = this.volume;
+            });
+          } catch (e) {
+            console.warn('Audio pool initialization error:', e);
+          }
+        }
+      });
+    }
+  }
+
+  unlockAllAudio() {
+    // 1. Prime HTML5 Audio Pool (unlocks iOS Safari audio playback restriction)
+    if (!this.unlocked && this.audioPool) {
+      this.unlocked = true;
+      Object.keys(this.audioPool).forEach(key => {
+        const list = this.audioPool[key];
+        if (Array.isArray(list) && list[0]) {
+          try {
+            list[0].volume = 0;
+            const p = list[0].play();
+            if (p && typeof p.then === 'function') {
+              p.then(() => {
+                list[0].pause();
+                list[0].currentTime = 0;
+                list[0].volume = this.volume;
+              }).catch(() => {});
+            }
+          } catch (e) {}
+        }
+      });
+    }
+
+    // 2. Unlock Web Audio Context
     const AudioContextClass = window.AudioContext || window.webkitAudioContext;
     if (!this.audioCtx && AudioContextClass) {
       try {
@@ -49,42 +96,53 @@ class BookSoundEngine {
 
     if (this.audioCtx) {
       if (this.audioCtx.state === 'suspended') {
-        this.audioCtx.resume();
-      }
-
-      if (!this.unlocked) {
-        try {
-          // Play a 1-sample silent buffer directly to force iOS Safari to power on audio hardware
-          const buffer = this.audioCtx.createBuffer(1, 1, 22050);
-          const source = this.audioCtx.createBufferSource();
-          source.buffer = buffer;
-          source.connect(this.audioCtx.destination);
-          source.start(0);
-          this.unlocked = true;
-        } catch (e) {}
+        this.audioCtx.resume().catch(() => {});
       }
     }
+  }
 
-    // Play tiny silent audio snippet to configure iOS system audio session to playback category
-    try {
-      if (!this.silentAudio) {
-        this.silentAudio = new Audio('data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA');
-        this.silentAudio.play().catch(() => {});
+  playNativeClip(soundName) {
+    if (this.isMuted) return false;
+    // Re-check pool in case sounds-data.js loaded after instance creation
+    if (!this.audioPool[soundName] && typeof window !== 'undefined' && window.BOOK_SOUND_DATA) {
+      this.initAudioPool();
+    }
+    const pool = this.audioPool ? this.audioPool[soundName] : null;
+    if (pool && pool.length > 0) {
+      let audioToPlay = pool.find(a => a.paused || a.ended);
+      if (!audioToPlay) {
+        audioToPlay = pool[0];
       }
-    } catch (e) {}
+      try {
+        audioToPlay.currentTime = 0;
+        audioToPlay.volume = this.volume;
+        const playPromise = audioToPlay.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(err => {
+            // Autoplay policy or gesture required
+          });
+        }
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+    return false;
   }
 
   init() {
-    this.unlockIOSAudio();
+    this.unlockAllAudio();
   }
 
-  /**
-   * Generates a realistic physical paper page turn sound
-   * @param {string} direction - 'next' or 'prev'
-   */
   playPageTurn(direction = 'next') {
     if (this.isMuted) return;
-    this.init();
+    this.unlockAllAudio();
+
+    // 1. Instant native audio clip - guaranteed to play on iPhone 15 Plus and mobile browsers
+    const clipKey = direction === 'prev' ? 'bwd' : 'fwd';
+    this.playNativeClip(clipKey);
+
+    // 2. Synthesized Web Audio API paper turn for rich layered spatial ambience
     if (!this.audioCtx) return;
 
     try {
@@ -293,7 +351,12 @@ class BookSoundEngine {
    */
   playBookOpen() {
     if (this.isMuted) return;
-    this.init();
+    this.unlockAllAudio();
+
+    // 1. Instant native audio clip for book opening
+    this.playNativeClip('open');
+
+    // 2. Synthesized Web Audio API resonant overtone
     if (!this.audioCtx) return;
 
     try {
@@ -319,9 +382,6 @@ class BookSoundEngine {
 
       // Cosmic sacred overtone shimmer
       this.playCosmicAura();
-
-      // Organic paper rustle layer
-      this.playPageTurn('next');
     } catch (e) {
       console.warn('Audio open error:', e);
     }
@@ -332,16 +392,17 @@ class BookSoundEngine {
    */
   playBookClose() {
     if (this.isMuted) return;
-    this.init();
+    this.unlockAllAudio();
+
+    // 1. Instant native audio clip for book closing
+    this.playNativeClip('close');
+
+    // 2. Synthesized Web Audio API impact thud
     if (!this.audioCtx) return;
 
     try {
       const now = this.audioCtx.currentTime;
-      const duration = 0.65;
       
-      // Initial swing paper whoosh
-      this.playPageTurn('prev');
-
       // Heavy settling impact at close (around 460ms into the 650ms animation)
       const impactTime = now + 0.46;
       const thudOsc = this.audioCtx.createOscillator();
@@ -368,6 +429,20 @@ class BookSoundEngine {
     try {
       localStorage.setItem('tantra_book_muted', this.isMuted.toString());
     } catch (e) {}
+
+    if (this.isMuted && this.audioPool) {
+      Object.keys(this.audioPool).forEach(key => {
+        const list = this.audioPool[key];
+        if (Array.isArray(list)) {
+          list.forEach(a => {
+            try {
+              a.pause();
+              a.currentTime = 0;
+            } catch (e) {}
+          });
+        }
+      });
+    }
     return this.isMuted;
   }
 
@@ -376,6 +451,17 @@ class BookSoundEngine {
     try {
       localStorage.setItem('tantra_book_volume', this.volume.toString());
     } catch (e) {}
+
+    if (this.audioPool) {
+      Object.keys(this.audioPool).forEach(key => {
+        const list = this.audioPool[key];
+        if (Array.isArray(list)) {
+          list.forEach(a => {
+            a.volume = this.volume;
+          });
+        }
+      });
+    }
   }
 }
 

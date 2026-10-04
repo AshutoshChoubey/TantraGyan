@@ -149,7 +149,7 @@ class BookUIController {
   saveBookmarks() {
     try {
       localStorage.setItem('tantra_saved_bookmarks', JSON.stringify(this.bookmarks));
-    } catch (e) {}
+    } catch (e) { }
   }
 
   isPageBookmarked(pageNum) {
@@ -227,8 +227,8 @@ class BookUIController {
     const ribbon = document.querySelector('.silk-bookmark');
     if (ribbon) {
       ribbon.classList.toggle('bookmarked', isCurrentBookmarked);
-      ribbon.title = isCurrentBookmarked 
-        ? 'वर्तमान पृष्ठ बुकमार्क से हटाएं (Click to remove bookmark)' 
+      ribbon.title = isCurrentBookmarked
+        ? 'वर्तमान पृष्ठ बुकमार्क से हटाएं (Click to remove bookmark)'
         : 'वर्तमान पृष्ठ बुकमार्क करें (Click to bookmark page)';
     }
 
@@ -405,13 +405,13 @@ class BookUIController {
     const header = document.querySelector('.app-header');
     const searchCloseMobileBtn = document.getElementById('search-close-mobile-btn');
 
-    this.expandSearchMobile = () => {
+    const expandSearchMobile = () => {
       if (window.innerWidth <= 860 && header) {
         header.classList.add('search-expanded');
       }
     };
 
-    this.collapseSearchMobile = () => {
+    const collapseSearchMobile = () => {
       if (header) {
         header.classList.remove('search-expanded');
       }
@@ -420,9 +420,27 @@ class BookUIController {
       }
     };
 
+    this.collapseSearchMobile = collapseSearchMobile;
+
+    // Mobile Search Trigger Pill Click
+    const mobileSearchTrigger = document.getElementById('mobile-search-trigger');
+    if (mobileSearchTrigger) {
+      mobileSearchTrigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (header && header.classList.contains('search-expanded')) {
+          collapseSearchMobile();
+        } else {
+          expandSearchMobile();
+          setTimeout(() => {
+            if (searchInput) searchInput.focus();
+          }, 50);
+        }
+      });
+    }
+
     // Expand mobile search on focus or click
-    searchInput.addEventListener('focus', () => this.expandSearchMobile());
-    searchInput.addEventListener('click', () => this.expandSearchMobile());
+    searchInput.addEventListener('focus', expandSearchMobile);
+    searchInput.addEventListener('click', expandSearchMobile);
 
     // Mobile Close Button
     if (searchCloseMobileBtn) {
@@ -437,7 +455,7 @@ class BookUIController {
         if (searchDropdown) searchDropdown.style.display = 'none';
         this.activeSearchQuery = '';
         this.clearPageHighlights();
-        this.collapseSearchMobile();
+        collapseSearchMobile();
         searchInput.blur();
       });
     }
@@ -454,8 +472,8 @@ class BookUIController {
       const container = document.getElementById('search-box-container');
       if (container && !container.contains(e.target)) {
         if (searchDropdown) searchDropdown.style.display = 'none';
-        if (window.innerWidth <= 860) {
-          this.collapseSearchMobile();
+        if (window.innerWidth <= 860 && !searchInput.value.trim()) {
+          collapseSearchMobile();
         }
       }
     });
@@ -469,7 +487,7 @@ class BookUIController {
   buildSearchRegex(query) {
     const q = query.trim();
     const escaped = this.escapeRegex(q);
-    
+
     // Hindi variants equivalence:
     // If searching "चंद्र" or "चन्द्र", match both
     let pattern = escaped;
@@ -554,7 +572,7 @@ class BookUIController {
               window.bookEngine.goToPage(targetPage, true);
               this.highlightActiveSearchInPage();
               searchDropdown.style.display = 'none';
-              if (typeof this.collapseSearchMobile === 'function') {
+              if (window.innerWidth <= 860 && typeof this.collapseSearchMobile === 'function') {
                 this.collapseSearchMobile();
               }
             }
@@ -572,7 +590,7 @@ class BookUIController {
       this.highlightActiveSearchInPage();
       this.showToast(`🔍 पृष्ठ ${firstPage} पर ले जाया गया (${matches.length} परिणाम मिले)`);
       if (searchDropdown) searchDropdown.style.display = 'none';
-      if (typeof this.collapseSearchMobile === 'function') {
+      if (window.innerWidth <= 860 && typeof this.collapseSearchMobile === 'function') {
         this.collapseSearchMobile();
       }
     }
@@ -670,7 +688,7 @@ class BookUIController {
         document.documentElement.setAttribute('data-theme', savedTheme);
         this.updateThemeButtonLabel(savedTheme);
       }
-    } catch (e) {}
+    } catch (e) { }
 
     if (themeBtn) {
       themeBtn.addEventListener('click', () => {
@@ -680,7 +698,7 @@ class BookUIController {
         this.updateThemeButtonLabel(nextTheme);
         try {
           localStorage.setItem('tantra_book_theme', nextTheme);
-        } catch (e) {}
+        } catch (e) { }
       });
     }
   }
@@ -706,11 +724,11 @@ class BookUIController {
   // ============================================================================
   initLanguageMode() {
     const langBtns = document.querySelectorAll('.lang-btn');
-    
+
     // Determine active edition from filename or HTML attribute
     const currentPath = window.location.pathname;
     const currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
-    
+
     let activeMode = 'bilingual';
     if (currentFile.includes('hindi')) {
       activeMode = 'hindi';
@@ -744,7 +762,7 @@ class BookUIController {
           try {
             localStorage.setItem('tantra_book_page', currentPage.toString());
             localStorage.setItem('tantra_book_lang', targetMode);
-          } catch (err) {}
+          } catch (err) { }
           window.location.href = `${targetFile}#page-${currentPage}`;
         } else {
           this.setLanguageMode(targetMode);
@@ -763,7 +781,7 @@ class BookUIController {
     });
     try {
       localStorage.setItem('tantra_book_lang', mode);
-    } catch (e) {}
+    } catch (e) { }
   }
 
   // ============================================================================
@@ -841,7 +859,7 @@ class BookUIController {
         if (currentFontScale > 0.85) {
           currentFontScale = Math.round((currentFontScale - 0.05) * 100) / 100;
           document.documentElement.style.setProperty('--font-scale', `${currentFontScale}rem`);
-          try { localStorage.setItem('tg_font_scale', currentFontScale); } catch (e) {}
+          try { localStorage.setItem('tg_font_scale', currentFontScale); } catch (e) { }
         }
       });
     }
@@ -851,7 +869,7 @@ class BookUIController {
         if (currentFontScale < 1.40) {
           currentFontScale = Math.round((currentFontScale + 0.05) * 100) / 100;
           document.documentElement.style.setProperty('--font-scale', `${currentFontScale}rem`);
-          try { localStorage.setItem('tg_font_scale', currentFontScale); } catch (e) {}
+          try { localStorage.setItem('tg_font_scale', currentFontScale); } catch (e) { }
         }
       });
     }
@@ -1039,7 +1057,7 @@ class BookUIController {
         settingsFsBtn.addEventListener('click', () => {
           const docEl = document.documentElement;
           const isFs = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
-          
+
           if (!isFs) {
             if (docEl.requestFullscreen) {
               docEl.requestFullscreen().catch(err => {
