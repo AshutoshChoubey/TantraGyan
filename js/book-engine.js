@@ -13,6 +13,8 @@ class BookEngine {
     this.totalPages = 0;
     this.isDualPage = window.innerWidth > 1080;
     this.isAnimating = false;
+    this._animStartTime = 0;
+    this._animWatchdog = null;
     this.pages = [];
     
     // UI Elements
@@ -24,6 +26,31 @@ class BookEngine {
     this.counter = null;
     this.progressFill = null;
     this.isInitialized = false;
+    this.unstick = this.unstick.bind(this);
+  }
+
+  unstick() {
+    if (this._animWatchdog) {
+      clearTimeout(this._animWatchdog);
+      this._animWatchdog = null;
+    }
+    this.isAnimating = false;
+    this._animStartTime = 0;
+    const wrapper = document.querySelector('.book-pages-wrapper');
+    if (wrapper) {
+      wrapper.querySelectorAll('.book-flipper-leaf, .flipper-under-shadow').forEach(el => el.remove());
+    }
+    const bookContainer = document.querySelector('.book-container');
+    if (bookContainer) {
+      bookContainer.classList.remove(
+        'book-opening',
+        'book-closing-front',
+        'book-closing-back',
+        'book-opening-back',
+        'cosmic-manifest'
+      );
+    }
+    this.render();
   }
 
   init() {
@@ -124,9 +151,15 @@ class BookEngine {
     const bookContainer = document.querySelector('.book-container');
     if (bookContainer) {
       bookContainer.addEventListener('click', (e) => {
-        if (this.isAnimating) return;
+        if (this.isAnimating) {
+          if (Date.now() - (this._animStartTime || 0) > 650) {
+            this.unstick();
+          } else {
+            return;
+          }
+        }
         if (bookContainer.classList.contains('cover-closed-front')) {
-          if (!e.target.closest('button, a, input, select, .silk-bookmark, .tool-btn, .page-nav-pill')) {
+          if (!e.target.closest('button:not(.cover-open-btn), a, input, select, .silk-bookmark, .tool-btn, .page-nav-pill')) {
             this.nextPage();
           }
         } else if (bookContainer.classList.contains('cover-closed-back')) {
@@ -142,7 +175,7 @@ class BookEngine {
       this.rightPageEl.addEventListener('click', (e) => {
         const bc = document.querySelector('.book-container');
         if (bc && bc.classList.contains('cover-closed-front')) {
-          if (!e.target.closest('button, a, input, select, .silk-bookmark, .tool-btn, .page-nav-pill')) {
+          if (!e.target.closest('button:not(.cover-open-btn), a, input, select, .silk-bookmark, .tool-btn, .page-nav-pill')) {
             this.nextPage();
           }
         }
@@ -186,7 +219,7 @@ class BookEngine {
       }
     });
 
-    // Touch swipe navigation for tablets and mobile (Strictly protected against table scrolling)
+    // Touch swipe navigation for tablets and mobile (Fluid & Responsive)
     let touchStartX = 0;
     let touchStartY = 0;
     let touchStartTime = 0;
@@ -196,22 +229,31 @@ class BookEngine {
       stage.addEventListener('touchstart', (e) => {
         if (!e.changedTouches || !e.changedTouches.length) return;
         const target = e.target;
-        // If touch began inside any table, table container, or scrollable area, disable page flip
-        isTableTouch = !!(target && target.closest('.astro-table-container, .table-container, table, pre, code, .table-scroll-hint, button, input, select, a, .tool-btn, .page-nav-pill'));
+        // Only suppress swipe if touch began inside an actually horizontally scrollable table
+        const scrollable = target && target.closest('.astro-table-container, .table-container');
+        if (scrollable && scrollable.scrollWidth > scrollable.clientWidth + 8) {
+          isTableTouch = true;
+        } else {
+          isTableTouch = false;
+        }
         touchStartX = e.changedTouches[0].screenX;
         touchStartY = e.changedTouches[0].screenY;
         touchStartTime = Date.now();
       }, { passive: true });
 
+      stage.addEventListener('touchcancel', () => {
+        isTableTouch = false;
+      }, { passive: true });
+
       stage.addEventListener('touchend', (e) => {
-        // If touch began on or inside a table or interactive control, NEVER flip page
         if (isTableTouch) {
           isTableTouch = false;
           return;
         }
         if (!e.changedTouches || !e.changedTouches.length) return;
         const target = e.target;
-        if (target && target.closest('.astro-table-container, .table-container, table, pre, code, .table-scroll-hint, button, input, select, a, .tool-btn, .page-nav-pill')) {
+        // If ended directly on active interactive controls, don't flip
+        if (target && target.closest('button, input, select, textarea, .tool-btn, .page-nav-pill, .silk-bookmark')) {
           return;
         }
 
@@ -219,8 +261,8 @@ class BookEngine {
         const diffY = e.changedTouches[0].screenY - touchStartY;
         const timeDiff = Date.now() - touchStartTime;
 
-        // Decisive horizontal swipe: fast (< 500ms), at least 60px horizontal, predominantly horizontal
-        if (timeDiff < 500 && Math.abs(diffX) > 60 && Math.abs(diffX) > Math.abs(diffY) * 1.6) {
+        // Decisive horizontal swipe: fast (< 650ms), at least 45px horizontal, predominantly horizontal (1.25x)
+        if (timeDiff < 650 && Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY) * 1.25) {
           if (diffX < 0) {
             this.nextPage();
           } else {
@@ -242,7 +284,13 @@ class BookEngine {
   }
 
   nextPage() {
-    if (this.isAnimating) return;
+    if (this.isAnimating) {
+      if (Date.now() - (this._animStartTime || 0) > 650) {
+        this.unstick();
+      } else {
+        return;
+      }
+    }
     if (!this.isDualPage) {
       if (this.currentPage < this.totalPages) {
         this.flip3D('forward', this.currentPage + 1);
@@ -270,7 +318,13 @@ class BookEngine {
   }
 
   prevPage() {
-    if (this.isAnimating) return;
+    if (this.isAnimating) {
+      if (Date.now() - (this._animStartTime || 0) > 650) {
+        this.unstick();
+      } else {
+        return;
+      }
+    }
     if (!this.isDualPage) {
       if (this.currentPage > 1) {
         this.flip3D('backward', this.currentPage - 1);
@@ -302,14 +356,26 @@ class BookEngine {
    * @param {number} targetPage - destination page number
    */
   flip3D(direction, targetPage) {
-    if (this.isAnimating) return;
+    if (this.isAnimating) {
+      if (Date.now() - (this._animStartTime || 0) > 650) {
+        this.unstick();
+      } else {
+        return;
+      }
+    }
     this.isAnimating = true;
+    this._animStartTime = Date.now();
+
+    // Auto-unstick watchdog after 750ms
+    if (this._animWatchdog) clearTimeout(this._animWatchdog);
+    this._animWatchdog = setTimeout(() => {
+      this.unstick();
+    }, 750);
 
     const wrapper = document.querySelector('.book-pages-wrapper');
     if (!wrapper) {
       this.currentPage = targetPage;
-      this.render();
-      this.isAnimating = false;
+      this.unstick();
       return;
     }
 
@@ -431,19 +497,28 @@ class BookEngine {
     wrapper.appendChild(flipper);
 
     setTimeout(() => {
-      // Step 4: Cover has landed at -180deg on the left desk
-      if (this.leftPageEl) {
-        this.renderSinglePageContent(this.leftPageEl, this.pages[1], 2);
+      try {
+        // Step 4: Cover has landed at -180deg on the left desk
+        if (this.leftPageEl) {
+          this.renderSinglePageContent(this.leftPageEl, this.pages[1], 2);
+        }
+        flipper.remove();
+        shadow.remove();
+        if (bookContainer) {
+          bookContainer.classList.remove('book-opening');
+        }
+        this.currentPage = targetPage;
+        this.render();
+        this.onPageChanged();
+      } catch (err) {
+        console.error('Book open error:', err);
+      } finally {
+        if (this._animWatchdog) {
+          clearTimeout(this._animWatchdog);
+          this._animWatchdog = null;
+        }
+        this.isAnimating = false;
       }
-      flipper.remove();
-      shadow.remove();
-      if (bookContainer) {
-        bookContainer.classList.remove('book-opening');
-      }
-      this.currentPage = targetPage;
-      this.render();
-      this.onPageChanged();
-      this.isAnimating = false;
     }, 650);
   }
 
@@ -492,17 +567,26 @@ class BookEngine {
     wrapper.appendChild(flipper);
 
     setTimeout(() => {
-      // Step 3: Cover has landed closed over the right desk
-      flipper.remove();
-      shadow.remove();
-      if (bookContainer) {
-        bookContainer.classList.remove('dual-page-layout', 'book-closing-front');
-        bookContainer.classList.add('cover-closed-front');
+      try {
+        // Step 3: Cover has landed closed over the right desk
+        flipper.remove();
+        shadow.remove();
+        if (bookContainer) {
+          bookContainer.classList.remove('dual-page-layout', 'book-closing-front');
+          bookContainer.classList.add('cover-closed-front');
+        }
+        this.currentPage = 1;
+        this.render();
+        this.onPageChanged();
+      } catch (err) {
+        console.error('Book close front error:', err);
+      } finally {
+        if (this._animWatchdog) {
+          clearTimeout(this._animWatchdog);
+          this._animWatchdog = null;
+        }
+        this.isAnimating = false;
       }
-      this.currentPage = 1;
-      this.render();
-      this.onPageChanged();
-      this.isAnimating = false;
     }, 650);
   }
 
@@ -546,16 +630,25 @@ class BookEngine {
     wrapper.appendChild(flipper);
 
     setTimeout(() => {
-      flipper.remove();
-      shadow.remove();
-      if (bookContainer) {
-        bookContainer.classList.remove('dual-page-layout', 'book-closing-back');
-        bookContainer.classList.add('cover-closed-back');
+      try {
+        flipper.remove();
+        shadow.remove();
+        if (bookContainer) {
+          bookContainer.classList.remove('dual-page-layout', 'book-closing-back');
+          bookContainer.classList.add('cover-closed-back');
+        }
+        this.currentPage = this.totalPages;
+        this.render();
+        this.onPageChanged();
+      } catch (err) {
+        console.error('Book close back error:', err);
+      } finally {
+        if (this._animWatchdog) {
+          clearTimeout(this._animWatchdog);
+          this._animWatchdog = null;
+        }
+        this.isAnimating = false;
       }
-      this.currentPage = this.totalPages;
-      this.render();
-      this.onPageChanged();
-      this.isAnimating = false;
     }, 650);
   }
 
@@ -605,18 +698,27 @@ class BookEngine {
     wrapper.appendChild(flipper);
 
     setTimeout(() => {
-      if (this.leftPageEl) {
-        this.renderSinglePageContent(this.leftPageEl, this.pages[targetL - 1], targetL);
+      try {
+        if (this.leftPageEl) {
+          this.renderSinglePageContent(this.leftPageEl, this.pages[targetL - 1], targetL);
+        }
+        flipper.remove();
+        shadow.remove();
+        if (bookContainer) {
+          bookContainer.classList.remove('book-opening-back');
+        }
+        this.currentPage = targetPage;
+        this.render();
+        this.onPageChanged();
+      } catch (err) {
+        console.error('Book open back error:', err);
+      } finally {
+        if (this._animWatchdog) {
+          clearTimeout(this._animWatchdog);
+          this._animWatchdog = null;
+        }
+        this.isAnimating = false;
       }
-      flipper.remove();
-      shadow.remove();
-      if (bookContainer) {
-        bookContainer.classList.remove('book-opening-back');
-      }
-      this.currentPage = targetPage;
-      this.render();
-      this.onPageChanged();
-      this.isAnimating = false;
     }, 650);
   }
 
@@ -628,6 +730,11 @@ class BookEngine {
       window.bookSound.playBookOpen();
     } else if (window.bookSound) {
       window.bookSound.playPageTurn('next');
+    }
+
+    const bookContainer = document.querySelector('.book-container');
+    if (bookContainer) {
+      bookContainer.classList.remove('cover-closed-front', 'cover-closed-back');
     }
 
     if (this.rightPageEl) {
@@ -650,11 +757,20 @@ class BookEngine {
     wrapper.appendChild(flipper);
 
     setTimeout(() => {
-      flipper.remove();
-      this.currentPage = targetPage;
-      this.render();
-      this.onPageChanged();
-      this.isAnimating = false;
+      try {
+        flipper.remove();
+        this.currentPage = targetPage;
+        this.render();
+        this.onPageChanged();
+      } catch (err) {
+        console.error('Single cover open error:', err);
+      } finally {
+        if (this._animWatchdog) {
+          clearTimeout(this._animWatchdog);
+          this._animWatchdog = null;
+        }
+        this.isAnimating = false;
+      }
     }, 620);
   }
 
@@ -688,11 +804,20 @@ class BookEngine {
     wrapper.appendChild(flipper);
 
     setTimeout(() => {
-      flipper.remove();
-      this.currentPage = 1;
-      this.render();
-      this.onPageChanged();
-      this.isAnimating = false;
+      try {
+        flipper.remove();
+        this.currentPage = 1;
+        this.render();
+        this.onPageChanged();
+      } catch (err) {
+        console.error('Single cover close error:', err);
+      } finally {
+        if (this._animWatchdog) {
+          clearTimeout(this._animWatchdog);
+          this._animWatchdog = null;
+        }
+        this.isAnimating = false;
+      }
     }, 620);
   }
 
@@ -726,11 +851,20 @@ class BookEngine {
     wrapper.appendChild(flipper);
 
     setTimeout(() => {
-      flipper.remove();
-      this.currentPage = this.totalPages;
-      this.render();
-      this.onPageChanged();
-      this.isAnimating = false;
+      try {
+        flipper.remove();
+        this.currentPage = this.totalPages;
+        this.render();
+        this.onPageChanged();
+      } catch (err) {
+        console.error('Single cover close back error:', err);
+      } finally {
+        if (this._animWatchdog) {
+          clearTimeout(this._animWatchdog);
+          this._animWatchdog = null;
+        }
+        this.isAnimating = false;
+      }
     }, 620);
   }
 
@@ -764,11 +898,20 @@ class BookEngine {
     wrapper.appendChild(flipper);
 
     setTimeout(() => {
-      flipper.remove();
-      this.currentPage = targetPage;
-      this.render();
-      this.onPageChanged();
-      this.isAnimating = false;
+      try {
+        flipper.remove();
+        this.currentPage = targetPage;
+        this.render();
+        this.onPageChanged();
+      } catch (err) {
+        console.error('Single cover open back error:', err);
+      } finally {
+        if (this._animWatchdog) {
+          clearTimeout(this._animWatchdog);
+          this._animWatchdog = null;
+        }
+        this.isAnimating = false;
+      }
     }, 620);
   }
 
@@ -807,11 +950,21 @@ class BookEngine {
       wrapper.appendChild(flipper);
 
       setTimeout(() => {
-        flipper.remove();
-        shadow.remove();
-        this.currentPage = targetPage;
-        this.render();
-        this.isAnimating = false;
+        try {
+          flipper.remove();
+          shadow.remove();
+          this.currentPage = targetPage;
+          this.render();
+          this.onPageChanged();
+        } catch (err) {
+          console.error('Dual flip forward error:', err);
+        } finally {
+          if (this._animWatchdog) {
+            clearTimeout(this._animWatchdog);
+            this._animWatchdog = null;
+          }
+          this.isAnimating = false;
+        }
       }, 540);
 
     } else {
@@ -842,11 +995,21 @@ class BookEngine {
       wrapper.appendChild(flipper);
 
       setTimeout(() => {
-        flipper.remove();
-        shadow.remove();
-        this.currentPage = targetPage;
-        this.render();
-        this.isAnimating = false;
+        try {
+          flipper.remove();
+          shadow.remove();
+          this.currentPage = targetPage;
+          this.render();
+          this.onPageChanged();
+        } catch (err) {
+          console.error('Dual flip backward error:', err);
+        } finally {
+          if (this._animWatchdog) {
+            clearTimeout(this._animWatchdog);
+            this._animWatchdog = null;
+          }
+          this.isAnimating = false;
+        }
       }, 540);
     }
   }
@@ -877,10 +1040,20 @@ class BookEngine {
       wrapper.appendChild(flipper);
 
       setTimeout(() => {
-        flipper.remove();
-        this.currentPage = targetP;
-        this.render();
-        this.isAnimating = false;
+        try {
+          flipper.remove();
+          this.currentPage = targetP;
+          this.render();
+          this.onPageChanged();
+        } catch (err) {
+          console.error('Single flip forward error:', err);
+        } finally {
+          if (this._animWatchdog) {
+            clearTimeout(this._animWatchdog);
+            this._animWatchdog = null;
+          }
+          this.isAnimating = false;
+        }
       }, 520);
 
     } else {
@@ -900,10 +1073,20 @@ class BookEngine {
       wrapper.appendChild(flipper);
 
       setTimeout(() => {
-        flipper.remove();
-        this.currentPage = targetP;
-        this.render();
-        this.isAnimating = false;
+        try {
+          flipper.remove();
+          this.currentPage = targetP;
+          this.render();
+          this.onPageChanged();
+        } catch (err) {
+          console.error('Single flip backward error:', err);
+        } finally {
+          if (this._animWatchdog) {
+            clearTimeout(this._animWatchdog);
+            this._animWatchdog = null;
+          }
+          this.isAnimating = false;
+        }
       }, 520);
     }
   }

@@ -405,13 +405,13 @@ class BookUIController {
     const header = document.querySelector('.app-header');
     const searchCloseMobileBtn = document.getElementById('search-close-mobile-btn');
 
-    const expandSearchMobile = () => {
+    this.expandSearchMobile = () => {
       if (window.innerWidth <= 860 && header) {
         header.classList.add('search-expanded');
       }
     };
 
-    const collapseSearchMobile = () => {
+    this.collapseSearchMobile = () => {
       if (header) {
         header.classList.remove('search-expanded');
       }
@@ -421,8 +421,8 @@ class BookUIController {
     };
 
     // Expand mobile search on focus or click
-    searchInput.addEventListener('focus', expandSearchMobile);
-    searchInput.addEventListener('click', expandSearchMobile);
+    searchInput.addEventListener('focus', () => this.expandSearchMobile());
+    searchInput.addEventListener('click', () => this.expandSearchMobile());
 
     // Mobile Close Button
     if (searchCloseMobileBtn) {
@@ -437,7 +437,7 @@ class BookUIController {
         if (searchDropdown) searchDropdown.style.display = 'none';
         this.activeSearchQuery = '';
         this.clearPageHighlights();
-        collapseSearchMobile();
+        this.collapseSearchMobile();
         searchInput.blur();
       });
     }
@@ -454,8 +454,8 @@ class BookUIController {
       const container = document.getElementById('search-box-container');
       if (container && !container.contains(e.target)) {
         if (searchDropdown) searchDropdown.style.display = 'none';
-        if (window.innerWidth <= 860 && !searchInput.value.trim()) {
-          collapseSearchMobile();
+        if (window.innerWidth <= 860) {
+          this.collapseSearchMobile();
         }
       }
     });
@@ -554,6 +554,9 @@ class BookUIController {
               window.bookEngine.goToPage(targetPage, true);
               this.highlightActiveSearchInPage();
               searchDropdown.style.display = 'none';
+              if (typeof this.collapseSearchMobile === 'function') {
+                this.collapseSearchMobile();
+              }
             }
           });
         });
@@ -569,6 +572,9 @@ class BookUIController {
       this.highlightActiveSearchInPage();
       this.showToast(`🔍 पृष्ठ ${firstPage} पर ले जाया गया (${matches.length} परिणाम मिले)`);
       if (searchDropdown) searchDropdown.style.display = 'none';
+      if (typeof this.collapseSearchMobile === 'function') {
+        this.collapseSearchMobile();
+      }
     }
   }
 
@@ -952,6 +958,9 @@ class BookUIController {
 
     if (settingsToggleBtn && settingsOverlay) {
       settingsToggleBtn.addEventListener('click', () => {
+        if (typeof this.collapseSearchMobile === 'function') {
+          this.collapseSearchMobile();
+        }
         settingsOverlay.classList.add('active');
         this.syncSettingsDrawerLabels();
       });
