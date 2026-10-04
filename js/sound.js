@@ -209,7 +209,55 @@ class BookSoundEngine {
   }
 
   /**
-   * Generates a deep, rich physical hardcover book opening sound
+   * Generates a sacred celestial harmonic aura resonance (108Hz / 432Hz)
+   */
+  playCosmicAura() {
+    if (this.isMuted) return;
+    this.init();
+    if (!this.audioCtx) return;
+
+    try {
+      const now = this.audioCtx.currentTime;
+      const duration = 1.4;
+      
+      const osc1 = this.audioCtx.createOscillator();
+      const osc2 = this.audioCtx.createOscillator();
+      const gain = this.audioCtx.createGain();
+      const filter = this.audioCtx.createBiquadFilter();
+
+      osc1.type = 'sine';
+      osc1.frequency.setValueAtTime(108, now);
+      osc1.frequency.exponentialRampToValueAtTime(162, now + duration * 0.6);
+      osc1.frequency.exponentialRampToValueAtTime(108, now + duration);
+
+      osc2.type = 'sine';
+      osc2.frequency.setValueAtTime(432, now);
+      osc2.frequency.exponentialRampToValueAtTime(436, now + duration * 0.4);
+      osc2.frequency.exponentialRampToValueAtTime(432, now + duration);
+
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(750, now);
+
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.linearRampToValueAtTime(this.volume * 0.28, now + 0.25);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+      osc1.connect(filter);
+      osc2.connect(filter);
+      filter.connect(gain);
+      gain.connect(this.audioCtx.destination);
+
+      osc1.start(now);
+      osc2.start(now);
+      osc1.stop(now + duration);
+      osc2.stop(now + duration);
+    } catch (e) {
+      console.warn('Cosmic audio error:', e);
+    }
+  }
+
+  /**
+   * Generates a deep, rich physical hardcover book opening sound with cosmic aura
    */
   playBookOpen() {
     if (this.isMuted) return;
@@ -236,6 +284,9 @@ class BookSoundEngine {
       oscGain.connect(this.audioCtx.destination);
       osc.start(now);
       osc.stop(now + duration);
+
+      // Cosmic sacred overtone shimmer
+      this.playCosmicAura();
 
       // Organic paper rustle layer
       this.playPageTurn('next');

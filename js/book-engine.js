@@ -80,6 +80,17 @@ class BookEngine {
     this.currentPage = startPage;
     this.render();
     this.onPageChanged();
+
+    // Cosmic manifestation entrance on initial load at cover
+    if (this.currentPage === 1) {
+      const bookContainer = document.querySelector('.book-container');
+      if (bookContainer) {
+        bookContainer.classList.add('cosmic-manifest');
+        setTimeout(() => {
+          bookContainer.classList.remove('cosmic-manifest');
+        }, 1600);
+      }
+    }
   }
 
   updateSpreadMode() {
@@ -95,6 +106,11 @@ class BookEngine {
 
     if (!this.isDualPage) {
       bookContainer.classList.add('single-page-layout');
+      if (this.currentPage === 1) {
+        bookContainer.classList.add('cover-closed-front');
+      } else if (this.currentPage === this.totalPages) {
+        bookContainer.classList.add('cover-closed-back');
+      }
       return;
     }
 
@@ -115,20 +131,41 @@ class BookEngine {
       this.nextBtn.addEventListener('click', () => this.nextPage());
     }
 
-    // Clicking on closed cover cards opens/turns page
+    // Clicking anywhere on closed cover opens the book
+    const bookContainer = document.querySelector('.book-container');
+    if (bookContainer) {
+      bookContainer.addEventListener('click', (e) => {
+        if (this.isAnimating) return;
+        if (bookContainer.classList.contains('cover-closed-front')) {
+          if (!e.target.closest('button, a, input, select, .silk-bookmark, .tool-btn, .page-nav-pill')) {
+            this.nextPage();
+          }
+        } else if (bookContainer.classList.contains('cover-closed-back')) {
+          if (!e.target.closest('button, a, input, select, .silk-bookmark, .tool-btn, .page-nav-pill')) {
+            this.prevPage();
+          }
+        }
+      });
+    }
+
+    // Direct page element clicks as backup
     if (this.rightPageEl) {
       this.rightPageEl.addEventListener('click', (e) => {
-        const bookContainer = document.querySelector('.book-container');
-        if (bookContainer && bookContainer.classList.contains('cover-closed-front')) {
-          this.nextPage();
+        const bc = document.querySelector('.book-container');
+        if (bc && bc.classList.contains('cover-closed-front')) {
+          if (!e.target.closest('button, a, input, select, .silk-bookmark, .tool-btn, .page-nav-pill')) {
+            this.nextPage();
+          }
         }
       });
     }
     if (this.leftPageEl) {
       this.leftPageEl.addEventListener('click', (e) => {
-        const bookContainer = document.querySelector('.book-container');
-        if (bookContainer && bookContainer.classList.contains('cover-closed-back')) {
-          this.prevPage();
+        const bc = document.querySelector('.book-container');
+        if (bc && bc.classList.contains('cover-closed-back')) {
+          if (!e.target.closest('button, a, input, select, .silk-bookmark, .tool-btn, .page-nav-pill')) {
+            this.prevPage();
+          }
         }
       });
     }
@@ -356,6 +393,7 @@ class BookEngine {
 
   /**
    * Real 3D physical hardcover book opening (Front Cover -> Inside Spread)
+   * Single, clean, majestic hardcover swing with no duplicate page flashes
    */
   performBookOpen(targetPage, wrapper) {
     const bookContainer = document.querySelector('.book-container');
@@ -365,20 +403,25 @@ class BookEngine {
       window.bookSound.playPageTurn('next');
     }
 
-    // Step 1: Pre-render inside spread underneath
+    // Step 1: Transition container into dual-page opening state
     if (bookContainer) {
-      bookContainer.classList.remove('cover-closed-front', 'cover-closed-back');
-      bookContainer.classList.add('dual-page-layout');
+      bookContainer.classList.remove('cover-closed-front', 'cover-closed-back', 'cosmic-manifest');
+      bookContainer.classList.add('dual-page-layout', 'book-opening');
     }
 
+    // Step 2: Underneath the lifting cover:
+    // Left desk page is kept completely empty/hidden during the 3D cover swing
     if (this.leftPageEl) {
-      this.renderSinglePageContent(this.leftPageEl, this.pages[1], 2);
+      this.clearPage(this.leftPageEl);
     }
+    // Right desk page immediately reveals Page 3 as the cover lifts off it
     if (this.rightPageEl) {
       this.renderSinglePageContent(this.rightPageEl, this.pages[2], 3);
     }
 
-    // Step 2: 3D Heavy Cover Leaf (swings from 0deg on right to -180deg on left)
+    // Step 3: 3D Heavy Cover Leaf (swings from 0deg on right to -180deg on left)
+    // Front face: Page 1 (Front Cover)
+    // Back face: Page 2 (Inside Cover / Mangalacharan)
     const flipper = document.createElement('div');
     flipper.className = 'book-flipper-leaf book-cover-flipper book-open-forward';
     flipper.innerHTML = `
@@ -399,8 +442,15 @@ class BookEngine {
     wrapper.appendChild(flipper);
 
     setTimeout(() => {
+      // Step 4: Cover has landed at -180deg on the left desk
+      if (this.leftPageEl) {
+        this.renderSinglePageContent(this.leftPageEl, this.pages[1], 2);
+      }
       flipper.remove();
       shadow.remove();
+      if (bookContainer) {
+        bookContainer.classList.remove('book-opening');
+      }
       this.currentPage = targetPage;
       this.render();
       this.onPageChanged();
@@ -410,6 +460,7 @@ class BookEngine {
 
   /**
    * Real 3D physical hardcover book closing (Inside Spread -> Front Cover)
+   * Clean single reverse swing shut into the floating closed cover
    */
   performBookCloseFront(wrapper) {
     const bookContainer = document.querySelector('.book-container');
@@ -420,14 +471,18 @@ class BookEngine {
     }
 
     if (bookContainer) {
-      bookContainer.classList.add('book-animating-close-front');
+      bookContainer.classList.add('book-closing-front');
     }
 
-    if (this.rightPageEl) {
-      this.renderSinglePageContent(this.rightPageEl, this.pages[0], 1);
+    // Step 1: Left desk page lifts with the cover leaf, so clear left container
+    if (this.leftPageEl) {
+      this.clearPage(this.leftPageEl);
     }
+    // Right container remains displaying Page 3 until covered
 
-    // 3D Cover Leaf swings from -180deg on left to 0deg on right
+    // Step 2: 3D Cover Leaf swings from -180deg on left to 0deg on right
+    // Front face: Page 2 (Inside Cover)
+    // Back face: Page 1 (Front Cover)
     const flipper = document.createElement('div');
     flipper.className = 'book-flipper-leaf book-cover-flipper book-close-backward';
     flipper.innerHTML = `
@@ -448,17 +503,12 @@ class BookEngine {
     wrapper.appendChild(flipper);
 
     setTimeout(() => {
-      if (bookContainer) {
-        bookContainer.classList.remove('dual-page-layout');
-        bookContainer.classList.add('cover-closed-front');
-      }
-    }, 320);
-
-    setTimeout(() => {
+      // Step 3: Cover has landed closed over the right desk
       flipper.remove();
       shadow.remove();
       if (bookContainer) {
-        bookContainer.classList.remove('book-animating-close-front');
+        bookContainer.classList.remove('dual-page-layout', 'book-closing-front');
+        bookContainer.classList.add('cover-closed-front');
       }
       this.currentPage = 1;
       this.render();
@@ -479,11 +529,12 @@ class BookEngine {
     }
 
     if (bookContainer) {
-      bookContainer.classList.add('book-animating-close-back');
+      bookContainer.classList.add('book-closing-back');
     }
 
-    if (this.leftPageEl) {
-      this.renderSinglePageContent(this.leftPageEl, this.pages[this.totalPages - 1], this.totalPages);
+    // Right desk lifts with the leaf
+    if (this.rightPageEl) {
+      this.clearPage(this.rightPageEl);
     }
 
     const flipper = document.createElement('div');
@@ -506,17 +557,11 @@ class BookEngine {
     wrapper.appendChild(flipper);
 
     setTimeout(() => {
-      if (bookContainer) {
-        bookContainer.classList.remove('dual-page-layout');
-        bookContainer.classList.add('cover-closed-back');
-      }
-    }, 320);
-
-    setTimeout(() => {
       flipper.remove();
       shadow.remove();
       if (bookContainer) {
-        bookContainer.classList.remove('book-animating-close-back');
+        bookContainer.classList.remove('dual-page-layout', 'book-closing-back');
+        bookContainer.classList.add('cover-closed-back');
       }
       this.currentPage = this.totalPages;
       this.render();
@@ -538,14 +583,14 @@ class BookEngine {
 
     if (bookContainer) {
       bookContainer.classList.remove('cover-closed-front', 'cover-closed-back');
-      bookContainer.classList.add('dual-page-layout');
+      bookContainer.classList.add('dual-page-layout', 'book-opening-back');
     }
 
     const targetL = this.totalPages - 2;
     const targetR = this.totalPages - 1;
 
     if (this.leftPageEl) {
-      this.renderSinglePageContent(this.leftPageEl, this.pages[targetL - 1], targetL);
+      this.clearPage(this.leftPageEl);
     }
     if (this.rightPageEl) {
       this.renderSinglePageContent(this.rightPageEl, this.pages[targetR - 1], targetR);
@@ -559,7 +604,7 @@ class BookEngine {
         <div class="flipper-lighting-layer"></div>
       </div>
       <div class="flipper-face flipper-face-back page-sheet right-page">
-        ${this.getPageHTML(targetR)}
+        ${this.getPageHTML(targetL)}
         <div class="flipper-lighting-layer"></div>
       </div>
     `;
@@ -571,8 +616,14 @@ class BookEngine {
     wrapper.appendChild(flipper);
 
     setTimeout(() => {
+      if (this.leftPageEl) {
+        this.renderSinglePageContent(this.leftPageEl, this.pages[targetL - 1], targetL);
+      }
       flipper.remove();
       shadow.remove();
+      if (bookContainer) {
+        bookContainer.classList.remove('book-opening-back');
+      }
       this.currentPage = targetPage;
       this.render();
       this.onPageChanged();

@@ -558,6 +558,7 @@ html, body {
    5. Main Book Stage & 3D Book Anatomy
    -------------------------------------------------------------------------- */
 .main-stage {
+  position: relative;
   min-height: 100vh;
   height: 100vh;
   box-sizing: border-box;
@@ -566,7 +567,123 @@ html, body {
   align-items: center;
   justify-content: center;
   perspective: 2400px;
-  background: radial-gradient(circle at 50% 40%, rgba(179, 127, 25, 0.08) 0%, transparent 70%);
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 50%, #0d0818 0%, #07030d 45%, #020106 100%);
+}
+
+/* Cosmic Void & Celestial Singularity Stage Background */
+.cosmic-stage-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Black Hole Singularity Core */
+.cosmic-singularity-core {
+  position: absolute;
+  width: 580px;
+  height: 580px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #000000 60%, rgba(12, 5, 26, 0.95) 75%, transparent 100%);
+  box-shadow: 0 0 120px 40px rgba(0, 0, 0, 0.98), inset 0 0 80px rgba(0, 0, 0, 1);
+  filter: drop-shadow(0 0 50px rgba(138, 43, 226, 0.28));
+}
+
+/* Rotating Accretion Disk / Cosmic Horizon */
+.cosmic-accretion-ring {
+  position: absolute;
+  width: 960px;
+  height: 960px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(217, 119, 6, 0.0) 0deg,
+    rgba(147, 51, 234, 0.18) 60deg,
+    rgba(217, 119, 6, 0.28) 120deg,
+    rgba(79, 70, 229, 0.22) 180deg,
+    rgba(220, 38, 38, 0.15) 240deg,
+    rgba(217, 119, 6, 0.32) 300deg,
+    rgba(217, 119, 6, 0.0) 360deg
+  );
+  filter: blur(48px);
+  animation: cosmicAccretionSpin 60s linear infinite;
+  opacity: 0.85;
+}
+
+/* Sacred Yantra Celestial Halo */
+.cosmic-yantra-halo {
+  position: absolute;
+  width: 720px;
+  height: 720px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: cosmicHaloPulse 7s ease-in-out infinite alternate;
+  opacity: 0.75;
+}
+
+.cosmic-sri-yantra {
+  width: 82%;
+  height: 82%;
+  animation: cosmicYantraSpin 140s linear infinite;
+  filter: drop-shadow(0 0 12px rgba(217, 119, 6, 0.35));
+}
+
+/* Cosmic Stardust particles drifting */
+.cosmic-stardust-dust {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1.5px 1.5px at 25px 35px, rgba(255, 230, 160, 0.65), rgba(0,0,0,0)),
+    radial-gradient(1.2px 1.2px at 160px 130px, rgba(200, 180, 255, 0.55), rgba(0,0,0,0)),
+    radial-gradient(1.8px 1.8px at 290px 250px, rgba(255, 215, 0, 0.75), rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 460px 85px, rgba(255, 255, 255, 0.6), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 710px 330px, rgba(255, 200, 120, 0.7), rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 910px 190px, rgba(180, 150, 255, 0.55), rgba(0,0,0,0)),
+    radial-gradient(2.2px 2.2px at 1160px 300px, rgba(255, 220, 140, 0.75), rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 1360px 115px, rgba(255, 255, 255, 0.65), rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 1400px 600px;
+  animation: cosmicDustDrift 90s linear infinite;
+  opacity: 0.65;
+}
+
+@keyframes cosmicAccretionSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes cosmicYantraSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes cosmicHaloPulse {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.55;
+    box-shadow: 0 0 35px rgba(217, 119, 6, 0.12);
+  }
+  100% {
+    transform: scale(1.04);
+    opacity: 0.85;
+    box-shadow: 0 0 65px rgba(147, 51, 234, 0.22);
+  }
+}
+
+@keyframes cosmicDustDrift {
+  0% { background-position: 0 0; }
+  100% { background-position: 1400px 600px; }
 }
 
 .book-container {
@@ -584,8 +701,9 @@ html, body {
   padding: 12px;
   display: flex;
   flex-direction: column;
-  transition: all 0.35s ease;
+  transition: max-width 0.65s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.65s cubic-bezier(0.22, 1, 0.36, 1);
   user-select: text;
+  z-index: 10;
 }
 
 /* Gilded Book Edges & Corner Embossings */
@@ -732,8 +850,86 @@ html, body {
 /* Closed Front Cover Mode (Book Closed at Start) */
 .book-container.cover-closed-front,
 .book-container.cover-closed-back {
-  max-width: 580px !important;
+  max-width: 600px !important;
   margin: 0 auto;
+  animation: cosmicBookLevitation 5.2s ease-in-out infinite alternate;
+  box-shadow: 
+    0 30px 65px -12px rgba(0, 0, 0, 0.88),
+    0 0 50px rgba(147, 51, 234, 0.22),
+    0 0 80px rgba(217, 119, 6, 0.2) !important;
+}
+
+/* While book is in active cover open/close animations, freeze levitation */
+.book-container.book-opening,
+.book-container.book-closing-front,
+.book-container.book-closing-back,
+.book-container.book-opening-back {
+  animation: none !important;
+}
+
+/* Clean single-action visibility controls: left page completely hidden during cover opening/closing */
+.book-container.book-opening .left-page,
+.book-container.book-closing-front .left-page {
+  display: flex !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.book-container.book-closing-back .right-page,
+.book-container.book-opening-back .left-page {
+  display: flex !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Floating Levitating Book Animation Keyframes */
+@keyframes cosmicBookLevitation {
+  0% {
+    transform: translateY(0px) rotateX(1deg) rotateZ(0deg);
+    box-shadow: 
+      0 26px 50px -12px rgba(0, 0, 0, 0.88),
+      0 0 40px rgba(147, 51, 234, 0.2),
+      0 0 60px rgba(217, 119, 6, 0.16);
+  }
+  50% {
+    transform: translateY(-16px) rotateX(-0.5deg) rotateZ(0.3deg);
+    box-shadow: 
+      0 44px 80px -15px rgba(0, 0, 0, 0.78),
+      0 0 70px rgba(147, 51, 234, 0.32),
+      0 0 100px rgba(217, 119, 6, 0.28);
+  }
+  100% {
+    transform: translateY(-8px) rotateX(0.5deg) rotateZ(-0.2deg);
+    box-shadow: 
+      0 34px 62px -12px rgba(0, 0, 0, 0.84),
+      0 0 50px rgba(147, 51, 234, 0.25),
+      0 0 75px rgba(217, 119, 6, 0.22);
+  }
+}
+
+/* Initial Load Manifestation from Cosmic Void */
+.book-container.cosmic-manifest {
+  animation: cosmicBookManifest 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes cosmicBookManifest {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.86) rotateX(8deg);
+    filter: blur(14px) brightness(1.8);
+  }
+  65% {
+    opacity: 0.96;
+    transform: translateY(-18px) scale(1.02) rotateX(-1deg);
+    filter: blur(0px) brightness(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1) rotateX(1deg);
+    filter: blur(0px) brightness(1);
+  }
 }
 
 .book-container.cover-closed-front .book-pages-wrapper,
@@ -1382,6 +1578,46 @@ html, body {
   padding: 0.35rem 1rem;
   border-radius: 30px;
   background: rgba(200, 157, 61, 0.08);
+}
+
+/* Golden Open Prompt on Closed Front Cover */
+.cover-open-prompt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0.55rem auto 0.2rem auto;
+  padding: 0.35rem 1.15rem;
+  background: linear-gradient(135deg, rgba(200, 157, 61, 0.15), rgba(147, 51, 234, 0.12));
+  border: 1px solid rgba(200, 157, 61, 0.45);
+  border-radius: 20px;
+  color: var(--accent-gold);
+  font-family: var(--font-heading);
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 15px rgba(200, 157, 61, 0.2);
+  transition: all 0.25s ease;
+  cursor: pointer;
+  animation: promptPulse 2.8s ease-in-out infinite alternate;
+}
+
+.book-container.cover-closed-front:hover .cover-open-prompt {
+  background: linear-gradient(135deg, rgba(200, 157, 61, 0.3), rgba(147, 51, 234, 0.26));
+  border-color: rgba(255, 215, 0, 0.75);
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.45);
+  transform: scale(1.04);
+}
+
+@keyframes promptPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(200, 157, 61, 0.2);
+    border-color: rgba(200, 157, 61, 0.35);
+  }
+  100% {
+    box-shadow: 0 0 22px rgba(200, 157, 61, 0.55), 0 0 35px rgba(147, 51, 234, 0.3);
+    border-color: rgba(255, 215, 0, 0.7);
+  }
 }
 
 /* Auspicious Invocation (मंगलाचरण) Page Styling */

@@ -1458,6 +1458,12 @@ def generate_hindi_pages(orig_pages):
 
       <div class="cover-subtitle-minimal">बृहत् शास्त्रीय सूत्र, खगोल गणित एवं फलित सिद्धांतों का अद्वितीय संग्रह</div>
 
+      <div class="cover-open-prompt" title="ग्रंथ खोलें • Click to Open">
+        <span class="prompt-icon">✧</span>
+        <span class="prompt-text">ग्रंथ का अनावरण करें • Click to Open Book</span>
+        <span class="prompt-icon">✧</span>
+      </div>
+
       <div class="cover-footer-brand">
         <div class="cover-tag">तंत्र ज्ञान शोध संस्थान • २०२६ • सम्पूर्ण हिन्दी संस्करण</div>
       </div>
@@ -1926,6 +1932,12 @@ def generate_english_pages(orig_pages):
       <div class="cover-divider-flourish">⚜ ☸ ⚜</div>
 
       <div class="cover-subtitle-minimal">Master Reference of Navagraha Karakatva, Raja Yogas, Nakshatra Padas & Medical Astrology</div>
+
+      <div class="cover-open-prompt" title="Open Grimoire • Click to Open">
+        <span class="prompt-icon">✧</span>
+        <span class="prompt-text">Open Sacred Grimoire • Click to Open</span>
+        <span class="prompt-icon">✧</span>
+      </div>
 
       <div class="cover-footer-brand">
         <div class="cover-tag">Tantra Gyan Research Center • 2026 • English Edition</div>
@@ -2589,6 +2601,24 @@ def render_edition_html(pages_list, edition_lang='hindi'):
 
   <!-- Main Book Reading Stage -->
   <main class="main-stage">
+    <!-- Cosmic Void & Celestial Singularity Backdrop -->
+    <div class="cosmic-stage-backdrop" aria-hidden="true">
+      <div class="cosmic-singularity-core"></div>
+      <div class="cosmic-accretion-ring"></div>
+      <div class="cosmic-stardust-dust"></div>
+      <div class="cosmic-yantra-halo">
+        <svg class="cosmic-sri-yantra" viewBox="0 0 200 200" fill="none" stroke="currentColor">
+          <circle cx="100" cy="100" r="95" stroke="rgba(217, 119, 6, 0.28)" stroke-width="1.2" stroke-dasharray="3,3"/>
+          <circle cx="100" cy="100" r="82" stroke="rgba(147, 51, 234, 0.3)" stroke-width="1"/>
+          <polygon points="100,18 178,148 22,148" stroke="rgba(217, 119, 6, 0.25)" stroke-width="1.2"/>
+          <polygon points="100,182 178,52 22,52" stroke="rgba(147, 51, 234, 0.25)" stroke-width="1.2"/>
+          <polygon points="100,32 165,140 35,140" stroke="rgba(217, 119, 6, 0.2)" stroke-width="0.9"/>
+          <polygon points="100,168 165,60 35,60" stroke="rgba(147, 51, 234, 0.2)" stroke-width="0.9"/>
+          <circle cx="100" cy="100" r="4" fill="rgba(255, 215, 0, 0.7)"/>
+        </svg>
+      </div>
+    </div>
+
     <div class="book-container cover-closed-front">
       <!-- Decorative Gilded Corners -->
       <div class="corner-ornament corner-tl"></div>
