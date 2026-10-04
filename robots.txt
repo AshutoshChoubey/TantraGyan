@@ -1,0 +1,81 @@
+# Robots.txt for Tantra Gyan Vedic Astrology Masterwork
+# Website: https://t.worldgyan.com
+# Author: Astrologer Ashutosh Kumar Choubey
+
+# 1. Global Crawler Rules
+User-agent: *
+Allow: /
+Disallow: /scripts/
+Disallow: /.git/
+
+# 2. Traditional Web Search Engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# 3. AI Search Engines & LLM Ingestion Bots (Explicitly Welcome)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# 4. Sitemaps and AI Specifications
+Sitemap: https://t.worldgyan.com/sitemap.xml
+
+# LLM Standard Ingestion Endpoints (https://llmstxt.org)
+# llms.txt: https://t.worldgyan.com/llms.txt
+# llms-full.txt: https://t.worldgyan.com/llms-full.txt

@@ -2476,6 +2476,121 @@ html, body {
   font-weight: 500;
 }
 
+/* Download & Offline Master Card */
+.settings-download-card {
+  grid-column: span 2;
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.12), rgba(180, 83, 9, 0.05));
+  border: 1.5px solid rgba(217, 119, 6, 0.4);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  text-align: left;
+  user-select: none;
+}
+
+.settings-download-card:hover {
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.22), rgba(180, 83, 9, 0.12));
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(217, 119, 6, 0.18);
+}
+
+.settings-download-card.update-available {
+  border-color: #f59e0b;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.22), rgba(217, 119, 6, 0.12));
+  animation: pulse-update-glow 2.5s infinite alternate;
+}
+
+.settings-download-card.downloaded {
+  border-color: rgba(34, 197, 94, 0.45);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(200, 157, 61, 0.05));
+}
+
+@keyframes pulse-update-glow {
+  0% { box-shadow: 0 0 0 rgba(245, 158, 11, 0.2); }
+  100% { box-shadow: 0 0 16px rgba(245, 158, 11, 0.5); }
+}
+
+.settings-download-top {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.settings-download-icon {
+  font-size: 1.45rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.settings-download-titles {
+  flex: 1;
+}
+
+.settings-download-heading {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.settings-download-sub {
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  margin-top: 0.15rem;
+  line-height: 1.35;
+}
+
+.settings-download-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.settings-download-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #d97706, #fbbf24);
+  border-radius: 999px;
+  transition: width 0.15s ease;
+}
+
+.pulse-badge {
+  display: inline-block;
+  padding: 0.15rem 0.45rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  animation: pulse-update-badge 1.8s infinite;
+}
+
+@keyframes pulse-update-badge {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.85; }
+}
+
+/* Desktop and Mobile Download Buttons */
+.tool-btn.update-glow {
+  border-color: #f59e0b !important;
+  color: #f59e0b !important;
+  animation: pulse-update-glow 2s infinite alternate;
+}
+
 .settings-lang-row {
   display: flex;
   border-radius: 10px;

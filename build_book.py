@@ -1066,69 +1066,237 @@ html_template = f"""<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>वैदिक ज्योतिष महाग्रंथ सरलीकृत | Complete Vedic Astrology Compendium Simplified</title>
   
-  <!-- SEO Best Practice Meta Tags -->
+  <!-- Primary SEO Meta Tags -->
   <meta name="description" content="वैदिक ज्योतिष महाग्रंथ सरलीकृत by Astrologer Ashutosh Kumar Choubey, Published by Tantra Gyan Research Center. Comprehensive authentic compendium covering Navagraha Karakatva, 17 Classical Raja Yogas, 27 Nakshatras & 108 Padas, Deeptadi Avasthas, and Planetary Predictions.">
   <meta name="keywords" content="Tantra Gyan, Vedic Astrology, Astrologer Ashutosh Kumar Choubey, Navagraha Karakatva, Raja Yoga, Medical Astrology, Cancer in Astrology, Nakshatra Padas, Jyotish Shastra, Parashara, Phaladeepika">
   <meta name="author" content="Ashutosh Kumar Choubey">
-  <meta name="robots" content="index, follow">
-  
-  <!-- OpenGraph Metadata -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <!-- Progressive Web App (PWA) & Mobile Application Meta -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#b45309">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Tantra Gyan">
+  <meta name="application-name" content="Tantra Gyan">
+  <meta name="msapplication-TileColor" content="#b45309">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Canonical & Multi-Language Hreflang Tags (Google & Bing Best Practice) -->
+  <link rel="canonical" href="https://t.worldgyan.com/">
+  <link rel="alternate" hreflang="hi" href="https://t.worldgyan.com/hindi.html">
+  <link rel="alternate" hreflang="en" href="https://t.worldgyan.com/english.html">
+  <link rel="alternate" hreflang="x-default" href="https://t.worldgyan.com/">
+
+  <!-- OpenGraph Metadata for Social & Search Snippets -->
+  <meta property="og:site_name" content="तंत्र ज्ञान (Tantra Gyan)">
   <meta property="og:title" content="वैदिक ज्योतिष महाग्रंथ सरलीकृत | Complete Vedic Astrology Compendium Simplified">
-  <meta property="og:description" content="Comprehensive Authentic Vedic Astrology Reference Book by Astrologer Ashutosh Kumar Choubey.">
+  <meta property="og:description" content="सम्पूर्ण प्रामाणिक फलित ज्ञानकोश: नवग्रह कारकत्व, १७ शास्त्रीय राजयोग, २७ नक्षत्र, १०८ पद, दीप्तादि ९ अवस्थाएं एवं आयुर्-ज्योतिष। लेखक: ज्योतिषाचार्य Ashutosh Kumar Choubey।">
   <meta property="og:type" content="book">
-  <meta property="og:url" content="https://t.worldgyan.com">
-  <link rel="canonical" href="https://t.worldgyan.com">
-  
+  <meta property="og:url" content="https://t.worldgyan.com/">
+  <meta property="og:image" content="https://t.worldgyan.com/assets/og-image.jpg">
+  <meta property="og:image:secure_url" content="https://t.worldgyan.com/assets/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:image:alt" content="तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ - Sacred Sri Yantra & Celestial Astrology Charts">
+  <meta property="og:locale" content="hi_IN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="book:author" content="Ashutosh Kumar Choubey">
+  <meta property="book:release_date" content="2026-01-01">
+  <meta property="book:tag" content="Vedic Astrology">
+  <meta property="book:tag" content="Jyotish Shastra">
+  <meta property="book:tag" content="Medical Astrology">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@TantraGyan108">
+  <meta name="twitter:creator" content="@TantraGyan108">
+  <meta name="twitter:title" content="वैदिक ज्योतिष महाग्रंथ सरलीकृत | Complete Vedic Astrology Compendium">
+  <meta name="twitter:description" content="सम्पूर्ण प्रामाणिक फलित ज्ञानकोश: नवग्रह कारकत्व, १७ शास्त्रीय राजयोग, २७ नक्षत्र, १०८ पद, दीप्तादि ९ अवस्थाएं एवं आयुर्-ज्योतिष।">
+  <meta name="twitter:image" content="https://t.worldgyan.com/assets/og-image.jpg">
+
+  <!-- Academic & AI Citation Metadata -->
+  <meta name="citation_title" content="वैदिक ज्योतिष महाग्रंथ सरलीकृत: Complete Vedic Astrology Compendium">
+  <meta name="citation_author" content="Choubey, Ashutosh Kumar">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_publisher" content="Tantra Gyan Research Center">
+  <meta name="citation_language" content="hi, en">
+
+  <!-- AI Search Engine Discovery (llms.txt standard & sitemap) -->
+  <link rel="help" type="text/plain" href="/llms.txt" title="LLM Context Specification">
+  <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full Knowledge Base for AI Models">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
   <!-- Standard High-Quality Google Fonts for Vedic & Modern Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-  
+
   <!-- Standard CSS Files for Maximum Maintainability -->
   <link rel="stylesheet" href="css/book.css?v=3.8">
   <link rel="stylesheet" href="css/tables.css?v=3.8">
-  
-  <!-- Schema.org JSON-LD Educational Book Structured Data -->
+
+  <!-- Ultra-Rich Schema.org JSON-LD Educational Book & Knowledge Graph Structured Data -->
   <script type="application/ld+json">
   {{
     "@context": "https://schema.org",
-    "@type": "Book",
-    "name": "वैदिक ज्योतिष महाग्रंथ सरलीकृत (Complete Vedic Astrology Compendium Simplified)",
-    "alternateName": "Complete Vedic Astrology Compendium Simplified",
-    "url": "https://t.worldgyan.com",
-    "author": {{
-      "@type": "Person",
-      "name": "Ashutosh Kumar Choubey",
-      "jobTitle": "Vedic Astrologer & Researcher",
-      "url": "https://t.worldgyan.com",
-      "sameAs": [
-        "https://www.youtube.com/@TantraGyan108",
-        "https://t.worldgyan.com"
-      ],
-      "email": "tantraresearchcenter@gmail.com",
-      "telephone": "+919658476170"
-    }},
-    "publisher": {{
-      "@type": "Organization",
-      "name": "तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)",
-      "url": "https://t.worldgyan.com",
-      "sameAs": [
-        "https://www.youtube.com/@TantraGyan108"
-      ],
-      "email": "tantraresearchcenter@gmail.com",
-      "telephone": "+919658476170"
-    }},
-    "datePublished": "2026",
-    "inLanguage": ["hi", "en"],
-    "bookFormat": "EBook",
-    "numberOfPages": {total_pages},
-    "genre": "Vedic Astrology / Jyotish / Medical Astrology",
-    "about": [
-      "Vedic Astrology",
-      "Navagraha Karakatva",
-      "Pancha Mahapurusha Raja Yogas",
-      "27 Nakshatras and 108 Padas",
-      "Medical Astrology and Cancer Disease"
+    "@graph": [
+      {{
+        "@type": "WebSite",
+        "@id": "https://t.worldgyan.com/#website",
+        "url": "https://t.worldgyan.com/",
+        "name": "तंत्र ज्ञान (Tantra Gyan)",
+        "alternateName": ["Tantra Gyan Vedic Astrology", "Vedic Astrology Compendium"],
+        "publisher": {{ "@id": "https://t.worldgyan.com/#organization" }},
+        "inLanguage": ["hi", "en"],
+        "potentialAction": {{
+          "@type": "SearchAction",
+          "target": "https://t.worldgyan.com/#search?q={{search_term_string}}",
+          "query-input": "required name=search_term_string"
+        }}
+      }},
+      {{
+        "@type": "Organization",
+        "@id": "https://t.worldgyan.com/#organization",
+        "name": "तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)",
+        "url": "https://t.worldgyan.com",
+        "logo": {{
+          "@type": "ImageObject",
+          "url": "https://t.worldgyan.com/assets/icon-512.png",
+          "width": 512,
+          "height": 512
+        }},
+        "sameAs": [
+          "https://www.youtube.com/@TantraGyan108",
+          "https://t.worldgyan.com"
+        ],
+        "contactPoint": {{
+          "@type": "ContactPoint",
+          "telephone": "+919658476170",
+          "contactType": "Customer Support",
+          "email": "tantraresearchcenter@gmail.com",
+          "availableLanguage": ["Hindi", "English"]
+        }}
+      }},
+      {{
+        "@type": "Person",
+        "@id": "https://t.worldgyan.com/#author",
+        "name": "Ashutosh Kumar Choubey",
+        "alternateName": "आशुतोष कुमार चौबे",
+        "jobTitle": "Vedic Astrologer & Researcher",
+        "url": "https://t.worldgyan.com",
+        "sameAs": [
+          "https://www.youtube.com/@TantraGyan108"
+        ],
+        "email": "tantraresearchcenter@gmail.com",
+        "telephone": "+919658476170",
+        "worksFor": {{ "@id": "https://t.worldgyan.com/#organization" }}
+      }},
+      {{
+        "@type": "Book",
+        "@id": "https://t.worldgyan.com/#book",
+        "name": "वैदिक ज्योतिष महाग्रंथ सरलीकृत (Complete Vedic Astrology Compendium Simplified)",
+        "alternateName": "Complete Vedic Astrology Compendium Simplified",
+        "url": "https://t.worldgyan.com/",
+        "author": {{ "@id": "https://t.worldgyan.com/#author" }},
+        "publisher": {{ "@id": "https://t.worldgyan.com/#organization" }},
+        "datePublished": "2026-01-01",
+        "inLanguage": ["hi", "en"],
+        "bookFormat": "https://schema.org/EBook",
+        "numberOfPages": {total_pages},
+        "genre": ["Vedic Astrology", "Jyotish Shastra", "Medical Astrology", "Ayur-Jyotish"],
+        "educationalLevel": "Beginner to Advanced Jyotish Practitioner",
+        "citation": "Choubey, Ashutosh Kumar. Tantra Gyan: Complete Vedic Astrology Compendium Simplified. Tantra Gyan Research Center, 2026. Web. https://t.worldgyan.com",
+        "offers": {{
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock"
+        }},
+        "teaches": [
+          "Navagraha Karakatvas (9 Planetary Significations)",
+          "17 Classical Raja Yogas including Pancha Mahapurusha and Viparita Raja Yogas",
+          "27 Nakshatras and 108 Padas breakdown",
+          "9 Deeptadi Planetary States (Deepta, Swastha, Mudita, Shanta, etc.)",
+          "Ayur-Jyotish Anatomical Rulerships and Cancer Disease Astrological Diagnosis",
+          "Vimshottari Mahadasha 120-year cycle calculations"
+        ],
+        "about": [
+          {{ "@type": "Thing", "name": "Vedic Astrology" }},
+          {{ "@type": "Thing", "name": "Navagraha Karakatva" }},
+          {{ "@type": "Thing", "name": "Raja Yoga" }},
+          {{ "@type": "Thing", "name": "Medical Astrology" }},
+          {{ "@type": "Thing", "name": "Cancer in Astrology (Arbuda Roga)" }},
+          {{ "@type": "Thing", "name": "Nakshatra Padas" }}
+        ],
+        "hasPart": [
+          {{
+            "@type": "Chapter",
+            "name": "प्रस्तावना, मंगलाचरण एवं लेखक परिचय",
+            "position": 1,
+            "pageStart": 1,
+            "pageEnd": 5
+          }},
+          {{
+            "@type": "Chapter",
+            "name": "नवग्रह कारकत्व एवं १७ शास्त्रीय राजयोग",
+            "position": 2,
+            "pageStart": 6,
+            "pageEnd": 20
+          }},
+          {{
+            "@type": "Chapter",
+            "name": "राशि, नक्षत्र, ग्रह गति एवं विंशोत्तरी महादशा",
+            "position": 3,
+            "pageStart": 21,
+            "pageEnd": 37
+          }},
+          {{
+            "@type": "Chapter",
+            "name": "भाव एवं राशियों में ग्रह (दीप्तादि ९ अवस्थाएं)",
+            "position": 4,
+            "pageStart": 38,
+            "pageEnd": 47
+          }},
+          {{
+            "@type": "Chapter",
+            "name": "मेडिकल एस्ट्रोलॉजी एवं कैंसर रोग विश्लेषण",
+            "position": 5,
+            "pageStart": 48,
+            "pageEnd": 74
+          }},
+          {{
+            "@type": "Chapter",
+            "name": "नक्षत्रों का गहन पद एवं ग्रह विश्लेषण",
+            "position": 6,
+            "pageStart": 75,
+            "pageEnd": 87
+          }}
+        ]
+      }},
+      {{
+        "@type": "BreadcrumbList",
+        "@id": "https://t.worldgyan.com/#breadcrumbs",
+        "itemListElement": [
+          {{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://t.worldgyan.com/"
+          }},
+          {{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Vedic Astrology Compendium",
+            "item": "https://t.worldgyan.com/index.html"
+          }}
+        ]
+      }}
     ]
   }}
   </script>
@@ -1154,8 +1322,11 @@ html_template = f"""<!DOCTYPE html>
         <span>Search</span>
       </button>
 
-      <!-- Mobile Header Actions (Gear Settings Icon) -->
+      <!-- Mobile Header Actions (Download/Update + Gear Settings) -->
       <div class="mobile-header-actions">
+        <button class="tool-btn mobile-action-btn mobile-download-btn" id="mobile-btn-download" title="ग्रंथ ऑफ़लाइन डाउनलोड करें / नया संस्करण अपडेट करें" aria-label="Download or Update Book">
+          <span id="mobile-download-icon">📥</span>
+        </button>
         <button class="tool-btn mobile-action-btn mobile-gear-btn" id="btn-settings-toggle" title="Settings & Options (सेटिंग्स और विकल्प)" aria-label="Open Settings">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;">
             <circle cx="12" cy="12" r="3"></circle>
@@ -1241,6 +1412,16 @@ html_template = f"""<!DOCTYPE html>
 
       <!-- Fullscreen -->
       <button class="tool-btn" id="btn-fullscreen" title="Toggle Fullscreen" style="padding:0.45rem 0.6rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>
+
+      <!-- Download / Update Book Offline Button -->
+      <button class="tool-btn" id="btn-download-offline" title="सम्पूर्ण ग्रंथ ऑफ़लाइन डाउनलोड करें (Download Book Offline)">
+        <span id="btn-download-icon">📥</span> <span id="btn-download-label">Download Offline</span>
+      </button>
+
+      <!-- Install PWA App Button -->
+      <button class="tool-btn" id="btn-install-app" title="डिवाइस पर इंस्टॉल करें (Install App to Desktop / Mobile)" style="display:none; color:var(--accent-gold); border-color:var(--accent-gold);">
+        <span>📲</span> <span>Install</span>
+      </button>
     </div>
   </header>
 
@@ -1433,6 +1614,41 @@ html_template = f"""<!DOCTYPE html>
                 <button class="font-zoom-btn" id="settings-font-inc" title="Increase Font">A+</button>
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- Section: App & Offline (ऐप व ऑफ़लाइन) -->
+        <div class="settings-section">
+          <div class="settings-section-title">App & Offline (ऐप व ऑफ़लाइन)</div>
+          <div class="settings-grid">
+            <!-- Full Interactive Download & Update Card -->
+            <div class="settings-download-card" id="settings-download-card" role="button" tabindex="0" title="Click to download full book offline or update">
+              <div class="settings-download-top">
+                <span class="settings-download-icon" id="settings-card-icon">📥</span>
+                <div class="settings-download-titles">
+                  <div class="settings-download-heading" id="settings-card-heading">
+                    <span id="settings-card-title">सम्पूर्ण ग्रंथ डाउनलोड करें</span>
+                    <span class="pulse-badge" id="settings-update-badge" style="display:none;">NEW</span>
+                  </div>
+                  <div class="settings-download-sub" id="settings-card-sub">सभी पृष्ठ, तालिकाएं व ऑडियो ऑफ़लाइन पढ़ें • 100% Offline</div>
+                </div>
+              </div>
+              <div class="settings-download-progress-bar" id="settings-download-progress-bar">
+                <div class="settings-download-progress-fill" id="settings-download-progress-fill"></div>
+              </div>
+            </div>
+
+            <!-- Install App button -->
+            <button class="settings-action-btn" id="settings-btn-install" style="color:var(--accent-gold); font-weight:600;">
+              <span class="settings-btn-icon">📲</span>
+              <span class="settings-btn-label" id="settings-install-label">ऐप इंस्टॉल करें (Install App)</span>
+            </button>
+
+            <!-- Check for updates button -->
+            <button class="settings-action-btn" id="settings-btn-check-update">
+              <span class="settings-btn-icon">🔄</span>
+              <span class="settings-btn-label" id="settings-check-update-label">अपडेट जांचें (Check Updates)</span>
+            </button>
           </div>
         </div>
 

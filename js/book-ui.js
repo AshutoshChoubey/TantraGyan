@@ -58,6 +58,9 @@ class BookUIController {
     // 10. Initialize Mobile Settings Drawer Modal (⚙️)
     this.initSettingsDrawer();
 
+    // 11. Initialize Progressive Web App (PWA) & Offline Capabilities
+    this.initPWA();
+
     // Initial update of bookmark UI state
     this.updateBookmarkUI();
   }
@@ -1179,6 +1182,413 @@ class BookUIController {
     document.querySelectorAll('.settings-opt-btn').forEach(btn => {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === currentLang);
     });
+
+    // Sync Offline Status Label
+    const offlineStatusLabel = document.getElementById('settings-offline-label');
+    if (offlineStatusLabel) {
+      const isCached = localStorage.getItem('tantragyan_cached') === 'true';
+      if (isPureHindi) {
+        offlineStatusLabel.textContent = isCached ? 'ऑफ़लाइन: पूर्ण कैश्ड' : 'ऑफ़लाइन: डेटा सुरक्षित';
+      } else {
+        offlineStatusLabel.textContent = isCached ? 'Offline: 100% Ready' : 'Offline: Ready';
+      }
+    }
+  }
+
+  // ============================================================================
+  // 11. Progressive Web App (PWA) & Offline Capabilities
+  // ============================================================================
+  initPWA() {
+    this.currentAppVersion = '1.0.1';
+    this.deferredInstallPrompt = null;
+    this.updateWorker = null;
+    this.isDownloading = false;
+
+    // Check saved offline version
+    const savedVersion = localStorage.getItem('tantragyan_downloaded_version');
+    this.offlineState = savedVersion ? 'downloaded' : 'idle';
+
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+    // A. Register Service Worker & Handle Updates
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then((reg) => {
+            console.log('[TantraGyan] PWA Service Worker registered:', reg.scope);
+
+            // Check if there is already a waiting worker
+            if (reg.waiting) {
+              this.setUpdateAvailable(reg.waiting);
+            }
+
+            reg.onupdatefound = () => {
+              const installingWorker = reg.installing;
+              if (installingWorker) {
+                installingWorker.onstatechange = () => {
+                  if (installingWorker.state === 'installed') {
+                    if (navigator.serviceWorker.controller) {
+                      // New version is available and waiting!
+                      this.setUpdateAvailable(installingWorker);
+                    } else {
+                      // First install pre-caching complete
+                      if (this.offlineState !== 'downloaded') {
+                        this.offlineState = 'downloaded';
+                        localStorage.setItem('tantragyan_downloaded_version', this.currentAppVersion);
+                        this.updateDownloadUI();
+                      }
+                    }
+                  }
+                };
+              }
+            };
+          })
+          .catch((err) => {
+            console.warn('[TantraGyan] Service Worker registration failed:', err);
+          });
+      });
+
+      // Handle controlling service worker change (after update is applied)
+      let refreshing = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (!refreshing) {
+          refreshing = true;
+          window.location.reload();
+        }
+      });
+
+      // Listen for messages from Service Worker
+      navigator.serviceWorker.addEventListener('message', (event) => {
+        const data = event.data;
+        if (!data) return;
+
+        if (data.type === 'DOWNLOAD_PROGRESS') {
+          this.offlineState = 'downloading';
+          this.updateDownloadProgress(data.current, data.total, data.percent);
+        } else if (data.type === 'DOWNLOAD_COMPLETE') {
+          this.offlineState = 'downloaded';
+          localStorage.setItem('tantragyan_downloaded_version', data.version || this.currentAppVersion);
+          this.updateDownloadUI();
+          const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
+          this.showToast(isHindi
+            ? '🎉 सम्पूर्ण ग्रंथ सफलतापूर्वक ऑफ़लाइन डाउनलोड हो गया! अब आप बिना इंटरनेट पढ़ सकते हैं।'
+            : '🎉 Full Book Downloaded Successfully! You can now read completely offline.', 5000);
+        } else if (data.type === 'UPDATE_AVAILABLE') {
+          this.setUpdateAvailable();
+        }
+      });
+    }
+
+    // B. Setup Download / Update Buttons Click Handlers
+    const downloadCard = document.getElementById('settings-download-card');
+    const desktopDownloadBtn = document.getElementById('btn-download-offline');
+    const mobileDownloadBtn = document.getElementById('mobile-btn-download');
+    const checkUpdateBtn = document.getElementById('settings-btn-check-update');
+
+    const handleDownloadOrUpdate = (e) => {
+      if (e) e.preventDefault();
+      this.triggerDownloadOrUpdate();
+    };
+
+    if (downloadCard) downloadCard.addEventListener('click', handleDownloadOrUpdate);
+    if (desktopDownloadBtn) desktopDownloadBtn.addEventListener('click', handleDownloadOrUpdate);
+    if (mobileDownloadBtn) mobileDownloadBtn.addEventListener('click', handleDownloadOrUpdate);
+
+    if (checkUpdateBtn) {
+      checkUpdateBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.checkForUpdates();
+      });
+    }
+
+    // C. Handle beforeinstallprompt (Android, Chrome, Edge, Desktop PWA)
+    const desktopInstallBtn = document.getElementById('btn-install-app');
+    const settingsInstallBtn = document.getElementById('settings-btn-install');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      this.deferredInstallPrompt = e;
+      if (desktopInstallBtn) desktopInstallBtn.style.display = 'inline-flex';
+      if (settingsInstallBtn) settingsInstallBtn.style.display = 'flex';
+      this.updateInstallLabels(false);
+    });
+
+    // D. Handle appinstalled event
+    window.addEventListener('appinstalled', () => {
+      this.deferredInstallPrompt = null;
+      if (desktopInstallBtn) desktopInstallBtn.style.display = 'none';
+      this.updateInstallLabels(true);
+      const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
+      this.showToast(isHindi ? 'तंत्र ज्ञान ऐप सफलतापूर्वक इंस्टॉल हो गया!' : 'Tantra Gyan App Installed Successfully!', 4000);
+    });
+
+    // E. Install Button Click Handler
+    const handleInstallClick = async (e) => {
+      e.preventDefault();
+      if (this.deferredInstallPrompt) {
+        this.deferredInstallPrompt.prompt();
+        const choice = await this.deferredInstallPrompt.userChoice;
+        if (choice && choice.outcome === 'accepted') {
+          console.log('[TantraGyan] User accepted install prompt');
+        }
+        this.deferredInstallPrompt = null;
+      } else if (isIOS && !isStandalone) {
+        const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
+        const msg = isHindi
+          ? 'iOS पर इंस्टॉल करने हेतु: सफारी में नीचे शेयर बटन [⎋] दबाकर "होम स्क्रीन पर जोड़ें [⊞]" चुनें।'
+          : 'To install on iOS: Tap Share [⎋] in Safari and choose "Add to Home Screen [⊞]".';
+        this.showToast(msg, 6000);
+      } else if (isStandalone) {
+        const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
+        this.showToast(isHindi ? 'ऐप पहले से आपकी डिवाइस पर स्थापित है।' : 'App is already installed on your device.', 3000);
+      } else {
+        const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
+        this.showToast(isHindi ? 'ब्राउज़र मेनू से "Install App" या "Add to Home Screen" चुनें।' : 'Select "Install App" or "Add to Home Screen" from browser menu.', 4000);
+      }
+    };
+
+    if (desktopInstallBtn) desktopInstallBtn.addEventListener('click', handleInstallClick);
+    if (settingsInstallBtn) settingsInstallBtn.addEventListener('click', handleInstallClick);
+
+    // If already in standalone mode, reflect in UI
+    if (isStandalone) {
+      if (desktopInstallBtn) desktopInstallBtn.style.display = 'none';
+      this.updateInstallLabels(true);
+    }
+
+    // F. Offline & Online Network State Detection
+    window.addEventListener('offline', () => {
+      const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
+      this.showToast(isHindi ? '📡 ऑफ़लाइन मोड: सम्पूर्ण ग्रंथ पूर्णतः उपलब्ध है' : '📡 Offline Mode: Full Book Available Offline', 4000);
+    });
+
+    window.addEventListener('online', () => {
+      const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
+      this.showToast(isHindi ? '🌐 ऑनलाइन कनेक्शन सक्रिय' : '🌐 Online Connection Restored', 3000);
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.ready.then(reg => reg.update()).catch(() => {});
+      }
+    });
+
+    // Initial update of download UI controls
+    this.updateDownloadUI();
+  }
+
+  setUpdateAvailable(worker = null) {
+    this.updateWorker = worker;
+    this.offlineState = 'update_available';
+    this.updateDownloadUI();
+    const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
+    this.showToast(isHindi
+      ? '🔔 ग्रंथ का नया संस्करण उपलब्ध है! अपडेट करने हेतु क्लिक करें।'
+      : '🔔 New Edition Available! Click Update to load latest content.', 5000);
+  }
+
+  triggerDownloadOrUpdate() {
+    const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
+
+    if (this.offlineState === 'update_available') {
+      this.showToast(isHindi ? 'नवीनतम संस्करण अपडेट हो रहा है...' : 'Updating to latest edition...', 3000);
+      localStorage.setItem('tantragyan_downloaded_version', this.currentAppVersion);
+
+      if (this.updateWorker) {
+        this.updateWorker.postMessage({ action: 'APPLY_UPDATE' });
+      } else if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.ready.then((reg) => {
+          if (reg.waiting) {
+            reg.waiting.postMessage({ action: 'APPLY_UPDATE' });
+          } else if (navigator.serviceWorker.controller) {
+            navigator.serviceWorker.controller.postMessage({ action: 'APPLY_UPDATE' });
+          } else {
+            window.location.reload();
+          }
+        }).catch(() => {
+          window.location.reload();
+        });
+      } else {
+        window.location.reload();
+      }
+      return;
+    }
+
+    if (this.offlineState === 'downloading') {
+      this.showToast(isHindi ? 'डाउनलोड पहले से प्रगति पर है, कृपया प्रतीक्षा करें...' : 'Download is in progress, please wait...', 2500);
+      return;
+    }
+
+    // Start offline download (either initial or re-cache)
+    if (!navigator.onLine) {
+      this.showToast(isHindi ? 'ऑफ़लाइन मोड: सम्पूर्ण ग्रंथ पहले से उपलब्ध है!' : 'Offline Mode: Book is already available offline!', 3000);
+      return;
+    }
+
+    this.offlineState = 'downloading';
+    this.updateDownloadUI();
+    this.showToast(isHindi ? 'सम्पूर्ण ग्रंथ डाउनलोड होना प्रारम्भ हो गया...' : 'Downloading complete book for offline use...', 3000);
+
+    if (navigator.serviceWorker && navigator.serviceWorker.controller) {
+      navigator.serviceWorker.controller.postMessage({ action: 'DOWNLOAD_ALL_OFFLINE' });
+    } else if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.ready.then((reg) => {
+        if (reg.active) {
+          reg.active.postMessage({ action: 'DOWNLOAD_ALL_OFFLINE' });
+        }
+      });
+    }
+  }
+
+  updateDownloadProgress(current, total, percent) {
+    const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
+
+    // Progress bar
+    const pBar = document.getElementById('settings-download-progress-bar');
+    const pFill = document.getElementById('settings-download-progress-fill');
+    if (pBar) pBar.style.display = 'block';
+    if (pFill) pFill.style.width = percent + '%';
+
+    // Titles
+    const titleEl = document.getElementById('settings-card-title');
+    const subEl = document.getElementById('settings-card-sub');
+    if (titleEl) {
+      titleEl.textContent = isHindi ? `डाउनलोड जारी है... (${percent}%)` : `Downloading... (${percent}%)`;
+    }
+    if (subEl) {
+      subEl.textContent = isHindi ? `प्रगति: ${current}/${total} फाइलें कैश्ड` : `Progress: ${current}/${total} files cached`;
+    }
+
+    // Desktop Toolbar label
+    const deskLabel = document.getElementById('btn-download-label');
+    const deskIcon = document.getElementById('btn-download-icon');
+    if (deskLabel) deskLabel.textContent = `Downloading (${percent}%)`;
+    if (deskIcon) deskIcon.textContent = '⏳';
+
+    // Mobile icon
+    const mobIcon = document.getElementById('mobile-download-icon');
+    if (mobIcon) mobIcon.textContent = '⏳';
+  }
+
+  updateDownloadUI() {
+    const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
+    const card = document.getElementById('settings-download-card');
+    const cardIcon = document.getElementById('settings-card-icon');
+    const cardTitle = document.getElementById('settings-card-title');
+    const cardSub = document.getElementById('settings-card-sub');
+    const updateBadge = document.getElementById('settings-update-badge');
+    const pBar = document.getElementById('settings-download-progress-bar');
+
+    const deskBtn = document.getElementById('btn-download-offline');
+    const deskIcon = document.getElementById('btn-download-icon');
+    const deskLabel = document.getElementById('btn-download-label');
+    const mobBtn = document.getElementById('mobile-btn-download');
+    const mobIcon = document.getElementById('mobile-download-icon');
+
+    if (this.offlineState === 'update_available') {
+      if (card) {
+        card.classList.add('update-available');
+        card.classList.remove('downloaded');
+      }
+      if (cardIcon) cardIcon.textContent = '🔄';
+      if (cardTitle) cardTitle.textContent = isHindi ? 'नया संस्करण अपडेट करें' : 'Update to Latest Edition';
+      if (cardSub) cardSub.textContent = isHindi ? 'नवीनतम संशोधन व सुधार लोड करने हेतु क्लिक करें' : 'Click to load latest revisions and fixes';
+      if (updateBadge) updateBadge.style.display = 'inline-block';
+      if (pBar) pBar.style.display = 'none';
+
+      if (deskBtn) {
+        deskBtn.classList.add('update-glow');
+        if (deskIcon) deskIcon.textContent = '🔄';
+        if (deskLabel) deskLabel.textContent = isHindi ? 'अपडेट करें (New)' : 'Update Available';
+      }
+      if (mobBtn) {
+        mobBtn.classList.add('update-glow');
+        if (mobIcon) mobIcon.textContent = '🔄';
+      }
+    } else if (this.offlineState === 'downloaded') {
+      if (card) {
+        card.classList.add('downloaded');
+        card.classList.remove('update-available');
+      }
+      if (cardIcon) cardIcon.textContent = '✅';
+      if (cardTitle) cardTitle.textContent = isHindi ? 'सम्पूर्ण ग्रंथ डाउनलोड है' : 'Full Book Downloaded';
+      if (cardSub) cardSub.textContent = isHindi ? 'बिना इंटरनेट 100% उपलब्ध • पुनः जांच हेतु क्लिक करें' : '100% Offline Ready • Click to re-verify';
+      if (updateBadge) updateBadge.style.display = 'none';
+      if (pBar) pBar.style.display = 'none';
+
+      if (deskBtn) {
+        deskBtn.classList.remove('update-glow');
+        if (deskIcon) deskIcon.textContent = '✅';
+        if (deskLabel) deskLabel.textContent = isHindi ? 'ऑफ़लाइन तैयार' : 'Offline Ready';
+      }
+      if (mobBtn) {
+        mobBtn.classList.remove('update-glow');
+        if (mobIcon) mobIcon.textContent = '✅';
+      }
+    } else if (this.offlineState === 'downloading') {
+      if (card) {
+        card.classList.remove('update-available', 'downloaded');
+      }
+      if (cardIcon) cardIcon.textContent = '⏳';
+      if (updateBadge) updateBadge.style.display = 'none';
+      if (pBar) pBar.style.display = 'block';
+    } else {
+      // idle
+      if (card) {
+        card.classList.remove('update-available', 'downloaded');
+      }
+      if (cardIcon) cardIcon.textContent = '📥';
+      if (cardTitle) cardTitle.textContent = isHindi ? 'सम्पूर्ण ग्रंथ डाउनलोड करें' : 'Download Book Offline';
+      if (cardSub) cardSub.textContent = isHindi ? 'सभी पृष्ठ, तालिकाएं व ऑडियो ऑफ़लाइन पढ़ें • 100% Offline' : 'All 88 pages, tables & audio offline • 100% Offline';
+      if (updateBadge) updateBadge.style.display = 'none';
+      if (pBar) pBar.style.display = 'none';
+
+      if (deskBtn) {
+        deskBtn.classList.remove('update-glow');
+        if (deskIcon) deskIcon.textContent = '📥';
+        if (deskLabel) deskLabel.textContent = isHindi ? 'डाउनलोड करें' : 'Download Offline';
+      }
+      if (mobBtn) {
+        mobBtn.classList.remove('update-glow');
+        if (mobIcon) mobIcon.textContent = '📥';
+      }
+    }
+  }
+
+  checkForUpdates() {
+    const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
+    if (!navigator.onLine) {
+      this.showToast(isHindi ? 'अपडेट जांचने हेतु इंटरनेट कनेक्शन आवश्यक है।' : 'Internet connection is required to check for updates.', 3000);
+      return;
+    }
+
+    this.showToast(isHindi ? 'संस्करण जांच हो रही है...' : 'Checking for latest edition...', 2500);
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.ready.then((reg) => {
+        return reg.update().then(() => {
+          setTimeout(() => {
+            if (this.offlineState !== 'update_available') {
+              this.showToast(isHindi
+                ? `आप पहले से नवीनतम संस्करण (v${this.currentAppVersion}) पर हैं!`
+                : `You are already on the latest edition (v${this.currentAppVersion})!`, 3500);
+            }
+          }, 1500);
+        });
+      }).catch((err) => {
+        console.warn('Update check error:', err);
+      });
+    }
+  }
+
+  updateInstallLabels(isInstalled) {
+    const langMode = document.documentElement.getAttribute('data-lang-mode') || 'bilingual';
+    const isPureHindi = (langMode === 'hindi');
+    const settingsLabel = document.getElementById('settings-install-label');
+    if (settingsLabel) {
+      if (isInstalled) {
+        settingsLabel.textContent = isPureHindi ? 'ऐप स्थापित है (Installed)' : 'App Installed';
+      } else {
+        settingsLabel.textContent = isPureHindi ? 'ऐप इंस्टॉल करें (Install)' : 'Install App';
+      }
+    }
   }
 
   escapeHtml(text) {

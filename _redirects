@@ -1,0 +1,2 @@
+# Cloudflare Pages Redirects
+/manifest.json    /manifest.webmanifest    301

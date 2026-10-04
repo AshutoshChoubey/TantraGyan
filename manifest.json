@@ -1,0 +1,73 @@
+{
+  "id": "tantra-gyan-vedic-astrology-compendium",
+  "name": "तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ (Tantra Gyan Vedic Astrology)",
+  "short_name": "तंत्र ज्ञान",
+  "description": "वैदिक ज्योतिष, नवग्रह कारकत्व, १७ शास्त्रीय राजयोग, २७ नक्षत्र, १०८ पद, दीप्तादि ९ अवस्थाएं एवं आयुर्-ज्योतिष का प्रामाणिक डिजिटल ज्ञानकोश। Complete Vedic Astrology Compendium by Astrologer Ashutosh Kumar Choubey.",
+  "lang": "hi",
+  "dir": "auto",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "theme_color": "#b45309",
+  "background_color": "#fbf6ec",
+  "categories": ["books", "education", "reference", "lifestyle"],
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/yantra.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "द्विभाषी महाग्रंथ (Bilingual)",
+      "short_name": "Bilingual",
+      "url": "./index.html",
+      "description": "मूल द्विभाषी वैदिक ज्योतिष महाग्रंथ खोलें",
+      "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "सम्पूर्ण हिन्दी संस्करण (Hindi)",
+      "short_name": "हिन्दी",
+      "url": "./hindi.html",
+      "description": "सम्पूर्ण हिन्दी संस्करण पढ़ें",
+      "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Complete English Edition",
+      "short_name": "English",
+      "url": "./english.html",
+      "description": "Read Complete English Edition",
+      "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

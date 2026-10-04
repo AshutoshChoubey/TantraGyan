@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- 1. Original Bilingual Masterwork Edition (द्विभाषी संस्करण) -->
+  <url>
+    <loc>https://t.worldgyan.com/</loc>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://t.worldgyan.com/hindi.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.worldgyan.com/english.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t.worldgyan.com/" />
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://t.worldgyan.com/assets/og-image.jpg</image:loc>
+      <image:title>तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ - Astrologer Ashutosh Kumar Choubey</image:title>
+      <image:caption>Complete Vedic Astrology Compendium Simplified (Bilingual Edition)</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://t.worldgyan.com/assets/yantra.svg</image:loc>
+      <image:title>श्री यंत्र Mandala - Tantra Gyan</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://t.worldgyan.com/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://t.worldgyan.com/hindi.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.worldgyan.com/english.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t.worldgyan.com/" />
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 2. Pure Hindi Dedicated Edition (सम्पूर्ण हिन्दी संस्करण) -->
+  <url>
+    <loc>https://t.worldgyan.com/hindi.html</loc>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://t.worldgyan.com/hindi.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.worldgyan.com/english.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t.worldgyan.com/" />
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://t.worldgyan.com/assets/og-image.jpg</image:loc>
+      <image:title>वैदिक ज्योतिष महाग्रंथ सरलीकृत (सम्पूर्ण हिन्दी संस्करण)</image:title>
+    </image:image>
+  </url>
+
+  <!-- 3. Complete English Dedicated Edition -->
+  <url>
+    <loc>https://t.worldgyan.com/english.html</loc>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://t.worldgyan.com/hindi.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://t.worldgyan.com/english.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t.worldgyan.com/" />
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://t.worldgyan.com/assets/og-image.jpg</image:loc>
+      <image:title>Complete Vedic Astrology Compendium Simplified (English Edition)</image:title>
+    </image:image>
+  </url>
+
+</urlset>
