@@ -366,12 +366,9 @@ class BookEngine {
       }
 
       // Standard interior dual-page flip
-      if (window.bookSound) {
-        window.bookSound.playPageTurn(direction === 'forward' ? 'next' : 'prev');
-      }
       this.performDualPageFlip(direction, targetPage, wrapper);
     } else {
-      // Single Page Mode (Mobile / Tablet)
+      // Single Page Mode (Mobile / Tablet / Desktop Ekal Page)
       // 1. Opening Book from Front Cover (Page 1 -> Page 2)
       if (this.currentPage === 1 && direction === 'forward') {
         this.performSingleCoverOpen(targetPage, wrapper);
@@ -397,9 +394,6 @@ class BookEngine {
       }
 
       // Standard single page flip
-      if (window.bookSound) {
-        window.bookSound.playPageTurn(direction === 'forward' ? 'next' : 'prev');
-      }
       this.performSinglePageFlip(direction, targetPage, wrapper);
     }
   }
@@ -410,11 +404,6 @@ class BookEngine {
    */
   performBookOpen(targetPage, wrapper) {
     const bookContainer = document.querySelector('.book-container');
-    if (window.bookSound && window.bookSound.playBookOpen) {
-      window.bookSound.playBookOpen();
-    } else if (window.bookSound) {
-      window.bookSound.playPageTurn('next');
-    }
 
     // Step 1: Transition container into dual-page opening state
     if (bookContainer) {
@@ -454,6 +443,15 @@ class BookEngine {
     wrapper.appendChild(shadow);
     wrapper.appendChild(flipper);
 
+    // Audio triggered during visual swing (after DOM insertion & paint)
+    setTimeout(() => {
+      if (window.bookSound && window.bookSound.playBookOpen) {
+        window.bookSound.playBookOpen();
+      } else if (window.bookSound) {
+        window.bookSound.playPageTurn('next');
+      }
+    }, 70);
+
     setTimeout(() => {
       // Step 4: Cover has landed at -180deg on the left desk
       if (this.leftPageEl) {
@@ -477,11 +475,6 @@ class BookEngine {
    */
   performBookCloseFront(wrapper) {
     const bookContainer = document.querySelector('.book-container');
-    if (window.bookSound && window.bookSound.playBookClose) {
-      window.bookSound.playBookClose();
-    } else if (window.bookSound) {
-      window.bookSound.playPageTurn('prev');
-    }
 
     if (bookContainer) {
       bookContainer.classList.add('book-closing-front');
@@ -515,6 +508,15 @@ class BookEngine {
     wrapper.appendChild(shadow);
     wrapper.appendChild(flipper);
 
+    // Audio triggered during visual swing
+    setTimeout(() => {
+      if (window.bookSound && window.bookSound.playBookClose) {
+        window.bookSound.playBookClose();
+      } else if (window.bookSound) {
+        window.bookSound.playPageTurn('prev');
+      }
+    }, 70);
+
     setTimeout(() => {
       // Step 3: Cover has landed closed over the right desk
       flipper.remove();
@@ -535,11 +537,6 @@ class BookEngine {
    */
   performBookCloseBack(wrapper) {
     const bookContainer = document.querySelector('.book-container');
-    if (window.bookSound && window.bookSound.playBookClose) {
-      window.bookSound.playBookClose();
-    } else if (window.bookSound) {
-      window.bookSound.playPageTurn('next');
-    }
 
     if (bookContainer) {
       bookContainer.classList.add('book-closing-back');
@@ -569,6 +566,15 @@ class BookEngine {
     wrapper.appendChild(shadow);
     wrapper.appendChild(flipper);
 
+    // Audio triggered during visual swing
+    setTimeout(() => {
+      if (window.bookSound && window.bookSound.playBookClose) {
+        window.bookSound.playBookClose();
+      } else if (window.bookSound) {
+        window.bookSound.playPageTurn('next');
+      }
+    }, 70);
+
     setTimeout(() => {
       flipper.remove();
       shadow.remove();
@@ -588,11 +594,6 @@ class BookEngine {
    */
   performBookOpenBack(targetPage, wrapper) {
     const bookContainer = document.querySelector('.book-container');
-    if (window.bookSound && window.bookSound.playBookOpen) {
-      window.bookSound.playBookOpen();
-    } else if (window.bookSound) {
-      window.bookSound.playPageTurn('prev');
-    }
 
     if (bookContainer) {
       bookContainer.classList.remove('cover-closed-front', 'cover-closed-back');
@@ -628,6 +629,15 @@ class BookEngine {
     wrapper.appendChild(shadow);
     wrapper.appendChild(flipper);
 
+    // Audio triggered during visual swing
+    setTimeout(() => {
+      if (window.bookSound && window.bookSound.playBookOpen) {
+        window.bookSound.playBookOpen();
+      } else if (window.bookSound) {
+        window.bookSound.playPageTurn('prev');
+      }
+    }, 70);
+
     setTimeout(() => {
       if (this.leftPageEl) {
         this.renderSinglePageContent(this.leftPageEl, this.pages[targetL - 1], targetL);
@@ -645,15 +655,9 @@ class BookEngine {
   }
 
   /**
-   * Single-page (mobile) book cover opening animation
+   * Single-page (mobile / desktop ekal) book cover opening animation (Page 1 -> Page 2)
    */
   performSingleCoverOpen(targetPage, wrapper) {
-    if (window.bookSound && window.bookSound.playBookOpen) {
-      window.bookSound.playBookOpen();
-    } else if (window.bookSound) {
-      window.bookSound.playPageTurn('next');
-    }
-
     if (this.rightPageEl) {
       this.renderSinglePageContent(this.rightPageEl, this.pages[targetPage - 1], targetPage);
     }
@@ -673,6 +677,15 @@ class BookEngine {
 
     wrapper.appendChild(flipper);
 
+    // Audio triggered during visual swing
+    setTimeout(() => {
+      if (window.bookSound && window.bookSound.playBookOpen) {
+        window.bookSound.playBookOpen();
+      } else if (window.bookSound) {
+        window.bookSound.playPageTurn('next');
+      }
+    }, 70);
+
     setTimeout(() => {
       flipper.remove();
       this.currentPage = targetPage;
@@ -683,15 +696,9 @@ class BookEngine {
   }
 
   /**
-   * Single-page (mobile) book cover closing animation
+   * Single-page (mobile / desktop ekal) book cover closing animation (Page 2 -> Page 1)
    */
   performSingleCoverClose(wrapper) {
-    if (window.bookSound && window.bookSound.playBookClose) {
-      window.bookSound.playBookClose();
-    } else if (window.bookSound) {
-      window.bookSound.playPageTurn('prev');
-    }
-
     if (this.rightPageEl) {
       this.renderSinglePageContent(this.rightPageEl, this.pages[0], 1);
     }
@@ -704,12 +711,21 @@ class BookEngine {
         <div class="flipper-lighting-layer"></div>
       </div>
       <div class="flipper-face flipper-face-back page-sheet">
-        ${this.getPageHTML(1)}
+        <div class="page-sheet-back-parchment"></div>
         <div class="flipper-lighting-layer"></div>
       </div>
     `;
 
     wrapper.appendChild(flipper);
+
+    // Audio triggered during visual swing
+    setTimeout(() => {
+      if (window.bookSound && window.bookSound.playBookClose) {
+        window.bookSound.playBookClose();
+      } else if (window.bookSound) {
+        window.bookSound.playPageTurn('prev');
+      }
+    }, 70);
 
     setTimeout(() => {
       flipper.remove();
@@ -721,15 +737,9 @@ class BookEngine {
   }
 
   /**
-   * Single-page (mobile) closing to Back Cover
+   * Single-page (mobile / desktop ekal) closing to Back Cover (Page 87 -> Page 88)
    */
   performSingleCoverCloseBack(wrapper) {
-    if (window.bookSound && window.bookSound.playBookClose) {
-      window.bookSound.playBookClose();
-    } else if (window.bookSound) {
-      window.bookSound.playPageTurn('next');
-    }
-
     if (this.rightPageEl) {
       this.renderSinglePageContent(this.rightPageEl, this.pages[this.totalPages - 1], this.totalPages);
     }
@@ -742,12 +752,21 @@ class BookEngine {
         <div class="flipper-lighting-layer"></div>
       </div>
       <div class="flipper-face flipper-face-back page-sheet">
-        ${this.getPageHTML(this.totalPages)}
+        <div class="page-sheet-back-parchment"></div>
         <div class="flipper-lighting-layer"></div>
       </div>
     `;
 
     wrapper.appendChild(flipper);
+
+    // Audio triggered during visual swing
+    setTimeout(() => {
+      if (window.bookSound && window.bookSound.playBookClose) {
+        window.bookSound.playBookClose();
+      } else if (window.bookSound) {
+        window.bookSound.playPageTurn('next');
+      }
+    }, 70);
 
     setTimeout(() => {
       flipper.remove();
@@ -759,15 +778,9 @@ class BookEngine {
   }
 
   /**
-   * Single-page (mobile) reopening from Back Cover
+   * Single-page (mobile / desktop ekal) reopening from Back Cover (Page 88 -> Page 87)
    */
   performSingleCoverOpenBack(targetPage, wrapper) {
-    if (window.bookSound && window.bookSound.playBookOpen) {
-      window.bookSound.playBookOpen();
-    } else if (window.bookSound) {
-      window.bookSound.playPageTurn('prev');
-    }
-
     if (this.rightPageEl) {
       this.renderSinglePageContent(this.rightPageEl, this.pages[targetPage - 1], targetPage);
     }
@@ -780,12 +793,21 @@ class BookEngine {
         <div class="flipper-lighting-layer"></div>
       </div>
       <div class="flipper-face flipper-face-back page-sheet">
-        ${this.getPageHTML(targetPage)}
+        <div class="page-sheet-back-parchment"></div>
         <div class="flipper-lighting-layer"></div>
       </div>
     `;
 
     wrapper.appendChild(flipper);
+
+    // Audio triggered during visual swing
+    setTimeout(() => {
+      if (window.bookSound && window.bookSound.playBookOpen) {
+        window.bookSound.playBookOpen();
+      } else if (window.bookSound) {
+        window.bookSound.playPageTurn('prev');
+      }
+    }, 70);
 
     setTimeout(() => {
       flipper.remove();
@@ -830,6 +852,13 @@ class BookEngine {
       wrapper.appendChild(shadow);
       wrapper.appendChild(flipper);
 
+      // Audio triggered during visual swing (mid-flight alignment)
+      setTimeout(() => {
+        if (window.bookSound) {
+          window.bookSound.playPageTurn('next');
+        }
+      }, 70);
+
       setTimeout(() => {
         flipper.remove();
         shadow.remove();
@@ -866,6 +895,13 @@ class BookEngine {
       wrapper.appendChild(shadow);
       wrapper.appendChild(flipper);
 
+      // Audio triggered during visual swing (mid-flight alignment)
+      setTimeout(() => {
+        if (window.bookSound) {
+          window.bookSound.playPageTurn('prev');
+        }
+      }, 70);
+
       setTimeout(() => {
         flipper.remove();
         shadow.remove();
@@ -882,6 +918,7 @@ class BookEngine {
     const targetP = targetPage;
 
     if (direction === 'forward') {
+      // Forward Turn: Right edge lifts, rotates right-to-left
       // Underneath, right container immediately reveals target page
       if (this.rightPageEl) {
         this.renderSinglePageContent(this.rightPageEl, this.pages[targetP - 1], targetP);
@@ -900,10 +937,22 @@ class BookEngine {
         </div>
       `;
 
+      const shadow = document.createElement('div');
+      shadow.className = 'flipper-under-shadow single-flip-forward-shadow';
+
+      wrapper.appendChild(shadow);
       wrapper.appendChild(flipper);
+
+      // Audio triggered during visual swing
+      setTimeout(() => {
+        if (window.bookSound) {
+          window.bookSound.playPageTurn('next');
+        }
+      }, 70);
 
       setTimeout(() => {
         flipper.remove();
+        shadow.remove();
         this.currentPage = targetP;
         this.render();
         this.onPageChanged();
@@ -911,11 +960,17 @@ class BookEngine {
       }, 520);
 
     } else {
+      // Backward Turn: Left edge lifts, rotates left-to-right
+      // Underneath, right container immediately reveals target page
+      if (this.rightPageEl) {
+        this.renderSinglePageContent(this.rightPageEl, this.pages[targetP - 1], targetP);
+      }
+
       const flipper = document.createElement('div');
       flipper.className = 'book-flipper-leaf single-flip-backward';
       flipper.innerHTML = `
         <div class="flipper-face flipper-face-front page-sheet">
-          ${this.getPageHTML(targetP)}
+          ${this.getPageHTML(currP)}
           <div class="flipper-lighting-layer"></div>
         </div>
         <div class="flipper-face flipper-face-back page-sheet">
@@ -924,10 +979,22 @@ class BookEngine {
         </div>
       `;
 
+      const shadow = document.createElement('div');
+      shadow.className = 'flipper-under-shadow single-flip-backward-shadow';
+
+      wrapper.appendChild(shadow);
       wrapper.appendChild(flipper);
+
+      // Audio triggered during visual swing
+      setTimeout(() => {
+        if (window.bookSound) {
+          window.bookSound.playPageTurn('prev');
+        }
+      }, 70);
 
       setTimeout(() => {
         flipper.remove();
+        shadow.remove();
         this.currentPage = targetP;
         this.render();
         this.onPageChanged();

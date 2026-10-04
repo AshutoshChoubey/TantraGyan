@@ -196,14 +196,13 @@ class BookSoundEngine {
 
       const frictionGain = this.audioCtx.createGain();
       frictionGain.gain.setValueAtTime(0.0001, now);
-      // Fast tactile grab & lift attack with smooth ramp (no click)
-      frictionGain.gain.linearRampToValueAtTime(this.volume * 0.42, now + 0.025);
-      // Gentle flutter decay
-      frictionGain.gain.exponentialRampToValueAtTime(this.volume * 0.14, now + 0.12);
-      frictionGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.20);
+      // Gentle whisper ramp as leaf lifts
+      frictionGain.gain.linearRampToValueAtTime(this.volume * 0.38, now + 0.08);
+      frictionGain.gain.exponentialRampToValueAtTime(this.volume * 0.16, now + 0.20);
+      frictionGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.30);
 
       // ----------------------------------------------------------------------
-      // 3. Layer B: Aerodynamic Resonant Body Swish & Air Displacement (0 to 450ms)
+      // 3. Layer B: Aerodynamic Resonant Body Swish & Air Displacement (0 to 500ms)
       // ----------------------------------------------------------------------
       const bodyFilter = this.audioCtx.createBiquadFilter();
       bodyFilter.type = 'bandpass';
@@ -212,24 +211,25 @@ class BookSoundEngine {
       if (direction === 'next') {
         // Page moves right to left: starts high, opens cavity, lowers pitch
         bodyFilter.frequency.setValueAtTime(2200 * curVar.freqMult, now);
-        bodyFilter.frequency.exponentialRampToValueAtTime(1200 * curVar.freqMult, now + 0.22);
-        bodyFilter.frequency.exponentialRampToValueAtTime(420 * curVar.freqMult, now + 0.45);
+        bodyFilter.frequency.exponentialRampToValueAtTime(1200 * curVar.freqMult, now + 0.25);
+        bodyFilter.frequency.exponentialRampToValueAtTime(420 * curVar.freqMult, now + 0.48);
       } else {
         // Page moves left to right
         bodyFilter.frequency.setValueAtTime(650 * curVar.freqMult, now);
-        bodyFilter.frequency.exponentialRampToValueAtTime(1600 * curVar.freqMult, now + 0.20);
-        bodyFilter.frequency.exponentialRampToValueAtTime(460 * curVar.freqMult, now + 0.45);
+        bodyFilter.frequency.exponentialRampToValueAtTime(1600 * curVar.freqMult, now + 0.25);
+        bodyFilter.frequency.exponentialRampToValueAtTime(460 * curVar.freqMult, now + 0.48);
       }
 
       const bodyGain = this.audioCtx.createGain();
       bodyGain.gain.setValueAtTime(0.0001, now);
-      bodyGain.gain.linearRampToValueAtTime(this.volume * 0.72, now + 0.06);
-      bodyGain.gain.linearRampToValueAtTime(this.volume * 0.85, now + 0.20);
-      bodyGain.gain.exponentialRampToValueAtTime(0.01, now + 0.44);
-      bodyGain.gain.linearRampToValueAtTime(0.0001, now + 0.49);
+      // Swells as page arches vertically across center (peaks around 250ms)
+      bodyGain.gain.linearRampToValueAtTime(this.volume * 0.65, now + 0.12);
+      bodyGain.gain.linearRampToValueAtTime(this.volume * 0.85, now + 0.25);
+      bodyGain.gain.exponentialRampToValueAtTime(0.01, now + 0.46);
+      bodyGain.gain.linearRampToValueAtTime(0.0001, now + 0.51);
 
       // ----------------------------------------------------------------------
-      // 4. Layer C: Soft Paper Landing Impact & Air Puff (350ms to 520ms)
+      // 4. Layer C: Soft Paper Landing Impact & Air Puff (380ms to 520ms)
       // ----------------------------------------------------------------------
       const thudOsc = this.audioCtx.createOscillator();
       const thudGain = this.audioCtx.createGain();
@@ -237,15 +237,15 @@ class BookSoundEngine {
 
       thudOsc.type = 'sine';
       thudFilter.type = 'lowpass';
-      thudFilter.frequency.setValueAtTime(170, now + 0.35);
+      thudFilter.frequency.setValueAtTime(170, now + 0.38);
 
-      thudOsc.frequency.setValueAtTime(curVar.thudPitch, now + 0.35);
+      thudOsc.frequency.setValueAtTime(curVar.thudPitch, now + 0.38);
       thudOsc.frequency.exponentialRampToValueAtTime(35, now + duration);
 
       thudGain.gain.setValueAtTime(0.0001, now);
-      thudGain.gain.setValueAtTime(0.0001, now + 0.35);
+      thudGain.gain.setValueAtTime(0.0001, now + 0.38);
       // Soft cushion arrival
-      thudGain.gain.linearRampToValueAtTime(this.volume * 0.40, now + 0.40);
+      thudGain.gain.linearRampToValueAtTime(this.volume * 0.40, now + 0.44);
       thudGain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
 
       const isMobileDevice = window.innerWidth <= 860 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -296,7 +296,7 @@ class BookSoundEngine {
       // Start sound sources
       noiseSource.start(now);
       noiseSource.stop(now + duration);
-      thudOsc.start(now + 0.35);
+      thudOsc.start(now + 0.38);
       thudOsc.stop(now + duration);
 
     } catch (e) {

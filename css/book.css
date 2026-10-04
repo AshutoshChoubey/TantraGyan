@@ -2615,23 +2615,25 @@ html, body {
   animation: flipDualBackward 0.56s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-/* Single Page (Mobile & Tablet): Forward Turn */
+/* Single Page (Mobile & Tablet & Desktop Single Mode): Forward Turn (Lifting right edge, turns R to L) */
 .single-page-layout .book-flipper-leaf.single-flip-forward,
 .book-flipper-leaf.single-flip-forward {
   left: 0;
+  right: auto;
   width: 100%;
   transform-origin: left center;
   -webkit-transform-origin: left center;
   animation: flipSingleForward 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-/* Single Page (Mobile & Tablet): Backward Turn (Peeled in from spine on left) */
+/* Single Page (Mobile & Tablet & Desktop Single Mode): Backward Turn (Lifting left edge, turns L to R) */
 .single-page-layout .book-flipper-leaf.single-flip-backward,
 .book-flipper-leaf.single-flip-backward {
-  left: 0;
+  right: 0;
+  left: auto;
   width: 100%;
-  transform-origin: left center;
-  -webkit-transform-origin: left center;
+  transform-origin: right center;
+  -webkit-transform-origin: right center;
   animation: flipSingleBackward 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
@@ -2664,11 +2666,26 @@ html, body {
   transform: rotateY(-180deg);
 }
 
-.single-flip-forward .flipper-face-back,
-.single-flip-backward .flipper-face-back {
+.single-flip-forward .flipper-face-back {
   z-index: 1;
   transform: rotateY(180deg);
   background: var(--page-bg-alt);
+}
+
+.single-flip-backward .flipper-face-back {
+  z-index: 1;
+  transform: rotateY(-180deg);
+  background: var(--page-bg-alt);
+}
+
+.page-sheet-back-parchment {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--page-bg, #fdfbf7);
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.04);
 }
 
 /* Dynamic Paper Lighting / Curl Highlights */
@@ -2710,12 +2727,12 @@ html, body {
   animation: backLightingForward 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.single-flip-backward .flipper-face-back .flipper-lighting-layer {
-  animation: singleBackLightingBackward 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
 .single-flip-backward .flipper-face-front .flipper-lighting-layer {
   animation: singleFrontLightingBackward 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.single-flip-backward .flipper-face-back .flipper-lighting-layer {
+  animation: singleBackLightingBackward 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 /* Dynamic Underlying Page Shadow */
@@ -2740,6 +2757,20 @@ html, body {
   transform-origin: right center;
   -webkit-transform-origin: right center;
   animation: underShadowBackward 0.56s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.single-flip-forward-shadow {
+  left: 0;
+  transform-origin: left center;
+  -webkit-transform-origin: left center;
+  animation: underShadowForward 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.single-flip-backward-shadow {
+  right: 0;
+  transform-origin: right center;
+  -webkit-transform-origin: right center;
+  animation: underShadowBackward 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 /* 3D Keyframes for Dual Forward Flip (Right to Left) */
@@ -2810,22 +2841,22 @@ html, body {
   }
 }
 
-/* 3D Keyframes for Single Page Backward Flip */
+/* 3D Keyframes for Single Page Backward Flip (Left to Right) */
 @keyframes flipSingleBackward {
   0% {
-    transform: rotateY(-180deg);
+    transform: rotateY(0deg);
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
-  35% {
-    transform: rotateY(-105deg) skewY(-0.5deg);
-    box-shadow: 8px 6px 24px rgba(0, 0, 0, 0.24);
-  }
-  70% {
-    transform: rotateY(-42deg) skewY(-1.5deg);
+  30% {
+    transform: rotateY(42deg) skewY(-1.5deg);
     box-shadow: 16px 6px 32px rgba(0, 0, 0, 0.32);
   }
+  65% {
+    transform: rotateY(105deg) skewY(-0.5deg);
+    box-shadow: 8px 6px 24px rgba(0, 0, 0, 0.24);
+  }
   100% {
-    transform: rotateY(0deg);
+    transform: rotateY(180deg);
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
 }
@@ -2936,34 +2967,36 @@ html, body {
   }
 }
 
-/* Single Page Backward: Back face visible 0% to 50% */
-@keyframes singleBackLightingBackward {
+/* Single Page Backward: Front face visible 0% to 50% (lifting from left edge) */
+@keyframes singleFrontLightingBackward {
   0% {
-    opacity: 0.65;
-    background: linear-gradient(90deg, rgba(0,0,0,0.22) 0%, rgba(255,255,255,0.18) 40%, rgba(0,0,0,0.08) 100%);
+    opacity: 0;
+    background: transparent;
   }
   35% {
-    opacity: 0.45;
+    opacity: 0.65;
+    background: linear-gradient(-90deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.2) 35%, rgba(0,0,0,0.12) 75%, rgba(0,0,0,0.28) 100%);
   }
   50% {
-    opacity: 0;
+    opacity: 0.75;
   }
   100% {
     opacity: 0;
   }
 }
 
-/* Single Page Backward: Front face visible 50% to 100% */
-@keyframes singleFrontLightingBackward {
+/* Single Page Backward: Back face visible 50% to 100% (landing toward right) */
+@keyframes singleBackLightingBackward {
   0% {
     opacity: 0;
   }
   50% {
-    opacity: 0.65;
-    background: linear-gradient(90deg, rgba(0,0,0,0.25) 0%, rgba(255,255,255,0.22) 30%, rgba(0,0,0,0.08) 100%);
+    opacity: 0.75;
+    background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.2) 35%, rgba(0,0,0,0.12) 75%, rgba(0,0,0,0.28) 100%);
   }
   75% {
-    opacity: 0.35;
+    opacity: 0.45;
+    background: linear-gradient(90deg, rgba(0,0,0,0.2) 0%, rgba(255,255,255,0.12) 50%, rgba(0,0,0,0.08) 100%);
   }
   100% {
     opacity: 0;
@@ -3180,39 +3213,41 @@ html, body {
 /* Single Page (Mobile & Tablet): Cover Close (Page 2 -> Page 1) */
 .single-page-layout .book-flipper-leaf.single-cover-close,
 .book-flipper-leaf.single-cover-close {
-  left: 0;
+  right: 0;
+  left: auto;
   width: 100%;
-  transform-origin: left center;
-  -webkit-transform-origin: left center;
+  transform-origin: right center;
+  -webkit-transform-origin: right center;
   animation: singleCoverClose 0.62s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   z-index: 100;
 }
 
 .single-cover-close .flipper-face-front {
-  z-index: 1;
+  z-index: 2;
   transform: rotateY(0deg);
 }
 
 .single-cover-close .flipper-face-back {
-  z-index: 2;
-  transform: rotateY(180deg);
+  z-index: 1;
+  transform: rotateY(-180deg);
+  background: var(--page-bg-alt);
 }
 
 @keyframes singleCoverClose {
   0% {
-    transform: rotateY(-180deg) translateZ(0);
+    transform: rotateY(0deg) translateZ(0);
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
   35% {
-    transform: rotateY(-125deg) translateZ(24px) skewY(-0.5deg);
-    box-shadow: 10px 8px 30px rgba(0, 0, 0, 0.3);
-  }
-  70% {
-    transform: rotateY(-60deg) translateZ(32px) skewY(-2deg);
+    transform: rotateY(60deg) translateZ(32px) skewY(-2deg);
     box-shadow: 22px 12px 48px rgba(0, 0, 0, 0.45);
   }
+  70% {
+    transform: rotateY(125deg) translateZ(24px) skewY(-0.5deg);
+    box-shadow: 10px 8px 30px rgba(0, 0, 0, 0.3);
+  }
   100% {
-    transform: rotateY(0deg) translateZ(0);
+    transform: rotateY(180deg) translateZ(0);
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
 }
