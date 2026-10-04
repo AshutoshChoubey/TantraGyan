@@ -2623,7 +2623,7 @@ html, body {
   width: 100%;
   transform-origin: left center;
   -webkit-transform-origin: left center;
-  animation: flipSingleForward 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: flipSingleForward 0.66s cubic-bezier(0.28, 0.84, 0.42, 1) forwards;
 }
 
 /* Single Page (Mobile & Tablet & Desktop Single Mode): Backward Turn (Lifting left edge, turns L to R) */
@@ -2634,7 +2634,7 @@ html, body {
   width: 100%;
   transform-origin: right center;
   -webkit-transform-origin: right center;
-  animation: flipSingleBackward 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: flipSingleBackward 0.66s cubic-bezier(0.28, 0.84, 0.42, 1) forwards;
 }
 
 /* Flipper Faces */
@@ -2720,19 +2720,19 @@ html, body {
 
 /* Single Page Lighting */
 .single-flip-forward .flipper-face-front .flipper-lighting-layer {
-  animation: frontLightingForward 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: frontLightingForward 0.66s cubic-bezier(0.28, 0.84, 0.42, 1) forwards;
 }
 
 .single-flip-forward .flipper-face-back .flipper-lighting-layer {
-  animation: backLightingForward 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: backLightingForward 0.66s cubic-bezier(0.28, 0.84, 0.42, 1) forwards;
 }
 
 .single-flip-backward .flipper-face-front .flipper-lighting-layer {
-  animation: singleFrontLightingBackward 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: singleFrontLightingBackward 0.66s cubic-bezier(0.28, 0.84, 0.42, 1) forwards;
 }
 
 .single-flip-backward .flipper-face-back .flipper-lighting-layer {
-  animation: singleBackLightingBackward 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: singleBackLightingBackward 0.66s cubic-bezier(0.28, 0.84, 0.42, 1) forwards;
 }
 
 /* Dynamic Underlying Page Shadow */
@@ -2763,14 +2763,14 @@ html, body {
   left: 0;
   transform-origin: left center;
   -webkit-transform-origin: left center;
-  animation: underShadowForward 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: underShadowForward 0.66s cubic-bezier(0.28, 0.84, 0.42, 1) forwards;
 }
 
 .single-flip-backward-shadow {
   right: 0;
   transform-origin: right center;
   -webkit-transform-origin: right center;
-  animation: underShadowBackward 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: underShadowBackward 0.66s cubic-bezier(0.28, 0.84, 0.42, 1) forwards;
 }
 
 /* 3D Keyframes for Dual Forward Flip (Right to Left) */
@@ -3550,12 +3550,12 @@ html, body {
 @media (max-width: 860px) {
   :root {
     --book-width: 100%;
-    --book-height: calc(100vh - 164px);
+    --book-height: calc(100vh - 112px);
   }
 
   .app-header {
-    height: 56px;
-    min-height: 56px;
+    height: 46px;
+    min-height: 46px;
     padding: 0 0.85rem;
     display: flex;
     flex-direction: column;
@@ -3565,9 +3565,9 @@ html, body {
   }
 
   .app-header.search-expanded {
-    height: 104px;
-    min-height: 104px;
-    padding: 0.45rem 0.85rem 0.55rem 0.85rem;
+    height: 94px;
+    min-height: 94px;
+    padding: 0.4rem 0.85rem 0.5rem 0.85rem;
   }
 
   .header-top-row {
@@ -3782,19 +3782,19 @@ html, body {
   }
 
   .main-stage {
-    padding: 66px 0.5rem 64px 0.5rem !important;
+    padding: 50px 0.5rem 58px 0.5rem !important;
     min-height: 100vh;
     height: 100vh;
     box-sizing: border-box;
   }
 
   .app-header.search-expanded ~ .main-stage {
-    padding-top: 112px !important;
+    padding-top: 98px !important;
   }
 
   .book-container {
     height: 100%;
-    max-height: calc(100vh - 164px);
+    max-height: calc(100vh - 112px);
     min-height: 0;
     padding: 6px;
     border-width: 2px;
@@ -3911,13 +3911,20 @@ html, body {
 @media (max-width: 580px) {
   :root {
     --book-width: 100%;
-    --book-height: calc(100vh - 160px);
+    --book-height: calc(100vh - 106px);
   }
 
   .app-header {
-    min-height: 82px;
-    padding: 0.35rem 0.55rem 0.45rem 0.55rem;
+    height: 44px;
+    min-height: 44px;
+    padding: 0.2rem 0.55rem;
     gap: 0.35rem;
+  }
+
+  .app-header.search-expanded {
+    height: 88px;
+    min-height: 88px;
+    padding: 0.3rem 0.55rem 0.4rem 0.55rem;
   }
 
   .brand-name {
@@ -3930,15 +3937,19 @@ html, body {
   }
 
   .main-stage {
-    padding: 90px 4px 64px 4px !important;
+    padding: 48px 4px 54px 4px !important;
     min-height: 100vh;
     height: 100vh;
     box-sizing: border-box;
   }
 
+  .app-header.search-expanded ~ .main-stage {
+    padding-top: 92px !important;
+  }
+
   .book-container {
     height: 100%;
-    max-height: calc(100vh - 158px);
+    max-height: calc(100vh - 106px);
     min-height: 0;
     padding: 4px;
     border-width: 1px;
@@ -4024,8 +4035,9 @@ html, body {
 /* Foldable Phones Closed Screen & Ultra-Compact Devices (<= 340px) */
 @media (max-width: 340px) {
   .app-header {
-    padding: 0.3rem 0.4rem;
-    min-height: 80px;
+    padding: 0.2rem 0.4rem;
+    height: 42px;
+    min-height: 42px;
   }
 
   .brand-logo img {

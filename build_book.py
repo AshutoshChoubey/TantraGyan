@@ -22,7 +22,7 @@ def clean_text(s):
     s = re.sub(r'<[^>]+>', '', s).strip()
     s = re.sub(r'^\d+\s*\|\s*', '', s)
     # Remove symbols and emojis that might cause box tofu on mobile
-    s = re.sub(r'[☿♃♄☊☋♀♂♈♉♊♋♌♍♎♏♐♑♒♓⇄⛶\ufe0f]', '', s)
+    s = re.sub(r'[🎯🔍☿♃♄☊☋♀♂♈♉♊♋♌♍♎♏♐♑♒♓⇄⛶\ufe0f]', '', s)
     s = re.sub(r'[\U00010000-\U0010ffff]', '', s)
     return s.strip()
 
@@ -77,6 +77,7 @@ def sanitize_content_block(cb_raw):
     # Strip formula pills that merely repeat section titles
     s = re.sub(r'<span class="rule-badge">.*?</span>', '', s)
     s = re.sub(r'<span class="formula-pill">.*?</span>', '', s)
+    s = s.replace('🎯', '').replace('🔍', '')
     # Check if there is actual non-heading content left
     text_content = re.sub(r'<[^>]+>', '', s).strip()
     if not text_content or len(text_content) < 30:
@@ -193,7 +194,7 @@ page_2 = """
 
   <div class="rule-card success">
     <div class="rule-header">
-      <div class="rule-title">🎯 फलित ज्योतिष दर्शन एवं कर्म सिद्धांत (Predictive Philosophy & Karmic Principles)</div>
+      <div class="rule-title">☸ फलित ज्योतिष दर्शन एवं कर्म सिद्धांत (Predictive Philosophy & Karmic Principles)</div>
       <span class="badge-chip badge-gold">मार्गदर्शक दृष्टि</span>
     </div>
     <div class="rule-body">
@@ -829,8 +830,48 @@ if ch5_m:
     
     for idx, (cb, tb, tid) in enumerate(ch5_pairs):
         caption = ch5_titles[idx] if idx < len(ch5_titles) else f"चिकित्सा ज्योतिष तालिका {idx+1}"
-        cb_clean = sanitize_content_block(cb) if cb else ""
-        cb_clean = re.sub(r'<h2[^>]*id=\"Page-5[^\"]*\"[^>]*>.*?</h2>', '', cb_clean)
+        if idx == 24:
+            # Section 25: General Cancer (Breast / Lung)
+            cb_clean = """
+          <div class="rule-card">
+            <div class="rule-header">
+              <div class="rule-title">🌬️ स्तन व फेफड़े के कैंसर • शास्त्रीय फलित सूत्र</div>
+              <span class="badge-chip badge-crimson">शास्त्रीय निदान</span>
+            </div>
+            <div class="rule-body" style="font-size:0.86rem; line-height:1.65;">
+              <p><strong>मूल शास्त्रीय सिद्धांत:</strong> वक्षस्थल एवं फेफड़ों का नैसर्गिक भाव <strong>चतुर्थ भाव</strong> तथा कारक ग्रह <strong>चन्द्रमा</strong> व <strong>बुध</strong> (श्वसन तंत्र) हैं। जब चतुर्थ भाव, चतुर्थेश अथवा कर्क राशि पर राहु, शनि या मंगल का क्रूर प्रभाव हो और चन्द्रमा त्रिक भावों (६/८/१२) में पीड़ित हो, तो वक्षस्थल एवं फेफड़ों में अर्बुद (कैंसर) की स्थिति निर्मित होती है।</p>
+            </div>
+          </div>
+            """
+        elif idx == 25:
+            # Section 26: Blood Cancer (Leukemia)
+            cb_clean = """
+          <div class="rule-card">
+            <div class="rule-header">
+              <div class="rule-title">🩸 रक्त कैंसर (ल्यूकीमिया) • शास्त्रीय फलित सूत्र</div>
+              <span class="badge-chip badge-crimson">शास्त्रीय निदान</span>
+            </div>
+            <div class="rule-body" style="font-size:0.86rem; line-height:1.65;">
+              <p><strong>मूल शास्त्रीय सिद्धांत:</strong> रक्त का नैसर्गिक कारक <strong>मंगल</strong> तथा शारीरिक द्रवों का कारक <strong>चन्द्रमा</strong> है। जब मंगल और चन्द्रमा पर राहु (अनियंत्रित म्यूटेशन) तथा शनि (अवरोध) का क्रूर प्रभाव हो और वे ६ठे, ८वें अथवा १२वें भाव में स्थित हों, तो रक्त विकृति व ल्यूकीमिया का योग बनता है।</p>
+            </div>
+          </div>
+            """
+        elif idx == 26:
+            # Section 27: Skin Cancer (Melanoma)
+            cb_clean = """
+          <div class="rule-card danger">
+            <div class="rule-header">
+              <div class="rule-title">🔬 त्वचा कैंसर (मेलानोमा) • शास्त्रीय फलित सूत्र</div>
+              <span class="badge-chip badge-gold">चिकित्सा ज्योतिष</span>
+            </div>
+            <div class="rule-body" style="font-size:0.86rem; line-height:1.65;">
+              <p><strong>मूल शास्त्रीय सिद्धांत:</strong> त्वचा का नैसर्गिक कारक ग्रह <strong>बुध</strong> है तथा रक्त व ऊतकों में तीव्र प्रदाह का कारक <strong>मंगल</strong> है। जब बुध पर पापी ग्रहों (राहु/शनि/मंगल) की क्रूर युति या दृष्टि हो और वह ६ठे, ८वें या लग्न भाव में स्थित होकर पीड़ित हो, तो असामान्य कोशिका विभाजन एवं त्वचा कैंसर का योग बनता है।</p>
+            </div>
+          </div>
+            """
+        else:
+            cb_clean = sanitize_content_block(cb) if cb else ""
+            cb_clean = re.sub(r'<h2[^>]*id=\"Page-5[^\"]*\"[^>]*>.*?</h2>', '', cb_clean)
         
         # Eliminate stacked duplicate title bar
         tb_clean = re.sub(r'<div class=\"table-caption\">.*?</div>', '', tb)
@@ -997,14 +1038,12 @@ def make_initial_sheet_markup(pageNum, pageData, totalPages):
           {co}
         </div>
         """
-    subtitle_part = f'<span class="page-header-sep" aria-hidden="true">•</span><span class="page-header-subtitle">{ti}</span>' if ti and ti.strip() != ch.strip() else ''
     return f"""
         <div class="page-header">
           <div class="page-header-info">
             <span class="page-header-title">
               <span class="chapter-wheel">☸</span> {ch}
             </span>
-            {subtitle_part}
           </div>
         </div>
         <div class="page-body">
@@ -1046,8 +1085,8 @@ html_template = f"""<!DOCTYPE html>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   
   <!-- Standard CSS Files for Maximum Maintainability -->
-  <link rel="stylesheet" href="css/book.css?v=3.5">
-  <link rel="stylesheet" href="css/tables.css?v=3.5">
+  <link rel="stylesheet" href="css/book.css?v=3.6">
+  <link rel="stylesheet" href="css/tables.css?v=3.6">
   
   <!-- Schema.org JSON-LD Educational Book Structured Data -->
   <script type="application/ld+json">
@@ -1424,10 +1463,10 @@ html_template = f"""<!DOCTYPE html>
   </div>
 
   <!-- Scripts -->
-  <script src="js/sounds-data.js?v=3.5"></script>
-  <script src="js/sound.js?v=3.5"></script>
-  <script src="js/book-engine.js?v=3.5"></script>
-  <script src="js/book-ui.js?v=3.5"></script>
+  <script src="js/sounds-data.js?v=3.6"></script>
+  <script src="js/sound.js?v=3.6"></script>
+  <script src="js/book-engine.js?v=3.6"></script>
+  <script src="js/book-ui.js?v=3.6"></script>
 </body>
 </html>
 """

@@ -11,7 +11,7 @@ const cssContent = fs.readFileSync(path.join(rootDir, 'css/book.css'), 'utf-8');
 // Check single-flip-forward
 if (!cssContent.includes('.book-flipper-leaf.single-flip-forward') || 
     !cssContent.includes('transform-origin: left center') ||
-    !cssContent.includes('animation: flipSingleForward 0.52s')) {
+    !cssContent.includes('animation: flipSingleForward 0.66s')) {
   console.error('FAIL: single-flip-forward CSS missing or wrong origin/animation');
   process.exit(1);
 }
@@ -20,7 +20,7 @@ if (!cssContent.includes('.book-flipper-leaf.single-flip-forward') ||
 if (!cssContent.includes('.book-flipper-leaf.single-flip-backward') ||
     !cssContent.includes('transform-origin: right center') ||
     !cssContent.includes('right: 0') ||
-    !cssContent.includes('animation: flipSingleBackward 0.52s')) {
+    !cssContent.includes('animation: flipSingleBackward 0.66s')) {
   console.error('FAIL: single-flip-backward CSS missing or wrong origin/animation');
   process.exit(1);
 }
@@ -71,8 +71,9 @@ const singleFlipSection = engineContent.substring(defIdx, engineContent.indexOf(
 if (!singleFlipSection.includes("single-flip-backward") ||
     !singleFlipSection.includes("single-flip-backward-shadow") ||
     !singleFlipSection.includes("playPageTurn('prev')") ||
-    !singleFlipSection.includes("playPageTurn('next')")) {
-  console.error('FAIL: performSinglePageFlip missing correct directional classes or sound triggers');
+    !singleFlipSection.includes("playPageTurn('next')") ||
+    !singleFlipSection.includes("}, 660);")) {
+  console.error('FAIL: performSinglePageFlip missing correct directional classes, sound triggers, or 660ms timeout');
   process.exit(1);
 }
 
@@ -99,8 +100,8 @@ console.log('PASS: js/sound.js swell and peak envelope verified.');
 // 4. Verify all HTML files and page counts
 ['index.html', 'hindi.html', 'english.html'].forEach(file => {
   const html = fs.readFileSync(path.join(rootDir, file), 'utf-8');
-  if (!html.includes('book.css?v=3.5') || !html.includes('book-engine.js?v=3.5')) {
-    console.error(`FAIL: ${file} missing asset v=3.5`);
+  if (!html.includes('book.css?v=3.6') || !html.includes('book-engine.js?v=3.6')) {
+    console.error(`FAIL: ${file} missing asset v=3.6`);
     process.exit(1);
   }
   const pageMatches = html.match(/class="book-page-data"/g) || [];
@@ -108,7 +109,7 @@ console.log('PASS: js/sound.js swell and peak envelope verified.');
     console.error(`FAIL: ${file} does not contain 88 pages (found ${pageMatches.length})`);
     process.exit(1);
   }
-  console.log(`PASS: ${file} verified (88 pages, v=3.5 assets).`);
+  console.log(`PASS: ${file} verified (88 pages, v=3.6 assets).`);
 });
 
 console.log('\n--- ALL VERIFICATION TESTS PASSED SUCCESSFULLY! ---');

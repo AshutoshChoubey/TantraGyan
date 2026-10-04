@@ -1540,7 +1540,7 @@ def generate_hindi_pages(orig_pages):
 
       <div class="rule-card success">
         <div class="rule-header">
-          <div class="rule-title">🎯 फलित ज्योतिष दर्शन एवं कर्म सिद्धांत</div>
+          <div class="rule-title">☸ फलित ज्योतिष दर्शन एवं कर्म सिद्धांत</div>
           <span class="badge-chip badge-gold">मार्गदर्शक दृष्टि</span>
         </div>
         <div class="rule-body">
@@ -2015,7 +2015,7 @@ def generate_english_pages(orig_pages):
 
       <div class="rule-card success">
         <div class="rule-header">
-          <div class="rule-title">🎯 Predictive Philosophy & Karmic Principles</div>
+          <div class="rule-title">☸ Predictive Philosophy & Karmic Principles</div>
           <span class="badge-chip badge-gold">Core Vision</span>
         </div>
         <div class="rule-body">
@@ -2491,8 +2491,8 @@ def render_edition_html(pages_list, edition_lang='hindi'):
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   
   <!-- Standard CSS Files -->
-  <link rel="stylesheet" href="css/book.css?v=3.5">
-  <link rel="stylesheet" href="css/tables.css?v=3.5">
+  <link rel="stylesheet" href="css/book.css?v=3.6">
+  <link rel="stylesheet" href="css/tables.css?v=3.6">
 </head>
 <body>
 
@@ -2822,10 +2822,10 @@ def render_edition_html(pages_list, edition_lang='hindi'):
   </div>
 
   <!-- Scripts -->
-  <script src="js/sounds-data.js?v=3.5"></script>
-  <script src="js/sound.js?v=3.5"></script>
-  <script src="js/book-engine.js?v=3.5"></script>
-  <script src="js/book-ui.js?v=3.5"></script>
+  <script src="js/sounds-data.js?v=3.6"></script>
+  <script src="js/sound.js?v=3.6"></script>
+  <script src="js/book-engine.js?v=3.6"></script>
+  <script src="js/book-ui.js?v=3.6"></script>
 </body>
 </html>
 """

@@ -151,85 +151,85 @@ class BookSoundEngine {
 
     try {
       const now = Math.max(this.audioCtx.currentTime, 0.005);
-      const duration = 0.52; // 520ms natural flip, matching 540ms/560ms 3D leaf turn
+      const duration = 0.65; // 650ms soothing flip, matching 660ms smooth 3D leaf turn
 
       // Organic variation factor (shifts pitch & filter characteristics slightly)
       this.variationIndex = (this.variationIndex + 1) % 3;
       const variations = [
-        { freqMult: 1.0,  qMult: 1.0,  thudPitch: 75, frictionCutoff: 3400 },
-        { freqMult: 1.08, qMult: 1.15, thudPitch: 82, frictionCutoff: 3800 },
-        { freqMult: 0.94, qMult: 0.92, thudPitch: 68, frictionCutoff: 3100 }
+        { freqMult: 1.0,  qMult: 1.0,  thudPitch: 45, frictionCutoff: 2800 },
+        { freqMult: 1.06, qMult: 1.10, thudPitch: 48, frictionCutoff: 3100 },
+        { freqMult: 0.95, qMult: 0.95, thudPitch: 42, frictionCutoff: 2600 }
       ];
       const curVar = variations[this.variationIndex];
 
       // ----------------------------------------------------------------------
-      // 1. Noise Generator for Paper Texture & Fiber Friction
+      // 1. Noise Generator for Velvety Paper Texture & Whisper Friction
       // ----------------------------------------------------------------------
       const bufferSize = Math.floor(this.audioCtx.sampleRate * duration);
       const noiseBuffer = this.audioCtx.createBuffer(1, bufferSize, this.audioCtx.sampleRate);
       const output = noiseBuffer.getChannelData(0);
-      let lastOut = 0.0;
       
-      // Filtered Pink + White Noise with granular paper flutter
+      // High-precision 3-pole Paul Kellet pink noise filter for whisper-soft paper fiber acoustics
+      let b0 = 0.0, b1 = 0.0, b2 = 0.0;
       for (let i = 0; i < bufferSize; i++) {
         const white = Math.random() * 2 - 1;
-        // Pink noise filter integration
-        lastOut = (lastOut + (0.02 * white)) / 1.02;
-        // Granular paper micro-flutter amplitude modulation (around 35Hz-45Hz)
+        b0 = 0.99886 * b0 + white * 0.0555179;
+        b1 = 0.99332 * b1 + white * 0.0750759;
+        b2 = 0.96900 * b2 + white * 0.1538520;
+        const pink = (b0 + b1 + b2 + white * 0.5362) * 0.18;
         const t = i / this.audioCtx.sampleRate;
-        const flutter = 0.74 + 0.26 * mathSin(2 * Math.PI * 38 * t + 0.7 * mathSin(2 * Math.PI * 12 * t));
-        output[i] = (lastOut * 2.8 + white * 0.40) * flutter;
+        // Natural gentle organic micro-flutter
+        const flutter = 0.82 + 0.18 * Math.sin(2 * Math.PI * 32 * t + 0.5 * Math.sin(2 * Math.PI * 10 * t));
+        output[i] = pink * flutter;
       }
-
-      function mathSin(val) { return Math.sin(val); }
 
       const noiseSource = this.audioCtx.createBufferSource();
       noiseSource.buffer = noiseBuffer;
 
       // ----------------------------------------------------------------------
-      // 2. Layer A: High-Frequency Edge Separation Rustle (0 to 140ms)
+      // 2. Layer A: High-Frequency Edge Separation Rustle (0 to 350ms)
       // ----------------------------------------------------------------------
       const frictionFilter = this.audioCtx.createBiquadFilter();
       frictionFilter.type = 'highpass';
       frictionFilter.frequency.setValueAtTime(curVar.frictionCutoff, now);
-      frictionFilter.Q.setValueAtTime(1.15, now);
+      frictionFilter.Q.setValueAtTime(0.75, now);
 
       const frictionGain = this.audioCtx.createGain();
       frictionGain.gain.setValueAtTime(0.0001, now);
-      // Gentle whisper ramp as leaf lifts
-      frictionGain.gain.linearRampToValueAtTime(this.volume * 0.38, now + 0.08);
-      frictionGain.gain.exponentialRampToValueAtTime(this.volume * 0.16, now + 0.20);
-      frictionGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.30);
+      // Delicate whisper ramp as leaf lifts
+      frictionGain.gain.linearRampToValueAtTime(this.volume * 0.22, now + 0.08);
+      frictionGain.gain.exponentialRampToValueAtTime(this.volume * 0.09, now + 0.20);
+      frictionGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.35);
 
       // ----------------------------------------------------------------------
-      // 3. Layer B: Aerodynamic Resonant Body Swish & Air Displacement (0 to 500ms)
+      // 3. Layer B: Aerodynamic Soothing Body Whisper & Air Gliding (0 to 640ms)
       // ----------------------------------------------------------------------
       const bodyFilter = this.audioCtx.createBiquadFilter();
       bodyFilter.type = 'bandpass';
-      bodyFilter.Q.setValueAtTime(3.0 * curVar.qMult, now);
+      bodyFilter.Q.setValueAtTime(1.4 * curVar.qMult, now);
 
       if (direction === 'next') {
-        // Page moves right to left: starts high, opens cavity, lowers pitch
-        bodyFilter.frequency.setValueAtTime(2200 * curVar.freqMult, now);
-        bodyFilter.frequency.exponentialRampToValueAtTime(1200 * curVar.freqMult, now + 0.25);
-        bodyFilter.frequency.exponentialRampToValueAtTime(420 * curVar.freqMult, now + 0.48);
+        // Page moves right to left: starts gentle, opens cavity, lowers pitch
+        bodyFilter.frequency.setValueAtTime(1600 * curVar.freqMult, now);
+        bodyFilter.frequency.exponentialRampToValueAtTime(950 * curVar.freqMult, now + 0.28);
+        bodyFilter.frequency.exponentialRampToValueAtTime(360 * curVar.freqMult, now + 0.58);
       } else {
         // Page moves left to right
-        bodyFilter.frequency.setValueAtTime(650 * curVar.freqMult, now);
-        bodyFilter.frequency.exponentialRampToValueAtTime(1600 * curVar.freqMult, now + 0.25);
-        bodyFilter.frequency.exponentialRampToValueAtTime(460 * curVar.freqMult, now + 0.48);
+        bodyFilter.frequency.setValueAtTime(500 * curVar.freqMult, now);
+        bodyFilter.frequency.exponentialRampToValueAtTime(1250 * curVar.freqMult, now + 0.28);
+        bodyFilter.frequency.exponentialRampToValueAtTime(380 * curVar.freqMult, now + 0.58);
       }
 
       const bodyGain = this.audioCtx.createGain();
       bodyGain.gain.setValueAtTime(0.0001, now);
-      // Swells as page arches vertically across center (peaks around 250ms)
-      bodyGain.gain.linearRampToValueAtTime(this.volume * 0.65, now + 0.12);
-      bodyGain.gain.linearRampToValueAtTime(this.volume * 0.85, now + 0.25);
-      bodyGain.gain.exponentialRampToValueAtTime(0.01, now + 0.46);
-      bodyGain.gain.linearRampToValueAtTime(0.0001, now + 0.51);
+      // Gentle whisper swell (peaks around 250ms)
+      bodyGain.gain.linearRampToValueAtTime(this.volume * 0.24, now + 0.12);
+      bodyGain.gain.linearRampToValueAtTime(this.volume * 0.36, now + 0.25);
+      bodyGain.gain.exponentialRampToValueAtTime(this.volume * 0.08, now + 0.50);
+      bodyGain.gain.linearRampToValueAtTime(0.0001, now + 0.63);
 
       // ----------------------------------------------------------------------
-      // 4. Layer C: Soft Paper Landing Impact & Air Puff (380ms to 520ms)
+      // 4. Layer C: Ultra-Soft Cushion Landing (480ms to 650ms)
       // ----------------------------------------------------------------------
       const thudOsc = this.audioCtx.createOscillator();
       const thudGain = this.audioCtx.createGain();
@@ -237,15 +237,15 @@ class BookSoundEngine {
 
       thudOsc.type = 'sine';
       thudFilter.type = 'lowpass';
-      thudFilter.frequency.setValueAtTime(170, now + 0.38);
+      thudFilter.frequency.setValueAtTime(120, now + 0.48);
 
-      thudOsc.frequency.setValueAtTime(curVar.thudPitch, now + 0.38);
-      thudOsc.frequency.exponentialRampToValueAtTime(35, now + duration);
+      thudOsc.frequency.setValueAtTime(curVar.thudPitch, now + 0.48);
+      thudOsc.frequency.exponentialRampToValueAtTime(28, now + duration);
 
       thudGain.gain.setValueAtTime(0.0001, now);
-      thudGain.gain.setValueAtTime(0.0001, now + 0.38);
+      thudGain.gain.setValueAtTime(0.0001, now + 0.48);
       // Soft cushion arrival
-      thudGain.gain.linearRampToValueAtTime(this.volume * 0.40, now + 0.44);
+      thudGain.gain.linearRampToValueAtTime(this.volume * 0.15, now + 0.54);
       thudGain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
 
       const isMobileDevice = window.innerWidth <= 860 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -256,13 +256,13 @@ class BookSoundEngine {
         try {
           panner = this.audioCtx.createStereoPanner();
           if (direction === 'next') {
-            // Sweeps from Right (+0.35) across spine to Left (-0.35)
-            panner.pan.setValueAtTime(0.35, now);
-            panner.pan.linearRampToValueAtTime(-0.35, now + duration);
+            // Sweeps from Right (+0.30) across spine to Left (-0.30)
+            panner.pan.setValueAtTime(0.30, now);
+            panner.pan.linearRampToValueAtTime(-0.30, now + duration);
           } else {
-            // Sweeps from Left (-0.35) across spine to Right (+0.35)
-            panner.pan.setValueAtTime(-0.35, now);
-            panner.pan.linearRampToValueAtTime(0.35, now + duration);
+            // Sweeps from Left (-0.30) across spine to Right (+0.30)
+            panner.pan.setValueAtTime(-0.30, now);
+            panner.pan.linearRampToValueAtTime(0.30, now + duration);
           }
         } catch (pe) {
           panner = null;
@@ -296,7 +296,7 @@ class BookSoundEngine {
       // Start sound sources
       noiseSource.start(now);
       noiseSource.stop(now + duration);
-      thudOsc.start(now + 0.38);
+      thudOsc.start(now + 0.48);
       thudOsc.stop(now + duration);
 
     } catch (e) {

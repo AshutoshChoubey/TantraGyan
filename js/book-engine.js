@@ -957,7 +957,7 @@ class BookEngine {
         this.render();
         this.onPageChanged();
         this.clearAnimLock();
-      }, 520);
+      }, 660);
 
     } else {
       // Backward Turn: Left edge lifts, rotates left-to-right
@@ -999,7 +999,7 @@ class BookEngine {
         this.render();
         this.onPageChanged();
         this.clearAnimLock();
-      }, 520);
+      }, 660);
     }
   }
 
@@ -1215,15 +1215,9 @@ class BookEngine {
     }
 
     const chapterTitle = node.getAttribute('data-chapter') || 'Tantra Gyan';
-    const pageHeaderTitle = node.getAttribute('data-title') || chapterTitle;
     const footerTitle = document.documentElement.lang === 'en'
       ? 'Complete Vedic Astrology Compendium Simplified'
       : 'वैदिक ज्योतिष महाग्रंथ सरलीकृत';
-
-    const hasDifferentSubtitle = pageHeaderTitle && pageHeaderTitle.trim() !== chapterTitle.trim();
-    const subtitleHTML = hasDifferentSubtitle
-      ? `<span class="page-header-sep" aria-hidden="true">•</span><span class="page-header-subtitle">${pageHeaderTitle}</span>`
-      : '';
 
     return `
       <div class="page-header">
@@ -1231,7 +1225,6 @@ class BookEngine {
           <span class="page-header-title">
             <span style="color:var(--accent-gold);">☸</span> ${chapterTitle}
           </span>
-          ${subtitleHTML}
         </div>
       </div>
       <div class="page-body">
