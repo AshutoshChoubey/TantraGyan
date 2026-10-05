@@ -1204,6 +1204,15 @@ class BookUIController {
     this.updateWorker = null;
     this.isDownloading = false;
 
+    // Standard SVG Icons (No emoji checkbox)
+    this.pwaIcons = {
+      download: (size = 15) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>`,
+      offlineReady: (size = 15) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M20 16.2A4.5 4.5 0 0 0 17.5 8h-1.8A7 7 0 1 0 4 14.9"></path><polyline points="9 13 12 16 22 6"></polyline></svg>`,
+      downloading: (size = 15) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke-width="2.4" style="vertical-align:middle; animation:spin 1s linear infinite;"><circle cx="12" cy="12" r="9" stroke="rgba(200,157,61,0.25)"></circle><path d="M12 3a9 9 0 0 1 9 9" stroke="#d97706" stroke-linecap="round"></path></svg>`,
+      update: (size = 15) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l6.73-1.19"></path></svg>`,
+      install: (size = 15) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="5" y="2" width="14" height="20" rx="3" ry="3"></rect><path d="M12 18h.01"></path><path d="M12 7v5"></path><polyline points="9 10 12 13 15 10"></polyline></svg>`
+    };
+
     // Check saved offline version or existing CacheStorage
     const savedVersion = localStorage.getItem('tantragyan_downloaded_version');
     this.offlineState = (savedVersion === this.currentAppVersion) ? 'downloaded' : 'idle';
@@ -1358,10 +1367,7 @@ class BookUIController {
       } else if (isStandalone) {
         this.showToast(isHindi ? '✅ ऐप पहले से आपकी डिवाइस पर स्थापित है।' : '✅ App is already installed on your device.', 3500);
       } else if (isIOS) {
-        const msg = isHindi
-          ? '📱 iPhone/iPad पर इंस्टॉल करने हेतु: सफारी में नीचे शेयर बटन [⎋] दबाकर "होम स्क्रीन पर जोड़ें [⊞]" चुनें।'
-          : '📱 To install on iOS: Tap Share [⎋] in Safari and select "Add to Home Screen [⊞]".';
-        this.showToast(msg, 7000);
+        this.showIOSInstallSheet();
       } else {
         const msg = isHindi
           ? '📲 ऐप इंस्टॉल: ब्राउज़र मेनू (⋮) से "Install App" या "Add to Home screen" चुनें। यदि आप Incognito/Private मोड में हैं, तो सामान्य टैब में खोलें। (नोट: यह ग्रंथ बिना ऐप के भी आपके ब्राउज़र में 100% ऑफ़लाइन कार्य करता है!)'
@@ -1483,11 +1489,11 @@ class BookUIController {
     const deskLabel = document.getElementById('btn-download-label');
     const deskIcon = document.getElementById('btn-download-icon');
     if (deskLabel) deskLabel.textContent = `Downloading (${percent}%)`;
-    if (deskIcon) deskIcon.textContent = '⏳';
+    if (deskIcon && this.pwaIcons) deskIcon.innerHTML = this.pwaIcons.downloading(15);
 
     // Mobile icon
     const mobIcon = document.getElementById('mobile-download-icon');
-    if (mobIcon) mobIcon.textContent = '⏳';
+    if (mobIcon && this.pwaIcons) mobIcon.innerHTML = this.pwaIcons.downloading(15);
   }
 
   updateDownloadUI() {
@@ -1505,12 +1511,14 @@ class BookUIController {
     const mobBtn = document.getElementById('mobile-btn-download');
     const mobIcon = document.getElementById('mobile-download-icon');
 
+    if (!this.pwaIcons) return;
+
     if (this.offlineState === 'update_available') {
       if (card) {
         card.classList.add('update-available');
         card.classList.remove('downloaded');
       }
-      if (cardIcon) cardIcon.textContent = '🔄';
+      if (cardIcon) cardIcon.innerHTML = this.pwaIcons.update(22);
       if (cardTitle) cardTitle.textContent = isHindi ? 'नया संस्करण अपडेट करें' : 'Update to Latest Edition';
       if (cardSub) cardSub.textContent = isHindi ? 'नवीनतम संशोधन व सुधार लोड करने हेतु क्लिक करें' : 'Click to load latest revisions and fixes';
       if (updateBadge) updateBadge.style.display = 'inline-block';
@@ -1518,19 +1526,19 @@ class BookUIController {
 
       if (deskBtn) {
         deskBtn.classList.add('update-glow');
-        if (deskIcon) deskIcon.textContent = '🔄';
+        if (deskIcon) deskIcon.innerHTML = this.pwaIcons.update(15);
         if (deskLabel) deskLabel.textContent = isHindi ? 'अपडेट करें (New)' : 'Update Available';
       }
       if (mobBtn) {
         mobBtn.classList.add('update-glow');
-        if (mobIcon) mobIcon.textContent = '🔄';
+        if (mobIcon) mobIcon.innerHTML = this.pwaIcons.update(15);
       }
     } else if (this.offlineState === 'downloaded') {
       if (card) {
         card.classList.add('downloaded');
         card.classList.remove('update-available');
       }
-      if (cardIcon) cardIcon.textContent = '✅';
+      if (cardIcon) cardIcon.innerHTML = this.pwaIcons.offlineReady(22);
       if (cardTitle) cardTitle.textContent = isHindi ? 'सम्पूर्ण ग्रंथ डाउनलोड है' : 'Full Book Downloaded';
       if (cardSub) cardSub.textContent = isHindi ? 'बिना इंटरनेट 100% उपलब्ध • पुनः जांच हेतु क्लिक करें' : '100% Offline Ready • Click to re-verify';
       if (updateBadge) updateBadge.style.display = 'none';
@@ -1538,18 +1546,18 @@ class BookUIController {
 
       if (deskBtn) {
         deskBtn.classList.remove('update-glow');
-        if (deskIcon) deskIcon.textContent = '✅';
+        if (deskIcon) deskIcon.innerHTML = this.pwaIcons.offlineReady(15);
         if (deskLabel) deskLabel.textContent = isHindi ? 'ऑफ़लाइन तैयार' : 'Offline Ready';
       }
       if (mobBtn) {
         mobBtn.classList.remove('update-glow');
-        if (mobIcon) mobIcon.textContent = '✅';
+        if (mobIcon) mobIcon.innerHTML = this.pwaIcons.offlineReady(15);
       }
     } else if (this.offlineState === 'downloading') {
       if (card) {
         card.classList.remove('update-available', 'downloaded');
       }
-      if (cardIcon) cardIcon.textContent = '⏳';
+      if (cardIcon) cardIcon.innerHTML = this.pwaIcons.downloading(22);
       if (updateBadge) updateBadge.style.display = 'none';
       if (pBar) pBar.style.display = 'block';
     } else {
@@ -1557,7 +1565,7 @@ class BookUIController {
       if (card) {
         card.classList.remove('update-available', 'downloaded');
       }
-      if (cardIcon) cardIcon.textContent = '📥';
+      if (cardIcon) cardIcon.innerHTML = this.pwaIcons.download(22);
       if (cardTitle) cardTitle.textContent = isHindi ? 'सम्पूर्ण ग्रंथ डाउनलोड करें' : 'Download Book Offline';
       if (cardSub) cardSub.textContent = isHindi ? 'सभी पृष्ठ, तालिकाएं व ऑडियो ऑफ़लाइन पढ़ें • 100% Offline' : 'All 88 pages, tables & audio offline • 100% Offline';
       if (updateBadge) updateBadge.style.display = 'none';
@@ -1565,14 +1573,91 @@ class BookUIController {
 
       if (deskBtn) {
         deskBtn.classList.remove('update-glow');
-        if (deskIcon) deskIcon.textContent = '📥';
+        if (deskIcon) deskIcon.innerHTML = this.pwaIcons.download(15);
         if (deskLabel) deskLabel.textContent = isHindi ? 'डाउनलोड करें' : 'Download Offline';
       }
       if (mobBtn) {
         mobBtn.classList.remove('update-glow');
-        if (mobIcon) mobIcon.textContent = '📥';
+        if (mobIcon) mobIcon.innerHTML = this.pwaIcons.download(15);
       }
     }
+  }
+
+  showIOSInstallSheet() {
+    const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
+    let sheet = document.getElementById('ios-install-sheet');
+    if (!sheet) {
+      sheet = document.createElement('div');
+      sheet.className = 'ios-install-sheet';
+      sheet.id = 'ios-install-sheet';
+      sheet.innerHTML = `
+        <div class="ios-install-backdrop" id="ios-install-backdrop"></div>
+        <div class="ios-install-card">
+          <div class="ios-install-header">
+            <img src="assets/icon-192.png" alt="Tantra Gyan" class="ios-install-icon">
+            <div class="ios-install-titles">
+              <div class="ios-install-title">तंत्र ज्ञान (Tantra Gyan)</div>
+              <div class="ios-install-sub" id="ios-install-sub-text">iPhone / iPad पर स्थापित करें</div>
+            </div>
+            <button type="button" class="ios-install-close" id="ios-install-close" aria-label="Close">✕</button>
+          </div>
+          <div class="ios-install-steps">
+            <div class="ios-install-step">
+              <span class="step-num">1</span>
+              <span id="ios-step-1">सफारी में नीचे शेयर बटन <strong><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:text-bottom;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg> (Share)</strong> दबाएं।</span>
+            </div>
+            <div class="ios-install-step">
+              <span class="step-num">2</span>
+              <span id="ios-step-2">नीचे स्क्रॉल कर <strong><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:text-bottom;"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Add to Home Screen</strong> चुनें।</span>
+            </div>
+            <div class="ios-install-step">
+              <span class="step-num">3</span>
+              <span id="ios-step-3">ऊपर दाएँ कोने में <strong>'Add'</strong> दबाएं।</span>
+            </div>
+          </div>
+          <div class="ios-install-note" id="ios-note-text">
+            💡 <em>Apple iOS सुरक्षा नियम अनुसार ऐप्स को Safari Share मेनू द्वारा ही होम स्क्रीन पर जोड़ा जा सकता है। यह ग्रंथ बिना ऐप के भी Safari में 100% ऑफ़लाइन कार्य करता है!</em>
+          </div>
+          <div class="ios-install-pointer">
+            <span id="ios-pointer-text">नीचे शेयर बटन पर टैप करें</span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="bounce-down"><line x1="12" y1="4" x2="12" y2="18"></line><polyline points="18 12 12 18 6 12"></polyline></svg>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(sheet);
+
+      const closeBtn = document.getElementById('ios-install-close');
+      const backdrop = document.getElementById('ios-install-backdrop');
+      const closeSheet = () => { sheet.style.display = 'none'; };
+      if (closeBtn) closeBtn.addEventListener('click', closeSheet);
+      if (backdrop) backdrop.addEventListener('click', closeSheet);
+    }
+
+    // Dynamic language sync
+    const subText = document.getElementById('ios-install-sub-text');
+    const step1 = document.getElementById('ios-step-1');
+    const step2 = document.getElementById('ios-step-2');
+    const step3 = document.getElementById('ios-step-3');
+    const noteText = document.getElementById('ios-note-text');
+    const ptrText = document.getElementById('ios-pointer-text');
+
+    if (isHindi) {
+      if (subText) subText.textContent = 'iPhone / iPad पर स्थापित करें';
+      if (step1) step1.innerHTML = 'सफारी में नीचे शेयर बटन <strong><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:text-bottom;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg> (Share)</strong> दबाएं।';
+      if (step2) step2.innerHTML = 'नीचे स्क्रॉल कर <strong><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:text-bottom;"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Add to Home Screen</strong> चुनें।';
+      if (step3) step3.innerHTML = 'ऊपर दाएँ कोने में <strong>\'Add\'</strong> दबाएं।';
+      if (noteText) noteText.innerHTML = '💡 <em>Apple iOS सुरक्षा नियम अनुसार ऐप्स को Safari Share मेनू द्वारा ही होम स्क्रीन पर जोड़ा जा सकता है। यह ग्रंथ बिना ऐप के भी Safari में 100% ऑफ़लाइन कार्य करता है!</em>';
+      if (ptrText) ptrText.textContent = 'नीचे शेयर बटन पर टैप करें';
+    } else {
+      if (subText) subText.textContent = 'Install App on iPhone / iPad';
+      if (step1) step1.innerHTML = 'Tap the Share button <strong><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:text-bottom;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg> (Share)</strong> at the bottom of Safari.';
+      if (step2) step2.innerHTML = 'Scroll down and tap <strong><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:text-bottom;"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Add to Home Screen</strong>.';
+      if (step3) step3.innerHTML = 'Tap <strong>\'Add\'</strong> in the top right corner.';
+      if (noteText) noteText.innerHTML = '💡 <em>Apple iOS security requires using Safari\'s Share menu to add apps to the Home Screen. This book works 100% offline in Safari even without installing!</em>';
+      if (ptrText) ptrText.textContent = 'Tap Share button below';
+    }
+
+    sheet.style.display = 'flex';
   }
 
   checkForUpdates() {

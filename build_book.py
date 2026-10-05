@@ -1325,7 +1325,7 @@ html_template = f"""<!DOCTYPE html>
       <!-- Mobile Header Actions (Download/Update + Gear Settings) -->
       <div class="mobile-header-actions">
         <button class="tool-btn mobile-action-btn mobile-download-btn" id="mobile-btn-download" title="ग्रंथ ऑफ़लाइन डाउनलोड करें / नया संस्करण अपडेट करें" aria-label="Download or Update Book">
-          <span id="mobile-download-icon">📥</span>
+          <span id="mobile-download-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></span>
         </button>
         <button class="tool-btn mobile-action-btn mobile-gear-btn" id="btn-settings-toggle" title="Settings & Options (सेटिंग्स और विकल्प)" aria-label="Open Settings">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;">
@@ -1415,12 +1415,12 @@ html_template = f"""<!DOCTYPE html>
 
       <!-- Download / Update Book Offline Button -->
       <button class="tool-btn" id="btn-download-offline" title="सम्पूर्ण ग्रंथ ऑफ़लाइन डाउनलोड करें (Download Book Offline)">
-        <span id="btn-download-icon">📥</span> <span id="btn-download-label">Download Offline</span>
+        <span id="btn-download-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></span> <span id="btn-download-label">Download Offline</span>
       </button>
 
       <!-- Install PWA App Button -->
       <button class="tool-btn" id="btn-install-app" title="डिवाइस पर इंस्टॉल करें (Install App to Desktop / Mobile)" style="color:var(--accent-gold); border-color:var(--accent-gold);">
-        <span>📲</span> <span id="btn-install-label">Install App</span>
+        <span id="btn-install-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="5" y="2" width="14" height="20" rx="3" ry="3"></rect><path d="M12 18h.01"></path><path d="M12 7v5"></path><polyline points="9 10 12 13 15 10"></polyline></svg></span> <span id="btn-install-label">Install App</span>
       </button>
     </div>
   </header>
@@ -1624,7 +1624,7 @@ html_template = f"""<!DOCTYPE html>
             <!-- Full Interactive Download & Update Card -->
             <div class="settings-download-card" id="settings-download-card" role="button" tabindex="0" title="Click to download full book offline or update">
               <div class="settings-download-top">
-                <span class="settings-download-icon" id="settings-card-icon">📥</span>
+                <span class="settings-download-icon" id="settings-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></span>
                 <div class="settings-download-titles">
                   <div class="settings-download-heading" id="settings-card-heading">
                     <span id="settings-card-title">सम्पूर्ण ग्रंथ डाउनलोड करें</span>
@@ -1640,13 +1640,13 @@ html_template = f"""<!DOCTYPE html>
 
             <!-- Install App button -->
             <button class="settings-action-btn" id="settings-btn-install" style="color:var(--accent-gold); font-weight:600;">
-              <span class="settings-btn-icon">📲</span>
+              <span class="settings-btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="5" y="2" width="14" height="20" rx="3" ry="3"></rect><path d="M12 18h.01"></path><path d="M12 7v5"></path><polyline points="9 10 12 13 15 10"></polyline></svg></span>
               <span class="settings-btn-label" id="settings-install-label">ऐप इंस्टॉल करें (Install App)</span>
             </button>
 
             <!-- Check for updates button -->
             <button class="settings-action-btn" id="settings-btn-check-update">
-              <span class="settings-btn-icon">🔄</span>
+              <span class="settings-btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l6.73-1.19"></path></svg></span>
               <span class="settings-btn-label" id="settings-check-update-label">अपडेट जांचें (Check Updates)</span>
             </button>
           </div>
