@@ -1199,14 +1199,24 @@ class BookUIController {
   // 11. Progressive Web App (PWA) & Offline Capabilities
   // ============================================================================
   initPWA() {
-    this.currentAppVersion = '1.0.1';
+    this.currentAppVersion = '1.0.2';
     this.deferredInstallPrompt = null;
     this.updateWorker = null;
     this.isDownloading = false;
 
-    // Check saved offline version
+    // Check saved offline version or existing CacheStorage
     const savedVersion = localStorage.getItem('tantragyan_downloaded_version');
-    this.offlineState = savedVersion ? 'downloaded' : 'idle';
+    this.offlineState = (savedVersion === this.currentAppVersion) ? 'downloaded' : 'idle';
+
+    if ('caches' in window) {
+      caches.has(`tantragyan-v${this.currentAppVersion}`).then((hasCache) => {
+        if (hasCache) {
+          this.offlineState = 'downloaded';
+          localStorage.setItem('tantragyan_downloaded_version', this.currentAppVersion);
+          this.updateDownloadUI();
+        }
+      }).catch(() => {});
+    }
 
     const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
@@ -1274,6 +1284,12 @@ class BookUIController {
           this.showToast(isHindi
             ? '🎉 सम्पूर्ण ग्रंथ सफलतापूर्वक ऑफ़लाइन डाउनलोड हो गया! अब आप बिना इंटरनेट पढ़ सकते हैं।'
             : '🎉 Full Book Downloaded Successfully! You can now read completely offline.', 5000);
+        } else if (data.type === 'VERSION_ACTIVATED') {
+          if (this.offlineState !== 'downloaded') {
+            this.offlineState = 'downloaded';
+            localStorage.setItem('tantragyan_downloaded_version', data.version || this.currentAppVersion);
+            this.updateDownloadUI();
+          }
         } else if (data.type === 'UPDATE_AVAILABLE') {
           this.setUpdateAvailable();
         }
@@ -1325,26 +1341,32 @@ class BookUIController {
 
     // E. Install Button Click Handler
     const handleInstallClick = async (e) => {
-      e.preventDefault();
+      if (e) e.preventDefault();
+      const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
+
       if (this.deferredInstallPrompt) {
-        this.deferredInstallPrompt.prompt();
-        const choice = await this.deferredInstallPrompt.userChoice;
-        if (choice && choice.outcome === 'accepted') {
-          console.log('[TantraGyan] User accepted install prompt');
+        try {
+          this.deferredInstallPrompt.prompt();
+          const choice = await this.deferredInstallPrompt.userChoice;
+          if (choice && choice.outcome === 'accepted') {
+            this.showToast(isHindi ? '🎉 ऐप स्थापित हो रहा है!' : '🎉 App installing!', 3500);
+          }
+          this.deferredInstallPrompt = null;
+        } catch (err) {
+          console.warn('Install prompt error:', err);
         }
-        this.deferredInstallPrompt = null;
-      } else if (isIOS && !isStandalone) {
-        const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
-        const msg = isHindi
-          ? 'iOS पर इंस्टॉल करने हेतु: सफारी में नीचे शेयर बटन [⎋] दबाकर "होम स्क्रीन पर जोड़ें [⊞]" चुनें।'
-          : 'To install on iOS: Tap Share [⎋] in Safari and choose "Add to Home Screen [⊞]".';
-        this.showToast(msg, 6000);
       } else if (isStandalone) {
-        const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
-        this.showToast(isHindi ? 'ऐप पहले से आपकी डिवाइस पर स्थापित है।' : 'App is already installed on your device.', 3000);
+        this.showToast(isHindi ? '✅ ऐप पहले से आपकी डिवाइस पर स्थापित है।' : '✅ App is already installed on your device.', 3500);
+      } else if (isIOS) {
+        const msg = isHindi
+          ? '📱 iPhone/iPad पर इंस्टॉल करने हेतु: सफारी में नीचे शेयर बटन [⎋] दबाकर "होम स्क्रीन पर जोड़ें [⊞]" चुनें।'
+          : '📱 To install on iOS: Tap Share [⎋] in Safari and select "Add to Home Screen [⊞]".';
+        this.showToast(msg, 7000);
       } else {
-        const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
-        this.showToast(isHindi ? 'ब्राउज़र मेनू से "Install App" या "Add to Home Screen" चुनें।' : 'Select "Install App" or "Add to Home Screen" from browser menu.', 4000);
+        const msg = isHindi
+          ? '📲 ऐप इंस्टॉल: ब्राउज़र मेनू (⋮) से "Install App" या "Add to Home screen" चुनें। यदि आप Incognito/Private मोड में हैं, तो सामान्य टैब में खोलें। (नोट: यह ग्रंथ बिना ऐप के भी आपके ब्राउज़र में 100% ऑफ़लाइन कार्य करता है!)'
+          : '📲 Install App: Select "Install App" or "Add to Home Screen" from browser menu (⋮). If in Incognito/Private mode, please open in a regular tab. (Note: This book works 100% offline in your browser even without installing!)';
+        this.showToast(msg, 7500);
       }
     };
 

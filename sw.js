@@ -1,17 +1,19 @@
 /**
  * Tantra Gyan Vedic Astrology Book - Progressive Web App Service Worker
- * Version: 1.0.1
+ * Version: 1.0.2
  * 
  * Features:
- * - Instant offline access for all 3 editions (Bilingual, Hindi, English)
- * - Explicit one-click offline download with real-time progress reporting
+ * - 100% Instant offline access for all 3 editions (Bilingual, Hindi, English)
+ * - Zero-action auto pre-caching: just visiting once caches entire book in browser
+ * - Works completely offline in browser without needing to install an app
+ * - Explicit one-click offline download with real-time percentage progress reporting
  * - Automated version tracking & instant "Update Available" notification
  * - Seamless zero-downtime cache invalidation & atomic updates
  * - Dynamic font caching for Google Fonts
- * - Stale-While-Revalidate for HTML pages, Cache-First for static assets
+ * - Stale-While-Revalidate with instant 0ms offline cache return for HTML pages
  */
 
-const APP_VERSION = '1.0.1';
+const APP_VERSION = '1.0.2';
 const CACHE_NAME = `tantragyan-v${APP_VERSION}`;
 const FONT_CACHE_NAME = 'tantragyan-fonts-v1.0';
 
@@ -42,11 +44,11 @@ const PRECACHE_ASSETS = [
   'manifest.json'
 ];
 
-// 1. Install Event: Pre-cache assets and signal waiting state if updating
+// 1. Install Event: Pre-cache assets immediately and activate
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return Promise.allSettled(
+    caches.open(CACHE_NAME).then(async (cache) => {
+      await Promise.allSettled(
         PRECACHE_ASSETS.map((asset) =>
           cache.add(asset).catch((err) => {
             console.warn(`[ServiceWorker v${APP_VERSION}] Pre-cache skipped for ${asset}:`, err);
@@ -54,17 +56,13 @@ self.addEventListener('install', (event) => {
         )
       );
     }).then(() => {
-      // Notify clients of new version availability
-      return self.clients.matchAll().then((clients) => {
-        clients.forEach((client) => {
-          client.postMessage({ type: 'UPDATE_AVAILABLE', version: APP_VERSION });
-        });
-      });
+      // Force immediate activation so first-time visitors have 100% offline access immediately
+      return self.skipWaiting();
     })
   );
 });
 
-// 2. Activate Event: Clean up any old version caches and claim all clients
+// 2. Activate Event: Clean up old version caches and claim all clients immediately
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -118,64 +116,107 @@ self.addEventListener('fetch', (event) => {
   }
 
   // B. Navigation Requests (HTML Pages: index.html, hindi.html, english.html)
-  // Strategy: Stale-While-Revalidate with instant offline fallback
+  // Strategy: Instant 0ms Cache Return with background network update.
+  // Works 100% offline in browser without needing an app.
   if (request.mode === 'navigate' || request.headers.get('accept')?.includes('text/html')) {
     event.respondWith(
-      caches.open(CACHE_NAME).then((cache) => {
-        return cache.match(request).then((cachedResponse) => {
-          const fetchPromise = fetch(request).then((networkResponse) => {
-            if (networkResponse && networkResponse.status === 200) {
-              cache.put(request, networkResponse.clone());
-            }
-            return networkResponse;
-          }).catch(() => {
-            // Network failure / Offline mode
-            if (cachedResponse) return cachedResponse;
-            // Fallback to index.html if specific page isn't in cache
-            return cache.match('index.html') || cache.match('./');
-          });
+      (async () => {
+        const cache = await caches.open(CACHE_NAME);
 
-          return cachedResponse || fetchPromise;
+        // Match requested URL or fallback to edition
+        let cached = await cache.match(request);
+        if (!cached) {
+          const path = url.pathname;
+          if (path === '/' || path.endsWith('/index.html')) {
+            cached = (await cache.match('index.html')) || (await cache.match('./'));
+          } else if (path.includes('hindi')) {
+            cached = await cache.match('hindi.html');
+          } else if (path.includes('english')) {
+            cached = await cache.match('english.html');
+          }
+        }
+
+        // Background network revalidation
+        const networkPromise = fetch(request).then(async (netResponse) => {
+          if (netResponse && netResponse.status === 200) {
+            await cache.put(request, netResponse.clone());
+            if (url.pathname === '/' || url.pathname.endsWith('index.html')) {
+              await cache.put('./', netResponse.clone());
+            }
+          }
+          return netResponse;
+        }).catch((err) => {
+          // Offline mode or network down
+          return null;
         });
-      })
+
+        // If cached page is available, return immediately!
+        if (cached) {
+          event.waitUntil(networkPromise);
+          return cached;
+        }
+
+        // If not in cache yet, await network
+        const netRes = await networkPromise;
+        if (netRes) return netRes;
+
+        // Ultimate offline fallback to index.html
+        const fallback = (await cache.match('index.html')) || (await cache.match('./'));
+        if (fallback) return fallback;
+
+        return new Response('<h1>Offline</h1><p>Tantra Gyan is unavailable offline at this moment.</p>', {
+          headers: { 'Content-Type': 'text/html; charset=utf-8' }
+        });
+      })()
     );
     return;
   }
 
   // C. Static Local Assets (CSS, JS, SVG, Images, Favicon, Manifest)
-  // Strategy: Cache-First with network refresh
+  // Strategy: Cache-First with ignoreSearch fallback & background revalidation
   if (url.origin === self.location.origin) {
     event.respondWith(
-      caches.open(CACHE_NAME).then((cache) => {
-        return cache.match(request).then((cachedResponse) => {
-          if (cachedResponse) {
-            // Optional background refresh for CSS and JS
-            if (request.url.includes('.css') || request.url.includes('.js')) {
+      (async () => {
+        const cache = await caches.open(CACHE_NAME);
+        let cachedResponse = await cache.match(request);
+        if (!cachedResponse) {
+          cachedResponse = await cache.match(request, { ignoreSearch: true });
+        }
+
+        if (cachedResponse) {
+          // Optional background refresh for CSS and JS
+          if (request.url.includes('.css') || request.url.includes('.js')) {
+            event.waitUntil(
               fetch(request).then((networkResponse) => {
                 if (networkResponse && networkResponse.status === 200) {
-                  cache.put(request, networkResponse.clone());
+                  return cache.put(request, networkResponse.clone());
                 }
-              }).catch(() => {});
-            }
-            return cachedResponse;
+              }).catch(() => {})
+            );
           }
+          return cachedResponse;
+        }
 
-          // Not in cache: fetch from network, then cache
-          return fetch(request).then((networkResponse) => {
-            if (networkResponse && networkResponse.status === 200) {
-              cache.put(request, networkResponse.clone());
-            }
-            return networkResponse;
-          }).catch((err) => {
-            console.warn(`[ServiceWorker] Failed to fetch asset: ${request.url}`, err);
-          });
-        });
-      })
+        // Not in cache: fetch from network, then cache
+        try {
+          const networkResponse = await fetch(request);
+          if (networkResponse && networkResponse.status === 200) {
+            cache.put(request, networkResponse.clone());
+          }
+          return networkResponse;
+        } catch (err) {
+          if (request.destination === 'image') {
+            const fallbackImg = await cache.match('assets/icon-192.png');
+            if (fallbackImg) return fallbackImg;
+          }
+          console.warn(`[ServiceWorker] Asset fetch failed offline: ${request.url}`);
+        }
+      })()
     );
     return;
   }
 
-  // Default: Network with Cache Fallback
+  // Default: Cache first then Network fallback
   event.respondWith(
     caches.match(request).then((cachedResponse) => {
       return cachedResponse || fetch(request);

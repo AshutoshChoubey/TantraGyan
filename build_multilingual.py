@@ -2782,8 +2782,8 @@ def render_edition_html(pages_list, edition_lang='hindi'):
       </button>
 
       <!-- Install PWA App Button -->
-      <button class="tool-btn" id="btn-install-app" title="{'डिवाइस पर इंस्टॉल करें' if is_hindi else 'Install App to Device'}" style="display:none; color:var(--accent-gold); border-color:var(--accent-gold);">
-        <span>📲</span> <span>{'इंस्टॉल' if is_hindi else 'Install'}</span>
+      <button class="tool-btn" id="btn-install-app" title="{'डिवाइस पर इंस्टॉल करें' if is_hindi else 'Install App to Device'}" style="color:var(--accent-gold); border-color:var(--accent-gold);">
+        <span>📲</span> <span id="btn-install-label">{'ऐप इंस्टॉल' if is_hindi else 'Install App'}</span>
       </button>
     </div>
   </header>
