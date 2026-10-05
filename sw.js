@@ -1,6 +1,6 @@
 /**
  * Tantra Gyan Vedic Astrology Book - Progressive Web App Service Worker
- * Version: 1.0.3
+ * Version: 1.0.4
  * 
  * Features:
  * - Safari / iOS WebKit Redirection Fix (eliminates WebKitErrorDomain 100)
@@ -14,7 +14,7 @@
  * - Stale-While-Revalidate with instant 0ms sanitized offline cache return for HTML pages
  */
 
-const APP_VERSION = '1.0.3';
+const APP_VERSION = '1.0.4';
 const CACHE_NAME = `tantragyan-v${APP_VERSION}`;
 const FONT_CACHE_NAME = 'tantragyan-fonts-v1.0';
 
@@ -25,7 +25,7 @@ const PRECACHE_ASSETS = [
   'index.html',
   'hindi.html',
   'english.html',
-  'css/book.css?v=3.8',
+  'css/book.css?v=3.9',
   'css/tables.css?v=3.8',
   'js/sounds-data.js?v=3.8',
   'js/sound.js?v=3.8',
