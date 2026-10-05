@@ -1,8 +1,10 @@
 /**
  * Tantra Gyan Vedic Astrology Book - Progressive Web App Service Worker
- * Version: 1.0.4
+ * Version: 1.0.5
  * 
  * Features:
+ * - Full SEO & AI Generative Engine Optimization (GEO) architecture
+ * - Semantic Accessible Book Corpus pre-caching for Googlebot, Bingbot & AI scrapers
  * - Safari / iOS WebKit Redirection Fix (eliminates WebKitErrorDomain 100)
  * - 100% Instant offline access for all 3 editions (Bilingual, Hindi, English)
  * - Zero-action auto pre-caching: just visiting once caches entire book in browser
@@ -14,7 +16,7 @@
  * - Stale-While-Revalidate with instant 0ms sanitized offline cache return for HTML pages
  */
 
-const APP_VERSION = '1.0.4';
+const APP_VERSION = '1.0.5';
 const CACHE_NAME = `tantragyan-v${APP_VERSION}`;
 const FONT_CACHE_NAME = 'tantragyan-fonts-v1.0';
 
@@ -25,7 +27,7 @@ const PRECACHE_ASSETS = [
   'index.html',
   'hindi.html',
   'english.html',
-  'css/book.css?v=3.9',
+  'css/book.css?v=4.0',
   'css/tables.css?v=3.8',
   'js/sounds-data.js?v=3.8',
   'js/sound.js?v=3.8',
@@ -42,7 +44,9 @@ const PRECACHE_ASSETS = [
   'assets/favicon-16.png',
   'assets/og-image.jpg',
   'favicon.ico',
-  'manifest.webmanifest'
+  'manifest.webmanifest',
+  'llms.txt',
+  'llms-full.txt'
 ];
 
 /**

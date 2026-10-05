@@ -1,6 +1,9 @@
 # Robots.txt for Tantra Gyan Vedic Astrology Masterwork
 # Website: https://t.worldgyan.com
 # Author: Astrologer Ashutosh Kumar Choubey
+# LLM Specification: https://t.worldgyan.com/llms.txt
+# Full Knowledge Base: https://t.worldgyan.com/llms-full.txt
+# Sitemap: https://t.worldgyan.com/sitemap.xml
 
 # 1. Global Crawler Rules
 User-agent: *
@@ -27,7 +30,16 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-# 3. AI Search Engines & LLM Ingestion Bots (Explicitly Welcome)
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: SeznamBot
+Allow: /
+
+# 3. AI Search Engines, Generative Retrieval & LLM Ingestion Bots (Explicitly Allowed & Welcomed)
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 
@@ -58,6 +70,12 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
 User-agent: CCBot
 Allow: /
 
@@ -70,7 +88,13 @@ Allow: /
 User-agent: Diffbot
 Allow: /
 
-User-agent: FacebookBot
+User-agent: YouBot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Amazonbot
 Allow: /
 
 # 4. Sitemaps and AI Specifications

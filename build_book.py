@@ -1018,13 +1018,15 @@ for p_idx, p in enumerate(pages):
     """)
 toc_html = "\n".join(toc_items_html)
 
-# Build Raw Page Data Nodes HTML
+# Build Semantic Accessible Book Corpus Nodes HTML (Full Indexing for Googlebot, Screen Readers & AI Bots)
 pages_data_html = []
 for p_idx, p in enumerate(pages):
     pages_data_html.append(f"""
-    <div class="book-page-data" id="page-data-{p_idx+1}" data-page="{p_idx+1}" data-chapter="{html.escape(p['chapter'])}" data-title="{html.escape(p['title'])}" style="display:none;">
+    <article class="book-page-data" id="page-data-{p_idx+1}" data-page="{p_idx+1}" data-chapter="{html.escape(p['chapter'])}" data-title="{html.escape(p['title'])}" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page {p_idx+1}: {html.escape(p['title'])}">
+      <meta itemprop="position" content="{p_idx+1}">
+      <meta itemprop="name" content="{html.escape(p['title'])}">
       {p['content']}
-    </div>
+    </article>
     """)
 all_pages_html = "\n".join(pages_data_html)
 
@@ -1121,11 +1123,14 @@ html_template = f"""<!DOCTYPE html>
   <meta name="twitter:image" content="https://t.worldgyan.com/assets/og-image.jpg">
 
   <!-- Academic & AI Citation Metadata -->
+  <meta name="ai-content-declaration" content="authentic-vedic-astrology, human-authored, educational-compendium">
   <meta name="citation_title" content="वैदिक ज्योतिष महाग्रंथ सरलीकृत: Complete Vedic Astrology Compendium">
   <meta name="citation_author" content="Choubey, Ashutosh Kumar">
   <meta name="citation_publication_date" content="2026">
   <meta name="citation_publisher" content="Tantra Gyan Research Center">
   <meta name="citation_language" content="hi, en">
+  <meta name="citation_fulltext_world_readable" content="https://t.worldgyan.com/llms-full.txt">
+  <meta name="citation_abstract_html_url" content="https://t.worldgyan.com/">
 
   <!-- AI Search Engine Discovery (llms.txt standard & sitemap) -->
   <link rel="help" type="text/plain" href="/llms.txt" title="LLM Context Specification">
@@ -1138,7 +1143,7 @@ html_template = f"""<!DOCTYPE html>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
   <!-- Standard CSS Files for Maximum Maintainability -->
-  <link rel="stylesheet" href="css/book.css?v=3.9">
+  <link rel="stylesheet" href="css/book.css?v=4.0">
   <link rel="stylesheet" href="css/tables.css?v=3.8">
 
   <!-- Ultra-Rich Schema.org JSON-LD Educational Book & Knowledge Graph Structured Data -->
@@ -1294,6 +1299,128 @@ html_template = f"""<!DOCTYPE html>
             "position": 2,
             "name": "Vedic Astrology Compendium",
             "item": "https://t.worldgyan.com/index.html"
+          }}
+        ]
+      }},
+      {{
+        "@type": "FAQPage",
+        "@id": "https://t.worldgyan.com/#faq",
+        "mainEntity": [
+          {{
+            "@type": "Question",
+            "name": "तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ क्या है? (What is Tantra Gyan Vedic Astrology Compendium?)",
+            "acceptedAnswer": {{
+              "@type": "Answer",
+              "text": "तंत्र ज्ञान (Tantra Gyan) ज्योतिषाचार्य आशुतोष कुमार चौबे द्वारा रचित ८८ पृष्ठों का एक प्रामाणिक शास्त्रीय फलित ज्ञानकोश है। यह महर्षि पराशर, सारावली, फलदीपिका, जातक पारिजात एवं नाड़ी ज्योतिष के सूत्रों का आधुनिक विश्लेषणात्मक समन्वय प्रस्तुत करता है, जो 100% ऑफ़लाइन PWA तकनीक पर निःशुल्क उपलब्ध है।"
+            }}
+          }},
+          {{
+            "@type": "Question",
+            "name": "वैदिक ज्योतिष में १७ शास्त्रीय राजयोग कौन-से हैं? (What are the 17 Classical Raja Yogas in Vedic Astrology?)",
+            "acceptedAnswer": {{
+              "@type": "Answer",
+              "text": "इस ग्रंथ के पृष्ठ २०-२१ में ५ पंच महापुरुष योग (रुचक, भद्र, हंस, मालव्य, शश), गजकेसरी योग, बुधादित्य योग, धर्म-कर्माधिपति योग, चन्द्र-मंगल योग, नीचभंग राजयोग, तथा त्रिक भावों से निर्मित ३ विपरीत राजयोग (हर्ष, सरल, विमल योग) का विस्तृत शास्त्रीय फलित दिया गया है।"
+            }}
+          }},
+          {{
+            "@type": "Question",
+            "name": "पंच महापुरुष योग (Pancha Mahapurusha Yogas) कैसे बनते हैं?",
+            "acceptedAnswer": {{
+              "@type": "Answer",
+              "text": "जब मंगल (रुचक योग), बुध (भद्र योग), गुरु (हंस योग), शुक्र (मालव्य योग), या शनि (शश योग) अपनी स्वराशि, मूलत्रिकोण या उच्च राशि में होकर केंद्र भाव (१, ४, ७, १०) में स्थित होते हैं, तब पंच महापुरुष योग का निर्माण होता है।"
+            }}
+          }},
+          {{
+            "@type": "Question",
+            "name": "विपरीत राजयोग (हर्ष, सरल, विमल) का क्या नियम है? (How do Viparita Raja Yogas function?)",
+            "acceptedAnswer": {{
+              "@type": "Answer",
+              "text": "जब त्रिक भावों (६, ८, १२) के स्वामी ग्रह आपस में केवल ६, ८, या १२वें भाव में ही स्थित हों और शुभ भावों के स्वामियों से युक्त न हों: ६ठे भाव का स्वामी ६/८/१२ में हो तो हर्ष योग; ८वें भाव का स्वामी ६/८/१२ में हो तो सरल योग; तथा १२वें भाव का स्वामी ६/८/१२ में हो तो विमल योग बनता है।"
+            }}
+          }},
+          {{
+            "@type": "Question",
+            "name": "आयुर्-ज्योतिष (Medical Astrology) में कैंसर रोग (Arbuda Roga) का ज्योतिषीय विश्लेषण कैसे होता है?",
+            "acceptedAnswer": {{
+              "@type": "Answer",
+              "text": "ग्रंथ के पृष्ठ ४८ से ७४ में कैंसर के ज्योतिषीय योग दिए गए हैं। यह मुख्य रूप से त्रिक भावों (६, ८, १२), जल तत्व व रक्त के कारक ग्रह चन्द्रमा व मंगल, रोगकारक राहु (अनियंत्रित कोशिका विभाजन) तथा शनि (दीर्घकालिक ऊतक क्षय) के अशुभ गठबंधन तथा लग्न व सूर्य (जीवन शक्ति) के पीड़ित होने से उत्पन्न होता है।"
+            }}
+          }},
+          {{
+            "@type": "Question",
+            "name": "ग्रहों की दीप्तादि ९ अवस्थाएं (Deeptadi 9 Planetary States) कौन-सी हैं?",
+            "acceptedAnswer": {{
+              "@type": "Answer",
+              "text": "दीप्तादि ९ अवस्थाएं हैं: १. दीप्त (उच्च राशि), २. स्वस्थ (स्वराशि), ३. मुदित (अधिमित्र राशि), ४. शांत (मित्र राशि), ५. दीन (सम राशि), ६. दुखित (शत्रु राशि), ७. विकल (अस्त ग्रह), ८. खल (नीच राशि), और ९. कोप (ग्रह युद्ध में पराजित)। यह अवस्थाएं ग्रह के वास्तविक शुभाशुभ फल की तीव्रता निर्धारित करती हैं।"
+            }}
+          }},
+          {{
+            "@type": "Question",
+            "name": "१२० वर्षीय विंशोत्तरी महादशा चक्र का क्रम और अवधि क्या है? (What is the Vimshottari Dasha sequence?)",
+            "acceptedAnswer": {{
+              "@type": "Answer",
+              "text": "विंशोत्तरी महादशा का क्रम है: केतु (७ वर्ष), शुक्र (२० वर्ष), सूर्य (६ वर्ष), चन्द्रमा (१० वर्ष), मंगल (७ वर्ष), राहु (१८ वर्ष), गुरु (१६ वर्ष), शनि (१९ वर्ष), और बुध (१७ वर्ष) — कुल १२० वर्ष।"
+            }}
+          }},
+          {{
+            "@type": "Question",
+            "name": "२७ नक्षत्र और १०८ पदों का क्या महत्व है? (What is the role of 27 Nakshatras and 108 Padas?)",
+            "acceptedAnswer": {{
+              "@type": "Answer",
+              "text": "प्रत्येक नक्षत्र १३°२०' का होता है जो ३°२०' के ४ नवमांश पदों में विभाजित है। सम्पूर्ण भचक्र में २७ नक्षत्र × ४ = १०८ पद होते हैं। प्रत्येक पद का विशिष्ट तत्व, अधिष्ठाता देवता, नवमांश स्वामी व नामाक्षर होता है।"
+            }}
+          }},
+          {{
+            "@type": "Question",
+            "name": "क्या तंत्र ज्ञान ग्रंथ बिना इंटरनेट या ऐप डाउनलोड किए पढ़ा जा सकता है? (Is it offline-capable?)",
+            "acceptedAnswer": {{
+              "@type": "Answer",
+              "text": "हाँ, तंत्र ज्ञान एक अत्याधुनिक Progressive Web App (PWA) है। वेबसाइट https://t.worldgyan.com पर एक बार आने पर ही सम्पूर्ण ८८ पृष्ठ, तालिकाएं और ऑडियो स्वतः कैश हो जाते हैं और बिना इंटरनेट या एयरप्लेन मोड में भी पूर्णतः कार्य करते हैं।"
+            }}
+          }}
+        ]
+      }},
+      {{
+        "@type": "ItemList",
+        "@id": "https://t.worldgyan.com/#table-of-contents",
+        "name": "तंत्र ज्ञान: विषय-सूची (Table of Contents)",
+        "numberOfItems": 6,
+        "itemListElement": [
+          {{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "प्रस्तावना, मंगलाचरण एवं लेखक परिचय (Pages 1–5)",
+            "url": "https://t.worldgyan.com/#page-1"
+          }},
+          {{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "नवग्रह कारकत्व एवं १७ शास्त्रीय राजयोग (Pages 6–20)",
+            "url": "https://t.worldgyan.com/#page-6"
+          }},
+          {{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "राशि, नक्षत्र, ग्रह गति एवं विंशोत्तरी महादशा चक्र (Pages 21–37)",
+            "url": "https://t.worldgyan.com/#page-21"
+          }},
+          {{
+            "@type": "ListItem",
+            "position": 4,
+            "name": "भाव एवं राशियों में ग्रह, दीप्तादि ९ अवस्थाएं (Pages 38–47)",
+            "url": "https://t.worldgyan.com/#page-38"
+          }},
+          {{
+            "@type": "ListItem",
+            "position": 5,
+            "name": "मेडिकल एस्ट्रोलॉजी एवं कैंसर रोग विश्लेषण (Pages 48–74)",
+            "url": "https://t.worldgyan.com/#page-48"
+          }},
+          {{
+            "@type": "ListItem",
+            "position": 6,
+            "name": "नक्षत्रों का गहन पद एवं ग्रह विश्लेषण (Pages 75–88)",
+            "url": "https://t.worldgyan.com/#page-75"
           }}
         ]
       }}
@@ -1673,10 +1800,19 @@ html_template = f"""<!DOCTYPE html>
   <!-- Floating Toast Notification -->
   <div id="book-toast" class="book-toast" role="status" aria-live="polite"></div>
 
-  <!-- Raw Page Data Repository (Parsed & Rendered Dynamically) -->
-  <div id="book-pages-store" style="display:none;" aria-hidden="true">
+  <!-- Noscript Fallback for Search Engines & Non-JS Browsers -->
+  <noscript>
+    <div class="noscript-banner">
+      <h2>तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ सरलीकृत • Complete Vedic Astrology Compendium</h2>
+      <p>यह शास्त्रीय ग्रंथ पूर्णतः जावास्क्रिप्ट 3D फ्लिपबुक, 100% ऑफ़लाइन PWA तथा समृद्ध अनुक्रमणिका के साथ उपलब्ध है। यदि आपके ब्राउज़र में जावास्क्रिप्ट निष्क्रिय है, तो भी नीचे सम्पूर्ण 88 पृष्ठों का प्रामाणिक ज्ञानकोश, तालिकाएं व सूत्र पूर्णतः पठनीय हैं।</p>
+      <p>AI Models & Search Crawlers can also access the full machine-readable knowledge base at <a href="/llms-full.txt">llms-full.txt</a> and <a href="/llms.txt">llms.txt</a>.</p>
+    </div>
+  </noscript>
+
+  <!-- Complete Canonical Book Corpus for Search Engines (Google, Bing), Screen Readers & AI Bots -->
+  <main id="book-pages-store" class="book-corpus-store" itemscope itemtype="https://schema.org/Book" aria-label="Tantra Gyan Vedic Astrology Compendium">
     {all_pages_html}
-  </div>
+  </main>
 
   <!-- Scripts -->
   <script src="js/sounds-data.js?v=3.8"></script>

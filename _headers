@@ -1,12 +1,13 @@
 # Cloudflare Pages Headers Configuration
 # Optimized for Tantra Gyan Vedic Astrology PWA, High-Performance Caching & AI Crawlers
 
-# 1. Global Security & Content Headers
+# 1. Global Security, Content & AI Discovery Headers
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: interest-cohort=(), accelerometer=(), camera=(), geolocation=(), microphone=()
+  Link: </llms.txt>; rel="help"; type="text/plain", </llms-full.txt>; rel="alternate"; type="text/plain", </sitemap.xml>; rel="sitemap"; type="application/xml"
 
 # 2. Service Worker (Never cache long term, allow root scope)
 /sw.js
@@ -25,7 +26,7 @@
   Cache-Control: public, max-age=86400
   Access-Control-Allow-Origin: *
 
-# 4. AI Ingestion Standard Endpoints (LLMs / GPTBot / ClaudeBot)
+# 4. AI Ingestion Standard Endpoints (LLMs / GPTBot / ClaudeBot / Perplexity)
 /llms.txt
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=86400

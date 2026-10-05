@@ -2426,13 +2426,15 @@ def render_edition_html(pages_list, edition_lang='hindi'):
         """)
     toc_html = "\n".join(toc_items)
 
-    # Build Raw Page Data Nodes
+    # Build Semantic Accessible Book Corpus Nodes (Full Indexing for Googlebot, Screen Readers & AI Bots)
     pages_data_nodes = []
     for p_idx, p in enumerate(pages_list):
         pages_data_nodes.append(f"""
-        <div class="book-page-data" id="page-data-{p_idx+1}" data-page="{p_idx+1}" data-chapter="{html.escape(p['chapter'])}" data-title="{html.escape(p['title'])}" style="display:none;">
+        <article class="book-page-data" id="page-data-{p_idx+1}" data-page="{p_idx+1}" data-chapter="{html.escape(p['chapter'])}" data-title="{html.escape(p['title'])}" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page {p_idx+1}: {html.escape(p['title'])}">
+          <meta itemprop="position" content="{p_idx+1}">
+          <meta itemprop="name" content="{html.escape(p['title'])}">
           {p['content']}
-        </div>
+        </article>
         """)
     all_pages_html = "\n".join(pages_data_nodes)
 
@@ -2467,6 +2469,347 @@ def render_edition_html(pages_list, edition_lang='hindi'):
     edition_canonical = "https://t.worldgyan.com/hindi.html" if is_hindi else "https://t.worldgyan.com/english.html"
     edition_locale = "hi_IN" if is_hindi else "en_US"
     schema_book_name = "वैदिक ज्योतिष महाग्रंथ सरलीकृत (सम्पूर्ण हिन्दी संस्करण)" if is_hindi else "Complete Vedic Astrology Compendium Simplified (English Edition)"
+
+    noscript_msg = "यह शास्त्रीय ग्रंथ पूर्णतः जावास्क्रिप्ट 3D फ्लिपबुक, 100% ऑफ़लाइन PWA तथा समृद्ध अनुक्रमणिका के साथ उपलब्ध है। यदि आपके ब्राउज़र में जावास्क्रिप्ट निष्क्रिय है, तो भी नीचे सम्पूर्ण 88 पृष्ठों का प्रामाणिक ज्ञानकोश, तालिकाएं व सूत्र पूर्णतः पठनीय हैं।" if is_hindi else "This classical masterwork is available with a 3D flipbook, 100% offline PWA capability, and complete table of contents. If JavaScript is disabled, the full 88-page canonical compendium, tables, and principles remain completely readable below."
+
+    if is_hindi:
+        schema_chapters_json = """,
+        "hasPart": [
+          {
+            "@type": "Chapter",
+            "name": "प्रस्तावना, मंगलाचरण एवं लेखक परिचय",
+            "position": 1,
+            "pageStart": 1,
+            "pageEnd": 5
+          },
+          {
+            "@type": "Chapter",
+            "name": "नवग्रह कारकत्व एवं १७ शास्त्रीय राजयोग",
+            "position": 2,
+            "pageStart": 6,
+            "pageEnd": 20
+          },
+          {
+            "@type": "Chapter",
+            "name": "राशि, नक्षत्र, ग्रह गति एवं विंशोत्तरी महादशा",
+            "position": 3,
+            "pageStart": 21,
+            "pageEnd": 37
+          },
+          {
+            "@type": "Chapter",
+            "name": "भाव एवं राशियों में ग्रह (दीप्तादि ९ अवस्थाएं)",
+            "position": 4,
+            "pageStart": 38,
+            "pageEnd": 47
+          },
+          {
+            "@type": "Chapter",
+            "name": "मेडिकल एस्ट्रोलॉजी एवं कैंसर रोग विश्लेषण",
+            "position": 5,
+            "pageStart": 48,
+            "pageEnd": 74
+          },
+          {
+            "@type": "Chapter",
+            "name": "नक्षत्रों का गहन पद एवं ग्रह विश्लेषण",
+            "position": 6,
+            "pageStart": 75,
+            "pageEnd": 87
+          }
+        ]"""
+        schema_faq_json = """,
+      {
+        "@type": "FAQPage",
+        "@id": "https://t.worldgyan.com/hindi.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ क्या है?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "तंत्र ज्ञान (Tantra Gyan) ज्योतिषाचार्य आशुतोष कुमार चौबे द्वारा रचित ८८ पृष्ठों का सम्पूर्ण प्रामाणिक शास्त्रीय फलित ज्ञानकोश है। इसमें महर्षि पराशर, सारावली, फलदीपिका, जातक पारिजात एवं नाड़ी ज्योतिष के सूत्रों का आधुनिक विश्लेषणात्मक समन्वय प्रस्तुत किया गया है, जो 100% ऑफ़लाइन PWA तकनीक पर निःशुल्क उपलब्ध है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "वैदिक ज्योतिष में १७ शास्त्रीय राजयोग कौन-से हैं?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "इस ग्रंथ के पृष्ठ २०-२१ में ५ पंच महापुरुष योग (रुचक, भद्र, हंस, मालव्य, शश), गजकेसरी योग, बुधादित्य योग, धर्म-कर्माधिपति योग, चन्द्र-मंगल योग, नीचभंग राजयोग, तथा त्रिक भावों से निर्मित ३ विपरीत राजयोग (हर्ष, सरल, विमल योग) का विस्तृत शास्त्रीय फलित दिया गया है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "पंच महापुरुष योग जन्मकुंडली में कैसे बनते हैं?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "जब मंगल (रुचक योग), बुध (भद्र योग), गुरु (हंस योग), शुक्र (मालव्य योग), या शनि (शश योग) अपनी स्वराशि, मूलत्रिकोण या उच्च राशि में होकर केंद्र भाव (१, ४, ७, १०) में स्थित होते हैं, तब पंच महापुरुष योग का निर्माण होता है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "विपरीत राजयोग (हर्ष, सरल, विमल) का क्या नियम है?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "जब त्रिक भावों (६, ८, १२) के स्वामी ग्रह आपस में केवल ६, ८, या १२वें भाव में ही स्थित हों और शुभ भावों के स्वामियों से युक्त न हों: ६ठे भाव का स्वामी ६/८/१२ में हो तो हर्ष योग; ८वें भाव का स्वामी ६/८/१२ में हो तो सरल योग; तथा १२वें भाव का स्वामी ६/८/१२ में हो तो विमल योग बनता है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "आयुर्-ज्योतिष (Medical Astrology) में कैंसर रोग का ज्योतिषीय विश्लेषण कैसे होता है?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ग्रंथ के पृष्ठ ४८ से ७४ में कैंसर के ज्योतिषीय योग दिए गए हैं। यह मुख्य रूप से त्रिक भावों (६, ८, १२), जल तत्व व रक्त के कारक ग्रह चन्द्रमा व मंगल, रोगकारक राहु (अनियंत्रित कोशिका विभाजन) तथा शनि (दीर्घकालिक ऊतक क्षय) के अशुभ गठबंधन तथा लग्न व सूर्य (जीवन शक्ति) के पीड़ित होने से उत्पन्न होता है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ग्रहों की दीप्तादि ९ अवस्थाएं कौन-सी हैं?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "दीप्तादि ९ अवस्थाएं हैं: १. दीप्त (उच्च राशि), २. स्वस्थ (स्वराशि), ३. मुदित (अधिमित्र राशि), ४. शांत (मित्र राशि), ५. दीन (सम राशि), ६. दुखित (शत्रु राशि), ७. विकल (अस्त ग्रह), ८. खल (नीच राशि), और ९. कोप (ग्रह युद्ध में पराजित)। यह अवस्थाएं ग्रह के वास्तविक शुभाशुभ फल की तीव्रता निर्धारित करती हैं।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "१२० वर्षीय विंशोत्तरी महादशा चक्र का क्रम और अवधि क्या है?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "विंशोत्तरी महादशा का क्रम है: केतु (७ वर्ष), शुक्र (२० वर्ष), सूर्य (६ वर्ष), चन्द्रमा (१० वर्ष), मंगल (७ वर्ष), राहु (१८ वर्ष), गुरु (१६ वर्ष), शनि (१९ वर्ष), और बुध (१७ वर्ष) — कुल १२० वर्ष।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "२७ नक्षत्र और १०८ पदों का क्या महत्व है?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "प्रत्येक नक्षत्र १३°२०' का होता है जो ३°२०' के ४ नवमांश पदों में विभाजित है। सम्पूर्ण भचक्र में २७ नक्षत्र × ४ = १०८ पद होते हैं। प्रत्येक पद का विशिष्ट तत्व, अधिष्ठाता देवता, नवमांश स्वामी व नामाक्षर होता है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "क्या तंत्र ज्ञान ग्रंथ बिना इंटरनेट या ऐप डाउनलोड किए पढ़ा जा सकता है?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "हाँ, तंत्र ज्ञान एक अत्याधुनिक Progressive Web App (PWA) है। वेबसाइट https://t.worldgyan.com/hindi.html पर एक बार आने पर ही सम्पूर्ण ८८ पृष्ठ स्वतः कैश हो जाते हैं और बिना इंटरनेट या एयरप्लेन मोड में भी पूर्णतः कार्य करते हैं।"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://t.worldgyan.com/hindi.html#table-of-contents",
+        "name": "तंत्र ज्ञान: विषय-सूची (Table of Contents)",
+        "numberOfItems": 6,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "प्रस्तावना, मंगलाचरण एवं लेखक परिचय (पृष्ठ १–५)",
+            "url": "https://t.worldgyan.com/hindi.html#page-1"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "नवग्रह कारकत्व एवं १७ शास्त्रीय राजयोग (पृष्ठ ६–२०)",
+            "url": "https://t.worldgyan.com/hindi.html#page-6"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "राशि, नक्षत्र, ग्रह गति एवं विंशोत्तरी महादशा (पृष्ठ २१–३७)",
+            "url": "https://t.worldgyan.com/hindi.html#page-21"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "भाव एवं राशियों में ग्रह (दीप्तादि ९ अवस्थाएं) (पृष्ठ ३८–४७)",
+            "url": "https://t.worldgyan.com/hindi.html#page-38"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "मेडिकल एस्ट्रोलॉजी एवं कैंसर रोग विश्लेषण (पृष्ठ ४८–७४)",
+            "url": "https://t.worldgyan.com/hindi.html#page-48"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "नक्षत्रों का गहन पद एवं ग्रह विश्लेषण (पृष्ठ ७५–८८)",
+            "url": "https://t.worldgyan.com/hindi.html#page-75"
+          }
+        ]
+      }"""
+    else:
+        schema_chapters_json = """,
+        "hasPart": [
+          {
+            "@type": "Chapter",
+            "name": "Introduction, Invocation & Author Profile",
+            "position": 1,
+            "pageStart": 1,
+            "pageEnd": 5
+          },
+          {
+            "@type": "Chapter",
+            "name": "Navagraha Karakatva & 17 Classical Raja Yogas",
+            "position": 2,
+            "pageStart": 6,
+            "pageEnd": 20
+          },
+          {
+            "@type": "Chapter",
+            "name": "Signs, Nakshatras, Motions & Vimshottari Dasha",
+            "position": 3,
+            "pageStart": 21,
+            "pageEnd": 37
+          },
+          {
+            "@type": "Chapter",
+            "name": "Houses & Signs: 9 Deeptadi Planetary States",
+            "position": 4,
+            "pageStart": 38,
+            "pageEnd": 47
+          },
+          {
+            "@type": "Chapter",
+            "name": "Medical Astrology & Cancer Disease Analysis",
+            "position": 5,
+            "pageStart": 48,
+            "pageEnd": 74
+          },
+          {
+            "@type": "Chapter",
+            "name": "In-Depth Nakshatra Pada & Planetary Analysis",
+            "position": 6,
+            "pageStart": 75,
+            "pageEnd": 87
+          }
+        ]"""
+        schema_faq_json = """,
+      {
+        "@type": "FAQPage",
+        "@id": "https://t.worldgyan.com/english.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Tantra Gyan: Vedic Astrology Compendium?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tantra Gyan is an authoritative 88-page practitioner compendium by Astrologer Ashutosh Kumar Choubey synthesizing classical Vedic astrology from Maharishi Parashara, Saravali, Phaladeepika, Jataka Parijata, and Nadi astrology with modern empirical chart analysis, available 100% free and offline as a PWA."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the 17 Classical Raja Yogas in Vedic Astrology?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pages 20–21 document 5 Pancha Mahapurusha Yogas (Ruchaka, Bhadra, Hamsa, Malavya, Shasha), Gajakesari Yoga, Budhaditya Yoga, Dharma-Karmadhipati Yoga, Chandra-Mangala Yoga, Neechabhanga Raja Yoga, and 3 Viparita Raja Yogas (Harsha, Sarala, Vimala)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do Pancha Mahapurusha Yogas form in a birth chart?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When Mars (Ruchaka), Mercury (Bhadra), Jupiter (Hamsa), Venus (Malavya), or Saturn (Shasha) occupies a Kendra house (1, 4, 7, 10) in its own sign, moolatrikona, or exaltation sign, a Pancha Mahapurusha Yoga is formed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do Viparita Raja Yogas (Harsha, Sarala, Vimala) function?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When the lords of Trika houses (6, 8, 12) are situated exclusively in the 6th, 8th, or 12th houses without aspect or conjunction with benefic lords: 6th lord in 6/8/12 creates Harsha Yoga; 8th lord in 6/8/12 creates Sarala Yoga; and 12th lord in 6/8/12 creates Vimala Yoga."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Vedic Astrology diagnose Cancer (Arbuda Roga)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pages 48–74 detail cancer etiology: affliction to Trika houses (6, 8, 12), water and cellular fluid significators Moon and Mars, malefic nexus of Rahu (uncontrolled proliferation) and Saturn (necrosis), alongside affliction to the Ascendant and Sun (vital immune resistance)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the 9 Deeptadi Planetary States (Deeptadi Avasthas)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 9 Deeptadi states are: 1. Deepta (Exalted), 2. Swastha (Own Sign), 3. Mudita (Great Friend Sign), 4. Shanta (Friendly Sign), 5. Deena (Neutral Sign), 6. Dukhita (Enemy Sign), 7. Vikala (Combust), 8. Khala (Debilitated), and 9. Kopa (Defeated in Graha Yuddha)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the sequence and duration of the 120-year Vimshottari Dasha system?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The cycle sequence is: Ketu (7y), Venus (20y), Sun (6y), Moon (10y), Mars (7y), Rahu (18y), Jupiter (16y), Saturn (19y), and Mercury (17y) — totaling 120 years."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the significance of the 27 Nakshatras and 108 Padas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each constellation spans 13°20' divided into four 3°20' Navamsha padas. 27 Nakshatras x 4 = 108 Padas across the 360° zodiac, each possessing an elemental rulership, deity, dasha lord, and sound syllable."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can the Tantra Gyan digital book be read completely offline without an app?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Tantra Gyan is a Progressive Web App (PWA). Visiting https://t.worldgyan.com/english.html once automatically caches all 88 pages, tables, and sounds, allowing 100% offline access in any browser or in Airplane mode without installing an app."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://t.worldgyan.com/english.html#table-of-contents",
+        "name": "Tantra Gyan: Table of Contents",
+        "numberOfItems": 6,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Introduction, Invocation & Author Profile (Pages 1–5)",
+            "url": "https://t.worldgyan.com/english.html#page-1"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Navagraha Karakatva & 17 Classical Raja Yogas (Pages 6–20)",
+            "url": "https://t.worldgyan.com/english.html#page-6"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Signs, Nakshatras, Motions & Vimshottari Dasha (Pages 21–37)",
+            "url": "https://t.worldgyan.com/english.html#page-21"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Houses & Signs: 9 Deeptadi Planetary States (Pages 38–47)",
+            "url": "https://t.worldgyan.com/english.html#page-38"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Medical Astrology & Cancer Disease Analysis (Pages 48–74)",
+            "url": "https://t.worldgyan.com/english.html#page-48"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "In-Depth Nakshatra Pada & Planetary Analysis (Pages 75–88)",
+            "url": "https://t.worldgyan.com/english.html#page-75"
+          }
+        ]
+      }"""
 
     html_code = f"""<!DOCTYPE html>
 <html lang="{doc_lang}" data-theme="parchment" data-lang-mode="{edition_lang}">
@@ -2529,11 +2872,14 @@ def render_edition_html(pages_list, edition_lang='hindi'):
   <meta name="twitter:image" content="https://t.worldgyan.com/assets/og-image.jpg">
 
   <!-- Academic & AI Citation Metadata -->
+  <meta name="ai-content-declaration" content="authentic-vedic-astrology, human-authored, educational-compendium">
   <meta name="citation_title" content="{doc_title}">
   <meta name="citation_author" content="Choubey, Ashutosh Kumar">
   <meta name="citation_publication_date" content="2026">
   <meta name="citation_publisher" content="Tantra Gyan Research Center">
   <meta name="citation_language" content="{doc_lang}">
+  <meta name="citation_fulltext_world_readable" content="https://t.worldgyan.com/llms-full.txt">
+  <meta name="citation_abstract_html_url" content="{edition_canonical}">
 
   <!-- AI Search Engine Discovery (llms.txt standard & sitemap) -->
   <link rel="help" type="text/plain" href="/llms.txt" title="LLM Context Specification">
@@ -2546,7 +2892,7 @@ def render_edition_html(pages_list, edition_lang='hindi'):
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
   <!-- Standard CSS Files -->
-  <link rel="stylesheet" href="css/book.css?v=3.9">
+  <link rel="stylesheet" href="css/book.css?v=4.0">
   <link rel="stylesheet" href="css/tables.css?v=3.8">
 
   <!-- Ultra-Rich Schema.org JSON-LD Educational Book & Knowledge Graph Structured Data -->
@@ -2641,6 +2987,7 @@ def render_edition_html(pages_list, edition_lang='hindi'):
           {{ "@type": "Thing", "name": "Cancer in Astrology (Arbuda Roga)" }},
           {{ "@type": "Thing", "name": "Nakshatra Padas" }}
         ]
+        {schema_chapters_json}
       }},
       {{
         "@type": "BreadcrumbList",
@@ -2659,7 +3006,7 @@ def render_edition_html(pages_list, edition_lang='hindi'):
             "item": "{edition_canonical}"
           }}
         ]
-      }}
+      }}{schema_faq_json}
     ]
   }}
   </script>
@@ -3034,10 +3381,19 @@ def render_edition_html(pages_list, edition_lang='hindi'):
   <!-- Floating Toast Notification -->
   <div id="book-toast" class="book-toast" role="status" aria-live="polite"></div>
 
-  <!-- Raw Page Data Repository -->
-  <div id="book-pages-store" style="display:none;" aria-hidden="true">
+  <!-- Noscript Fallback for Search Engines & Non-JS Browsers -->
+  <noscript>
+    <div class="noscript-banner">
+      <h2>{doc_title}</h2>
+      <p>{noscript_msg}</p>
+      <p>AI Models & Search Crawlers: Access full machine-readable knowledge base at <a href="/llms-full.txt">llms-full.txt</a> and <a href="/llms.txt">llms.txt</a>.</p>
+    </div>
+  </noscript>
+
+  <!-- Complete Canonical Book Corpus for Search Engines (Google, Bing), Screen Readers & AI Bots -->
+  <main id="book-pages-store" class="book-corpus-store" itemscope itemtype="https://schema.org/Book" aria-label="{doc_title}">
     {all_pages_html}
-  </div>
+  </main>
 
   <!-- Scripts -->
   <script src="js/sounds-data.js?v=3.8"></script>

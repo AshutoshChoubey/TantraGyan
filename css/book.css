@@ -4474,4 +4474,76 @@ html, body {
   50% { transform: translateY(8px); }
 }
 
+/* ==========================================================================
+   Accessible Book Corpus & SEO Architecture (Google, Bing, Screen Readers, AI Bots)
+   ========================================================================== */
+
+/* The semantic corpus container holds all 88 pages for search engines & AI scrapers */
+.book-corpus-store {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: normal;
+  border: 0;
+}
+
+/* Individual page articles inside the accessible corpus */
+.book-corpus-store .book-page-data {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+/* Noscript Fallback Banner for Bots & Non-JS Browsers */
+.noscript-banner {
+  background: #2a1f14;
+  color: #fef08a;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 2px solid #d97706;
+  text-align: center;
+  font-family: var(--font-cinzel), serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.noscript-banner a {
+  color: #fbbf24;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+/* Print Stylesheet: Render clean canonical pages when printed */
+@media print {
+  .app-header,
+  .book-app-bottom-bar,
+  .book-stage-viewport,
+  .toc-overlay,
+  .bookmark-overlay,
+  .settings-overlay,
+  .ios-install-sheet,
+  .book-toast {
+    display: none !important;
+  }
+
+  .book-corpus-store {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    clip: auto !important;
+  }
+
+  .book-corpus-store .book-page-data {
+    display: block !important;
+    page-break-after: always;
+    break-after: page;
+    padding: 2rem;
+    color: #111111;
+    background: #ffffff;
+  }
+}
+
 

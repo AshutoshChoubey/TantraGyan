@@ -59,9 +59,9 @@ def main():
     with open('/Users/apple/Movies/ap/TantraGyan/index.html', 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # Find all book-page-data blocks
+    # Find all book-page-data blocks (supports both semantic <article> and <div>)
     page_blocks = re.findall(
-        r'<div class="book-page-data" id="page-data-(\d+)"[^>]*data-title="([^"]*)"[^>]*>(.*?)</div>\s*(?=<div class="book-page-data"|$)',
+        r'<(?:div|article) class="book-page-data" id="page-data-(\d+)"[^>]*data-title="([^"]*)"[^>]*>(.*?)</(?:div|article)>\s*(?=<(?:div|article) class="book-page-data"|$)',
         content,
         flags=re.DOTALL
     )
