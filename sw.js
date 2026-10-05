@@ -1,8 +1,9 @@
 /**
  * Tantra Gyan Vedic Astrology Book - Progressive Web App Service Worker
- * Version: 1.0.2
+ * Version: 1.0.3
  * 
  * Features:
+ * - Safari / iOS WebKit Redirection Fix (eliminates WebKitErrorDomain 100)
  * - 100% Instant offline access for all 3 editions (Bilingual, Hindi, English)
  * - Zero-action auto pre-caching: just visiting once caches entire book in browser
  * - Works completely offline in browser without needing to install an app
@@ -10,14 +11,15 @@
  * - Automated version tracking & instant "Update Available" notification
  * - Seamless zero-downtime cache invalidation & atomic updates
  * - Dynamic font caching for Google Fonts
- * - Stale-While-Revalidate with instant 0ms offline cache return for HTML pages
+ * - Stale-While-Revalidate with instant 0ms sanitized offline cache return for HTML pages
  */
 
-const APP_VERSION = '1.0.2';
+const APP_VERSION = '1.0.3';
 const CACHE_NAME = `tantragyan-v${APP_VERSION}`;
 const FONT_CACHE_NAME = 'tantragyan-fonts-v1.0';
 
 // Critical core assets and all 3 editions to cache for complete offline functioning
+// Note: manifest.json is excluded from precache because it 301-redirects to manifest.webmanifest
 const PRECACHE_ASSETS = [
   './',
   'index.html',
@@ -40,21 +42,56 @@ const PRECACHE_ASSETS = [
   'assets/favicon-16.png',
   'assets/og-image.jpg',
   'favicon.ico',
-  'manifest.webmanifest',
-  'manifest.json'
+  'manifest.webmanifest'
 ];
 
-// 1. Install Event: Pre-cache assets immediately and activate
+/**
+ * Safari (iOS & macOS WebKit) Redirection Fix:
+ * WebKit strictly blocks service workers from returning responses where response.redirected === true,
+ * throwing "Response served by ServiceWorker has redirections".
+ * This helper reconstructs a pristine Response object, stripping all internal redirect metadata.
+ */
+async function cleanResponse(response) {
+  if (!response) return response;
+  if (response.redirected) {
+    const body = await response.blob();
+    return new Response(body, {
+      status: response.status || 200,
+      statusText: response.statusText || 'OK',
+      headers: response.headers
+    });
+  }
+  return response;
+}
+
+/**
+ * Safely fetches and caches an asset, ensuring any redirected response
+ * is sanitized before being written into CacheStorage.
+ */
+async function safeCachePut(cache, requestOrUrl, response) {
+  if (!response || (response.status !== 200 && response.type !== 'opaque')) return;
+  const toCache = response.redirected
+    ? new Response(await response.clone().blob(), {
+        status: response.status,
+        statusText: response.statusText,
+        headers: response.headers
+      })
+    : response.clone();
+  await cache.put(requestOrUrl, toCache);
+}
+
+// 1. Install Event: Pre-cache assets immediately with redirection sanitization
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(async (cache) => {
-      await Promise.allSettled(
-        PRECACHE_ASSETS.map((asset) =>
-          cache.add(asset).catch((err) => {
-            console.warn(`[ServiceWorker v${APP_VERSION}] Pre-cache skipped for ${asset}:`, err);
-          })
-        )
-      );
+      for (const asset of PRECACHE_ASSETS) {
+        try {
+          const res = await fetch(asset);
+          await safeCachePut(cache, asset, res);
+        } catch (err) {
+          console.warn(`[ServiceWorker v${APP_VERSION}] Pre-cache skipped for ${asset}:`, err);
+        }
+      }
     }).then(() => {
       // Force immediate activation so first-time visitors have 100% offline access immediately
       return self.skipWaiting();
@@ -86,7 +123,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// 3. Fetch Event: Multi-tier caching
+// 3. Fetch Event: Multi-tier caching with Safari Redirection Sanitization
 self.addEventListener('fetch', (event) => {
   const request = event.request;
   const url = new URL(request.url);
@@ -116,8 +153,8 @@ self.addEventListener('fetch', (event) => {
   }
 
   // B. Navigation Requests (HTML Pages: index.html, hindi.html, english.html)
-  // Strategy: Instant 0ms Cache Return with background network update.
-  // Works 100% offline in browser without needing an app.
+  // Strategy: Instant 0ms Sanitized Cache Return with background network update.
+  // 100% Safari & iOS WebKit redirection-safe!
   if (request.mode === 'navigate' || request.headers.get('accept')?.includes('text/html')) {
     event.respondWith(
       (async () => {
@@ -139,30 +176,29 @@ self.addEventListener('fetch', (event) => {
         // Background network revalidation
         const networkPromise = fetch(request).then(async (netResponse) => {
           if (netResponse && netResponse.status === 200) {
-            await cache.put(request, netResponse.clone());
+            await safeCachePut(cache, request, netResponse);
             if (url.pathname === '/' || url.pathname.endsWith('index.html')) {
-              await cache.put('./', netResponse.clone());
+              await safeCachePut(cache, './', netResponse);
             }
           }
           return netResponse;
         }).catch((err) => {
-          // Offline mode or network down
           return null;
         });
 
-        // If cached page is available, return immediately!
+        // If cached page is available, return sanitized clean response immediately!
         if (cached) {
           event.waitUntil(networkPromise);
-          return cached;
+          return cleanResponse(cached);
         }
 
         // If not in cache yet, await network
         const netRes = await networkPromise;
-        if (netRes) return netRes;
+        if (netRes) return cleanResponse(netRes);
 
         // Ultimate offline fallback to index.html
         const fallback = (await cache.match('index.html')) || (await cache.match('./'));
-        if (fallback) return fallback;
+        if (fallback) return cleanResponse(fallback);
 
         return new Response('<h1>Offline</h1><p>Tantra Gyan is unavailable offline at this moment.</p>', {
           headers: { 'Content-Type': 'text/html; charset=utf-8' }
@@ -173,7 +209,7 @@ self.addEventListener('fetch', (event) => {
   }
 
   // C. Static Local Assets (CSS, JS, SVG, Images, Favicon, Manifest)
-  // Strategy: Cache-First with ignoreSearch fallback & background revalidation
+  // Strategy: Cache-First with ignoreSearch fallback, background revalidation & redirect sanitization
   if (url.origin === self.location.origin) {
     event.respondWith(
       (async () => {
@@ -187,27 +223,27 @@ self.addEventListener('fetch', (event) => {
           // Optional background refresh for CSS and JS
           if (request.url.includes('.css') || request.url.includes('.js')) {
             event.waitUntil(
-              fetch(request).then((networkResponse) => {
+              fetch(request).then(async (networkResponse) => {
                 if (networkResponse && networkResponse.status === 200) {
-                  return cache.put(request, networkResponse.clone());
+                  await safeCachePut(cache, request, networkResponse);
                 }
               }).catch(() => {})
             );
           }
-          return cachedResponse;
+          return cleanResponse(cachedResponse);
         }
 
         // Not in cache: fetch from network, then cache
         try {
           const networkResponse = await fetch(request);
           if (networkResponse && networkResponse.status === 200) {
-            cache.put(request, networkResponse.clone());
+            await safeCachePut(cache, request, networkResponse);
           }
-          return networkResponse;
+          return cleanResponse(networkResponse);
         } catch (err) {
           if (request.destination === 'image') {
             const fallbackImg = await cache.match('assets/icon-192.png');
-            if (fallbackImg) return fallbackImg;
+            if (fallbackImg) return cleanResponse(fallbackImg);
           }
           console.warn(`[ServiceWorker] Asset fetch failed offline: ${request.url}`);
         }
@@ -218,8 +254,10 @@ self.addEventListener('fetch', (event) => {
 
   // Default: Cache first then Network fallback
   event.respondWith(
-    caches.match(request).then((cachedResponse) => {
-      return cachedResponse || fetch(request);
+    caches.match(request).then(async (cachedResponse) => {
+      if (cachedResponse) return cleanResponse(cachedResponse);
+      const netRes = await fetch(request);
+      return cleanResponse(netRes);
     })
   );
 });
@@ -228,7 +266,7 @@ self.addEventListener('fetch', (event) => {
 self.addEventListener('message', async (event) => {
   if (!event.data) return;
 
-  // A. Trigger full offline download with live progress reporting
+  // A. Trigger full offline download with live progress reporting & redirect sanitization
   if (event.data.action === 'DOWNLOAD_ALL_OFFLINE') {
     const source = event.source;
     const broadcastMsg = async (msg) => {
@@ -252,7 +290,8 @@ self.addEventListener('message', async (event) => {
       for (let i = 0; i < total; i++) {
         const asset = PRECACHE_ASSETS[i];
         try {
-          await cache.add(asset);
+          const res = await fetch(asset);
+          await safeCachePut(cache, asset, res);
         } catch (err) {
           console.warn(`[ServiceWorker] Download skipped for ${asset}:`, err);
         }
