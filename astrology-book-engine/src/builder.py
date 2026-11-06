@@ -138,6 +138,12 @@ def build_typst_target(metadata, chapters):
 
     compile_typst_book(metadata, chapters, output_typst_pdf, ENGINE_ROOT)
 
+    root_typst = os.path.join(os.path.dirname(ENGINE_ROOT), "astrology-book-typst.pdf")
+    shutil.copy(output_typst_pdf, root_typst)
+    web_typst = os.path.join(DIST_WEB_DIR, "astrology-book-typst.pdf")
+    os.makedirs(DIST_WEB_DIR, exist_ok=True)
+    shutil.copy(output_typst_pdf, web_typst)
+
     elapsed = time.time() - start_time
     size_mb = os.path.getsize(output_typst_pdf) / (1024 * 1024)
     print(f"✓ Target 1B (Typst) Complete: {output_typst_pdf}")

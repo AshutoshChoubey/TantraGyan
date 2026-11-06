@@ -62,7 +62,7 @@ class AstrologyCalloutPreprocessor(Preprocessor):
                 yoga_title = title.strip() or "शास्त्रीय राजयोग (Classical Raja Yoga)"
                 return f"""<div class="callout callout-yoga">
   <div class="callout-header">
-    <span class="callout-badge">⚜ RAJA YOGA</span>
+    <span class="callout-badge">RAJA YOGA</span>
     <span class="callout-title">{html.escape(yoga_title)}</span>
   </div>
   <div class="callout-body">
@@ -74,7 +74,7 @@ class AstrologyCalloutPreprocessor(Preprocessor):
                 formula_title = title.strip() or "फलित सूत्र (Predictive Sutra)"
                 return f"""<div class="callout callout-formula">
   <div class="callout-header">
-    <span class="callout-badge">📐 SUTRA / सूत्र</span>
+    <span class="callout-badge">SUTRA / सूत्र</span>
     <span class="callout-title">{html.escape(formula_title)}</span>
   </div>
   <div class="callout-body">
@@ -86,7 +86,7 @@ class AstrologyCalloutPreprocessor(Preprocessor):
                 warning_title = title.strip() or "ज्योतिषीय चेतावनी एवं सावधानियां"
                 return f"""<div class="callout callout-warning">
   <div class="callout-header">
-    <span class="callout-badge">⚠️ सावधान (CAVEAT)</span>
+    <span class="callout-badge">CAVEAT / सावधान</span>
     <span class="callout-title">{html.escape(warning_title)}</span>
   </div>
   <div class="callout-body">
@@ -124,7 +124,7 @@ class AstrologyCalloutPreprocessor(Preprocessor):
                 # Generic callout
                 return f"""<div class="callout callout-note">
   <div class="callout-header">
-    <span class="callout-badge">📌 NOTE</span>
+    <span class="callout-badge">NOTE / टिप्पणी</span>
     <span class="callout-title">{html.escape(title)}</span>
   </div>
   <div class="callout-body">

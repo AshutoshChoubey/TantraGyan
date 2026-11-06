@@ -67,11 +67,51 @@
   <circle cx="250" cy="250" r="14" fill="url(#goldGlow)" filter="url(#glow)"/>
   <circle cx="250" cy="250" r="5" fill="#ffffff"/>
 
-  <!-- Corner Ornamental Symbols (Trishul & Om accents) -->
-  <g fill="url(#goldLinear)" opacity="0.85" font-family="'Cinzel', serif" font-size="18" text-anchor="middle">
-    <text x="60" y="70">🕉</text>
-    <text x="440" y="70">卐</text>
-    <text x="60" y="445">卐</text>
-    <text x="440" y="445">🕉</text>
+  <!-- Corner Ornamental Sacred Vector Flourishes (Zero font dependency) -->
+  <g stroke="url(#goldLinear)" fill="none" opacity="0.85">
+    <!-- Top-Left Flourish -->
+    <g transform="translate(60, 65)">
+      <circle cx="0" cy="0" r="11" stroke-width="1.2"/>
+      <circle cx="0" cy="0" r="3.5" fill="url(#goldLinear)"/>
+      <line x1="-15" y1="0" x2="15" y2="0" stroke-width="1"/>
+      <line x1="0" y1="-15" x2="0" y2="15" stroke-width="1"/>
+      <polygon points="0,-16 4,-7 0,-10 -4,-7" fill="url(#goldLinear)"/>
+      <polygon points="0,16 4,7 0,10 -4,7" fill="url(#goldLinear)"/>
+      <polygon points="-16,0 -7,4 -10,0 -7,-4" fill="url(#goldLinear)"/>
+      <polygon points="16,0 7,4 10,0 7,-4" fill="url(#goldLinear)"/>
+    </g>
+    <!-- Top-Right Flourish -->
+    <g transform="translate(440, 65)">
+      <circle cx="0" cy="0" r="11" stroke-width="1.2"/>
+      <circle cx="0" cy="0" r="3.5" fill="url(#goldLinear)"/>
+      <line x1="-15" y1="0" x2="15" y2="0" stroke-width="1"/>
+      <line x1="0" y1="-15" x2="0" y2="15" stroke-width="1"/>
+      <polygon points="0,-16 4,-7 0,-10 -4,-7" fill="url(#goldLinear)"/>
+      <polygon points="0,16 4,7 0,10 -4,7" fill="url(#goldLinear)"/>
+      <polygon points="-16,0 -7,4 -10,0 -7,-4" fill="url(#goldLinear)"/>
+      <polygon points="16,0 7,4 10,0 7,-4" fill="url(#goldLinear)"/>
+    </g>
+    <!-- Bottom-Left Flourish -->
+    <g transform="translate(60, 435)">
+      <circle cx="0" cy="0" r="11" stroke-width="1.2"/>
+      <circle cx="0" cy="0" r="3.5" fill="url(#goldLinear)"/>
+      <line x1="-15" y1="0" x2="15" y2="0" stroke-width="1"/>
+      <line x1="0" y1="-15" x2="0" y2="15" stroke-width="1"/>
+      <polygon points="0,-16 4,-7 0,-10 -4,-7" fill="url(#goldLinear)"/>
+      <polygon points="0,16 4,7 0,10 -4,7" fill="url(#goldLinear)"/>
+      <polygon points="-16,0 -7,4 -10,0 -7,-4" fill="url(#goldLinear)"/>
+      <polygon points="16,0 7,4 10,0 7,-4" fill="url(#goldLinear)"/>
+    </g>
+    <!-- Bottom-Right Flourish -->
+    <g transform="translate(440, 435)">
+      <circle cx="0" cy="0" r="11" stroke-width="1.2"/>
+      <circle cx="0" cy="0" r="3.5" fill="url(#goldLinear)"/>
+      <line x1="-15" y1="0" x2="15" y2="0" stroke-width="1"/>
+      <line x1="0" y1="-15" x2="0" y2="15" stroke-width="1"/>
+      <polygon points="0,-16 4,-7 0,-10 -4,-7" fill="url(#goldLinear)"/>
+      <polygon points="0,16 4,7 0,10 -4,7" fill="url(#goldLinear)"/>
+      <polygon points="-16,0 -7,4 -10,0 -7,-4" fill="url(#goldLinear)"/>
+      <polygon points="16,0 7,4 10,0 7,-4" fill="url(#goldLinear)"/>
+    </g>
   </g>
 </svg>

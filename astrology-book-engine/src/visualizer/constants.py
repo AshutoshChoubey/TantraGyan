@@ -20,3 +20,4 @@ ZODIAC_SIGNS = [
 ZODIAC_NAMES = [z["name"] for z in ZODIAC_SIGNS]
 ZODIAC_SANSKRIT = [z["sanskrit"] for z in ZODIAC_SIGNS]
 SIGN_LORDS = [z["lord"] for z in ZODIAC_SIGNS]
+

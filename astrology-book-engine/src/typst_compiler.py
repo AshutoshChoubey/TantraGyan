@@ -51,21 +51,21 @@ def convert_md_to_typst(md_text, assets_dir):
         elif s.startswith('::: yoga'):
             m = re.search(r'\[(.*?)\]', s)
             title = m.group(1) if m else "राजयोग"
-            out.append(f'\n#rect(fill: rgb("#fefce8"), stroke: (left: 3.5pt + rgb("#ca8a04"), rest: 0.6pt + rgb("#eab308")), radius: 4pt, width: 100%, inset: 11pt)[\n  #text(size: 9.5pt, weight: "bold", fill: rgb("#78350f"))[⚜ RAJA YOGA: {title}]\n')
+            out.append(f'\n#rect(fill: rgb("#fefce8"), stroke: (left: 3.5pt + rgb("#ca8a04"), rest: 0.6pt + rgb("#eab308")), radius: 4pt, width: 100%, inset: 11pt)[\n  #text(size: 9.5pt, weight: "bold", fill: rgb("#78350f"))[RAJA YOGA: {title}]\n')
             in_yoga = True
             i += 1
             continue
         elif s.startswith('::: formula'):
             m = re.search(r'\[(.*?)\]', s)
             title = m.group(1) if m else "फलित सूत्र"
-            out.append(f'\n#rect(fill: rgb("#f8fafc"), stroke: (left: 3.5pt + rgb("#334155"), rest: 0.6pt + rgb("#94a3b8")), radius: 4pt, width: 100%, inset: 11pt)[\n  #text(size: 9.5pt, weight: "bold", fill: rgb("#0f172a"))[📐 SUTRA: {title}]\n')
+            out.append(f'\n#rect(fill: rgb("#f8fafc"), stroke: (left: 3.5pt + rgb("#334155"), rest: 0.6pt + rgb("#94a3b8")), radius: 4pt, width: 100%, inset: 11pt)[\n  #text(size: 9.5pt, weight: "bold", fill: rgb("#0f172a"))[SUTRA: {title}]\n')
             in_formula = True
             i += 1
             continue
         elif s.startswith('::: warning'):
             m = re.search(r'\[(.*?)\]', s)
             title = m.group(1) if m else "सावधान"
-            out.append(f'\n#rect(fill: rgb("#fff1f2"), stroke: (left: 3.5pt + rgb("#dc2626"), rest: 0.6pt + rgb("#f87171")), radius: 4pt, width: 100%, inset: 11pt)[\n  #text(size: 9.5pt, weight: "bold", fill: rgb("#991b1b"))[⚠️ CAVEAT: {title}]\n')
+            out.append(f'\n#rect(fill: rgb("#fff1f2"), stroke: (left: 3.5pt + rgb("#dc2626"), rest: 0.6pt + rgb("#f87171")), radius: 4pt, width: 100%, inset: 11pt)[\n  #text(size: 9.5pt, weight: "bold", fill: rgb("#991b1b"))[CAVEAT: {title}]\n')
             in_warning = True
             i += 1
             continue

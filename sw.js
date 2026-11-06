@@ -16,7 +16,7 @@
  * - Stale-While-Revalidate with instant 0ms sanitized offline cache return for HTML pages
  */
 
-const APP_VERSION = '1.0.5';
+const APP_VERSION = '1.0.6';
 const CACHE_NAME = `tantragyan-v${APP_VERSION}`;
 const FONT_CACHE_NAME = 'tantragyan-fonts-v1.0';
 
@@ -137,6 +137,11 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Bypass service worker entirely for astrology-book-engine and all PDF files
+  if (url.pathname.includes('/astrology-book-engine/') || url.pathname.endsWith('.pdf')) {
+    return;
+  }
+
   // A. Google Fonts API & Fonts Caching (Stale-While-Revalidate / Cache-First)
   if (url.origin === 'https://fonts.googleapis.com' || url.origin === 'https://fonts.gstatic.com') {
     event.respondWith(
@@ -168,11 +173,11 @@ self.addEventListener('fetch', (event) => {
         let cached = await cache.match(request);
         if (!cached) {
           const path = url.pathname;
-          if (path === '/' || path.endsWith('/index.html')) {
+          if (path === '/' || path === '/index.html' || path.endsWith('/TantraGyan/') || path.endsWith('/TantraGyan/index.html')) {
             cached = (await cache.match('index.html')) || (await cache.match('./'));
-          } else if (path.includes('hindi')) {
+          } else if (path.endsWith('/hindi.html')) {
             cached = await cache.match('hindi.html');
-          } else if (path.includes('english')) {
+          } else if (path.endsWith('/english.html')) {
             cached = await cache.match('english.html');
           }
         }
