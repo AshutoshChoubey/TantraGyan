@@ -139,26 +139,83 @@ class AstrologyCalloutPreprocessor(Preprocessor):
 class AstrologyTablePostprocessor(Postprocessor):
     """
     Wraps standard markdown tables into professional print-ready responsive book tables.
+    Automatically assigns .table-dense for tables with 6+ columns to guarantee zero horizontal scrollbars.
     """
     def run(self, text):
-        # Wrap <table> in book table wrapper and add classes
-        text = re.sub(
-            r'<table>',
-            r'<div class="table-container"><table class="astro-book-table">',
-            text
-        )
-        text = re.sub(
-            r'</table>',
-            r'</table></div>',
-            text
-        )
-        return text
+        def wrap_table(m):
+            tbl = m.group(0)
+            first_row = re.search(r'<tr>(.*?)</tr>', tbl, re.DOTALL)
+            col_count = len(re.findall(r'<t[hd]', first_row.group(1))) if first_row else 0
+            cls = 'astro-book-table'
+            if col_count >= 6:
+                cls += ' table-dense'
+            inner = tbl[len('<table>'):-len('</table>')]
+            return f'<div class="table-container"><table class="{cls}">{inner}</table></div>'
+
+        return re.sub(r'<table>[\s\S]*?</table>', wrap_table, text)
+
+
+# Authentic Vedic Jyotish Planet Color Palette Rules
+PLANET_RULES = [
+    ('sun', r'(?<![क-हअ-औ्])(?:सूर्य\s*\(\s*Sun\s*\)|सूर्यदेव|सूर्य|\bSun\b)(?![क-हअ-औ्ा-ौ])'),
+    ('moon', r'(?<![क-हअ-औ्])(?:चन्द्र\s*\(\s*Moon\s*\)|चंद्र\s*\(\s*Moon\s*\)|चन्द्रमा|चंद्रमा|चन्द्र|चंद्र|\bMoon\b)(?![क-हअ-औ्ा-ौ])'),
+    ('mars', r'(?<![क-हअ-औ्])(?:मंगल\s*\(\s*Mars\s*\)|मंगलदेव|मंगल|\bMars\b)(?![क-हअ-औ्ा-ौ])'),
+    ('mercury', r'(?<![क-हअ-औ्])(?:बुध\s*\(\s*Mercury\s*\)|बुधदेव|बुध|\bMercury\b)(?![क-हअ-औ्ा-ौ])'),
+    ('jupiter', r'(?<![क-हअ-औ्])(?:(?:गुरु\s*/\s*बृहस्पति|बृहस्पति|देवगुरु|गुरु(?!\s*जन))\s*\(\s*Jupiter\s*\)|बृहस्पति|देवगुरु|गुरु(?!\s*जन)|\bJupiter\b)(?![क-हअ-औ्ा-ौ])'),
+    ('venus', r'(?<![क-हअ-औ्])(?:शुक्र\s*\(\s*Venus\s*\)|शुक्रदेव|शुक्र|\bVenus\b)(?![क-हअ-औ्ा-ौ])'),
+    ('saturn', r'(?<![क-हअ-औ्])(?:शनि\s*\(\s*Saturn\s*\)|शनिदेव|शनैश्चर|शनि|\bSaturn\b)(?![क-हअ-औ्ा-ौ])'),
+    ('rahu', r'(?<![क-हअ-औ्])(?:राहु\s*\(\s*Rahu\s*\)|राहु|\bRahu\b)(?![क-हअ-औ्ा-ौ])'),
+    ('ketu', r'(?<![क-हअ-औ्])(?:केतु\s*\(\s*Ketu\s*\)|केतु|\bKetu\b)(?![क-हअ-औ्ा-ौ])'),
+]
+
+
+class PlanetColoringPostprocessor(Postprocessor):
+    """
+    Intelligently colors planet names across all text and tables according to authentic Jyotish symbolism:
+    - Sun: Saffron
+    - Moon: Pearl / Silver Moon
+    - Mars: Fiery Red
+    - Mercury: Emerald Green
+    - Jupiter: Golden Turmeric Yellow
+    - Venus: Brilliant Diamond Rose Pink
+    - Saturn: Deep Cosmic Royal Blue
+    - Rahu: Shadow Obsidian Black
+    - Ketu: Smokey Ash Shadow Gray
+    """
+    def run(self, text):
+        protected = []
+        def save_block(m):
+            protected.append(m.group(0))
+            return f'___PROTECTED_PLANET_{len(protected)-1}___'
+
+        # Protect SVG diagrams, Sanskrit Shlokas, code blocks, and attributes
+        s = re.sub(r'<svg[\s\S]*?</svg>', save_block, text)
+        s = re.sub(r'<div class="callout callout-shloka"[\s\S]*?</div>\s*</div>', save_block, s)
+        s = re.sub(r'<pre[\s\S]*?</pre>', save_block, s)
+        s = re.sub(r'<code[\s\S]*?</code>', save_block, s)
+
+        parts = re.split(r'(<[^>]+>)', s)
+        out = []
+        for p in parts:
+            if p.startswith('<'):
+                out.append(p)
+            else:
+                txt = p
+                for p_key, pat in PLANET_RULES:
+                    txt = re.sub(pat, lambda m: f'<span class="planet-badge planet-{p_key}">{m.group(0)}</span>', txt)
+                out.append(txt)
+
+        res = ''.join(out)
+        for idx, orig in enumerate(protected):
+            res = res.replace(f'___PROTECTED_PLANET_{idx}___', orig)
+        return res
 
 
 class AstrologyExtension(Extension):
     def extendMarkdown(self, md):
         md.preprocessors.register(AstrologyCalloutPreprocessor(md), 'astrology_callouts', 30)
         md.postprocessors.register(AstrologyTablePostprocessor(md), 'astrology_tables', 30)
+        md.postprocessors.register(PlanetColoringPostprocessor(md), 'planet_coloring', 25)
 
 
 def parse_manuscript(md_content):

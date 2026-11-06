@@ -497,7 +497,7 @@ table.astro-book-table {
 
 table.astro-book-table th,
 table.astro-book-table td {
-  padding: 0.05in 0.08in;
+  padding: 0.05in 0.07in;
   border: 0.5pt solid #cbd5e1;
   text-align: left;
   vertical-align: top;
@@ -522,6 +522,85 @@ table.astro-book-table tr:hover td {
 
 table.astro-book-table strong {
   color: #0f172a;
+}
+
+/* Dense Tables (6+ columns: e.g. Navagraha Karakatva, Nakshatras) */
+table.astro-book-table.table-dense {
+  font-size: 7.2pt;
+  line-height: 1.3;
+}
+
+table.astro-book-table.table-dense th,
+table.astro-book-table.table-dense td {
+  padding: 0.035in 0.05in;
+}
+
+table.astro-book-table.table-dense th {
+  font-size: 7.4pt;
+}
+
+/* Print Planet Signature Badges */
+.planet-badge {
+  display: inline-block;
+  font-weight: 700;
+  border-radius: 2pt;
+  padding: 0.4pt 2.5pt;
+  font-size: 0.92em;
+  line-height: 1.25;
+}
+
+.planet-sun {
+  color: #c2410c;
+  background-color: #ffedd5;
+  border: 0.5pt solid #fdba74;
+}
+
+.planet-moon {
+  color: #475569;
+  background-color: #f1f5f9;
+  border: 0.5pt solid #cbd5e1;
+}
+
+.planet-mars {
+  color: #b91c1c;
+  background-color: #fee2e2;
+  border: 0.5pt solid #fca5a5;
+}
+
+.planet-mercury {
+  color: #047857;
+  background-color: #d1fae5;
+  border: 0.5pt solid #6ee7b7;
+}
+
+.planet-jupiter {
+  color: #b45309;
+  background-color: #fef3c7;
+  border: 0.5pt solid #fcd34d;
+}
+
+.planet-venus {
+  color: #be185d;
+  background-color: #fce7f3;
+  border: 0.5pt solid #f9a8d4;
+}
+
+.planet-saturn {
+  color: #1d4ed8;
+  background-color: #dbeafe;
+  border: 0.5pt solid #93c5fd;
+}
+
+.planet-rahu {
+  color: #09090b;
+  background-color: #f4f4f5;
+  border: 0.5pt solid #a1a1aa;
+}
+
+.planet-ketu {
+  color: #52525b;
+  background-color: #f4f4f5;
+  border: 0.5pt solid #cbd5e1;
 }
 
 /* Epilogue & Back Matter */
