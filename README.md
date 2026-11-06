@@ -95,7 +95,72 @@ TantraGyan/
 python3 -m http.server 8899
 ```
 और ब्राउज़र में जाएं:
-`http://localhost:8899/index.html`
+- **मूल 3D फ्लिपबुक ग्रंथ:** `http://localhost:8899/index.html`
+- **नया Paged.js आधुनिक ग्रंथ पाठक:** `http://localhost:8899/astrology-book-engine/dist/web/index.html`
+- **प्रिंट-रेडी वेक्टर PDF डाउनलोड:** `http://localhost:8899/astrology-book-engine/dist/pdf/astrology-book.pdf` (या `http://localhost:8899/astrology-book.pdf`)
+
+---
+
+## 🖨️ द्वैध प्रकाशन इंजन (Dual-Target Publishing Pipeline)
+
+TantraGyan में अब एक समर्पित **Astrology Book Publishing Engine** सम्मिलित है जो वेदिक पांडुलिपियों को दो उच्च-मानक प्रकाशन लक्ष्यों में संकलित करता है:
+1. **Target 1 (Vector PDF):** WeasyPrint द्वारा संकलित 6x9 Trade Paperback मानक, गटर मार्जिन, रनिंग हेडर व पृष्ठ संख्या युक्त हाई-रेज़ोल्यूशन प्रिंट-रेडी वेक्टर पीडीएफ।
+2. **Target 2 (Web Reader):** Paged.js पॉलीफिल द्वारा संचालित पूर्णतः प्री-कम्पाइल्ड, क्लाइंट-साइड 2-पेज स्प्रेड वेब ऐप जिसमें शून्य बैकएंड निर्भरता है।
+
+### इंजन संरचना (astrology-book-engine):
+```text
+astrology-book-engine/
+├── manuscript/
+│   ├── metadata.yaml             # Book title, author, edition, ISBN, publisher
+│   ├── chapter-01.md             # Foundations, houses, aspects
+│   ├── chapter-02.md             # Planetary combinations, 17 Raja Yogas & transits
+│   ├── chapter-03.md             # Signs, 27 Nakshatras & Vimshottari Mahadasha
+│   ├── chapter-04.md             # Deeptadi 9 planetary states & Sun positions
+│   ├── chapter-05.md             # Medical Astrology & Oncological cellular analysis
+│   └── chapter-06.md             # Nakshatra Pada sub-divisions & Shanti Path
+├── assets/
+│   ├── fonts/                    # Antique serif & Devanagari typography
+│   ├── icons/                    # Astrological charts (SVG) & sacred yantras
+│   └── js/                       # Local Paged.js polyfill (100% offline)
+├── templates/
+│   ├── layout.html               # Jinja2 template with Paged.js polyfill
+│   ├── print.css                 # W3C CSS Paged Media specs for WeasyPrint & Paged.js
+│   ├── web-reader.css            # Reader UI controls, canvas shadow, book layout
+│   └── web-reader.js             # Client-side spread & navigation engine
+├── src/
+│   ├── builder.py                # Main build CLI script
+│   ├── chart_generator.py        # Crisp vector SVGs for North Indian Kundli & Aspects
+│   └── markdown_parser.py        # Astrology callouts (::: yoga, ::: shloka, ::: chart)
+├── dist/
+│   ├── pdf/
+│   │   └── astrology-book.pdf    # Target 1: Print-ready vector PDF (47 pages)
+│   └── web/
+│       ├── index.html            # Target 2: Pre-compiled standalone static book app
+│       ├── astrology-book.pdf    # One-click instant download copy
+│       ├── assets/
+│       └── print.css
+└── requirements.txt
+```
+
+### संकलन कैसे करें (How to Compile Manuscripts):
+```bash
+cd astrology-book-engine
+
+# आभासी वातावरण सक्रिय करें (Activate venv)
+source .venv/bin/activate
+
+# सम्पूर्ण ग्रंथ (PDF + Web) संकलित करें
+python3 src/builder.py --target all
+
+# केवल वेक्टर पीडीएफ संकलित करें
+python3 src/builder.py --target pdf
+
+# केवल वेब रीडर संकलित करें
+python3 src/builder.py --target web
+
+# लोकल सर्वर चलाकर तुरंत परीक्षण करें
+python3 src/builder.py --serve 8899
+```
 
 ---
 

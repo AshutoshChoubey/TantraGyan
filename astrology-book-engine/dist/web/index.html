@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ • Tantra Gyan: Complete Vedic Astrology Compendium</title>
+  
+  <meta name="description" content="सम्पूर्ण प्रामाणिक शास्त्रीय फलित ज्ञानकोश एवं प्रेक्टिशनर नोटबुक - Comprehensive Classical Predictive Astrological Compendium & Practitioner Notebook by Ashutosh Kumar Choubey">
+  <meta name="author" content="Ashutosh Kumar Choubey">
+  
+  <!-- Print & Book CSS Paged Media -->
+  <link rel="stylesheet" href="print.css">
+
+  
+  <!-- Interactive Web Reader CSS -->
+  <link rel="stylesheet" href="web-reader.css">
+  
+  <!-- Paged.js Polyfill (Local Self-Contained) -->
+  <script src="assets/js/paged.polyfill.js"></script>
+  <script src="assets/js/web-reader.js" defer></script>
+  
+</head>
+<body class="paged-reader-app mode-spread theme-parchment">
+
+  
+  <!-- Loading Splash Overlay -->
+  <div id="paged-loading-overlay">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">ग्रंथ संकलन एवं पृष्ठ विन्यास...</div>
+    <div class="loader-subtext">Rendering High-Resolution Book Spreads via Paged.js</div>
+  </div>
+
+  <!-- Reader Top Toolbar Chrome -->
+  <header class="reader-navbar">
+    <a href="../../index.html" class="reader-brand" title="तंत्र ज्ञान (Tantra Gyan) - Home">
+      <img src="assets/icons/yantra.svg" alt="Yantra" class="reader-logo">
+      <div class="reader-title-group">
+        <span class="reader-title">तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ</span>
+        <span class="reader-author">Ashutosh Kumar Choubey • डिजिटल एवं प्रिंट मास्टरवर्क संस्करण (First Trade Paperback Edition 2026)</span>
+      </div>
+    </a>
+
+    <!-- Center: Chapter Jump & Page Counter -->
+    <div class="reader-center-tools">
+      <select id="reader-chapter-select" class="chapter-select" aria-label="विषय चुनें (Jump to Chapter)">
+        <option value="">-- अध्याय चुनें (Jump) --</option>
+        <option value="front-title">ग्रंथ आवरण व परिचय (Front)</option>
+        <option value="toc-root">विषय-सूची (Contents)</option>
+        
+        <option value="chapter-01">१. वैदिक ज्योतिष आधार, दर्शन एवं भाव कारकत्व</option>
+        
+        <option value="chapter-02">२. नवग्रह कारकत्व, १७ शास्त्रीय राजयोग एवं पंच महापुरुष</option>
+        
+        <option value="chapter-03">३. राशि चक्र, २७ नक्षत्र एवं विंशोत्तरी महादशा</option>
+        
+        <option value="chapter-04">४. दीप्तादि ९ अवस्थाएं एवं भावों में सूर्य फल</option>
+        
+        <option value="chapter-05">५. आयुर्-ज्योतिष (Medical Astrology) एवं अर्बुद (कैंसर) रोग विश्लेषण</option>
+        
+        <option value="chapter-06">६. नक्षत्र पद विभाजन, नवांश गणित एवं मंगल श्लोक</option>
+        
+        <option value="back-matter">मंगल श्लोक व समापन (Colophon)</option>
+      </select>
+
+      <span class="page-indicator-pill" id="page-indicator">Loading...</span>
+    </div>
+
+    <!-- Right Actions -->
+    <div class="reader-actions">
+      <!-- Spread Mode Toggle -->
+      <button type="button" class="reader-btn" id="btn-spread-toggle" title="पृष्ठ दृश्य बदलें (Toggle Spread / Single Page)">
+        <span>📖</span> <span>Spread</span>
+      </button>
+
+      <!-- Theme Switcher -->
+      <button type="button" class="reader-btn" id="btn-theme-toggle" title="थीम बदलें (Theme: Parchment / Dark / White)">
+        <span>🎨</span> <span>Parchment</span>
+      </button>
+
+      <!-- Zoom Controls -->
+      <button type="button" class="reader-btn" id="btn-zoom-out" title="Decrease Size" style="padding:0.35rem 0.5rem;">A−</button>
+      <button type="button" class="reader-btn" id="btn-zoom-in" title="Increase Size" style="padding:0.35rem 0.5rem;">A+</button>
+
+      <!-- Fullscreen -->
+      <button type="button" class="reader-btn" id="btn-fullscreen" title="Fullscreen" style="padding:0.35rem 0.5rem;">⛶</button>
+
+      <!-- Direct PDF Download Button -->
+      <a href="astrology-book.pdf" download="TantraGyan-Vedic-Astrology-Compendium.pdf" class="reader-btn reader-btn-primary" title="प्रिंट-रेडी वेक्टर पीडीएफ डाउनलोड करें">
+        <span>📥</span> <span>Download PDF</span>
+      </a>
+
+      <!-- Back to Classic 3D Book Link -->
+      <a href="../../index.html" class="reader-btn reader-btn-back" title="पुराने 3D फ्लिपबुक संस्करण पर लौटें">
+        <span>🔙</span> <span>Classic 3D</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Left / Right Floating Chevrons -->
+  <button type="button" class="nav-arrow-btn nav-prev-btn" id="btn-prev-page" title="Previous Page (पिछला पृष्ठ)">‹</button>
+  <button type="button" class="nav-arrow-btn nav-next-btn" id="btn-next-page" title="Next Page (अगला पृष्ठ)">›</button>
+
+  <main class="reader-stage-container">
+  
+
+    <!-- =========================================================================
+         BOOK CONTENT CORE (Rendered for both PDF and Paged.js Reader)
+         ========================================================================= -->
+    <article class="book-manuscript-root">
+
+      <!-- FRONT MATTER 1: Half Title -->
+      <section class="front-matter-page half-title-page">
+        <div class="half-title-text">तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ</div>
+      </section>
+
+      <!-- FRONT MATTER 2: Title Page -->
+      <section class="front-matter-page title-page" id="front-title">
+        <div class="title-yantra-emblem">
+          <img src="assets/icons/yantra.svg" alt="Sacred Sri Yantra" width="130" height="130">
+        </div>
+        <h1 class="book-title">तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ</h1>
+        <h2 class="book-subtitle">Tantra Gyan: Complete Vedic Astrology Compendium</h2>
+        <div style="font-size: 11pt; color: #854d0e; font-style: italic; margin-bottom: 0.3in;">
+          सम्पूर्ण प्रामाणिक शास्त्रीय फलित ज्ञानकोश एवं प्रेक्टिशनर नोटबुक
+        </div>
+
+        <div class="title-author-block">
+          <div>ग्रंथकार एवं ज्योतिषाचार्य</div>
+          <div class="title-author-name">आशुतोष कुमार चौबे (Ashutosh Kumar Choubey)</div>
+          <div style="font-size: 9.5pt; color: #64748b; margin-top: 0.05in;">Vedic Astrologer & Publishing Systems Architect</div>
+        </div>
+
+        <div class="title-publisher-block">
+          <div>तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center) • WorldGyan</div>
+          <div>डिजिटल एवं प्रिंट मास्टरवर्क संस्करण (First Trade Paperback Edition 2026) • वर्ष 2026</div>
+          <div>https://t.worldgyan.com • https://www.youtube.com/@TantraGyan108</div>
+        </div>
+      </section>
+
+      <!-- FRONT MATTER 3: Copyright Page -->
+      <section class="copyright-page">
+        <p><strong>तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ</strong></p>
+        <p><em>Tantra Gyan: Complete Vedic Astrology Compendium</em></p>
+        <p>© 2026 Ashutosh Kumar Choubey & Tantra Gyan Research Center. All rights reserved.</p>
+        <p>सर्वाधिकार सुरक्षित। इस ग्रंथ का कोई भी अंश, सारणी अथवा चित्र लेखक एवं प्रकाशक की पूर्व लिखित अनुमति के बिना किसी भी रूप में पुनरुत्पादित नहीं किया जा सकता।</p>
+        <p style="margin-top: 0.2in;"><strong>प्रकाशक:</strong> तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center) • WorldGyan</p>
+        <p><strong>आधिकारिक शोध मंच:</strong> https://t.worldgyan.com</p>
+        <p><strong>ईमेल:</strong> tantraresearchcenter@gmail.com</p>
+        <p><strong>संपर्क / WhatsApp:</strong> +91 9658476170</p>
+        <p><strong>ISBN:</strong> 978-93-5912-108-0</p>
+        <p style="margin-top: 0.25in; font-size: 7.8pt; color: #94a3b8;">मुद्रण मानक: 6x9 Trade Paperback • WeasyPrint & Paged.js Dual-Target Architecture</p>
+      </section>
+
+      <!-- FRONT MATTER 4: Dedication & Mangalacharan -->
+      <section class="front-matter-page dedication-page">
+        <div style="width: 50px; height: 50px; margin: 0 auto 0.2in auto;">
+          <img src="assets/icons/ganesha.svg" alt="Lord Ganesha" width="50" height="50">
+        </div>
+        <div class="mangala-verse">
+          वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>
+          निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
+        </div>
+        <p style="font-size: 10pt; color: #78350f; max-width: 4in; margin: 0 auto;">
+          यह ग्रंथ समस्त गुरुजनों, वैदिक ऋषियों एवं ज्ञान के पिपासु जिज्ञासुओं को सप्रेम समर्पित है।
+        </p>
+      </section>
+
+      <!-- FRONT MATTER 5: Table of Contents -->
+      <section class="toc-section" id="toc-root">
+        <h2 class="toc-title">ग्रंथ अनुक्रमणिका • Table of Contents</h2>
+        <ul class="toc-list">
+          
+          <li class="toc-item">
+            <a href="#chapter-01">
+              <span class="toc-chapter-name">१. वैदिक ज्योतिष आधार, दर्शन एवं भाव कारकत्व</span>
+              <span class="toc-dots"></span>
+              <span class="toc-page-num"></span>
+            </a>
+          </li>
+          
+          <li class="toc-item">
+            <a href="#chapter-02">
+              <span class="toc-chapter-name">२. नवग्रह कारकत्व, १७ शास्त्रीय राजयोग एवं पंच महापुरुष</span>
+              <span class="toc-dots"></span>
+              <span class="toc-page-num"></span>
+            </a>
+          </li>
+          
+          <li class="toc-item">
+            <a href="#chapter-03">
+              <span class="toc-chapter-name">३. राशि चक्र, २७ नक्षत्र एवं विंशोत्तरी महादशा</span>
+              <span class="toc-dots"></span>
+              <span class="toc-page-num"></span>
+            </a>
+          </li>
+          
+          <li class="toc-item">
+            <a href="#chapter-04">
+              <span class="toc-chapter-name">४. दीप्तादि ९ अवस्थाएं एवं भावों में सूर्य फल</span>
+              <span class="toc-dots"></span>
+              <span class="toc-page-num"></span>
+            </a>
+          </li>
+          
+          <li class="toc-item">
+            <a href="#chapter-05">
+              <span class="toc-chapter-name">५. आयुर्-ज्योतिष (Medical Astrology) एवं अर्बुद (कैंसर) रोग विश्लेषण</span>
+              <span class="toc-dots"></span>
+              <span class="toc-page-num"></span>
+            </a>
+          </li>
+          
+          <li class="toc-item">
+            <a href="#chapter-06">
+              <span class="toc-chapter-name">६. नक्षत्र पद विभाजन, नवांश गणित एवं मंगल श्लोक</span>
+              <span class="toc-dots"></span>
+              <span class="toc-page-num"></span>
+            </a>
+          </li>
+          
+        </ul>
+      </section>
+
+      <!-- CHAPTERS BODY -->
+      
+      <section class="chapter" id="chapter-01">
+        <h1 id="_1">अध्याय १: वैदिक ज्योतिष आधार, दर्शन एवं भाव कारकत्व</h1>
+<h2 id="chapter-1-foundations-cosmic-philosophy-12-bhavas-aspects">Chapter 1: Foundations, Cosmic Philosophy, 12 Bhavas &amp; Aspects</h2>
+<div class="callout callout-shloka">
+  <div class="shloka-header">
+    <span class="shloka-emblem">ॐ</span>
+    <span class="shloka-source">बृहत्पाराशर होरा शास्त्र — सृष्टि क्रम एवं वेदान्त</span>
+  </div>
+  <div class="shloka-verse">
+    <p class='shloka-line'>यथा शिखा मयूराणां नागानां मणयो यथा।</p><p class='shloka-line'>तद्वद्वेदांगशास्त्राणां ज्योतिषं मूर्धनि स्थितम्॥</p>
+  </div>
+</div>
+<p>वैदिक ज्योतिष (Jyotish Shastra) केवल भाग्य बताने का माध्यम नहीं है, अपितु यह काल-विधान, कर्म-सिद्धांत और चेतना के विकास का गूढ़ विज्ञान है। जिस प्रकार मयूरों के सिर पर शिखा और नागों के सिर पर मणि सर्वोच्च स्थान पर सुशोभित होती है, उसी प्रकार समस्त वेदांगों (शिक्षा, कल्प, व्याकरण, निरुक्त, छंद, ज्योतिष) में ज्योतिष शास्त्र को सर्वोच्च "वेद का चक्षु" (Eye of the Veda) कहा गया है।</p>
+<p>मानव जीवन में पूर्वजन्म-संचित कर्मों (प्रारब्ध) का प्रकटीकरण जन्म समय के आकाशीय ग्रहीय विन्यास के माध्यम से होता है। लग्न (Ascendant) आत्मा के इस देह में अवतरण का क्षणिक बिंदु है, जहां से संपूर्ण जीवन का खाका १२ भावों में विभाजित हो जाता है।</p>
+<hr />
+<h3 id="the-12-houses-bhavas">१.१ कालपुरुष कुण्डली एवं भाव व्यवस्था (The 12 Houses / Bhavas)</h3>
+<p>जन्म कुण्डली में १२ भाव होते हैं, जो जीवन के समस्त आयामों (शारीरिक, मानसिक, आर्थिक, वैवाहिक, आध्यात्मिक) का संचालन करते हैं। नीचे दिए गए कालपुरुष चक्र में मेष राशि लग्न (प्रथम भाव) में स्थित होकर प्राकृतिक कारकत्व दर्शाती है:</p>
+<figure class="chart-figure" id="chart-lagna_chart">
+  <div class="chart-svg-wrapper">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="auto" class="vedic-chart-svg" style="max-width:500px; background:#fffdfa; border-radius:12px; font-family:'Georgia', 'Devanagari MT', 'Kohinoor Devanagari', serif; box-shadow:0 4px 18px rgba(0,0,0,0.06);">
+  <defs>
+    <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#ca8a04" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Border & Background -->
+  <rect x="12" y="12" width="476" height="476" rx="8" fill="#fffdfa" stroke="#854d0e" stroke-width="1.8"/>
+  <rect x="16" y="16" width="468" height="468" rx="6" fill="none" stroke="#854d0e" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.6"/>
+
+  <!-- Main Chart Diamond Boundaries -->
+  <!-- Outer Box -->
+  <rect x="40" y="40" width="420" height="420" fill="#fefce8" stroke="#854d0e" stroke-width="2.2"/>
+
+  <!-- Diagonal X Lines (Connecting corners) -->
+  <line x1="40" y1="40" x2="460" y2="460" stroke="#ca8a04" stroke-width="1.8"/>
+  <line x1="40" y1="460" x2="460" y2="40" stroke="#ca8a04" stroke-width="1.8"/>
+
+  <!-- Central Inner Diamond (Connecting midpoints of 4 outer edges) -->
+  <polygon points="250.0,40 460,250.0 250.0,460 40,250.0" fill="none" stroke="#ca8a04" stroke-width="2"/>
+
+  <!-- House 1 (Rashi 1: मेष) -->
+  <text x="250.0" y="157.6" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">1</text>
+  <text x="250.0" y="191.6" fill="#ea580c" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">सूर्य(Ex)</text>
+  <text x="250.0" y="207.6" fill="#d97706" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">गुरु</text>
+  <!-- House 2 (Rashi 2: वृषभ) -->
+  <text x="145.0" y="90.4" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">2</text>
+  <!-- House 3 (Rashi 3: मिथुन) -->
+  <text x="90.4" y="145.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">3</text>
+  <!-- House 4 (Rashi 4: कर्क) -->
+  <text x="157.6" y="250.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">4</text>
+  <text x="199.6" y="250.0" fill="#0284c7" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">चन्द्र(Own)</text>
+  <!-- House 5 (Rashi 5: सिंह) -->
+  <text x="90.4" y="355.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">5</text>
+  <!-- House 6 (Rashi 6: कन्या) -->
+  <text x="145.0" y="409.6" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">6</text>
+  <!-- House 7 (Rashi 7: तुला) -->
+  <text x="250.0" y="342.4" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">7</text>
+  <text x="250.0" y="300.4" fill="#4f46e5" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">शनि(Ex)</text>
+  <!-- House 8 (Rashi 8: वृश्चिक) -->
+  <text x="355.0" y="409.6" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">8</text>
+  <!-- House 9 (Rashi 9: धनु) -->
+  <text x="409.6" y="355.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">9</text>
+  <!-- House 10 (Rashi 10: मकर) -->
+  <text x="342.4" y="250.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">10</text>
+  <text x="300.4" y="250.0" fill="#dc2626" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">मंगल(Ex)</text>
+  <!-- House 11 (Rashi 11: कुंभ) -->
+  <text x="409.6" y="145.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">11</text>
+  <!-- House 12 (Rashi 12: मीन) -->
+  <text x="355.0" y="90.4" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">12</text>
+  <!-- Title & Subtitle Banner -->
+  <text x="250.0" y="30" fill="#854d0e" font-size="13" font-weight="bold" letter-spacing="1" text-anchor="middle">कालपुरुष कुण्डली (Kaalpurusha Lagna)</text>
+  <text x="250.0" y="482" fill="#78716c" font-size="9.5" font-style="italic" letter-spacing="0.5" text-anchor="middle">उच्च ग्रह एवं केन्द्र भाव दिग्बल स्थिति (Aries Ascendant)</text>
+</svg>
+  </div>
+  <figcaption class="chart-caption">चित्र १.१: कालपुरुष कुण्डली (Kaalpurusha Kundli) — उच्च ग्रह एवं केन्द्र-त्रिकोण भाव विन्यास</figcaption>
+</figure>
+<p>प्रत्येक भाव का शास्त्रीय नाम, उसका जीवन कारकत्व तथा प्राकृतिक स्वामी ग्रह नीचे दी गई सारणी में स्पष्ट किया गया है:</p>
+<div class="table-container"><table class="astro-book-table">
+<thead>
+<tr>
+<th style="text-align: left;">भाव क्रम</th>
+<th style="text-align: left;">शास्त्रीय नाम</th>
+<th style="text-align: left;">मुख्य जीवन कारकत्व (Significations)</th>
+<th style="text-align: left;">प्राकृतिक स्वामी</th>
+<th style="text-align: left;">श्रेणी</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>१ (प्रथम)</strong></td>
+<td style="text-align: left;">तनु भाव (Lagna)</td>
+<td style="text-align: left;">देह, वर्ण, रूप, आत्मबल, स्वास्थ्य, दीर्घायु, स्वभाव</td>
+<td style="text-align: left;">मेष (मंगल)</td>
+<td style="text-align: left;">केन्द्र / त्रिकोण</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>२ (द्वितीय)</strong></td>
+<td style="text-align: left;">धन भाव (Dhana)</td>
+<td style="text-align: left;">संचित धन, कुटुंब, वाणी, प्रारंभिक शिक्षा, दाहिनी आँख</td>
+<td style="text-align: left;">वृषभ (शुक्र)</td>
+<td style="text-align: left;">मारक भाव</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>३ (तृतीय)</strong></td>
+<td style="text-align: left;">सहज भाव (Sahaja)</td>
+<td style="text-align: left;">अनुज (छोटे भाई-बहन), पराक्रम, साहस, लेखन, लघु यात्राएं</td>
+<td style="text-align: left;">मिथुन (बुध)</td>
+<td style="text-align: left;">उपचय भाव</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>४ (चतुर्थ)</strong></td>
+<td style="text-align: left;">सुख भाव (Sukha)</td>
+<td style="text-align: left;">माता, गृह, भूमि, वाहन, अंतःकरण, मानसिक शांति, छाती</td>
+<td style="text-align: left;">कर्क (चन्द्रमा)</td>
+<td style="text-align: left;">केन्द्र भाव</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>५ (पंचम)</strong></td>
+<td style="text-align: left;">पुत्र भाव (Putra)</td>
+<td style="text-align: left;">संतान, पूर्वपुण्य, बुद्धि, मंत्र साधना, उच्च विवेक, प्रेम</td>
+<td style="text-align: left;">सिंह (सूर्य)</td>
+<td style="text-align: left;">त्रिकोण भाव</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>६ (षष्ठ)</strong></td>
+<td style="text-align: left;">शत्रु / रोग भाव (Ari)</td>
+<td style="text-align: left;">रोग, ऋण, शत्रु, प्रतिस्पर्धा, मामा, सेवा, दैनिक कार्य</td>
+<td style="text-align: left;">कन्या (बुध)</td>
+<td style="text-align: left;">त्रिक / उपचय</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>७ (सप्तम)</strong></td>
+<td style="text-align: left;">जाया / कलत्र (Yuvati)</td>
+<td style="text-align: left;">जीवनसाथी, साझेदारी, व्यापार, विदेश गमन, काम-वासना</td>
+<td style="text-align: left;">तुला (शुक्र)</td>
+<td style="text-align: left;">केन्द्र / मारक</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>८ (अष्टम)</strong></td>
+<td style="text-align: left;">आयु / रन्ध्र (Randhra)</td>
+<td style="text-align: left;">आयु, मृत्यु का कारण, गुप्त विद्याएं, आकस्मिक धन, संकट</td>
+<td style="text-align: left;">वृश्चिक (मंगल)</td>
+<td style="text-align: left;">त्रिक भाव</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>९ (नवम)</strong></td>
+<td style="text-align: left;">भाग्य / धर्म (Dharma)</td>
+<td style="text-align: left;">धर्म, गुरु, पिता, उच्च शिक्षा, तीर्थाटन, ईश्वरीय कृपा</td>
+<td style="text-align: left;">धनु (गुरु)</td>
+<td style="text-align: left;">परम त्रिकोण</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>१० (दशम)</strong></td>
+<td style="text-align: left;">कर्म भाव (Karma)</td>
+<td style="text-align: left;">आजीविका, प्रतिष्ठा, राज्य पद, सामाजिक अधिकार, घुटने</td>
+<td style="text-align: left;">मकर (शनि)</td>
+<td style="text-align: left;">परम केन्द्र</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>११ (एकादश)</strong></td>
+<td style="text-align: left;">लाभ भाव (Labha)</td>
+<td style="text-align: left;">आय, ज्येष्ठ भ्राता, मित्र मंडली, महत्वाकांक्षा पूर्ति</td>
+<td style="text-align: left;">कुंभ (शनि)</td>
+<td style="text-align: left;">उपचय भाव</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>१२ (द्वादश)</strong></td>
+<td style="text-align: left;">व्यय भाव (Vyaya)</td>
+<td style="text-align: left;">व्यय, मोक्ष, विदेश वास, शयन सुख, अस्पताल, जेल, हानि</td>
+<td style="text-align: left;">मीन (गुरु)</td>
+<td style="text-align: left;">त्रिक भाव</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3 id="functional-classification-of-houses">१.२ भावों का शास्त्रीय वर्गीकरण (Functional Classification of Houses)</h3>
+<p>महर्षि पराशर ने फलित के गहन विश्लेषण हेतु भावों को चार प्रमुख आध्यात्मिक व भौतिक श्रेणियों में विभाजित किया है:</p>
+<div class="callout callout-formula">
+  <div class="callout-header">
+    <span class="callout-badge">📐 SUTRA / सूत्र</span>
+    <span class="callout-title">केन्द्र एवं त्रिकोण का राजयोग सिद्धांत</span>
+  </div>
+  <div class="callout-body">
+केन्द्र भाव (१, ४, ७, १०) भगवान विष्णु के स्वरूप हैं (संरक्षण एवं भौतिक विस्तार)।  
+त्रिकोण भाव (१, ५, ९) देवी महालक्ष्मी के स्वरूप हैं (सौभाग्य एवं दैवीय कृपा)।  
+जब केन्द्र और त्रिकोण के स्वामियों का युति, दृष्टि अथवा राशि-परिवर्तन संबंध बनता है, तब प्रबल राजयोग की उत्पत्ति होती है।
+  </div>
+</div>
+<ol>
+<li><strong>केन्द्र भाव (१, ४, ७, १०):</strong> कुण्डली के चार मुख्य स्तंभ। ये जातक को भौतिक संसार में शक्ति, स्थिरता एवं सामाजिक संप्रभुता प्रदान करते हैं।</li>
+<li><strong>त्रिकोण भाव (१, ५, ९):</strong> सर्वाधिक शुभ एवं सात्विक भाव। नवम भाव परम भाग्य एवं पंचम भाव पूर्वजन्म की संचित मेधा है। प्रथम भाव केन्द्र और त्रिकोण दोनों होने से सर्वोत्कृष्ट है।</li>
+<li><strong>उपचय भाव (३, ६, १०, ११):</strong> वृद्धि के भाव। इन भावों में पापी ग्रह (सूर्य, मंगल, शनि, राहु) समय के साथ जातक को संघर्ष के पश्चात विजय और अपार सफलता दिलाते हैं।</li>
+<li><strong>त्रिक भाव (६, ८, १२):</strong> कष्ट, विघ्न एवं विसर्जन के भाव। ६ठा भाव रोग व ऋण का है, ८वां भाव मृत्यु व अप्रत्याशित परिवर्तनों का है, और १२वां भाव व्यय व मोक्ष का है।</li>
+<li><strong>मारक भाव (२, ७):</strong> जीवन ऊर्जा को सीमित करने वाले भाव। मारक दशा में स्वास्थ्य एवं आयु का विशेष विचार किया जाता है।</li>
+</ol>
+<hr />
+<h3 id="planetary-aspects-drishti">१.३ ग्रहों की दृष्टियां (Planetary Aspects / Drishti)</h3>
+<p>वैदिक ज्योतिष में ग्रह अपने स्थान के अतिरिक्त अन्य भावों को भी पूर्ण दृष्टि से देखते हैं:</p>
+<figure class="chart-figure" id="chart-aspect_wheel">
+  <div class="chart-svg-wrapper">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 460" width="100%" height="auto" class="vedic-aspect-svg" style="max-width:460px; background:#fffdfa; border-radius:12px; border:1px solid #854d0e;">
+  <!-- Aspect Mandala Wheel -->
+  <circle cx="230.0" cy="230.0" r="185.0" fill="none" stroke="#854d0e" stroke-width="1.8" />
+  <circle cx="230.0" cy="230.0" r="120.25" fill="none" stroke="#854d0e" stroke-width="1" stroke-dasharray="4,4" opacity="0.6"/>
+  <circle cx="230.0" cy="230.0" r="51.800000000000004" fill="#854d0e" fill-opacity="0.08" stroke="#854d0e" stroke-width="1.2"/>
+  <text x="230.0" y="230.0" fill="#854d0e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">पूर्ण दृष्टि</text>
+  <text x="230.0" y="244.0" fill="#78716c" font-size="8.5" text-anchor="middle" dominant-baseline="middle">Drishti Wheel</text>
+  <line x1="230.0" y1="230.0" x2="230.0" y2="45.0" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="230.0" cy="45.0" r="4" fill="#854d0e"/>
+  <text x="230.0" y="26.0" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">1. मेष</text>
+  <line x1="230.0" y1="230.0" x2="322.5" y2="69.78530029987886" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="322.5" cy="69.78530029987886" r="4" fill="#854d0e"/>
+  <text x="333.5" y="53.732741416621224" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">2. वृषभ</text>
+  <line x1="230.0" y1="230.0" x2="390.2146997001212" y2="137.5" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="390.2146997001212" cy="137.5" r="4" fill="#854d0e"/>
+  <text x="409.2672585833788" y="129.5" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">3. मिथुन</text>
+  <line x1="230.0" y1="230.0" x2="415.0" y2="230.0" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="415.0" cy="230.0" r="4" fill="#854d0e"/>
+  <text x="437.0" y="233.0" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">4. कर्क</text>
+  <line x1="230.0" y1="230.0" x2="390.2146997001212" y2="322.5" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="390.2146997001212" cy="322.5" r="4" fill="#854d0e"/>
+  <text x="409.2672585833788" y="336.5" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">5. सिंह</text>
+  <line x1="230.0" y1="230.0" x2="322.5" y2="390.2146997001212" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="322.5" cy="390.2146997001212" r="4" fill="#854d0e"/>
+  <text x="333.5" y="412.26725858337875" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">6. कन्या</text>
+  <line x1="230.0" y1="230.0" x2="230.0" y2="415.0" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="230.0" cy="415.0" r="4" fill="#854d0e"/>
+  <text x="230.0" y="440.0" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">7. तुला</text>
+  <line x1="230.0" y1="230.0" x2="137.50000000000006" y2="390.2146997001212" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="137.50000000000006" cy="390.2146997001212" r="4" fill="#854d0e"/>
+  <text x="126.50000000000004" y="412.26725858337886" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">8. वृश्चिक</text>
+  <line x1="230.0" y1="230.0" x2="69.78530029987883" y2="322.5" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="69.78530029987883" cy="322.5" r="4" fill="#854d0e"/>
+  <text x="50.732741416621195" y="336.5" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">9. धनु</text>
+  <line x1="230.0" y1="230.0" x2="45.0" y2="230.00000000000003" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="45.0" cy="230.00000000000003" r="4" fill="#854d0e"/>
+  <text x="23.0" y="233.00000000000003" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">10. मकर</text>
+  <line x1="230.0" y1="230.0" x2="69.78530029987886" y2="137.5" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="69.78530029987886" cy="137.5" r="4" fill="#854d0e"/>
+  <text x="50.732741416621224" y="129.49999999999997" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">11. कुंभ</text>
+  <line x1="230.0" y1="230.0" x2="137.49999999999991" y2="69.78530029987891" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="137.49999999999991" cy="69.78530029987891" r="4" fill="#854d0e"/>
+  <text x="126.49999999999991" y="53.73274141662125" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">12. मीन</text>
+</svg>
+  </div>
+  <figcaption class="chart-caption">चित्र १.२: ग्रहीय दृष्टि चक्र (Planetary Aspects & Drishti Matrix)</figcaption>
+</figure>
+<ul>
+<li><strong>सर्वग्रह दृष्टि:</strong> समस्त ग्रह अपने स्थित भाव से <strong>७वें भाव</strong> को पूर्ण (१००%) दृष्टि से देखते हैं।</li>
+<li><strong>मंगल की विशेष दृष्टियां:</strong> ७वें भाव के अतिरिक्त <strong>४थे</strong> एवं <strong>८वें</strong> भाव पर पूर्ण दृष्टि।</li>
+<li><strong>बृहस्पति (गुरु), राहु एवं केतु की विशेष दृष्टियां:</strong> ७वें भाव के अतिरिक्त <strong>५वें</strong> एवं <strong>९वें</strong> भाव पर अमृतमय पूर्ण दृष्टि।</li>
+<li><strong>शनि की विशेष दृष्टियां:</strong> ७वें भाव के अतिरिक्त <strong>३रे</strong> एवं <strong>१०वें</strong> भाव पर तीक्ष्ण पूर्ण दृष्टि।</li>
+</ul>
+<div class="callout callout-warning">
+  <div class="callout-header">
+    <span class="callout-badge">⚠️ सावधान (CAVEAT)</span>
+    <span class="callout-title">दृष्टि फल का नियम</span>
+  </div>
+  <div class="callout-body">
+शुभ ग्रहों (गुरु, शुक्र, बली बुध, पूर्ण चन्द्र) की दृष्टि जिस भाव या ग्रह पर पड़ती है, वह उस भाव के फलों में वृद्धि एवं दोषों का शमन करती है। इसके विपरीत, पापी ग्रहों (शनि, राहु, केतु, क्रूर मंगल) की दृष्टि अलगाव, विलंब अथवा व्याधि उत्पन्न करती है, किंतु आध्यात्मिक दृष्टि से वैराग्य प्रदान करती है।
+  </div>
+</div>
+      </section>
+      
+      <section class="chapter" id="chapter-02">
+        <h1 id="_1">अध्याय २: नवग्रह कारकत्व, १७ शास्त्रीय राजयोग एवं पंच महापुरुष</h1>
+<h2 id="chapter-2-navagraha-karakatva-17-classical-raja-yogas-transits">Chapter 2: Navagraha Karakatva, 17 Classical Raja Yogas &amp; Transits</h2>
+<div class="callout callout-shloka">
+  <div class="shloka-header">
+    <span class="shloka-emblem">ॐ</span>
+    <span class="shloka-source">फलदीपिका — मन्त्रेश्वर विरचित — ग्रह स्वरूप</span>
+  </div>
+  <div class="shloka-verse">
+    <p class='shloka-line'>सूर्योऽऽत्मा जगतस्तस्थुषश्चन्द्रमा मन उच्यते।</p><p class='shloka-line'>सत्त्वं कुजः सोमसुतो वाणी वाचस्पतिर्धियम्॥</p>
+  </div>
+</div>
+<p>नौ आकाशीय शक्तियां (सूर्य, चन्द्रमा, मंगल, बुध, गुरु, शुक्र, शनि, राहु, केतु) मानव चेतना, देह, विचार एवं कर्मफलों के प्रतिनिधि हैं। सूर्य आत्मा है, चन्द्रमा मन है, मंगल पराक्रम व रक्त है, बुध वाणी व विवेक है, बृहस्पति ज्ञान व प्रज्ञा है, शुक्र वीर्य व सौंदर्य है, शनि आयु व कर्मदंड है, तथा राहु व केतु प्रारब्ध के कर्म-बंधन हैं।</p>
+<hr />
+<h3 id="navagraha-significator-matrix">२.१ नवग्रह शास्त्रीय कारकत्व सारणी (Navagraha Significator Matrix)</h3>
+<p>नीचे दी गई सारणी में नवग्रहों के संपूर्ण शास्त्रीय कारकत्व, उच्च-नीच अंश तथा ग्रंथ संदर्भ संकलित किए गए हैं:</p>
+<div class="table-container"><table class="astro-book-table">
+<thead>
+<tr>
+<th style="text-align: left;">ग्रह</th>
+<th style="text-align: left;">देह व अवयव</th>
+<th style="text-align: left;">स्वभाव व मानसिक वृत्ति</th>
+<th style="text-align: left;">संबंध व स्वजन</th>
+<th style="text-align: left;">उच्च राशि (अंश)</th>
+<th style="text-align: left;">नीच राशि (अंश)</th>
+<th style="text-align: left;">मूलत्रिकोण</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>सूर्य (Sun)</strong></td>
+<td style="text-align: left;">हृदय, अस्थि, नेत्र तेज, प्राण-शक्ति</td>
+<td style="text-align: left;">आत्मसम्मान, राजसी तेज, नेतृत्व</td>
+<td style="text-align: left;">पिता, शासक, नरेश</td>
+<td style="text-align: left;">मेष (१०°)</td>
+<td style="text-align: left;">तुला (१०°)</td>
+<td style="text-align: left;">सिंह (०°-२०°)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>चन्द्र (Moon)</strong></td>
+<td style="text-align: left;">रक्त संचार, शारीरिक द्रव, आमाशय, मन</td>
+<td style="text-align: left;">संवेदनशीलता, शांति, कल्पनाशक्ति</td>
+<td style="text-align: left;">माता, राजसी स्त्रियां</td>
+<td style="text-align: left;">वृषभ (३°)</td>
+<td style="text-align: left;">वृश्चिक (३°)</td>
+<td style="text-align: left;">वृषभ (४°-३०°)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>मंगल (Mars)</strong></td>
+<td style="text-align: left;">मज्जा, रक्त कणिकाएं, मांसपेशियां, पित्त</td>
+<td style="text-align: left;">पराक्रम, क्रोध, त्वरित निर्णय, साहस</td>
+<td style="text-align: left;">अनुज (छोटा भाई), सेनापति</td>
+<td style="text-align: left;">मकर (२८°)</td>
+<td style="text-align: left;">कर्क (२८°)</td>
+<td style="text-align: left;">मेष (०°-१२°)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>बुध (Mercury)</strong></td>
+<td style="text-align: left;">तंत्रिका तंत्र, त्वचा, वाणी, मस्तिष्क</td>
+<td style="text-align: left;">तर्क, हास्य-विनोद, व्यापारिक बुद्धि</td>
+<td style="text-align: left;">मामा, मित्र, बहन, दूत</td>
+<td style="text-align: left;">कन्या (१५°)</td>
+<td style="text-align: left;">मीन (१५°)</td>
+<td style="text-align: left;">कन्या (१६°-२०°)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>गुरु (Jupiter)</strong></td>
+<td style="text-align: left;">यकृत (लिवर), वसा, कान, धमनियां</td>
+<td style="text-align: left;">सात्विकता, दया, धर्म-निष्ठा, विवेक</td>
+<td style="text-align: left;">गुरु, पुत्र, विद्वान, ब्राह्मण</td>
+<td style="text-align: left;">कर्क (५°)</td>
+<td style="text-align: left;">मकर (५°)</td>
+<td style="text-align: left;">धनु (०°-१०°)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>शुक्र (Venus)</strong></td>
+<td style="text-align: left;">वीर्य, प्रजनन अंग, सौंदर्य, नेत्र ज्योति</td>
+<td style="text-align: left;">रसिकता, कला, परिष्कार, ऐश्वर्य</td>
+<td style="text-align: left;">पत्नी, प्रेमिका, कलाकार</td>
+<td style="text-align: left;">मीन (२७°)</td>
+<td style="text-align: left;">कन्या (२७°)</td>
+<td style="text-align: left;">तुला (०°-१५°)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>शनि (Saturn)</strong></td>
+<td style="text-align: left;">स्नायु, पैर, दांत, अस्थि संधियां (जोड़)</td>
+<td style="text-align: left;">धैर्य, वैराग्य, अनुशासन, कर्मठता</td>
+<td style="text-align: left;">सेवक, श्रमिक, वृद्ध जन</td>
+<td style="text-align: left;">तुला (२०°)</td>
+<td style="text-align: left;">मेष (२०°)</td>
+<td style="text-align: left;">कुंभ (०°-२०°)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>राहु (Rahu)</strong></td>
+<td style="text-align: left;">श्वसन तंत्र, त्वचा रोग, विषाक्तता</td>
+<td style="text-align: left;">महत्वाकांक्षा, कूटनीति, विद्रोही भाव</td>
+<td style="text-align: left;">दादा, विदेशी जन, विधर्मी</td>
+<td style="text-align: left;">मिथुन / वृषभ</td>
+<td style="text-align: left;">धनु / वृश्चिक</td>
+<td style="text-align: left;">कुंभ</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>केतु (Ketu)</strong></td>
+<td style="text-align: left;">रीढ़, सूक्ष्म नाड़ियां, मोक्ष द्वार</td>
+<td style="text-align: left;">वैराग्य, अंतर्ज्ञान, मौन, संन्यास</td>
+<td style="text-align: left;">नाना, तपस्वी, गुप्त शत्रु</td>
+<td style="text-align: left;">धनु / वृश्चिक</td>
+<td style="text-align: left;">मिथुन / वृषभ</td>
+<td style="text-align: left;">मीन</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3 id="17-classical-raja-yogas">२.२ १७ शास्त्रीय राजयोग एवं पंच महापुरुष (17 Classical Raja Yogas)</h3>
+<p>शास्त्रीय ग्रंथों (बृहत्पाराशर, सारावली, फलदीपिका एवं जातक पारिजात) में वर्णित १७ प्रमुख राजयोग जातक को विपुल धन, सामाजिक ख्याति, राज्य सत्ता एवं अखंड अधिकार प्रदान करते हैं:</p>
+<figure class="chart-figure" id="chart-raja_yogas_chart">
+  <div class="chart-svg-wrapper">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="auto" class="vedic-chart-svg" style="max-width:500px; background:#fffdfa; border-radius:12px; font-family:'Georgia', 'Devanagari MT', 'Kohinoor Devanagari', serif; box-shadow:0 4px 18px rgba(0,0,0,0.06);">
+  <defs>
+    <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#ca8a04" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Border & Background -->
+  <rect x="12" y="12" width="476" height="476" rx="8" fill="#fffdfa" stroke="#854d0e" stroke-width="1.8"/>
+  <rect x="16" y="16" width="468" height="468" rx="6" fill="none" stroke="#854d0e" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.6"/>
+
+  <!-- Main Chart Diamond Boundaries -->
+  <!-- Outer Box -->
+  <rect x="40" y="40" width="420" height="420" fill="#fefce8" stroke="#854d0e" stroke-width="2.2"/>
+
+  <!-- Diagonal X Lines (Connecting corners) -->
+  <line x1="40" y1="40" x2="460" y2="460" stroke="#ca8a04" stroke-width="1.8"/>
+  <line x1="40" y1="460" x2="460" y2="40" stroke="#ca8a04" stroke-width="1.8"/>
+
+  <!-- Central Inner Diamond (Connecting midpoints of 4 outer edges) -->
+  <polygon points="250.0,40 460,250.0 250.0,460 40,250.0" fill="none" stroke="#ca8a04" stroke-width="2"/>
+
+  <!-- House 1 (Rashi 4: कर्क) -->
+  <text x="250.0" y="157.6" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">4</text>
+  <text x="250.0" y="191.6" fill="#d97706" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">गुरु(Ex)</text>
+  <text x="250.0" y="207.6" fill="#0284c7" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">चन्द्र</text>
+  <!-- House 2 (Rashi 5: सिंह) -->
+  <text x="145.0" y="90.4" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">5</text>
+  <!-- House 3 (Rashi 6: कन्या) -->
+  <text x="90.4" y="145.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">6</text>
+  <!-- House 4 (Rashi 7: तुला) -->
+  <text x="157.6" y="250.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">7</text>
+  <text x="199.6" y="250.0" fill="#db2777" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">शुक्र(Own)</text>
+  <!-- House 5 (Rashi 8: वृश्चिक) -->
+  <text x="90.4" y="355.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">8</text>
+  <!-- House 6 (Rashi 9: धनु) -->
+  <text x="145.0" y="409.6" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">9</text>
+  <!-- House 7 (Rashi 10: मकर) -->
+  <text x="250.0" y="342.4" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">10</text>
+  <text x="250.0" y="300.4" fill="#dc2626" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">मंगल(Ex)</text>
+  <!-- House 8 (Rashi 11: कुंभ) -->
+  <text x="355.0" y="409.6" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">11</text>
+  <!-- House 9 (Rashi 12: मीन) -->
+  <text x="409.6" y="355.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">12</text>
+  <!-- House 10 (Rashi 1: मेष) -->
+  <text x="342.4" y="250.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">1</text>
+  <text x="300.4" y="242.0" fill="#16a34a" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">बुध</text>
+  <text x="300.4" y="258.0" fill="#ea580c" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">सूर्य</text>
+  <!-- House 11 (Rashi 2: वृषभ) -->
+  <text x="409.6" y="145.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">2</text>
+  <!-- House 12 (Rashi 3: मिथुन) -->
+  <text x="355.0" y="90.4" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">3</text>
+  <!-- Title & Subtitle Banner -->
+  <text x="250.0" y="30" fill="#854d0e" font-size="13" font-weight="bold" letter-spacing="1" text-anchor="middle">पंच महापुरुष एवं गजकेसरी राजयोग</text>
+  <text x="250.0" y="482" fill="#78716c" font-size="9.5" font-style="italic" letter-spacing="0.5" text-anchor="middle">Classical Kendra-Trikona Synthesis (Cancer Lagna)</text>
+</svg>
+  </div>
+  <figcaption class="chart-caption">चित्र २.१: पंच महापुरुष एवं गजकेसरी राजयोग — केन्द्र-त्रिकोण भाव विन्यास (कर्क लग्न)</figcaption>
+</figure>
+<h4 id="the-5-imperial-yogas">१. पंच महापुरुष योग (The 5 Imperial Yogas)</h4>
+<p>जब भौमादि पांच ग्रह (मंगल, बुध, गुरु, शुक्र, शनि) अपनी <strong>स्वराशि, मूलत्रिकोण या उच्च राशि</strong> में होकर <strong>केन्द्र भाव (१, ४, ७, १०)</strong> में स्थित हों:</p>
+<ol>
+<li><strong>रुचक योग (मंगल):</strong> पराक्रमी, साहसी, सेनाध्यक्ष या पुलिस प्रमुख, तेजस्वी देह, भू-स्वामी।</li>
+<li><strong>भद्र योग (बुध):</strong> प्रखर विद्वान, अद्वितीय वक्ता, व्यापार में निपुण, दीर्घायु, तीव्र स्मरण शक्ति।</li>
+<li><strong>हंस योग (गुरु):</strong> धार्मिक, निष्कलंक चरित्र, शास्त्रवेत्ता, राजा या राष्ट्रपति द्वारा सम्मानित, सात्विक जीवन।</li>
+<li><strong>मालव्य योग (शुक्र):</strong> वैभवशाली, वाहनों व भवनों का स्वामी, कला-पारखी, सुखी दांपत्य, कामाकर्षक व्यक्तित्व।</li>
+<li><strong>शश योग (शनि):</strong> न्यायप्रिय, जन-समूह का नेता, दीर्घायु, कूटनीतिज्ञ, गुप्त साधनों से अपार धनार्जन।</li>
+</ol>
+<div class="callout callout-yoga">
+  <div class="callout-header">
+    <span class="callout-badge">⚜ RAJA YOGA</span>
+    <span class="callout-title">गजकेसरी राजयोग (Gajakesari Yoga)</span>
+  </div>
+  <div class="callout-body">
+**निर्माण नियम:** जब बृहस्पति चन्द्रमा से केन्द्र भाव (१, ४, ७, १०) में स्थित हो, और पाप ग्रहों से दृष्ट या अस्त न हो।  
+**शास्त्रीय फल:** गज (हाथी) के समान प्रचंड बल एवं केसरी (सिंह) के समान अदम्य शौर्य। जातक समाज में सम्मानित, नीतिवान, अमर कीर्ति प्राप्त करने वाला होता है।
+  </div>
+</div>
+<div class="callout callout-yoga">
+  <div class="callout-header">
+    <span class="callout-badge">⚜ RAJA YOGA</span>
+    <span class="callout-title">बुधादित्य योग (Budhaditya Yoga)</span>
+  </div>
+  <div class="callout-body">
+**निर्माण नियम:** सूर्य और बुध की किसी शुभ भाव (विशेषकर १, ५, ९, १०, ११) में युति हो, और बुध सूर्य के अत्यंत निकट होकर पूर्णतः अस्त न हो।  
+**शास्त्रीय फल:** कुशाग्र बुद्धि, प्रशासनिक कौशल, राजदरबार या कॉरपोरेट में सर्वोच्च पद, तार्किक विश्लेषण क्षमता।
+  </div>
+</div>
+<div class="callout callout-yoga">
+  <div class="callout-header">
+    <span class="callout-badge">⚜ RAJA YOGA</span>
+    <span class="callout-title">धर्म-कर्माधिपति राजयोग (Dharma-Karmadhipati Yoga)</span>
+  </div>
+  <div class="callout-body">
+**निर्माण नियम:** नवमेश (भाग्य भाव का स्वामी) एवं दशमेश (कर्म भाव का स्वामी) की युति, दृष्टि संबंध अथवा परस्पर राशि-परिवर्तन हो।  
+**शास्त्रीय फल:** वैदिक ज्योतिष का सर्वोत्तम राजयोग। जातक धर्मपूर्वक राज्य संचालन करता है, विपुल ऐश्वर्य भोगता है और लोक-कल्याणकारी कार्यों से अमर हो जाता है।
+  </div>
+</div>
+<div class="callout callout-yoga">
+  <div class="callout-header">
+    <span class="callout-badge">⚜ RAJA YOGA</span>
+    <span class="callout-title">नीचभंग राजयोग (Neechabhanga Raja Yoga)</span>
+  </div>
+  <div class="callout-body">
+**शास्त्रीय नियम:** नीच राशि में स्थित ग्रह का नीचत्व निम्न ४ नियमों से भंग होता है:
+१. नीच ग्रह जिस राशि में बैठा है, उसका स्वामी केन्द्र में हो।
+२. नीच ग्रह जिस राशि में उच्च होता है, उसका स्वामी लग्न या चन्द्र से केन्द्र में हो।
+३. नीच ग्रह पर उसकी उच्च राशि के स्वामी की पूर्ण दृष्टि हो।
+४. नीच ग्रह चन्द्र लग्न से केन्द्र भाव में स्थित हो।  
+**फल:** प्रारंभिक जीवन में तीव्र संघर्ष, तत्पश्चात चक्रवर्ती सम्राट या उद्योगपति के समान अप्रत्याशित उत्थान।
+  </div>
+</div>
+<hr />
+<h3 id="viparita-raja-yogas-harsha-sarala-vimala">२.३ विपरीत राजयोग (Viparita Raja Yogas: Harsha, Sarala, Vimala)</h3>
+<figure class="chart-figure" id="chart-viparita_chart">
+  <div class="chart-svg-wrapper">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="auto" class="vedic-chart-svg" style="max-width:500px; background:#fffdfa; border-radius:12px; font-family:'Georgia', 'Devanagari MT', 'Kohinoor Devanagari', serif; box-shadow:0 4px 18px rgba(0,0,0,0.06);">
+  <defs>
+    <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#ca8a04" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Border & Background -->
+  <rect x="12" y="12" width="476" height="476" rx="8" fill="#fffdfa" stroke="#854d0e" stroke-width="1.8"/>
+  <rect x="16" y="16" width="468" height="468" rx="6" fill="none" stroke="#854d0e" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.6"/>
+
+  <!-- Main Chart Diamond Boundaries -->
+  <!-- Outer Box -->
+  <rect x="40" y="40" width="420" height="420" fill="#fefce8" stroke="#854d0e" stroke-width="2.2"/>
+
+  <!-- Diagonal X Lines (Connecting corners) -->
+  <line x1="40" y1="40" x2="460" y2="460" stroke="#ca8a04" stroke-width="1.8"/>
+  <line x1="40" y1="460" x2="460" y2="40" stroke="#ca8a04" stroke-width="1.8"/>
+
+  <!-- Central Inner Diamond (Connecting midpoints of 4 outer edges) -->
+  <polygon points="250.0,40 460,250.0 250.0,460 40,250.0" fill="none" stroke="#ca8a04" stroke-width="2"/>
+
+  <!-- House 1 (Rashi 7: तुला) -->
+  <text x="250.0" y="157.6" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">7</text>
+  <text x="250.0" y="199.6" fill="#4f46e5" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">शनि(Ex)</text>
+  <!-- House 2 (Rashi 8: वृश्चिक) -->
+  <text x="145.0" y="90.4" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">8</text>
+  <!-- House 3 (Rashi 9: धनु) -->
+  <text x="90.4" y="145.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">9</text>
+  <!-- House 4 (Rashi 10: मकर) -->
+  <text x="157.6" y="250.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">10</text>
+  <!-- House 5 (Rashi 11: कुंभ) -->
+  <text x="90.4" y="355.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">11</text>
+  <!-- House 6 (Rashi 12: मीन) -->
+  <text x="145.0" y="409.6" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">12</text>
+  <text x="145.0" y="367.6" fill="#d97706" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">गुरु(Own)</text>
+  <!-- House 7 (Rashi 1: मेष) -->
+  <text x="250.0" y="342.4" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">1</text>
+  <!-- House 8 (Rashi 2: वृषभ) -->
+  <text x="355.0" y="409.6" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">2</text>
+  <text x="355.0" y="367.6" fill="#db2777" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">शुक्र(Own)</text>
+  <!-- House 9 (Rashi 3: मिथुन) -->
+  <text x="409.6" y="355.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">3</text>
+  <!-- House 10 (Rashi 4: कर्क) -->
+  <text x="342.4" y="250.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">4</text>
+  <!-- House 11 (Rashi 5: सिंह) -->
+  <text x="409.6" y="145.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">5</text>
+  <!-- House 12 (Rashi 6: कन्या) -->
+  <text x="355.0" y="90.4" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">6</text>
+  <text x="355.0" y="132.4" fill="#16a34a" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">बुध(Ex)</text>
+  <!-- Title & Subtitle Banner -->
+  <text x="250.0" y="30" fill="#854d0e" font-size="13" font-weight="bold" letter-spacing="1" text-anchor="middle">हर्ष, सरल एवं विमल विपरीत राजयोग</text>
+  <text x="250.0" y="482" fill="#78716c" font-size="9.5" font-style="italic" letter-spacing="0.5" text-anchor="middle">Trika Bhava Neutralization &amp; Unconventional Elevation</text>
+</svg>
+  </div>
+  <figcaption class="chart-caption">चित्र २.२: त्रिक भावों (६, ८, १२) से निर्मित हर्ष, सरल एवं विमल विपरीत राजयोग (तुला लग्न)</figcaption>
+</figure>
+<p>त्रिक भाव (६, ८, १२) सामान्यतः विनाशकारी माने जाते हैं, किंतु जब इन अशुभ भावों के स्वामी परस्पर केवल त्रिक भावों में ही स्थित हों और किसी शुभ भाव के स्वामी से युत न हों, तो यह "माइनस गुणा माइनस बराबर प्लस" के नियम से प्रचंड राजयोग उत्पन्न करते हैं:</p>
+<div class="table-container"><table class="astro-book-table">
+<thead>
+<tr>
+<th style="text-align: left;">विपरीत राजयोग</th>
+<th style="text-align: left;">निर्माण नियम (Formation Rule)</th>
+<th style="text-align: left;">शास्त्रीय फल (Predictive Outcome)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>हर्ष योग (Harsha Yoga)</strong></td>
+<td style="text-align: left;">६ठे भाव का स्वामी केवल ६ठे, ८वें या १२वें भाव में स्थित हो।</td>
+<td style="text-align: left;">शत्रुओं का समूल नाश, अटूट स्वास्थ्य, विपत्तियों में दैवीय रक्षा, न्यायालय में विजय।</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>सरल योग (Sarala Yoga)</strong></td>
+<td style="text-align: left;">८वें भाव का स्वामी केवल ६ठे, ८वें या १२वें भाव में स्थित हो।</td>
+<td style="text-align: left;">जातक निर्भय, दीर्घायु, अकूत गुप्त संपत्ति का स्वामी, संकटों को अवसर में बदलने वाला।</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>विमल योग (Vimala Yoga)</strong></td>
+<td style="text-align: left;">१२वें भाव का स्वामी केवल ६ठे, ८वें या १२वें भाव में स्थित हो।</td>
+<td style="text-align: left;">स्वतंत्र विचार, अपार आध्यात्मिक शांति, न्यूनतम व्यय से महान साम्राज्य की स्थापना।</td>
+</tr>
+</tbody>
+</table></div>
+      </section>
+      
+      <section class="chapter" id="chapter-03">
+        <h1 id="_1">अध्याय ३: राशि चक्र, २७ नक्षत्र एवं विंशोत्तरी महादशा</h1>
+<h2 id="chapter-3-zodiac-signs-27-lunar-mansions-vimshottari-mahadasha">Chapter 3: Zodiac Signs, 27 Lunar Mansions &amp; Vimshottari Mahadasha</h2>
+<div class="callout callout-shloka">
+  <div class="shloka-header">
+    <span class="shloka-emblem">ॐ</span>
+    <span class="shloka-source">बृहज्जातकम् — वराहमिहिर — राशि स्वरूप</span>
+  </div>
+  <div class="shloka-verse">
+    <p class='shloka-line'>क्षेत्राणि भानि भवनानि च राशयश्च।</p><p class='shloka-line'>मेषादयो नवभिरंघ्रिभिरृक्षमेकम्॥</p>
+  </div>
+</div>
+<p>आकाश मंडल ३६० अंश (Degrees) का एक पूर्ण वृत्त है, जिसे १२ राशियों (प्रत्येक ३० अंश) तथा २७ नक्षत्रों (प्रत्येक १३ अंश २० कला) में विभाजित किया गया है। प्रत्येक नक्षत्र में ४ चरण या पद होते हैं (प्रत्येक पद ३ अंश २० कला)। संपूर्ण राशि चक्र में कुल १०८ नक्षत्र पद होते हैं (२७ × ४ = १०८), जो भारतीय वैदिक गणित का आधार हैं।</p>
+<hr />
+<h3 id="12-zodiac-signs-matrix">३.१ द्वादश राशि तत्व एवं गति स्वभाव (12 Zodiac Signs Matrix)</h3>
+<div class="table-container"><table class="astro-book-table">
+<thead>
+<tr>
+<th style="text-align: left;">राशि क्रम</th>
+<th style="text-align: left;">नाम (Sanskrit / English)</th>
+<th style="text-align: left;">तत्व (Element)</th>
+<th style="text-align: left;">स्वभाव (Modality)</th>
+<th style="text-align: left;">स्वामी ग्रह</th>
+<th style="text-align: left;">शरीर का अंग</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>१</strong></td>
+<td style="text-align: left;">मेष (Aries)</td>
+<td style="text-align: left;">अग्नि (Fire)</td>
+<td style="text-align: left;">चर (Movable)</td>
+<td style="text-align: left;">मंगल (Mars)</td>
+<td style="text-align: left;">मस्तक, कपाल</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>२</strong></td>
+<td style="text-align: left;">वृषभ (Taurus)</td>
+<td style="text-align: left;">पृथ्वी (Earth)</td>
+<td style="text-align: left;">स्थिर (Fixed)</td>
+<td style="text-align: left;">शुक्र (Venus)</td>
+<td style="text-align: left;">मुख, गला, वाणी</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>३</strong></td>
+<td style="text-align: left;">मिथुन (Gemini)</td>
+<td style="text-align: left;">वायु (Air)</td>
+<td style="text-align: left;">द्विस्वभाव (Dual)</td>
+<td style="text-align: left;">बुध (Mercury)</td>
+<td style="text-align: left;">कंधे, हाथ, श्वसन नलिका</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>४</strong></td>
+<td style="text-align: left;">कर्क (Cancer)</td>
+<td style="text-align: left;">जल (Water)</td>
+<td style="text-align: left;">चर (Movable)</td>
+<td style="text-align: left;">चन्द्रमा (Moon)</td>
+<td style="text-align: left;">छाती, स्तन, हृदय</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>५</strong></td>
+<td style="text-align: left;">सिंह (Leo)</td>
+<td style="text-align: left;">अग्नि (Fire)</td>
+<td style="text-align: left;">स्थिर (Fixed)</td>
+<td style="text-align: left;">सूर्य (Sun)</td>
+<td style="text-align: left;">पेट, रीढ़ की हड्डी</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>६</strong></td>
+<td style="text-align: left;">कन्या (Virgo)</td>
+<td style="text-align: left;">पृथ्वी (Earth)</td>
+<td style="text-align: left;">द्विस्वभाव (Dual)</td>
+<td style="text-align: left;">बुध (Mercury)</td>
+<td style="text-align: left;">आंतें, कमर, उदर गुहा</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>७</strong></td>
+<td style="text-align: left;">तुला (Libra)</td>
+<td style="text-align: left;">वायु (Air)</td>
+<td style="text-align: left;">चर (Movable)</td>
+<td style="text-align: left;">शुक्र (Venus)</td>
+<td style="text-align: left;">गुर्दे (Kidneys), कटि प्रदेश</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>८</strong></td>
+<td style="text-align: left;">वृश्चिक (Scorpio)</td>
+<td style="text-align: left;">जल (Water)</td>
+<td style="text-align: left;">स्थिर (Fixed)</td>
+<td style="text-align: left;">मंगल (Mars)</td>
+<td style="text-align: left;">जननांग, गुदा, मूत्राशय</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>९</strong></td>
+<td style="text-align: left;">धनु (Sagittarius)</td>
+<td style="text-align: left;">अग्नि (Fire)</td>
+<td style="text-align: left;">द्विस्वभाव (Dual)</td>
+<td style="text-align: left;">गुरु (Jupiter)</td>
+<td style="text-align: left;">जंघाएं (Thighs), नितंब</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>१०</strong></td>
+<td style="text-align: left;">मकर (Capricorn)</td>
+<td style="text-align: left;">पृथ्वी (Earth)</td>
+<td style="text-align: left;">चर (Movable)</td>
+<td style="text-align: left;">शनि (Saturn)</td>
+<td style="text-align: left;">घुटने, कंकाल संधि</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>११</strong></td>
+<td style="text-align: left;">कुंभ (Aquarius)</td>
+<td style="text-align: left;">वायु (Air)</td>
+<td style="text-align: left;">स्थिर (Fixed)</td>
+<td style="text-align: left;">शनि (Saturn)</td>
+<td style="text-align: left;">पिंडलियां, टखने</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>१२</strong></td>
+<td style="text-align: left;">मीन (Pisces)</td>
+<td style="text-align: left;">जल (Water)</td>
+<td style="text-align: left;">द्विस्वभाव (Dual)</td>
+<td style="text-align: left;">गुरु (Jupiter)</td>
+<td style="text-align: left;">पैर के तलवे, अंगूठे</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3 id="the-27-nakshatras">३.२ २७ नक्षत्र, उनके स्वामी एवं अधिष्ठाता देवता (The 27 Nakshatras)</h3>
+<p>प्रत्येक नक्षत्र के स्वामी ग्रह विंशोत्तरी दशा का आरंभ बिंदु निर्धारित करते हैं:</p>
+<div class="table-container"><table class="astro-book-table">
+<thead>
+<tr>
+<th style="text-align: left;">नक्षत्र क्रम</th>
+<th style="text-align: left;">नक्षत्र नाम</th>
+<th style="text-align: left;">विस्तार (Degrees)</th>
+<th style="text-align: left;">नक्षत्र स्वामी ग्रह</th>
+<th style="text-align: left;">अधिष्ठाता देवता</th>
+<th style="text-align: left;">प्रतीक</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>१</strong></td>
+<td style="text-align: left;">अश्विनी (Ashwini)</td>
+<td style="text-align: left;">०°००' - १३°२०' मेष</td>
+<td style="text-align: left;">केतु</td>
+<td style="text-align: left;">अश्विनी कुमार (देव-वैद्य)</td>
+<td style="text-align: left;">अश्व का मुख</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>२</strong></td>
+<td style="text-align: left;">भरणी (Bharani)</td>
+<td style="text-align: left;">१३°२०' - २६°४०' मेष</td>
+<td style="text-align: left;">शुक्र</td>
+<td style="text-align: left;">यमराज (न्याय व धर्म)</td>
+<td style="text-align: left;">योनि / त्रिकोण</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>३</strong></td>
+<td style="text-align: left;">कृत्तिका (Krittika)</td>
+<td style="text-align: left;">२६°४०' मेष - १०°००' वृषभ</td>
+<td style="text-align: left;">सूर्य</td>
+<td style="text-align: left;">अग्नि देव (तेज व शुद्धि)</td>
+<td style="text-align: left;">उस्तरा / ज्वाला</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>४</strong></td>
+<td style="text-align: left;">रोहिणी (Rohini)</td>
+<td style="text-align: left;">१०°००' - २३°२०' वृषभ</td>
+<td style="text-align: left;">चन्द्रमा</td>
+<td style="text-align: left;">ब्रह्मा / प्रजापति</td>
+<td style="text-align: left;">रथ / बैलगाड़ी</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>५</strong></td>
+<td style="text-align: left;">मृगशिरा (Mrigashira)</td>
+<td style="text-align: left;">२३°२०' वृषभ - ६°४०' मिथुन</td>
+<td style="text-align: left;">मंगल</td>
+<td style="text-align: left;">सोम (अमृत व चन्द्र)</td>
+<td style="text-align: left;">हिरण का सिर</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>६</strong></td>
+<td style="text-align: left;">आर्द्रा (Ardra)</td>
+<td style="text-align: left;">६°४०' - २०°००' मिथुन</td>
+<td style="text-align: left;">राहु</td>
+<td style="text-align: left;">रुद्र (तूफान व प्रलय)</td>
+<td style="text-align: left;">अश्रु बिंदु / मणि</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>७</strong></td>
+<td style="text-align: left;">पुनर्वसु (Punarvasu)</td>
+<td style="text-align: left;">२०°००' मिथुन - ३°२०' कर्क</td>
+<td style="text-align: left;">गुरु</td>
+<td style="text-align: left;">अदिति (देवमाता)</td>
+<td style="text-align: left;">बाणों का तरकश</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>८</strong></td>
+<td style="text-align: left;">पुष्य (Pushya)</td>
+<td style="text-align: left;">३°२०' - १६°४०' कर्क</td>
+<td style="text-align: left;">शनि</td>
+<td style="text-align: left;">बृहस्पति (दिव्य ज्ञान)</td>
+<td style="text-align: left;">गाय का थन / कमल</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>९</strong></td>
+<td style="text-align: left;">आश्लेषा (Ashlesha)</td>
+<td style="text-align: left;">१६°४०' - ३०°००' कर्क</td>
+<td style="text-align: left;">बुध</td>
+<td style="text-align: left;">सर्प / नागराज</td>
+<td style="text-align: left;">कुण्डलित सर्प</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>१०</strong></td>
+<td style="text-align: left;">मघा (Magha)</td>
+<td style="text-align: left;">०°००' - १३°२०' सिंह</td>
+<td style="text-align: left;">केतु</td>
+<td style="text-align: left;">पितृ गण (पूर्वज)</td>
+<td style="text-align: left;">राज सिंहासन</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>११</strong></td>
+<td style="text-align: left;">पूर्वाफाल्गुनी (Purva Phalguni)</td>
+<td style="text-align: left;">१३°२०' - २६°४०' सिंह</td>
+<td style="text-align: left;">शुक्र</td>
+<td style="text-align: left;">भग (ऐश्वर्य व सौभाग्य)</td>
+<td style="text-align: left;">शय्या (झूला)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>१२</strong></td>
+<td style="text-align: left;">उत्तराफाल्गुनी (Uttara Phalguni)</td>
+<td style="text-align: left;">२६°४०' सिंह - १०°००' कन्या</td>
+<td style="text-align: left;">सूर्य</td>
+<td style="text-align: left;">अर्यमा (सत्य व न्याय)</td>
+<td style="text-align: left;">मंच / शैय्या</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>१३</strong></td>
+<td style="text-align: left;">हस्त (Hasta)</td>
+<td style="text-align: left;">१०°००' - २३°२०' कन्या</td>
+<td style="text-align: left;">चन्द्रमा</td>
+<td style="text-align: left;">सविता (सूर्य की जीवन ऊर्जा)</td>
+<td style="text-align: left;">खुला हुआ हाथ</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>१४</strong></td>
+<td style="text-align: left;">चित्रा (Chitra)</td>
+<td style="text-align: left;">२३°२०' कन्या - ६°४०' तुला</td>
+<td style="text-align: left;">मंगल</td>
+<td style="text-align: left;">त्वष्टा / विश्वकर्मा</td>
+<td style="text-align: left;">चमकीला रत्न</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>१५</strong></td>
+<td style="text-align: left;">स्वाति (Swati)</td>
+<td style="text-align: left;">६°४०' - २०°००' तुला</td>
+<td style="text-align: left;">राहु</td>
+<td style="text-align: left;">वायु देव (गति व स्वतंत्रता)</td>
+<td style="text-align: left;">मूंगे का पौधा</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>१६</strong></td>
+<td style="text-align: left;">विशाखा (Vishakha)</td>
+<td style="text-align: left;">२०°००' तुला - ३°२०' वृश्चिक</td>
+<td style="text-align: left;">गुरु</td>
+<td style="text-align: left;">इंद्राग्नि (इंद्र व अग्नि)</td>
+<td style="text-align: left;">तोरण द्वार</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>१७</strong></td>
+<td style="text-align: left;">अनुराधा (Anuradha)</td>
+<td style="text-align: left;">३°२०' - १६°४०' वृश्चिक</td>
+<td style="text-align: left;">शनि</td>
+<td style="text-align: left;">मित्र देव (मैत्री व सहयोग)</td>
+<td style="text-align: left;">विजय पताका</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>१८</strong></td>
+<td style="text-align: left;">ज्येष्ठा (Jyeshtha)</td>
+<td style="text-align: left;">१६°४०' - ३०°००' वृश्चिक</td>
+<td style="text-align: left;">बुध</td>
+<td style="text-align: left;">इंद्र (देवराज)</td>
+<td style="text-align: left;">कुंडल / छत्र</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>१९</strong></td>
+<td style="text-align: left;">मूल (Moola)</td>
+<td style="text-align: left;">०°००' - १३°२०' धनु</td>
+<td style="text-align: left;">केतु</td>
+<td style="text-align: left;">निर्ऋति (विनाश व पुनरुत्थान)</td>
+<td style="text-align: left;">जड़ों का गुच्छा</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>२०</strong></td>
+<td style="text-align: left;">पूर्वाषाढ़ा (Purva Ashadha)</td>
+<td style="text-align: left;">१३°२०' - २६°४०' धनु</td>
+<td style="text-align: left;">शुक्र</td>
+<td style="text-align: left;">अपः (जल देव)</td>
+<td style="text-align: left;">पंखा / सूप</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>२१</strong></td>
+<td style="text-align: left;">उत्तराषाढ़ा (Uttara Ashadha)</td>
+<td style="text-align: left;">२६°४०' धनु - १०°००' मकर</td>
+<td style="text-align: left;">सूर्य</td>
+<td style="text-align: left;">विश्वेदेव (समस्त देवता)</td>
+<td style="text-align: left;">हाथी का दांत</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>२२</strong></td>
+<td style="text-align: left;">श्रवण (Shravana)</td>
+<td style="text-align: left;">१०°००' - २३°२०' मकर</td>
+<td style="text-align: left;">चन्द्रमा</td>
+<td style="text-align: left;">भगवान विष्णु (संरक्षक)</td>
+<td style="text-align: left;">तीन पद / कान</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>२३</strong></td>
+<td style="text-align: left;">धनिष्ठा (Dhanishta)</td>
+<td style="text-align: left;">२३°२०' मकर - ६°४०' कुंभ</td>
+<td style="text-align: left;">मंगल</td>
+<td style="text-align: left;">अष्ट वसु (भौतिक समृद्धि)</td>
+<td style="text-align: left;">मृदंग / ढोल</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>२४</strong></td>
+<td style="text-align: left;">शतभिषा (Shatabhisha)</td>
+<td style="text-align: left;">६°४०' - २०°००' कुंभ</td>
+<td style="text-align: left;">राहु</td>
+<td style="text-align: left;">वरुण (सागर व अंतरिक्ष)</td>
+<td style="text-align: left;">१०० चिकित्सकों का वृत्त</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>२५</strong></td>
+<td style="text-align: left;">पूर्वाभाद्रपद (Purva Bhadrapada)</td>
+<td style="text-align: left;">२०°००' कुंभ - ३°२०' मीन</td>
+<td style="text-align: left;">गुरु</td>
+<td style="text-align: left;">अज एकपाद (अग्नि नाग)</td>
+<td style="text-align: left;">तलवार / दो मुख</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>२६</strong></td>
+<td style="text-align: left;">उत्तराभाद्रपद (Uttara Bhadrapada)</td>
+<td style="text-align: left;">३°२०' - १६°४०' मीन</td>
+<td style="text-align: left;">शनि</td>
+<td style="text-align: left;">अहिर्बुध्न्य (समुद्री शेषनाग)</td>
+<td style="text-align: left;">जुड़वां / सर्प</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>२७</strong></td>
+<td style="text-align: left;">रेवती (Revati)</td>
+<td style="text-align: left;">१६°४०' - ३०°००' मीन</td>
+<td style="text-align: left;">बुध</td>
+<td style="text-align: left;">पूषा (पोषण व मार्गदर्शक)</td>
+<td style="text-align: left;">मछली का युगल</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3 id="120-year-vimshottari-mahadasha">३.३ १२० वर्षीय विंशोत्तरी महादशा चक्र (120-Year Vimshottari Mahadasha)</h3>
+<p>वैदिक ज्योतिष में काल-गणना एवं फलित समय-निर्धारण (Timing of Events) का मुख्य आधार <strong>विंशोत्तरी महादशा</strong> है। मानव की पूर्ण आयु १२० वर्ष मानकर इसे ९ ग्रहों में शास्त्रीय अनुपात में बांटा गया है:</p>
+<div class="callout callout-formula">
+  <div class="callout-header">
+    <span class="callout-badge">📐 SUTRA / सूत्र</span>
+    <span class="callout-title">विंशोत्तरी दशा क्रम एवं भुक्ति काल</span>
+  </div>
+  <div class="callout-body">
+दशा क्रम निश्चित है:  
+केतु (७ वर्ष) ➔ शुक्र (२० वर्ष) ➔ सूर्य (६ वर्ष) ➔ चन्द्रमा (१० वर्ष) ➔ मंगल (७ वर्ष) ➔ राहु (१८ वर्ष) ➔ गुरु (१६ वर्ष) ➔ शनि (१९ वर्ष) ➔ बुध (१७ वर्ष)  
+कुल योग = १२० वर्ष
+  </div>
+</div>
+<div class="table-container"><table class="astro-book-table">
+<thead>
+<tr>
+<th style="text-align: left;">दशा क्रम</th>
+<th style="text-align: left;">ग्रह</th>
+<th style="text-align: left;">महादशा अवधि (वर्ष)</th>
+<th style="text-align: left;">मुख्य प्रभाव एवं फलित दृष्टिकोण</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>१</strong></td>
+<td style="text-align: left;">केतु (Ketu)</td>
+<td style="text-align: left;"><strong>७ वर्ष</strong></td>
+<td style="text-align: left;">आध्यात्मिक उन्मेष, भौतिक विरक्ति, आकस्मिक परिवर्तन, गुप्त विद्याओं की ओर झुकाव</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>२</strong></td>
+<td style="text-align: left;">शुक्र (Venus)</td>
+<td style="text-align: left;"><strong>२० वर्ष</strong></td>
+<td style="text-align: left;">भौतिक ऐश्वर्य, विवाह, वाहन, सौंदर्य, कला, व्यापारिक विस्तार, विलास</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>३</strong></td>
+<td style="text-align: left;">सूर्य (Sun)</td>
+<td style="text-align: left;"><strong>६ वर्ष</strong></td>
+<td style="text-align: left;">आत्मबल, प्रशासनिक अधिकार, सरकारी सम्मान, पिता का सहयोग, नेत्र व स्वास्थ्य विचार</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>४</strong></td>
+<td style="text-align: left;">चन्द्र (Moon)</td>
+<td style="text-align: left;"><strong>१० वर्ष</strong></td>
+<td style="text-align: left;">मानसिक शांति, माता का सुख, यात्राएं, कल्पनाशक्ति, जन-समर्थन, रचनात्मकता</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>५</strong></td>
+<td style="text-align: left;">मंगल (Mars)</td>
+<td style="text-align: left;"><strong>७ वर्ष</strong></td>
+<td style="text-align: left;">साहस, भूमि क्रय-विक्रय, रक्त व मज्जा की सक्रियता, तकनीकी कार्य, विवाद अथवा विजय</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>६</strong></td>
+<td style="text-align: left;">राहु (Rahu)</td>
+<td style="text-align: left;"><strong>१८ वर्ष</strong></td>
+<td style="text-align: left;">तीव्र महत्वाकांक्षा, विदेशी यात्राएं, अकूत धनार्जन, अप्रत्याशित उत्थान-पतन, कूटनीति</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>७</strong></td>
+<td style="text-align: left;">गुरु (Jupiter)</td>
+<td style="text-align: left;"><strong>१६ वर्ष</strong></td>
+<td style="text-align: left;">ज्ञान, संतान प्राप्ति, धर्मानुष्ठान, उच्च पद, गुरु कृपा, विवेक एवं आर्थिक स्थिरता</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>८</strong></td>
+<td style="text-align: left;">शनि (Saturn)</td>
+<td style="text-align: left;"><strong>१९ वर्ष</strong></td>
+<td style="text-align: left;">कठोर परिश्रम, अनुशासन, कर्मफल भुगतान, जन-सामान्य से जुड़ाव, दीर्घकालिक सफलता</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>९</strong></td>
+<td style="text-align: left;">बुध (Mercury)</td>
+<td style="text-align: left;"><strong>१७ वर्ष</strong></td>
+<td style="text-align: left;">व्यापारिक उन्नति, संचार, लेखा, लेखन, तार्किक विवेक, बौद्धिक शिखर</td>
+</tr>
+</tbody>
+</table></div>
+      </section>
+      
+      <section class="chapter" id="chapter-04">
+        <h1 id="_1">अध्याय ४: दीप्तादि ९ अवस्थाएं एवं भावों में सूर्य फल</h1>
+<h2 id="chapter-4-deeptadi-9-planetary-states-solar-house-positions">Chapter 4: Deeptadi 9 Planetary States &amp; Solar House Positions</h2>
+<div class="callout callout-shloka">
+  <div class="shloka-header">
+    <span class="shloka-emblem">ॐ</span>
+    <span class="shloka-source">सारावली — कल्याण वर्मा — दीप्तादि अवस्था फल</span>
+  </div>
+  <div class="shloka-verse">
+    <p class='shloka-line'>दीप्तः स्वोच्चे स्वस्थः स्वगृहे मुदितोऽधिमित्रे शान्तः सुहृदि।</p><p class='shloka-line'>दीनोऽसमर्थशत्रौ दुःखी विकलः खलोऽधमे कोपो रणे॥</p>
+  </div>
+</div>
+<p>कुण्डली में किसी ग्रह का केवल शुभ भाव में बैठना ही पर्याप्त नहीं होता, अपितु यह देखना अनिवार्य है कि वह ग्रह चेतना के किस स्तर पर कार्य कर रहा है। महर्षि पराशर एवं कल्याण वर्मा ने ग्रहों की <strong>९ दीप्तादि अवस्थाओं</strong> का प्रतिपादन किया है, जो ग्रह के वास्तविक शुभाशुभ फल की तीव्रता और गुणवत्ता निर्धारित करती हैं।</p>
+<hr />
+<h3 id="deeptadi-9-planetary-dignities">४.१ ग्रहों की दीप्तादि ९ अवस्थाएं (Deeptadi 9 Planetary Dignities)</h3>
+<div class="table-container"><table class="astro-book-table">
+<thead>
+<tr>
+<th style="text-align: left;">अवस्था क्रम</th>
+<th style="text-align: left;">अवस्था नाम</th>
+<th style="text-align: left;">स्थिति एवं खगोलीय मर्यादा (Astronomical Position)</th>
+<th style="text-align: left;">फल की तीव्रता (Potency)</th>
+<th style="text-align: left;">वास्तविक जीवन प्रभाव (Life Manifestation)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>१</strong></td>
+<td style="text-align: left;"><strong>दीप्त (Deepta)</strong></td>
+<td style="text-align: left;">ग्रह अपनी परम उच्च राशि (Exaltation) में स्थित हो।</td>
+<td style="text-align: left;">१००% पूर्ण शुभ फल</td>
+<td style="text-align: left;">राज्य सम्मान, अदम्य आत्मविश्वास, सार्वभौम कीर्ति, विपुल ऐश्वर्य।</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>२</strong></td>
+<td style="text-align: left;"><strong>स्वस्थ (Swastha)</strong></td>
+<td style="text-align: left;">ग्रह अपनी स्वराशि (Own Sign) या मूलत्रिकोण में हो।</td>
+<td style="text-align: left;">८५% उच्च शुभ फल</td>
+<td style="text-align: left;">स्थिरता, गृह-सुख, निष्कलंक स्वास्थ्य, स्वावलंबी जीवन, आत्म-संतोष।</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>३</strong></td>
+<td style="text-align: left;"><strong>मुदित (Mudita)</strong></td>
+<td style="text-align: left;">ग्रह अपने अधिमित्र (Great Friend) की राशि में हो।</td>
+<td style="text-align: left;">७५% शुभ फल</td>
+<td style="text-align: left;">प्रसन्नता, मित्रों व परिजनों का अटूट सहयोग, आर्थिक सुख, सुरुचिपूर्ण जीवन।</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>४</strong></td>
+<td style="text-align: left;"><strong>शांत (Shanta)</strong></td>
+<td style="text-align: left;">ग्रह अपने मित्र (Friend) की राशि में स्थित हो।</td>
+<td style="text-align: left;">६०% अनुकूल फल</td>
+<td style="text-align: left;">शांतिपूर्ण प्रगति, सहज कार्य सिद्धि, सामान्य सुख, धार्मिक अभिरुचि।</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>५</strong></td>
+<td style="text-align: left;"><strong>दीन (Deena)</strong></td>
+<td style="text-align: left;">ग्रह अपने सम (Neutral) ग्रह की राशि में स्थित हो।</td>
+<td style="text-align: left;">४०% मध्यम फल</td>
+<td style="text-align: left;">औसत जीवन, सामान्य संघर्ष, न विशेष हानि न विशेष लाभ।</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>६</strong></td>
+<td style="text-align: left;"><strong>दुखित (Dukhita)</strong></td>
+<td style="text-align: left;">ग्रह अपने शत्रु (Enemy) की राशि में स्थित हो।</td>
+<td style="text-align: left;">२५% कष्टप्रद फल</td>
+<td style="text-align: left;">मानसिक उद्वेग, पारिवारिक कलह, स्थान परिवर्तन, कार्यों में अकारण विघ्न।</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>७</strong></td>
+<td style="text-align: left;"><strong>विकल (Vikala)</strong></td>
+<td style="text-align: left;">ग्रह सूर्य की किरणों से अत्यंत निकट होकर <strong>अस्त (Combust)</strong> हो।</td>
+<td style="text-align: left;">१०% क्षीण फल</td>
+<td style="text-align: left;">आत्मबल का अभाव, रोग, संबंधियों से उपेक्षा, प्रयासों का श्रेय न मिलना।</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>८</strong></td>
+<td style="text-align: left;"><strong>खल (Khala)</strong></td>
+<td style="text-align: left;">ग्रह अपनी नीच राशि (Debilitation) में स्थित हो।</td>
+<td style="text-align: left;">०-१५% दूषित फल</td>
+<td style="text-align: left;">संकीर्ण मनोवृत्ति, आर्थिक संकट, अपयश, नीच संगति, असाध्य रोग।</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>९</strong></td>
+<td style="text-align: left;"><strong>कोप (Kopa)</strong></td>
+<td style="text-align: left;">ग्रह ग्रह-युद्ध (Planetary War) में अन्य ग्रह से पराजित हो।</td>
+<td style="text-align: left;">अत्यंत अनिष्ट फल</td>
+<td style="text-align: left;">धन-हानि, मानसिक अवसाद, पराजय का भय, परिजनों से घोर विछोह।</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3 id="the-five-fold-relationship-matrix">४.२ पंचधा मैत्री सिद्धांत (The Five-Fold Relationship Matrix)</h3>
+<p>ग्रहों के आपसी संबंध केवल स्थायी (नैसर्गिक) नहीं होते, अपितु कुण्डली में उनकी तात्कालिक स्थिति भी मित्रता या शत्रुता तय करती है:</p>
+<div class="callout callout-formula">
+  <div class="callout-header">
+    <span class="callout-badge">📐 SUTRA / सूत्र</span>
+    <span class="callout-title">पंचधा मैत्री गणना सूत्र</span>
+  </div>
+  <div class="callout-body">
+१. **नैसर्गिक मित्र + तात्कालिक मित्र** = **अधिमित्र (Great Friend)**  
+२. **नैसर्गिक मित्र + तात्कालिक सम/शत्रु** = **सम या मित्र**  
+३. **नैसर्गिक शत्रु + तात्कालिक शत्रु** = **अधिशत्रु (Great Enemy)**  
+४. **नैसर्गिक सम + तात्कालिक मित्र** = **मित्र**  
+५. **नैसर्गिक शत्रु + तात्कालिक मित्र** = **सम**
+  </div>
+</div>
+<hr />
+<h3 id="sun-across-12-houses">४.३ सूर्य देव का द्वादश भावों में शास्त्रीय फल (Sun Across 12 Houses)</h3>
+<p>सूर्य संपूर्ण सौरमंडल की आत्मा एवं जीवन-ऊर्जा का मूल स्रोत हैं। १२ भावों में सूर्य का फल निम्नानुसार है:</p>
+<ol>
+<li><strong>प्रथम भाव (तनु):</strong> जातक तेजस्वी, गौरवर्ण, स्वाभिमानी, क्रोधी, नेत्र ज्योति पर प्रभाव, नेतृत्व क्षमता से संपन्न।</li>
+<li><strong>द्वितीय भाव (धन):</strong> मुख में तेज, स्पष्ट व कटु वाणी, पैतृक संपत्ति से लाभ अथवा विवाद, नेत्र विकार की संभावना।</li>
+<li><strong>तृतीय भाव (सहज):</strong> प्रचंड पराक्रमी, शत्रुओं पर विजय, बंधु-बांधवों में प्रतिष्ठित, लेखन व युद्ध में अजेय।</li>
+<li><strong>चतुर्थ भाव (सुख):</strong> मातृ-सुख में कमी, गृह से दूर वास, वाहनों का सुख, सीने में उष्णता या पित्त की अधिकता।</li>
+<li><strong>पंचम भाव (पुत्र):</strong> तीक्ष्ण बुद्धि, मंत्र विद्या में सिद्धि, संतान की संख्या सीमित, पाचन तंत्र में पित्त प्रकोप।</li>
+<li><strong>षष्ठ भाव (शत्रु):</strong> शत्रुओं का समूल नाश, प्रशासनिक विजय, ऋण से मुक्ति, उत्तम पाचन शक्ति, मामा पक्ष पर प्रभाव।</li>
+<li><strong>सप्तम भाव (जाया):</strong> दांपत्य में अहं का टकराव, जीवनसाथी स्वाभिमानी, साझेदारी में सावधान रहने की आवश्यकता।</li>
+<li><strong>अष्टम भाव (आयु):</strong> रहस्यमयी ज्ञान, नेत्र विकार की आशंका, गुप्त धन की प्राप्ति, पित्त विकार, दीर्घायु।</li>
+<li><strong>नवम भाव (भाग्य):</strong> अत्यंत भाग्यशाली, पिता व गुरु का भक्त, धार्मिक अनुष्ठानकर्ता, समाज में पूज्य।</li>
+<li><strong>दशम भाव (कर्म):</strong> <strong>दिग्बली सूर्य (Digbala)</strong>। जातक राजा या सरकार का मुख्य अधिकारी, असीम प्रतिष्ठा, अटूट सत्ता।</li>
+<li><strong>एकादश भाव (लाभ):</strong> अपार धन लाभ, उच्च पदाधिकारियों से मित्रता, महत्वाकांक्षाओं की पूर्ण सिद्धि, निरोगी काया।</li>
+<li><strong>द्वादश भाव (व्यय):</strong> आध्यात्मिक मुक्ति, विदेश यात्राएं, नेत्र दुर्बलता, अस्पताल या राजकीय व्यय, एकांतप्रियता।</li>
+</ol>
+      </section>
+      
+      <section class="chapter" id="chapter-05">
+        <h1 id="-medical-astrology">अध्याय ५: आयुर्-ज्योतिष (Medical Astrology) एवं अर्बुद (कैंसर) रोग विश्लेषण</h1>
+<h2 id="chapter-5-medical-astrology-oncological-cellular-diagnostics">Chapter 5: Medical Astrology &amp; Oncological Cellular Diagnostics</h2>
+<div class="callout callout-shloka">
+  <div class="shloka-header">
+    <span class="shloka-emblem">ॐ</span>
+    <span class="shloka-source">चरक संहिता — सूत्रस्थान — कर्मज व्याधि विचार</span>
+  </div>
+  <div class="shloka-verse">
+    <p class='shloka-line'>कर्मजा व्याधयो ये स्युर्न ते शाम्यन्ति भेषजैः।</p><p class='shloka-line'>प्रायश्चित्तैः प्रशाम्यन्ति जपहोमार्चनादिभिः॥</p>
+  </div>
+</div>
+<p>आयुर्-ज्योतिष (Medical Astrology) चरक, सुश्रुत और पराशर के ज्ञान का दिव्य समन्वय है। रोग केवल जैविक या भौतिक कारणों से ही नहीं होते, अपितु वे पूर्वजन्म-कृत अशुभ कर्मों (कर्मज व्याधि) के परिणाम होते हैं। जब कुण्डली में रोगकारक ग्रह सक्रिय होते हैं, तब शरीर के त्रिदोष (वात, पित्त, कफ) में असंतुलन उत्पन्न होकर असाध्य रोगों का रूप ले लेता है।</p>
+<hr />
+<h3 id="-anatomical-rulerships">५.१ आयुर्-ज्योतिष अंग एवं ग्रह अधिकार (Anatomical Rulerships)</h3>
+<div class="table-container"><table class="astro-book-table">
+<thead>
+<tr>
+<th style="text-align: left;">ग्रह</th>
+<th style="text-align: left;">शारीरिक धातु (Dhatu)</th>
+<th style="text-align: left;">त्रिदोष प्रकृति</th>
+<th style="text-align: left;">प्रभावित अंग एवं अवयव</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>सूर्य (Sun)</strong></td>
+<td style="text-align: left;">अस्थि (Bones)</td>
+<td style="text-align: left;">पित्त (Pitta)</td>
+<td style="text-align: left;">हृदय, दाहिना नेत्र, मस्तिष्क, जीवन-ऊर्जा (प्राण), रक्तचाप</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>चन्द्र (Moon)</strong></td>
+<td style="text-align: left;">रस व रक्त द्रव (Plasma/Blood)</td>
+<td style="text-align: left;">कफ व वात</td>
+<td style="text-align: left;">फेफड़े, छाती, आमाशय, बायां नेत्र, लिंफेटिक तंत्र, गर्भाशय</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>मंगल (Mars)</strong></td>
+<td style="text-align: left;">मज्जा व लाल रक्त कण (Bone Marrow/RBC)</td>
+<td style="text-align: left;">पित्त (Pitta)</td>
+<td style="text-align: left;">यकृत, पित्ताशय, मांसपेशियां, जननांग, सूजन, विद्रधि</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>बुध (Mercury)</strong></td>
+<td style="text-align: left;">त्वचा (Skin)</td>
+<td style="text-align: left;">त्रिदोष (सम)</td>
+<td style="text-align: left;">तंत्रिका तंत्र (Nerves), मस्तिष्क के सेरिब्रम, फेफड़े की नलिकाएं</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>गुरु (Jupiter)</strong></td>
+<td style="text-align: left;">वसा (Fat / Adipose Tissue)</td>
+<td style="text-align: left;">कफ (Kapha)</td>
+<td style="text-align: left;">यकृत (Liver), धमनियां, कान, अग्न्याशय (Pancreas)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>शुक्र (Venus)</strong></td>
+<td style="text-align: left;">शुक्र / वीर्य (Semen / Ovaries)</td>
+<td style="text-align: left;">वात व कफ</td>
+<td style="text-align: left;">वृक्क (Kidneys), मूत्र मार्ग, प्रजनन ग्रंथियां, हार्मोन संतुलन</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>शनि (Saturn)</strong></td>
+<td style="text-align: left;">स्नायु व मांसपेशियां (Tendons/Nerves)</td>
+<td style="text-align: left;">वात (Vata)</td>
+<td style="text-align: left;">जोड़, अस्थि-संधि, पैर, बड़ी आंत, दीर्घकालिक क्षय, ट्यूमर</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>राहु (Rahu)</strong></td>
+<td style="text-align: left;">विषाक्तता (Toxins / Mutagens)</td>
+<td style="text-align: left;">वात (Vata)</td>
+<td style="text-align: left;">अनियंत्रित कोशिका विभाजन, ऑटो-इम्यून विकार, रहस्यमयी संक्रमण</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>केतु (Ketu)</strong></td>
+<td style="text-align: left;">सूक्ष्म नाड़ियां व कोशिकाएं</td>
+<td style="text-align: left;">पित्त (Pitta)</td>
+<td style="text-align: left;">शल्य क्रिया, फोड़े, कीटाणु संक्रमण, असाध्य अवरोध</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3 id="oncology-arbuda-roga">५.२ अर्बुद (कैंसर) रोग का ज्योतिषीय सूत्र विश्लेषण (Oncology / Arbuda Roga)</h3>
+<figure class="chart-figure" id="chart-medical_astrology_chart">
+  <div class="chart-svg-wrapper">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="auto" class="vedic-chart-svg" style="max-width:500px; background:#fffdfa; border-radius:12px; font-family:'Georgia', 'Devanagari MT', 'Kohinoor Devanagari', serif; box-shadow:0 4px 18px rgba(0,0,0,0.06);">
+  <defs>
+    <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#ca8a04" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Border & Background -->
+  <rect x="12" y="12" width="476" height="476" rx="8" fill="#fffdfa" stroke="#854d0e" stroke-width="1.8"/>
+  <rect x="16" y="16" width="468" height="468" rx="6" fill="none" stroke="#854d0e" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.6"/>
+
+  <!-- Main Chart Diamond Boundaries -->
+  <!-- Outer Box -->
+  <rect x="40" y="40" width="420" height="420" fill="#fefce8" stroke="#854d0e" stroke-width="2.2"/>
+
+  <!-- Diagonal X Lines (Connecting corners) -->
+  <line x1="40" y1="40" x2="460" y2="460" stroke="#ca8a04" stroke-width="1.8"/>
+  <line x1="40" y1="460" x2="460" y2="40" stroke="#ca8a04" stroke-width="1.8"/>
+
+  <!-- Central Inner Diamond (Connecting midpoints of 4 outer edges) -->
+  <polygon points="250.0,40 460,250.0 250.0,460 40,250.0" fill="none" stroke="#ca8a04" stroke-width="2"/>
+
+  <!-- House 1 (Rashi 8: वृश्चिक) -->
+  <text x="250.0" y="157.6" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">8</text>
+  <text x="250.0" y="199.6" fill="#ea580c" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">सूर्य</text>
+  <!-- House 2 (Rashi 9: धनु) -->
+  <text x="145.0" y="90.4" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">9</text>
+  <!-- House 3 (Rashi 10: मकर) -->
+  <text x="90.4" y="145.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">10</text>
+  <!-- House 4 (Rashi 11: कुंभ) -->
+  <text x="157.6" y="250.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">11</text>
+  <!-- House 5 (Rashi 12: मीन) -->
+  <text x="90.4" y="355.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">12</text>
+  <!-- House 6 (Rashi 1: मेष) -->
+  <text x="145.0" y="409.6" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">1</text>
+  <text x="145.0" y="359.6" fill="#0284c7" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">चन्द्र</text>
+  <text x="145.0" y="375.6" fill="#7c3aed" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">राहु</text>
+  <!-- House 7 (Rashi 2: वृषभ) -->
+  <text x="250.0" y="342.4" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">2</text>
+  <!-- House 8 (Rashi 3: मिथुन) -->
+  <text x="355.0" y="409.6" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">3</text>
+  <text x="355.0" y="359.6" fill="#dc2626" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">मंगल</text>
+  <text x="355.0" y="375.6" fill="#4f46e5" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">शनि</text>
+  <!-- House 9 (Rashi 4: कर्क) -->
+  <text x="409.6" y="355.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">4</text>
+  <!-- House 10 (Rashi 5: सिंह) -->
+  <text x="342.4" y="250.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">5</text>
+  <!-- House 11 (Rashi 6: कन्या) -->
+  <text x="409.6" y="145.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">6</text>
+  <!-- House 12 (Rashi 7: तुला) -->
+  <text x="355.0" y="90.4" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">7</text>
+  <text x="355.0" y="132.4" fill="#475569" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">केतु</text>
+  <!-- Title & Subtitle Banner -->
+  <text x="250.0" y="30" fill="#854d0e" font-size="13" font-weight="bold" letter-spacing="1" text-anchor="middle">आयुर्-ज्योतिष: अर्बुद (कैंसर) रोग योग</text>
+  <text x="250.0" y="482" fill="#78716c" font-size="9.5" font-style="italic" letter-spacing="0.5" text-anchor="middle">Trik Bhava Cellular Affliction &amp; Remedial Diagnostics</text>
+</svg>
+  </div>
+  <figcaption class="chart-caption">चित्र ५.१: अर्बुद (कैंसर) रोग कारक कुण्डली विन्यास — त्रिक भावों (६, ८, १२) में चन्द्र-राहु एवं शनि-मंगल युति</figcaption>
+</figure>
+<p>अर्बुद (कैंसर) रोग का मूल कारण कोशिकाओं का अनियंत्रित, अनियोजित एवं आक्रामक रूप से विभाजित होना है। वैदिक ज्योतिष के अनुसार कैंसर का निर्माण किसी एक ग्रह से नहीं, बल्कि एक जटिल ग्रहीय सिंड्रोम से होता है:</p>
+<div class="callout callout-formula">
+  <div class="callout-header">
+    <span class="callout-badge">📐 SUTRA / सूत्र</span>
+    <span class="callout-title">कैंसर निर्माण का चतुर्-सूत्रीय सिद्धांत</span>
+  </div>
+  <div class="callout-body">
+१. **राहु की भूमिका:** राहु अनियंत्रित विस्तार, धुंधलापन, उत्परिवर्तन (Genetic Mutation) एवं असामान्य कोशिका गुणन का मुख्य अधिपति है।  
+२. **शनि की भूमिका:** शनि दीर्घकालिक क्षय, रक्त में रुकावट, ऊतकों का सड़ना (Necrosis) और पुरानी गांठों (Tumors) का कारक है।  
+३. **चन्द्रमा एवं मंगल का दूषित होना:** चन्द्रमा रस/जल का स्वामी है और मंगल रक्त व मज्जा का। जब जल और रक्त विषाक्त होते हैं, तब अर्बुद की नींव पड़ती है।  
+४. **त्रिक भाव (६, ८, १२) एवं लग्न का पीड़ित होना:** ६ठा भाव रोग का, ८वां भाव असाध्य व्याधि का, १२वां भाव शय्याग्रस्त होने का, और लग्न रोग प्रतिरोधक क्षमता का है।
+  </div>
+</div>
+<h4 id="_1">विभिन्न अंगों के कैंसर के विशिष्ट ग्रहीय योग:</h4>
+<div class="table-container"><table class="astro-book-table">
+<thead>
+<tr>
+<th style="text-align: left;">कैंसर का प्रकार</th>
+<th style="text-align: left;">प्रभावित भाव व ग्रह</th>
+<th style="text-align: left;">विशिष्ट शास्त्रीय ग्रहीय युति</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>रक्त कैंसर (Leukemia)</strong></td>
+<td style="text-align: left;">चन्द्रमा, मंगल एवं षष्ठेश</td>
+<td style="text-align: left;">चन्द्रमा और मंगल पर राहु या शनि की कुदृष्टि, षष्ठ भाव में नीच का मंगल राहु से युक्त।</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>स्तन एवं फेफड़े का कैंसर</strong></td>
+<td style="text-align: left;">चतुर्थ भाव एवं कर्क राशि</td>
+<td style="text-align: left;">चतुर्थेश का ६ठे या ८वें भाव में राहु-शनि से पीड़ित होना, कर्क राशि में पापी ग्रहों का जमावड़ा।</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>मस्तिष्क का अर्बुद (Brain Tumor)</strong></td>
+<td style="text-align: left;">प्रथम भाव एवं मेष राशि</td>
+<td style="text-align: left;">लग्नेश मेष राशि में राहु-केतु अक्ष पर होकर शनि या वक्री मंगल द्वारा देखा जाना।</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>त्वचा का कैंसर (Melanoma)</strong></td>
+<td style="text-align: left;">बुध, षष्ठ भाव एवं कन्या राशि</td>
+<td style="text-align: left;">बुध का नीच राशि में राहु से युत होकर सूर्य द्वारा अत्यधिक दग्ध होना।</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>उदर व आंतों का कैंसर</strong></td>
+<td style="text-align: left;">पंचम व षष्ठ भाव</td>
+<td style="text-align: left;">गुरु या बुध का राहु के साथ षष्ठ भाव में स्थित होकर पाप ग्रहों से पीड़ित होना।</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3 id="-timing-remedies">५.३ दशा-गोचर प्रकटीकरण एवं ज्योतिषीय निवारण (Timing &amp; Remedies)</h3>
+<p>कैंसर रोग का प्रकटीकरण तभी होता है जब:
+१. जातक की <strong>मारक (२, ७) अथवा त्रिक भावों (६, ८, १२)</strong> के स्वामियों की विंशोत्तरी दशा चल रही हो।<br />
+२. गोचर में राहु अथवा शनि लग्न, लग्नेश अथवा चन्द्र राशि के ऊपर से या अष्टम भाव से भ्रमण कर रहे हों।</p>
+<div class="callout callout-warning">
+  <div class="callout-header">
+    <span class="callout-badge">⚠️ सावधान (CAVEAT)</span>
+    <span class="callout-title">चिकित्सीय एवं आध्यात्मिक समन्वय</span>
+  </div>
+  <div class="callout-body">
+ज्योतिषीय उपचार कभी भी आधुनिक एलोपैथी, कीमोथेरेपी अथवा शल्य चिकित्सा का विकल्प नहीं है। यह चिकित्सा के साथ-साथ जातक के आत्मबल, आभामंडल (Aura) एवं कर्मज दोषों को शांत करने में सहायक सिद्ध होता है:
+१. **महामृत्युंजय मंत्र जप:** सवा लाख महामृत्युंजय मंत्र का संपुटित जप प्राण-शक्ति का संवर्धन करता है।  
+२. **रुद्राभिषेक अनुष्ठान:** कुशा रस एवं दूर्वा से भगवान शिव का अभिषेक रक्त शोधन में फलदायी है।  
+३. **दान कर्म:** शनि व राहु की शांति हेतु काले तिल, कंबल, नारियल एवं रोगियों को निःशुल्क औषधि दान।
+  </div>
+</div>
+      </section>
+      
+      <section class="chapter" id="chapter-06">
+        <h1 id="_1">अध्याय ६: नक्षत्र पद विभाजन, नवांश गणित एवं मंगल श्लोक</h1>
+<h2 id="chapter-6-nakshatra-pada-sub-division-navamsha-concluding-shlokas">Chapter 6: Nakshatra Pada Sub-Division, Navamsha &amp; Concluding Shlokas</h2>
+<div class="callout callout-shloka">
+  <div class="shloka-header">
+    <span class="shloka-emblem">ॐ</span>
+    <span class="shloka-source">बृहत्पाराशर होरा शास्त्र — नवांश फल</span>
+  </div>
+  <div class="shloka-verse">
+    <p class='shloka-line'>नवांशाद्बलिनो ज्ञेयं कलत्रस्य बलाबलम्।</p><p class='shloka-line'>तथैव भाग्यवृद्धिश्च धर्ममार्गरतिस्तथा॥</p>
+  </div>
+</div>
+<p>कुण्डली का स्थूल शरीर लग्न कुण्डली (D1) है, किंतु उसकी सूक्ष्म आत्मा <strong>नवांश कुण्डली (D9)</strong> है। नवांश का अर्थ है किसी राशि का ९वां भाग (३°२०')। चूंकि २७ नक्षत्रों में प्रत्येक के ४ पद होते हैं, अतः संपूर्ण भचक्र में १०८ नवांश पद होते हैं। नवांश से जातक के आंतरिक सामर्थ्य, दांपत्य जीवन, भाग्य की वास्तविकता तथा उत्तरार्ध जीवन का सटीक ज्ञान प्राप्त होता है।</p>
+<hr />
+<h3 id="navamsha-mathematics">६.१ नवांश पद गणना सिद्धांत (Navamsha Mathematics)</h3>
+<p>नवांश की गणना राशियों के चर, स्थिर एवं द्विस्वभाव स्वभाव के अनुसार की जाती है:</p>
+<ol>
+<li><strong>चर राशियां (मेष, कर्क, तुला, मकर):</strong> नवांश की गणना उसी राशि से प्रारंभ होती है (मेष का प्रथम नवांश मेष से, कर्क का कर्क से)।</li>
+<li><strong>स्थिर राशियां (वृषभ, सिंह, वृश्चिक, कुंभ):</strong> नवांश की गणना उस राशि से ९वें स्थान से प्रारंभ होती है (वृषभ का प्रथम नवांश मकर से)।</li>
+<li><strong>द्विस्वभाव राशियां (मिथुन, कन्या, धनु, मीन):</strong> नवांश की गणना उस राशि से ५वें स्थान से प्रारंभ होती है (मिथुन का प्रथम नवांश तुला से)।</li>
+</ol>
+<div class="callout callout-formula">
+  <div class="callout-header">
+    <span class="callout-badge">📐 SUTRA / सूत्र</span>
+    <span class="callout-title">वर्गोत्तम नवांश का अमृत नियम</span>
+  </div>
+  <div class="callout-body">
+जब कोई ग्रह लग्न कुण्डली (D1) और नवांश कुण्डली (D9) दोनों में **एक ही राशि** में स्थित होता है, तो वह **वर्गोत्तम (Vargottama)** कहलाता है।  
+वर्गोत्तम ग्रह अपनी दशा में परम उच्च ग्रह के समान शुभ, स्थायी एवं राजसी फल प्रदान करता है, भले ही वह स्थूल कुण्डली में मित्र या सम राशि में ही क्यों न हो।
+  </div>
+</div>
+<hr />
+<h3 id="pada-micro-analysis">६.२ प्रमुख नक्षत्र पदों का सूक्ष्म फलित (Pada Micro-Analysis)</h3>
+<p>नीचे तीन महत्वपूर्ण नक्षत्रों के पदों का व्यावहारिक फलित दिया गया है:</p>
+<div class="table-container"><table class="astro-book-table">
+<thead>
+<tr>
+<th style="text-align: left;">नक्षत्र</th>
+<th style="text-align: left;">पद क्रम</th>
+<th style="text-align: left;">नवांश राशि व स्वामी</th>
+<th style="text-align: left;">मनोवैज्ञानिक प्रवृत्ति व फलित संकेत</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>अश्विनी (Ashwini)</strong></td>
+<td style="text-align: left;">प्रथम पद (१)</td>
+<td style="text-align: left;">मेष (मंगल)</td>
+<td style="text-align: left;">तीव्र ऊर्जा, साहसी, नेतृत्व क्षमता, त्वरित कार्य सिद्धि, अग्रणी स्वभाव।</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">द्वितीय पद (२)</td>
+<td style="text-align: left;">वृषभ (शुक्र)</td>
+<td style="text-align: left;">भौतिक स्थिरता, रूपवान, व्यावहारिक ज्ञान, कला व धन संचय की रुचि।</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">तृतीय पद (३)</td>
+<td style="text-align: left;">मिथुन (बुध)</td>
+<td style="text-align: left;">बौद्धिक चंचलता, संचार कला, हास्य-विनोद, बहुमुखी प्रतिभा।</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">चतुर्थ पद (४)</td>
+<td style="text-align: left;">कर्क (चन्द्रमा)</td>
+<td style="text-align: left;">संवेदनशील, दूसरों की सेवा करने वाला, उत्कृष्ट चिकित्सक, भावनात्मक मन।</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>पुष्य (Pushya)</strong></td>
+<td style="text-align: left;">प्रथम पद (१)</td>
+<td style="text-align: left;">सिंह (सूर्य)</td>
+<td style="text-align: left;">आध्यात्मिक तेज, पैतृक गौरव, न्यायप्रियता, राजदरबार में सम्मान।</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">द्वितीय पद (२)</td>
+<td style="text-align: left;">कन्या (बुध)</td>
+<td style="text-align: left;">सूक्ष्म विश्लेषण, सेवा भाव, व्यावहारिक योजनाकार, संयमित वाणी।</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">तृतीय पद (३)</td>
+<td style="text-align: left;">तुला (शुक्र)</td>
+<td style="text-align: left;">सामाजिक सौहार्द, सुरुचिपूर्ण जीवन, निष्पक्ष न्याय, व्यापारिक सफलता।</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">चतुर्थ पद (४)</td>
+<td style="text-align: left;">वृश्चिक (मंगल)</td>
+<td style="text-align: left;">गुप्त साधना, गूढ़ विद्याओं का ज्ञाता, गहन अंतर्दृष्टि, आक्रामक संकल्प।</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>आश्लेषा (Ashlesha)</strong></td>
+<td style="text-align: left;">प्रथम पद (१)</td>
+<td style="text-align: left;">धनु (गुरु)</td>
+<td style="text-align: left;">दार्शनिक सोच, उच्च आकांक्षाएं, कूटनीति में दक्ष, शास्त्रों का अभ्यासी।</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">द्वितीय पद (२)</td>
+<td style="text-align: left;">मकर (शनि)</td>
+<td style="text-align: left;">कठोर परिश्रम, महत्वाकांक्षा, धैर्यपूर्वक लक्ष्य प्राप्ति, स्वार्थ नियंत्रण।</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">तृतीय पद (३)</td>
+<td style="text-align: left;">कुंभ (शनि)</td>
+<td style="text-align: left;">गुप्त अनुसंधान, जन-कल्याण, वैज्ञानिक दृष्टिकोण, अलौकिक आकर्षण।</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">चतुर्थ पद (४)</td>
+<td style="text-align: left;">मीन (गुरु)</td>
+<td style="text-align: left;">मोक्ष प्राप्ति की लालसा, मोह-माया से विरक्ति, पूर्ण समर्पण, तांत्रिक अंतःप्रेरणा।</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3 id="universal-benediction">६.३ उपनिषद् मंगल कामना एवं शांति पाठ (Universal Benediction)</h3>
+<div class="callout callout-shloka">
+  <div class="shloka-header">
+    <span class="shloka-emblem">ॐ</span>
+    <span class="shloka-source">बृहदारण्यकोपनिषद् — शांति मंत्र</span>
+  </div>
+  <div class="shloka-verse">
+    <p class='shloka-line'>ॐ असतो मा सद्गमय।</p><p class='shloka-line'>तमसो मा ज्योतिर्गमय।</p><p class='shloka-line'>मृत्योर्मा अमृतं गमय॥</p><p class='shloka-line'>ॐ शान्तिः शान्तिः शान्तिः॥</p>
+  </div>
+</div>
+<p>हे परमात्मा! हमें असत्य से सत्य की ओर ले चलो, अंधकार से प्रकाश की ओर ले चलो, और मृत्यु से अमरत्व की ओर ले चलो। तीनों लोकों में दैहिक, दैविक और भौतिक तापों की पूर्ण शांति हो।</p>
+<div class="callout callout-shloka">
+  <div class="shloka-header">
+    <span class="shloka-emblem">ॐ</span>
+    <span class="shloka-source">स्वस्ति प्रार्थना — लोक कल्याण श्लोक</span>
+  </div>
+  <div class="shloka-verse">
+    <p class='shloka-line'>सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः।</p><p class='shloka-line'>सर्वे भद्राणि पश्यन्तु मा कश्चिद्दुःखभाग्भवेत्॥</p>
+  </div>
+</div>
+<p>समस्त प्राणी सुखी हों, सभी रोगमुक्त व स्वस्थ रहें, सभी का कल्याण हो, और इस संसार में किसी को भी लेशमात्र भी दुःख न भोगना पड़े।</p>
+<hr />
+<h3 id="colophon">६.४ ग्रंथ समापन एवं कृतज्ञता ज्ञापन (Colophon)</h3>
+<p><strong>तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ</strong> का यह प्रथम ट्रेड पेपरबैक एवं डिजिटल ग्रंथ संस्करण प्रामाणिक संकलन, शास्त्रीय सूत्रों के अनुसंधान एवं आधुनिक विश्लेषणात्मक प्रारूप के साथ लोक-हितार्थ समर्पित किया जाता है।</p>
+<ul>
+<li><strong>ग्रंथकार एवं शोधकर्ता:</strong> ज्योतिषाचार्य आशुतोष कुमार चौबे (Ashutosh Kumar Choubey)</li>
+<li><strong>आधिकारिक अनुसंधान केन्द्र:</strong> तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)</li>
+<li><strong>वेबसाइट:</strong> <a href="https://t.worldgyan.com">t.worldgyan.com</a></li>
+<li><strong>यूट्यूब शोध मंच:</strong> <a href="https://www.youtube.com/@TantraGyan108">@TantraGyan108</a></li>
+<li><strong>ईमेल:</strong> <a href="mailto:tantraresearchcenter@gmail.com">tantraresearchcenter@gmail.com</a></li>
+<li><strong>संस्करण वर्ष:</strong> २०२६ (Digital &amp; Print Masterwork Edition)</li>
+</ul>
+      </section>
+      
+
+      <!-- BACK MATTER: Colophon & Shanti Path -->
+      <section class="back-matter-page" id="back-matter">
+        <div class="colophon-box">
+          <h3 style="margin-top: 0; color: #854d0e;">ग्रंथ विवरण एवं प्रकाशन सूचना</h3>
+          <p><strong>ग्रंथ:</strong> तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ (Tantra Gyan: Complete Vedic Astrology Compendium)</p>
+          <p><strong>लेखक:</strong> आशुतोष कुमार चौबे (Ashutosh Kumar Choubey)</p>
+          <p><strong>संस्थान:</strong> तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center) • WorldGyan</p>
+          <p><strong>प्रकाशन वर्ष:</strong> 2026 • संस्करण: डिजिटल एवं प्रिंट मास्टरवर्क संस्करण (First Trade Paperback Edition 2026)</p>
+          <p><strong>मुद्रण विनिर्देश:</strong> Standard Trade Paperback (6" × 9"), 0.85in inside gutter, dual-target vector typography.</p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 0.5in; color: #854d0e; font-size: 14pt;">
+          ॐ तत्सत् श्रीब्रह्मार्पणमस्तु।
+        </div>
+      </section>
+
+    </article>
+
+  
+  </main>
+  
+
+</body>
+</html>

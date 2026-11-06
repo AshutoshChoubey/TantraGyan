@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 460" width="100%" height="auto" class="vedic-aspect-svg" style="max-width:460px; background:#fffdfa; border-radius:12px; border:1px solid #854d0e;">
+  <!-- Aspect Mandala Wheel -->
+  <circle cx="230.0" cy="230.0" r="185.0" fill="none" stroke="#854d0e" stroke-width="1.8" />
+  <circle cx="230.0" cy="230.0" r="120.25" fill="none" stroke="#854d0e" stroke-width="1" stroke-dasharray="4,4" opacity="0.6"/>
+  <circle cx="230.0" cy="230.0" r="51.800000000000004" fill="#854d0e" fill-opacity="0.08" stroke="#854d0e" stroke-width="1.2"/>
+  <text x="230.0" y="230.0" fill="#854d0e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">पूर्ण दृष्टि</text>
+  <text x="230.0" y="244.0" fill="#78716c" font-size="8.5" text-anchor="middle" dominant-baseline="middle">Drishti Wheel</text>
+  <line x1="230.0" y1="230.0" x2="230.0" y2="45.0" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="230.0" cy="45.0" r="4" fill="#854d0e"/>
+  <text x="230.0" y="26.0" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">1. मेष</text>
+  <line x1="230.0" y1="230.0" x2="322.5" y2="69.78530029987886" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="322.5" cy="69.78530029987886" r="4" fill="#854d0e"/>
+  <text x="333.5" y="53.732741416621224" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">2. वृषभ</text>
+  <line x1="230.0" y1="230.0" x2="390.2146997001212" y2="137.5" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="390.2146997001212" cy="137.5" r="4" fill="#854d0e"/>
+  <text x="409.2672585833788" y="129.5" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">3. मिथुन</text>
+  <line x1="230.0" y1="230.0" x2="415.0" y2="230.0" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="415.0" cy="230.0" r="4" fill="#854d0e"/>
+  <text x="437.0" y="233.0" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">4. कर्क</text>
+  <line x1="230.0" y1="230.0" x2="390.2146997001212" y2="322.5" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="390.2146997001212" cy="322.5" r="4" fill="#854d0e"/>
+  <text x="409.2672585833788" y="336.5" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">5. सिंह</text>
+  <line x1="230.0" y1="230.0" x2="322.5" y2="390.2146997001212" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="322.5" cy="390.2146997001212" r="4" fill="#854d0e"/>
+  <text x="333.5" y="412.26725858337875" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">6. कन्या</text>
+  <line x1="230.0" y1="230.0" x2="230.0" y2="415.0" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="230.0" cy="415.0" r="4" fill="#854d0e"/>
+  <text x="230.0" y="440.0" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">7. तुला</text>
+  <line x1="230.0" y1="230.0" x2="137.50000000000006" y2="390.2146997001212" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="137.50000000000006" cy="390.2146997001212" r="4" fill="#854d0e"/>
+  <text x="126.50000000000004" y="412.26725858337886" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">8. वृश्चिक</text>
+  <line x1="230.0" y1="230.0" x2="69.78530029987883" y2="322.5" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="69.78530029987883" cy="322.5" r="4" fill="#854d0e"/>
+  <text x="50.732741416621195" y="336.5" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">9. धनु</text>
+  <line x1="230.0" y1="230.0" x2="45.0" y2="230.00000000000003" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="45.0" cy="230.00000000000003" r="4" fill="#854d0e"/>
+  <text x="23.0" y="233.00000000000003" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">10. मकर</text>
+  <line x1="230.0" y1="230.0" x2="69.78530029987886" y2="137.5" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="69.78530029987886" cy="137.5" r="4" fill="#854d0e"/>
+  <text x="50.732741416621224" y="129.49999999999997" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">11. कुंभ</text>
+  <line x1="230.0" y1="230.0" x2="137.49999999999991" y2="69.78530029987891" stroke="#854d0e" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="137.49999999999991" cy="69.78530029987891" r="4" fill="#854d0e"/>
+  <text x="126.49999999999991" y="53.73274141662125" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">12. मीन</text>
+</svg>

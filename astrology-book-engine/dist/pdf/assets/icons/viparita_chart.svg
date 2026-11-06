@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="auto" class="vedic-chart-svg" style="max-width:500px; background:#fffdfa; border-radius:12px; font-family:'Georgia', 'Devanagari MT', 'Kohinoor Devanagari', serif; box-shadow:0 4px 18px rgba(0,0,0,0.06);">
+  <defs>
+    <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#ca8a04" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Border & Background -->
+  <rect x="12" y="12" width="476" height="476" rx="8" fill="#fffdfa" stroke="#854d0e" stroke-width="1.8"/>
+  <rect x="16" y="16" width="468" height="468" rx="6" fill="none" stroke="#854d0e" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.6"/>
+
+  <!-- Main Chart Diamond Boundaries -->
+  <!-- Outer Box -->
+  <rect x="40" y="40" width="420" height="420" fill="#fefce8" stroke="#854d0e" stroke-width="2.2"/>
+
+  <!-- Diagonal X Lines (Connecting corners) -->
+  <line x1="40" y1="40" x2="460" y2="460" stroke="#ca8a04" stroke-width="1.8"/>
+  <line x1="40" y1="460" x2="460" y2="40" stroke="#ca8a04" stroke-width="1.8"/>
+
+  <!-- Central Inner Diamond (Connecting midpoints of 4 outer edges) -->
+  <polygon points="250.0,40 460,250.0 250.0,460 40,250.0" fill="none" stroke="#ca8a04" stroke-width="2"/>
+
+  <!-- House 1 (Rashi 7: तुला) -->
+  <text x="250.0" y="157.6" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">7</text>
+  <text x="250.0" y="199.6" fill="#4f46e5" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">शनि(Ex)</text>
+  <!-- House 2 (Rashi 8: वृश्चिक) -->
+  <text x="145.0" y="90.4" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">8</text>
+  <!-- House 3 (Rashi 9: धनु) -->
+  <text x="90.4" y="145.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">9</text>
+  <!-- House 4 (Rashi 10: मकर) -->
+  <text x="157.6" y="250.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">10</text>
+  <!-- House 5 (Rashi 11: कुंभ) -->
+  <text x="90.4" y="355.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">11</text>
+  <!-- House 6 (Rashi 12: मीन) -->
+  <text x="145.0" y="409.6" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">12</text>
+  <text x="145.0" y="367.6" fill="#d97706" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">गुरु(Own)</text>
+  <!-- House 7 (Rashi 1: मेष) -->
+  <text x="250.0" y="342.4" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">1</text>
+  <!-- House 8 (Rashi 2: वृषभ) -->
+  <text x="355.0" y="409.6" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">2</text>
+  <text x="355.0" y="367.6" fill="#db2777" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">शुक्र(Own)</text>
+  <!-- House 9 (Rashi 3: मिथुन) -->
+  <text x="409.6" y="355.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">3</text>
+  <!-- House 10 (Rashi 4: कर्क) -->
+  <text x="342.4" y="250.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">4</text>
+  <!-- House 11 (Rashi 5: सिंह) -->
+  <text x="409.6" y="145.0" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">5</text>
+  <!-- House 12 (Rashi 6: कन्या) -->
+  <text x="355.0" y="90.4" fill="#92400e" font-size="12" font-weight="bold" text-anchor="middle" dominant-baseline="middle">6</text>
+  <text x="355.0" y="132.4" fill="#16a34a" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="middle">बुध(Ex)</text>
+  <!-- Title & Subtitle Banner -->
+  <text x="250.0" y="30" fill="#854d0e" font-size="13" font-weight="bold" letter-spacing="1" text-anchor="middle">हर्ष, सरल एवं विमल विपरीत राजयोग</text>
+  <text x="250.0" y="482" fill="#78716c" font-size="9.5" font-style="italic" letter-spacing="0.5" text-anchor="middle">Trika Bhava Neutralization &amp; Unconventional Elevation</text>
+</svg>

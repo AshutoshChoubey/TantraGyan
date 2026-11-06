@@ -3123,6 +3123,16 @@ def render_edition_html(pages_list, edition_lang='hindi'):
       <!-- Fullscreen -->
       <button class="tool-btn" id="btn-fullscreen" title="Toggle Fullscreen" style="padding:0.45rem 0.6rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>
 
+      <!-- Modern Paged.js Reader Button -->
+      <a href="astrology-book-engine/dist/web/index.html" class="tool-btn" id="btn-paged-reader" title="{'✨ नया संस्करण पढ़ें • Modern Paged.js Reader' if is_hindi else '✨ Read Modern Paged.js Reader'}" style="color:var(--accent-gold); border-color:rgba(217,119,6,0.6); text-decoration:none;">
+        <span>📖</span> <span>Paged Reader</span>
+      </a>
+
+      <!-- Vector PDF Download Button -->
+      <a href="astrology-book.pdf" download="TantraGyan-Vedic-Astrology-Compendium.pdf" class="tool-btn" id="btn-download-pdf-vector" title="{'📄 सम्पूर्ण ग्रंथ PDF डाउनलोड करें' if is_hindi else '📄 Download Print-Ready Vector PDF'}" style="background:rgba(217,119,6,0.15); border-color:var(--accent-gold); text-decoration:none;">
+        <span>📄</span> <span>Download PDF</span>
+      </a>
+
       <!-- Download / Update Book Offline Button -->
       <button class="tool-btn" id="btn-download-offline" title="{'सम्पूर्ण ग्रंथ ऑफ़लाइन डाउनलोड करें' if is_hindi else 'Download Book for Offline Use'}">
         <span id="btn-download-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></span> <span id="btn-download-label">{'डाउनलोड करें' if is_hindi else 'Download Offline'}</span>

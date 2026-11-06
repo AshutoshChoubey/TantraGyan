@@ -1,0 +1,541 @@
+/* ==============================================================================
+   TANTRA GYAN VEDIC ASTROLOGY PUBLISHING ENGINE
+   CSS Paged Media Specifications (W3C Paged Media Level 3 & Generated Content)
+   Dual-Target: WeasyPrint (Vector PDF) & Paged.js (Client-Side Reader Polyfill)
+   ============================================================================== */
+
+@page {
+  size: 6in 9in; /* Standard Trade Paperback Specifications */
+  margin-top: 0.75in;
+  margin-bottom: 0.75in;
+  @bottom-center {
+    font-family: "Georgia", "Devanagari MT", "Kohinoor Devanagari", serif;
+    font-size: 8.5pt;
+    color: #94a3b8;
+  }
+}
+
+/* Verso (Left / Even Pages) */
+@page :left {
+  margin-left: 0.65in;
+  margin-right: 0.85in; /* Inside binding gutter */
+  @top-left {
+    content: counter(page);
+    font-family: "Georgia", "Devanagari MT", serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #854d0e;
+  }
+  @top-center {
+    content: "तंत्र ज्ञान • VEDIC ASTROLOGY COMPENDIUM";
+    font-family: "Georgia", "Devanagari MT", serif;
+    font-size: 7.8pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #64748b;
+  }
+}
+
+/* Recto (Right / Odd Pages) */
+@page :right {
+  margin-left: 0.85in; /* Inside binding gutter */
+  margin-right: 0.65in;
+  @top-right {
+    content: counter(page);
+    font-family: "Georgia", "Devanagari MT", serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #854d0e;
+  }
+  @top-center {
+    content: string(chapter-title);
+    font-family: "Georgia", "Devanagari MT", serif;
+    font-size: 7.8pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #64748b;
+  }
+}
+
+/* First Page of Each Chapter / Front Matter */
+@page :first {
+  @top-left { content: none; }
+  @top-center { content: none; }
+  @top-right { content: none; }
+}
+
+@page chapter-first {
+  @top-left { content: none; }
+  @top-center { content: none; }
+  @top-right { content: none; }
+  @bottom-center {
+    content: counter(page);
+    font-family: "Georgia", serif;
+    font-size: 8.5pt;
+    color: #94a3b8;
+  }
+}
+
+@page blank {
+  @top-left { content: none; }
+  @top-center { content: none; }
+  @top-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+/* Reset and Root Typography */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Kohinoor Devanagari", "Devanagari MT", "Devanagari Sangam MN", "Georgia", "Palatino", serif;
+  font-size: 10pt;
+  line-height: 1.55;
+  color: #1e293b;
+  background-color: #ffffff;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings and Titles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Kohinoor Devanagari", "Devanagari MT", "Georgia", serif;
+  color: #0f172a;
+  page-break-after: avoid;
+  break-after: avoid;
+  line-height: 1.25;
+}
+
+h1.book-title {
+  font-size: 24pt;
+  font-weight: 800;
+  color: #854d0e;
+  margin-top: 0.4in;
+  margin-bottom: 0.1in;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+h2.book-subtitle {
+  font-size: 13pt;
+  font-weight: 600;
+  color: #b45309;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0.3in;
+}
+
+h1.chapter-title {
+  string-set: chapter-title content();
+  font-size: 17pt;
+  font-weight: 800;
+  color: #78350f;
+  margin-top: 0.25in;
+  margin-bottom: 0.08in;
+  border-bottom: 1.5pt solid #ca8a04;
+  padding-bottom: 0.08in;
+}
+
+h2.chapter-subtitle {
+  font-size: 11pt;
+  font-style: italic;
+  color: #64748b;
+  margin-top: 0;
+  margin-bottom: 0.2in;
+}
+
+h3 {
+  font-size: 12.5pt;
+  font-weight: 700;
+  color: #1e293b;
+  margin-top: 0.22in;
+  margin-bottom: 0.08in;
+  border-left: 3pt solid #ca8a04;
+  padding-left: 0.08in;
+}
+
+h4 {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #334155;
+  margin-top: 0.16in;
+  margin-bottom: 0.06in;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0.12in;
+  text-align: justify;
+  hyphens: auto;
+  widows: 2;
+  orphans: 2;
+}
+
+hr {
+  border: 0;
+  height: 1pt;
+  background-image: linear-gradient(to right, transparent, #ca8a04, transparent);
+  margin: 0.25in 0;
+  break-inside: avoid;
+}
+
+/* Front Matter Structure */
+.front-matter-page {
+  page-break-before: always;
+  break-before: page;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 7in;
+  text-align: center;
+}
+
+.half-title-page {
+  page-break-before: right;
+  break-before: right;
+  padding-top: 2in;
+}
+
+.half-title-text {
+  font-size: 18pt;
+  font-weight: 700;
+  color: #854d0e;
+  letter-spacing: 0.05em;
+}
+
+.title-page {
+  page-break-before: right;
+  break-before: right;
+  padding-top: 0.8in;
+}
+
+.title-yantra-emblem {
+  width: 1.4in;
+  height: 1.4in;
+  margin: 0 auto 0.2in auto;
+}
+
+.title-yantra-emblem svg {
+  width: 100%;
+  height: 100%;
+}
+
+.title-author-block {
+  margin-top: 0.5in;
+  font-size: 12pt;
+  color: #1e293b;
+}
+
+.title-author-name {
+  font-size: 14pt;
+  font-weight: 700;
+  color: #78350f;
+}
+
+.title-publisher-block {
+  margin-top: 0.6in;
+  font-size: 9.5pt;
+  color: #64748b;
+  border-top: 0.75pt solid #e2e8f0;
+  padding-top: 0.15in;
+  width: 80%;
+}
+
+/* Copyright Page */
+.copyright-page {
+  page-break-before: left;
+  break-before: left;
+  font-size: 8.5pt;
+  line-height: 1.5;
+  color: #475569;
+  padding-top: 3.5in;
+  text-align: left;
+}
+
+.copyright-page p {
+  text-align: left;
+  margin-bottom: 0.08in;
+}
+
+/* Dedication & Mangalacharan */
+.dedication-page {
+  page-break-before: right;
+  break-before: right;
+  padding-top: 1.8in;
+  text-align: center;
+}
+
+.mangala-verse {
+  font-size: 12pt;
+  font-style: italic;
+  color: #78350f;
+  line-height: 1.7;
+  margin-bottom: 0.2in;
+}
+
+/* Table of Contents */
+.toc-section {
+  page-break-before: right;
+  break-before: right;
+  margin-top: 0.2in;
+}
+
+.toc-title {
+  font-size: 16pt;
+  font-weight: 800;
+  color: #854d0e;
+  text-align: center;
+  margin-bottom: 0.25in;
+  border-bottom: 1pt solid #ca8a04;
+  padding-bottom: 0.08in;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 0.14in;
+  font-size: 10pt;
+}
+
+.toc-item a {
+  text-decoration: none;
+  color: #0f172a;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.toc-chapter-name {
+  font-weight: 700;
+  color: #78350f;
+}
+
+.toc-dots {
+  flex-grow: 1;
+  border-bottom: 1pt dotted #94a3b8;
+  margin: 0 0.08in;
+  height: 1pt;
+}
+
+.toc-page-num::after {
+  content: target-counter(attr(href), page);
+  font-weight: 700;
+  color: #854d0e;
+}
+
+/* Chapter Sections */
+section.chapter {
+  page-break-before: right;
+  break-before: right;
+  page: chapter-first;
+}
+
+/* Callout Boxes */
+.callout {
+  margin: 0.18in 0;
+  padding: 0.12in 0.16in;
+  border-radius: 4pt;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  font-size: 9.5pt;
+  line-height: 1.5;
+}
+
+/* Shloka Box */
+.callout-shloka {
+  background-color: #fffdf5;
+  border: 1pt solid #b45309;
+  border-left: 3.5pt solid #b45309;
+  box-shadow: 0 1pt 3pt rgba(180, 83, 9, 0.06);
+  text-align: center;
+}
+
+.shloka-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.06in;
+  margin-bottom: 0.08in;
+}
+
+.shloka-emblem {
+  font-size: 12pt;
+  color: #b45309;
+}
+
+.shloka-source {
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: #78350f;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.shloka-verse {
+  font-size: 11pt;
+  font-weight: 600;
+  color: #451a03;
+  line-height: 1.7;
+}
+
+.shloka-line {
+  margin: 0.02in 0;
+  text-align: center;
+}
+
+/* Raja Yoga Callout */
+.callout-yoga {
+  background-color: #fefce8;
+  border: 1pt solid #ca8a04;
+  border-left: 3.5pt solid #ca8a04;
+}
+
+/* Sutra / Formula Callout */
+.callout-formula {
+  background-color: #f8fafc;
+  border: 1pt solid #64748b;
+  border-left: 3.5pt solid #334155;
+}
+
+/* Warning / Caveat Callout */
+.callout-warning {
+  background-color: #fff1f2;
+  border: 1pt solid #f43f5e;
+  border-left: 3.5pt solid #e11d48;
+}
+
+.callout-header {
+  display: flex;
+  align-items: center;
+  gap: 0.08in;
+  margin-bottom: 0.06in;
+}
+
+.callout-badge {
+  font-size: 7.5pt;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.02in 0.06in;
+  border-radius: 2pt;
+  background-color: #78350f;
+  color: #ffffff;
+}
+
+.callout-warning .callout-badge {
+  background-color: #be123c;
+}
+
+.callout-formula .callout-badge {
+  background-color: #1e293b;
+}
+
+.callout-title {
+  font-weight: 700;
+  font-size: 10pt;
+  color: #0f172a;
+}
+
+.callout-body {
+  color: #334155;
+}
+
+.callout-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Chart Figures */
+figure.chart-figure {
+  margin: 0.2in 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  text-align: center;
+}
+
+.chart-svg-wrapper {
+  max-width: 4.8in;
+  margin: 0 auto;
+}
+
+.chart-svg-wrapper svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+figcaption.chart-caption {
+  margin-top: 0.08in;
+  font-size: 8.5pt;
+  font-style: italic;
+  color: #64748b;
+  text-align: center;
+}
+
+/* High-Density Astro Book Tables */
+.table-container {
+  margin: 0.16in 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  width: 100%;
+}
+
+table.astro-book-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.5pt;
+  line-height: 1.4;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+table.astro-book-table th,
+table.astro-book-table td {
+  padding: 0.05in 0.08in;
+  border: 0.5pt solid #cbd5e1;
+  text-align: left;
+  vertical-align: top;
+}
+
+table.astro-book-table th {
+  background-color: #fef08a;
+  color: #713f12;
+  font-weight: 700;
+  font-size: 8.5pt;
+  letter-spacing: 0.02em;
+  border-bottom: 1.2pt solid #ca8a04;
+}
+
+table.astro-book-table tr:nth-child(even) td {
+  background-color: #f8fafc;
+}
+
+table.astro-book-table tr:hover td {
+  background-color: #fefce8;
+}
+
+table.astro-book-table strong {
+  color: #0f172a;
+}
+
+/* Epilogue & Back Matter */
+.back-matter-page {
+  page-break-before: right;
+  break-before: right;
+  margin-top: 0.3in;
+}
+
+.colophon-box {
+  border-top: 1pt solid #cbd5e1;
+  border-bottom: 1pt solid #cbd5e1;
+  padding: 0.15in 0;
+  margin: 0.3in 0;
+  font-size: 9pt;
+  color: #475569;
+}

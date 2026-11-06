@@ -2,3 +2,6 @@
 *.log
 scratch/
 __pycache__/
+.venv/
+venv/
+
