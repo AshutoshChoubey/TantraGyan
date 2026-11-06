@@ -684,130 +684,430 @@ body.theme-dark table.astro-book-table th {
 
 /* ==============================================================================
    PLANET SIGNATURE BADGES & COLOR PALETTE
-   Vibrant, Authentic Vedic Jyotish Symbolism
+   Vibrant, Authentic Vedic Jyotish Symbolism (from Kundali Studio)
    ============================================================================== */
 .planet-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.28rem;
   font-weight: 700;
   border-radius: 4px;
-  padding: 0.08rem 0.36rem;
-  line-height: 1.3;
+  padding: 0.08rem 0.42rem;
+  line-height: 1.32;
   white-space: nowrap;
-  font-size: 0.94em;
+  font-size: 0.92em;
   transition: all 0.2s ease;
   vertical-align: baseline;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.planet-icon {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  vertical-align: -1.5px;
+  display: inline-block;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* Sun - Divine Saffron (सूर्य) */
 .planet-sun {
   color: #c2410c;
-  background-color: rgba(234, 88, 12, 0.10);
-  border: 1px solid rgba(194, 65, 12, 0.32);
+  background: linear-gradient(135deg, rgba(255, 247, 237, 0.95), rgba(255, 237, 213, 0.90));
+  border: 1px solid #ea580c;
 }
 
 /* Moon - Sacred Pearl Moon (चन्द्र) */
 .planet-moon {
-  color: #475569;
-  background-color: rgba(148, 163, 184, 0.16);
-  border: 1px solid rgba(100, 116, 139, 0.35);
+  color: #334155;
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.95), rgba(226, 232, 240, 0.90));
+  border: 1px solid #94a3b8;
 }
 
 /* Mars - Fiery Crimson Red (मंगल) */
 .planet-mars {
-  color: #b91c1c;
-  background-color: rgba(239, 68, 68, 0.10);
-  border: 1px solid rgba(185, 28, 28, 0.32);
+  color: #dc2626;
+  background: linear-gradient(135deg, rgba(254, 242, 242, 0.95), rgba(254, 226, 226, 0.90));
+  border: 1px solid #ef4444;
 }
 
 /* Mercury - Emerald Green (बुध) */
 .planet-mercury {
   color: #047857;
-  background-color: rgba(16, 185, 129, 0.10);
-  border: 1px solid rgba(4, 120, 87, 0.32);
+  background: linear-gradient(135deg, rgba(240, 253, 244, 0.95), rgba(209, 250, 229, 0.90));
+  border: 1px solid #10b981;
 }
 
 /* Jupiter - Golden Turmeric Yellow (गुरु / बृहस्पति) */
 .planet-jupiter {
   color: #b45309;
-  background-color: rgba(245, 158, 11, 0.13);
-  border: 1px solid rgba(180, 83, 9, 0.34);
+  background: linear-gradient(135deg, rgba(255, 251, 235, 0.95), rgba(254, 243, 199, 0.90));
+  border: 1px solid #f59e0b;
 }
 
 /* Venus - Brilliant Diamond Rose Pink (शुक्र) */
 .planet-venus {
   color: #be185d;
-  background-color: rgba(244, 63, 94, 0.11);
-  border: 1px solid rgba(190, 24, 93, 0.34);
+  background: linear-gradient(135deg, rgba(253, 242, 248, 0.95), rgba(252, 231, 243, 0.90));
+  border: 1px solid #f43f5e;
 }
 
 /* Saturn - Deep Cosmic Royal Blue (शनि) */
 .planet-saturn {
   color: #1d4ed8;
-  background-color: rgba(59, 130, 246, 0.10);
-  border: 1px solid rgba(29, 78, 216, 0.32);
+  background: linear-gradient(135deg, rgba(239, 246, 255, 0.95), rgba(219, 234, 254, 0.90));
+  border: 1px solid #3b82f6;
 }
 
 /* Rahu - Shadow Obsidian Black (राहु) */
 .planet-rahu {
   color: #09090b;
-  background-color: rgba(24, 24, 27, 0.10);
-  border: 1px solid rgba(9, 9, 11, 0.38);
+  background: linear-gradient(135deg, rgba(24, 24, 27, 0.08), rgba(9, 9, 11, 0.15));
+  border: 1px solid #27272a;
 }
 
 /* Ketu - Smokey Ash Shadow Gray (केतु) */
 .planet-ketu {
   color: #52525b;
-  background-color: rgba(113, 113, 122, 0.12);
-  border: 1px solid rgba(82, 82, 91, 0.35);
+  background: linear-gradient(135deg, rgba(113, 113, 122, 0.10), rgba(82, 82, 91, 0.18));
+  border: 1px solid #71717a;
+}
+
+/* Dignity Badges (Exalted, Debilitated, Moolatrikona, Own) */
+.dignity-badge {
+  display: inline-block;
+  padding: 0.06rem 0.38rem;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 0.88em;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.dignity-exalted {
+  color: #047857;
+  background-color: #d1fae5;
+  border: 1px solid #10b981;
+}
+
+.dignity-debilitated {
+  color: #b91c1c;
+  background-color: #fee2e2;
+  border: 1px solid #f87171;
+}
+
+.dignity-moolatrikona {
+  color: #6b21a8;
+  background-color: #f3e8ff;
+  border: 1px solid #c084fc;
+}
+
+.dignity-own {
+  color: #b45309;
+  background-color: #fef3c7;
+  border: 1px solid #f59e0b;
 }
 
 /* Dark Theme Overrides for Planet Badges */
 body.theme-dark .planet-sun {
   color: #fb923c;
-  background-color: rgba(251, 146, 60, 0.18);
-  border-color: rgba(251, 146, 60, 0.45);
+  background: rgba(124, 45, 18, 0.35);
+  border-color: rgba(234, 88, 12, 0.7);
 }
 body.theme-dark .planet-moon {
   color: #e2e8f0;
-  background-color: rgba(226, 232, 240, 0.14);
-  border-color: rgba(203, 213, 225, 0.40);
+  background: rgba(30, 41, 59, 0.45);
+  border-color: rgba(148, 163, 184, 0.6);
 }
 body.theme-dark .planet-mars {
   color: #f87171;
-  background-color: rgba(248, 113, 113, 0.18);
-  border-color: rgba(248, 113, 113, 0.45);
+  background: rgba(127, 29, 29, 0.35);
+  border-color: rgba(239, 68, 68, 0.7);
 }
 body.theme-dark .planet-mercury {
   color: #34d399;
-  background-color: rgba(52, 211, 153, 0.18);
-  border-color: rgba(52, 211, 153, 0.45);
+  background: rgba(6, 78, 59, 0.35);
+  border-color: rgba(16, 185, 129, 0.7);
 }
 body.theme-dark .planet-jupiter {
   color: #fbbf24;
-  background-color: rgba(251, 191, 36, 0.18);
-  border-color: rgba(251, 191, 36, 0.45);
+  background: rgba(120, 53, 15, 0.35);
+  border-color: rgba(245, 158, 11, 0.7);
 }
 body.theme-dark .planet-venus {
   color: #f472b6;
-  background-color: rgba(244, 114, 182, 0.18);
-  border-color: rgba(244, 114, 182, 0.45);
+  background: rgba(131, 24, 67, 0.35);
+  border-color: rgba(244, 63, 94, 0.7);
 }
 body.theme-dark .planet-saturn {
   color: #60a5fa;
-  background-color: rgba(96, 165, 250, 0.18);
-  border-color: rgba(96, 165, 250, 0.45);
+  background: rgba(30, 58, 138, 0.35);
+  border-color: rgba(59, 130, 246, 0.7);
 }
 body.theme-dark .planet-rahu {
   color: #f4f4f5;
-  background-color: rgba(9, 9, 11, 0.65);
-  border-color: rgba(228, 228, 231, 0.45);
+  background: rgba(9, 9, 11, 0.75);
+  border-color: rgba(113, 113, 122, 0.6);
 }
 body.theme-dark .planet-ketu {
   color: #cbd5e1;
-  background-color: rgba(100, 116, 139, 0.22);
-  border-color: rgba(148, 163, 184, 0.45);
+  background: rgba(39, 39, 42, 0.65);
+  border-color: rgba(161, 161, 170, 0.6);
+}
+
+body.theme-dark .dignity-exalted {
+  color: #34d399;
+  background-color: rgba(52, 211, 153, 0.2);
+  border-color: rgba(52, 211, 153, 0.4);
+}
+body.theme-dark .dignity-debilitated {
+  color: #f87171;
+  background-color: rgba(248, 113, 113, 0.2);
+  border-color: rgba(248, 113, 113, 0.4);
+}
+body.theme-dark .dignity-moolatrikona {
+  color: #d8b4fe;
+  background-color: rgba(168, 85, 247, 0.2);
+  border-color: rgba(168, 85, 247, 0.4);
+}
+body.theme-dark .dignity-own {
+  color: #fde047;
+  background-color: rgba(234, 179, 8, 0.2);
+  border-color: rgba(234, 179, 8, 0.4);
+}
+
+/* ==============================================================================
+   NAVAGRAHA COLOR & SYMBOL REFERENCE PLATE (From Kundali Studio)
+   ============================================================================== */
+.plate-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.plate-badge {
+  display: inline-block;
+  padding: 0.32rem 0.85rem;
+  background: rgba(217, 119, 6, 0.12);
+  border: 1px solid rgba(217, 119, 6, 0.4);
+  color: var(--heading-gold);
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.plate-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--heading-gold);
+  margin: 0.3rem 0;
+}
+
+.plate-subtitle {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.45;
+}
+
+.graha-palette-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.15rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .graha-palette-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.graha-card {
+  border-radius: 8px;
+  border: 1.5px solid;
+  padding: 1rem 1.15rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.graha-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.graha-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+  padding-bottom: 0.55rem;
+}
+
+body.theme-dark .graha-card-top {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.graha-3d-sphere {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.graha-card-titles {
+  flex-grow: 1;
+}
+
+.graha-name-hi {
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.graha-name-en {
+  font-size: 0.82rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.graha-color-tag {
+  font-size: 0.74rem;
+  font-weight: 600;
+  opacity: 0.9;
+  letter-spacing: 0.02em;
+}
+
+.graha-glyph {
+  font-size: 1.6rem;
+  opacity: 0.35;
+  font-family: serif;
+}
+
+.graha-card-body {
+  font-size: 0.82rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  line-height: 1.4;
+}
+
+.graha-meta-row strong {
+  font-weight: 700;
+}
+
+/* Individual Graha Card Colors (Matching Kundali Studio) */
+.graha-card-sun {
+  background: linear-gradient(135deg, rgba(255, 247, 237, 0.95), rgba(255, 237, 213, 0.85));
+  border-color: #ea580c;
+  color: #7c2d12;
+}
+.graha-card-moon {
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.95), rgba(226, 232, 240, 0.85));
+  border-color: #94a3b8;
+  color: #1e293b;
+}
+.graha-card-mars {
+  background: linear-gradient(135deg, rgba(254, 242, 242, 0.95), rgba(254, 226, 226, 0.85));
+  border-color: #ef4444;
+  color: #7f1d1d;
+}
+.graha-card-mercury {
+  background: linear-gradient(135deg, rgba(240, 253, 244, 0.95), rgba(209, 250, 229, 0.85));
+  border-color: #10b981;
+  color: #064e3b;
+}
+.graha-card-jupiter {
+  background: linear-gradient(135deg, rgba(255, 251, 235, 0.95), rgba(254, 243, 199, 0.85));
+  border-color: #f59e0b;
+  color: #78350f;
+}
+.graha-card-venus {
+  background: linear-gradient(135deg, rgba(253, 242, 248, 0.95), rgba(252, 231, 243, 0.85));
+  border-color: #f43f5e;
+  color: #831843;
+}
+.graha-card-saturn {
+  background: linear-gradient(135deg, rgba(239, 246, 255, 0.95), rgba(219, 234, 254, 0.85));
+  border-color: #3b82f6;
+  color: #1e3a8a;
+}
+.graha-card-rahu {
+  background: linear-gradient(135deg, rgba(24, 24, 27, 0.06), rgba(9, 9, 11, 0.12));
+  border-color: #27272a;
+  color: #09090b;
+}
+.graha-card-ketu {
+  background: linear-gradient(135deg, rgba(113, 113, 122, 0.08), rgba(82, 82, 91, 0.14));
+  border-color: #71717a;
+  color: #27272a;
+}
+.graha-card-lagna {
+  background: linear-gradient(135deg, rgba(250, 245, 255, 0.95), rgba(243, 232, 255, 0.85));
+  border-color: #a855f7;
+  color: #581c87;
+}
+
+/* Dark Mode Card Overrides */
+body.theme-dark .graha-card-sun {
+  background: rgba(124, 45, 18, 0.25);
+  border-color: rgba(234, 88, 12, 0.6);
+  color: #fed7aa;
+}
+body.theme-dark .graha-card-moon {
+  background: rgba(30, 41, 59, 0.4);
+  border-color: rgba(148, 163, 184, 0.5);
+  color: #f1f5f9;
+}
+body.theme-dark .graha-card-mars {
+  background: rgba(127, 29, 29, 0.25);
+  border-color: rgba(239, 68, 68, 0.6);
+  color: #fecaca;
+}
+body.theme-dark .graha-card-mercury {
+  background: rgba(6, 78, 59, 0.25);
+  border-color: rgba(16, 185, 129, 0.6);
+  color: #a7f3d0;
+}
+body.theme-dark .graha-card-jupiter {
+  background: rgba(120, 53, 15, 0.25);
+  border-color: rgba(245, 158, 11, 0.6);
+  color: #fde68a;
+}
+body.theme-dark .graha-card-venus {
+  background: rgba(131, 24, 67, 0.25);
+  border-color: rgba(244, 63, 94, 0.6);
+  color: #fbcfe8;
+}
+body.theme-dark .graha-card-saturn {
+  background: rgba(30, 58, 138, 0.25);
+  border-color: rgba(59, 130, 246, 0.6);
+  color: #bfdbfe;
+}
+body.theme-dark .graha-card-rahu {
+  background: rgba(9, 9, 11, 0.65);
+  border-color: rgba(113, 113, 122, 0.6);
+  color: #e4e4e7;
+}
+body.theme-dark .graha-card-ketu {
+  background: rgba(39, 39, 42, 0.55);
+  border-color: rgba(161, 161, 170, 0.6);
+  color: #e4e4e7;
+}
+body.theme-dark .graha-card-lagna {
+  background: rgba(88, 28, 135, 0.25);
+  border-color: rgba(168, 85, 247, 0.6);
+  color: #e9d5ff;
 }
 
 /* Back Matter */

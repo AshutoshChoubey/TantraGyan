@@ -37,6 +37,7 @@
       <select id="reader-chapter-select" class="chapter-select" aria-label="अध्याय चुनें (Jump to Chapter)">
         <option value="front-title">✧ ग्रंथ आवरण व मुखपृष्ठ (Cover & Title)</option>
         <option value="toc-root">✧ ग्रंथ अनुक्रमणिका (Table of Contents)</option>
+        <option value="navagraha-plate">✧ नवग्रह स्वरूप एवं वर्ण चक्र (Color Legend)</option>
         {% for ch in chapters %}
         <option value="{{ ch.id }}">अध्याय {{ ch.number }}: {{ ch.title }}</option>
         {% endfor %}
@@ -167,6 +168,14 @@
         <div class="sheet-inner">
           <h2 class="toc-title">ग्रंथ अनुक्रमणिका • Table of Contents</h2>
           <ul class="toc-list">
+            <li class="toc-item">
+              <a href="#navagraha-plate" class="toc-link">
+                <span class="toc-num">✧</span>
+                <span class="toc-chapter-name">नवग्रह शास्त्रीय स्वरूप, वर्ण एवं प्रतीक चक्र (Color & Symbol Reference)</span>
+                <span class="toc-dots"></span>
+                <span class="toc-target-label">वर्ण परिचय</span>
+              </a>
+            </li>
             {% for ch in chapters %}
             <li class="toc-item">
               <a href="#{{ ch.id }}" class="toc-link">
@@ -178,6 +187,199 @@
             </li>
             {% endfor %}
           </ul>
+        </div>
+      </section>
+
+      <!-- FRONT MATTER 6: Dedicated Full-Color Navagraha Reference Plate -->
+      <section class="book-sheet navagraha-palette-plate" id="navagraha-plate">
+        <div class="sheet-inner">
+          <div class="plate-header">
+            <div class="plate-badge">शास्त्रीय ग्रह स्वरूप चक्र • PARASHARI COLOR PALETTE</div>
+            <h2 class="plate-title">नवग्रह शास्त्रीय स्वरूप, वर्ण एवं प्रतीक परिचय</h2>
+            <div class="plate-subtitle">बृहत्पाराशर होरा शास्त्र एवं फलदीपिका अनुसार नवग्रहों का खगोलीय स्वरूप, रत्न, धातु, वर्ण एवं उच्च-नीच मर्यादा</div>
+          </div>
+
+          <div class="graha-palette-grid">
+            <!-- 1. Sun -->
+            <div class="graha-card graha-card-sun">
+              <div class="graha-card-top">
+                <img src="assets/images/planets/sun.png" alt="Sun" class="graha-3d-sphere">
+                <div class="graha-card-titles">
+                  <div class="graha-name-hi">सूर्य • <span class="graha-name-en">Sun (Su)</span></div>
+                  <div class="graha-color-tag">भगवा • Saffron (Bhagwa)</div>
+                </div>
+                <div class="graha-glyph">☉</div>
+              </div>
+              <div class="graha-card-body">
+                <div class="graha-meta-row"><strong>देवता / तत्व:</strong> अग्नि • तेजस तत्व</div>
+                <div class="graha-meta-row"><strong>रत्न / धातु:</strong> माणिक्य (Ruby) • तांबा</div>
+                <div class="graha-meta-row"><strong>उच्च / नीच:</strong> <span class="dignity-badge dignity-exalted">मेष १०°</span> • <span class="dignity-badge dignity-debilitated">तुला १०°</span></div>
+                <div class="graha-meta-row"><strong>कारकत्व:</strong> आत्मा, पिता, राजसत्ता, आरोग्य, तेज</div>
+              </div>
+            </div>
+
+            <!-- 2. Moon -->
+            <div class="graha-card graha-card-moon">
+              <div class="graha-card-top">
+                <img src="assets/images/planets/moon.png" alt="Moon" class="graha-3d-sphere">
+                <div class="graha-card-titles">
+                  <div class="graha-name-hi">चन्द्र • <span class="graha-name-en">Moon (Mo)</span></div>
+                  <div class="graha-color-tag">मोती श्वेत • Pearl Gray</div>
+                </div>
+                <div class="graha-glyph">☽</div>
+              </div>
+              <div class="graha-card-body">
+                <div class="graha-meta-row"><strong>देवता / तत्व:</strong> वरुण • जल तत्व</div>
+                <div class="graha-meta-row"><strong>रत्न / धातु:</strong> मोती (Pearl) • चांदी</div>
+                <div class="graha-meta-row"><strong>उच्च / नीच:</strong> <span class="dignity-badge dignity-exalted">वृषभ ३°</span> • <span class="dignity-badge dignity-debilitated">वृश्चिक ३°</span></div>
+                <div class="graha-meta-row"><strong>कारकत्व:</strong> मन, माता, मानसिक शांति, कल्पनाशक्ति</div>
+              </div>
+            </div>
+
+            <!-- 3. Mars -->
+            <div class="graha-card graha-card-mars">
+              <div class="graha-card-top">
+                <img src="assets/images/planets/mars.png" alt="Mars" class="graha-3d-sphere">
+                <div class="graha-card-titles">
+                  <div class="graha-name-hi">मंगल • <span class="graha-name-en">Mars (Ma)</span></div>
+                  <div class="graha-color-tag">रक्त वर्ण • Fiery Red</div>
+                </div>
+                <div class="graha-glyph">♂</div>
+              </div>
+              <div class="graha-card-body">
+                <div class="graha-meta-row"><strong>देवता / तत्व:</strong> कार्तिकेय • अग्नि तत्व</div>
+                <div class="graha-meta-row"><strong>रत्न / धातु:</strong> मूंगा (Red Coral) • तांबा</div>
+                <div class="graha-meta-row"><strong>उच्च / नीच:</strong> <span class="dignity-badge dignity-exalted">मकर २८°</span> • <span class="dignity-badge dignity-debilitated">कर्क २८°</span></div>
+                <div class="graha-meta-row"><strong>कारकत्व:</strong> पराक्रम, भ्राता, शौर्य, सेनापति, भूमि</div>
+              </div>
+            </div>
+
+            <!-- 4. Mercury -->
+            <div class="graha-card graha-card-mercury">
+              <div class="graha-card-top">
+                <img src="assets/images/planets/mercury.png" alt="Mercury" class="graha-3d-sphere">
+                <div class="graha-card-titles">
+                  <div class="graha-name-hi">बुध • <span class="graha-name-en">Mercury (Me)</span></div>
+                  <div class="graha-color-tag">मरकत हरित • Emerald Green</div>
+                </div>
+                <div class="graha-glyph">☿</div>
+              </div>
+              <div class="graha-card-body">
+                <div class="graha-meta-row"><strong>देवता / तत्व:</strong> विष्णु • पृथ्वी तत्व</div>
+                <div class="graha-meta-row"><strong>रत्न / धातु:</strong> पन्ना (Emerald) • कांसा</div>
+                <div class="graha-meta-row"><strong>उच्च / नीच:</strong> <span class="dignity-badge dignity-exalted">कन्या १५°</span> • <span class="dignity-badge dignity-debilitated">मीन १५°</span></div>
+                <div class="graha-meta-row"><strong>कारकत्व:</strong> बुद्धि, वाणी, व्यापार, तर्क, मातुल</div>
+              </div>
+            </div>
+
+            <!-- 5. Jupiter -->
+            <div class="graha-card graha-card-jupiter">
+              <div class="graha-card-top">
+                <img src="assets/images/planets/jupiter.png" alt="Jupiter" class="graha-3d-sphere">
+                <div class="graha-card-titles">
+                  <div class="graha-name-hi">गुरु • <span class="graha-name-en">Jupiter (Ju)</span></div>
+                  <div class="graha-color-tag">पीत हल्दी • Golden Yellow</div>
+                </div>
+                <div class="graha-glyph">♃</div>
+              </div>
+              <div class="graha-card-body">
+                <div class="graha-meta-row"><strong>देवता / तत्व:</strong> इन्द्र / ब्रह्मा • आकाश तत्व</div>
+                <div class="graha-meta-row"><strong>रत्न / धातु:</strong> पुखराज (Yellow Sapphire) • स्वर्ण</div>
+                <div class="graha-meta-row"><strong>उच्च / नीच:</strong> <span class="dignity-badge dignity-exalted">कर्क ५°</span> • <span class="dignity-badge dignity-debilitated">मकर ५°</span></div>
+                <div class="graha-meta-row"><strong>कारकत्व:</strong> ज्ञान, धर्म, संतान, विवेक, सद्गुरु</div>
+              </div>
+            </div>
+
+            <!-- 6. Venus -->
+            <div class="graha-card graha-card-venus">
+              <div class="graha-card-top">
+                <img src="assets/images/planets/venus.png" alt="Venus" class="graha-3d-sphere">
+                <div class="graha-card-titles">
+                  <div class="graha-name-hi">शुक्र • <span class="graha-name-en">Venus (Ve)</span></div>
+                  <div class="graha-color-tag">गुलाबी / श्वेत • Diamond Rose</div>
+                </div>
+                <div class="graha-glyph">♀</div>
+              </div>
+              <div class="graha-card-body">
+                <div class="graha-meta-row"><strong>देवता / तत्व:</strong> इंद्राणी • जल तत्व</div>
+                <div class="graha-meta-row"><strong>रत्न / धातु:</strong> हीरा (Diamond) • चांदी</div>
+                <div class="graha-meta-row"><strong>उच्च / नीच:</strong> <span class="dignity-badge dignity-exalted">मीन २७°</span> • <span class="dignity-badge dignity-debilitated">कन्या २७°</span></div>
+                <div class="graha-meta-row"><strong>कारकत्व:</strong> प्रेम, ऐश्वर्य, कला, संगीत, दांपत्य</div>
+              </div>
+            </div>
+
+            <!-- 7. Saturn -->
+            <div class="graha-card graha-card-saturn">
+              <div class="graha-card-top">
+                <img src="assets/images/planets/saturn.png" alt="Saturn" class="graha-3d-sphere">
+                <div class="graha-card-titles">
+                  <div class="graha-name-hi">शनि • <span class="graha-name-en">Saturn (Sa)</span></div>
+                  <div class="graha-color-tag">नील / श्याम • Cosmic Blue</div>
+                </div>
+                <div class="graha-glyph">♄</div>
+              </div>
+              <div class="graha-card-body">
+                <div class="graha-meta-row"><strong>देवता / तत्व:</strong> यमराज • वायु तत्व</div>
+                <div class="graha-meta-row"><strong>रत्न / धातु:</strong> नीलम (Blue Sapphire) • लोहा</div>
+                <div class="graha-meta-row"><strong>उच्च / नीच:</strong> <span class="dignity-badge dignity-exalted">तुला २०°</span> • <span class="dignity-badge dignity-debilitated">मेष २०°</span></div>
+                <div class="graha-meta-row"><strong>कारकत्व:</strong> कर्म, न्याय, वैराग्य, अनुशासन, दीर्घायु</div>
+              </div>
+            </div>
+
+            <!-- 8. Rahu -->
+            <div class="graha-card graha-card-rahu">
+              <div class="graha-card-top">
+                <img src="assets/images/planets/rahu.png" alt="Rahu" class="graha-3d-sphere">
+                <div class="graha-card-titles">
+                  <div class="graha-name-hi">राहु • <span class="graha-name-en">Rahu (Ra)</span></div>
+                  <div class="graha-color-tag">धूम्र कृष्ण • Shadow Black</div>
+                </div>
+                <div class="graha-glyph">☊</div>
+              </div>
+              <div class="graha-card-body">
+                <div class="graha-meta-row"><strong>देवता / तत्व:</strong> सर्प • तमोगुण (छाया)</div>
+                <div class="graha-meta-row"><strong>रत्न / धातु:</strong> गोमेद (Hessonite) • सीसा</div>
+                <div class="graha-meta-row"><strong>उच्च / नीच:</strong> <span class="dignity-badge dignity-exalted">मिथुन / वृषभ</span> • <span class="dignity-badge dignity-debilitated">धनु / वृश्चिक</span></div>
+                <div class="graha-meta-row"><strong>कारकत्व:</strong> कूटनीति, विद्रोही भाव, महत्वाकांक्षा, विदेश</div>
+              </div>
+            </div>
+
+            <!-- 9. Ketu -->
+            <div class="graha-card graha-card-ketu">
+              <div class="graha-card-top">
+                <img src="assets/images/planets/ketu.png" alt="Ketu" class="graha-3d-sphere">
+                <div class="graha-card-titles">
+                  <div class="graha-name-hi">केतु • <span class="graha-name-en">Ketu (Ke)</span></div>
+                  <div class="graha-color-tag">धूसर राख • Smokey Ash</div>
+                </div>
+                <div class="graha-glyph">☋</div>
+              </div>
+              <div class="graha-card-body">
+                <div class="graha-meta-row"><strong>देवता / तत्व:</strong> चित्रगुप्त • तमोगुण (छाया)</div>
+                <div class="graha-meta-row"><strong>रत्न / धातु:</strong> लहसुनिया (Cat's Eye) • मिश्र धातु</div>
+                <div class="graha-meta-row"><strong>उच्च / नीच:</strong> <span class="dignity-badge dignity-exalted">धनु / वृश्चिक</span> • <span class="dignity-badge dignity-debilitated">मिथुन / वृषभ</span></div>
+                <div class="graha-meta-row"><strong>कारकत्व:</strong> मोक्ष, अंतर्ज्ञान, वैराग्य, पराविद्या, मौन</div>
+              </div>
+            </div>
+
+            <!-- 10. Lagna -->
+            <div class="graha-card graha-card-lagna">
+              <div class="graha-card-top">
+                <img src="assets/images/planets/lagna.png" alt="Lagna" class="graha-3d-sphere">
+                <div class="graha-card-titles">
+                  <div class="graha-name-hi">लग्न • <span class="graha-name-en">Ascendant (Asc)</span></div>
+                  <div class="graha-color-tag">जांबुनी • Amethyst Purple</div>
+                </div>
+                <div class="graha-glyph">✦</div>
+              </div>
+              <div class="graha-card-body">
+                <div class="graha-meta-row"><strong>स्वरूप:</strong> कालपुरुष प्रथम भाव • तनु भाव</div>
+                <div class="graha-meta-row"><strong>दिग्बल:</strong> पूर्व दिशा क्षितिज उदय बिंदु</div>
+                <div class="graha-meta-row"><strong>मर्यादा:</strong> देह सौष्ठव, तेज, आत्मबल, जीवन गति</div>
+                <div class="graha-meta-row"><strong>कारकत्व:</strong> सम्पूर्ण जन्म कुण्डली का आधार स्तम्भ</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

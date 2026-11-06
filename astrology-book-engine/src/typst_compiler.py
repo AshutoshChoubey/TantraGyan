@@ -5,7 +5,8 @@ Typst Publishing Compiler for Astrology Book Engine (Masterwork Edition)
 Translates manuscript chapters into modern, academic-grade Typst markup
 and compiles ultra-high resolution trade-paperback (A5 / 6x9in) vector PDFs.
 Features:
-- Authentic Vedic Jyotish color-coded planetary typography
+- Authentic Vedic Jyotish color-coded planetary typography with 3D sphere icons
+- Dedicated Full-Color Navagraha Reference Plate
 - Royal ornamental framed title and dedication pages
 - Proportional responsive tables with header accents and zero horizontal overflow
 - Classical shloka, yoga, and sutra callout boxes
@@ -17,35 +18,49 @@ import re
 import typst
 import yaml
 
-# Authentic Vedic Jyotish Planet Color Palette for Typst
-TYPST_PLANET_COLORS = [
-    # Sun - Saffron
-    (r'(?<![क-हअ-औ्])(?:सूर्य\s*\(\s*Sun\s*\)|सूर्यदेव|सूर्य|\bSun\b)(?![क-हअ-औ्ा-ौ])', 'rgb("#c2410c")'),
-    # Moon - Pearl / Silver Gray
-    (r'(?<![क-हअ-औ्])(?:चन्द्र\s*\(\s*Moon\s*\)|चंद्र\s*\(\s*Moon\s*\)|चन्द्रमा|चंद्रमा|चन्द्र|चंद्र|\bMoon\b)(?![क-हअ-औ्ा-ौ])', 'rgb("#475569")'),
-    # Mars - Fiery Crimson Red
-    (r'(?<![क-हअ-औ्])(?:मंगल\s*\(\s*Mars\s*\)|मंगलदेव|मंगल|\bMars\b)(?![क-हअ-औ्ा-ौ])', 'rgb("#dc2626")'),
-    # Mercury - Emerald Green
-    (r'(?<![क-हअ-औ्])(?:बुध\s*\(\s*Mercury\s*\)|बुधदेव|बुध|\bMercury\b)(?![क-हअ-औ्ा-ौ])', 'rgb("#047857")'),
-    # Jupiter - Golden Turmeric Yellow
-    (r'(?<![क-हअ-औ्])(?:(?:गुरु\s*/\s*बृहस्पति|बृहस्पति|देवगुरु|गुरु(?!\s*जन))\s*\(\s*Jupiter\s*\)|बृहस्पति|देवगुरु|गुरु(?!\s*जन)|\bJupiter\b)(?![क-हअ-औ्ा-ौ])', 'rgb("#b45309")'),
-    # Venus - Diamond Rose Pink
-    (r'(?<![क-हअ-औ्])(?:शुक्र\s*\(\s*Venus\s*\)|शुक्रदेव|शुक्र|\bVenus\b)(?![क-हअ-औ्ा-ौ])', 'rgb("#be185d")'),
-    # Saturn - Deep Cosmic Royal Blue
-    (r'(?<![क-हअ-औ्])(?:शनि\s*\(\s*Saturn\s*\)|शनिदेव|शनैश्चर|शनि|\bSaturn\b)(?![क-हअ-औ्ा-ौ])', 'rgb("#1d4ed8")'),
-    # Rahu - Shadow Obsidian Black
-    (r'(?<![क-हअ-औ्])(?:राहु\s*\(\s*Rahu\s*\)|राहु|\bRahu\b)(?![क-हअ-औ्ा-ौ])', 'rgb("#09090b")'),
-    # Ketu - Smokey Ash Shadow Gray
-    (r'(?<![क-हअ-औ्])(?:केतु\s*\(\s*Ketu\s*\)|केतु|\bKetu\b)(?![क-हअ-औ्ा-ौ])', 'rgb("#52525b")'),
+# Authentic Vedic Jyotish Planet Color Palette & 3D Icons for Typst
+TYPST_PLANET_SPECS = [
+    # (key, icon, pattern, text_color, bg_color, border_color)
+    ('sun', 'sun.png', r'(?<![क-हअ-औ्])(?:सूर्य\s*\(\s*Sun\s*\)|सूर्यदेव|सूर्य|\bSun\b)(?![क-हअ-औ्ा-ौ])', 'rgb("#c2410c")', 'rgb("#ffedd5")', 'rgb("#ea580c")'),
+    ('moon', 'moon.png', r'(?<![क-हअ-औ्])(?:चन्द्र\s*\(\s*Moon\s*\)|चंद्र\s*\(\s*Moon\s*\)|चन्द्रमा|चंद्रमा|चन्द्र|चंद्र|\bMoon\b)(?![क-हअ-औ्ा-ौ])', 'rgb("#334155")', 'rgb("#f1f5f9")', 'rgb("#94a3b8")'),
+    ('mars', 'mars.png', r'(?<![क-हअ-औ्])(?:मंगल\s*\(\s*Mars\s*\)|मंगलदेव|मंगल|\bMars\b)(?![क-हअ-औ्ा-ौ])', 'rgb("#dc2626")', 'rgb("#fee2e2")', 'rgb("#ef4444")'),
+    ('mercury', 'mercury.png', r'(?<![क-हअ-औ्])(?:बुध\s*\(\s*Mercury\s*\)|बुधदेव|बुध|\bMercury\b)(?![क-हअ-औ्ा-ौ])', 'rgb("#047857")', 'rgb("#d1fae5")', 'rgb("#10b981")'),
+    ('jupiter', 'jupiter.png', r'(?<![क-हअ-औ्])(?:(?:गुरु\s*/\s*बृहस्पति|बृहस्पति|देवगुरु|गुरु(?!\s*जन))\s*\(\s*Jupiter\s*\)|बृहस्पति|देवगुरु|गुरु(?!\s*जन)|\bJupiter\b)(?![क-हअ-औ्ा-ौ])', 'rgb("#b45309")', 'rgb("#fef3c7")', 'rgb("#f59e0b")'),
+    ('venus', 'venus.png', r'(?<![क-हअ-औ्])(?:शुक्र\s*\(\s*Venus\s*\)|शुक्रदेव|शुक्र|\bVenus\b)(?![क-हअ-औ्ा-ौ])', 'rgb("#be185d")', 'rgb("#fce7f3")', 'rgb("#f43f5e")'),
+    ('saturn', 'saturn.png', r'(?<![क-हअ-औ्])(?:शनि\s*\(\s*Saturn\s*\)|शनिदेव|शनैश्चर|शनि|\bSaturn\b)(?![क-हअ-औ्ा-ौ])', 'rgb("#1d4ed8")', 'rgb("#dbeafe")', 'rgb("#3b82f6")'),
+    ('rahu', 'rahu.png', r'(?<![क-हअ-औ्])(?:राहु\s*\(\s*Rahu\s*\)|राहु|\bRahu\b)(?![क-हअ-औ्ा-ौ])', 'rgb("#09090b")', 'rgb("#f4f4f5")', 'rgb("#27272a")'),
+    ('ketu', 'ketu.png', r'(?<![क-हअ-औ्])(?:केतु\s*\(\s*Ketu\s*\)|केतु|\bKetu\b)(?![क-हअ-औ्ा-ौ])', 'rgb("#52525b")', 'rgb("#f4f4f5")', 'rgb("#71717a")'),
+]
+
+TYPST_DIGNITY_RULES = [
+    (r'(?<![क-हअ-औ्])उच्च(?![क-हअ-औ्ा-ौ])', 'rgb("#047857")', 'rgb("#d1fae5")', 'rgb("#10b981")'),
+    (r'(?<![क-हअ-औ्])नीच(?![क-हअ-औ्ा-ौ])', 'rgb("#dc2626")', 'rgb("#fee2e2")', 'rgb("#ef4444")'),
+    (r'(?<![क-हअ-औ्])मूलत्रिकोण(?![क-हअ-औ्ा-ौ])', 'rgb("#6b21a8")', 'rgb("#f3e8ff")', 'rgb("#c084fc")'),
+    (r'(?<![क-हअ-औ्])स्वराशि(?![क-हअ-औ्ा-ौ])', 'rgb("#b45309")', 'rgb("#fef3c7")', 'rgb("#f59e0b")'),
 ]
 
 
 def apply_typst_planet_colors(text):
-    """Wraps matched planetary names in their signature Typst colored bold spans."""
-    for pattern, color_expr in TYPST_PLANET_COLORS:
+    """Wraps matched planetary names in their signature Typst colored bold spans with 3D icons."""
+    for key, icon, pat, text_col, bg_col, border_col in TYPST_PLANET_SPECS:
         text = re.sub(
-            pattern,
-            lambda m: f'#text(fill: {color_expr}, weight: "bold")[{m.group(0)}]',
+            pat,
+            lambda m, ic=icon, tc=text_col, bg=bg_col, bc=border_col: (
+                f'#box(baseline: 20%, inset: (x: 2.5pt, y: 1.2pt), radius: 2.5pt, fill: {bg}, stroke: 0.4pt + {bc})['
+                f'#image("/assets/images/planets/{ic}", width: 8pt) #h(1.5pt)'
+                f'#text(fill: {tc}, weight: "bold")[{m.group(0)}]'
+                f']'
+            ),
+            text
+        )
+    for pat, text_col, bg_col, border_col in TYPST_DIGNITY_RULES:
+        text = re.sub(
+            pat,
+            lambda m, tc=text_col, bg=bg_col, bc=border_col: (
+                f'#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: {bg}, stroke: 0.4pt + {bc})['
+                f'#text(fill: {tc}, weight: "bold", size: 0.85em)[{m.group(0)}]'
+                f']'
+            ),
             text
         )
     return text
@@ -299,7 +314,7 @@ def convert_md_to_typst(md_text, assets_dir):
         s = re.sub(r'\*\*(.*?)\*\*', r'#strong[\1]', s)
         s = re.sub(r'\*(.*?)\*', r'#emph[\1]', s)
 
-        # Apply authentic Jyotish planet colors to prose
+        # Apply authentic Jyotish planet colors & icons to prose
         s = apply_typst_planet_colors(s)
 
         out.append(s + '\n')
@@ -332,7 +347,7 @@ def compile_typst_book(metadata, chapters, output_pdf, base_dir):
   margin: (top: 2.2cm, bottom: 2.2cm, inside: 2.4cm, outside: 1.8cm),
   header: context {{
     let page_num = counter(page).get().first()
-    if page_num > 4 {{
+    if page_num > 5 {{
       if calc.odd(page_num) {{
         align(right)[
           #text(size: 7.8pt, fill: rgb("#78350f"), font: ("Cinzel", "Georgia"))[
@@ -470,6 +485,153 @@ def compile_typst_book(metadata, chapters, output_pdf, base_dir):
 #outline(title: "ग्रंथ अनुक्रमणिका • Table of Contents", depth: 2, indent: auto)
 
 #pagebreak()
+
+// Dedicated Full-Color Navagraha Reference Plate
+#align(center)[
+  #rect(fill: rgb("#fef3c7"), stroke: 0.6pt + rgb("#d97706"), radius: 3pt, inset: (x: 8pt, y: 3pt))[
+    #text(size: 7.5pt, weight: "bold", fill: rgb("#78350f"))[शास्त्रीय ग्रह स्वरूप चक्र • PARASHARI COLOR PALETTE]
+  ]
+  #v(0.2cm)
+  #text(size: 14pt, weight: "bold", fill: rgb("#78350f"))[नवग्रह शास्त्रीय स्वरूप, वर्ण एवं प्रतीक परिचय]
+  #v(0.12cm)
+  #text(size: 8pt, style: "italic", fill: rgb("#57534e"))[बृहत्पाराशर होरा शास्त्र एवं फलदीपिका अनुसार नवग्रहों का खगोलीय स्वरूप, रत्न, धातु, वर्ण एवं उच्च-नीच मर्यादा]
+  #v(0.35cm)
+]
+
+#grid(
+  columns: (1fr, 1fr),
+  gutter: 7pt,
+  // 1. Sun
+  rect(fill: rgb("#fff7ed"), stroke: 0.6pt + rgb("#ea580c"), radius: 4pt, inset: 6pt)[
+    #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
+      image("/assets/images/planets/sun.png", width: 16pt),
+      [#text(weight: "bold", fill: rgb("#c2410c"), size: 8pt)[सूर्य • Sun (Su)] \\ #text(size: 6.5pt, fill: rgb("#7c2d12"))[भगवा • Saffron]],
+      [#align(right)[#text(size: 10pt, fill: rgb("#ea580c"))[☉]]]
+    )
+    #v(2pt)
+    #text(size: 6.5pt, fill: rgb("#451a03"))[
+      *देवता / तत्व:* अग्नि • तेजस | *रत्न:* माणिक्य • तांबा \\
+      *उच्च / नीच:* मेष १०° / तुला १०° | *कारकत्व:* आत्मा, पिता, राजसत्ता
+    ]
+  ],
+  // 2. Moon
+  rect(fill: rgb("#f8fafc"), stroke: 0.6pt + rgb("#94a3b8"), radius: 4pt, inset: 6pt)[
+    #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
+      image("/assets/images/planets/moon.png", width: 16pt),
+      [#text(weight: "bold", fill: rgb("#334155"), size: 8pt)[चन्द्र • Moon (Mo)] \\ #text(size: 6.5pt, fill: rgb("#475569"))[मोती श्वेत • Pearl Gray]],
+      [#align(right)[#text(size: 10pt, fill: rgb("#94a3b8"))[☽]]]
+    )
+    #v(2pt)
+    #text(size: 6.5pt, fill: rgb("#1e293b"))[
+      *देवता / तत्व:* वरुण • जल तत्व | *रत्न:* मोती • चांदी \\
+      *उच्च / नीच:* वृषभ ३° / वृश्चिक ३° | *कारकत्व:* मन, माता, मानसिक शांति
+    ]
+  ],
+  // 3. Mars
+  rect(fill: rgb("#fef2f2"), stroke: 0.6pt + rgb("#ef4444"), radius: 4pt, inset: 6pt)[
+    #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
+      image("/assets/images/planets/mars.png", width: 16pt),
+      [#text(weight: "bold", fill: rgb("#dc2626"), size: 8pt)[मंगल • Mars (Ma)] \\ #text(size: 6.5pt, fill: rgb("#991b1b"))[रक्त वर्ण • Fiery Red]],
+      [#align(right)[#text(size: 10pt, fill: rgb("#ef4444"))[♂]]]
+    )
+    #v(2pt)
+    #text(size: 6.5pt, fill: rgb("#7f1d1d"))[
+      *देवता / तत्व:* कार्तिकेय • अग्नि | *रत्न:* मूंगा • तांबा \\
+      *उच्च / नीच:* मकर २८° / कर्क २८° | *कारकत्व:* पराक्रम, भ्राता, शौर्य
+    ]
+  ],
+  // 4. Mercury
+  rect(fill: rgb("#f0fdf4"), stroke: 0.6pt + rgb("#10b981"), radius: 4pt, inset: 6pt)[
+    #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
+      image("/assets/images/planets/mercury.png", width: 16pt),
+      [#text(weight: "bold", fill: rgb("#047857"), size: 8pt)[बुध • Mercury (Me)] \\ #text(size: 6.5pt, fill: rgb("#065f46"))[मरकत हरित • Emerald Green]],
+      [#align(right)[#text(size: 10pt, fill: rgb("#10b981"))[☿]]]
+    )
+    #v(2pt)
+    #text(size: 6.5pt, fill: rgb("#064e3b"))[
+      *देवता / तत्व:* विष्णु • पृथ्वी | *रत्न:* पन्ना • कांसा \\
+      *उच्च / नीच:* कन्या १५° / मीन १५° | *कारकत्व:* बुद्धि, वाणी, व्यापार
+    ]
+  ],
+  // 5. Jupiter
+  rect(fill: rgb("#fffbeb"), stroke: 0.6pt + rgb("#f59e0b"), radius: 4pt, inset: 6pt)[
+    #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
+      image("/assets/images/planets/jupiter.png", width: 16pt),
+      [#text(weight: "bold", fill: rgb("#b45309"), size: 8pt)[गुरु • Jupiter (Ju)] \\ #text(size: 6.5pt, fill: rgb("#92400e"))[पीत हल्दी • Golden Yellow]],
+      [#align(right)[#text(size: 10pt, fill: rgb("#f59e0b"))[♃]]]
+    )
+    #v(2pt)
+    #text(size: 6.5pt, fill: rgb("#78350f"))[
+      *देवता / तत्व:* इन्द्र / ब्रह्मा • आकाश | *रत्न:* पुखराज • स्वर्ण \\
+      *उच्च / नीच:* कर्क ५° / मकर ५° | *कारकत्व:* ज्ञान, धर्म, संतान, विवेक
+    ]
+  ],
+  // 6. Venus
+  rect(fill: rgb("#fdf2f8"), stroke: 0.6pt + rgb("#f43f5e"), radius: 4pt, inset: 6pt)[
+    #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
+      image("/assets/images/planets/venus.png", width: 16pt),
+      [#text(weight: "bold", fill: rgb("#be185d"), size: 8pt)[शुक्र • Venus (Ve)] \\ #text(size: 6.5pt, fill: rgb("#9d174d"))[गुलाबी • Diamond Rose]],
+      [#align(right)[#text(size: 10pt, fill: rgb("#f43f5e"))[♀]]]
+    )
+    #v(2pt)
+    #text(size: 6.5pt, fill: rgb("#831843"))[
+      *देवता / तत्व:* इंद्राणी • जल तत्व | *रत्न:* हीरा • चांदी \\
+      *उच्च / नीच:* मीन २७° / कन्या २७° | *कारकत्व:* प्रेम, ऐश्वर्य, कला, दांपत्य
+    ]
+  ],
+  // 7. Saturn
+  rect(fill: rgb("#eff6ff"), stroke: 0.6pt + rgb("#3b82f6"), radius: 4pt, inset: 6pt)[
+    #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
+      image("/assets/images/planets/saturn.png", width: 16pt),
+      [#text(weight: "bold", fill: rgb("#1d4ed8"), size: 8pt)[शनि • Saturn (Sa)] \\ #text(size: 6.5pt, fill: rgb("#1e40af"))[नील श्याम • Cosmic Blue]],
+      [#align(right)[#text(size: 11pt, fill: rgb("#3b82f6"))[♄]]]
+    )
+    #v(2pt)
+    #text(size: 6.5pt, fill: rgb("#1e3a8a"))[
+      *देवता / तत्व:* यमराज • वायु तत्व | *रत्न:* नीलम • लोहा \\
+      *उच्च / नीच:* तुला २०° / मेष २०° | *कारकत्व:* कर्म, न्याय, वैराग्य, दीर्घायु
+    ]
+  ],
+  // 8. Rahu
+  rect(fill: rgb("#f4f4f5"), stroke: 0.6pt + rgb("#27272a"), radius: 4pt, inset: 6pt)[
+    #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
+      image("/assets/images/planets/rahu.png", width: 16pt),
+      [#text(weight: "bold", fill: rgb("#09090b"), size: 8pt)[राहु • Rahu (Ra)] \\ #text(size: 6.5pt, fill: rgb("#27272a"))[धूम्र कृष्ण • Shadow Black]],
+      [#align(right)[#text(size: 10pt, fill: rgb("#27272a"))[☊]]]
+    )
+    #v(2pt)
+    #text(size: 6.5pt, fill: rgb("#09090b"))[
+      *देवता / तत्व:* सर्प • तमोगुण (छाया) | *रत्न:* गोमेद • सीसा \\
+      *उच्च / नीच:* मिथुन / धनु | *कारकत्व:* कूटनीति, विद्रोही भाव, विदेश
+    ]
+  ],
+  // 9. Ketu
+  rect(fill: rgb("#f4f4f5"), stroke: 0.6pt + rgb("#71717a"), radius: 4pt, inset: 6pt)[
+    #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
+      image("/assets/images/planets/ketu.png", width: 16pt),
+      [#text(weight: "bold", fill: rgb("#52525b"), size: 8pt)[केतु • Ketu (Ke)] \\ #text(size: 6.5pt, fill: rgb("#52525b"))[धूसर राख • Smokey Ash]],
+      [#align(right)[#text(size: 10pt, fill: rgb("#71717a"))[☋]]]
+    )
+    #v(2pt)
+    #text(size: 6.5pt, fill: rgb("#27272a"))[
+      *देवता / तत्व:* चित्रगुप्त • तमोगुण (छाया) | *रत्न:* लहसुनिया • मिश्र धातु \\
+      *उच्च / नीच:* धनु / मिथुन | *कारकत्व:* मोक्ष, अंतर्ज्ञान, वैराग्य, मौन
+    ]
+  ],
+  // 10. Lagna
+  rect(fill: rgb("#faf5ff"), stroke: 0.6pt + rgb("#a855f7"), radius: 4pt, inset: 6pt)[
+    #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
+      image("/assets/images/planets/lagna.png", width: 16pt),
+      [#text(weight: "bold", fill: rgb("#6b21a8"), size: 8pt)[लग्न • Ascendant (Asc)] \\ #text(size: 6.5pt, fill: rgb("#7e22ce"))[जांबुनी • Amethyst Purple]],
+      [#align(right)[#text(size: 10pt, fill: rgb("#a855f7"))[✦]]]
+    )
+    #v(2pt)
+    #text(size: 6.5pt, fill: rgb("#581c87"))[
+      *स्वरूप:* कालपुरुष प्रथम भाव (तनु भाव) | *दिग्बल:* पूर्व क्षितिज \\
+      *मर्यादा:* देह सौष्ठव, तेज, आत्मबल, जीवन गति
+    ]
+  ]
+)
 """
 
     chapter_blocks = []

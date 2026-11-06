@@ -539,69 +539,226 @@ table.astro-book-table.table-dense th {
   font-size: 7.4pt;
 }
 
-/* Print Planet Signature Badges */
+/* Print Planet Signature Badges (With 3D Spheres from Kundali Studio) */
 .planet-badge {
   display: inline-block;
   font-weight: 700;
   border-radius: 2pt;
-  padding: 0.4pt 2.5pt;
-  font-size: 0.92em;
+  padding: 0.3pt 2.5pt;
+  font-size: 0.9em;
   line-height: 1.25;
+  white-space: nowrap;
+}
+
+.planet-icon {
+  width: 8pt;
+  height: 8pt;
+  border-radius: 50%;
+  vertical-align: -1.2pt;
+  display: inline-block;
+  margin-right: 2pt;
 }
 
 .planet-sun {
   color: #c2410c;
   background-color: #ffedd5;
-  border: 0.5pt solid #fdba74;
+  border: 0.5pt solid #ea580c;
 }
 
 .planet-moon {
-  color: #475569;
+  color: #334155;
   background-color: #f1f5f9;
-  border: 0.5pt solid #cbd5e1;
+  border: 0.5pt solid #94a3b8;
 }
 
 .planet-mars {
-  color: #b91c1c;
+  color: #dc2626;
   background-color: #fee2e2;
-  border: 0.5pt solid #fca5a5;
+  border: 0.5pt solid #ef4444;
 }
 
 .planet-mercury {
   color: #047857;
   background-color: #d1fae5;
-  border: 0.5pt solid #6ee7b7;
+  border: 0.5pt solid #10b981;
 }
 
 .planet-jupiter {
   color: #b45309;
   background-color: #fef3c7;
-  border: 0.5pt solid #fcd34d;
+  border: 0.5pt solid #f59e0b;
 }
 
 .planet-venus {
   color: #be185d;
   background-color: #fce7f3;
-  border: 0.5pt solid #f9a8d4;
+  border: 0.5pt solid #f43f5e;
 }
 
 .planet-saturn {
   color: #1d4ed8;
   background-color: #dbeafe;
-  border: 0.5pt solid #93c5fd;
+  border: 0.5pt solid #3b82f6;
 }
 
 .planet-rahu {
   color: #09090b;
   background-color: #f4f4f5;
-  border: 0.5pt solid #a1a1aa;
+  border: 0.5pt solid #27272a;
 }
 
 .planet-ketu {
   color: #52525b;
   background-color: #f4f4f5;
-  border: 0.5pt solid #cbd5e1;
+  border: 0.5pt solid #71717a;
 }
+
+/* Print Dignity Badges */
+.dignity-badge {
+  display: inline-block;
+  padding: 0.3pt 2pt;
+  border-radius: 2pt;
+  font-weight: 700;
+  font-size: 0.88em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.dignity-exalted {
+  color: #047857;
+  background-color: #d1fae5;
+  border: 0.5pt solid #10b981;
+}
+
+.dignity-debilitated {
+  color: #b91c1c;
+  background-color: #fee2e2;
+  border: 0.5pt solid #f87171;
+}
+
+.dignity-moolatrikona {
+  color: #6b21a8;
+  background-color: #f3e8ff;
+  border: 0.5pt solid #c084fc;
+}
+
+.dignity-own {
+  color: #b45309;
+  background-color: #fef3c7;
+  border: 0.5pt solid #f59e0b;
+}
+
+/* Print Navagraha Reference Plate */
+.navagraha-palette-plate {
+  page-break-before: always;
+  break-before: always;
+}
+
+.plate-header {
+  text-align: center;
+  margin-bottom: 0.15in;
+}
+
+.plate-badge {
+  display: inline-block;
+  padding: 0.02in 0.08in;
+  background-color: #fef3c7;
+  border: 0.6pt solid #d97706;
+  color: #78350f;
+  border-radius: 9999px;
+  font-size: 7.5pt;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.plate-title {
+  font-size: 14pt;
+  font-weight: 800;
+  color: #78350f;
+  margin: 0.04in 0;
+}
+
+.plate-subtitle {
+  font-size: 8pt;
+  color: #57534e;
+  line-height: 1.35;
+}
+
+.graha-palette-grid {
+  display: block;
+}
+
+.graha-card {
+  page-break-inside: avoid;
+  break-inside: avoid;
+  margin-bottom: 0.08in;
+  padding: 0.06in 0.08in;
+  border-radius: 4pt;
+  border: 0.8pt solid;
+  font-size: 7.6pt;
+  line-height: 1.3;
+}
+
+.graha-card-top {
+  display: block;
+  border-bottom: 0.5pt dashed #cbd5e1;
+  padding-bottom: 0.03in;
+  margin-bottom: 0.03in;
+}
+
+.graha-3d-sphere {
+  width: 14pt;
+  height: 14pt;
+  border-radius: 50%;
+  vertical-align: -3pt;
+  display: inline-block;
+  margin-right: 4pt;
+}
+
+.graha-card-titles {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.graha-name-hi {
+  font-size: 8.5pt;
+  font-weight: 800;
+}
+
+.graha-name-en {
+  font-size: 7.5pt;
+  font-weight: 600;
+}
+
+.graha-color-tag {
+  font-size: 7pt;
+  font-weight: 600;
+}
+
+.graha-glyph {
+  float: right;
+  font-size: 11pt;
+  color: #94a3b8;
+}
+
+.graha-card-body {
+  font-size: 7.4pt;
+}
+
+.graha-meta-row {
+  margin-bottom: 0.02in;
+}
+
+.graha-card-sun { background-color: #fff7ed; border-color: #ea580c; color: #7c2d12; }
+.graha-card-moon { background-color: #f8fafc; border-color: #94a3b8; color: #1e293b; }
+.graha-card-mars { background-color: #fef2f2; border-color: #ef4444; color: #7f1d1d; }
+.graha-card-mercury { background-color: #f0fdf4; border-color: #10b981; color: #064e3b; }
+.graha-card-jupiter { background-color: #fffbeb; border-color: #f59e0b; color: #78350f; }
+.graha-card-venus { background-color: #fdf2f8; border-color: #f43f5e; color: #831843; }
+.graha-card-saturn { background-color: #eff6ff; border-color: #3b82f6; color: #1e3a8a; }
+.graha-card-rahu { background-color: #f4f4f5; border-color: #27272a; color: #09090b; }
+.graha-card-ketu { background-color: #f4f4f5; border-color: #71717a; color: #27272a; }
+.graha-card-lagna { background-color: #faf5ff; border-color: #a855f7; color: #581c87; }
 
 /* Epilogue & Back Matter */
 .back-matter-page {

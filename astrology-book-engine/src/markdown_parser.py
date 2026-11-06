@@ -155,32 +155,40 @@ class AstrologyTablePostprocessor(Postprocessor):
         return re.sub(r'<table>[\s\S]*?</table>', wrap_table, text)
 
 
-# Authentic Vedic Jyotish Planet Color Palette Rules
+# Authentic Vedic Jyotish Planet Color Palette & 3D Icons
 PLANET_RULES = [
-    ('sun', r'(?<![क-हअ-औ्])(?:सूर्य\s*\(\s*Sun\s*\)|सूर्यदेव|सूर्य|\bSun\b)(?![क-हअ-औ्ा-ौ])'),
-    ('moon', r'(?<![क-हअ-औ्])(?:चन्द्र\s*\(\s*Moon\s*\)|चंद्र\s*\(\s*Moon\s*\)|चन्द्रमा|चंद्रमा|चन्द्र|चंद्र|\bMoon\b)(?![क-हअ-औ्ा-ौ])'),
-    ('mars', r'(?<![क-हअ-औ्])(?:मंगल\s*\(\s*Mars\s*\)|मंगलदेव|मंगल|\bMars\b)(?![क-हअ-औ्ा-ौ])'),
-    ('mercury', r'(?<![क-हअ-औ्])(?:बुध\s*\(\s*Mercury\s*\)|बुधदेव|बुध|\bMercury\b)(?![क-हअ-औ्ा-ौ])'),
-    ('jupiter', r'(?<![क-हअ-औ्])(?:(?:गुरु\s*/\s*बृहस्पति|बृहस्पति|देवगुरु|गुरु(?!\s*जन))\s*\(\s*Jupiter\s*\)|बृहस्पति|देवगुरु|गुरु(?!\s*जन)|\bJupiter\b)(?![क-हअ-औ्ा-ौ])'),
-    ('venus', r'(?<![क-हअ-औ्])(?:शुक्र\s*\(\s*Venus\s*\)|शुक्रदेव|शुक्र|\bVenus\b)(?![क-हअ-औ्ा-ौ])'),
-    ('saturn', r'(?<![क-हअ-औ्])(?:शनि\s*\(\s*Saturn\s*\)|शनिदेव|शनैश्चर|शनि|\bSaturn\b)(?![क-हअ-औ्ा-ौ])'),
-    ('rahu', r'(?<![क-हअ-औ्])(?:राहु\s*\(\s*Rahu\s*\)|राहु|\bRahu\b)(?![क-हअ-औ्ा-ौ])'),
-    ('ketu', r'(?<![क-हअ-औ्])(?:केतु\s*\(\s*Ketu\s*\)|केतु|\bKetu\b)(?![क-हअ-औ्ा-ौ])'),
+    ('sun', 'sun.png', r'(?<![क-हअ-औ्])(?:सूर्य\s*\(\s*Sun\s*\)|सूर्यदेव|सूर्य|\bSun\b)(?![क-हअ-औ्ा-ौ])'),
+    ('moon', 'moon.png', r'(?<![क-हअ-औ्])(?:चन्द्र\s*\(\s*Moon\s*\)|चंद्र\s*\(\s*Moon\s*\)|चन्द्रमा|चंद्रमा|चन्द्र|चंद्र|\bMoon\b)(?![क-हअ-औ्ा-ौ])'),
+    ('mars', 'mars.png', r'(?<![क-हअ-औ्])(?:मंगल\s*\(\s*Mars\s*\)|मंगलदेव|मंगल|\bMars\b)(?![क-हअ-औ्ा-ौ])'),
+    ('mercury', 'mercury.png', r'(?<![क-हअ-औ्])(?:बुध\s*\(\s*Mercury\s*\)|बुधदेव|बुध|\bMercury\b)(?![क-हअ-औ्ा-ौ])'),
+    ('jupiter', 'jupiter.png', r'(?<![क-हअ-औ्])(?:(?:गुरु\s*/\s*बृहस्पति|बृहस्पति|देवगुरु|गुरु(?!\s*जन))\s*\(\s*Jupiter\s*\)|बृहस्पति|देवगुरु|गुरु(?!\s*जन)|\bJupiter\b)(?![क-हअ-औ्ा-ौ])'),
+    ('venus', 'venus.png', r'(?<![क-हअ-औ्])(?:शुक्र\s*\(\s*Venus\s*\)|शुक्रदेव|शुक्र|\bVenus\b)(?![क-हअ-औ्ा-ौ])'),
+    ('saturn', 'saturn.png', r'(?<![क-हअ-औ्])(?:शनि\s*\(\s*Saturn\s*\)|शनिदेव|शनैश्चर|शनि|\bSaturn\b)(?![क-हअ-औ्ा-ौ])'),
+    ('rahu', 'rahu.png', r'(?<![क-हअ-औ्])(?:राहु\s*\(\s*Rahu\s*\)|राहु|\bRahu\b)(?![क-हअ-औ्ा-ौ])'),
+    ('ketu', 'ketu.png', r'(?<![क-हअ-औ्])(?:केतु\s*\(\s*Ketu\s*\)|केतु|\bKetu\b)(?![क-हअ-औ्ा-ौ])'),
+]
+
+DIGNITY_RULES = [
+    (r'(?<![क-हअ-औ्])उच्च(?![क-हअ-औ्ा-ौ])', 'exalted'),
+    (r'(?<![क-हअ-औ्])नीच(?![क-हअ-औ्ा-ौ])', 'debilitated'),
+    (r'(?<![क-हअ-औ्])मूलत्रिकोण(?![क-हअ-औ्ा-ौ])', 'moolatrikona'),
+    (r'(?<![क-हअ-औ्])स्वराशि(?![क-हअ-औ्ा-ौ])', 'own'),
 ]
 
 
 class PlanetColoringPostprocessor(Postprocessor):
     """
-    Intelligently colors planet names across all text and tables according to authentic Jyotish symbolism:
-    - Sun: Saffron
-    - Moon: Pearl / Silver Moon
-    - Mars: Fiery Red
-    - Mercury: Emerald Green
-    - Jupiter: Golden Turmeric Yellow
-    - Venus: Brilliant Diamond Rose Pink
-    - Saturn: Deep Cosmic Royal Blue
-    - Rahu: Shadow Obsidian Black
-    - Ketu: Smokey Ash Shadow Gray
+    Intelligently colors planet names and embeds 3D realistic sphere icons
+    along with colored dignity badges across all text and tables:
+    - Sun: Saffron (#c2410c) + 3D Sun Icon
+    - Moon: Pearl / Silver Gray (#475569) + 3D Moon Icon
+    - Mars: Fiery Red (#dc2626) + 3D Mars Icon
+    - Mercury: Emerald Green (#047857) + 3D Mercury Icon
+    - Jupiter: Golden Turmeric Yellow (#b45309) + 3D Jupiter Icon
+    - Venus: Diamond Rose Pink (#be185d) + 3D Venus Icon
+    - Saturn: Deep Cosmic Royal Blue (#1d4ed8) + 3D Saturn Icon
+    - Rahu: Shadow Obsidian Black (#09090b) + 3D Rahu Icon
+    - Ketu: Smokey Ash Shadow Gray (#52525b) + 3D Ketu Icon
     """
     def run(self, text):
         protected = []
@@ -201,8 +209,20 @@ class PlanetColoringPostprocessor(Postprocessor):
                 out.append(p)
             else:
                 txt = p
-                for p_key, pat in PLANET_RULES:
-                    txt = re.sub(pat, lambda m: f'<span class="planet-badge planet-{p_key}">{m.group(0)}</span>', txt)
+                # Inject 3D Planet Badges
+                for p_key, p_icon, pat in PLANET_RULES:
+                    txt = re.sub(
+                        pat,
+                        lambda m, k=p_key, ic=p_icon: f'<span class="planet-badge planet-{k}"><img src="assets/images/planets/{ic}" class="planet-icon" alt="{k}"/>{m.group(0)}</span>',
+                        txt
+                    )
+                # Inject Dignity Badges
+                for d_pat, d_cls in DIGNITY_RULES:
+                    txt = re.sub(
+                        d_pat,
+                        lambda m, c=d_cls: f'<span class="dignity-badge dignity-{c}">{m.group(0)}</span>',
+                        txt
+                    )
                 out.append(txt)
 
         res = ''.join(out)
