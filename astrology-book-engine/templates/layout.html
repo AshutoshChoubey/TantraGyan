@@ -8,71 +8,62 @@
   <meta name="description" content="{{ meta.subtitle }} - {{ meta.english_subtitle }} by {{ meta.author }}">
   <meta name="author" content="{{ meta.author }}">
   
-  <!-- Print & Book CSS Paged Media -->
+  <!-- Base Book Stylesheet -->
   <link rel="stylesheet" href="print.css">
 
   {% if target == 'web' %}
-  <!-- Interactive Web Reader CSS -->
+  <!-- Interactive Modern Rich-Text Book Reader CSS -->
   <link rel="stylesheet" href="web-reader.css">
-  
-  <!-- Paged.js Polyfill (Local Self-Contained) -->
-  <script src="assets/js/paged.polyfill.js"></script>
   <script src="assets/js/web-reader.js" defer></script>
   {% endif %}
 </head>
-<body class="{% if target == 'web' %}paged-reader-app mode-spread theme-parchment{% else %}weasyprint-pdf-body{% endif %}">
+<body class="{% if target == 'web' %}paged-reader-app theme-parchment mode-spread{% else %}weasyprint-pdf-body{% endif %}">
 
   {% if target == 'web' %}
-  <!-- Loading Splash Overlay -->
-  <div id="paged-loading-overlay">
-    <div class="loader-spinner"></div>
-    <div class="loader-text">ग्रंथ संकलन एवं पृष्ठ विन्यास...</div>
-    <div class="loader-subtext">Rendering High-Resolution Book Spreads via Paged.js</div>
-  </div>
-
   <!-- Reader Top Toolbar Chrome -->
   <header class="reader-navbar">
-    <a href="../../index.html" class="reader-brand" title="तंत्र ज्ञान (Tantra Gyan) - Home">
-      <img src="assets/icons/yantra.svg" alt="Yantra" class="reader-logo">
-      <div class="reader-title-group">
-        <span class="reader-title">{{ meta.title }}</span>
-        <span class="reader-author">{{ meta.author }} • {{ meta.edition }}</span>
-      </div>
-    </a>
-
-    <!-- Center: Chapter Jump & Page Counter -->
-    <div class="reader-center-tools">
-      <select id="reader-chapter-select" class="chapter-select" aria-label="विषय चुनें (Jump to Chapter)">
-        <option value="">-- अध्याय चुनें (Jump) --</option>
-        <option value="front-title">ग्रंथ आवरण व परिचय (Front)</option>
-        <option value="toc-root">विषय-सूची (Contents)</option>
-        {% for ch in chapters %}
-        <option value="{{ ch.id }}">{{ ch.number }}. {{ ch.title }}</option>
-        {% endfor %}
-        <option value="back-matter">मंगल श्लोक व समापन (Colophon)</option>
-      </select>
-
-      <span class="page-indicator-pill" id="page-indicator">Loading...</span>
+    <div class="reader-nav-left">
+      <a href="../../index.html" class="reader-brand" title="तंत्र ज्ञान (Tantra Gyan) - Home">
+        <img src="assets/icons/yantra.svg" alt="Yantra" class="reader-logo">
+        <div class="reader-title-group">
+          <span class="reader-title">{{ meta.title }}</span>
+          <span class="reader-author">{{ meta.author }} • {{ meta.edition }}</span>
+        </div>
+      </a>
     </div>
 
-    <!-- Right Actions -->
+    <!-- Center: Chapter Jump & Progress -->
+    <div class="reader-center-tools">
+      <select id="reader-chapter-select" class="chapter-select" aria-label="अध्याय चुनें (Jump to Chapter)">
+        <option value="front-title">✧ ग्रंथ आवरण व मुखपृष्ठ (Cover & Title)</option>
+        <option value="toc-root">✧ ग्रंथ अनुक्रमणिका (Table of Contents)</option>
+        {% for ch in chapters %}
+        <option value="{{ ch.id }}">अध्याय {{ ch.number }}: {{ ch.title }}</option>
+        {% endfor %}
+        <option value="back-matter">✧ मंगल श्लोक व समापन (Colophon)</option>
+      </select>
+    </div>
+
+    <!-- Right Controls -->
     <div class="reader-actions">
       <!-- Spread Mode Toggle -->
-      <button type="button" class="reader-btn" id="btn-spread-toggle" title="पृष्ठ दृश्य बदलें (Toggle Spread / Single Page)">
-        <span>📖</span> <span>Spread</span>
+      <button type="button" class="reader-btn" id="btn-spread-toggle" title="पृष्ठ दृश्य बदलें (Toggle Two-Page Spread / Single Column)">
+        <span class="btn-icon">📖</span> <span class="btn-label">Two Pages</span>
       </button>
 
       <!-- Theme Switcher -->
       <button type="button" class="reader-btn" id="btn-theme-toggle" title="थीम बदलें (Theme: Parchment / Dark / White)">
-        <span>🎨</span> <span>Parchment</span>
+        <span class="btn-icon">📜</span> <span class="btn-label">Parchment</span>
       </button>
 
       <!-- Zoom Controls -->
-      <button type="button" class="reader-btn" id="btn-zoom-out" title="Decrease Size" style="padding:0.35rem 0.5rem;">A−</button>
-      <button type="button" class="reader-btn" id="btn-zoom-in" title="Increase Size" style="padding:0.35rem 0.5rem;">A+</button>
+      <div class="font-zoom-ctrl">
+        <button type="button" class="reader-btn zoom-btn" id="btn-zoom-out" title="Decrease Font Size">A−</button>
+        <button type="button" class="reader-btn zoom-btn" id="btn-zoom-in" title="Increase Font Size">A+</button>
+      </div>
 
       <!-- Fullscreen -->
-      <button type="button" class="reader-btn" id="btn-fullscreen" title="Fullscreen" style="padding:0.35rem 0.5rem;">⛶</button>
+      <button type="button" class="reader-btn" id="btn-fullscreen" title="Toggle Fullscreen">⛶</button>
 
       <!-- Direct PDF Download Button -->
       <a href="astrology-book.pdf" download="TantraGyan-Vedic-Astrology-Compendium.pdf" class="reader-btn reader-btn-primary" title="प्रिंट-रेडी वेक्टर पीडीएफ डाउनलोड करें">
@@ -80,117 +71,138 @@
       </a>
 
       <!-- Back to Classic 3D Book Link -->
-      <a href="../../index.html" class="reader-btn reader-btn-back" title="पुराने 3D फ्लिपबुक संस्करण पर लौटें">
+      <a href="../../index.html" class="reader-btn reader-btn-back" title="मूल 3D फ्लिपबुक संस्करण पर लौटें">
         <span>🔙</span> <span>Classic 3D</span>
       </a>
     </div>
   </header>
 
   <!-- Left / Right Floating Chevrons -->
-  <button type="button" class="nav-arrow-btn nav-prev-btn" id="btn-prev-page" title="Previous Page (पिछला पृष्ठ)">‹</button>
-  <button type="button" class="nav-arrow-btn nav-next-btn" id="btn-next-page" title="Next Page (अगला पृष्ठ)">›</button>
+  <button type="button" class="nav-arrow-btn nav-prev-btn" id="btn-prev-page" title="Previous Section (पिछला)">‹</button>
+  <button type="button" class="nav-arrow-btn nav-next-btn" id="btn-next-page" title="Next Section (अगला)">›</button>
 
-  <main class="reader-stage-container">
+  <main class="reader-stage-container" id="reader-stage">
   {% endif %}
 
     <!-- =========================================================================
-         BOOK CONTENT CORE (Rendered for both PDF and Paged.js Reader)
+         BOOK MANUSCRIPT CONTENT ROOT
          ========================================================================= -->
-    <article class="book-manuscript-root">
+    <article class="book-manuscript-root" id="manuscript-content">
 
       <!-- FRONT MATTER 1: Half Title -->
-      <section class="front-matter-page half-title-page">
-        <div class="half-title-text">{{ meta.title }}</div>
+      <section class="book-sheet front-matter-page half-title-page" id="front-half-title">
+        <div class="sheet-inner">
+          <div class="half-title-text">{{ meta.title }}</div>
+          <div class="half-title-sub">{{ meta.english_title }}</div>
+        </div>
       </section>
 
-      <!-- FRONT MATTER 2: Title Page -->
-      <section class="front-matter-page title-page" id="front-title">
-        <div class="title-yantra-emblem">
-          <img src="assets/icons/yantra.svg" alt="Sacred Sri Yantra" width="130" height="130">
-        </div>
-        <h1 class="book-title">{{ meta.title }}</h1>
-        <h2 class="book-subtitle">{{ meta.english_title }}</h2>
-        <div style="font-size: 11pt; color: #854d0e; font-style: italic; margin-bottom: 0.3in;">
-          {{ meta.subtitle }}
-        </div>
+      <!-- FRONT MATTER 2: Grand Title Page -->
+      <section class="book-sheet front-matter-page title-page" id="front-title">
+        <div class="sheet-inner">
+          <div class="title-yantra-emblem">
+            <img src="assets/icons/yantra.svg" alt="Sacred Sri Yantra" width="130" height="130">
+          </div>
+          <h1 class="book-title">{{ meta.title }}</h1>
+          <h2 class="book-subtitle">{{ meta.english_title }}</h2>
+          <div class="book-desc-minimal">
+            {{ meta.subtitle }}<br>
+            <em>{{ meta.english_subtitle }}</em>
+          </div>
 
-        <div class="title-author-block">
-          <div>ग्रंथकार एवं ज्योतिषाचार्य</div>
-          <div class="title-author-name">{{ meta.author_hindi }} ({{ meta.author }})</div>
-          <div style="font-size: 9.5pt; color: #64748b; margin-top: 0.05in;">{{ meta.author_title }}</div>
-        </div>
+          <div class="title-author-block">
+            <div class="title-role">ग्रंथकार एवं ज्योतिषाचार्य</div>
+            <div class="title-author-name">{{ meta.author_hindi }}</div>
+            <div class="title-author-en">({{ meta.author }})</div>
+            <div class="title-author-desc">{{ meta.author_title }}</div>
+          </div>
 
-        <div class="title-publisher-block">
-          <div>{{ meta.publisher }}</div>
-          <div>{{ meta.edition }} • वर्ष {{ meta.year }}</div>
-          <div>{{ meta.website }} • {{ meta.youtube }}</div>
+          <div class="title-publisher-block">
+            <div class="pub-name">{{ meta.publisher }}</div>
+            <div class="pub-edition">{{ meta.edition }} • वर्ष {{ meta.year }}</div>
+            <div class="pub-links">{{ meta.website }} • {{ meta.youtube }}</div>
+          </div>
         </div>
       </section>
 
       <!-- FRONT MATTER 3: Copyright Page -->
-      <section class="copyright-page">
-        <p><strong>{{ meta.title }}</strong></p>
-        <p><em>{{ meta.english_title }}</em></p>
-        <p>{{ meta.copyright }}</p>
-        <p>सर्वाधिकार सुरक्षित। इस ग्रंथ का कोई भी अंश, सारणी अथवा चित्र लेखक एवं प्रकाशक की पूर्व लिखित अनुमति के बिना किसी भी रूप में पुनरुत्पादित नहीं किया जा सकता।</p>
-        <p style="margin-top: 0.2in;"><strong>प्रकाशक:</strong> {{ meta.publisher }}</p>
-        <p><strong>आधिकारिक शोध मंच:</strong> {{ meta.website }}</p>
-        <p><strong>ईमेल:</strong> {{ meta.contact_email }}</p>
-        <p><strong>संपर्क / WhatsApp:</strong> {{ meta.contact_phone }}</p>
-        <p><strong>ISBN:</strong> {{ meta.isbn }}</p>
-        <p style="margin-top: 0.25in; font-size: 7.8pt; color: #94a3b8;">मुद्रण मानक: 6x9 Trade Paperback • WeasyPrint & Paged.js Dual-Target Architecture</p>
+      <section class="book-sheet copyright-page" id="front-copyright">
+        <div class="sheet-inner">
+          <div class="copyright-header">वैधानिक सूचना एवं सर्वाधिकार</div>
+          <p><strong>{{ meta.title }}</strong></p>
+          <p><em>{{ meta.english_title }}</em></p>
+          <p>{{ meta.copyright }}</p>
+          <p>सर्वाधिकार सुरक्षित। इस ग्रंथ का कोई भी अंश, सारणी अथवा चित्र लेखक एवं प्रकाशक की पूर्व लिखित अनुमति के बिना किसी भी रूप में पुनरुत्पादित नहीं किया जा सकता।</p>
+          <hr class="sep-rule">
+          <p><strong>प्रकाशक:</strong> {{ meta.publisher }}</p>
+          <p><strong>आधिकारिक शोध मंच:</strong> {{ meta.website }}</p>
+          <p><strong>ईमेल:</strong> {{ meta.contact_email }}</p>
+          <p><strong>संपर्क / WhatsApp:</strong> {{ meta.contact_phone }}</p>
+          <p><strong>ISBN:</strong> {{ meta.isbn }}</p>
+          <p class="print-spec-note">प्रकाशन प्रारूप: Standard Trade Paperback (6" × 9") • WeasyPrint & Typst Dual-Target Architecture</p>
+        </div>
       </section>
 
       <!-- FRONT MATTER 4: Dedication & Mangalacharan -->
-      <section class="front-matter-page dedication-page">
-        <div style="width: 50px; height: 50px; margin: 0 auto 0.2in auto;">
-          <img src="assets/icons/ganesha.svg" alt="Lord Ganesha" width="50" height="50">
+      <section class="book-sheet front-matter-page dedication-page" id="front-dedication">
+        <div class="sheet-inner">
+          <div class="ganesha-emblem">
+            <img src="assets/icons/ganesha.svg" alt="Lord Ganesha" width="56" height="56">
+          </div>
+          <div class="mangala-verse">
+            वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>
+            निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
+          </div>
+          <div class="dedication-text">
+            यह ग्रंथ समस्त गुरुजनों, वैदिक ऋषियों एवं ज्ञान के पिपासु जिज्ञासुओं को सप्रेम समर्पित है।
+          </div>
         </div>
-        <div class="mangala-verse">
-          वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>
-          निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
-        </div>
-        <p style="font-size: 10pt; color: #78350f; max-width: 4in; margin: 0 auto;">
-          यह ग्रंथ समस्त गुरुजनों, वैदिक ऋषियों एवं ज्ञान के पिपासु जिज्ञासुओं को सप्रेम समर्पित है।
-        </p>
       </section>
 
       <!-- FRONT MATTER 5: Table of Contents -->
-      <section class="toc-section" id="toc-root">
-        <h2 class="toc-title">ग्रंथ अनुक्रमणिका • Table of Contents</h2>
-        <ul class="toc-list">
-          {% for ch in chapters %}
-          <li class="toc-item">
-            <a href="#{{ ch.id }}">
-              <span class="toc-chapter-name">{{ ch.number }}. {{ ch.title }}</span>
-              <span class="toc-dots"></span>
-              <span class="toc-page-num"></span>
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
+      <section class="book-sheet toc-section" id="toc-root">
+        <div class="sheet-inner">
+          <h2 class="toc-title">ग्रंथ अनुक्रमणिका • Table of Contents</h2>
+          <ul class="toc-list">
+            {% for ch in chapters %}
+            <li class="toc-item">
+              <a href="#{{ ch.id }}" class="toc-link">
+                <span class="toc-num">{{ ch.number }}.</span>
+                <span class="toc-chapter-name">{{ ch.title }}</span>
+                <span class="toc-dots"></span>
+                <span class="toc-target-label">भाग {{ ch.number }}</span>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
       </section>
 
       <!-- CHAPTERS BODY -->
       {% for ch in chapters %}
-      <section class="chapter" id="{{ ch.id }}">
-        {{ ch.html_content | safe }}
+      <section class="book-sheet chapter" id="{{ ch.id }}">
+        <div class="sheet-inner">
+          <div class="chapter-badge">भाग {{ ch.number }}</div>
+          {{ ch.html_content | safe }}
+        </div>
       </section>
       {% endfor %}
 
       <!-- BACK MATTER: Colophon & Shanti Path -->
-      <section class="back-matter-page" id="back-matter">
-        <div class="colophon-box">
-          <h3 style="margin-top: 0; color: #854d0e;">ग्रंथ विवरण एवं प्रकाशन सूचना</h3>
-          <p><strong>ग्रंथ:</strong> {{ meta.title }} ({{ meta.english_title }})</p>
-          <p><strong>लेखक:</strong> {{ meta.author_hindi }} ({{ meta.author }})</p>
-          <p><strong>संस्थान:</strong> {{ meta.publisher }}</p>
-          <p><strong>प्रकाशन वर्ष:</strong> {{ meta.year }} • संस्करण: {{ meta.edition }}</p>
-          <p><strong>मुद्रण विनिर्देश:</strong> Standard Trade Paperback (6" × 9"), 0.85in inside gutter, dual-target vector typography.</p>
-        </div>
-        
-        <div style="text-align: center; margin-top: 0.5in; color: #854d0e; font-size: 14pt;">
-          ॐ तत्सत् श्रीब्रह्मार्पणमस्तु।
+      <section class="book-sheet back-matter-page" id="back-matter">
+        <div class="sheet-inner">
+          <div class="colophon-box">
+            <h3 class="colophon-title">ग्रंथ विवरण एवं प्रकाशन सूचना</h3>
+            <p><strong>ग्रंथ:</strong> {{ meta.title }} ({{ meta.english_title }})</p>
+            <p><strong>लेखक:</strong> {{ meta.author_hindi }} ({{ meta.author }})</p>
+            <p><strong>संस्थान:</strong> {{ meta.publisher }}</p>
+            <p><strong>प्रकाशन वर्ष:</strong> {{ meta.year }} • संस्करण: {{ meta.edition }}</p>
+            <p><strong>मुद्रण विनिर्देश:</strong> Trade Paperback (6" × 9"), 0.85in gutter margin, high-resolution vector SVGs.</p>
+          </div>
+          
+          <div class="closing-mangala">
+            ॐ तत्सत् श्रीब्रह्मार्पणमस्तु।
+          </div>
         </div>
       </section>
 

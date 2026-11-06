@@ -1,12 +1,11 @@
 /**
- * Tantra Gyan Astrology Book Engine - Client-Side Interactive Web Reader
- * Powered by Paged.js polyfill with zero backend dependency.
+ * Tantra Gyan Modern Rich-Text Book Reader Client Engine
+ * Instant Zero-Lag Rendering • Interactive Spreads • Typography Controls
  */
 
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
-  const loadingOverlay = document.getElementById("paged-loading-overlay");
-  const pageIndicator = document.getElementById("page-indicator");
+  const stage = document.getElementById("reader-stage");
   const chapterSelect = document.getElementById("reader-chapter-select");
   const btnPrev = document.getElementById("btn-prev-page");
   const btnNext = document.getElementById("btn-next-page");
@@ -15,82 +14,49 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnZoomIn = document.getElementById("btn-zoom-in");
   const btnZoomOut = document.getElementById("btn-zoom-out");
   const btnFullscreen = document.getElementById("btn-fullscreen");
-  const stage = document.querySelector(".reader-stage-container");
 
-  let currentPageIndex = 0;
-  let totalPages = 0;
-  let zoomLevel = 1.0;
+  const sheets = Array.from(document.querySelectorAll(".book-sheet"));
+  let currentSheetIdx = 0;
+  let currentFontSizePt = 11;
 
-  // Initialize Paged.js hooks
-  if (typeof Paged !== "undefined") {
-    class ReaderHandler extends Paged.Handler {
-      constructor(chunker, polisher, caller) {
-        super(chunker, polisher, caller);
+  // Chapter Jump Sync
+  if (chapterSelect) {
+    chapterSelect.addEventListener("change", (e) => {
+      const targetId = e.target.value;
+      if (!targetId) return;
+
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+        currentSheetIdx = sheets.indexOf(targetEl);
       }
-
-      afterPageLayout(pageElement, page, breakToken, chunker) {
-        // Track pages as they are built
-        totalPages = chunker.pages.length;
-        if (pageIndicator) {
-          pageIndicator.textContent = `Page 1 of ${totalPages}`;
-        }
-      }
-
-      afterRendered(pages) {
-        totalPages = pages.length;
-        if (pageIndicator) {
-          pageIndicator.textContent = `1 / ${totalPages}`;
-        }
-        if (loadingOverlay) {
-          loadingOverlay.style.opacity = "0";
-          setTimeout(() => {
-            loadingOverlay.style.display = "none";
-          }, 400);
-        }
-        setupChapterSync();
-        scrollToPage(0);
-      }
-    }
-    Paged.registerHandlers(ReaderHandler);
-  } else {
-    // If not using Paged.js directly
-    if (loadingOverlay) {
-      loadingOverlay.style.display = "none";
-    }
+    });
   }
 
   // Navigation Logic
-  function getAllPages() {
-    return document.querySelectorAll(".pagedjs_page");
-  }
+  function scrollToSheet(idx) {
+    if (idx < 0) idx = 0;
+    if (idx >= sheets.length) idx = sheets.length - 1;
+    currentSheetIdx = idx;
+    sheets[idx].scrollIntoView({ behavior: "smooth", block: "start" });
 
-  function scrollToPage(index) {
-    const pages = getAllPages();
-    if (!pages || pages.length === 0) return;
-
-    if (index < 0) index = 0;
-    if (index >= pages.length) index = pages.length - 1;
-
-    currentPageIndex = index;
-    pages[index].scrollIntoView({ behavior: "smooth", block: "start", inline: "center" });
-
-    if (pageIndicator) {
-      pageIndicator.textContent = `${index + 1} / ${pages.length}`;
+    // Sync select dropdown
+    const sheetId = sheets[idx].id;
+    if (chapterSelect && sheetId) {
+      chapterSelect.value = sheetId;
     }
   }
 
-  function nextPage() {
-    const step = body.classList.contains("mode-spread") ? 2 : 1;
-    scrollToPage(currentPageIndex + step);
+  function nextSection() {
+    scrollToSheet(currentSheetIdx + 1);
   }
 
-  function prevPage() {
-    const step = body.classList.contains("mode-spread") ? 2 : 1;
-    scrollToPage(currentPageIndex - step);
+  function prevSection() {
+    scrollToSheet(currentSheetIdx - 1);
   }
 
-  if (btnNext) btnNext.addEventListener("click", nextPage);
-  if (btnPrev) btnPrev.addEventListener("click", prevPage);
+  if (btnNext) btnNext.addEventListener("click", nextSection);
+  if (btnPrev) btnPrev.addEventListener("click", prevSection);
 
   // Keyboard Shortcuts
   window.addEventListener("keydown", (e) => {
@@ -100,20 +66,20 @@ document.addEventListener("DOMContentLoaded", () => {
       case "ArrowRight":
       case "PageDown":
         e.preventDefault();
-        nextPage();
+        nextSection();
         break;
       case "ArrowLeft":
       case "PageUp":
         e.preventDefault();
-        prevPage();
+        prevSection();
         break;
       case "Home":
         e.preventDefault();
-        scrollToPage(0);
+        scrollToSheet(0);
         break;
       case "End":
         e.preventDefault();
-        scrollToPage(totalPages - 1);
+        scrollToSheet(sheets.length - 1);
         break;
       case "f":
       case "F":
@@ -122,88 +88,58 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Chapter Jump Sync
-  function setupChapterSync() {
-    if (!chapterSelect) return;
-    chapterSelect.addEventListener("change", (e) => {
-      const targetId = e.target.value;
-      if (!targetId) return;
-
-      const targetEl = document.getElementById(targetId);
-      if (targetEl) {
-        // Find parent pagedjs_page
-        const pageEl = targetEl.closest(".pagedjs_page");
-        if (pageEl) {
-          const allPages = Array.from(getAllPages());
-          const pIndex = allPages.indexOf(pageEl);
-          if (pIndex !== -1) {
-            scrollToPage(pIndex);
-          }
-        } else {
-          targetEl.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    });
-  }
-
   // Spread Mode Toggle
   if (btnSpreadToggle) {
     btnSpreadToggle.addEventListener("click", () => {
+      const label = btnSpreadToggle.querySelector(".btn-label");
       if (body.classList.contains("mode-spread")) {
         body.classList.remove("mode-spread");
         body.classList.add("mode-single");
-        btnSpreadToggle.innerHTML = `<span>📄</span> <span>Single</span>`;
+        if (label) label.textContent = "Single Column";
       } else {
         body.classList.remove("mode-single");
         body.classList.add("mode-spread");
-        btnSpreadToggle.innerHTML = `<span>📖</span> <span>Spread</span>`;
+        if (label) label.textContent = "Two Pages";
       }
-      scrollToPage(currentPageIndex);
     });
   }
 
-  // Theme Toggle: Parchment -> Dark -> White
-  const themes = ["theme-dark", "theme-parchment", "theme-white"];
-  let currentThemeIdx = 0;
+  // Theme Cycling
+  const themes = ["theme-parchment", "theme-dark", "theme-white"];
+  let themeIndex = 0;
 
   if (btnThemeToggle) {
     btnThemeToggle.addEventListener("click", () => {
-      body.classList.remove(themes[currentThemeIdx]);
-      currentThemeIdx = (currentThemeIdx + 1) % themes.length;
-      body.classList.add(themes[currentThemeIdx]);
+      body.classList.remove(themes[themeIndex]);
+      themeIndex = (themeIndex + 1) % themes.length;
+      body.classList.add(themes[themeIndex]);
 
-      const labels = ["🌙 Dark", "📜 Parchment", "☀️ White"];
-      btnThemeToggle.innerHTML = `<span>🎨</span> <span>${labels[currentThemeIdx]}</span>`;
+      const labels = ["📜 Parchment", "🌙 Dark", "☀️ White"];
+      const label = btnThemeToggle.querySelector(".btn-label");
+      if (label) label.textContent = labels[themeIndex];
     });
   }
 
-  // Zoom Controls
-  function applyZoom() {
-    const container = document.querySelector(".pagedjs_pages");
-    if (container) {
-      container.style.transform = `scale(${zoomLevel})`;
-    }
-  }
-
+  // Font Zoom
   if (btnZoomIn) {
     btnZoomIn.addEventListener("click", () => {
-      if (zoomLevel < 1.6) {
-        zoomLevel += 0.1;
-        applyZoom();
+      if (currentFontSizePt < 18) {
+        currentFontSizePt += 1;
+        document.documentElement.style.setProperty("--book-font-size", `${currentFontSizePt}pt`);
       }
     });
   }
 
   if (btnZoomOut) {
     btnZoomOut.addEventListener("click", () => {
-      if (zoomLevel > 0.6) {
-        zoomLevel -= 0.1;
-        applyZoom();
+      if (currentFontSizePt > 9) {
+        currentFontSizePt -= 1;
+        document.documentElement.style.setProperty("--book-font-size", `${currentFontSizePt}pt`);
       }
     });
   }
 
-  // Fullscreen Toggle
+  // Fullscreen
   function toggleFullscreen() {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen().catch(() => {});
