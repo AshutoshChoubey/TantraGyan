@@ -384,10 +384,6 @@ def build_web_target(metadata, chapters, pdf_path=None):
         shutil.copy(pdf_path, root_tantragyan_pdf)
         print(f"  • Copied PDF to web distribution & root TantraGyan for instant download")
 
-    rl_pdf = os.path.join(DIST_PDF_DIR, "astrology-book-reportlab.pdf")
-    if os.path.exists(rl_pdf):
-        shutil.copy(rl_pdf, os.path.join(DIST_WEB_DIR, "astrology-book-reportlab.pdf"))
-
     elapsed = time.time() - start_time
     print(f"✓ Target 2 Complete: {index_html_path}")
     print(f"  • Pre-compiled rich-text reader ready with instant zero-lag rendering")
@@ -420,7 +416,7 @@ def main():
     if args.target in ["all", "typst"]:
         build_typst_target(metadata, chapters)
 
-    if args.target in ["all", "reportlab"]:
+    if args.target == "reportlab":
         build_reportlab_target(metadata, chapters)
 
     if args.target in ["all", "web"]:
@@ -435,9 +431,7 @@ def main():
     print(f"1. PDF Target (WeasyPrint): {DIST_PDF_DIR}/astrology-book.pdf")
     if os.path.exists(os.path.join(DIST_PDF_DIR, "astrology-book-typst.pdf")):
         print(f"2. PDF Target (Typst):       {DIST_PDF_DIR}/astrology-book-typst.pdf")
-    if os.path.exists(os.path.join(DIST_PDF_DIR, "astrology-book-reportlab.pdf")):
-        print(f"3. PDF Target (ReportLab):   {DIST_PDF_DIR}/astrology-book-reportlab.pdf")
-    print(f"4. Web Reader (Rich-Text):   {DIST_WEB_DIR}/index.html")
+    print(f"3. Web Reader (Rich-Text):   {DIST_WEB_DIR}/index.html")
     print("=======================================================\n")
 
     if args.serve > 0:

@@ -4,32 +4,46 @@
    Dual-Target: WeasyPrint (Vector PDF) & Paged.js (Client-Side Reader Polyfill)
    ============================================================================== */
 
+@font-face {
+  font-family: "Noto Sans Devanagari";
+  src: url("assets/fonts/NotoSansDevanagari-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans Devanagari";
+  src: url("assets/fonts/NotoSansDevanagari-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
 @page {
   size: 6in 9in; /* Standard Trade Paperback Specifications */
-  margin-top: 0.75in;
-  margin-bottom: 0.75in;
+  margin-top: 0.45in;
+  margin-bottom: 0.45in;
   @bottom-center {
     font-family: "Georgia", "Devanagari MT", "Kohinoor Devanagari", serif;
-    font-size: 8.5pt;
+    font-size: 8pt;
     color: #94a3b8;
   }
 }
 
 /* Verso (Left / Even Pages) */
 @page :left {
-  margin-left: 0.65in;
-  margin-right: 0.85in; /* Inside binding gutter */
+  margin-left: 0.45in;
+  margin-right: 0.45in;
   @top-left {
     content: counter(page);
     font-family: "Georgia", "Devanagari MT", serif;
-    font-size: 8.5pt;
+    font-size: 8pt;
     font-weight: 700;
     color: #854d0e;
   }
   @top-center {
     content: "तंत्र ज्ञान • VEDIC ASTROLOGY COMPENDIUM";
     font-family: "Georgia", "Devanagari MT", serif;
-    font-size: 7.8pt;
+    font-size: 7.2pt;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #64748b;
@@ -38,19 +52,19 @@
 
 /* Recto (Right / Odd Pages) */
 @page :right {
-  margin-left: 0.85in; /* Inside binding gutter */
-  margin-right: 0.65in;
+  margin-left: 0.45in;
+  margin-right: 0.45in;
   @top-right {
     content: counter(page);
     font-family: "Georgia", "Devanagari MT", serif;
-    font-size: 8.5pt;
+    font-size: 8pt;
     font-weight: 700;
     color: #854d0e;
   }
   @top-center {
     content: string(chapter-title);
     font-family: "Georgia", "Devanagari MT", serif;
-    font-size: 7.8pt;
+    font-size: 7.2pt;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #64748b;
@@ -91,9 +105,9 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "Kohinoor Devanagari", "Devanagari MT", "Devanagari Sangam MN", "Georgia", "Palatino", serif;
-  font-size: 10pt;
-  line-height: 1.55;
+  font-family: "Noto Sans Devanagari", "Kohinoor Devanagari", "Devanagari MT", "Devanagari Sangam MN", "Georgia", "Palatino", serif;
+  font-size: 9.5pt;
+  line-height: 1.5;
   color: #1e293b;
   background-color: #ffffff;
   text-rendering: optimizeLegibility;
@@ -102,7 +116,7 @@ html, body {
 
 /* Headings and Titles */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Kohinoor Devanagari", "Devanagari MT", "Georgia", serif;
+  font-family: "Noto Sans Devanagari", "Kohinoor Devanagari", "Devanagari MT", "Georgia", serif;
   color: #0f172a;
   page-break-after: avoid;
   break-after: avoid;
@@ -477,34 +491,39 @@ figcaption.chart-caption {
 
 /* High-Density Astro Book Tables */
 .table-container {
-  margin: 0.16in 0;
+  margin: 0.12in 0;
   page-break-inside: avoid;
   break-inside: avoid;
   width: 100%;
+  border-radius: 4pt;
+  overflow: hidden;
+  border: 0.5pt solid #cbd5e1;
 }
 
 table.astro-book-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 8.5pt;
-  line-height: 1.4;
+  font-size: 7.4pt;
+  line-height: 1.32;
   page-break-inside: avoid;
   break-inside: avoid;
 }
 
 table.astro-book-table th,
 table.astro-book-table td {
-  padding: 0.05in 0.07in;
-  border: 0.5pt solid #cbd5e1;
+  padding: 0.035in 0.055in;
+  border: 0.4pt solid #cbd5e1;
   text-align: left;
-  vertical-align: top;
+  vertical-align: middle;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 table.astro-book-table th {
-  background-color: #fef08a;
-  color: #713f12;
+  background-color: #fef3c7;
+  color: #78350f;
   font-weight: 700;
-  font-size: 8.5pt;
+  font-size: 7.6pt;
   letter-spacing: 0.02em;
   border-bottom: 1.2pt solid #ca8a04;
 }
@@ -523,17 +542,17 @@ table.astro-book-table strong {
 
 /* Dense Tables (6+ columns: e.g. Navagraha Karakatva, Nakshatras) */
 table.astro-book-table.table-dense {
-  font-size: 7.2pt;
-  line-height: 1.3;
+  font-size: 6.6pt;
+  line-height: 1.22;
 }
 
 table.astro-book-table.table-dense th,
 table.astro-book-table.table-dense td {
-  padding: 0.035in 0.05in;
+  padding: 0.025in 0.04in;
 }
 
 table.astro-book-table.table-dense th {
-  font-size: 7.4pt;
+  font-size: 6.8pt;
 }
 
 /* Print Planet Signature Badges (With 3D Spheres from Kundali Studio) */
@@ -541,19 +560,19 @@ table.astro-book-table.table-dense th {
   display: inline-block;
   font-weight: 700;
   border-radius: 2pt;
-  padding: 0.3pt 2.5pt;
-  font-size: 0.9em;
+  padding: 0.2pt 2.5pt;
+  font-size: 0.88em;
   line-height: 1.25;
   white-space: nowrap;
 }
 
 .planet-icon {
-  width: 8pt;
-  height: 8pt;
+  width: 7.5pt;
+  height: 7.5pt;
   border-radius: 50%;
-  vertical-align: -1.2pt;
+  vertical-align: -1pt;
   display: inline-block;
-  margin-right: 2pt;
+  margin-right: 1.5pt;
 }
 
 .planet-sun {

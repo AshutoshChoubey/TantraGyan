@@ -46,8 +46,8 @@ def apply_typst_planet_colors(text):
         text = re.sub(
             pat,
             lambda m, ic=icon, tc=text_col, bg=bg_col, bc=border_col: (
-                f'#box(baseline: 20%, inset: (x: 2.5pt, y: 1.2pt), radius: 2.5pt, fill: {bg}, stroke: 0.4pt + {bc})['
-                f'#image("/assets/images/planets/{ic}", width: 8pt) #h(1.5pt)'
+                f'#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: {bg}, stroke: 0.35pt + {bc})['
+                f'#image("/assets/images/planets/{ic}", width: 7pt) #h(1pt)'
                 f'#text(fill: {tc}, weight: "bold")[{m.group(0)}]'
                 f']'
             ),
@@ -57,7 +57,7 @@ def apply_typst_planet_colors(text):
         text = re.sub(
             pat,
             lambda m, tc=text_col, bg=bg_col, bc=border_col: (
-                f'#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: {bg}, stroke: 0.4pt + {bc})['
+                f'#box(baseline: 15%, inset: (x: 1.8pt, y: 0.8pt), radius: 2pt, fill: {bg}, stroke: 0.35pt + {bc})['
                 f'#text(fill: {tc}, weight: "bold", size: 0.85em)[{m.group(0)}]'
                 f']'
             ),
@@ -88,31 +88,31 @@ def parse_markdown_table_to_typst(lines):
 
     num_cols = len(rows[0])
 
-    # Dynamic proportional column sizing to eliminate horizontal overflow
+    # Dynamic proportional column sizing with generous room for explanation columns
     if num_cols == 7:
-        cols_str = "(1.1fr, 1.8fr, 1.8fr, 1.3fr, 1.1fr, 1.1fr, 1.1fr)"
-        text_size = "7.2pt"
-        inset_str = "(x: 3.5pt, y: 4.5pt)"
+        cols_str = "(1.0fr, 1.5fr, 1.5fr, 1.2fr, 1.0fr, 1.0fr, 1.0fr)"
+        text_size = "6.8pt"
+        inset_str = "(x: 2.8pt, y: 3.5pt)"
     elif num_cols == 6:
-        cols_str = "(0.8fr, 1.4fr, 1.2fr, 1.2fr, 1.4fr, 1.4fr)"
-        text_size = "7.2pt"
-        inset_str = "(x: 3.5pt, y: 4.5pt)"
+        cols_str = "(0.8fr, 1.2fr, 1.2fr, 1.2fr, 1.4fr, 1.4fr)"
+        text_size = "7.0pt"
+        inset_str = "(x: 3.0pt, y: 4.0pt)"
     elif num_cols == 5:
-        cols_str = "(0.9fr, 1.4fr, 2.2fr, 1.3fr, 1.3fr)"
-        text_size = "7.8pt"
-        inset_str = "(x: 4.5pt, y: 5pt)"
+        cols_str = "(0.9fr, 1.4fr, 1.6fr, 1.3fr, 1.8fr)"
+        text_size = "7.2pt"
+        inset_str = "(x: 3.2pt, y: 4.2pt)"
     elif num_cols == 4:
-        cols_str = "(1.2fr, 1.4fr, 1.2fr, 2.2fr)"
-        text_size = "8.2pt"
-        inset_str = "(x: 5pt, y: 5.5pt)"
+        cols_str = "(1.1fr, 1.3fr, 1.4fr, 3.2fr)"
+        text_size = "7.5pt"
+        inset_str = "(x: 3.8pt, y: 4.5pt)"
     elif num_cols == 3:
-        cols_str = "(1.3fr, 2.2fr, 2.5fr)"
-        text_size = "8.5pt"
-        inset_str = "(x: 6pt, y: 6pt)"
+        cols_str = "(1.1fr, 1.4fr, 3.5fr)"
+        text_size = "7.8pt"
+        inset_str = "(x: 4.2pt, y: 5.0pt)"
     else:
         cols_str = f"{num_cols}"
-        text_size = "8.5pt"
-        inset_str = "(x: 6pt, y: 6pt)"
+        text_size = "7.8pt"
+        inset_str = "(x: 4.5pt, y: 5.0pt)"
 
     cells = []
     for r_idx, row in enumerate(rows):
@@ -131,9 +131,10 @@ def parse_markdown_table_to_typst(lines):
   #text(size: {text_size})[
     #table(
       columns: {cols_str},
-      fill: (x, y) => if y == 0 {{ rgb("#fef3c7") }} else if calc.odd(y) {{ rgb("#fbfaf7") }} else {{ none }},
-      stroke: (x, y) => if y == 0 {{ (bottom: 1.2pt + rgb("#b45309"), rest: 0.4pt + rgb("#e2e8f0")) }} else {{ 0.4pt + rgb("#e2e8f0") }},
+      fill: (x, y) => if y == 0 {{ rgb("#fef3c7") }} else if calc.odd(y) {{ rgb("#f8fafc") }} else {{ rgb("#ffffff") }},
+      stroke: (x, y) => if y == 0 {{ (bottom: 1.2pt + rgb("#b45309"), rest: 0.4pt + rgb("#cbd5e1")) }} else {{ 0.4pt + rgb("#cbd5e1") }},
       inset: {inset_str},
+      align: (x, y) => if y == 0 {{ center + horizon }} else {{ left + horizon }},
       {', '.join(cells)}
     )
   ]
@@ -344,38 +345,46 @@ def compile_typst_book(metadata, chapters, output_pdf, base_dir):
 
 #set page(
   paper: "a5",
-  margin: (top: 2.2cm, bottom: 2.2cm, inside: 2.4cm, outside: 1.8cm),
+  margin: (top: 1.2cm, bottom: 1.2cm, inside: 1.2cm, outside: 1.2cm),
   header: context {{
     let page_num = counter(page).get().first()
-    if page_num > 5 {{
+    if page_num > 4 {{
       if calc.odd(page_num) {{
         align(right)[
-          #text(size: 7.8pt, fill: rgb("#78350f"), font: ("Cinzel", "Georgia"))[
+          #text(size: 7.5pt, fill: rgb("#78350f"), font: ("Cinzel", "Georgia", "Noto Sans Devanagari"))[
             TANTRA GYAN • VEDIC ASTROLOGY #h(1fr) #page_num
           ]
           #v(-3pt)
-          #line(length: 100%, stroke: 0.4pt + rgb("#e2e8f0"))
+          #line(length: 100%, stroke: 0.4pt + rgb("#cbd5e1"))
         ]
       }} else {{
         align(left)[
-          #text(size: 7.8pt, fill: rgb("#78350f"), font: ("Cinzel", "Georgia"))[
+          #text(size: 7.5pt, fill: rgb("#78350f"), font: ("Cinzel", "Georgia", "Noto Sans Devanagari"))[
             #page_num #h(1fr) {metadata.get("english_title", "")}
           ]
           #v(-3pt)
-          #line(length: 100%, stroke: 0.4pt + rgb("#e2e8f0"))
+          #line(length: 100%, stroke: 0.4pt + rgb("#cbd5e1"))
         ]
       }}
+    }}
+  }},
+  footer: context {{
+    let page_num = counter(page).get().first()
+    if page_num > 4 {{
+      align(center)[
+        #text(size: 7.5pt, fill: rgb("#94a3b8"))[— पृष्ठ #page_num —]
+      ]
     }}
   }}
 )
 
 #set text(
-  font: ("Devanagari MT", "Kohinoor Devanagari", "Georgia", "Palatino"),
-  size: 9.2pt,
+  font: ("Noto Sans Devanagari", "Devanagari MT", "Kohinoor Devanagari", "Georgia", "Palatino"),
+  size: 9.0pt,
   lang: "hi"
 )
 
-#set par(justify: true, leading: 0.72em)
+#set par(justify: true, leading: 0.68em)
 
 // Masterwork Show Rules for Headings
 #show heading.where(level: 1): it => {{
@@ -647,7 +656,9 @@ def compile_typst_book(metadata, chapters, output_pdf, base_dir):
 
     print(f"✓ Generated Typst document: {typ_file}")
 
-    # Compile with Typst
-    typst.compile(typ_file, output=output_pdf, root=base_dir)
+    # Compile with Typst and bundled OpenType Noto Sans Devanagari fonts
+    fonts_dir = os.path.join(base_dir, "assets", "fonts")
+    font_paths = [fonts_dir] if os.path.exists(fonts_dir) else None
+    typst.compile(typ_file, output=output_pdf, root=base_dir, font_paths=font_paths)
     print(f"✓ Typst PDF successfully compiled: {output_pdf}")
     return output_pdf
