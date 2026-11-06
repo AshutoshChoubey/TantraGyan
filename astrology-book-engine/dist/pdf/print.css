@@ -18,12 +18,26 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Noto Serif Devanagari";
+  src: url("assets/fonts/NotoSerifDevanagari-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Serif Devanagari";
+  src: url("assets/fonts/NotoSerifDevanagari-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
 @page {
   size: 6in 9in; /* Standard Trade Paperback Specifications */
   margin-top: 0.45in;
   margin-bottom: 0.45in;
   @bottom-center {
-    font-family: "Georgia", "Devanagari MT", "Kohinoor Devanagari", serif;
+    font-family: "Noto Sans Devanagari", "Georgia", "Devanagari MT", serif;
     font-size: 8pt;
     color: #94a3b8;
   }
@@ -35,14 +49,14 @@
   margin-right: 0.45in;
   @top-left {
     content: counter(page);
-    font-family: "Georgia", "Devanagari MT", serif;
+    font-family: "Noto Sans Devanagari", "Georgia", "Devanagari MT", serif;
     font-size: 8pt;
     font-weight: 700;
     color: #854d0e;
   }
   @top-center {
     content: "तंत्र ज्ञान • VEDIC ASTROLOGY COMPENDIUM";
-    font-family: "Georgia", "Devanagari MT", serif;
+    font-family: "Noto Sans Devanagari", "Georgia", "Devanagari MT", serif;
     font-size: 7.2pt;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -56,14 +70,14 @@
   margin-right: 0.45in;
   @top-right {
     content: counter(page);
-    font-family: "Georgia", "Devanagari MT", serif;
+    font-family: "Noto Sans Devanagari", "Georgia", "Devanagari MT", serif;
     font-size: 8pt;
     font-weight: 700;
     color: #854d0e;
   }
   @top-center {
     content: string(chapter-title);
-    font-family: "Georgia", "Devanagari MT", serif;
+    font-family: "Noto Sans Devanagari", "Georgia", "Devanagari MT", serif;
     font-size: 7.2pt;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -105,9 +119,9 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "Noto Sans Devanagari", "Kohinoor Devanagari", "Devanagari MT", "Devanagari Sangam MN", "Georgia", "Palatino", serif;
+  font-family: "Noto Serif Devanagari", "Noto Sans Devanagari", "Devanagari MT", "Georgia", "Palatino", serif;
   font-size: 9.5pt;
-  line-height: 1.5;
+  line-height: 1.55;
   color: #1e293b;
   background-color: #ffffff;
   text-rendering: optimizeLegibility;
@@ -116,7 +130,7 @@ html, body {
 
 /* Headings and Titles */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Noto Sans Devanagari", "Kohinoor Devanagari", "Devanagari MT", "Georgia", serif;
+  font-family: "Noto Serif Devanagari", "Noto Sans Devanagari", "Devanagari MT", "Georgia", serif;
   color: #0f172a;
   page-break-after: avoid;
   break-after: avoid;
@@ -391,8 +405,10 @@ section.chapter {
 }
 
 .shloka-verse {
-  font-size: 11pt;
-  font-weight: 600;
+  font-family: "Noto Serif Devanagari", "Devanagari MT", "Georgia", serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  font-style: italic;
   color: #451a03;
   line-height: 1.7;
 }
@@ -503,6 +519,7 @@ figcaption.chart-caption {
 table.astro-book-table {
   width: 100%;
   border-collapse: collapse;
+  font-family: "Noto Sans Devanagari", "Kohinoor Devanagari", "Devanagari MT", sans-serif;
   font-size: 7.4pt;
   line-height: 1.32;
   page-break-inside: avoid;

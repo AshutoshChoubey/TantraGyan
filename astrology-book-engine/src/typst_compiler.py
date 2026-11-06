@@ -128,7 +128,7 @@ def parse_markdown_table_to_typst(lines):
 
     return f"""
 #align(center)[
-  #text(size: {text_size})[
+  #text(font: ("Noto Sans Devanagari", "Noto Serif Devanagari"), size: {text_size})[
     #table(
       columns: {cols_str},
       fill: (x, y) => if y == 0 {{ rgb("#fef3c7") }} else if calc.odd(y) {{ rgb("#f8fafc") }} else {{ rgb("#ffffff") }},
@@ -266,7 +266,7 @@ def convert_md_to_typst(md_text, assets_dir):
 
         # In shloka lines (sacred verse formatting)
         if in_shloka:
-            out.append(f'  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[{s}]]\n')
+            out.append(f'  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[{s}]]\n')
             i += 1
             continue
 
@@ -379,12 +379,12 @@ def compile_typst_book(metadata, chapters, output_pdf, base_dir):
 )
 
 #set text(
-  font: ("Noto Sans Devanagari", "Devanagari MT", "Kohinoor Devanagari", "Georgia", "Palatino"),
-  size: 9.0pt,
+  font: ("Noto Serif Devanagari", "Noto Sans Devanagari", "Devanagari MT", "Georgia", "Palatino"),
+  size: 9.2pt,
   lang: "hi"
 )
 
-#set par(justify: true, leading: 0.68em)
+#set par(justify: true, leading: 0.70em)
 
 // Masterwork Show Rules for Headings
 #show heading.where(level: 1): it => {{

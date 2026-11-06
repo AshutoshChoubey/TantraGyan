@@ -39,12 +39,12 @@
 )
 
 #set text(
-  font: ("Noto Sans Devanagari", "Devanagari MT", "Kohinoor Devanagari", "Georgia", "Palatino"),
-  size: 9.0pt,
+  font: ("Noto Serif Devanagari", "Noto Sans Devanagari", "Devanagari MT", "Georgia", "Palatino"),
+  size: 9.2pt,
   lang: "hi"
 )
 
-#set par(justify: true, leading: 0.68em)
+#set par(justify: true, leading: 0.70em)
 
 // Masterwork Show Rules for Headings
 #show heading.where(level: 1): it => {
@@ -321,8 +321,8 @@
     ]
   ]
   #v(0.2cm)
-  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[यथा शिखा मयूराणां नागानां मणयो यथा।]]
-  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[तद्वद्वेदांगशास्त्राणां ज्योतिषं मूर्धनि स्थितम्॥]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[यथा शिखा मयूराणां नागानां मणयो यथा।]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[तद्वद्वेदांगशास्त्राणां ज्योतिषं मूर्धनि स्थितम्॥]]
 ]
 
 वैदिक ज्योतिष (Jyotish Shastra) केवल भाग्य बताने का माध्यम नहीं है, अपितु यह काल-विधान, कर्म-सिद्धांत और चेतना के विकास का गूढ़ विज्ञान है। जिस प्रकार मयूरों के सिर पर शिखा और नागों के सिर पर मणि सर्वोच्च स्थान पर सुशोभित होती है, उसी प्रकार समस्त वेदांगों (शिक्षा, कल्प, व्याकरण, निरुक्त, छंद, ज्योतिष) में ज्योतिष शास्त्र को सर्वोच्च "वेद का चक्षु" (Eye of the Veda) कहा गया है।
@@ -348,7 +348,7 @@
 
 
 #align(center)[
-  #text(size: 7.2pt)[
+  #text(font: ("Noto Sans Devanagari", "Noto Serif Devanagari"), size: 7.2pt)[
     #table(
       columns: (0.9fr, 1.4fr, 1.6fr, 1.3fr, 1.8fr),
       fill: (x, y) => if y == 0 { rgb("#fef3c7") } else if calc.odd(y) { rgb("#f8fafc") } else { rgb("#ffffff") },
@@ -449,8 +449,8 @@
     ]
   ]
   #v(0.2cm)
-  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[सूर्योऽऽत्मा जगतस्तस्थुषश्चन्द्रमा मन उच्यते।]]
-  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[सत्त्वं कुजः सोमसुतो वाणी वाचस्पतिर्धियम्॥]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[सूर्योऽऽत्मा जगतस्तस्थुषश्चन्द्रमा मन उच्यते।]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[सत्त्वं कुजः सोमसुतो वाणी वाचस्पतिर्धियम्॥]]
 ]
 
 नौ आकाशीय शक्तियां (#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#ffedd5"), stroke: 0.35pt + rgb("#ea580c"))[#image("/assets/images/planets/sun.png", width: 7pt) #h(1pt)#text(fill: rgb("#c2410c"), weight: "bold")[सूर्य]], #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f1f5f9"), stroke: 0.35pt + rgb("#94a3b8"))[#image("/assets/images/planets/moon.png", width: 7pt) #h(1pt)#text(fill: rgb("#334155"), weight: "bold")[चन्द्रमा]], #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#image("/assets/images/planets/mars.png", width: 7pt) #h(1pt)#text(fill: rgb("#dc2626"), weight: "bold")[मंगल]], #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#d1fae5"), stroke: 0.35pt + rgb("#10b981"))[#image("/assets/images/planets/mercury.png", width: 7pt) #h(1pt)#text(fill: rgb("#047857"), weight: "bold")[बुध]], #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fef3c7"), stroke: 0.35pt + rgb("#f59e0b"))[#image("/assets/images/planets/jupiter.png", width: 7pt) #h(1pt)#text(fill: rgb("#b45309"), weight: "bold")[गुरु]], #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fce7f3"), stroke: 0.35pt + rgb("#f43f5e"))[#image("/assets/images/planets/venus.png", width: 7pt) #h(1pt)#text(fill: rgb("#be185d"), weight: "bold")[शुक्र]], #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#dbeafe"), stroke: 0.35pt + rgb("#3b82f6"))[#image("/assets/images/planets/saturn.png", width: 7pt) #h(1pt)#text(fill: rgb("#1d4ed8"), weight: "bold")[शनि]], #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f4f4f5"), stroke: 0.35pt + rgb("#27272a"))[#image("/assets/images/planets/rahu.png", width: 7pt) #h(1pt)#text(fill: rgb("#09090b"), weight: "bold")[राहु]], #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f4f4f5"), stroke: 0.35pt + rgb("#71717a"))[#image("/assets/images/planets/ketu.png", width: 7pt) #h(1pt)#text(fill: rgb("#52525b"), weight: "bold")[केतु]]) मानव चेतना, देह, विचार एवं कर्मफलों के प्रतिनिधि हैं। #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#ffedd5"), stroke: 0.35pt + rgb("#ea580c"))[#image("/assets/images/planets/sun.png", width: 7pt) #h(1pt)#text(fill: rgb("#c2410c"), weight: "bold")[सूर्य]] आत्मा है, #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f1f5f9"), stroke: 0.35pt + rgb("#94a3b8"))[#image("/assets/images/planets/moon.png", width: 7pt) #h(1pt)#text(fill: rgb("#334155"), weight: "bold")[चन्द्रमा]] मन है, #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#image("/assets/images/planets/mars.png", width: 7pt) #h(1pt)#text(fill: rgb("#dc2626"), weight: "bold")[मंगल]] पराक्रम व रक्त है, #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#d1fae5"), stroke: 0.35pt + rgb("#10b981"))[#image("/assets/images/planets/mercury.png", width: 7pt) #h(1pt)#text(fill: rgb("#047857"), weight: "bold")[बुध]] वाणी व विवेक है, #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fef3c7"), stroke: 0.35pt + rgb("#f59e0b"))[#image("/assets/images/planets/jupiter.png", width: 7pt) #h(1pt)#text(fill: rgb("#b45309"), weight: "bold")[बृहस्पति]] ज्ञान व प्रज्ञा है, #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fce7f3"), stroke: 0.35pt + rgb("#f43f5e"))[#image("/assets/images/planets/venus.png", width: 7pt) #h(1pt)#text(fill: rgb("#be185d"), weight: "bold")[शुक्र]] वीर्य व सौंदर्य है, #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#dbeafe"), stroke: 0.35pt + rgb("#3b82f6"))[#image("/assets/images/planets/saturn.png", width: 7pt) #h(1pt)#text(fill: rgb("#1d4ed8"), weight: "bold")[शनि]] आयु व कर्मदंड है, तथा #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f4f4f5"), stroke: 0.35pt + rgb("#27272a"))[#image("/assets/images/planets/rahu.png", width: 7pt) #h(1pt)#text(fill: rgb("#09090b"), weight: "bold")[राहु]] व #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f4f4f5"), stroke: 0.35pt + rgb("#71717a"))[#image("/assets/images/planets/ketu.png", width: 7pt) #h(1pt)#text(fill: rgb("#52525b"), weight: "bold")[केतु]] प्रारब्ध के कर्म-बंधन हैं।
@@ -466,7 +466,7 @@
 
 
 #align(center)[
-  #text(size: 6.8pt)[
+  #text(font: ("Noto Sans Devanagari", "Noto Serif Devanagari"), size: 6.8pt)[
     #table(
       columns: (1.0fr, 1.5fr, 1.5fr, 1.2fr, 1.0fr, 1.0fr, 1.0fr),
       fill: (x, y) => if y == 0 { rgb("#fef3c7") } else if calc.odd(y) { rgb("#f8fafc") } else { rgb("#ffffff") },
@@ -587,7 +587,7 @@
 
 
 #align(center)[
-  #text(size: 7.8pt)[
+  #text(font: ("Noto Sans Devanagari", "Noto Serif Devanagari"), size: 7.8pt)[
     #table(
       columns: (1.1fr, 1.4fr, 3.5fr),
       fill: (x, y) => if y == 0 { rgb("#fef3c7") } else if calc.odd(y) { rgb("#f8fafc") } else { rgb("#ffffff") },
@@ -621,8 +621,8 @@
     ]
   ]
   #v(0.2cm)
-  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[क्षेत्राणि भानि भवनानि च राशयश्च।]]
-  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[मेषादयो नवभिरंघ्रिभिरृक्षमेकम्॥]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[क्षेत्राणि भानि भवनानि च राशयश्च।]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[मेषादयो नवभिरंघ्रिभिरृक्षमेकम्॥]]
 ]
 
 आकाश मंडल ३६० अंश (Degrees) का एक पूर्ण वृत्त है, जिसे १२ राशियों (प्रत्येक ३० अंश) तथा २७ नक्षत्रों (प्रत्येक १३ अंश २० कला) में विभाजित किया गया है। प्रत्येक नक्षत्र में ४ चरण या पद होते हैं (प्रत्येक पद ३ अंश २० कला)। संपूर्ण राशि चक्र में कुल १०८ नक्षत्र पद होते हैं (२७ × ४ = १०८), जो भारतीय वैदिक गणित का आधार हैं।
@@ -636,7 +636,7 @@
 
 
 #align(center)[
-  #text(size: 7.0pt)[
+  #text(font: ("Noto Sans Devanagari", "Noto Serif Devanagari"), size: 7.0pt)[
     #table(
       columns: (0.8fr, 1.2fr, 1.2fr, 1.2fr, 1.4fr, 1.4fr),
       fill: (x, y) => if y == 0 { rgb("#fef3c7") } else if calc.odd(y) { rgb("#f8fafc") } else { rgb("#ffffff") },
@@ -659,7 +659,7 @@
 
 
 #align(center)[
-  #text(size: 7.0pt)[
+  #text(font: ("Noto Sans Devanagari", "Noto Serif Devanagari"), size: 7.0pt)[
     #table(
       columns: (0.8fr, 1.2fr, 1.2fr, 1.2fr, 1.4fr, 1.4fr),
       fill: (x, y) => if y == 0 { rgb("#fef3c7") } else if calc.odd(y) { rgb("#f8fafc") } else { rgb("#ffffff") },
@@ -699,7 +699,7 @@
 
 
 #align(center)[
-  #text(size: 7.5pt)[
+  #text(font: ("Noto Sans Devanagari", "Noto Serif Devanagari"), size: 7.5pt)[
     #table(
       columns: (1.1fr, 1.3fr, 1.4fr, 3.2fr),
       fill: (x, y) => if y == 0 { rgb("#fef3c7") } else if calc.odd(y) { rgb("#f8fafc") } else { rgb("#ffffff") },
@@ -733,8 +733,8 @@
     ]
   ]
   #v(0.2cm)
-  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[दीप्तः स्वोच्चे स्वस्थः स्वगृहे मुदितोऽधिमित्रे शान्तः सुहृदि।]]
-  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[दीनोऽसमर्थशत्रौ दुःखी विकलः खलोऽधमे कोपो रणे॥]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[दीप्तः स्वोच्चे स्वस्थः स्वगृहे मुदितोऽधिमित्रे शान्तः सुहृदि।]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[दीनोऽसमर्थशत्रौ दुःखी विकलः खलोऽधमे कोपो रणे॥]]
 ]
 
 कुण्डली में किसी ग्रह का केवल शुभ भाव में बैठना ही पर्याप्त नहीं होता, अपितु यह देखना अनिवार्य है कि वह ग्रह चेतना के किस स्तर पर कार्य कर रहा है। महर्षि पराशर एवं कल्याण वर्मा ने ग्रहों की #strong[९ दीप्तादि अवस्थाओं] का प्रतिपादन किया है, जो ग्रह के वास्तविक शुभाशुभ फल की तीव्रता और गुणवत्ता निर्धारित करती हैं।
@@ -748,7 +748,7 @@
 
 
 #align(center)[
-  #text(size: 7.2pt)[
+  #text(font: ("Noto Sans Devanagari", "Noto Serif Devanagari"), size: 7.2pt)[
     #table(
       columns: (0.9fr, 1.4fr, 1.6fr, 1.3fr, 1.8fr),
       fill: (x, y) => if y == 0 { rgb("#fef3c7") } else if calc.odd(y) { rgb("#f8fafc") } else { rgb("#ffffff") },
@@ -832,8 +832,8 @@
     ]
   ]
   #v(0.2cm)
-  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[कर्मजा व्याधयो ये स्युर्न ते शाम्यन्ति भेषजैः।]]
-  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[प्रायश्चित्तैः प्रशाम्यन्ति जपहोमार्चनादिभिः॥]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[कर्मजा व्याधयो ये स्युर्न ते शाम्यन्ति भेषजैः।]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[प्रायश्चित्तैः प्रशाम्यन्ति जपहोमार्चनादिभिः॥]]
 ]
 
 आयुर्-ज्योतिष (Medical Astrology) चरक, सुश्रुत और पराशर के ज्ञान का दिव्य समन्वय है। रोग केवल जैविक या भौतिक कारणों से ही नहीं होते, अपितु वे पूर्वजन्म-कृत अशुभ कर्मों (कर्मज व्याधि) के परिणाम होते हैं। जब कुण्डली में रोगकारक ग्रह सक्रिय होते हैं, तब शरीर के त्रिदोष (वात, पित्त, कफ) में असंतुलन उत्पन्न होकर असाध्य रोगों का रूप ले लेता है।
@@ -847,7 +847,7 @@
 
 
 #align(center)[
-  #text(size: 7.5pt)[
+  #text(font: ("Noto Sans Devanagari", "Noto Serif Devanagari"), size: 7.5pt)[
     #table(
       columns: (1.1fr, 1.3fr, 1.4fr, 3.2fr),
       fill: (x, y) => if y == 0 { rgb("#fef3c7") } else if calc.odd(y) { rgb("#f8fafc") } else { rgb("#ffffff") },
@@ -896,7 +896,7 @@
 
 
 #align(center)[
-  #text(size: 7.8pt)[
+  #text(font: ("Noto Sans Devanagari", "Noto Serif Devanagari"), size: 7.8pt)[
     #table(
       columns: (1.1fr, 1.4fr, 3.5fr),
       fill: (x, y) => if y == 0 { rgb("#fef3c7") } else if calc.odd(y) { rgb("#f8fafc") } else { rgb("#ffffff") },
@@ -959,8 +959,8 @@
     ]
   ]
   #v(0.2cm)
-  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[नवांशाद्बलिनो ज्ञेयं कलत्रस्य बलाबलम्।]]
-  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[तथैव भाग्यवृद्धिश्च धर्ममार्गरतिस्तथा॥]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[नवांशाद्बलिनो ज्ञेयं कलत्रस्य बलाबलम्।]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[तथैव भाग्यवृद्धिश्च धर्ममार्गरतिस्तथा॥]]
 ]
 
 कुण्डली का स्थूल शरीर लग्न कुण्डली (D1) है, किंतु उसकी सूक्ष्म आत्मा #strong[नवांश कुण्डली (D9)] है। नवांश का अर्थ है किसी राशि का ९वां भाग (३°२०')। चूंकि २७ नक्षत्रों में प्रत्येक के ४ पद होते हैं, अतः संपूर्ण भचक्र में १०८ नवांश पद होते हैं। नवांश से जातक के आंतरिक सामर्थ्य, दांपत्य जीवन, भाग्य की वास्तविकता तथा उत्तरार्ध जीवन का सटीक ज्ञान प्राप्त होता है।
@@ -1005,7 +1005,7 @@
 
 
 #align(center)[
-  #text(size: 7.5pt)[
+  #text(font: ("Noto Sans Devanagari", "Noto Serif Devanagari"), size: 7.5pt)[
     #table(
       columns: (1.1fr, 1.3fr, 1.4fr, 3.2fr),
       fill: (x, y) => if y == 0 { rgb("#fef3c7") } else if calc.odd(y) { rgb("#f8fafc") } else { rgb("#ffffff") },
@@ -1038,10 +1038,10 @@
     ]
   ]
   #v(0.2cm)
-  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[ॐ असतो मा सद्गमय।]]
-  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[तमसो मा ज्योतिर्गमय।]]
-  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[मृत्योर्मा अमृतं गमय॥]]
-  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[ॐ शान्तिः शान्तिः शान्तिः॥]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[ॐ असतो मा सद्गमय।]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[तमसो मा ज्योतिर्गमय।]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[मृत्योर्मा अमृतं गमय॥]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[ॐ शान्तिः शान्तिः शान्तिः॥]]
 ]
 
 हे परमात्मा! हमें असत्य से सत्य की ओर ले चलो, अंधकार से प्रकाश की ओर ले चलो, और मृत्यु से अमरत्व की ओर ले चलो। तीनों लोकों में दैहिक, दैविक और भौतिक तापों की पूर्ण शांति हो।
@@ -1060,8 +1060,8 @@
     ]
   ]
   #v(0.2cm)
-  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः।]]
-  #align(center)[#text(size: 10.5pt, weight: "bold", fill: rgb("#451a03"))[सर्वे भद्राणि पश्यन्तु मा कश्चिद्दुःखभाग्भवेत्॥]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः।]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[सर्वे भद्राणि पश्यन्तु मा कश्चिद्दुःखभाग्भवेत्॥]]
 ]
 
 समस्त प्राणी सुखी हों, सभी रोगमुक्त व स्वस्थ रहें, सभी का कल्याण हो, और इस संसार में किसी को भी लेशमात्र भी दुःख न भोगना पड़े।

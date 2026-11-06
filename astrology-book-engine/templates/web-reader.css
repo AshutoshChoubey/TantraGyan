@@ -69,7 +69,7 @@ body.paged-reader-app {
   padding: 0;
   background-color: var(--reader-bg);
   color: var(--text-primary);
-  font-family: "Kohinoor Devanagari", "Devanagari MT", "Georgia", "Palatino", serif;
+  font-family: "Noto Serif Devanagari", "Noto Sans Devanagari", "Kohinoor Devanagari", "Devanagari MT", "Georgia", "Palatino", serif;
   font-size: var(--book-font-size);
   line-height: 1.65;
   height: 100vh;
