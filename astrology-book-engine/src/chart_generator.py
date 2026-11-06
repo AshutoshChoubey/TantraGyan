@@ -91,7 +91,7 @@ def generate_aspect_wheel(width=500, height=500, theme="parchment"):
         f'  <circle cx="{cx}" cy="{cy}" r="{radius}" fill="none" stroke="{border_color}" stroke-width="2" />',
         f'  <circle cx="{cx}" cy="{cy}" r="{radius * 0.65}" fill="none" stroke="{border_color}" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.6"/>',
         f'  <circle cx="{cx}" cy="{cy}" r="{radius * 0.28}" fill="{border_color}" fill-opacity="0.08" stroke="{border_color}" stroke-width="1.5"/>',
-        f'  <text x="{cx}" y="{cy - 5}" fill="{border_color}" font-family="\'Noto Serif Devanagari\', \'Devanagari MT\', serif" font-size="13" font-weight="bold" text-anchor="middle" dominant-baseline="middle">पूर्ण दृष्टि चक्र</text>',
+        f'  <text x="{cx}" y="{cy - 5}" fill="{border_color}" font-family="\'Noto Sans Devanagari\', \'Devanagari MT\', \'Kohinoor Devanagari\', sans-serif" font-size="13" font-weight="bold" text-anchor="middle" dominant-baseline="middle">पूर्ण दृष्टि चक्र</text>',
         f'  <text x="{cx}" y="{cy + 13}" fill="#78716c" font-family="\'Cinzel\', \'Georgia\', serif" font-size="9" text-anchor="middle" dominant-baseline="middle">Aspect Mandala</text>'
     ]
 
@@ -107,7 +107,7 @@ def generate_aspect_wheel(width=500, height=500, theme="parchment"):
         r_hi, r_en = RASHI_NAMES[i]
         lines.append(f'  <line x1="{cx}" y1="{cy}" x2="{x}" y2="{y}" stroke="{border_color}" stroke-width="0.8" opacity="0.35"/>')
         lines.append(f'  <circle cx="{x}" cy="{y}" r="4.5" fill="{border_color}"/>')
-        lines.append(f'  <text x="{label_x}" y="{label_y + 3}" fill="{text_color}" font-family="\'Noto Serif Devanagari\', \'Devanagari MT\', serif" font-size="10.5" font-weight="bold" text-anchor="middle">{i+1}. {r_hi}</text>')
+        lines.append(f'  <text x="{label_x}" y="{label_y + 3}" fill="{text_color}" font-family="\'Noto Sans Devanagari\', \'Devanagari MT\', \'Kohinoor Devanagari\', sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle">{i+1}. {r_hi}</text>')
 
     lines.append('</svg>')
     return "\n".join(lines)

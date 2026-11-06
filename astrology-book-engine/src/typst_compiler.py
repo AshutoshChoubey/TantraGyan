@@ -505,7 +505,7 @@ def compile_typst_book(metadata, chapters, output_pdf, base_dir):
   rect(fill: rgb("#fff7ed"), stroke: 0.6pt + rgb("#ea580c"), radius: 4pt, inset: 6pt)[
     #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
       image("/assets/images/planets/sun.png", width: 16pt),
-      [#text(weight: "bold", fill: rgb("#c2410c"), size: 8pt)[सूर्य • Sun (Su)] \\ #text(size: 6.5pt, fill: rgb("#7c2d12"))[भगवा • Saffron]],
+      [#text(weight: "bold", fill: rgb("#c2410c"), size: 8pt)[सूर्य • Sun (Su)] \\ #text(size: 6.5pt, fill: rgb("#7c2d12"))[शास्त्रीय वर्ण: रक्त / ताम्रवर्ण]],
       [#align(right)[#text(size: 10pt, fill: rgb("#ea580c"))[☉]]]
     )
     #v(2pt)
@@ -518,7 +518,7 @@ def compile_typst_book(metadata, chapters, output_pdf, base_dir):
   rect(fill: rgb("#f8fafc"), stroke: 0.6pt + rgb("#94a3b8"), radius: 4pt, inset: 6pt)[
     #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
       image("/assets/images/planets/moon.png", width: 16pt),
-      [#text(weight: "bold", fill: rgb("#334155"), size: 8pt)[चन्द्र • Moon (Mo)] \\ #text(size: 6.5pt, fill: rgb("#475569"))[मोती श्वेत • Pearl Gray]],
+      [#text(weight: "bold", fill: rgb("#334155"), size: 8pt)[चन्द्र • Moon (Mo)] \\ #text(size: 6.5pt, fill: rgb("#475569"))[शास्त्रीय वर्ण: श्वेत / चन्द्रकान्ति]],
       [#align(right)[#text(size: 10pt, fill: rgb("#94a3b8"))[☽]]]
     )
     #v(2pt)
@@ -531,7 +531,7 @@ def compile_typst_book(metadata, chapters, output_pdf, base_dir):
   rect(fill: rgb("#fef2f2"), stroke: 0.6pt + rgb("#ef4444"), radius: 4pt, inset: 6pt)[
     #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
       image("/assets/images/planets/mars.png", width: 16pt),
-      [#text(weight: "bold", fill: rgb("#dc2626"), size: 8pt)[मंगल • Mars (Ma)] \\ #text(size: 6.5pt, fill: rgb("#991b1b"))[रक्त वर्ण • Fiery Red]],
+      [#text(weight: "bold", fill: rgb("#dc2626"), size: 8pt)[मंगल • Mars (Ma)] \\ #text(size: 6.5pt, fill: rgb("#991b1b"))[शास्त्रीय वर्ण: रक्तवर्ण (कुज)]],
       [#align(right)[#text(size: 10pt, fill: rgb("#ef4444"))[♂]]]
     )
     #v(2pt)
@@ -544,7 +544,7 @@ def compile_typst_book(metadata, chapters, output_pdf, base_dir):
   rect(fill: rgb("#f0fdf4"), stroke: 0.6pt + rgb("#10b981"), radius: 4pt, inset: 6pt)[
     #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
       image("/assets/images/planets/mercury.png", width: 16pt),
-      [#text(weight: "bold", fill: rgb("#047857"), size: 8pt)[बुध • Mercury (Me)] \\ #text(size: 6.5pt, fill: rgb("#065f46"))[मरकत हरित • Emerald Green]],
+      [#text(weight: "bold", fill: rgb("#047857"), size: 8pt)[बुध • Mercury (Me)] \\ #text(size: 6.5pt, fill: rgb("#065f46"))[शास्त्रीय वर्ण: हरित / श्याम]],
       [#align(right)[#text(size: 10pt, fill: rgb("#10b981"))[☿]]]
     )
     #v(2pt)
@@ -557,7 +557,7 @@ def compile_typst_book(metadata, chapters, output_pdf, base_dir):
   rect(fill: rgb("#fffbeb"), stroke: 0.6pt + rgb("#f59e0b"), radius: 4pt, inset: 6pt)[
     #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
       image("/assets/images/planets/jupiter.png", width: 16pt),
-      [#text(weight: "bold", fill: rgb("#b45309"), size: 8pt)[गुरु • Jupiter (Ju)] \\ #text(size: 6.5pt, fill: rgb("#92400e"))[पीत हल्दी • Golden Yellow]],
+      [#text(weight: "bold", fill: rgb("#b45309"), size: 8pt)[गुरु • Jupiter (Ju)] \\ #text(size: 6.5pt, fill: rgb("#92400e"))[शास्त्रीय वर्ण: पीत / कनकवर्ण]],
       [#align(right)[#text(size: 10pt, fill: rgb("#f59e0b"))[♃]]]
     )
     #v(2pt)
@@ -570,7 +570,7 @@ def compile_typst_book(metadata, chapters, output_pdf, base_dir):
   rect(fill: rgb("#fdf2f8"), stroke: 0.6pt + rgb("#f43f5e"), radius: 4pt, inset: 6pt)[
     #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
       image("/assets/images/planets/venus.png", width: 16pt),
-      [#text(weight: "bold", fill: rgb("#be185d"), size: 8pt)[शुक्र • Venus (Ve)] \\ #text(size: 6.5pt, fill: rgb("#9d174d"))[गुलाबी • Diamond Rose]],
+      [#text(weight: "bold", fill: rgb("#be185d"), size: 8pt)[शुक्र • Venus (Ve)] \\ #text(size: 6.5pt, fill: rgb("#9d174d"))[शास्त्रीय वर्ण: चित्र / शुभ्र श्वेत]],
       [#align(right)[#text(size: 10pt, fill: rgb("#f43f5e"))[♀]]]
     )
     #v(2pt)
@@ -583,7 +583,7 @@ def compile_typst_book(metadata, chapters, output_pdf, base_dir):
   rect(fill: rgb("#eff6ff"), stroke: 0.6pt + rgb("#3b82f6"), radius: 4pt, inset: 6pt)[
     #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
       image("/assets/images/planets/saturn.png", width: 16pt),
-      [#text(weight: "bold", fill: rgb("#1d4ed8"), size: 8pt)[शनि • Saturn (Sa)] \\ #text(size: 6.5pt, fill: rgb("#1e40af"))[नील श्याम • Cosmic Blue]],
+      [#text(weight: "bold", fill: rgb("#1d4ed8"), size: 8pt)[शनि • Saturn (Sa)] \\ #text(size: 6.5pt, fill: rgb("#1e40af"))[शास्त्रीय वर्ण: कृष्ण / नीलवर्ण]],
       [#align(right)[#text(size: 11pt, fill: rgb("#3b82f6"))[♄]]]
     )
     #v(2pt)
@@ -596,7 +596,7 @@ def compile_typst_book(metadata, chapters, output_pdf, base_dir):
   rect(fill: rgb("#f4f4f5"), stroke: 0.6pt + rgb("#27272a"), radius: 4pt, inset: 6pt)[
     #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
       image("/assets/images/planets/rahu.png", width: 16pt),
-      [#text(weight: "bold", fill: rgb("#09090b"), size: 8pt)[राहु • Rahu (Ra)] \\ #text(size: 6.5pt, fill: rgb("#27272a"))[धूम्र कृष्ण • Shadow Black]],
+      [#text(weight: "bold", fill: rgb("#09090b"), size: 8pt)[राहु • Rahu (Ra)] \\ #text(size: 6.5pt, fill: rgb("#27272a"))[शास्त्रीय स्वरूप: धूम्रवर्ण (तमोगुणी)]],
       [#align(right)[#text(size: 10pt, fill: rgb("#27272a"))[☊]]]
     )
     #v(2pt)
@@ -609,7 +609,7 @@ def compile_typst_book(metadata, chapters, output_pdf, base_dir):
   rect(fill: rgb("#f4f4f5"), stroke: 0.6pt + rgb("#71717a"), radius: 4pt, inset: 6pt)[
     #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
       image("/assets/images/planets/ketu.png", width: 16pt),
-      [#text(weight: "bold", fill: rgb("#52525b"), size: 8pt)[केतु • Ketu (Ke)] \\ #text(size: 6.5pt, fill: rgb("#52525b"))[धूसर राख • Smokey Ash]],
+      [#text(weight: "bold", fill: rgb("#52525b"), size: 8pt)[केतु • Ketu (Ke)] \\ #text(size: 6.5pt, fill: rgb("#52525b"))[शास्त्रीय स्वरूप: चित्र / धूम्रवर्ण]],
       [#align(right)[#text(size: 10pt, fill: rgb("#71717a"))[☋]]]
     )
     #v(2pt)
@@ -622,7 +622,7 @@ def compile_typst_book(metadata, chapters, output_pdf, base_dir):
   rect(fill: rgb("#faf5ff"), stroke: 0.6pt + rgb("#a855f7"), radius: 4pt, inset: 6pt)[
     #grid(columns: (18pt, 1fr, 12pt), gutter: 3pt,
       image("/assets/images/planets/lagna.png", width: 16pt),
-      [#text(weight: "bold", fill: rgb("#6b21a8"), size: 8pt)[लग्न • Ascendant (Asc)] \\ #text(size: 6.5pt, fill: rgb("#7e22ce"))[जांबुनी • Amethyst Purple]],
+      [#text(weight: "bold", fill: rgb("#6b21a8"), size: 8pt)[लग्न • Ascendant (Asc)] \\ #text(size: 6.5pt, fill: rgb("#7e22ce"))[शास्त्रीय स्वरूप: उदित लग्न (तनु भाव)]],
       [#align(right)[#text(size: 10pt, fill: rgb("#a855f7"))[✦]]]
     )
     #v(2pt)

@@ -30,6 +30,7 @@ sys.path.insert(0, SRC_DIR)
 from chart_generator import generate_sample_kundlis
 from markdown_parser import parse_manuscript
 from typst_compiler import compile_typst_book
+from reportlab_compiler import compile_reportlab_book
 
 MANUSCRIPT_DIR = os.path.join(ENGINE_ROOT, "manuscript")
 ASSETS_DIR = os.path.join(ENGINE_ROOT, "assets")
@@ -89,10 +90,178 @@ def parse_all_chapters(metadata):
     return chapters
 
 
+def patch_weasyprint_svg_text():
+    """
+    Patches WeasyPrint's SVG text renderer to prevent splitting Devanagari combining
+    characters into isolated single codepoints (which strips matras like ि and conjuncts)
+    and ensures full Pango/HarfBuzz shaping.
+    """
+    try:
+        import sys
+        import weasyprint.svg as wsvg
+        import weasyprint.svg.text
+        wst_mod = sys.modules['weasyprint.svg.text']
+        from weasyprint.svg.utils import normalize, size, radians
+        from weasyprint.matrix import Matrix
+        from weasyprint.svg.bounding_box import extend_bounding_box
+        from math import cos, sin, inf
+
+        def fixed_text(svg, node, font_size):
+            from weasyprint.css.properties import INITIAL_VALUES
+            from weasyprint.draw.text import draw_emojis, draw_first_line
+            from weasyprint.text.line_break import split_first_line
+            from weasyprint.svg.text import TextBox
+
+            style = INITIAL_VALUES.copy()
+            style['font_family'] = [
+                font.strip('\"\'') for font in
+                node.get('font-family', 'Noto Sans Devanagari, Devanagari MT, sans-serif').split(',')]
+            style['font_style'] = node.get('font-style', 'normal')
+            style['font_weight'] = node.get('font-weight', 400)
+            style['font_size'] = font_size
+            if style['font_weight'] == 'normal':
+                style['font_weight'] = 400
+            elif style['font_weight'] == 'bold':
+                style['font_weight'] = 700
+            else:
+                try:
+                    style['font_weight'] = int(style['font_weight'])
+                except ValueError:
+                    style['font_weight'] = 400
+
+            layout, _, _, width, height, _ = split_first_line(
+                node.text or '', style, svg.context, inf, 0)
+
+            x, y, dx, dy, rotate = [], [], [], [], [0]
+            if 'x' in node.attrib:
+                x = [size(i, font_size, svg.inner_width)
+                     for i in normalize(node.attrib['x']).strip().split(' ')]
+            if 'y' in node.attrib:
+                y = [size(i, font_size, svg.inner_height)
+                     for i in normalize(node.attrib['y']).strip().split(' ')]
+            if 'dx' in node.attrib:
+                dx = [size(i, font_size, svg.inner_width)
+                      for i in normalize(node.attrib['dx']).strip().split(' ')]
+            if 'dy' in node.attrib:
+                dy = [size(i, font_size, svg.inner_height)
+                      for i in normalize(node.attrib['dy']).strip().split(' ')]
+            if 'rotate' in node.attrib:
+                rotate = [radians(float(i)) if i else 0
+                          for i in normalize(node.attrib['rotate']).strip().split(' ')]
+            last_r = rotate[-1]
+
+            is_multi = len(x) > 1 or len(y) > 1 or len(dx) > 1 or len(dy) > 1 or len(rotate) > 1
+            if not is_multi and node.text:
+                letters_positions = [
+                    ([x.pop(0) if x else None, y.pop(0) if y else None, dx.pop(0) if dx else None, dy.pop(0) if dy else None, rotate.pop(0) if rotate else None], node.text)
+                ]
+            else:
+                letters_positions = [
+                    ([pl.pop(0) if pl else None for pl in (x, y, dx, dy, rotate)], char)
+                    for char in (node.text or '')]
+
+            letter_spacing = svg.length(node.get('letter-spacing'), font_size)
+            text_length = svg.length(node.get('textLength'), font_size)
+            scale_x = 1
+            if text_length and node.text:
+                spaces_count = len(node.text) - 1
+                if normalize(node.attrib.get('lengthAdjust')) == 'spacingAndGlyphs':
+                    width_with_spacing = width + spaces_count * letter_spacing
+                    letter_spacing *= text_length / width_with_spacing
+                    spaceless_text_length = text_length - spaces_count * letter_spacing
+                    scale_x = spaceless_text_length / width
+                elif spaces_count:
+                    letter_spacing = (text_length - width) / spaces_count
+                width = text_length
+
+            ascent, descent = font_size * .8, font_size * .2
+            y_align = 0
+            display_anchor = node.get('display-anchor')
+            alignment_baseline = node.get(
+                'dominant-baseline', node.get('alignment-baseline'))
+            if display_anchor == 'middle':
+                y_align = -height / 2
+            elif display_anchor == 'top':
+                pass
+            elif display_anchor == 'bottom':
+                y_align = -height
+            elif alignment_baseline in ('central', 'middle'):
+                y_align = (ascent + descent) / 2 - descent
+            elif alignment_baseline in (
+                    'text-before-edge', 'before_edge', 'top', 'hanging', 'text-top'):
+                y_align = ascent
+            elif alignment_baseline in (
+                    'text-after-edge', 'after_edge', 'bottom', 'text-bottom'):
+                y_align = -descent
+
+            text_anchor = node.get('text-anchor', 'start')
+            x_align = -width / 2 if text_anchor == 'middle' else (-width if text_anchor == 'end' else 0)
+
+            if not node.text:
+                x = x[0] if x else svg.cursor_position[0]
+                y = y[0] if y else svg.cursor_position[1]
+                dx = dx[0] if dx else 0
+                dy = dy[0] if dy else 0
+                svg.cursor_position = (x + dx, y + dy)
+                return
+
+            svg.stream.push_state()
+            svg.stream.begin_text()
+            emoji_lines = []
+
+            for i, ((x, y, dx, dy, r), letter) in enumerate(letters_positions):
+                if x:
+                    svg.cursor_d_position[0] = 0
+                if y:
+                    svg.cursor_d_position[1] = 0
+                svg.cursor_d_position[0] += dx or 0
+                svg.cursor_d_position[1] += dy or 0
+                layout, _, _, width, height, _ = split_first_line(
+                    letter, style, svg.context, inf, 0)
+                x = svg.cursor_position[0] if x is None else x
+                y = svg.cursor_position[1] if y is None else y
+                width *= scale_x
+                if i:
+                    x += letter_spacing
+                svg.cursor_position = x + width, y
+
+                x_position = x + svg.cursor_d_position[0] + x_align
+                y_position = y + svg.cursor_d_position[1] + y_align
+                angle = last_r if r is None else r
+                points = (
+                    (x_position, y_position),
+                    (x_position + width, y_position - height))
+                node.text_bounding_box = extend_bounding_box(
+                    node.text_bounding_box, points)
+
+                layout.reactivate(style)
+                svg.fill_stroke(node, font_size, text=True)
+                matrix = Matrix(a=scale_x, d=-1, e=x_position, f=y_position)
+                if angle:
+                    a, c = cos(angle), sin(angle)
+                    matrix = Matrix(a, -c, c, a) @ matrix
+                emojis = draw_first_line(
+                    svg.stream, TextBox(layout, style), 'none', 'none', matrix)
+                emoji_lines.append((font_size, x, y, emojis))
+
+            svg.stream.end_text()
+            svg.stream.pop_state()
+
+            for font_size, x, y, emojis in emoji_lines:
+                draw_emojis(svg.stream, font_size, x, y, emojis)
+
+        wst_mod.text = fixed_text
+        wsvg.TAGS['text'] = fixed_text
+    except Exception as e:
+        print(f"⚠️ Notice: Could not patch WeasyPrint SVG text: {e}")
+
+
 def build_pdf_target(metadata, chapters):
     """Target 1: Compiles Trade Paperback Vector PDF via WeasyPrint"""
     print("\n--- Compiling Target 1: Vector PDF (WeasyPrint) ---")
     start_time = time.time()
+
+    patch_weasyprint_svg_text()
 
     env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
     template = env.get_template("layout.html")
@@ -122,11 +291,34 @@ def build_pdf_target(metadata, chapters):
     wp = weasyprint.HTML(filename=pdf_html_path, base_url=DIST_PDF_DIR)
     wp.write_pdf(output_pdf)
 
+    # Mirror to root TantraGyan
+    root_pdf = os.path.join(os.path.dirname(ENGINE_ROOT), "astrology-book.pdf")
+    shutil.copy(output_pdf, root_pdf)
+
     elapsed = time.time() - start_time
     size_mb = os.path.getsize(output_pdf) / (1024 * 1024)
     print(f"✓ Target 1 (WeasyPrint) Complete: {output_pdf}")
     print(f"  • Size: {size_mb:.2f} MB | Compile Duration: {elapsed:.2f}s")
     return output_pdf
+
+
+def build_reportlab_target(metadata, chapters):
+    """Target 1C: Compiles ReportLab PDF with devanagari-reportlab HarfBuzz shaping"""
+    print("\n--- Compiling Target 1C: Devanagari ReportLab PDF ---")
+    start_time = time.time()
+    os.makedirs(DIST_PDF_DIR, exist_ok=True)
+    output_rl_pdf = os.path.join(DIST_PDF_DIR, "astrology-book-reportlab.pdf")
+
+    compile_reportlab_book(metadata, chapters, output_rl_pdf, ENGINE_ROOT)
+
+    root_rl = os.path.join(os.path.dirname(ENGINE_ROOT), "astrology-book-reportlab.pdf")
+    shutil.copy(output_rl_pdf, root_rl)
+
+    elapsed = time.time() - start_time
+    size_mb = os.path.getsize(output_rl_pdf) / (1024 * 1024)
+    print(f"✓ Target 1C (ReportLab Devanagari) Complete: {output_rl_pdf}")
+    print(f"  • Size: {size_mb:.2f} MB | Compile Duration: {elapsed:.2f}s")
+    return output_rl_pdf
 
 
 def build_typst_target(metadata, chapters):
@@ -192,6 +384,10 @@ def build_web_target(metadata, chapters, pdf_path=None):
         shutil.copy(pdf_path, root_tantragyan_pdf)
         print(f"  • Copied PDF to web distribution & root TantraGyan for instant download")
 
+    rl_pdf = os.path.join(DIST_PDF_DIR, "astrology-book-reportlab.pdf")
+    if os.path.exists(rl_pdf):
+        shutil.copy(rl_pdf, os.path.join(DIST_WEB_DIR, "astrology-book-reportlab.pdf"))
+
     elapsed = time.time() - start_time
     print(f"✓ Target 2 Complete: {index_html_path}")
     print(f"  • Pre-compiled rich-text reader ready with instant zero-lag rendering")
@@ -201,7 +397,7 @@ def build_web_target(metadata, chapters, pdf_path=None):
 
 def main():
     parser = argparse.ArgumentParser(description="Astrology Book Dual-Target Publishing Pipeline")
-    parser.add_argument("--target", choices=["all", "pdf", "web", "typst"], default="all", help="Target output to build")
+    parser.add_argument("--target", choices=["all", "pdf", "web", "typst", "reportlab"], default="all", help="Target output to build")
     parser.add_argument("--clean", action="store_true", help="Clean dist before building")
     parser.add_argument("--serve", type=int, default=0, help="Start localhost HTTP server on given port after build")
     args = parser.parse_args()
@@ -224,6 +420,9 @@ def main():
     if args.target in ["all", "typst"]:
         build_typst_target(metadata, chapters)
 
+    if args.target in ["all", "reportlab"]:
+        build_reportlab_target(metadata, chapters)
+
     if args.target in ["all", "web"]:
         if not pdf_path:
             candidate = os.path.join(DIST_PDF_DIR, "astrology-book.pdf")
@@ -236,7 +435,9 @@ def main():
     print(f"1. PDF Target (WeasyPrint): {DIST_PDF_DIR}/astrology-book.pdf")
     if os.path.exists(os.path.join(DIST_PDF_DIR, "astrology-book-typst.pdf")):
         print(f"2. PDF Target (Typst):       {DIST_PDF_DIR}/astrology-book-typst.pdf")
-    print(f"3. Web Reader (Rich-Text):   {DIST_WEB_DIR}/index.html")
+    if os.path.exists(os.path.join(DIST_PDF_DIR, "astrology-book-reportlab.pdf")):
+        print(f"3. PDF Target (ReportLab):   {DIST_PDF_DIR}/astrology-book-reportlab.pdf")
+    print(f"4. Web Reader (Rich-Text):   {DIST_WEB_DIR}/index.html")
     print("=======================================================\n")
 
     if args.serve > 0:

@@ -214,16 +214,16 @@ def generate_diamond_chart_svg(
         '  <style>',
         '    .header-box { fill: url(#headerGrad); stroke: #09090b; stroke-width: 1.8; filter: url(#subtleShadow); }',
         '    .header-inner { fill: none; stroke: #52525b; stroke-width: 0.8; stroke-dasharray: 4,2; }',
-        '    .header-chart-type { font-size: 11px; font-weight: 800; fill: #09090b; font-family: "Cinzel", "Devanagari MT", "Kohinoor Devanagari", "Georgia", serif; letter-spacing: 1.6px; text-anchor: middle; text-transform: uppercase; }',
-        '    .header-name { font-size: 15px; font-weight: 900; fill: #78350f; font-family: "Cinzel", "Devanagari MT", "Kohinoor Devanagari", "Georgia", serif; letter-spacing: 0.8px; text-anchor: middle; }',
-        '    .header-meta { font-size: 10px; font-weight: 600; fill: #292524; font-family: "Devanagari MT", "Kohinoor Devanagari", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-anchor: middle; }',
-        '    .header-sub { font-size: 8.5px; font-weight: 500; fill: #71717a; font-family: "Devanagari MT", "Kohinoor Devanagari", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-anchor: middle; }',
+        '    .header-chart-type { font-size: 11px; font-weight: 800; fill: #09090b; font-family: "Noto Sans Devanagari", "Devanagari MT", "Kohinoor Devanagari", "Cinzel", "Georgia", serif; letter-spacing: 1.6px; text-anchor: middle; }',
+        '    .header-name { font-size: 15px; font-weight: 900; fill: #78350f; font-family: "Noto Sans Devanagari", "Devanagari MT", "Kohinoor Devanagari", "Cinzel", "Georgia", serif; letter-spacing: 0.8px; text-anchor: middle; }',
+        '    .header-meta { font-size: 10px; font-weight: 600; fill: #292524; font-family: "Noto Sans Devanagari", "Devanagari MT", "Kohinoor Devanagari", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-anchor: middle; }',
+        '    .header-sub { font-size: 8.5px; font-weight: 500; fill: #71717a; font-family: "Noto Sans Devanagari", "Devanagari MT", "Kohinoor Devanagari", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-anchor: middle; }',
         '    .chart-bg { fill: url(#parchmentBg); filter: url(#subtleShadow); }',
         '    .chart-border { fill: none; stroke: #09090b; stroke-width: 2.6; }',
         '    .chart-inner-border { fill: none; stroke: #3f3f46; stroke-width: 1.0; stroke-dasharray: 4,2; }',
         '    .grid-line { fill: none; stroke: #09090b; stroke-width: 2.0; stroke-linejoin: round; }',
         '    .rashi-num { font-size: 13.5px; font-weight: 900; fill: #09090b; font-family: "Cinzel", "Georgia", serif; opacity: 0.98; paint-order: stroke fill; stroke: #fffdf7; stroke-width: 3.5px; stroke-linejoin: round; }',
-        '    .planet-text { font-size: 12px; font-weight: 800; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }',
+        '    .planet-text { font-size: 12px; font-weight: 800; font-family: "Noto Sans Devanagari", "Devanagari MT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }',
         '    .deg-text { font-size: 9.5px; fill: #52525b; font-weight: 500; font-family: "SF Mono", monospace; }',
         '    .exalted { fill: #047857; font-weight: 800; }',
         '    .debilitated { fill: #b91c1c; font-weight: 800; }',
@@ -377,9 +377,15 @@ def generate_diamond_chart_svg(
 
                 deg_tspan = f' <tspan fill="{p_fill}" font-weight="600" font-size="{deg_font_size}" font-family="\'SF Mono\', monospace">{deg_short}</tspan>' if deg_short else ""
 
+                icon_b64 = PLANET_ICONS_B64.get(sym, "")
+                if icon_b64:
+                    img_element = f'<image href="{icon_b64}" x="{icon_x:.1f}" y="{icon_y:.1f}" width="{icon_sz}" height="{icon_sz}"/>'
+                else:
+                    img_element = f'<circle cx="{icon_x + icon_sz/2:.1f}" cy="{icon_y + icon_sz/2:.1f}" r="{icon_sz/2:.1f}" fill="{p_fill}"/>'
+
                 svg_parts.append(
                     f'  <!-- House {h} Planet {sym}: Vertical Next-Row Placement -->'
-                    f'  <use href="#icon-{sym}" x="{icon_x:.1f}" y="{icon_y:.1f}" width="{icon_sz}" height="{icon_sz}"/>'
+                    f'  {img_element}'
                     f'  <text x="{text_x:.1f}" y="{y_pos:.1f}" text-anchor="start" dominant-baseline="central" pointer-events="none" class="planet-text">'
                     f'<tspan fill="{p_fill}" font-weight="900" font-size="{sym_font_size}">{sym}</tspan>{badge_str}'
                     f'{deg_tspan}'
@@ -465,10 +471,10 @@ def generate_ashtakavarga_diamond_svg(
         '  <style>',
         '    .header-box { fill: url(#savHeaderGrad); stroke: #09090b; stroke-width: 1.8; filter: url(#savShadow); }',
         '    .header-inner { fill: none; stroke: #52525b; stroke-width: 0.8; stroke-dasharray: 4,2; }',
-        '    .header-chart-type { font-size: 11px; font-weight: 800; fill: #09090b; font-family: "Cinzel", "Devanagari MT", "Kohinoor Devanagari", "Georgia", serif; letter-spacing: 1.6px; text-anchor: middle; text-transform: uppercase; }',
-        '    .header-name { font-size: 15px; font-weight: 900; fill: #78350f; font-family: "Cinzel", "Devanagari MT", "Kohinoor Devanagari", "Georgia", serif; letter-spacing: 0.8px; text-anchor: middle; }',
-        '    .header-meta { font-size: 10px; font-weight: 600; fill: #292524; font-family: "Devanagari MT", "Kohinoor Devanagari", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-anchor: middle; }',
-        '    .header-sub { font-size: 8.5px; font-weight: 500; fill: #71717a; font-family: "Devanagari MT", "Kohinoor Devanagari", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-anchor: middle; }',
+        '    .header-chart-type { font-size: 11px; font-weight: 800; fill: #09090b; font-family: "Noto Sans Devanagari", "Devanagari MT", "Kohinoor Devanagari", "Cinzel", "Georgia", serif; letter-spacing: 1.6px; text-anchor: middle; }',
+        '    .header-name { font-size: 15px; font-weight: 900; fill: #78350f; font-family: "Noto Sans Devanagari", "Devanagari MT", "Kohinoor Devanagari", "Cinzel", "Georgia", serif; letter-spacing: 0.8px; text-anchor: middle; }',
+        '    .header-meta { font-size: 10px; font-weight: 600; fill: #292524; font-family: "Noto Sans Devanagari", "Devanagari MT", "Kohinoor Devanagari", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-anchor: middle; }',
+        '    .header-sub { font-size: 8.5px; font-weight: 500; fill: #71717a; font-family: "Noto Sans Devanagari", "Devanagari MT", "Kohinoor Devanagari", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-anchor: middle; }',
         '    .chart-bg { fill: url(#savParchmentBg); filter: url(#savShadow); }',
         '    .chart-border { fill: none; stroke: #09090b; stroke-width: 2.6; }',
         '    .chart-inner-border { fill: none; stroke: #3f3f46; stroke-width: 1.0; stroke-dasharray: 4,2; }',

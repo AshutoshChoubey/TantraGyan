@@ -4,4 +4,6 @@ scratch/
 __pycache__/
 .venv/
 venv/
+vendor/
+astrology-book-engine/vendor/
 
