@@ -381,6 +381,15 @@ def build_vivliostyle_target(metadata, chapters):
     os.makedirs(DIST_WEB_DIR, exist_ok=True)
     shutil.copy(output_vivlio_pdf, web_vivlio)
 
+    # Primary Clean Branded Masterwork PDF (Tantra Gyan: Vedic Jyotish Maha Granth)
+    primary_pdf_name = "tantra-gyan-vedic-jyotish-mahagranth.pdf"
+    dist_primary = os.path.join(DIST_PDF_DIR, primary_pdf_name)
+    shutil.copy(output_vivlio_pdf, dist_primary)
+    root_primary = os.path.join(os.path.dirname(ENGINE_ROOT), primary_pdf_name)
+    shutil.copy(output_vivlio_pdf, root_primary)
+    web_primary = os.path.join(DIST_WEB_DIR, primary_pdf_name)
+    shutil.copy(output_vivlio_pdf, web_primary)
+
     elapsed = time.time() - start_time
     size_mb = os.path.getsize(output_vivlio_pdf) / (1024 * 1024)
     print(f"✓ Target 1D (Vivliostyle) Complete: {output_vivlio_pdf}")
@@ -422,7 +431,7 @@ def build_web_target(metadata, chapters, pdf_path=None):
     shutil.copy(os.path.join(TEMPLATES_DIR, "web-reader.js"), os.path.join(dist_web_assets, "js", "web-reader.js"))
 
     # 3. Copy generated PDFs for direct 1-click download in UI and root TantraGyan
-    for pdf_name in ["astrology-book.pdf", "astrology-book-vivliostyle.pdf", "astrology-book-typst.pdf"]:
+    for pdf_name in ["tantra-gyan-vedic-jyotish-mahagranth.pdf", "astrology-book-vivliostyle.pdf", "astrology-book-typst.pdf", "astrology-book.pdf"]:
         src_p = os.path.join(DIST_PDF_DIR, pdf_name)
         if os.path.exists(src_p):
             web_pdf = os.path.join(DIST_WEB_DIR, pdf_name)

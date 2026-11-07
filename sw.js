@@ -16,7 +16,7 @@
  * - Stale-While-Revalidate with instant 0ms sanitized offline cache return for HTML pages
  */
 
-const APP_VERSION = '1.0.6';
+const APP_VERSION = '1.0.7';
 const CACHE_NAME = `tantragyan-v${APP_VERSION}`;
 const FONT_CACHE_NAME = 'tantragyan-fonts-v1.0';
 
@@ -27,12 +27,12 @@ const PRECACHE_ASSETS = [
   'index.html',
   'hindi.html',
   'english.html',
-  'css/book.css?v=4.0',
-  'css/tables.css?v=3.8',
-  'js/sounds-data.js?v=3.8',
-  'js/sound.js?v=3.8',
-  'js/book-engine.js?v=3.8',
-  'js/book-ui.js?v=3.8',
+  'css/book.css?v=4.1',
+  'css/tables.css?v=3.9',
+  'js/sounds-data.js?v=3.9',
+  'js/sound.js?v=3.9',
+  'js/book-engine.js?v=3.9',
+  'js/book-ui.js?v=3.9',
   'assets/yantra.svg',
   'assets/ganesha.svg',
   'assets/icon-192.png',
@@ -162,14 +162,34 @@ self.addEventListener('fetch', (event) => {
   }
 
   // B. Navigation Requests (HTML Pages: index.html, hindi.html, english.html)
-  // Strategy: Instant 0ms Sanitized Cache Return with background network update.
-  // 100% Safari & iOS WebKit redirection-safe!
+  // Strategy: Network-First with fast timeout & sanitized offline cache fallback.
+  // Guarantees online users always get the fresh page (fixes incognito-only caching bug)
+  // while retaining 100% instant offline fallback when disconnected!
   if (request.mode === 'navigate' || request.headers.get('accept')?.includes('text/html')) {
     event.respondWith(
       (async () => {
         const cache = await caches.open(CACHE_NAME);
 
-        // Match requested URL or fallback to edition
+        // 1. Try Network First (online guarantee)
+        try {
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 3000); // 3s network threshold
+
+          const networkResponse = await fetch(request, { signal: controller.signal });
+          clearTimeout(timeoutId);
+
+          if (networkResponse && networkResponse.status === 200) {
+            await safeCachePut(cache, request, networkResponse);
+            if (url.pathname === '/' || url.pathname.endsWith('index.html')) {
+              await safeCachePut(cache, './', networkResponse);
+            }
+            return cleanResponse(networkResponse);
+          }
+        } catch (netErr) {
+          // Offline, timeout, or network fetch failure: gracefully fall back to cache
+        }
+
+        // 2. Offline Fallback: Match requested URL in cache
         let cached = await cache.match(request);
         if (!cached) {
           const path = url.pathname;
@@ -182,30 +202,11 @@ self.addEventListener('fetch', (event) => {
           }
         }
 
-        // Background network revalidation
-        const networkPromise = fetch(request).then(async (netResponse) => {
-          if (netResponse && netResponse.status === 200) {
-            await safeCachePut(cache, request, netResponse);
-            if (url.pathname === '/' || url.pathname.endsWith('index.html')) {
-              await safeCachePut(cache, './', netResponse);
-            }
-          }
-          return netResponse;
-        }).catch((err) => {
-          return null;
-        });
-
-        // If cached page is available, return sanitized clean response immediately!
         if (cached) {
-          event.waitUntil(networkPromise);
           return cleanResponse(cached);
         }
 
-        // If not in cache yet, await network
-        const netRes = await networkPromise;
-        if (netRes) return cleanResponse(netRes);
-
-        // Ultimate offline fallback to index.html
+        // 3. Ultimate offline fallback to index.html
         const fallback = (await cache.match('index.html')) || (await cache.match('./'));
         if (fallback) return cleanResponse(fallback);
 

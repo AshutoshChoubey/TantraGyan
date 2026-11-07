@@ -9,6 +9,16 @@
   Permissions-Policy: interest-cohort=(), accelerometer=(), camera=(), geolocation=(), microphone=()
   Link: </llms.txt>; rel="help"; type="text/plain", </llms-full.txt>; rel="alternate"; type="text/plain", </sitemap.xml>; rel="sitemap"; type="application/xml"
 
+# 1B. HTML Pages (Always revalidate with server, eliminating stale caching issues)
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+/hindi.html
+  Cache-Control: public, max-age=0, must-revalidate
+/english.html
+  Cache-Control: public, max-age=0, must-revalidate
+
 # 2. Service Worker (Never cache long term, allow root scope)
 /sw.js
   Cache-Control: public, max-age=0, must-revalidate

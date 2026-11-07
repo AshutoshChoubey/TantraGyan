@@ -1199,10 +1199,11 @@ class BookUIController {
   // 11. Progressive Web App (PWA) & Offline Capabilities
   // ============================================================================
   initPWA() {
-    this.currentAppVersion = '1.0.5';
+    this.currentAppVersion = '1.0.7';
     this.deferredInstallPrompt = null;
     this.updateWorker = null;
     this.isDownloading = false;
+    this._userTriggeredUpdate = false;
 
     // Standard SVG Icons (No emoji checkbox)
     this.pwaIcons = {
@@ -1268,10 +1269,10 @@ class BookUIController {
           });
       });
 
-      // Handle controlling service worker change (after update is applied)
+      // Handle controlling service worker change (after update is applied by user)
       let refreshing = false;
       navigator.serviceWorker.addEventListener('controllerchange', () => {
-        if (!refreshing) {
+        if (!refreshing && this._userTriggeredUpdate) {
           refreshing = true;
           window.location.reload();
         }
@@ -1417,6 +1418,7 @@ class BookUIController {
     const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
 
     if (this.offlineState === 'update_available') {
+      this._userTriggeredUpdate = true;
       this.showToast(isHindi ? 'नवीनतम संस्करण अपडेट हो रहा है...' : 'Updating to latest edition...', 3000);
       localStorage.setItem('tantragyan_downloaded_version', this.currentAppVersion);
 

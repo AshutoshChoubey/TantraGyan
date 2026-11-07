@@ -388,7 +388,7 @@
 
       <!-- Mobile Header Actions (Download/Update + Gear Settings) -->
       <div class="mobile-header-actions">
-        <a href="astrology-book.pdf" download="TantraGyan-Vedic-Astrology-Compendium.pdf" class="tool-btn mobile-action-btn" title="ग्रंथ PDF डाउनलोड करें" aria-label="Download PDF" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; color:var(--accent-gold);">
+        <a href="tantra-gyan-vedic-jyotish-mahagranth.pdf" download="Tantra-Gyan-Vedic-Jyotish-Maha-Granth.pdf" class="tool-btn mobile-action-btn" title="सम्पूर्ण ग्रंथ PDF डाउनलोड करें • Tantra Gyan: Vedic Jyotish Maha Granth" aria-label="Download PDF" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; color:var(--accent-gold);">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="12" y2="18"></line><line x1="15" y1="15" x2="12" y2="18"></line></svg>
         </a>
         <button class="tool-btn mobile-action-btn mobile-download-btn" id="mobile-btn-download" title="ग्रंथ ऑफ़लाइन डाउनलोड करें / नया संस्करण अपडेट करें" aria-label="Download or Update Book">
@@ -480,20 +480,14 @@
       <!-- Fullscreen -->
       <button class="tool-btn" id="btn-fullscreen" title="Toggle Fullscreen" style="padding:0.45rem 0.6rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>
 
-      <!-- Modern Paged.js Reader Button -->
-      <a href="astrology-book-engine/dist/web/index.html" class="tool-btn" id="btn-paged-reader" title="✨ नया संस्करण पढ़ें • Modern Paged.js Reader (Spreads & Vector Typography)" style="color:var(--accent-gold); border-color:rgba(217,119,6,0.6); text-decoration:none;">
-        <span>📖</span> <span>Paged Reader</span>
+      <!-- Modern Rich-Text Web Reader Button -->
+      <a href="astrology-book-engine/dist/web/index.html" class="tool-btn" id="btn-paged-reader" title="✨ डिजिटल ग्रंथ पाठक • Modern Rich-Text Web Reader" style="color:#38bdf8; border-color:rgba(56,189,248,0.6); text-decoration:none; font-weight:600;">
+        <span>📖</span> <span>Web Reader</span>
       </a>
 
-      <!-- Vector PDF Download Buttons -->
-      <a href="astrology-book-vivliostyle.pdf" download="TantraGyan-Vivliostyle-Publication.pdf" class="tool-btn" id="btn-download-pdf-vivliostyle" title="🌟 सर्वोत्कृष्ट क्रोमियम व हार्फ़बज़ पब्लिकेशन PDF डाउनलोड करें (Vivliostyle Noto Devanagari Vector)" style="background:linear-gradient(135deg, rgba(37,99,235,0.2), rgba(30,58,138,0.3)); border-color:#60a5fa; color:#93c5fd; text-decoration:none;">
-        <span>🌟</span> <span>Vivliostyle PDF</span>
-      </a>
-      <a href="astrology-book-typst.pdf" download="TantraGyan-Typst-Academic-Book.pdf" class="tool-btn" id="btn-download-pdf-typst" title="📄 सम्पूर्ण ग्रंथ Typst PDF डाउनलोड करें (Academic Vector Typst Masterwork)" style="background:rgba(56,189,248,0.12); border-color:rgba(56,189,248,0.6); color:#38bdf8; text-decoration:none;">
-        <span>📄</span> <span>Typst PDF</span>
-      </a>
-      <a href="astrology-book.pdf" download="TantraGyan-Vedic-Astrology-Compendium.pdf" class="tool-btn" id="btn-download-pdf-vector" title="📄 सम्पूर्ण ग्रंथ Trade PDF डाउनलोड करें (Print-Ready 6x9 WeasyPrint)" style="background:rgba(217,119,6,0.15); border-color:var(--accent-gold); text-decoration:none;">
-        <span>📄</span> <span>Trade PDF</span>
+      <!-- Primary Masterwork PDF Download Button (Tantra Gyan: Vedic Jyotish Maha Granth) -->
+      <a href="tantra-gyan-vedic-jyotish-mahagranth.pdf" download="Tantra-Gyan-Vedic-Jyotish-Maha-Granth.pdf" class="tool-btn" id="btn-download-pdf-primary" title="📥 सम्पूर्ण वैदिक ज्योतिष महाग्रंथ PDF डाउनलोड करें (Tantra Gyan: Vedic Jyotish Maha Granth)" style="background:linear-gradient(135deg, rgba(217,119,6,0.22), rgba(180,83,9,0.35)); border-color:var(--accent-gold); color:var(--accent-gold); text-decoration:none; font-weight:600;">
+        <span>📥</span> <span>Download PDF</span>
       </a>
 
       <!-- Download / Update Book Offline Button -->
@@ -512,6 +506,52 @@
   <div class="reading-progress-track">
     <div class="reading-progress-fill" id="reading-progress-fill"></div>
   </div>
+
+  <!-- =========================================================================
+       TANTRA GYAN PRIMARY PUBLICATION & WEB READER SHOWCASE BANNER
+       ========================================================================= -->
+  <section class="book-edition-action-bar" id="tg-download-section" aria-label="ग्रंथ डाउनलोड एवं ऑनलाइन डिजिटल पठन">
+    <div class="edition-bar-inner">
+      <div class="edition-bar-info">
+        <div class="edition-badge">
+          <span class="badge-dot"></span>
+          <span>प्रकाशन संस्करण 2026 • Official Masterwork Edition</span>
+        </div>
+        <h2 class="edition-title">
+          तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ
+          <span class="edition-sub-title">(Tantra Gyan: Complete Vedic Astrology Compendium)</span>
+        </h2>
+        <p class="edition-desc">
+          30 पृष्ठ सम्पूर्ण प्रामाणिक शास्त्रीय फलित ज्ञानकोश • Noto Serif मुद्रण • उच्च-रिजॉल्यूशन 100% वेक्टर कुण्डली चक्र
+        </p>
+      </div>
+
+      <div class="edition-bar-actions">
+        <!-- 1. Download Master PDF (Tantra Gyan: Vedic Jyotish Maha Granth) -->
+        <a href="tantra-gyan-vedic-jyotish-mahagranth.pdf" 
+           download="Tantra-Gyan-Vedic-Jyotish-Maha-Granth.pdf" 
+           class="edition-action-btn btn-primary-pdf" 
+           title="सम्पूर्ण ग्रंथ PDF डाउनलोड करें • Tantra Gyan: Vedic Jyotish Maha Granth">
+          <span class="btn-icon">📥</span>
+          <span class="btn-text-group">
+            <span class="btn-main-text">Download PDF</span>
+            <span class="btn-sub-text">सम्पूर्ण ग्रंथ PDF (3.0 MB)</span>
+          </span>
+        </a>
+
+        <!-- 2. Modern Rich-Text Web Reader -->
+        <a href="astrology-book-engine/dist/web/index.html" 
+           class="edition-action-btn btn-web-reader" 
+           title="आधुनिक डिजिटल वेब पाठक में पढ़ें • Zero-Lag Interactive Reader">
+          <span class="btn-icon">📖</span>
+          <span class="btn-text-group">
+            <span class="btn-main-text">Web Reader</span>
+            <span class="btn-sub-text">डिजिटल ग्रंथ पाठक</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- Main Book Reading Stage -->
   <main class="main-stage">
@@ -580,6 +620,15 @@
     <span class="prompt-icon">✧</span>
     <span class="prompt-text">ग्रंथ का अनावरण करें • Click to Open Book</span>
     <span class="prompt-icon">✧</span>
+  </div>
+
+  <div class="cover-action-links">
+    <a href="tantra-gyan-vedic-jyotish-mahagranth.pdf" download="Tantra-Gyan-Vedic-Jyotish-Maha-Granth.pdf" class="cover-action-pill pill-pdf" title="सम्पूर्ण ग्रंथ PDF डाउनलोड करें • Tantra Gyan: Vedic Jyotish Maha Granth">
+      <span>📥</span> <span>Download PDF</span>
+    </a>
+    <a href="astrology-book-engine/dist/web/index.html" class="cover-action-pill pill-reader" title="डिजिटल वेब पाठक में पढ़ें • Modern Web Reader">
+      <span>📖</span> <span>Web Reader</span>
+    </a>
   </div>
 
   <div class="cover-footer-brand">
@@ -1587,28 +1636,16 @@
         <div class="settings-section">
           <div class="settings-section-title">App & Offline (ऐप व ऑफ़लाइन)</div>
           <div class="settings-grid">
-            <!-- Modern Paged Reader Action -->
-            <a href="astrology-book-engine/dist/web/index.html" class="settings-action-btn" style="color:var(--accent-gold); font-weight:600; text-decoration:none;">
+            <!-- Modern Web Reader Action -->
+            <a href="astrology-book-engine/dist/web/index.html" class="settings-action-btn" style="color:#38bdf8; font-weight:600; text-decoration:none;">
               <span class="settings-btn-icon">📖</span>
-              <span class="settings-btn-label">✨ Paged Reader (नया पाठक)</span>
+              <span class="settings-btn-label">✨ Web Reader (डिजिटल पाठक)</span>
             </a>
 
-            <!-- Download Vivliostyle PDF Action -->
-            <a href="astrology-book-vivliostyle.pdf" download="TantraGyan-Vivliostyle-Publication.pdf" class="settings-action-btn" style="color:#60a5fa; font-weight:600; text-decoration:none;">
-              <span class="settings-btn-icon">🌟</span>
-              <span class="settings-btn-label">🌟 Vivliostyle PDF (क्रोमियम)</span>
-            </a>
-
-            <!-- Download Typst PDF Action -->
-            <a href="astrology-book-typst.pdf" download="TantraGyan-Typst-Academic-Book.pdf" class="settings-action-btn" style="color:#38bdf8; font-weight:600; text-decoration:none;">
-              <span class="settings-btn-icon">📄</span>
-              <span class="settings-btn-label">📄 Typst PDF (अकादमिक ग्रंथ)</span>
-            </a>
-
-            <!-- Download Trade PDF Action -->
-            <a href="astrology-book.pdf" download="TantraGyan-Vedic-Astrology-Compendium.pdf" class="settings-action-btn" style="color:#f59e0b; font-weight:600; text-decoration:none;">
+            <!-- Download Primary PDF Action -->
+            <a href="tantra-gyan-vedic-jyotish-mahagranth.pdf" download="Tantra-Gyan-Vedic-Jyotish-Maha-Granth.pdf" class="settings-action-btn" style="color:var(--accent-gold); font-weight:600; text-decoration:none;">
               <span class="settings-btn-icon">📥</span>
-              <span class="settings-btn-label">📥 Trade PDF (प्रिंट-रेडी ग्रंथ)</span>
+              <span class="settings-btn-label">📥 Download PDF (वैदिक ज्योतिष महाग्रंथ)</span>
             </a>
 
             <!-- Full Interactive Download & Update Card -->
@@ -1700,6 +1737,15 @@
     <span class="prompt-icon">✧</span>
     <span class="prompt-text">ग्रंथ का अनावरण करें • Click to Open Book</span>
     <span class="prompt-icon">✧</span>
+  </div>
+
+  <div class="cover-action-links">
+    <a href="tantra-gyan-vedic-jyotish-mahagranth.pdf" download="Tantra-Gyan-Vedic-Jyotish-Maha-Granth.pdf" class="cover-action-pill pill-pdf" title="सम्पूर्ण ग्रंथ PDF डाउनलोड करें • Tantra Gyan: Vedic Jyotish Maha Granth">
+      <span>📥</span> <span>Download PDF</span>
+    </a>
+    <a href="astrology-book-engine/dist/web/index.html" class="cover-action-pill pill-reader" title="डिजिटल वेब पाठक में पढ़ें • Modern Web Reader">
+      <span>📖</span> <span>Web Reader</span>
+    </a>
   </div>
 
   <div class="cover-footer-brand">
