@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>Astrology Sanskrit PDF Test</title>
+  <style>
+    @font-face {
+      font-family: "NotoHindi";
+      src: url("./fonts/NotoSerifDevanagari-Regular.ttf");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "NotoHindi";
+      src: url("./fonts/NotoSerifDevanagari-Bold.ttf");
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: "NotoSansHindi";
+      src: url("./fonts/NotoSansDevanagari-Regular.ttf");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "NotoSansHindi";
+      src: url("./fonts/NotoSansDevanagari-Bold.ttf");
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: "NotoEnglish";
+      src: url("./fonts/NotoSerif-Regular.ttf");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "NotoEnglish";
+      src: url("./fonts/NotoSerif-Bold.ttf");
+      font-weight: 700;
+    }
+
+    @page {
+      size: A4;
+      margin: 22mm 20mm 24mm;
+      @bottom-center {
+        content: "पृष्ठ " counter(page);
+        font-family: "NotoHindi";
+        font-size: 9pt;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "NotoHindi", serif;
+      font-size: 12pt;
+      line-height: 1.85;
+      color: #252b38;
+    }
+
+    h1 {
+      font-size: 27pt;
+      color: #173b68;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-size: 18pt;
+      color: #80551d;
+      border-bottom: 1px solid #d8c49a;
+      padding-bottom: 7px;
+      margin-top: 20px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      text-align: justify;
+      margin: 10px 0;
+      word-break: normal;
+      overflow-wrap: normal;
+      hyphens: none;
+    }
+
+    .english {
+      font-family: "NotoEnglish", serif;
+      font-size: 11pt;
+      text-align: center;
+      color: #555e6d;
+    }
+
+    .sanskrit {
+      font-family: "NotoHindi", serif;
+      font-size: 16pt;
+      line-height: 2;
+    }
+
+    .test {
+      background: #f7f3e9;
+      padding: 15px;
+      border-left: 4px solid #a77b35;
+      margin: 18px 0;
+      border-radius: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: "NotoSansHindi", sans-serif;
+      font-size: 10pt;
+      margin-top: 12px;
+    }
+
+    th {
+      background: #173b68;
+      color: white;
+      font-weight: 700;
+    }
+
+    td, th {
+      border: 1px solid #d7dce5;
+      padding: 9px;
+      text-align: center;
+    }
+
+    tr {
+      break-inside: avoid;
+    }
+
+    .chart {
+      width: 100%;
+      max-width: 270px;
+      margin: 15px auto;
+      display: block;
+      break-inside: avoid;
+    }
+
+    .chart text {
+      font-family: "NotoSansHindi", sans-serif;
+      fill: #202938;
+      font-size: 13px;
+    }
+
+    .chapter {
+      break-before: page;
+    }
+  </style>
+</head>
+<body>
+  <h1>श्री ज्योतिष शास्त्रम्</h1>
+  <p class="english">
+    Premium Astrology Publication — Sanskrit, Hindi and English
+  </p>
+
+  <h2>देवनागरी परीक्षण</h2>
+  <div class="test sanskrit">
+    राष्ट्र, ज्योतिष, प्रार्थना, क्षत्रिय, ग्रह, लग्न, त्रिकोण, श्रीमद्भगवद्गीता।
+    <br/>
+    कर्म, धर्म, श्रद्धा, ज्ञान, त्र्यंबकम्, प्रकाश, संस्कृतम्, श्रीगणेशाय नमः।
+    <br/>
+    र्क, र्म, क्र, ग्र, त्र, श्र, क्ष, ज्ञ।
+  </div>
+
+  <h2>संस्कृत श्लोक</h2>
+  <p class="sanskrit">
+    कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।
+    मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥
+  </p>
+
+  <h2>Planetary Information</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ग्रह</th>
+        <th>राशि</th>
+        <th>भाव</th>
+        <th>स्थिति</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>सूर्य</td><td>मेष</td><td>प्रथम</td><td>उच्च</td></tr>
+      <tr><td>चन्द्र</td><td>वृषभ</td><td>द्वितीय</td><td>उच्च</td></tr>
+      <tr><td>मंगल</td><td>मिथुन</td><td>तृतीय</td><td>सामान्य</td></tr>
+      <tr><td>बृहस्पति</td><td>कर्क</td><td>चतुर्थ</td><td>उच्च</td></tr>
+    </tbody>
+  </table>
+
+  <section class="chapter">
+    <h1>जन्म कुण्डली</h1>
+
+    <h2>उत्तर भारतीय कुण्डली</h2>
+    <svg class="chart" viewBox="0 0 300 300">
+      <rect x="5" y="5" width="290" height="290" fill="#fffaf0" stroke="#9b7135" stroke-width="2"/>
+      <path d="M5 5 L295 295 M295 5 L5 295 M150 5 L295 150 L150 295 L5 150 Z" fill="none" stroke="#9b7135" stroke-width="1.5"/>
+      <path d="M150 5 L150 295 M5 150 L295 150" fill="none" stroke="#9b7135"/>
+      <g text-anchor="middle">
+        <text x="150" y="48">लग्न</text>
+        <text x="75" y="85">गुरु</text>
+        <text x="225" y="85">सूर्य</text>
+        <text x="75" y="220">चन्द्र</text>
+        <text x="225" y="220">मंगल</text>
+        <text x="150" y="268">शनि</text>
+      </g>
+    </svg>
+
+    <h2>दक्षिण भारतीय कुण्डली</h2>
+    <svg class="chart" viewBox="0 0 300 300">
+      <rect x="5" y="5" width="290" height="290" fill="#fffaf0" stroke="#9b7135" stroke-width="2"/>
+      <path d="M77.5 5 V295 M150 5 V295 M222.5 5 V295 M5 77.5 H295 M5 150 H295 M5 222.5 H295" fill="none" stroke="#9b7135" stroke-width="1.5"/>
+      <g text-anchor="middle">
+        <text x="41" y="40">मेष</text>
+        <text x="113" y="40">वृषभ</text>
+        <text x="186" y="40">मिथुन</text>
+        <text x="259" y="40">कर्क</text>
+        <text x="41" y="112">मीन</text>
+        <text x="259" y="112">सिंह</text>
+        <text x="41" y="184">कुम्भ</text>
+        <text x="259" y="184">कन्या</text>
+        <text x="41" y="258">मकर</text>
+        <text x="113" y="258">धनु</text>
+        <text x="186" y="258">वृश्चिक</text>
+        <text x="259" y="258">तुला</text>
+        <text x="150" y="145">जन्म कुण्डली</text>
+      </g>
+    </svg>
+  </section>
+</body>
+</html>

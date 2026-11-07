@@ -343,6 +343,51 @@ def build_typst_target(metadata, chapters):
     return output_typst_pdf
 
 
+def build_vivliostyle_target(metadata, chapters):
+    """Target 1D: Compiles Publication Masterwork Vector PDF via Vivliostyle + Chromium"""
+    print("\n--- Compiling Target 1D: Vector PDF (Vivliostyle + Chromium) ---")
+    start_time = time.time()
+    os.makedirs(DIST_PDF_DIR, exist_ok=True)
+
+    pdf_html_path = os.path.join(DIST_PDF_DIR, "index_pdf.html")
+    if not os.path.exists(pdf_html_path):
+        env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
+        template = env.get_template("layout.html")
+        html_out = template.render(meta=metadata, chapters=chapters, target="pdf")
+        with open(pdf_html_path, "w", encoding="utf-8") as f:
+            f.write(html_out)
+        shutil.copy(os.path.join(TEMPLATES_DIR, "print.css"), os.path.join(DIST_PDF_DIR, "print.css"))
+        dist_pdf_assets = os.path.join(DIST_PDF_DIR, "assets")
+        if os.path.exists(dist_pdf_assets):
+            shutil.rmtree(dist_pdf_assets)
+        shutil.copytree(ASSETS_DIR, dist_pdf_assets)
+
+    output_vivlio_pdf = os.path.join(DIST_PDF_DIR, "astrology-book-vivliostyle.pdf")
+
+    cmd = [
+        "vivliostyle",
+        "build",
+        pdf_html_path,
+        "-o",
+        output_vivlio_pdf
+    ]
+    print(f"Executing Vivliostyle build: {' '.join(cmd)}")
+    import subprocess
+    subprocess.run(cmd, check=True)
+
+    root_vivlio = os.path.join(os.path.dirname(ENGINE_ROOT), "astrology-book-vivliostyle.pdf")
+    shutil.copy(output_vivlio_pdf, root_vivlio)
+    web_vivlio = os.path.join(DIST_WEB_DIR, "astrology-book-vivliostyle.pdf")
+    os.makedirs(DIST_WEB_DIR, exist_ok=True)
+    shutil.copy(output_vivlio_pdf, web_vivlio)
+
+    elapsed = time.time() - start_time
+    size_mb = os.path.getsize(output_vivlio_pdf) / (1024 * 1024)
+    print(f"✓ Target 1D (Vivliostyle) Complete: {output_vivlio_pdf}")
+    print(f"  • Size: {size_mb:.2f} MB | Compile Duration: {elapsed:.2f}s")
+    return output_vivlio_pdf
+
+
 def build_web_target(metadata, chapters, pdf_path=None):
     """Target 2: Modern Rich-Text Book Reader with Enterprise Diamond Charts"""
     print("\n--- Compiling Target 2: Modern Rich-Text Web Reader ---")
@@ -376,13 +421,15 @@ def build_web_target(metadata, chapters, pdf_path=None):
     os.makedirs(os.path.join(dist_web_assets, "js"), exist_ok=True)
     shutil.copy(os.path.join(TEMPLATES_DIR, "web-reader.js"), os.path.join(dist_web_assets, "js", "web-reader.js"))
 
-    # 3. Copy generated PDF for direct 1-click download in UI and root TantraGyan
-    if pdf_path and os.path.exists(pdf_path):
-        web_pdf = os.path.join(DIST_WEB_DIR, "astrology-book.pdf")
-        shutil.copy(pdf_path, web_pdf)
-        root_tantragyan_pdf = os.path.join(os.path.dirname(ENGINE_ROOT), "astrology-book.pdf")
-        shutil.copy(pdf_path, root_tantragyan_pdf)
-        print(f"  • Copied PDF to web distribution & root TantraGyan for instant download")
+    # 3. Copy generated PDFs for direct 1-click download in UI and root TantraGyan
+    for pdf_name in ["astrology-book.pdf", "astrology-book-vivliostyle.pdf", "astrology-book-typst.pdf"]:
+        src_p = os.path.join(DIST_PDF_DIR, pdf_name)
+        if os.path.exists(src_p):
+            web_pdf = os.path.join(DIST_WEB_DIR, pdf_name)
+            shutil.copy(src_p, web_pdf)
+            root_tantragyan_pdf = os.path.join(os.path.dirname(ENGINE_ROOT), pdf_name)
+            shutil.copy(src_p, root_tantragyan_pdf)
+            print(f"  • Copied {pdf_name} to web distribution & root TantraGyan for instant download")
 
     elapsed = time.time() - start_time
     print(f"✓ Target 2 Complete: {index_html_path}")
@@ -392,8 +439,8 @@ def build_web_target(metadata, chapters, pdf_path=None):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Astrology Book Dual-Target Publishing Pipeline")
-    parser.add_argument("--target", choices=["all", "pdf", "web", "typst", "reportlab"], default="all", help="Target output to build")
+    parser = argparse.ArgumentParser(description="Astrology Book Multi-Target Publishing Pipeline")
+    parser.add_argument("--target", choices=["all", "pdf", "web", "typst", "vivliostyle", "reportlab"], default="all", help="Target output to build")
     parser.add_argument("--clean", action="store_true", help="Clean dist before building")
     parser.add_argument("--serve", type=int, default=0, help="Start localhost HTTP server on given port after build")
     args = parser.parse_args()
@@ -416,6 +463,9 @@ def main():
     if args.target in ["all", "typst"]:
         build_typst_target(metadata, chapters)
 
+    if args.target in ["all", "vivliostyle"]:
+        build_vivliostyle_target(metadata, chapters)
+
     if args.target == "reportlab":
         build_reportlab_target(metadata, chapters)
 
@@ -427,11 +477,13 @@ def main():
         build_web_target(metadata, chapters, pdf_path)
 
     print("\n=======================================================")
-    print("✨ DUAL PUBLISHING PIPELINE COMPLETED SUCCESSFULLY! ✨")
-    print(f"1. PDF Target (WeasyPrint): {DIST_PDF_DIR}/astrology-book.pdf")
+    print("✨ ASTROLOGY BOOK PUBLISHING PIPELINE COMPLETED! ✨")
+    print(f"1. PDF Target (Vivliostyle Chromium): {DIST_PDF_DIR}/astrology-book-vivliostyle.pdf")
     if os.path.exists(os.path.join(DIST_PDF_DIR, "astrology-book-typst.pdf")):
-        print(f"2. PDF Target (Typst):       {DIST_PDF_DIR}/astrology-book-typst.pdf")
-    print(f"3. Web Reader (Rich-Text):   {DIST_WEB_DIR}/index.html")
+        print(f"2. PDF Target (Typst Academic):        {DIST_PDF_DIR}/astrology-book-typst.pdf")
+    if os.path.exists(os.path.join(DIST_PDF_DIR, "astrology-book.pdf")):
+        print(f"3. PDF Target (WeasyPrint Trade):      {DIST_PDF_DIR}/astrology-book.pdf")
+    print(f"4. Web Reader (Rich-Text):             {DIST_WEB_DIR}/index.html")
     print("=======================================================\n")
 
     if args.serve > 0:

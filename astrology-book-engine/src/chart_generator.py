@@ -86,7 +86,7 @@ def generate_aspect_wheel(width=500, height=500, theme="parchment"):
     text_color = "#1e293b"
 
     lines = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="auto" class="vedic-aspect-svg" style="max-width:{width}px; background:{bg_color}; border-radius:12px; border:1.8px solid {border_color}; box-shadow:0 4px 18px rgba(0,0,0,0.06);">',
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="{height}" class="vedic-aspect-svg" style="max-width:{width}px; background:{bg_color}; border-radius:12px; border:1.8px solid {border_color}; box-shadow:0 4px 18px rgba(0,0,0,0.06);">',
         f'  <!-- Aspect Mandala Wheel -->',
         f'  <circle cx="{cx}" cy="{cy}" r="{radius}" fill="none" stroke="{border_color}" stroke-width="2" />',
         f'  <circle cx="{cx}" cy="{cy}" r="{radius * 0.65}" fill="none" stroke="{border_color}" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.6"/>',
