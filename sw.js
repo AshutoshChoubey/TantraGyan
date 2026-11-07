@@ -1,23 +1,24 @@
 /**
  * Tantra Gyan Vedic Astrology Book - Progressive Web App Service Worker
- * Version: 2.0.0 (Production Master • Zero-Redirect • Native Navigation Architecture)
+ * Version: 2.2.0 (User-Controlled Offline Architecture • Zero Navigation Conflict)
  * 
  * Features:
- * - 100% Zero-Redirect Guarantee: Online navigations bypass worker proxying natively
- * - Complete Offline Protection: Seamless offline fallback when internet is disconnected
- * - Automatic Cache Migration: Purges all legacy caches (v1.x) upon activation
- * - Live Background Download: Smooth multi-asset caching with percentage reporting
- * - Dynamic Google Fonts Caching: Offline typography support for Vedic Devanagari fonts
+ * - Pure Online First: Regular web visitors run natively with ZERO service worker overhead
+ * - User-Controlled Opt-In: Service worker activates ONLY when user explicitly downloads offline edition
+ * - Seamless Multi-Page Offline: Serves cached editions (/hindi, /english, ./) without page reloads or loops
+ * - Dynamic Google Fonts Caching: Vedic typography cached for offline reading
+ * - Complete Self-Purging: Clean cache wiping when user disables offline mode or updates edition
  */
 
-const APP_VERSION = '2.1.0';
+const APP_VERSION = '2.2.0';
 const CACHE_NAME = `tantragyan-v${APP_VERSION}`;
-const FONT_CACHE_NAME = 'tantragyan-fonts-v2.1';
+const FONT_CACHE_NAME = 'tantragyan-fonts-v2.2';
 
-// Critical core assets and editions for complete offline functioning
-// Uses './' instead of 'index.html' to prevent Cloudflare 307 canonical redirects
+// Essential assets for complete offline functioning
 const PRECACHE_ASSETS = [
   './',
+  'hindi',
+  'english',
   'hindi.html',
   'english.html',
   'css/book.css?v=5.0',
@@ -62,25 +63,12 @@ const PRECACHE_ASSETS = [
   'llms-full.txt'
 ];
 
-// 1. Install Event: Fast activation with non-blocking parallel pre-caching
+// 1. Install Event: Instant activation without blocking network
 self.addEventListener('install', (event) => {
   self.skipWaiting();
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return Promise.allSettled(
-        PRECACHE_ASSETS.map((asset) =>
-          fetch(asset, { cache: 'no-cache' }).then((res) => {
-            if (res && res.status === 200) {
-              return cache.put(asset, res);
-            }
-          }).catch(() => {})
-        )
-      );
-    })
-  );
 });
 
-// 2. Activate Event: Wipe legacy caches (v1.x) and claim all clients immediately
+// 2. Activate Event: Wipe legacy caches and claim clients cleanly
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -88,7 +76,7 @@ self.addEventListener('activate', (event) => {
         cacheNames
           .filter((name) => name !== CACHE_NAME && name !== FONT_CACHE_NAME)
           .map((name) => {
-            console.log(`[ServiceWorker v${APP_VERSION}] Deleting legacy cache: ${name}`);
+            console.log(`[ServiceWorker v${APP_VERSION}] Purging legacy cache: ${name}`);
             return caches.delete(name);
           })
       );
@@ -96,12 +84,12 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// 3. Fetch Event: Clean multi-tier caching with zero navigation redirects
+// 3. Fetch Event: Clean handling with zero navigation conflict
 self.addEventListener('fetch', (event) => {
   const request = event.request;
   const url = new URL(request.url);
 
-  // Skip non-GET requests and external protocols
+  // Skip non-GET requests and non-http protocols
   if (request.method !== 'GET' || !url.protocol.startsWith('http')) {
     return;
   }
@@ -129,38 +117,48 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // B. Top-Level Navigation Requests (HTML Pages)
-  // STRICT ARCHITECTURAL INVARIANT:
-  // When online, NEVER call event.respondWith() on navigation requests!
-  // Allowing native browser network navigation guarantees:
-  // 1. Zero Worker Redirects in Chromium & Safari
-  // 2. Zero 307 redirect recursion loops
-  // 3. Zero Content-Encoding mismatches
-  // 4. Instant native page rendering
+  // B. Navigation Requests (HTML Pages: /, /hindi, /english, index.html, hindi.html, english.html)
+  // Strategy: Network-First with Immediate Cache Fallback.
+  // Guarantees:
+  // - Online visitors get instant native server responses (zero 307 loops, zero worker redirects)
+  // - Offline visitors seamlessly get their cached book pages without error screens
   if (request.mode === 'navigate') {
-    if (self.navigator.onLine !== false) {
-      return; // 100% Native browser pass-through!
-    }
-
-    // OFFLINE ONLY: Serve from CacheStorage when network is disconnected
     event.respondWith(
-      (async () => {
-        const cache = await caches.open(CACHE_NAME);
-        const path = url.pathname;
-        let cached = null;
-        if (path.endsWith('hindi.html')) {
-          cached = await cache.match('hindi.html');
-        } else if (path.endsWith('english.html')) {
-          cached = await cache.match('english.html');
-        } else {
-          cached = (await cache.match('./')) || (await cache.match('/'));
-        }
-        if (cached) return cached;
-        return new Response(
-          '<!DOCTYPE html><html><head><meta charset="utf-8"><title>Offline</title></head><body style="font-family:sans-serif;text-align:center;padding:3rem;"><h1>📡 Offline Mode</h1><p>Please connect to the internet to access Tantra Gyan online.</p></body></html>',
-          { headers: { 'Content-Type': 'text/html; charset=utf-8' } }
-        );
-      })()
+      fetch(request)
+        .then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const clone = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(request.url, clone);
+              if (url.pathname === '/' || url.pathname === '') {
+                cache.put('./', networkResponse.clone());
+              }
+            }).catch(() => {});
+          }
+          return networkResponse;
+        })
+        .catch(async () => {
+          // Device is completely offline: Serve matched cached edition
+          const cache = await caches.open(CACHE_NAME);
+          const pathname = url.pathname;
+          let cached = null;
+
+          if (pathname.includes('hindi')) {
+            cached = (await cache.match('hindi')) || (await cache.match('hindi.html'));
+          } else if (pathname.includes('english')) {
+            cached = (await cache.match('english')) || (await cache.match('english.html'));
+          } else {
+            cached = (await cache.match('./')) || (await cache.match('index.html')) || (await cache.match('/'));
+          }
+
+          if (cached) return cached;
+
+          // Generic friendly offline fallback
+          return new Response(
+            '<!DOCTYPE html><html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ऑफ़लाइन मोड • Tantra Gyan</title><style>body{font-family:sans-serif;text-align:center;padding:3rem 1.5rem;background:#fdfbf7;color:#78350f}h1{font-size:1.6rem;color:#b45309}p{color:#57534e;max-width:480px;margin:1rem auto;line-height:1.6}a{display:inline-block;margin-top:1rem;padding:0.75rem 1.5rem;background:#b45309;color:#fff;text-decoration:none;border-radius:8px;font-weight:bold}</style></head><body><h1>📡 ऑफ़लाइन मोड (Offline Mode)</h1><p>यह पृष्ठ अभी कैश्ड नहीं है या इंटरनेट कनेक्शन उपलब्ध नहीं है। कृपया इंटरनेट से जुड़ने पर पुनः प्रयास करें।</p><a href="./">मुख्य पृष्ठ पर जाएं (Go Home)</a></body></html>',
+            { headers: { 'Content-Type': 'text/html; charset=utf-8' } }
+          );
+        })
     );
     return;
   }
@@ -181,23 +179,19 @@ self.addEventListener('fetch', (event) => {
             }).catch(() => {});
           }
           return networkResponse;
-        }).catch(() => {
-          if (request.destination === 'image') {
-            return caches.match('assets/icon-192.png');
-          }
         });
+      }).catch(() => {
+        if (request.destination === 'image') {
+          return caches.match('assets/icon-192.png');
+        }
+        return new Response('', { status: 408, statusText: 'Resource not available offline' });
       })
     );
     return;
   }
-
-  // Default fallback: Cache first then Network
-  event.respondWith(
-    caches.match(request).then((cached) => cached || fetch(request))
-  );
 });
 
-// 4. Message Event: Background offline download with progress reporting
+// 4. Message Event: User-Triggered Offline Download & Cache Management
 self.addEventListener('message', async (event) => {
   if (!event.data) return;
 
@@ -227,11 +221,21 @@ self.addEventListener('message', async (event) => {
         try {
           const res = await fetch(asset, { cache: 'no-cache' });
           if (res && res.status === 200) {
-            await cache.put(asset, res);
+            await cache.put(asset, res.clone());
+            // Mirror clean URL variants to guarantee 100% offline match
+            if (asset === 'hindi') {
+              await cache.put('hindi.html', res.clone());
+            } else if (asset === 'english') {
+              await cache.put('english.html', res.clone());
+            } else if (asset === './') {
+              await cache.put('/', res.clone());
+              await cache.put('index.html', res.clone());
+            }
           }
         } catch (err) {
           console.warn(`[ServiceWorker v${APP_VERSION}] Download skipped for ${asset}:`, err);
         }
+
         await broadcastMsg({
           type: 'DOWNLOAD_PROGRESS',
           current: i + 1,
@@ -250,7 +254,19 @@ self.addEventListener('message', async (event) => {
     }
   }
 
-  // B. Query current running version
+  // B. Clean cache deletion when user switches back to Online Only
+  if (event.data.action === 'CLEAR_OFFLINE_CACHE') {
+    try {
+      await caches.delete(CACHE_NAME);
+      await caches.delete(FONT_CACHE_NAME);
+      const clients = await self.clients.matchAll();
+      for (const client of clients) {
+        client.postMessage({ type: 'CACHE_CLEARED' });
+      }
+    } catch (e) {}
+  }
+
+  // C. Query current running version
   if (event.data.action === 'GET_VERSION') {
     if (event.source) {
       event.source.postMessage({ type: 'VERSION_INFO', version: APP_VERSION });

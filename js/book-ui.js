@@ -730,12 +730,10 @@ class BookUIController {
 
     // Determine active edition from filename or HTML attribute
     const currentPath = window.location.pathname;
-    const currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
-
     let activeMode = 'bilingual';
-    if (currentFile.includes('hindi')) {
+    if (currentPath.includes('hindi')) {
       activeMode = 'hindi';
-    } else if (currentFile.includes('english')) {
+    } else if (currentPath.includes('english')) {
       activeMode = 'english';
     } else {
       activeMode = document.documentElement.getAttribute('data-lang-mode') || 'bilingual';
@@ -749,18 +747,23 @@ class BookUIController {
         const targetMode = btn.getAttribute('data-lang');
         const currentPage = (window.bookEngine && window.bookEngine.currentPage) ? window.bookEngine.currentPage : 1;
 
+        const isProdDomain = (window.location.hostname === 't.worldgyan.com');
         let targetFile = './';
         if (targetMode === 'hindi') {
-          targetFile = 'hindi.html';
+          targetFile = isProdDomain ? 'hindi' : 'hindi.html';
         } else if (targetMode === 'english') {
-          targetFile = 'english.html';
+          targetFile = isProdDomain ? 'english' : 'english.html';
         } else {
           targetFile = './';
         }
 
         const path = window.location.pathname;
-        let thisFile = path.substring(path.lastIndexOf('/') + 1);
-        if (!thisFile || thisFile === 'index.html') thisFile = './';
+        let thisFile = './';
+        if (path.includes('hindi')) {
+          thisFile = isProdDomain ? 'hindi' : 'hindi.html';
+        } else if (path.includes('english')) {
+          thisFile = isProdDomain ? 'english' : 'english.html';
+        }
 
         if (thisFile !== targetFile) {
           try {
@@ -1200,7 +1203,7 @@ class BookUIController {
   // 11. Progressive Web App (PWA) & Offline Capabilities
   // ============================================================================
   initPWA() {
-    this.currentAppVersion = '2.1.0';
+    this.currentAppVersion = '2.2.0';
     this.deferredInstallPrompt = null;
     this.updateWorker = null;
     this.isDownloading = false;
@@ -1215,48 +1218,40 @@ class BookUIController {
       install: (size = 15) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="5" y="2" width="14" height="20" rx="3" ry="3"></rect><path d="M12 18h.01"></path><path d="M12 7v5"></path><polyline points="9 10 12 13 15 10"></polyline></svg>`
     };
 
-    // Version comparison & cache state detection
+    // User-controlled offline opt-in state
+    const isOfflineEnabled = (localStorage.getItem('tantragyan_offline_enabled') === 'true');
     const savedVersion = localStorage.getItem('tantragyan_downloaded_version');
-    const hadPreviousDownload = (savedVersion && savedVersion !== this.currentAppVersion);
 
-    this.offlineState = (savedVersion === this.currentAppVersion) ? 'downloaded' : 'idle';
-
-    if ('caches' in window) {
-      caches.has(`tantragyan-v${this.currentAppVersion}`).then((hasCache) => {
-        if (hasCache) {
-          this.offlineState = 'downloaded';
-          localStorage.setItem('tantragyan_downloaded_version', this.currentAppVersion);
-          this.updateDownloadUI();
-        }
-      }).catch(() => {});
-    }
+    this.offlineState = (isOfflineEnabled && savedVersion === this.currentAppVersion) ? 'downloaded' : 'idle';
 
     const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-    // A. Register Modern v2.1.0 Service Worker (Zero-Redirect Guarantee)
+    // A. Service Worker Management: Pure Online by default; Offline ONLY when manually enabled
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js')
-          .then((reg) => {
-            console.log('[TantraGyan] PWA Service Worker v2.1.0 active:', reg.scope);
-            
-            // If user previously downloaded an older offline version, auto-download v2.1.0 in the background
-            if (hadPreviousDownload && navigator.onLine) {
-              setTimeout(() => {
-                console.log('[TantraGyan] Automatically downloading v2.1.0 offline assets in the background...');
-                this.triggerDownloadOrUpdate(true);
-              }, 2500);
-            }
-          })
-          .catch((err) => {
-            console.warn('[TantraGyan] Service Worker registration failed:', err);
-          });
-      });
+      if (isOfflineEnabled) {
+        // User explicitly enabled offline mode: register service worker
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('sw.js')
+            .then((reg) => {
+              console.log('[TantraGyan] Offline Service Worker active:', reg.scope);
+            })
+            .catch((err) => {
+              console.warn('[TantraGyan] Service Worker registration failed:', err);
+            });
+        });
+      } else {
+        // Pure Online Mode: Ensure any legacy or lingering service workers are quietly unregistered
+        navigator.serviceWorker.getRegistrations().then((regs) => {
+          for (const reg of regs) {
+            reg.unregister();
+          }
+        }).catch(() => {});
+      }
 
       // Controlling Service Worker Change: Strictly NEVER auto-reload
       navigator.serviceWorker.addEventListener('controllerchange', () => {
-        console.log('[TantraGyan] PWA controller updated to v2.1.0');
+        console.log('[TantraGyan] PWA controller active');
       });
 
       // Listen for download progress & completion messages
@@ -1269,21 +1264,26 @@ class BookUIController {
           this.updateDownloadProgress(data.current, data.total, data.percent);
         } else if (data.type === 'DOWNLOAD_COMPLETE') {
           this.offlineState = 'downloaded';
+          localStorage.setItem('tantragyan_offline_enabled', 'true');
           localStorage.setItem('tantragyan_downloaded_version', this.currentAppVersion);
           this.updateDownloadUI();
           const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
           this.showToast(isHindi
-            ? '🎉 सम्पूर्ण ग्रंथ (v2.1.0) सफलतापूर्वक ऑफ़लाइन डाउनलोड हो गया! अब आप बिना इंटरनेट पढ़ सकते हैं।'
-            : '🎉 Full Compendium (v2.1.0) Downloaded Successfully! You can now read completely offline.', 5000);
+            ? '🎉 सम्पूर्ण ग्रंथ सफलतापूर्वक ऑफ़लाइन डाउनलोड हो गया! अब आप बिना इंटरनेट भी पढ़ सकते हैं।'
+            : '🎉 Full Compendium Downloaded Successfully! You can now read completely offline.', 5000);
+        } else if (data.type === 'CACHE_CLEARED') {
+          this.offlineState = 'idle';
+          this.updateDownloadUI();
         }
       });
     }
 
-    // B. Setup Download / Update Buttons Click Handlers
+    // B. Setup Download / Update / Clear Buttons Click Handlers
     const downloadCard = document.getElementById('settings-download-card');
     const desktopDownloadBtn = document.getElementById('btn-download-offline');
     const mobileDownloadBtn = document.getElementById('mobile-btn-download');
     const checkUpdateBtn = document.getElementById('settings-btn-check-update');
+    const clearCacheBtn = document.getElementById('settings-btn-clear-cache');
 
     const handleDownloadOrUpdate = (e) => {
       if (e) e.preventDefault();
@@ -1298,6 +1298,13 @@ class BookUIController {
       checkUpdateBtn.addEventListener('click', (e) => {
         e.preventDefault();
         this.checkForUpdates();
+      });
+    }
+
+    if (clearCacheBtn) {
+      clearCacheBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.clearOfflineData();
       });
     }
 
@@ -1368,7 +1375,7 @@ class BookUIController {
     window.addEventListener('online', () => {
       const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
       this.showToast(isHindi ? '🌐 ऑनलाइन कनेक्शन सक्रिय' : '🌐 Online Connection Restored', 3000);
-      if ('serviceWorker' in navigator) {
+      if (isOfflineEnabled && 'serviceWorker' in navigator) {
         navigator.serviceWorker.ready.then(reg => reg.update()).catch(() => {});
       }
     });
@@ -1396,25 +1403,72 @@ class BookUIController {
     }
 
     if (!navigator.onLine) {
-      if (!isSilent) this.showToast(isHindi ? 'ऑफ़लाइन मोड: सम्पूर्ण ग्रंथ पहले से उपलब्ध है!' : 'Offline Mode: Book is already available offline!', 3000);
+      if (!isSilent) this.showToast(isHindi ? 'आप अभी ऑफ़लाइन हैं। डाउनलोड करने हेतु इंटरनेट से जुड़ें।' : 'You are currently offline. Please connect to internet to download.', 3500);
       return;
     }
 
     this.offlineState = 'downloading';
     this.updateDownloadUI();
     if (!isSilent) {
-      this.showToast(isHindi ? 'सम्पूर्ण ग्रंथ (v2.1.0) डाउनलोड प्रारम्भ हो गया...' : 'Downloading complete book (v2.1.0) for offline use...', 3000);
+      this.showToast(isHindi ? 'सम्पूर्ण ग्रंथ ऑफ़लाइन डाउनलोड प्रारम्भ हो गया...' : 'Downloading complete book for offline use...', 3000);
     }
 
-    if (navigator.serviceWorker && navigator.serviceWorker.controller) {
-      navigator.serviceWorker.controller.postMessage({ action: 'DOWNLOAD_ALL_OFFLINE' });
-    } else if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.ready.then((reg) => {
-        if (reg.active) {
-          reg.active.postMessage({ action: 'DOWNLOAD_ALL_OFFLINE' });
-        }
-      });
+    localStorage.setItem('tantragyan_offline_enabled', 'true');
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then((reg) => {
+          const trigger = () => {
+            const target = reg.active || navigator.serviceWorker.controller;
+            if (target) {
+              target.postMessage({ action: 'DOWNLOAD_ALL_OFFLINE' });
+            }
+          };
+
+          if (reg.active) {
+            trigger();
+          } else {
+            navigator.serviceWorker.ready.then(() => {
+              trigger();
+            });
+          }
+        })
+        .catch((err) => {
+          console.warn('[TantraGyan] SW registration error:', err);
+          this.offlineState = 'idle';
+          this.updateDownloadUI();
+          if (!isSilent) this.showToast(isHindi ? 'डाउनलोड शुरू करने में त्रुटि आई।' : 'Failed to initialize download.', 3000);
+        });
     }
+  }
+
+  clearOfflineData() {
+    const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
+    localStorage.removeItem('tantragyan_offline_enabled');
+    localStorage.removeItem('tantragyan_downloaded_version');
+
+    if ('caches' in window) {
+      caches.keys().then((names) => {
+        return Promise.all(names.map((n) => caches.delete(n)));
+      }).catch(() => {});
+    }
+
+    if ('serviceWorker' in navigator) {
+      if (navigator.serviceWorker.controller) {
+        navigator.serviceWorker.controller.postMessage({ action: 'CLEAR_OFFLINE_CACHE' });
+      }
+      navigator.serviceWorker.getRegistrations().then((regs) => {
+        for (const reg of regs) {
+          reg.unregister();
+        }
+      }).catch(() => {});
+    }
+
+    this.offlineState = 'idle';
+    this.updateDownloadUI();
+    this.showToast(isHindi
+      ? '🗑️ ऑफ़लाइन डेटा हटा दिया गया। अब केवल ऑनलाइन संस्करण सक्रिय है।'
+      : '🗑️ Offline data cleared. Online-only mode active.', 4000);
   }
 
   updateDownloadProgress(current, total, percent) {
@@ -1461,6 +1515,7 @@ class BookUIController {
     const deskLabel = document.getElementById('btn-download-label');
     const mobBtn = document.getElementById('mobile-btn-download');
     const mobIcon = document.getElementById('mobile-download-icon');
+    const clearCacheBtn = document.getElementById('settings-btn-clear-cache');
 
     if (!this.pwaIcons) return;
 
@@ -1484,6 +1539,7 @@ class BookUIController {
         mobBtn.classList.add('update-glow');
         if (mobIcon) mobIcon.innerHTML = this.pwaIcons.update(15);
       }
+      if (clearCacheBtn) clearCacheBtn.style.display = 'none';
     } else if (this.offlineState === 'downloaded') {
       if (card) {
         card.classList.add('downloaded');
@@ -1491,7 +1547,7 @@ class BookUIController {
       }
       if (cardIcon) cardIcon.innerHTML = this.pwaIcons.offlineReady(22);
       if (cardTitle) cardTitle.textContent = isHindi ? 'सम्पूर्ण ग्रंथ डाउनलोड है' : 'Full Book Downloaded';
-      if (cardSub) cardSub.textContent = isHindi ? 'बिना इंटरनेट 100% उपलब्ध • पुनः जांच हेतु क्लिक करें' : '100% Offline Ready • Click to re-verify';
+      if (cardSub) cardSub.textContent = isHindi ? 'बिना इंटरनेट 100% उपलब्ध • पुनः डाउनलोड हेतु क्लिक करें' : '100% Offline Ready • Click to re-download';
       if (updateBadge) updateBadge.style.display = 'none';
       if (pBar) pBar.style.display = 'none';
 
@@ -1504,6 +1560,7 @@ class BookUIController {
         mobBtn.classList.remove('update-glow');
         if (mobIcon) mobIcon.innerHTML = this.pwaIcons.offlineReady(15);
       }
+      if (clearCacheBtn) clearCacheBtn.style.display = 'flex';
     } else if (this.offlineState === 'downloading') {
       if (card) {
         card.classList.remove('update-available', 'downloaded');
@@ -1511,8 +1568,9 @@ class BookUIController {
       if (cardIcon) cardIcon.innerHTML = this.pwaIcons.downloading(22);
       if (updateBadge) updateBadge.style.display = 'none';
       if (pBar) pBar.style.display = 'block';
+      if (clearCacheBtn) clearCacheBtn.style.display = 'none';
     } else {
-      // idle
+      // idle (pure online)
       if (card) {
         card.classList.remove('update-available', 'downloaded');
       }
@@ -1531,6 +1589,7 @@ class BookUIController {
         mobBtn.classList.remove('update-glow');
         if (mobIcon) mobIcon.innerHTML = this.pwaIcons.download(15);
       }
+      if (clearCacheBtn) clearCacheBtn.style.display = 'none';
     }
   }
 

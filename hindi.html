@@ -2,44 +2,26 @@
 <html lang="hi" data-theme="parchment" data-lang-mode="hindi">
 <head>
   <meta charset="utf-8">
-  <!-- Tantra Gyan v2.1.0 Version Comparison & Auto-Cache Purge Guard -->
+  <!-- Tantra Gyan Session & Online Architecture Initialization -->
   <script>
     (function() {
       try {
-        var CURRENT_VERSION = '2.1.0';
-        var storedVersion = localStorage.getItem('tantragyan_downloaded_version');
-
-        // 1. Version Comparison: If user has an older version downloaded or legacy caches exist
-        if (storedVersion && storedVersion !== CURRENT_VERSION) {
-          console.log('[TantraGyan] Older offline version detected (' + storedVersion + '). Migrating to v' + CURRENT_VERSION);
-
-          // Purge all legacy caches from CacheStorage immediately
-          if ('caches' in window) {
-            caches.keys().then(function(names) {
-              names.forEach(function(name) {
-                if (name !== 'tantragyan-v' + CURRENT_VERSION && name !== 'tantragyan-fonts-v2.1') {
-                  caches.delete(name);
-                }
-              });
-            });
-          }
-
-          // Unregister any stale Service Workers from previous versions
-          if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.getRegistrations().then(function(regs) {
-              for (var i = 0; i < regs.length; i++) {
-                regs[i].unregister();
-              }
-            });
-          }
-        }
-
-        // 2. Clear any lingering reload markers
+        // Clear any lingering reload / crash markers
         sessionStorage.removeItem('tg_pwa_reload_ts');
         sessionStorage.removeItem('tg_pwa_reload_cnt');
         sessionStorage.removeItem('tg_last_reload');
 
-        // 3. Bounds sanity check for saved page
+        // If user has NOT explicitly enabled offline mode, ensure clean online operation
+        var isOfflineEnabled = localStorage.getItem('tantragyan_offline_enabled');
+        if (isOfflineEnabled !== 'true' && 'serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function(regs) {
+            for (var i = 0; i < regs.length; i++) {
+              regs[i].unregister();
+            }
+          }).catch(function() {});
+        }
+
+        // Bounds sanity check for saved page
         var savedPage = localStorage.getItem('tantra_book_page');
         if (savedPage) {
           var p = parseInt(savedPage, 10);
@@ -1656,6 +1638,12 @@
             <button class="settings-action-btn" id="settings-btn-install" style="color:var(--accent-gold); font-weight:600;">
               <span class="settings-btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="5" y="2" width="14" height="20" rx="3" ry="3"></rect><path d="M12 18h.01"></path><path d="M12 7v5"></path><polyline points="9 10 12 13 15 10"></polyline></svg></span>
               <span class="settings-btn-label" id="settings-install-label">ऐप इंस्टॉल करें</span>
+            </button>
+
+            <!-- Clear Offline Cache / Online Only Button -->
+            <button class="settings-action-btn" id="settings-btn-clear-cache" style="color:#ef4444; font-weight:600; display:none;">
+              <span class="settings-btn-icon">🗑️</span>
+              <span class="settings-btn-label" id="settings-clear-cache-label">ऑफ़लाइन डेटा हटाएं (Online Only)</span>
             </button>
 
             <!-- Check for updates button -->
