@@ -749,3 +749,4 @@ def generate_bhava_karaka_diamond_chart(width: int = 560, height: int = 700) -> 
     ])
 
     return "\n".join(svg)
+

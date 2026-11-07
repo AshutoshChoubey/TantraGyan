@@ -79,7 +79,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
   <!-- Standard CSS Files -->
-  <link rel="stylesheet" href="css/book.css?v=4.1">
+  <link rel="stylesheet" href="css/book.css?v=4.2">
   <link rel="stylesheet" href="css/tables.css?v=4.0">
 
   <!-- Ultra-Rich Schema.org JSON-LD Educational Book & Knowledge Graph Structured Data -->
@@ -385,14 +385,21 @@
         <span>Search</span>
       </button>
 
-      <!-- Mobile Header Actions (Download/Update + Gear Settings) -->
+      <!-- Mobile Header Actions (PDF, Web View, Download/Update, Gear Settings) -->
       <div class="mobile-header-actions">
-        <a href="tantra-gyan-vedic-jyotish-mahagranth.pdf" download="Tantra-Gyan-Vedic-Jyotish-Maha-Granth.pdf" class="tool-btn mobile-action-btn" title="Download Masterwork PDF (Tantra Gyan: Vedic Jyotish Maha Granth)" aria-label="Download PDF" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; color:var(--accent-gold);">
+        <!-- PDF Download Icon (Mobile) -->
+        <a href="tantra-gyan-vedic-jyotish-mahagranth.pdf" download="Tantra-Gyan-Vedic-Jyotish-Maha-Granth.pdf" class="tool-btn mobile-action-btn" title="Download Masterwork PDF (Tantra Gyan: Vedic Jyotish Maha Granth)" aria-label="Download PDF" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; color:var(--accent-gold); border-color:rgba(200, 157, 61, 0.45);">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="12" y2="18"></line><line x1="15" y1="15" x2="12" y2="18"></line></svg>
         </a>
+        <!-- Web View Icon (Mobile) -->
+        <a href="astrology-book-engine/dist/web/index.html" class="tool-btn mobile-action-btn" title="Read in Modern Web Reader • Web View" aria-label="Web View" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; color:#38bdf8; border-color:rgba(56, 189, 248, 0.45);">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+        </a>
+        <!-- Offline Download Button -->
         <button class="tool-btn mobile-action-btn mobile-download-btn" id="mobile-btn-download" title="Download or Update Book Offline" aria-label="Download or Update Book">
           <span id="mobile-download-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></span>
         </button>
+        <!-- Gear Settings Button -->
         <button class="tool-btn mobile-action-btn mobile-gear-btn" id="btn-settings-toggle" title="Settings & Options (सेटिंग्स और विकल्प)" aria-label="Open Settings">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;">
             <circle cx="12" cy="12" r="3"></circle>
@@ -480,13 +487,15 @@
       <button class="tool-btn" id="btn-fullscreen" title="Toggle Fullscreen" style="padding:0.45rem 0.6rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>
 
       <!-- Modern Rich-Text Web Reader Button -->
-      <a href="astrology-book-engine/dist/web/index.html" class="tool-btn" id="btn-paged-reader" title="✨ Modern Rich-Text Web Reader" style="color:#38bdf8; border-color:rgba(56,189,248,0.6); text-decoration:none; font-weight:600;">
-        <span>📖</span> <span>Web Reader</span>
+      <a href="astrology-book-engine/dist/web/index.html" class="tool-btn" id="btn-paged-reader" title="✨ Modern Rich-Text Web Reader • Web View" style="color:#38bdf8; border-color:rgba(56,189,248,0.5); text-decoration:none;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; display:inline-block;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+        <span>Web View</span>
       </a>
 
       <!-- Primary Masterwork PDF Download Button (Tantra Gyan: Vedic Jyotish Maha Granth) -->
-      <a href="tantra-gyan-vedic-jyotish-mahagranth.pdf" download="Tantra-Gyan-Vedic-Jyotish-Maha-Granth.pdf" class="tool-btn" id="btn-download-pdf-primary" title="📥 Download Masterwork PDF (Tantra Gyan: Vedic Jyotish Maha Granth)" style="background:linear-gradient(135deg, rgba(217,119,6,0.22), rgba(180,83,9,0.35)); border-color:var(--accent-gold); color:var(--accent-gold); text-decoration:none; font-weight:600;">
-        <span>📥</span> <span>Download PDF</span>
+      <a href="tantra-gyan-vedic-jyotish-mahagranth.pdf" download="Tantra-Gyan-Vedic-Jyotish-Maha-Granth.pdf" class="tool-btn" id="btn-download-pdf-primary" title="📥 Download Masterwork PDF (Tantra Gyan: Vedic Jyotish Maha Granth)" style="color:var(--accent-gold); border-color:rgba(200,157,61,0.5); text-decoration:none;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; display:inline-block;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="12" y2="18"></line><line x1="15" y1="15" x2="12" y2="18"></line></svg>
+        <span>PDF</span>
       </a>
 
       <!-- Download / Update Book Offline Button -->
@@ -505,52 +514,6 @@
   <div class="reading-progress-track">
     <div class="reading-progress-fill" id="reading-progress-fill"></div>
   </div>
-
-  <!-- =========================================================================
-       TANTRA GYAN PRIMARY PUBLICATION & WEB READER SHOWCASE BANNER
-       ========================================================================= -->
-  <section class="book-edition-action-bar" id="tg-download-section" aria-label="Book Download and Modern Digital Reading">
-    <div class="edition-bar-inner">
-      <div class="edition-bar-info">
-        <div class="edition-badge">
-          <span class="badge-dot"></span>
-          <span>Official Masterwork Edition • 2026</span>
-        </div>
-        <h2 class="edition-title">
-          Tantra Gyan: Vedic Jyotish Maha Granth
-          <span class="edition-sub-title">(Complete Vedic Astrology Compendium)</span>
-        </h2>
-        <p class="edition-desc">
-          Authoritative Classical Treatise • Noto Serif Typography • 100% Vector Kundli Birth Charts
-        </p>
-      </div>
-
-      <div class="edition-bar-actions">
-        <!-- 1. Download Master PDF (Tantra Gyan: Vedic Jyotish Maha Granth) -->
-        <a href="tantra-gyan-vedic-jyotish-mahagranth.pdf" 
-           download="Tantra-Gyan-Vedic-Jyotish-Maha-Granth.pdf" 
-           class="edition-action-btn btn-primary-pdf" 
-           title="Download Masterwork PDF • Tantra Gyan: Vedic Jyotish Maha Granth">
-          <span class="btn-icon">📥</span>
-          <span class="btn-text-group">
-            <span class="btn-main-text">Download PDF</span>
-            <span class="btn-sub-text">Masterwork PDF (3.0 MB)</span>
-          </span>
-        </a>
-
-        <!-- 2. Modern Rich-Text Web Reader -->
-        <a href="astrology-book-engine/dist/web/index.html" 
-           class="edition-action-btn btn-web-reader" 
-           title="Read in Modern Digital Web Reader • Zero-Lag Interactive Spreads">
-          <span class="btn-icon">📖</span>
-          <span class="btn-text-group">
-            <span class="btn-main-text">Web Reader</span>
-            <span class="btn-sub-text">Digital Book Reader</span>
-          </span>
-        </a>
-      </div>
-    </div>
-  </section>
 
   <!-- Main Book Reading Stage -->
   <main class="main-stage">
@@ -5437,6 +5400,6 @@
   <script src="js/sounds-data.js?v=3.9"></script>
   <script src="js/sound.js?v=3.9"></script>
   <script src="js/book-engine.js?v=4.0"></script>
-  <script src="js/book-ui.js?v=4.0"></script>
+  <script src="js/book-ui.js?v=4.2"></script>
 </body>
 </html>

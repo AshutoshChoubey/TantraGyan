@@ -1199,7 +1199,7 @@ class BookUIController {
   // 11. Progressive Web App (PWA) & Offline Capabilities
   // ============================================================================
   initPWA() {
-    this.currentAppVersion = '1.0.9';
+    this.currentAppVersion = '1.1.0';
     this.deferredInstallPrompt = null;
     this.updateWorker = null;
     this.isDownloading = false;
@@ -1274,7 +1274,13 @@ class BookUIController {
       navigator.serviceWorker.addEventListener('controllerchange', () => {
         if (!refreshing && this._userTriggeredUpdate) {
           refreshing = true;
-          window.location.reload();
+          this._userTriggeredUpdate = false;
+          const now = Date.now();
+          const lastReload = parseInt(sessionStorage.getItem('tg_last_reload') || '0', 10);
+          if (now - lastReload > 12000) {
+            sessionStorage.setItem('tg_last_reload', now.toString());
+            window.location.reload();
+          }
         }
       });
 
@@ -1431,13 +1437,13 @@ class BookUIController {
           } else if (navigator.serviceWorker.controller) {
             navigator.serviceWorker.controller.postMessage({ action: 'APPLY_UPDATE' });
           } else {
-            window.location.reload();
+            this.showToast(isHindi ? '✅ नवीनतम संस्करण लोड हो गया है।' : '✅ Latest edition active.', 3000);
           }
         }).catch(() => {
-          window.location.reload();
+          this.showToast(isHindi ? '✅ नवीनतम संस्करण लोड हो गया है।' : '✅ Latest edition active.', 3000);
         });
       } else {
-        window.location.reload();
+        this.showToast(isHindi ? '✅ नवीनतम संस्करण लोड हो गया है।' : '✅ Latest edition active.', 3000);
       }
       return;
     }
