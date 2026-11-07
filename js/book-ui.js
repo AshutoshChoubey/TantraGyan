@@ -1199,7 +1199,7 @@ class BookUIController {
   // 11. Progressive Web App (PWA) & Offline Capabilities
   // ============================================================================
   initPWA() {
-    this.currentAppVersion = '1.1.0';
+    this.currentAppVersion = '1.2.0';
     this.deferredInstallPrompt = null;
     this.updateWorker = null;
     this.isDownloading = false;
@@ -1269,19 +1269,11 @@ class BookUIController {
           });
       });
 
-      // Handle controlling service worker change (after update is applied by user)
-      let refreshing = false;
+      // Handle controlling service worker change
       navigator.serviceWorker.addEventListener('controllerchange', () => {
-        if (!refreshing && this._userTriggeredUpdate) {
-          refreshing = true;
-          this._userTriggeredUpdate = false;
-          const now = Date.now();
-          const lastReload = parseInt(sessionStorage.getItem('tg_last_reload') || '0', 10);
-          if (now - lastReload > 12000) {
-            sessionStorage.setItem('tg_last_reload', now.toString());
-            window.location.reload();
-          }
-        }
+        // Strictly never auto-reload window.location on controllerchange!
+        // Auto-reloading here causes multi-reload loops across browsers when workers claim clients.
+        console.log('[TantraGyan] PWA active controller updated to version 1.2.0');
       });
 
       // Listen for messages from Service Worker

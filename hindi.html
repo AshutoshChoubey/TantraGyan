@@ -2,6 +2,47 @@
 <html lang="hi" data-theme="parchment" data-lang-mode="hindi">
 <head>
   <meta charset="utf-8">
+  <!-- Emergency Self-Healing & Crash Loop Prevention Guard -->
+  <script>
+    (function() {
+      try {
+        var now = Date.now();
+        var reloadKey = 'tg_pwa_reload_ts';
+        var countKey = 'tg_pwa_reload_cnt';
+        var lastTs = parseInt(sessionStorage.getItem(reloadKey) || '0', 10);
+        var cnt = parseInt(sessionStorage.getItem(countKey) || '0', 10);
+
+        if (now - lastTs < 6000) {
+          cnt++;
+          sessionStorage.setItem(countKey, cnt.toString());
+        } else {
+          cnt = 0;
+          sessionStorage.setItem(countKey, '0');
+        }
+        sessionStorage.setItem(reloadKey, now.toString());
+
+        // If 2 or more rapid reloads occur (Chrome crash loop), immediately purge workers and caches
+        if (cnt >= 2) {
+          sessionStorage.removeItem(countKey);
+          sessionStorage.removeItem(reloadKey);
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(regs) {
+              for (var i = 0; i < regs.length; i++) {
+                regs[i].unregister();
+              }
+            });
+          }
+          if ('caches' in window) {
+            caches.keys().then(function(names) {
+              for (var j = 0; j < names.length; j++) {
+                caches.delete(names[j]);
+              }
+            });
+          }
+        }
+      } catch (e) {}
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>वैदिक ज्योतिष महाग्रंथ सरलीकृत (सम्पूर्ण हिन्दी संस्करण)</title>
   
@@ -79,7 +120,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
   <!-- Standard CSS Files -->
-  <link rel="stylesheet" href="css/book.css?v=4.2">
+  <link rel="stylesheet" href="css/book.css?v=4.3">
   <link rel="stylesheet" href="css/tables.css?v=4.0">
 
   <!-- Ultra-Rich Schema.org JSON-LD Educational Book & Knowledge Graph Structured Data -->
@@ -5387,6 +5428,6 @@
   <script src="js/sounds-data.js?v=3.9"></script>
   <script src="js/sound.js?v=3.9"></script>
   <script src="js/book-engine.js?v=4.0"></script>
-  <script src="js/book-ui.js?v=4.2"></script>
+  <script src="js/book-ui.js?v=4.3"></script>
 </body>
 </html>

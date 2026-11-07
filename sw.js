@@ -1,18 +1,18 @@
 /**
  * Tantra Gyan Vedic Astrology Book - Progressive Web App Service Worker
- * Version: 1.1.0 (Production Stable • Zero-Reload • Bulletproof Navigation)
+ * Version: 1.2.0 (Production Stable • Zero-Reload • Bulletproof Navigation)
  * 
  * Features:
  * - 100% Reliable Navigation: Direct network-first with graceful offline cache fallback
- * - Zero Chrome crashes: Eliminates Content-Encoding and header mismatch errors
- * - Zero redirect loops: Transparent request handling with native browser fetch
+ * - Zero Chrome crashes: Uses fetch(request.url) preventing mode:navigate manual redirect errors
+ * - Zero redirect loops: Strictly zero auto-reloads on controllerchange
  * - Complete offline functionality for all 3 editions (Bilingual, Hindi, English)
- * - Automatic atomic cache updates with legacy cache purge
+ * - Atomic cache updates with immediate legacy cache purge
  * - Dynamic font caching for Google Fonts
  * - Live offline download progress reporting
  */
 
-const APP_VERSION = '1.1.0';
+const APP_VERSION = '1.2.0';
 const CACHE_NAME = `tantragyan-v${APP_VERSION}`;
 const FONT_CACHE_NAME = 'tantragyan-fonts-v1.0';
 
@@ -22,12 +22,12 @@ const PRECACHE_ASSETS = [
   'index.html',
   'hindi.html',
   'english.html',
-  'css/book.css?v=4.2',
+  'css/book.css?v=4.3',
   'css/tables.css?v=4.1',
   'js/sounds-data.js?v=3.9',
   'js/sound.js?v=3.9',
   'js/book-engine.js?v=4.0',
-  'js/book-ui.js?v=4.2',
+  'js/book-ui.js?v=4.3',
   'assets/yantra.svg',
   'assets/ganesha.svg',
   'assets/icons/elements_diamond_chart.svg',
@@ -63,21 +63,21 @@ const PRECACHE_ASSETS = [
   'llms-full.txt'
 ];
 
-// 1. Install Event: Pre-cache assets immediately
+// 1. Install Event: Instant activation with non-blocking parallel pre-caching
 self.addEventListener('install', (event) => {
   self.skipWaiting();
+  // Pre-cache essential shell in parallel without blocking installation
   event.waitUntil(
-    caches.open(CACHE_NAME).then(async (cache) => {
-      for (const asset of PRECACHE_ASSETS) {
-        try {
-          const res = await fetch(asset);
-          if (res && res.status === 200) {
-            await cache.put(asset, res);
-          }
-        } catch (err) {
-          console.warn(`[ServiceWorker v${APP_VERSION}] Pre-cache skipped for ${asset}:`, err);
-        }
-      }
+    caches.open(CACHE_NAME).then((cache) => {
+      return Promise.allSettled(
+        PRECACHE_ASSETS.map((asset) =>
+          fetch(asset, { cache: 'no-cache' }).then((res) => {
+            if (res && res.status === 200) {
+              return cache.put(asset, res);
+            }
+          }).catch(() => {})
+        )
+      );
     })
   );
 });
@@ -140,43 +140,47 @@ self.addEventListener('fetch', (event) => {
   }
 
   // B. Navigation Requests (HTML Pages: index.html, hindi.html, english.html)
-  // Strategy: Direct Network-First.
+  // Strategy: Direct Network-First using request.url
   // Online visitors get the 100% untouched native network response (guaranteed zero header/decoding corruption)
   // Offline visitors get the seamless cached book!
   if (request.mode === 'navigate' || (request.method === 'GET' && request.headers.get('accept')?.includes('text/html'))) {
     event.respondWith(
-      fetch(request)
-        .then((networkResponse) => {
+      (async () => {
+        try {
+          // Fetch directly via URL string (follows redirects cleanly, avoids manual redirect errors)
+          const networkResponse = await fetch(request.url);
           if (networkResponse && networkResponse.status === 200) {
             const clone = networkResponse.clone();
             caches.open(CACHE_NAME).then((cache) => {
-              cache.put(request, clone);
+              cache.put(request.url, clone);
               if (url.pathname === '/' || url.pathname.endsWith('index.html')) {
-                cache.put('index.html', clone.clone());
+                cache.put('./', clone.clone());
               }
             }).catch(() => {});
+            return networkResponse;
           }
-          return networkResponse;
-        })
-        .catch(async () => {
-          // Offline Fallback: Serve matching cached page
-          const cache = await caches.open(CACHE_NAME);
-          let cached = await cache.match(request);
-          if (!cached) {
-            const path = url.pathname;
-            if (path.endsWith('/hindi.html')) {
-              cached = await cache.match('hindi.html');
-            } else if (path.endsWith('/english.html')) {
-              cached = await cache.match('english.html');
-            } else {
-              cached = (await cache.match('index.html')) || (await cache.match('./'));
-            }
+        } catch (networkError) {
+          // Network failed (offline, airplane mode)
+        }
+
+        // Offline Fallback: Serve matching cached page
+        const cache = await caches.open(CACHE_NAME);
+        let cached = await cache.match(request.url);
+        if (!cached) {
+          const path = url.pathname;
+          if (path.endsWith('/hindi.html')) {
+            cached = await cache.match('hindi.html');
+          } else if (path.endsWith('/english.html')) {
+            cached = await cache.match('english.html');
+          } else {
+            cached = (await cache.match('./')) || (await cache.match('index.html'));
           }
-          if (cached) return cached;
-          return new Response('<!DOCTYPE html><html><head><meta charset="utf-8"><title>Offline</title></head><body style="font-family:sans-serif;text-align:center;padding:3rem;"><h1>📡 Offline Mode</h1><p>Please check your internet connection to access the online book.</p></body></html>', {
-            headers: { 'Content-Type': 'text/html; charset=utf-8' }
-          });
-        })
+        }
+        if (cached) return cached;
+        return new Response('<!DOCTYPE html><html><head><meta charset="utf-8"><title>Offline Mode</title></head><body style="font-family:sans-serif;text-align:center;padding:3rem;"><h1>📡 Offline Mode</h1><p>Please check your internet connection to access Tantra Gyan online.</p></body></html>', {
+          headers: { 'Content-Type': 'text/html; charset=utf-8' }
+        });
+      })()
     );
     return;
   }
