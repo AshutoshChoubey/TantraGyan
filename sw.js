@@ -16,7 +16,7 @@
  * - Stale-While-Revalidate with instant 0ms sanitized offline cache return for HTML pages
  */
 
-const APP_VERSION = '1.0.8';
+const APP_VERSION = '1.0.9';
 const CACHE_NAME = `tantragyan-v${APP_VERSION}`;
 const FONT_CACHE_NAME = 'tantragyan-fonts-v1.0';
 
@@ -27,14 +27,24 @@ const PRECACHE_ASSETS = [
   'index.html',
   'hindi.html',
   'english.html',
-  'css/book.css?v=4.1',
-  'css/tables.css?v=4.0',
+  'css/book.css?v=4.2',
+  'css/tables.css?v=4.1',
   'js/sounds-data.js?v=3.9',
   'js/sound.js?v=3.9',
   'js/book-engine.js?v=4.0',
-  'js/book-ui.js?v=4.0',
+  'js/book-ui.js?v=4.1',
   'assets/yantra.svg',
   'assets/ganesha.svg',
+  'assets/icons/elements_diamond_chart.svg',
+  'assets/icons/upachaya_diamond_chart.svg',
+  'assets/icons/kendra_trikona_diamond_chart.svg',
+  'assets/icons/nakshatra_mandala_wheel.svg',
+  'assets/icons/bhava_karaka_diamond_chart.svg',
+  'assets/icons/aspect_wheel.svg',
+  'assets/icons/lagna_chart.svg',
+  'assets/icons/raja_yogas_chart.svg',
+  'assets/icons/viparita_chart.svg',
+  'assets/icons/medical_astrology_chart.svg',
   'assets/images/planets/sun.png',
   'assets/images/planets/moon.png',
   'assets/images/planets/mars.png',

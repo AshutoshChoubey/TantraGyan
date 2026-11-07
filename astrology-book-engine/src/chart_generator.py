@@ -19,6 +19,13 @@ CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, CURRENT_DIR)
 
 from visualizer.diamond_chart import generate_diamond_chart_svg
+from visualizer.specialized_charts import (
+    generate_elements_diamond_chart,
+    generate_upachaya_diamond_chart,
+    generate_kendra_trikona_diamond_chart,
+    generate_nakshatra_mandala_wheel,
+    generate_bhava_karaka_diamond_chart
+)
 
 RASHI_NAMES = [
     ("मेष", "Aries"),
@@ -233,6 +240,21 @@ def generate_sample_kundlis():
     # 5. Aspect Wheel
     charts["aspect_wheel"] = generate_aspect_wheel()
 
+    # 6. Four Elements Diamond Kundali (Tattva Chakra)
+    charts["elements_diamond_chart"] = generate_elements_diamond_chart()
+
+    # 7. Upachaya Houses Growth & Compounding Kundali
+    charts["upachaya_diamond_chart"] = generate_upachaya_diamond_chart()
+
+    # 8. Kendra & Trikona Divine Geometry (Lakshmi-Narayana Yoga)
+    charts["kendra_trikona_diamond_chart"] = generate_kendra_trikona_diamond_chart()
+
+    # 9. 360° Circular Nakshatra & Pada Mandala Wheel
+    charts["nakshatra_mandala_wheel"] = generate_nakshatra_mandala_wheel()
+
+    # 10. Bhava Karakatva & Planetary Rulers Diamond Chart
+    charts["bhava_karaka_diamond_chart"] = generate_bhava_karaka_diamond_chart()
+
     return charts
 
 
@@ -241,11 +263,21 @@ if __name__ == "__main__":
     parser.add_argument("--samples", action="store_true", default=True, help="Generate all sample SVGs")
     args = parser.parse_args()
 
-    out_dir = os.path.join(os.path.dirname(CURRENT_DIR), "assets", "icons")
-    os.makedirs(out_dir, exist_ok=True)
+    engine_dir = os.path.dirname(CURRENT_DIR)
+    root_dir = os.path.dirname(engine_dir)
+
+    out_dirs = [
+        os.path.join(engine_dir, "assets", "icons"),
+        os.path.join(engine_dir, "dist", "pdf", "assets", "icons"),
+        os.path.join(root_dir, "assets", "icons")
+    ]
+    for d in out_dirs:
+        os.makedirs(d, exist_ok=True)
+
     samples = generate_sample_kundlis()
     for key, svg_code in samples.items():
-        path = os.path.join(out_dir, f"{key}.svg")
-        with open(path, "w", encoding="utf-8") as f:
-            f.write(svg_code)
-        print(f"Generated enterprise diamond chart: {path}")
+        for d in out_dirs:
+            path = os.path.join(d, f"{key}.svg")
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(svg_code)
+        print(f"Generated enterprise astrological chart: {key}.svg in all icon targets")

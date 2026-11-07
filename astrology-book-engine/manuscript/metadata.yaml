@@ -59,4 +59,10 @@ chapters:
     english_number: "Chapter 6"
     title: "नक्षत्र पद विभाजन, नवांश गणित एवं मंगल श्लोक"
     english_title: "Nakshatra Pada Sub-Division, Navamsha & Concluding Shlokas"
+  - id: "chapter-07"
+    file: "chapter-07.md"
+    number: "7"
+    english_number: "Chapter 7"
+    title: "चित्रात्मक कुण्डली एटलस — महाभूत, उपचय एवं नक्षत्र मण्डल"
+    english_title: "Visual Kundali Atlas — Elements, Upachaya & Nakshatra Mandala"
 

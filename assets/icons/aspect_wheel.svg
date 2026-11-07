@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="500" class="vedic-aspect-svg" style="max-width:500px; background:#fffdf7; border-radius:12px; border:1.8px solid #854d0e; box-shadow:0 4px 18px rgba(0,0,0,0.06);">
+  <!-- Aspect Mandala Wheel -->
+  <circle cx="250.0" cy="250.0" r="205.0" fill="none" stroke="#854d0e" stroke-width="2" />
+  <circle cx="250.0" cy="250.0" r="133.25" fill="none" stroke="#854d0e" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.6"/>
+  <circle cx="250.0" cy="250.0" r="57.400000000000006" fill="#854d0e" fill-opacity="0.08" stroke="#854d0e" stroke-width="1.5"/>
+  <text x="250.0" y="245.0" fill="#854d0e" font-family="'Noto Sans Devanagari', 'Devanagari MT', 'Kohinoor Devanagari', sans-serif" font-size="13" font-weight="bold" text-anchor="middle" dominant-baseline="middle">पूर्ण दृष्टि चक्र</text>
+  <text x="250.0" y="263.0" fill="#78716c" font-family="'Cinzel', 'Georgia', serif" font-size="9" text-anchor="middle" dominant-baseline="middle">Aspect Mandala</text>
+  <line x1="250.0" y1="250.0" x2="250.0" y2="45.0" stroke="#854d0e" stroke-width="0.8" opacity="0.35"/>
+  <circle cx="250.0" cy="45.0" r="4.5" fill="#854d0e"/>
+  <text x="250.0" y="24.0" fill="#1e293b" font-family="'Noto Sans Devanagari', 'Devanagari MT', 'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle">1. मेष</text>
+  <line x1="250.0" y1="250.0" x2="352.5" y2="72.46479222419009" stroke="#854d0e" stroke-width="0.8" opacity="0.35"/>
+  <circle cx="352.5" cy="72.46479222419009" r="4.5" fill="#854d0e"/>
+  <text x="364.5" y="54.68018253336356" fill="#1e293b" font-family="'Noto Sans Devanagari', 'Devanagari MT', 'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle">2. वृषभ</text>
+  <line x1="250.0" y1="250.0" x2="427.5352077758099" y2="147.5" stroke="#854d0e" stroke-width="0.8" opacity="0.35"/>
+  <circle cx="427.5352077758099" cy="147.5" r="4.5" fill="#854d0e"/>
+  <text x="448.31981746663644" y="138.5" fill="#1e293b" font-family="'Noto Sans Devanagari', 'Devanagari MT', 'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle">3. मिथुन</text>
+  <line x1="250.0" y1="250.0" x2="455.0" y2="250.0" stroke="#854d0e" stroke-width="0.8" opacity="0.35"/>
+  <circle cx="455.0" cy="250.0" r="4.5" fill="#854d0e"/>
+  <text x="479.0" y="253.0" fill="#1e293b" font-family="'Noto Sans Devanagari', 'Devanagari MT', 'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle">4. कर्क</text>
+  <line x1="250.0" y1="250.0" x2="427.5352077758099" y2="352.5" stroke="#854d0e" stroke-width="0.8" opacity="0.35"/>
+  <circle cx="427.5352077758099" cy="352.5" r="4.5" fill="#854d0e"/>
+  <text x="448.31981746663644" y="367.5" fill="#1e293b" font-family="'Noto Sans Devanagari', 'Devanagari MT', 'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle">5. सिंह</text>
+  <line x1="250.0" y1="250.0" x2="352.5" y2="427.5352077758099" stroke="#854d0e" stroke-width="0.8" opacity="0.35"/>
+  <circle cx="352.5" cy="427.5352077758099" r="4.5" fill="#854d0e"/>
+  <text x="364.5" y="451.31981746663644" fill="#1e293b" font-family="'Noto Sans Devanagari', 'Devanagari MT', 'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle">6. कन्या</text>
+  <line x1="250.0" y1="250.0" x2="250.0" y2="455.0" stroke="#854d0e" stroke-width="0.8" opacity="0.35"/>
+  <circle cx="250.0" cy="455.0" r="4.5" fill="#854d0e"/>
+  <text x="250.0" y="482.0" fill="#1e293b" font-family="'Noto Sans Devanagari', 'Devanagari MT', 'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle">7. तुला</text>
+  <line x1="250.0" y1="250.0" x2="147.50000000000006" y2="427.53520777580997" stroke="#854d0e" stroke-width="0.8" opacity="0.35"/>
+  <circle cx="147.50000000000006" cy="427.53520777580997" r="4.5" fill="#854d0e"/>
+  <text x="135.50000000000006" y="451.3198174666365" fill="#1e293b" font-family="'Noto Sans Devanagari', 'Devanagari MT', 'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle">8. वृश्चिक</text>
+  <line x1="250.0" y1="250.0" x2="72.46479222419006" y2="352.5" stroke="#854d0e" stroke-width="0.8" opacity="0.35"/>
+  <circle cx="72.46479222419006" cy="352.5" r="4.5" fill="#854d0e"/>
+  <text x="51.680182533363535" y="367.5" fill="#1e293b" font-family="'Noto Sans Devanagari', 'Devanagari MT', 'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle">9. धनु</text>
+  <line x1="250.0" y1="250.0" x2="45.0" y2="250.00000000000003" stroke="#854d0e" stroke-width="0.8" opacity="0.35"/>
+  <circle cx="45.0" cy="250.00000000000003" r="4.5" fill="#854d0e"/>
+  <text x="21.0" y="253.00000000000003" fill="#1e293b" font-family="'Noto Sans Devanagari', 'Devanagari MT', 'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle">10. मकर</text>
+  <line x1="250.0" y1="250.0" x2="72.46479222419009" y2="147.49999999999997" stroke="#854d0e" stroke-width="0.8" opacity="0.35"/>
+  <circle cx="72.46479222419009" cy="147.49999999999997" r="4.5" fill="#854d0e"/>
+  <text x="51.68018253336356" y="138.49999999999997" fill="#1e293b" font-family="'Noto Sans Devanagari', 'Devanagari MT', 'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle">11. कुंभ</text>
+  <line x1="250.0" y1="250.0" x2="147.49999999999991" y2="72.46479222419012" stroke="#854d0e" stroke-width="0.8" opacity="0.35"/>
+  <circle cx="147.49999999999991" cy="72.46479222419012" r="4.5" fill="#854d0e"/>
+  <text x="135.4999999999999" y="54.68018253336362" fill="#1e293b" font-family="'Noto Sans Devanagari', 'Devanagari MT', 'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle">12. मीन</text>
+</svg>
