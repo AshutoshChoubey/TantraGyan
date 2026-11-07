@@ -2,26 +2,50 @@
 <html lang="hi" data-theme="parchment" data-lang-mode="hindi">
 <head>
   <meta charset="utf-8">
-  <!-- Direct Web Worker Redirect Elimination Guard -->
+  <!-- Tantra Gyan v2.0.0 Version Comparison & Auto-Cache Purge Guard -->
   <script>
     (function() {
       try {
+        var CURRENT_VERSION = '2.0.0';
+        var storedVersion = localStorage.getItem('tantragyan_downloaded_version');
+
+        // 1. Version Comparison: If user has an older version downloaded or legacy caches exist
+        if (storedVersion && storedVersion !== CURRENT_VERSION) {
+          console.log('[TantraGyan] Older offline version detected (' + storedVersion + '). Migrating to v' + CURRENT_VERSION);
+
+          // Purge all legacy caches from CacheStorage immediately
+          if ('caches' in window) {
+            caches.keys().then(function(names) {
+              names.forEach(function(name) {
+                if (name !== 'tantragyan-v' + CURRENT_VERSION && name !== 'tantragyan-fonts-v2.0') {
+                  caches.delete(name);
+                }
+              });
+            });
+          }
+
+          // Unregister any stale Service Workers from previous versions
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(regs) {
+              for (var i = 0; i < regs.length; i++) {
+                regs[i].unregister();
+              }
+            });
+          }
+        }
+
+        // 2. Clear any lingering reload markers
         sessionStorage.removeItem('tg_pwa_reload_ts');
         sessionStorage.removeItem('tg_pwa_reload_cnt');
         sessionStorage.removeItem('tg_last_reload');
-        if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.getRegistrations().then(function(regs) {
-            for (var i = 0; i < regs.length; i++) {
-              regs[i].unregister();
-            }
-          });
-        }
-        if ('caches' in window) {
-          caches.keys().then(function(names) {
-            for (var j = 0; j < names.length; j++) {
-              caches.delete(names[j]);
-            }
-          });
+
+        // 3. Bounds sanity check for saved page
+        var savedPage = localStorage.getItem('tantra_book_page');
+        if (savedPage) {
+          var p = parseInt(savedPage, 10);
+          if (isNaN(p) || p < 1 || p > 88) {
+            localStorage.setItem('tantra_book_page', '1');
+          }
         }
       } catch (e) {}
     })();
@@ -103,8 +127,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
   <!-- Standard CSS Files -->
-  <link rel="stylesheet" href="css/book.css?v=4.3">
-  <link rel="stylesheet" href="css/tables.css?v=4.0">
+  <link rel="stylesheet" href="css/book.css?v=5.0">
+  <link rel="stylesheet" href="css/tables.css?v=5.0">
 
   <!-- Ultra-Rich Schema.org JSON-LD Educational Book & Knowledge Graph Structured Data -->
   <script type="application/ld+json">
@@ -5408,9 +5432,9 @@
   </main>
 
   <!-- Scripts -->
-  <script src="js/sounds-data.js?v=3.9"></script>
-  <script src="js/sound.js?v=3.9"></script>
-  <script src="js/book-engine.js?v=4.0"></script>
-  <script src="js/book-ui.js?v=4.3"></script>
+  <script src="js/sounds-data.js?v=5.0"></script>
+  <script src="js/sound.js?v=5.0"></script>
+  <script src="js/book-engine.js?v=5.0"></script>
+  <script src="js/book-ui.js?v=5.0"></script>
 </body>
 </html>

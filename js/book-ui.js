@@ -749,17 +749,18 @@ class BookUIController {
         const targetMode = btn.getAttribute('data-lang');
         const currentPage = (window.bookEngine && window.bookEngine.currentPage) ? window.bookEngine.currentPage : 1;
 
-        let targetFile = 'index.html';
+        let targetFile = './';
         if (targetMode === 'hindi') {
           targetFile = 'hindi.html';
         } else if (targetMode === 'english') {
           targetFile = 'english.html';
         } else {
-          targetFile = 'index.html';
+          targetFile = './';
         }
 
         const path = window.location.pathname;
-        const thisFile = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+        let thisFile = path.substring(path.lastIndexOf('/') + 1);
+        if (!thisFile || thisFile === 'index.html') thisFile = './';
 
         if (thisFile !== targetFile) {
           try {
@@ -1199,7 +1200,7 @@ class BookUIController {
   // 11. Progressive Web App (PWA) & Offline Capabilities
   // ============================================================================
   initPWA() {
-    this.currentAppVersion = '1.2.0';
+    this.currentAppVersion = '2.0.0';
     this.deferredInstallPrompt = null;
     this.updateWorker = null;
     this.isDownloading = false;
@@ -1214,8 +1215,10 @@ class BookUIController {
       install: (size = 15) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="5" y="2" width="14" height="20" rx="3" ry="3"></rect><path d="M12 18h.01"></path><path d="M12 7v5"></path><polyline points="9 10 12 13 15 10"></polyline></svg>`
     };
 
-    // Check saved offline version or existing CacheStorage
+    // Version comparison & cache state detection
     const savedVersion = localStorage.getItem('tantragyan_downloaded_version');
+    const hadPreviousDownload = (savedVersion && savedVersion !== this.currentAppVersion);
+
     this.offlineState = (savedVersion === this.currentAppVersion) ? 'downloaded' : 'idle';
 
     if ('caches' in window) {
@@ -1231,11 +1234,47 @@ class BookUIController {
     const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-    // A. Eliminate Web Worker Redirects: Unregister all service workers
+    // A. Register Modern v2.0.0 Service Worker (Zero-Redirect Guarantee)
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then((regs) => {
-        for (const reg of regs) {
-          reg.unregister();
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then((reg) => {
+            console.log('[TantraGyan] PWA Service Worker v2.0.0 active:', reg.scope);
+            
+            // If user previously downloaded an older offline version, auto-download v2.0.0 in the background
+            if (hadPreviousDownload && navigator.onLine) {
+              setTimeout(() => {
+                console.log('[TantraGyan] Automatically downloading v2.0.0 offline assets in the background...');
+                this.triggerDownloadOrUpdate(true);
+              }, 2500);
+            }
+          })
+          .catch((err) => {
+            console.warn('[TantraGyan] Service Worker registration failed:', err);
+          });
+      });
+
+      // Controlling Service Worker Change: Strictly NEVER auto-reload
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        console.log('[TantraGyan] PWA controller updated to v2.0.0');
+      });
+
+      // Listen for download progress & completion messages
+      navigator.serviceWorker.addEventListener('message', (event) => {
+        const data = event.data;
+        if (!data) return;
+
+        if (data.type === 'DOWNLOAD_PROGRESS') {
+          this.offlineState = 'downloading';
+          this.updateDownloadProgress(data.current, data.total, data.percent);
+        } else if (data.type === 'DOWNLOAD_COMPLETE') {
+          this.offlineState = 'downloaded';
+          localStorage.setItem('tantragyan_downloaded_version', this.currentAppVersion);
+          this.updateDownloadUI();
+          const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
+          this.showToast(isHindi
+            ? '🎉 सम्पूर्ण ग्रंथ (v2.0.0) सफलतापूर्वक ऑफ़लाइन डाउनलोड हो गया! अब आप बिना इंटरनेट पढ़ सकते हैं।'
+            : '🎉 Full Compendium (v2.0.0) Downloaded Successfully! You can now read completely offline.', 5000);
         }
       });
     }
@@ -1348,15 +1387,34 @@ class BookUIController {
       : '🔔 New Edition Available! Click Update to load latest content.', 5000);
   }
 
-  triggerDownloadOrUpdate() {
+  triggerDownloadOrUpdate(isSilent = false) {
     const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
-    this.showToast(isHindi ? '📥 आधिकारिक महाग्रंथ PDF डाउनलोड हो रहा है...' : '📥 Downloading Official Compendium PDF...', 3000);
-    const link = document.createElement('a');
-    link.href = 'tantra-gyan-vedic-jyotish-mahagranth.pdf';
-    link.download = 'tantra-gyan-vedic-jyotish-mahagranth.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+
+    if (this.offlineState === 'downloading') {
+      if (!isSilent) this.showToast(isHindi ? 'डाउनलोड पहले से प्रगति पर है, कृपया प्रतीक्षा करें...' : 'Download is in progress, please wait...', 2500);
+      return;
+    }
+
+    if (!navigator.onLine) {
+      if (!isSilent) this.showToast(isHindi ? 'ऑफ़लाइन मोड: सम्पूर्ण ग्रंथ पहले से उपलब्ध है!' : 'Offline Mode: Book is already available offline!', 3000);
+      return;
+    }
+
+    this.offlineState = 'downloading';
+    this.updateDownloadUI();
+    if (!isSilent) {
+      this.showToast(isHindi ? 'सम्पूर्ण ग्रंथ (v2.0.0) डाउनलोड प्रारम्भ हो गया...' : 'Downloading complete book (v2.0.0) for offline use...', 3000);
+    }
+
+    if (navigator.serviceWorker && navigator.serviceWorker.controller) {
+      navigator.serviceWorker.controller.postMessage({ action: 'DOWNLOAD_ALL_OFFLINE' });
+    } else if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.ready.then((reg) => {
+        if (reg.active) {
+          reg.active.postMessage({ action: 'DOWNLOAD_ALL_OFFLINE' });
+        }
+      });
+    }
   }
 
   updateDownloadProgress(current, total, percent) {
