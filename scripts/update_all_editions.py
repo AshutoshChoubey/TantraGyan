@@ -703,3 +703,4 @@ def process_edition(file_path, lang="hi"):
 if __name__ == "__main__":
     process_edition("/Users/apple/Movies/ap/TantraGyan/hindi.html", lang="hi")
     process_edition("/Users/apple/Movies/ap/TantraGyan/english.html", lang="en")
+

@@ -17,6 +17,8 @@ const FONT_CACHE_NAME = 'tantragyan-fonts-v2.3';
 // Essential assets for complete offline functioning
 const PRECACHE_ASSETS = [
   './',
+  'reader.html',
+  'book.html',
   'hindi',
   'english',
   'hindi.html',
@@ -148,6 +150,8 @@ self.addEventListener('fetch', (event) => {
             cached = (await cache.match('hindi')) || (await cache.match('hindi.html')) || (await cache.match('/hindi'));
           } else if (pathname.includes('english')) {
             cached = (await cache.match('english')) || (await cache.match('english.html')) || (await cache.match('/english'));
+          } else if (pathname.includes('reader') || pathname.includes('book')) {
+            cached = (await cache.match('reader.html')) || (await cache.match('book.html')) || (await cache.match(request.url));
           } else {
             cached = (await cache.match('./')) || (await cache.match('index.html')) || (await cache.match('/')) || (await cache.match(request.url));
           }

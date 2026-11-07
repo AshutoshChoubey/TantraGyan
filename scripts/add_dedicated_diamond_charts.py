@@ -544,3 +544,4 @@ with open(INDEX_FILE, "w", encoding="utf-8") as f:
     f.write(updated_html)
 
 print(f"Successfully generated {INDEX_FILE} with {TOTAL_PAGES} pages and updated TOC!")
+
