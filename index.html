@@ -35,7 +35,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&family=Noto+Serif+Devanagari:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@500;600;700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -53,9 +53,11 @@
       --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
       --shadow-md: 0 10px 30px rgba(120, 53, 15, 0.08);
       --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.12);
-      --font-devanagari: 'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, sans-serif;
-      --font-serif: 'Noto Serif Devanagari', 'Georgia', serif;
-      --font-english: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      /* Pure Modern Devanagari & Latin Typography Stack */
+      --font-body: 'Poppins', 'Noto Sans Devanagari', 'Kohinoor Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-heading: 'Noto Serif Devanagari', 'Cinzel', Georgia, serif;
+      --font-serif: 'Noto Serif Devanagari', Georgia, serif;
+      --font-sans: 'Poppins', 'Noto Sans Devanagari', -apple-system, sans-serif;
       --font-cinzel: 'Cinzel', serif;
     }
 
@@ -85,12 +87,16 @@
     body {
       background-color: var(--bg-base);
       color: var(--text-main);
-      font-family: var(--font-devanagari);
-      line-height: 1.6;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.65;
       overflow-x: hidden;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
     }
 
     /* Top Brand Navigation */
@@ -138,7 +144,7 @@
     .brand-text span {
       font-size: 0.75rem;
       color: var(--text-muted);
-      font-family: var(--font-english);
+      font-family: var(--font-sans);
       display: block;
     }
 
@@ -184,8 +190,8 @@
 
     /* Hero Banner */
     .hero-banner {
-      background: linear-gradient(180deg, rgba(200, 157, 61, 0.08) 0%, rgba(249, 246, 239, 0) 100%);
-      padding: 2.8rem 1.25rem 2rem 1.25rem;
+      background: linear-gradient(180deg, rgba(200, 157, 61, 0.09) 0%, rgba(249, 246, 239, 0) 100%);
+      padding: 3rem 1.25rem 2.2rem 1.25rem;
       text-align: center;
       border-bottom: 1px solid var(--border-soft);
     }
@@ -199,31 +205,47 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.35rem 1rem;
-      background: rgba(180, 83, 9, 0.09);
-      border: 1px solid rgba(180, 83, 9, 0.25);
+      padding: 0.45rem 1.25rem;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(217, 119, 6, 0.06));
+      border: 1px solid rgba(217, 119, 6, 0.35);
       border-radius: 50px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--text-heading);
-      margin-bottom: 1.2rem;
+      font-family: var(--font-heading);
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #92400e;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 2px 10px rgba(180, 83, 9, 0.08);
+      letter-spacing: 0.01em;
     }
 
     .hero-title {
-      font-family: var(--font-serif);
-      font-size: 2.35rem;
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 3.8vw, 2.75rem);
       font-weight: 900;
       color: var(--text-heading);
-      line-height: 1.3;
+      line-height: 1.28;
       margin-bottom: 0.85rem;
+      letter-spacing: -0.015em;
     }
 
     .hero-subtitle {
-      font-size: 1.05rem;
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      font-weight: 500;
       color: var(--text-muted);
-      max-width: 780px;
-      margin: 0 auto 1.8rem auto;
-      line-height: 1.6;
+      max-width: 820px;
+      margin: 0 auto 0.6rem auto;
+      line-height: 1.7;
+    }
+
+    .hero-subtag {
+      font-family: var(--font-cinzel);
+      font-size: 0.8rem;
+      font-weight: 750;
+      letter-spacing: 0.14em;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      margin-bottom: 1.6rem;
     }
 
     .metrics-bar {
@@ -271,7 +293,7 @@
     }
 
     .section-title {
-      font-family: var(--font-serif);
+      font-family: var(--font-heading);
       font-size: 1.55rem;
       font-weight: 800;
       color: var(--text-heading);
@@ -381,7 +403,7 @@
     }
 
     .cover-main-title {
-      font-family: var(--font-serif);
+      font-family: var(--font-heading);
       font-size: 1.32rem;
       font-weight: 900;
       color: #fffdf8;
@@ -391,7 +413,7 @@
     }
 
     .cover-en-title {
-      font-family: var(--font-english);
+      font-family: var(--font-sans);
       font-size: 0.68rem;
       color: #fbbf24;
       text-transform: uppercase;
@@ -515,7 +537,7 @@
     }
 
     .book-hub-title {
-      font-family: var(--font-serif);
+      font-family: var(--font-heading);
       font-size: 1.85rem;
       font-weight: 900;
       color: var(--text-heading);
@@ -540,25 +562,36 @@
     .features-bullet-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 0.6rem;
+      gap: 0.75rem;
       margin-bottom: 1.6rem;
       background: rgba(200, 157, 61, 0.05);
       border: 1px dashed var(--border-soft);
-      border-radius: 10px;
-      padding: 0.85rem 1rem;
+      border-radius: 12px;
+      padding: 1rem 1.15rem;
     }
 
     .bullet-item {
       display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.82rem;
-      font-weight: 600;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 0.86rem;
+      font-weight: 500;
       color: var(--text-main);
+      line-height: 1.45;
     }
 
-    .bullet-item span {
+    .bullet-icon {
       color: var(--accent-gold);
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .bullet-item strong {
+      font-family: var(--font-heading);
+      font-weight: 750;
+      color: var(--text-heading);
     }
 
     /* The Three Primary Action Buttons */
@@ -747,7 +780,7 @@
     }
 
     .thumb-title {
-      font-family: var(--font-serif);
+      font-family: var(--font-heading);
       font-size: 0.95rem;
       font-weight: 800;
       margin-top: 0.4rem;
@@ -769,7 +802,7 @@
     }
 
     .card-book-title {
-      font-family: var(--font-serif);
+      font-family: var(--font-heading);
       font-size: 1.15rem;
       font-weight: 800;
       color: var(--text-heading);
@@ -835,59 +868,117 @@
     .plates-showcase-section {
       background: var(--bg-surface);
       border: 1px solid var(--border-soft);
-      border-radius: 16px;
-      padding: 2rem;
+      border-radius: 18px;
+      padding: 2.2rem;
       box-shadow: var(--shadow-sm);
       margin-bottom: 3.5rem;
     }
 
+    .plates-section-intro {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 1.4rem;
+    }
+
     .plates-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1.25rem;
-      margin-top: 1.4rem;
+      grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+      gap: 1.35rem;
+      margin-top: 1.2rem;
     }
 
     .plate-thumb-card {
       border: 1px solid var(--border-soft);
-      border-radius: 10px;
-      padding: 0.85rem;
+      border-radius: 12px;
+      padding: 0.95rem;
       background: var(--bg-card);
       text-decoration: none;
       color: inherit;
       display: flex;
       flex-direction: column;
-      transition: all 0.2s ease;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
     }
 
     .plate-thumb-card:hover {
       border-color: var(--border-gold);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-sm);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(180, 83, 9, 0.12);
+    }
+
+    .plate-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 155px;
+      background: #ffffff;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      border: 1px solid rgba(180, 83, 9, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .plate-thumb-img {
       width: 100%;
-      height: 140px;
+      height: 100%;
       object-fit: contain;
-      background: #ffffff;
-      border-radius: 6px;
-      margin-bottom: 0.65rem;
-      border: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 4px;
+      transition: transform 0.3s ease;
+    }
+
+    .plate-thumb-card:hover .plate-thumb-img {
+      transform: scale(1.03);
+    }
+
+    .plate-badge {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      background: rgba(180, 83, 9, 0.92);
+      color: #ffffff;
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+      backdrop-filter: blur(4px);
     }
 
     .plate-thumb-name {
-      font-size: 0.86rem;
-      font-weight: 700;
+      font-family: var(--font-heading);
+      font-size: 0.98rem;
+      font-weight: 800;
       color: var(--text-heading);
-      line-height: 1.3;
-      margin-bottom: 0.25rem;
+      line-height: 1.35;
+      margin-bottom: 0.3rem;
+    }
+
+    .plate-thumb-desc {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 0.6rem;
+      flex-grow: 1;
     }
 
     .plate-thumb-page {
-      font-size: 0.74rem;
+      font-family: var(--font-body);
+      font-size: 0.76rem;
       color: var(--accent-gold);
       font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      border-top: 1px dashed var(--border-soft);
+      padding-top: 0.45rem;
+      margin-top: auto;
     }
 
     /* Footer */
@@ -908,7 +999,7 @@
     }
 
     .footer-brand h3 {
-      font-family: var(--font-serif);
+      font-family: var(--font-heading);
       font-size: 1.2rem;
       color: var(--text-heading);
       margin-bottom: 0.6rem;
@@ -1039,8 +1130,11 @@
       </div>
       <h2 class="hero-title">तंत्र ज्ञान: वैदिक ज्योतिष एवं गूढ़ विज्ञान ग्रंथालय</h2>
       <p class="hero-subtitle">
-        महर्षि पाराशर, कल्याण वर्मा, वराहमिहिर एवं मन्त्रेश्वर की अमर परंपरा पर आधारित प्रामाणिक फलित शोध ग्रंथ। अंधविश्वास एवं भय से मुक्त, तार्किक, सत्यापनीय एवं वैज्ञानिक शास्त्रीय सूत्र।
+        प्रामाणिक वैदिक फलित ज्योतिष का आधुनिक, वैज्ञानिक एवं सत्यापनीय ज्ञानकोश। अंधविश्वास एवं भय से मुक्त — 100 पृष्ठों में सुव्यवस्थित सम्पूर्ण नवग्रह कारकत्व, 17 शास्त्रीय राजयोग एवं अचूक कुण्डली विश्लेषण।
       </p>
+      <div class="hero-subtag">
+        CLASSICAL VEDIC JYOTISH COMPENDIUM • 100 AUTHENTIC PAGES • 12 MASTER KUNDLI CHARTS
+      </div>
 
       <div class="metrics-bar">
         <div class="metric-pill"><span>📚</span> <strong>100</strong> प्रामाणिक पृष्ठ</div>
@@ -1123,16 +1217,16 @@
         <div class="book-hub-subtitle">लेखक: ज्योतिषाचार्य आशुतोष कुमार चौबे • तंत्र ज्ञान शोध संस्थान (2026)</div>
 
         <p class="book-hub-desc">
-          <em>बृहत्पाराशर होरा शास्त्र, सारावली, फलदीपिका, जातक पारिजात</em> एवं <em>नंदी नाड़ी</em> के गूढ़ फलित सूत्रों को 100 सुव्यवस्थित पृष्ठों में सरलीकृत किया गया है। इसमें नवग्रह कारकत्व, 17 शास्त्रीय राजयोग (पंच महापुरुष व विपरीत), 27 नक्षत्र, 108 पद नवमांश, दीप्तादि 9 अवस्थाएं, तथा 12 भावों का अंग-रोग मेडिकल समन्वय विशद रूप से संकलित है।
+          वैदिक फलित सिद्धांतों का आधुनिक वैज्ञानिक निरूपण। सम्पूर्ण नवग्रहों के सूक्ष्म कारकत्व, 17 शास्त्रीय राजयोग (पंच महापुरुष, गजकेसरी, विपरीत), 27 नक्षत्र व 108 पाद नवमांश, ग्रहीय दीप्तादि 9 अवस्थाएं, तथा द्वादश भावों का प्रामाणिक रोग-निदान व सटीक भविष्यफल एक ही सुव्यवस्थित ग्रंथ में संकलित हैं।
         </p>
 
         <div class="features-bullet-grid">
-          <div class="bullet-item"><span>✦</span> <strong>कालपुरुष कुण्डली चक्र</strong> (मेष लग्न व 7 उच्च ग्रह)</div>
-          <div class="bullet-item"><span>✦</span> <strong>भाव वर्गीकरण महाचक्र</strong> (केन्द्र, त्रिकोण, उपचय, त्रिक, मारक)</div>
-          <div class="bullet-item"><span>✦</span> <strong>उपचय साधन चक्र</strong> (3, 6, 10, 11 भावों की सतत विजय)</div>
-          <div class="bullet-item"><span>✦</span> <strong>17 शास्त्रीय राजयोग</strong> (हंस, मालव्य, रुचक, भद्र, शश, विपरीत)</div>
-          <div class="bullet-item"><span>✦</span> <strong>चतुर्विध महाभूत व पुरुषार्थ</strong> (अग्नि, पृथ्वी, वायु, जल)</div>
-          <div class="bullet-item"><span>✦</span> <strong>मेडिकल एस्ट्रोलॉजी चक्र</strong> (अंग-रोग व कैंसर निदान)</div>
+          <div class="bullet-item"><span class="bullet-icon">✦</span> <div><strong>कालपुरुष कुण्डली महाचक्र</strong> — मेष लग्न विन्यास व ग्रहों के 7 उच्च-नीच पद</div></div>
+          <div class="bullet-item"><span class="bullet-icon">✦</span> <div><strong>द्वादश भाव वर्गीकरण चक्र</strong> — केन्द्र, त्रिकोण, उपचय, त्रिक व मारक भाव</div></div>
+          <div class="bullet-item"><span class="bullet-icon">✦</span> <div><strong>उपचय भाव सतत वृद्धि चक्र</strong> — 3, 6, 10, 11 भावों की पुरुषार्थ शक्ति</div></div>
+          <div class="bullet-item"><span class="bullet-icon">✦</span> <div><strong>17 शास्त्रीय राजयोग</strong> — पंच महापुरुष, गजकेसरी, विपरीत व लक्ष्मी-नारायण</div></div>
+          <div class="bullet-item"><span class="bullet-icon">✦</span> <div><strong>चतुर्विध महाभूत व पुरुषार्थ चक्र</strong> — तत्व सन्तुलन एवं जीवन के 4 परम लक्ष्य</div></div>
+          <div class="bullet-item"><span class="bullet-icon">✦</span> <div><strong>कालपुरुष आयुर्-ज्योतिष चक्र</strong> — द्वादश भाव अंग-रोग व व्याधि निदान</div></div>
         </div>
 
         <!-- The 3 Action Buttons Requested by User -->
@@ -1303,76 +1397,136 @@
       </p>
 
       <div class="plates-grid">
-        <a href="reader.html#page-7" class="plate-thumb-card" title="कालपुरुष कुण्डली चक्र">
-          <img src="assets/icons/lagna_chart.svg" alt="कालपुरुष कुण्डली चक्र" class="plate-thumb-img" loading="lazy">
-          <div class="plate-thumb-name">1. कालपुरुष कुण्डली चक्र (उच्च ग्रह)</div>
-          <div class="plate-thumb-page">पृष्ठ 7 (Page 7)</div>
+        <!-- Plate 1: Kaalpurush Kundli Chakra -->
+        <a href="reader.html#page-7" class="plate-thumb-card" title="१. कालपुरुष कुण्डली महाचक्र (मेष लग्न व नवग्रह पद)">
+          <div class="plate-img-wrap">
+            <img src="assets/icons/lagna_chart.svg" alt="कालपुरुष कुण्डली महाचक्र" class="plate-thumb-img" loading="lazy">
+            <span class="plate-badge">डायमंड कुण्डली</span>
+          </div>
+          <div class="plate-thumb-name">१. कालपुरुष कुण्डली महाचक्र</div>
+          <div class="plate-thumb-desc">मेष लग्न विन्यास • नवग्रहों की उच्च व नीच राशियाँ</div>
+          <div class="plate-thumb-page">📖 पृष्ठ 7 (Page 7) →</div>
         </a>
 
-        <a href="reader.html#page-8" class="plate-thumb-card" title="भाव वर्गीकरण महाचक्र">
-          <img src="assets/icons/kalpurush_bhavas_diamond_chart.svg" alt="भाव वर्गीकरण महाचक्र" class="plate-thumb-img" loading="lazy">
-          <div class="plate-thumb-name">2. भाव वर्गीकरण (केन्द्र, त्रिकोण, उपचय)</div>
-          <div class="plate-thumb-page">पृष्ठ 8 (Page 8)</div>
+        <!-- Plate 2: Bhava Classification Chakra -->
+        <a href="reader.html#page-8" class="plate-thumb-card" title="२. द्वादश भाव वर्गीकरण चक्र">
+          <div class="plate-img-wrap">
+            <img src="assets/icons/kalpurush_bhavas_diamond_chart.svg" alt="द्वादश भाव वर्गीकरण चक्र" class="plate-thumb-img" loading="lazy">
+            <span class="plate-badge">भाव वर्गीकरण</span>
+          </div>
+          <div class="plate-thumb-name">२. द्वादश भाव वर्गीकरण चक्र</div>
+          <div class="plate-thumb-desc">केन्द्र, त्रिकोण, उपचय, त्रिक व मारक भाव व्यवस्था</div>
+          <div class="plate-thumb-page">📖 पृष्ठ 8 (Page 8) →</div>
         </a>
 
-        <a href="reader.html#page-9" class="plate-thumb-card" title="उपचय भाव साधन चक्र">
-          <img src="assets/icons/upachaya_diamond_chart.svg" alt="उपचय भाव साधन चक्र" class="plate-thumb-img" loading="lazy">
-          <div class="plate-thumb-name">3. उपचय भाव साधन चक्र (3, 6, 10, 11)</div>
-          <div class="plate-thumb-page">पृष्ठ 9 (Page 9)</div>
+        <!-- Plate 3: Upachaya Bhava Chakra -->
+        <a href="reader.html#page-9" class="plate-thumb-card" title="३. उपचय भाव सतत वृद्धि चक्र">
+          <div class="plate-img-wrap">
+            <img src="assets/icons/upachaya_diamond_chart.svg" alt="उपचय भाव साधन चक्र" class="plate-thumb-img" loading="lazy">
+            <span class="plate-badge">उपचय शक्ति</span>
+          </div>
+          <div class="plate-thumb-name">३. उपचय भाव सतत वृद्धि चक्र</div>
+          <div class="plate-thumb-desc">3, 6, 10, 11 भावों की पुरुषार्थ विजय व कर्म साधना</div>
+          <div class="plate-thumb-page">📖 पृष्ठ 9 (Page 9) →</div>
         </a>
 
-        <a href="reader.html#page-10" class="plate-thumb-card" title="ग्रहीय दृष्टि महाचक्र">
-          <img src="assets/icons/aspect_wheel.svg" alt="ग्रहीय दृष्टि महाचक्र" class="plate-thumb-img" loading="lazy">
-          <div class="plate-thumb-name">4. ग्रहीय दृष्टि महाचक्र (विशेष दृष्टियां)</div>
-          <div class="plate-thumb-page">पृष्ठ 10 (Page 10)</div>
+        <!-- Plate 4: Planetary Aspects Wheel -->
+        <a href="reader.html#page-10" class="plate-thumb-card" title="४. ग्रहीय दृष्टि संबंध महाचक्र">
+          <div class="plate-img-wrap">
+            <img src="assets/icons/aspect_wheel.svg" alt="ग्रहीय दृष्टि महाचक्र" class="plate-thumb-img" loading="lazy">
+            <span class="plate-badge">दृष्टि विधान</span>
+          </div>
+          <div class="plate-thumb-name">४. ग्रहीय दृष्टि संबंध महाचक्र</div>
+          <div class="plate-thumb-desc">सप्तम दृष्टि व मंगल, गुरु, शनि की विशेष दृष्टियाँ</div>
+          <div class="plate-thumb-page">📖 पृष्ठ 10 (Page 10) →</div>
         </a>
 
-        <a href="reader.html#page-11" class="plate-thumb-card" title="द्वादश भाव स्थिर कारकत्व चक्र">
-          <img src="assets/icons/bhava_karaka_diamond_chart.svg" alt="द्वादश भाव स्थिर कारकत्व चक्र" class="plate-thumb-img" loading="lazy">
-          <div class="plate-thumb-name">5. द्वादश भाव स्थिर कारकत्व चक्र</div>
-          <div class="plate-thumb-page">पृष्ठ 11 (Page 11)</div>
+        <!-- Plate 5: Bhava Karakatva Chakra -->
+        <a href="reader.html#page-11" class="plate-thumb-card" title="५. द्वादश भाव स्थिर कारकत्व चक्र">
+          <div class="plate-img-wrap">
+            <img src="assets/icons/bhava_karaka_diamond_chart.svg" alt="द्वादश भाव स्थिर कारकत्व चक्र" class="plate-thumb-img" loading="lazy">
+            <span class="plate-badge">कारकत्व</span>
+          </div>
+          <div class="plate-thumb-name">५. द्वादश भाव स्थिर कारकत्व चक्र</div>
+          <div class="plate-thumb-desc">भावों के नैसर्गिक स्वामी, स्थिर व चर कारक अधिपति</div>
+          <div class="plate-thumb-page">📖 पृष्ठ 11 (Page 11) →</div>
         </a>
 
-        <a href="reader.html#page-25" class="plate-thumb-card" title="पंच महापुरुष एवं गजकेसरी राजयोग">
-          <img src="assets/icons/raja_yogas_chart.svg" alt="पंच महापुरुष एवं गजकेसरी राजयोग" class="plate-thumb-img" loading="lazy">
-          <div class="plate-thumb-name">6. पंच महापुरुष एवं गजकेसरी योग</div>
-          <div class="plate-thumb-page">पृष्ठ 25 (Page 25)</div>
+        <!-- Plate 6: Panch Mahapurush & Gaja-Kesari Yoga -->
+        <a href="reader.html#page-25" class="plate-thumb-card" title="६. पंच महापुरुष एवं गजकेसरी राजयोग">
+          <div class="plate-img-wrap">
+            <img src="assets/icons/raja_yogas_chart.svg" alt="पंच महापुरुष एवं गजकेसरी राजयोग" class="plate-thumb-img" loading="lazy">
+            <span class="plate-badge">राजयोग</span>
+          </div>
+          <div class="plate-thumb-name">६. पंच महापुरुष एवं गजकेसरी राजयोग</div>
+          <div class="plate-thumb-desc">रुचक, भद्र, हंस, मालव्य, शश एवं गजकेसरी योग</div>
+          <div class="plate-thumb-page">📖 पृष्ठ 25 (Page 25) →</div>
         </a>
 
-        <a href="reader.html#page-27" class="plate-thumb-card" title="लक्ष्मी-नारायण योग चक्र">
-          <img src="assets/icons/kendra_trikona_diamond_chart.svg" alt="लक्ष्मी-नारायण योग चक्र" class="plate-thumb-img" loading="lazy">
-          <div class="plate-thumb-name">7. लक्ष्मी-नारायण योग (केन्द्र-त्रिकोण)</div>
-          <div class="plate-thumb-page">पृष्ठ 27 (Page 27)</div>
+        <!-- Plate 7: Lakshmi-Narayan Yoga -->
+        <a href="reader.html#page-27" class="plate-thumb-card" title="७. लक्ष्मी-नारायण एवं केन्द्र-त्रिकोण योग">
+          <div class="plate-img-wrap">
+            <img src="assets/icons/kendra_trikona_diamond_chart.svg" alt="लक्ष्मी-नारायण योग चक्र" class="plate-thumb-img" loading="lazy">
+            <span class="plate-badge">केन्द्र-त्रिकोण</span>
+          </div>
+          <div class="plate-thumb-name">७. लक्ष्मी-नारायण एवं केन्द्र-त्रिकोण योग</div>
+          <div class="plate-thumb-desc">धर्म-कर्माधिपति संबंध, विष्णु व लक्ष्मी स्थान योग</div>
+          <div class="plate-thumb-page">📖 पृष्ठ 27 (Page 27) →</div>
         </a>
 
-        <a href="reader.html#page-28" class="plate-thumb-card" title="विपरीत राजयोग महाचक्र">
-          <img src="assets/icons/viparita_chart.svg" alt="विपरीत राजयोग महाचक्र" class="plate-thumb-img" loading="lazy">
-          <div class="plate-thumb-name">8. विपरीत राजयोग (हर्ष, सरल, विमल)</div>
-          <div class="plate-thumb-page">पृष्ठ 28 (Page 28)</div>
+        <!-- Plate 8: Viparita Raja Yoga -->
+        <a href="reader.html#page-28" class="plate-thumb-card" title="८. विपरीत राजयोग त्रिशूल चक्र">
+          <div class="plate-img-wrap">
+            <img src="assets/icons/viparita_chart.svg" alt="विपरीत राजयोग महाचक्र" class="plate-thumb-img" loading="lazy">
+            <span class="plate-badge">विपरीत राजयोग</span>
+          </div>
+          <div class="plate-thumb-name">८. विपरीत राजयोग त्रिशूल चक्र</div>
+          <div class="plate-thumb-desc">हर्ष, सरल, विमल योग — संकट से साम्राज्य प्राप्ति</div>
+          <div class="plate-thumb-page">📖 पृष्ठ 28 (Page 28) →</div>
         </a>
 
-        <a href="reader.html#page-32" class="plate-thumb-card" title="27 नक्षत्र व 108 पद 360° महामण्डल">
-          <img src="assets/icons/nakshatra_mandala_wheel.svg" alt="27 नक्षत्र व 108 पद महामण्डल" class="plate-thumb-img" loading="lazy">
-          <div class="plate-thumb-name">9. सप्तविंशति नक्षत्र 360° महामण्डल</div>
-          <div class="plate-thumb-page">पृष्ठ 32 (Page 32)</div>
+        <!-- Plate 9: 27 Nakshatras 108 Padas -->
+        <a href="reader.html#page-32" class="plate-thumb-card" title="९. सप्तविंशति नक्षत्र 360° महामण्डल">
+          <div class="plate-img-wrap">
+            <img src="assets/icons/nakshatra_mandala_wheel.svg" alt="27 नक्षत्र व 108 पद महामण्डल" class="plate-thumb-img" loading="lazy">
+            <span class="plate-badge">नक्षत्र मण्डल</span>
+          </div>
+          <div class="plate-thumb-name">९. सप्तविंशति नक्षत्र 360° महामण्डल</div>
+          <div class="plate-thumb-desc">27 नक्षत्र, 108 पाद, नवमांश चरण व राशि विभाजन</div>
+          <div class="plate-thumb-page">📖 पृष्ठ 32 (Page 32) →</div>
         </a>
 
-        <a href="reader.html#page-38" class="plate-thumb-card" title="चतुर्विध महाभूत कुण्डली चक्र">
-          <img src="assets/icons/elements_diamond_chart.svg" alt="चतुर्विध महाभूत कुण्डली चक्र" class="plate-thumb-img" loading="lazy">
-          <div class="plate-thumb-name">10. चतुर्विध महाभूत चक्र (4 तत्व)</div>
-          <div class="plate-thumb-page">पृष्ठ 38 (Page 38)</div>
+        <!-- Plate 10: 4 Elements Mahabhuta Chakra -->
+        <a href="reader.html#page-38" class="plate-thumb-card" title="१०. चतुर्विध महाभूत कुण्डली चक्र">
+          <div class="plate-img-wrap">
+            <img src="assets/icons/elements_diamond_chart.svg" alt="चतुर्विध महाभूत कुण्डली चक्र" class="plate-thumb-img" loading="lazy">
+            <span class="plate-badge">महाभूत तत्व</span>
+          </div>
+          <div class="plate-thumb-name">१०. चतुर्विध महाभूत कुण्डली चक्र</div>
+          <div class="plate-thumb-desc">अग्नि, पृथ्वी, वायु, जल तत्व कुण्डली सन्तुलन</div>
+          <div class="plate-thumb-page">📖 पृष्ठ 38 (Page 38) →</div>
         </a>
 
-        <a href="reader.html#page-39" class="plate-thumb-card" title="चतुर्विध पुरुषार्थ कुण्डली चक्र">
-          <img src="assets/icons/purushartha_diamond_chart.svg" alt="चतुर्विध पुरुषार्थ कुण्डली चक्र" class="plate-thumb-img" loading="lazy">
-          <div class="plate-thumb-name">11. चतुर्विध पुरुषार्थ चक्र (4 लक्ष्य)</div>
-          <div class="plate-thumb-page">पृष्ठ 39 (Page 39)</div>
+        <!-- Plate 11: 4 Purusharthas Chakra -->
+        <a href="reader.html#page-39" class="plate-thumb-card" title="११. चतुर्विध पुरुषार्थ कुण्डली चक्र">
+          <div class="plate-img-wrap">
+            <img src="assets/icons/purushartha_diamond_chart.svg" alt="चतुर्विध पुरुषार्थ कुण्डली चक्र" class="plate-thumb-img" loading="lazy">
+            <span class="plate-badge">पुरुषार्थ त्रिकोण</span>
+          </div>
+          <div class="plate-thumb-name">११. चतुर्विध पुरुषार्थ कुण्डली चक्र</div>
+          <div class="plate-thumb-desc">धर्म, अर्थ, काम, मोक्ष त्रिकोण एवं जीवन के 4 लक्ष्य</div>
+          <div class="plate-thumb-page">📖 पृष्ठ 39 (Page 39) →</div>
         </a>
 
-        <a href="reader.html#page-61" class="plate-thumb-card" title="कालपुरुष अंग-प्रत्यंग व आयुर्वेद कुण्डली चक्र">
-          <img src="assets/icons/medical_astrology_chart.svg" alt="मेडिकल एस्ट्रोलॉजी चक्र" class="plate-thumb-img" loading="lazy">
-          <div class="plate-thumb-name">12. आयुर्-ज्योतिष देह निदान चक्र</div>
-          <div class="plate-thumb-page">पृष्ठ 61 (Page 61)</div>
+        <!-- Plate 12: Medical Astrology Ayur-Jyotish Chakra -->
+        <a href="reader.html#page-61" class="plate-thumb-card" title="१२. कालपुरुष देह व आयुर्-ज्योतिष चक्र">
+          <div class="plate-img-wrap">
+            <img src="assets/icons/medical_astrology_chart.svg" alt="मेडिकल एस्ट्रोलॉजी चक्र" class="plate-thumb-img" loading="lazy">
+            <span class="plate-badge">आयुर्-ज्योतिष</span>
+          </div>
+          <div class="plate-thumb-name">१२. कालपुरुष देह व आयुर्-ज्योतिष चक्र</div>
+          <div class="plate-thumb-desc">द्वादश भाव अंग-प्रत्यंग, त्रिदोष एवं रोग-व्याधि निदान</div>
+          <div class="plate-thumb-page">📖 पृष्ठ 61 (Page 61) →</div>
         </a>
       </div>
     </section>
@@ -1385,7 +1539,7 @@
       <div class="footer-brand">
         <h3>तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)</h3>
         <p>
-          प्राचीन वैदिक ग्रंथों, पाराशरी ज्योतिष, तांत्रिक दर्शन एवं आयुर्वेद के गूढ़ सूत्रों को आधुनिक तार्किक विश्लेषण के साथ जनसामान्य हेतु सुलभ बनाने के लिए समर्पित शोध मंच।
+          प्रामाणिक वैदिक ज्योतिष, तांत्रिक दर्शन एवं आयुर्वेद के गूढ़ सिद्धांतों को आधुनिक तार्किक विश्लेषण और वैज्ञानिक दृष्टि के साथ जनसामान्य हेतु सुलभ बनाने के लिए समर्पित अंतरराष्ट्रीय शोध मंच।
         </p>
         <div style="margin-top:1rem; font-size:0.82rem; color:var(--text-muted);">
           प्रधान शोधकर्ता एवं लेखक: <strong>ज्योतिषाचार्य आशुतोष कुमार चौबे</strong>

@@ -10,9 +10,9 @@
  * - Complete Self-Purging: Clean cache wiping when user disables offline mode or updates edition
  */
 
-const APP_VERSION = '2.3.0';
+const APP_VERSION = '2.4.0';
 const CACHE_NAME = `tantragyan-v${APP_VERSION}`;
-const FONT_CACHE_NAME = 'tantragyan-fonts-v2.3';
+const FONT_CACHE_NAME = 'tantragyan-fonts-v2.4';
 
 // Essential assets for complete offline functioning
 const PRECACHE_ASSETS = [

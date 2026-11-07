@@ -32,9 +32,9 @@
   <rect x="12" y="12" width="536" height="676" rx="8" fill="none" stroke="#eab308" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
   <!-- Header Banner -->
   <rect x="24" y="20" width="512" height="66" rx="6" fill="#ffffff" stroke="#c89d3d" stroke-width="1.2"/>
-  <text x="280" y="42" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Noto Serif Devanagari', 'Georgia', serif" font-size="16" font-weight="800" fill="#78350f" text-anchor="middle">चतुर्विध महाभूत कुण्डली चक्र • Tattva Chakra</text>
-  <text x="280" y="60" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="600" fill="#92400e" text-anchor="middle">अग्नि (Fire), पृथ्वी (Earth), वायु (Air) एवं जल (Water) तत्वों का भाव समन्वय</text>
-  <text x="280" y="74" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#78716c" text-anchor="middle">कालपुरुष लग्न विन्यास • धर्म, अर्थ, काम व मोक्ष त्रिकोण का संपूर्ण फलित दर्पण</text>
+  <text x="280" y="42" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Georgia', serif" font-size="16" font-weight="800" fill="#78350f" text-anchor="middle">चतुर्विध महाभूत कुण्डली चक्र • Tattva Chakra</text>
+  <text x="280" y="60" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="600" fill="#92400e" text-anchor="middle">अग्नि (Fire), पृथ्वी (Earth), वायु (Air) एवं जल (Water) तत्वों का भाव समन्वय</text>
+  <text x="280" y="74" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#78716c" text-anchor="middle">कालपुरुष लग्न विन्यास • धर्म, अर्थ, काम व मोक्ष त्रिकोण का संपूर्ण फलित दर्पण</text>
   <!-- Diamond Kundali Outer Frame (X: 30 to 530, Y: 96 to 596) -->
   <g transform="translate(10, 0)">
     <!-- House 1: अग्नि तत्व -->
@@ -66,159 +66,159 @@
     <line x1="520" y1="100" x2="20" y2="600" stroke="#854d0e" stroke-width="1.2" opacity="0.6"/>
     <circle cx="270" cy="350" r="4.5" fill="#c89d3d" stroke="#78350f" stroke-width="1.5"/>
     <!-- Text block for House 1 -->
-    <text x="270.0" y="207.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#9a3412" text-anchor="middle">
+    <text x="270.0" y="207.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#9a3412" text-anchor="middle">
       मेष (1)
     </text>
-    <text x="270.0" y="221.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#ea580c" text-anchor="middle">
+    <text x="270.0" y="221.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#ea580c" text-anchor="middle">
       🔥 अग्नि तत्व
     </text>
-    <text x="270.0" y="233.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
+    <text x="270.0" y="233.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
       तनु / आत्मबल
     </text>
-    <text x="270.0" y="244.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
+    <text x="270.0" y="244.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
       धर्म त्रिकोण
     </text>
     <!-- Text block for House 2 -->
-    <text x="145.0" y="128.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#854d0e" text-anchor="middle">
+    <text x="145.0" y="128.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#854d0e" text-anchor="middle">
       वृषभ (2)
     </text>
-    <text x="145.0" y="142.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#d97706" text-anchor="middle">
+    <text x="145.0" y="142.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#d97706" text-anchor="middle">
       ⛰️ पृथ्वी तत्व
     </text>
-    <text x="145.0" y="154.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
+    <text x="145.0" y="154.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
       धन / कुटुंब
     </text>
-    <text x="145.0" y="165.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
+    <text x="145.0" y="165.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
       अर्थ त्रिकोण
     </text>
     <!-- Text block for House 3 -->
-    <text x="62.0" y="211.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#075985" text-anchor="middle">
+    <text x="62.0" y="211.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#075985" text-anchor="middle">
       मिथुन (3)
     </text>
-    <text x="62.0" y="225.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#0284c7" text-anchor="middle">
+    <text x="62.0" y="225.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#0284c7" text-anchor="middle">
       💨 वायु तत्व
     </text>
-    <text x="62.0" y="237.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
+    <text x="62.0" y="237.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
       साहस / उद्यम
     </text>
-    <text x="62.0" y="248.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
+    <text x="62.0" y="248.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
       काम त्रिकोण
     </text>
     <!-- Text block for House 4 -->
-    <text x="145.0" y="332.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#115e59" text-anchor="middle">
+    <text x="145.0" y="332.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#115e59" text-anchor="middle">
       कर्क (4)
     </text>
-    <text x="145.0" y="346.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#0d9488" text-anchor="middle">
+    <text x="145.0" y="346.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#0d9488" text-anchor="middle">
       🌊 जल तत्व
     </text>
-    <text x="145.0" y="358.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
+    <text x="145.0" y="358.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
       सुख / मन
     </text>
-    <text x="145.0" y="369.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
+    <text x="145.0" y="369.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
       मोक्ष त्रिकोण
     </text>
     <!-- Text block for House 5 -->
-    <text x="62.0" y="461.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#9a3412" text-anchor="middle">
+    <text x="62.0" y="461.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#9a3412" text-anchor="middle">
       सिंह (5)
     </text>
-    <text x="62.0" y="475.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#ea580c" text-anchor="middle">
+    <text x="62.0" y="475.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#ea580c" text-anchor="middle">
       🔥 अग्नि तत्व
     </text>
-    <text x="62.0" y="487.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
+    <text x="62.0" y="487.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
       धी / पूर्वपुण्य
     </text>
-    <text x="62.0" y="498.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
+    <text x="62.0" y="498.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
       धर्म त्रिकोण
     </text>
     <!-- Text block for House 6 -->
-    <text x="145.0" y="544.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#854d0e" text-anchor="middle">
+    <text x="145.0" y="544.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#854d0e" text-anchor="middle">
       कन्या (6)
     </text>
-    <text x="145.0" y="558.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#d97706" text-anchor="middle">
+    <text x="145.0" y="558.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#d97706" text-anchor="middle">
       ⛰️ पृथ्वी तत्व
     </text>
-    <text x="145.0" y="570.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
+    <text x="145.0" y="570.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
       सेवा / विजय
     </text>
-    <text x="145.0" y="581.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
+    <text x="145.0" y="581.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
       अर्थ त्रिकोण
     </text>
     <!-- Text block for House 7 -->
-    <text x="270.0" y="457.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#075985" text-anchor="middle">
+    <text x="270.0" y="457.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#075985" text-anchor="middle">
       तुला (7)
     </text>
-    <text x="270.0" y="471.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#0284c7" text-anchor="middle">
+    <text x="270.0" y="471.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#0284c7" text-anchor="middle">
       💨 वायु तत्व
     </text>
-    <text x="270.0" y="483.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
+    <text x="270.0" y="483.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
       जाया / व्यापार
     </text>
-    <text x="270.0" y="494.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
+    <text x="270.0" y="494.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
       काम त्रिकोण
     </text>
     <!-- Text block for House 8 -->
-    <text x="395.0" y="544.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#115e59" text-anchor="middle">
+    <text x="395.0" y="544.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#115e59" text-anchor="middle">
       वृश्चिक (8)
     </text>
-    <text x="395.0" y="558.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#0d9488" text-anchor="middle">
+    <text x="395.0" y="558.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#0d9488" text-anchor="middle">
       🌊 जल तत्व
     </text>
-    <text x="395.0" y="570.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
+    <text x="395.0" y="570.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
       आयु / गूढ़
     </text>
-    <text x="395.0" y="581.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
+    <text x="395.0" y="581.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
       मोक्ष त्रिकोण
     </text>
     <!-- Text block for House 9 -->
-    <text x="478.0" y="461.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#9a3412" text-anchor="middle">
+    <text x="478.0" y="461.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#9a3412" text-anchor="middle">
       धनु (9)
     </text>
-    <text x="478.0" y="475.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#ea580c" text-anchor="middle">
+    <text x="478.0" y="475.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#ea580c" text-anchor="middle">
       🔥 अग्नि तत्व
     </text>
-    <text x="478.0" y="487.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
+    <text x="478.0" y="487.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
       भाग्य / धर्म
     </text>
-    <text x="478.0" y="498.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
+    <text x="478.0" y="498.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
       धर्म त्रिकोण
     </text>
     <!-- Text block for House 10 -->
-    <text x="395.0" y="332.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#854d0e" text-anchor="middle">
+    <text x="395.0" y="332.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#854d0e" text-anchor="middle">
       मकर (10)
     </text>
-    <text x="395.0" y="346.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#d97706" text-anchor="middle">
+    <text x="395.0" y="346.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#d97706" text-anchor="middle">
       ⛰️ पृथ्वी तत्व
     </text>
-    <text x="395.0" y="358.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
+    <text x="395.0" y="358.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
       कर्म / सत्ता
     </text>
-    <text x="395.0" y="369.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
+    <text x="395.0" y="369.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
       अर्थ त्रिकोण
     </text>
     <!-- Text block for House 11 -->
-    <text x="478.0" y="211.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#075985" text-anchor="middle">
+    <text x="478.0" y="211.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#075985" text-anchor="middle">
       कुंभ (11)
     </text>
-    <text x="478.0" y="225.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#0284c7" text-anchor="middle">
+    <text x="478.0" y="225.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#0284c7" text-anchor="middle">
       💨 वायु तत्व
     </text>
-    <text x="478.0" y="237.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
+    <text x="478.0" y="237.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
       लाभ / मित्र
     </text>
-    <text x="478.0" y="248.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
+    <text x="478.0" y="248.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
       काम त्रिकोण
     </text>
     <!-- Text block for House 12 -->
-    <text x="395.0" y="128.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#115e59" text-anchor="middle">
+    <text x="395.0" y="128.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#115e59" text-anchor="middle">
       मीन (12)
     </text>
-    <text x="395.0" y="142.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#0d9488" text-anchor="middle">
+    <text x="395.0" y="142.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#0d9488" text-anchor="middle">
       🌊 जल तत्व
     </text>
-    <text x="395.0" y="154.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
+    <text x="395.0" y="154.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">
       मोक्ष / विसर्जन
     </text>
-    <text x="395.0" y="165.0" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
+    <text x="395.0" y="165.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">
       मोक्ष त्रिकोण
     </text>
   </g>
@@ -226,27 +226,27 @@
   <g transform="translate(24, 608)">
     <!-- Agni / Fire -->
     <rect x="0" y="0" width="120" height="74" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="1.2"/>
-    <text x="60" y="16" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="800" fill="#9a3412" text-anchor="middle">🔥 अग्नि (Fire)</text>
-    <text x="60" y="30" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="700" fill="#ea580c" text-anchor="middle">भाव 1, 5, 9 (Dharma)</text>
-    <text x="60" y="44" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#475569" text-anchor="middle">आत्मबल • मेधा • भाग्य</text>
-    <text x="60" y="58" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#c2410c" text-anchor="middle">स्वामी: मंगल, सूर्य, गुरु</text>
+    <text x="60" y="16" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="800" fill="#9a3412" text-anchor="middle">🔥 अग्नि (Fire)</text>
+    <text x="60" y="30" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="700" fill="#ea580c" text-anchor="middle">भाव 1, 5, 9 (Dharma)</text>
+    <text x="60" y="44" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#475569" text-anchor="middle">आत्मबल • मेधा • भाग्य</text>
+    <text x="60" y="58" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#c2410c" text-anchor="middle">स्वामी: मंगल, सूर्य, गुरु</text>
     <!-- Prithvi / Earth -->
     <rect x="130" y="0" width="120" height="74" rx="6" fill="#fefce8" stroke="#d97706" stroke-width="1.2"/>
-    <text x="190" y="16" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="800" fill="#854d0e" text-anchor="middle">⛰️ पृथ्वी (Earth)</text>
-    <text x="190" y="30" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="700" fill="#d97706" text-anchor="middle">भाव 2, 6, 10 (Artha)</text>
-    <text x="190" y="44" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#475569" text-anchor="middle">धन • सेवा • साम्राज्य</text>
-    <text x="190" y="58" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#b45309" text-anchor="middle">स्वामी: शुक्र, बुध, शनि</text>
+    <text x="190" y="16" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="800" fill="#854d0e" text-anchor="middle">⛰️ पृथ्वी (Earth)</text>
+    <text x="190" y="30" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="700" fill="#d97706" text-anchor="middle">भाव 2, 6, 10 (Artha)</text>
+    <text x="190" y="44" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#475569" text-anchor="middle">धन • सेवा • साम्राज्य</text>
+    <text x="190" y="58" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#b45309" text-anchor="middle">स्वामी: शुक्र, बुध, शनि</text>
     <!-- Vayu / Air -->
     <rect x="260" y="0" width="120" height="74" rx="6" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.2"/>
-    <text x="320" y="16" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="800" fill="#075985" text-anchor="middle">💨 वायु (Air)</text>
-    <text x="320" y="30" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="700" fill="#0284c7" text-anchor="middle">भाव 3, 7, 11 (Kama)</text>
-    <text x="320" y="44" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#475569" text-anchor="middle">साहस • व्यापार • सर्वलाभ</text>
-    <text x="320" y="58" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#0369a1" text-anchor="middle">स्वामी: बुध, शुक्र, शनि</text>
+    <text x="320" y="16" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="800" fill="#075985" text-anchor="middle">💨 वायु (Air)</text>
+    <text x="320" y="30" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="700" fill="#0284c7" text-anchor="middle">भाव 3, 7, 11 (Kama)</text>
+    <text x="320" y="44" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#475569" text-anchor="middle">साहस • व्यापार • सर्वलाभ</text>
+    <text x="320" y="58" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#0369a1" text-anchor="middle">स्वामी: बुध, शुक्र, शनि</text>
     <!-- Jala / Water -->
     <rect x="390" y="0" width="122" height="74" rx="6" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.2"/>
-    <text x="451" y="16" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="800" fill="#115e59" text-anchor="middle">🌊 जल (Water)</text>
-    <text x="451" y="30" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="700" fill="#0d9488" text-anchor="middle">भाव 4, 8, 12 (Moksha)</text>
-    <text x="451" y="44" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#475569" text-anchor="middle">सुख • गूढ़ साधना • मोक्ष</text>
-    <text x="451" y="58" font-family="'Devanagari MT', 'Kohinoor Devanagari', 'Devanagari Sangam MN', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#0f766e" text-anchor="middle">स्वामी: चन्द्र, मंगल, गुरु</text>
+    <text x="451" y="16" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="800" fill="#115e59" text-anchor="middle">🌊 जल (Water)</text>
+    <text x="451" y="30" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="700" fill="#0d9488" text-anchor="middle">भाव 4, 8, 12 (Moksha)</text>
+    <text x="451" y="44" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#475569" text-anchor="middle">सुख • गूढ़ साधना • मोक्ष</text>
+    <text x="451" y="58" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#0f766e" text-anchor="middle">स्वामी: चन्द्र, मंगल, गुरु</text>
   </g>
 </svg>
