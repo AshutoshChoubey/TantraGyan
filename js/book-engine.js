@@ -1240,6 +1240,40 @@ class BookEngine {
   renderSinglePageContent(container, pageDataNode, pageNum) {
     if (!container) return;
     container.innerHTML = this.getPageHTML(pageNum);
+    this.decoratePlanetBadges(container);
+  }
+
+  /**
+   * Automatically decorates planet names with authentic Vedic Jyotish color badges and 3D icons
+   */
+  decoratePlanetBadges(container) {
+    if (!container) return;
+    const planetMap = [
+      { key: 'sun', icon: 'sun.png', names: ['Sun', 'सूर्य'] },
+      { key: 'moon', icon: 'moon.png', names: ['Moon', 'चन्द्र', 'चंद्र'] },
+      { key: 'mars', icon: 'mars.png', names: ['Mars', 'मंगल'] },
+      { key: 'mercury', icon: 'mercury.png', names: ['Mercury', 'बुध'] },
+      { key: 'jupiter', icon: 'jupiter.png', names: ['Jupiter', 'गुरु', 'बृहस्पति'] },
+      { key: 'venus', icon: 'venus.png', names: ['Venus', 'शुक्र'] },
+      { key: 'saturn', icon: 'saturn.png', names: ['Saturn', 'शनि'] },
+      { key: 'rahu', icon: 'rahu.png', names: ['Rahu', 'राहु'] },
+      { key: 'ketu', icon: 'ketu.png', names: ['Ketu', 'केतु'] }
+    ];
+
+    const tableCells = container.querySelectorAll('.astro-table td.primary-col, .astro-table td:first-child');
+    tableCells.forEach(cell => {
+      const strong = cell.querySelector('strong') || cell;
+      const text = strong.textContent.trim();
+      for (const p of planetMap) {
+        if (p.names.some(n => text === n || text.startsWith(n + ' ') || text.startsWith(n + ' ('))) {
+          if (!cell.classList.contains(`planet-col-${p.key}`)) {
+            cell.classList.add(`planet-col-${p.key}`);
+            strong.innerHTML = `<span class="planet-badge planet-${p.key}"><img src="assets/images/planets/${p.icon}" class="planet-icon" alt="${p.key}"/> ${text}</span>`;
+          }
+          break;
+        }
+      }
+    });
   }
 
   checkAndRepairSpread() {

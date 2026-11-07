@@ -16,7 +16,7 @@
  * - Stale-While-Revalidate with instant 0ms sanitized offline cache return for HTML pages
  */
 
-const APP_VERSION = '1.0.7';
+const APP_VERSION = '1.0.8';
 const CACHE_NAME = `tantragyan-v${APP_VERSION}`;
 const FONT_CACHE_NAME = 'tantragyan-fonts-v1.0';
 
@@ -28,13 +28,22 @@ const PRECACHE_ASSETS = [
   'hindi.html',
   'english.html',
   'css/book.css?v=4.1',
-  'css/tables.css?v=3.9',
+  'css/tables.css?v=4.0',
   'js/sounds-data.js?v=3.9',
   'js/sound.js?v=3.9',
-  'js/book-engine.js?v=3.9',
-  'js/book-ui.js?v=3.9',
+  'js/book-engine.js?v=4.0',
+  'js/book-ui.js?v=4.0',
   'assets/yantra.svg',
   'assets/ganesha.svg',
+  'assets/images/planets/sun.png',
+  'assets/images/planets/moon.png',
+  'assets/images/planets/mars.png',
+  'assets/images/planets/mercury.png',
+  'assets/images/planets/jupiter.png',
+  'assets/images/planets/venus.png',
+  'assets/images/planets/saturn.png',
+  'assets/images/planets/rahu.png',
+  'assets/images/planets/ketu.png',
   'assets/icon-192.png',
   'assets/icon-512.png',
   'assets/icon-maskable-192.png',

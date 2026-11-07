@@ -33,8 +33,10 @@
 
 .astro-table-container table,
 .table-container table {
-  min-width: 600px;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  table-layout: auto;
 }
 
 .table-caption-bar {
@@ -109,7 +111,8 @@
   width: 100%;
   border-collapse: collapse;
   font-family: var(--font-table);
-  font-size: 0.93rem;
+  font-size: 0.82rem;
+  line-height: 1.44;
   text-align: left;
 }
 
@@ -118,13 +121,13 @@
   color: var(--text-heading);
   font-family: var(--font-heading);
   font-weight: 700;
-  padding: 0.8rem 1.05rem;
+  padding: 0.45rem 0.55rem;
   border-bottom: 2px solid var(--accent-gold);
   border-right: 1px solid var(--page-border);
   white-space: normal;
-  min-width: 95px;
-  font-size: 0.92rem;
-  line-height: 1.45;
+  min-width: 0;
+  font-size: 0.81rem;
+  line-height: 1.35;
   letter-spacing: normal;
   position: sticky;
   top: 0;
@@ -136,18 +139,26 @@
 }
 
 .astro-table td {
-  padding: 0.75rem 1.05rem;
+  padding: 0.42rem 0.55rem;
   border-bottom: 1px solid var(--page-border);
   border-right: 1px solid var(--page-border);
   color: var(--text-main);
-  vertical-align: top;
-  line-height: 1.68;
-  font-size: 0.92rem;
-  word-break: normal;
+  vertical-align: middle;
+  line-height: 1.46;
+  font-size: 0.79rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .astro-table td:last-child {
   border-right: none;
+}
+
+.astro-table td.primary-col,
+.astro-table td:first-child {
+  font-weight: 700;
+  white-space: nowrap;
+  vertical-align: middle;
 }
 
 .astro-table tbody tr:last-child td {
@@ -350,7 +361,148 @@
   white-space: nowrap;
 }
 
-/* Planet Specific Badges */
+/* ==============================================================================
+   PLANET SIGNATURE BADGES & COLOR PALETTE
+   Vibrant, Authentic Vedic Jyotish Symbolism (from Kundali Studio)
+   Venus: Pink | Sun: Saffron | Mercury: Green | Mars: Red | Jupiter: Yellow
+   Moon: Pearl Moon | Rahu: Black | Ketu: Shadow Ash Gray
+   ============================================================================== */
+.planet-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 0.12rem 0.45rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  font-size: 0.88em;
+  transition: all 0.2s ease;
+  vertical-align: middle;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.planet-icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: inline-block;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Sun - Divine Saffron (सूर्य) */
+.planet-sun, td.planet-col-sun .planet-badge {
+  color: #c2410c !important;
+  background: linear-gradient(135deg, rgba(255, 247, 237, 0.95), rgba(255, 237, 213, 0.90)) !important;
+  border: 1px solid #ea580c !important;
+}
+
+/* Moon - Sacred Pearl Moon (चन्द्र) */
+.planet-moon, td.planet-col-moon .planet-badge {
+  color: #334155 !important;
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.95), rgba(226, 232, 240, 0.90)) !important;
+  border: 1px solid #94a3b8 !important;
+}
+
+/* Mars - Fiery Crimson Red (मंगल) */
+.planet-mars, td.planet-col-mars .planet-badge {
+  color: #dc2626 !important;
+  background: linear-gradient(135deg, rgba(254, 242, 242, 0.95), rgba(254, 226, 226, 0.90)) !important;
+  border: 1px solid #ef4444 !important;
+}
+
+/* Mercury - Emerald Green (बुध) */
+.planet-mercury, td.planet-col-mercury .planet-badge {
+  color: #047857 !important;
+  background: linear-gradient(135deg, rgba(240, 253, 244, 0.95), rgba(209, 250, 229, 0.90)) !important;
+  border: 1px solid #10b981 !important;
+}
+
+/* Jupiter - Golden Turmeric Yellow (गुरु / बृहस्पति) */
+.planet-jupiter, td.planet-col-jupiter .planet-badge {
+  color: #b45309 !important;
+  background: linear-gradient(135deg, rgba(255, 251, 235, 0.95), rgba(254, 243, 199, 0.90)) !important;
+  border: 1px solid #f59e0b !important;
+}
+
+/* Venus - Brilliant Diamond Rose Pink (शुक्र) */
+.planet-venus, td.planet-col-venus .planet-badge {
+  color: #be185d !important;
+  background: linear-gradient(135deg, rgba(253, 242, 248, 0.95), rgba(252, 231, 243, 0.90)) !important;
+  border: 1px solid #f43f5e !important;
+}
+
+/* Saturn - Deep Cosmic Royal Blue (शनि) */
+.planet-saturn, td.planet-col-saturn .planet-badge {
+  color: #1d4ed8 !important;
+  background: linear-gradient(135deg, rgba(239, 246, 255, 0.95), rgba(219, 234, 254, 0.90)) !important;
+  border: 1px solid #3b82f6 !important;
+}
+
+/* Rahu - Shadow Obsidian Black (राहु) */
+.planet-rahu, td.planet-col-rahu .planet-badge {
+  color: #09090b !important;
+  background: linear-gradient(135deg, rgba(24, 24, 27, 0.08), rgba(9, 9, 11, 0.15)) !important;
+  border: 1px solid #27272a !important;
+}
+
+/* Ketu - Smokey Ash Shadow Gray (केतु) */
+.planet-ketu, td.planet-col-ketu .planet-badge {
+  color: #52525b !important;
+  background: linear-gradient(135deg, rgba(113, 113, 122, 0.10), rgba(82, 82, 91, 0.18)) !important;
+  border: 1px solid #71717a !important;
+}
+
+/* Dark Theme Overrides for Planet Badges */
+[data-theme="dark"] .planet-sun, [data-theme="dark"] td.planet-col-sun .planet-badge {
+  color: #fb923c !important;
+  background: rgba(124, 45, 18, 0.35) !important;
+  border-color: rgba(234, 88, 12, 0.7) !important;
+}
+[data-theme="dark"] .planet-moon, [data-theme="dark"] td.planet-col-moon .planet-badge {
+  color: #e2e8f0 !important;
+  background: rgba(30, 41, 59, 0.45) !important;
+  border-color: rgba(148, 163, 184, 0.6) !important;
+}
+[data-theme="dark"] .planet-mars, [data-theme="dark"] td.planet-col-mars .planet-badge {
+  color: #f87171 !important;
+  background: rgba(127, 29, 29, 0.35) !important;
+  border-color: rgba(239, 68, 68, 0.7) !important;
+}
+[data-theme="dark"] .planet-mercury, [data-theme="dark"] td.planet-col-mercury .planet-badge {
+  color: #34d399 !important;
+  background: rgba(6, 78, 59, 0.35) !important;
+  border-color: rgba(16, 185, 129, 0.7) !important;
+}
+[data-theme="dark"] .planet-jupiter, [data-theme="dark"] td.planet-col-jupiter .planet-badge {
+  color: #fbbf24 !important;
+  background: rgba(120, 53, 15, 0.35) !important;
+  border-color: rgba(245, 158, 11, 0.7) !important;
+}
+[data-theme="dark"] .planet-venus, [data-theme="dark"] td.planet-col-venus .planet-badge {
+  color: #f472b6 !important;
+  background: rgba(131, 24, 67, 0.35) !important;
+  border-color: rgba(244, 63, 94, 0.7) !important;
+}
+[data-theme="dark"] .planet-saturn, [data-theme="dark"] td.planet-col-saturn .planet-badge {
+  color: #60a5fa !important;
+  background: rgba(30, 58, 138, 0.35) !important;
+  border-color: rgba(59, 130, 246, 0.7) !important;
+}
+[data-theme="dark"] .planet-rahu, [data-theme="dark"] td.planet-col-rahu .planet-badge {
+  color: #f4f4f5 !important;
+  background: rgba(9, 9, 11, 0.75) !important;
+  border-color: rgba(113, 113, 122, 0.6) !important;
+}
+[data-theme="dark"] .planet-ketu, [data-theme="dark"] td.planet-col-ketu .planet-badge {
+  color: #cbd5e1 !important;
+  background: rgba(39, 39, 42, 0.65) !important;
+  border-color: rgba(161, 161, 170, 0.6) !important;
+}
+
+/* Legacy Planet Specific Badges */
 .badge-sun { background: #ffedd5; color: #9a3412; border: 1px solid #fdba74; }
 .badge-moon { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
 .badge-mars { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
