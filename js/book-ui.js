@@ -1231,75 +1231,11 @@ class BookUIController {
     const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-    // A. Register Service Worker & Handle Updates
+    // A. Eliminate Web Worker Redirects: Unregister all service workers
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js')
-          .then((reg) => {
-            console.log('[TantraGyan] PWA Service Worker registered:', reg.scope);
-
-            // Check if there is already a waiting worker
-            if (reg.waiting) {
-              this.setUpdateAvailable(reg.waiting);
-            }
-
-            reg.onupdatefound = () => {
-              const installingWorker = reg.installing;
-              if (installingWorker) {
-                installingWorker.onstatechange = () => {
-                  if (installingWorker.state === 'installed') {
-                    if (navigator.serviceWorker.controller) {
-                      // New version is available and waiting!
-                      this.setUpdateAvailable(installingWorker);
-                    } else {
-                      // First install pre-caching complete
-                      if (this.offlineState !== 'downloaded') {
-                        this.offlineState = 'downloaded';
-                        localStorage.setItem('tantragyan_downloaded_version', this.currentAppVersion);
-                        this.updateDownloadUI();
-                      }
-                    }
-                  }
-                };
-              }
-            };
-          })
-          .catch((err) => {
-            console.warn('[TantraGyan] Service Worker registration failed:', err);
-          });
-      });
-
-      // Handle controlling service worker change
-      navigator.serviceWorker.addEventListener('controllerchange', () => {
-        // Strictly never auto-reload window.location on controllerchange!
-        // Auto-reloading here causes multi-reload loops across browsers when workers claim clients.
-        console.log('[TantraGyan] PWA active controller updated to version 1.2.0');
-      });
-
-      // Listen for messages from Service Worker
-      navigator.serviceWorker.addEventListener('message', (event) => {
-        const data = event.data;
-        if (!data) return;
-
-        if (data.type === 'DOWNLOAD_PROGRESS') {
-          this.offlineState = 'downloading';
-          this.updateDownloadProgress(data.current, data.total, data.percent);
-        } else if (data.type === 'DOWNLOAD_COMPLETE') {
-          this.offlineState = 'downloaded';
-          localStorage.setItem('tantragyan_downloaded_version', data.version || this.currentAppVersion);
-          this.updateDownloadUI();
-          const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
-          this.showToast(isHindi
-            ? '🎉 सम्पूर्ण ग्रंथ सफलतापूर्वक ऑफ़लाइन डाउनलोड हो गया! अब आप बिना इंटरनेट पढ़ सकते हैं।'
-            : '🎉 Full Book Downloaded Successfully! You can now read completely offline.', 5000);
-        } else if (data.type === 'VERSION_ACTIVATED') {
-          if (this.offlineState !== 'downloaded') {
-            this.offlineState = 'downloaded';
-            localStorage.setItem('tantragyan_downloaded_version', data.version || this.currentAppVersion);
-            this.updateDownloadUI();
-          }
-        } else if (data.type === 'UPDATE_AVAILABLE') {
-          this.setUpdateAvailable();
+      navigator.serviceWorker.getRegistrations().then((regs) => {
+        for (const reg of regs) {
+          reg.unregister();
         }
       });
     }
@@ -1414,56 +1350,13 @@ class BookUIController {
 
   triggerDownloadOrUpdate() {
     const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
-
-    if (this.offlineState === 'update_available') {
-      this._userTriggeredUpdate = true;
-      this.showToast(isHindi ? 'नवीनतम संस्करण अपडेट हो रहा है...' : 'Updating to latest edition...', 3000);
-      localStorage.setItem('tantragyan_downloaded_version', this.currentAppVersion);
-
-      if (this.updateWorker) {
-        this.updateWorker.postMessage({ action: 'APPLY_UPDATE' });
-      } else if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.ready.then((reg) => {
-          if (reg.waiting) {
-            reg.waiting.postMessage({ action: 'APPLY_UPDATE' });
-          } else if (navigator.serviceWorker.controller) {
-            navigator.serviceWorker.controller.postMessage({ action: 'APPLY_UPDATE' });
-          } else {
-            this.showToast(isHindi ? '✅ नवीनतम संस्करण लोड हो गया है।' : '✅ Latest edition active.', 3000);
-          }
-        }).catch(() => {
-          this.showToast(isHindi ? '✅ नवीनतम संस्करण लोड हो गया है।' : '✅ Latest edition active.', 3000);
-        });
-      } else {
-        this.showToast(isHindi ? '✅ नवीनतम संस्करण लोड हो गया है।' : '✅ Latest edition active.', 3000);
-      }
-      return;
-    }
-
-    if (this.offlineState === 'downloading') {
-      this.showToast(isHindi ? 'डाउनलोड पहले से प्रगति पर है, कृपया प्रतीक्षा करें...' : 'Download is in progress, please wait...', 2500);
-      return;
-    }
-
-    // Start offline download (either initial or re-cache)
-    if (!navigator.onLine) {
-      this.showToast(isHindi ? 'ऑफ़लाइन मोड: सम्पूर्ण ग्रंथ पहले से उपलब्ध है!' : 'Offline Mode: Book is already available offline!', 3000);
-      return;
-    }
-
-    this.offlineState = 'downloading';
-    this.updateDownloadUI();
-    this.showToast(isHindi ? 'सम्पूर्ण ग्रंथ डाउनलोड होना प्रारम्भ हो गया...' : 'Downloading complete book for offline use...', 3000);
-
-    if (navigator.serviceWorker && navigator.serviceWorker.controller) {
-      navigator.serviceWorker.controller.postMessage({ action: 'DOWNLOAD_ALL_OFFLINE' });
-    } else if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.ready.then((reg) => {
-        if (reg.active) {
-          reg.active.postMessage({ action: 'DOWNLOAD_ALL_OFFLINE' });
-        }
-      });
-    }
+    this.showToast(isHindi ? '📥 आधिकारिक महाग्रंथ PDF डाउनलोड हो रहा है...' : '📥 Downloading Official Compendium PDF...', 3000);
+    const link = document.createElement('a');
+    link.href = 'tantra-gyan-vedic-jyotish-mahagranth.pdf';
+    link.download = 'tantra-gyan-vedic-jyotish-mahagranth.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 
   updateDownloadProgress(current, total, percent) {
@@ -1662,27 +1555,9 @@ class BookUIController {
 
   checkForUpdates() {
     const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
-    if (!navigator.onLine) {
-      this.showToast(isHindi ? 'अपडेट जांचने हेतु इंटरनेट कनेक्शन आवश्यक है।' : 'Internet connection is required to check for updates.', 3000);
-      return;
-    }
-
-    this.showToast(isHindi ? 'संस्करण जांच हो रही है...' : 'Checking for latest edition...', 2500);
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.ready.then((reg) => {
-        return reg.update().then(() => {
-          setTimeout(() => {
-            if (this.offlineState !== 'update_available') {
-              this.showToast(isHindi
-                ? `आप पहले से नवीनतम संस्करण (v${this.currentAppVersion}) पर हैं!`
-                : `You are already on the latest edition (v${this.currentAppVersion})!`, 3500);
-            }
-          }, 1500);
-        });
-      }).catch((err) => {
-        console.warn('Update check error:', err);
-      });
-    }
+    this.showToast(isHindi
+      ? `✅ आप पहले से नवीनतम प्रामाणिक संस्करण पर हैं!`
+      : `✅ You are on the latest authentic edition!`, 3500);
   }
 
   updateInstallLabels(isInstalled) {
