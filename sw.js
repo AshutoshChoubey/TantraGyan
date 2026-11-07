@@ -30,6 +30,7 @@ const PRECACHE_ASSETS = [
   'assets/yantra.svg',
   'assets/ganesha.svg',
   'assets/icons/elements_diamond_chart.svg',
+  'assets/icons/purushartha_diamond_chart.svg',
   'assets/icons/upachaya_diamond_chart.svg',
   'assets/icons/kendra_trikona_diamond_chart.svg',
   'assets/icons/nakshatra_mandala_wheel.svg',
