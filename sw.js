@@ -10,9 +10,9 @@
  * - Complete Self-Purging: Clean cache wiping when user disables offline mode or updates edition
  */
 
-const APP_VERSION = '2.2.0';
+const APP_VERSION = '2.3.0';
 const CACHE_NAME = `tantragyan-v${APP_VERSION}`;
-const FONT_CACHE_NAME = 'tantragyan-fonts-v2.2';
+const FONT_CACHE_NAME = 'tantragyan-fonts-v2.3';
 
 // Essential assets for complete offline functioning
 const PRECACHE_ASSETS = [
@@ -144,11 +144,11 @@ self.addEventListener('fetch', (event) => {
           let cached = null;
 
           if (pathname.includes('hindi')) {
-            cached = (await cache.match('hindi')) || (await cache.match('hindi.html'));
+            cached = (await cache.match('hindi')) || (await cache.match('hindi.html')) || (await cache.match('/hindi'));
           } else if (pathname.includes('english')) {
-            cached = (await cache.match('english')) || (await cache.match('english.html'));
+            cached = (await cache.match('english')) || (await cache.match('english.html')) || (await cache.match('/english'));
           } else {
-            cached = (await cache.match('./')) || (await cache.match('index.html')) || (await cache.match('/'));
+            cached = (await cache.match('./')) || (await cache.match('index.html')) || (await cache.match('/')) || (await cache.match(request.url));
           }
 
           if (cached) return cached;

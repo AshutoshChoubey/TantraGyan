@@ -1203,7 +1203,7 @@ class BookUIController {
   // 11. Progressive Web App (PWA) & Offline Capabilities
   // ============================================================================
   initPWA() {
-    this.currentAppVersion = '2.2.0';
+    this.currentAppVersion = '2.3.0';
     this.deferredInstallPrompt = null;
     this.updateWorker = null;
     this.isDownloading = false;

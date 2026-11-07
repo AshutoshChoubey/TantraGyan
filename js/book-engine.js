@@ -66,20 +66,38 @@ class BookEngine {
 
     startPage = Math.max(1, Math.min(this.totalPages || 1, startPage));
 
-    // Handle responsive spread mode
+    // Handle responsive spread mode with strict debounce and width-check guard
     this.updateSpreadMode();
+    let resizeTimer = null;
+    let prevWidth = window.innerWidth;
+    let prevIsDual = this.isDualPage;
+
     window.addEventListener('resize', () => {
-      this.updateSpreadMode();
-      this.render();
-    });
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const curWidth = window.innerWidth;
+        const widthDelta = Math.abs(curWidth - prevWidth);
+        const forcedSingle = document.documentElement.classList.contains('single-mode-active');
+        const nextIsDual = curWidth > 1080 && !forcedSingle;
+
+        // On mobile devices (iOS Chrome / Safari), scrolling dynamically expands or collapses
+        // address bars, firing vertical-only resize events (curWidth stays identical).
+        // Only re-render if horizontal width changed noticeably (> 30px) or layout mode flipped!
+        if (widthDelta > 30 || prevIsDual !== nextIsDual) {
+          prevWidth = curWidth;
+          prevIsDual = nextIsDual;
+          this.updateSpreadMode();
+          this.render();
+        }
+      }, 200);
+    }, { passive: true });
 
     // Bind event listeners
     this.bindEvents();
 
-    // Render initial page with 100% guarantee across all devices
+    // Render initial page directly (render() invokes onPageChanged())
     this.currentPage = startPage;
     this.render();
-    this.onPageChanged();
   }
 
   updateSpreadMode() {
@@ -160,10 +178,16 @@ class BookEngine {
     }
 
     if (this.slider) {
+      let sliderRaf = null;
       this.slider.addEventListener('input', (e) => {
         const p = parseInt(e.target.value, 10);
-        this.goToPage(p, true);
-      });
+        if (sliderRaf) cancelAnimationFrame(sliderRaf);
+        sliderRaf = requestAnimationFrame(() => {
+          if (!isNaN(p) && p >= 1 && p <= this.totalPages && p !== this.currentPage) {
+            this.goToPage(p, false);
+          }
+        });
+      }, { passive: true });
     }
 
     // Keyboard navigation
@@ -324,7 +348,6 @@ class BookEngine {
           w.querySelectorAll('.book-flipper-leaf, .flipper-under-shadow').forEach(el => el.remove());
         }
         this.render();
-        this.onPageChanged();
       }
     }, 800);
 
@@ -332,7 +355,6 @@ class BookEngine {
     if (!wrapper) {
       this.currentPage = targetPage;
       this.render();
-      this.onPageChanged();
       this.clearAnimLock();
       return;
     }
@@ -464,7 +486,6 @@ class BookEngine {
       }
       this.currentPage = targetPage;
       this.render();
-      this.onPageChanged();
       this.clearAnimLock();
     }, 650);
   }
@@ -527,7 +548,6 @@ class BookEngine {
       }
       this.currentPage = 1;
       this.render();
-      this.onPageChanged();
       this.clearAnimLock();
     }, 650);
   }
@@ -584,7 +604,6 @@ class BookEngine {
       }
       this.currentPage = this.totalPages;
       this.render();
-      this.onPageChanged();
       this.clearAnimLock();
     }, 650);
   }
@@ -649,7 +668,6 @@ class BookEngine {
       }
       this.currentPage = targetPage;
       this.render();
-      this.onPageChanged();
       this.clearAnimLock();
     }, 650);
   }
@@ -690,7 +708,6 @@ class BookEngine {
       flipper.remove();
       this.currentPage = targetPage;
       this.render();
-      this.onPageChanged();
       this.clearAnimLock();
     }, 620);
   }
@@ -731,7 +748,6 @@ class BookEngine {
       flipper.remove();
       this.currentPage = 1;
       this.render();
-      this.onPageChanged();
       this.clearAnimLock();
     }, 620);
   }
@@ -772,7 +788,6 @@ class BookEngine {
       flipper.remove();
       this.currentPage = this.totalPages;
       this.render();
-      this.onPageChanged();
       this.clearAnimLock();
     }, 620);
   }
@@ -813,7 +828,6 @@ class BookEngine {
       flipper.remove();
       this.currentPage = targetPage;
       this.render();
-      this.onPageChanged();
       this.clearAnimLock();
     }, 620);
   }
@@ -864,7 +878,6 @@ class BookEngine {
         shadow.remove();
         this.currentPage = targetPage;
         this.render();
-        this.onPageChanged();
         this.clearAnimLock();
       }, 560);
 
@@ -907,7 +920,6 @@ class BookEngine {
         shadow.remove();
         this.currentPage = targetPage;
         this.render();
-        this.onPageChanged();
         this.clearAnimLock();
       }, 560);
     }
@@ -955,7 +967,6 @@ class BookEngine {
         shadow.remove();
         this.currentPage = targetP;
         this.render();
-        this.onPageChanged();
         this.clearAnimLock();
       }, 660);
 
@@ -997,7 +1008,6 @@ class BookEngine {
         shadow.remove();
         this.currentPage = targetP;
         this.render();
-        this.onPageChanged();
         this.clearAnimLock();
       }, 660);
     }
@@ -1019,20 +1029,28 @@ class BookEngine {
           return;
         }
       }
-      if (playSound && !this.isAnimating) {
+      // ONLY trigger 3D physical flip for adjacent two-page spread navigation
+      const spreadStep = Math.abs(pageNum - (this.currentPage || 1));
+      if (playSound && !this.isAnimating && spreadStep <= 2) {
         const dir = (pageNum > (this.currentPage || 1)) ? 'forward' : 'backward';
         this.flip3D(dir, pageNum);
         return;
       }
     } else {
       if (pageNum === this.currentPage) return;
-      if (playSound && !this.isAnimating) {
+      // ONLY trigger 3D physical flip for adjacent single-page turn
+      const pageDelta = Math.abs(pageNum - (this.currentPage || 1));
+      if (playSound && !this.isAnimating && pageDelta === 1) {
         const dir = (pageNum > (this.currentPage || 1)) ? 'forward' : 'backward';
         this.flip3D(dir, pageNum);
         return;
       }
     }
 
+    // Direct Multi-Page Jump: Instant static render without heavy flippers or visual bouncing!
+    if (playSound && window.bookSound) {
+      window.bookSound.playPageTurn(pageNum > (this.currentPage || 1) ? 'next' : 'prev');
+    }
     this.currentPage = pageNum;
     this.render();
   }
@@ -1157,10 +1175,20 @@ class BookEngine {
     const btnLastBottom = document.getElementById('btn-last-bottom');
     if (btnLastBottom) btnLastBottom.disabled = atEnd;
 
-    // Update URL hash and localStorage
+    // Update URL hash and localStorage with throttle & guard to eliminate iOS WebKit loop crashes
     try {
-      history.replaceState(null, null, `#page-${this.currentPage}`);
       localStorage.setItem('tantra_book_page', this.currentPage.toString());
+      const targetHash = `#page-${this.currentPage}`;
+      if (window.location.hash !== targetHash) {
+        if (this._hashReplaceTimer) clearTimeout(this._hashReplaceTimer);
+        this._hashReplaceTimer = setTimeout(() => {
+          try {
+            if (window.location.hash !== targetHash) {
+              history.replaceState(null, null, targetHash);
+            }
+          } catch (e) { }
+        }, 150);
+      }
     } catch (e) { }
 
     // Notify BookUI to refresh bookmark state and search highlights
