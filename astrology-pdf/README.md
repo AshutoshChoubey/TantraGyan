@@ -86,3 +86,4 @@ python3 verify.py
 - **PDF Document**: [http://localhost:8899/astrology-pdf/output/astrology-test.pdf](http://localhost:8899/astrology-pdf/output/astrology-test.pdf)
 - **Proof Image Page 1**: [http://localhost:8899/astrology-pdf/output/proof-page-1.png](http://localhost:8899/astrology-pdf/output/proof-page-1.png)
 - **Proof Image Page 2**: [http://localhost:8899/astrology-pdf/output/proof-page-2.png](http://localhost:8899/astrology-pdf/output/proof-page-2.png)
+

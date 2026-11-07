@@ -21,7 +21,7 @@ PAGE_6_HI_TABLE = """
 <tr><td class="primary-col"><strong>धातु व रत्न</strong></td><td>तांबा, स्वर्ण, माणिक्य</td><td>बृहत्पाराशर, सारावली</td></tr>
 <tr><td class="primary-col"><strong>तत्व व दिशा</strong></td><td>अग्नि तत्व, पूर्व दिशा</td><td>बृहत्पाराशर, फलदीपिका</td></tr>
 <tr><td class="primary-col"><strong>गुण व वर्ण</strong></td><td>सत्व गुण, क्षत्रिय वर्ण</td><td>बृहत्पाराशर, सारावली</td></tr>
-<tr><td class="primary-col"><strong>दीप्तादि मर्यादा</strong></td><td>उच्च – मेष (१०°), नीच – तुला (१०°), मूलत्रिकोण – सिंह (०°-२०°)</td><td>बृहत्पाराशर, सारावली</td></tr>
+<tr><td class="primary-col"><strong>दीप्तादि मर्यादा</strong></td><td>उच्च – मेष (10°), नीच – तुला (10°), मूलत्रिकोण – सिंह (0°-20°)</td><td>बृहत्पाराशर, सारावली</td></tr>
 </tbody></table>
 """
 
@@ -41,7 +41,7 @@ PAGE_7_HI_TABLE = """
 <tr><td class="primary-col"><strong>धातु व रत्न</strong></td><td>चांदी, कांसा, मोती</td><td>बृहत्पाराशर, सारावली</td></tr>
 <tr><td class="primary-col"><strong>तत्व व दिशा</strong></td><td>जल तत्व, उत्तर-पश्चिम (वायव्य कोण)</td><td>बृहत्पाराशर, फलदीपिका</td></tr>
 <tr><td class="primary-col"><strong>गुण व वर्ण</strong></td><td>सत्व गुण, वैश्य वर्ण</td><td>बृहत्पाराशर, सारावली</td></tr>
-<tr><td class="primary-col"><strong>दीप्तादि मर्यादा</strong></td><td>उच्च – वृषभ (३°), नीच – वृश्चिक (३°), मूलत्रिकोण – वृषभ (४°-३०°)</td><td>बृहत्पाराशर, सारावली</td></tr>
+<tr><td class="primary-col"><strong>दीप्तादि मर्यादा</strong></td><td>उच्च – वृषभ (3°), नीच – वृश्चिक (3°), मूलत्रिकोण – वृषभ (4°-30°)</td><td>बृहत्पाराशर, सारावली</td></tr>
 </tbody></table>
 """
 
@@ -51,9 +51,9 @@ PAGE_8_HI_TABLE = """
 <th>शास्त्रीय ग्रंथ</th>
 <th>चन्द्रमा के मुख्य शास्त्रीय संदर्भ एवं सूत्र</th>
 </tr></thead><tbody>
-<tr><td class="primary-col"><strong>बृहत्पाराशर होरा शास्त्र</strong></td><td>चन्द्रमा को मन, बुद्धि और मातृत्व का मुख्य कारक कहा गया है। वृषभ में उच्च (३°) तथा वृश्चिक में नीच (३°) स्थित।</td></tr>
+<tr><td class="primary-col"><strong>बृहत्पाराशर होरा शास्त्र</strong></td><td>चन्द्रमा को मन, बुद्धि और मातृत्व का मुख्य कारक कहा गया है। वृषभ में उच्च (3°) तथा वृश्चिक में नीच (3°) स्थित।</td></tr>
 <tr><td class="primary-col"><strong>फलदीपिका (मन्त्रेश्वर)</strong></td><td>चन्द्रबल, पक्षबल, भावफल एवं चन्द्र योगों (सुनफा, अनफा, दुर्धरा, गजकेसरी) का विस्तृत निरूपण।</td></tr>
-<tr><td class="primary-col"><strong>सारावली (कल्याण वर्मा)</strong></td><td>१२ राशियों में चन्द्र फल, चन्द्र पर अन्य ग्रहों की दृष्टियों का फल तथा मानसिक वृत्तियों का शास्त्रीय विवेचन।</td></tr>
+<tr><td class="primary-col"><strong>सारावली (कल्याण वर्मा)</strong></td><td>12 राशियों में चन्द्र फल, चन्द्र पर अन्य ग्रहों की दृष्टियों का फल तथा मानसिक वृत्तियों का शास्त्रीय विवेचन।</td></tr>
 <tr><td class="primary-col"><strong>जातक पारिजात</strong></td><td>'सम्पत्तिकारक चन्द्र'—धन-धान्य, ऐश्वर्य, मातृत्व तथा पक्षबल के सूक्ष्म गणित का प्रामाणिक विवेचन।</td></tr>
 <tr><td class="primary-col"><strong>लाल किताब</strong></td><td>माता, मानसिक शांति, आशीर्वाद, दूध, बहता पानी, तरल धन एवं चतुर्थ भाव का नैसर्गिक स्वामी।</td></tr>
 <tr><td class="primary-col"><strong>भृगु नन्दी नाड़ी</strong></td><td>मन, माता, यात्रा, स्थान परिवर्तन, कल्पना शक्ति एवं आंतरिक संवेगों का मुख्य सूचक ग्रह।</td></tr>
@@ -113,7 +113,7 @@ PAGE_10_HI_TABLE = """
 <tr><td class="primary-col"><strong>धातु व रत्न</strong></td><td>तांबा, पीतल, लाल मूंगा (प्रवाल)</td><td>बृहत्पाराशर, सारावली</td></tr>
 <tr><td class="primary-col"><strong>तत्व व दिशा</strong></td><td>अग्नि तत्व, दक्षिण दिशा</td><td>बृहत्पाराशर, फलदीपिका</td></tr>
 <tr><td class="primary-col"><strong>गुण व वर्ण</strong></td><td>तमो गुण, क्षत्रिय वर्ण</td><td>बृहत्पाराशर, सारावली</td></tr>
-<tr><td class="primary-col"><strong>दीप्तादि मर्यादा</strong></td><td>उच्च – मकर (२८°), नीच – कर्क (२८°), मूलत्रिकोण – मेष (०°-१२°)</td><td>बृहत्पाराशर, सारावली</td></tr>
+<tr><td class="primary-col"><strong>दीप्तादि मर्यादा</strong></td><td>उच्च – मकर (28°), नीच – कर्क (28°), मूलत्रिकोण – मेष (0°-12°)</td><td>बृहत्पाराशर, सारावली</td></tr>
 </tbody></table>
 """
 
@@ -125,7 +125,7 @@ PAGE_11_HI_TABLE = """
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>बृहत्पाराशर होरा शास्त्र</strong></td><td>मंगल की क्रूर एवं तेज प्रकृति, रक्त, युद्ध, क्रोध, आत्मबल, साहस, छोटे भाई एवं भूमि कारकत्व का निरूपण।</td></tr>
 <tr><td class="primary-col"><strong>फलदीपिका (मन्त्रेश्वर)</strong></td><td>भूमि-भवन सुख, पराक्रम, बंधु सुख, सेनापतित्व, दशा प्रभाव एवं रुचक महापुरुष राजयोग का विस्तृत वर्णन।</td></tr>
-<tr><td class="primary-col"><strong>सारावली (कल्याण वर्मा)</strong></td><td>१२ राशियों में मंगल की स्थिति, युद्धकला में निपुणता, शारीरिक शक्ति, अस्त्र-शस्त्र ज्ञान एवं दृष्टि प्रभाव।</td></tr>
+<tr><td class="primary-col"><strong>सारावली (कल्याण वर्मा)</strong></td><td>12 राशियों में मंगल की स्थिति, युद्धकला में निपुणता, शारीरिक शक्ति, अस्त्र-शस्त्र ज्ञान एवं दृष्टि प्रभाव।</td></tr>
 <tr><td class="primary-col"><strong>जातक पारिजात</strong></td><td>भावानुसार मंगल फल, शत्रु दमन, पराक्रम, मांगलिक दोष का वैवाहिक जीवन पर प्रभाव एवं उपाय।</td></tr>
 <tr><td class="primary-col"><strong>लाल किताब</strong></td><td>मंगल नेक (शुभ मंगल—रक्षक व पराक्रमी) एवं मंगल बद (अशुभ मंगल—कलह व रक्त विकार) का सूक्ष्म विवेचन।</td></tr>
 <tr><td class="primary-col"><strong>भृगु नन्दी नाड़ी</strong></td><td>पति का कारक (स्त्री कुण्डली में), तकनीकी दक्षता, उद्योग, साहसिक कार्य व शारीरिक ओज का सूचक।</td></tr>
@@ -157,7 +157,7 @@ PAGE_19_HI_TABLE = """
 <th>शास्त्रीय विवरण एवं फल</th>
 <th>विद्वानों का शास्त्रीय मत</th>
 </tr></thead><tbody>
-<tr><td class="primary-col"><strong>गजकेसरी योग</strong></td><td>चन्द्रमा से केंद्र (१, ४, ७, १०) में गुरु की स्थिति</td><td>प्रचुर धन, अक्षुण्ण यश, उच्च विद्या, राजसी सम्मान व धार्मिक प्रवृत्ति।</td><td>सर्वमान्य; प्रभाव दोनों ग्रहों के बलाबल पर निर्भर।</td></tr>
+<tr><td class="primary-col"><strong>गजकेसरी योग</strong></td><td>चन्द्रमा से केंद्र (1, 4, 7, 10) में गुरु की स्थिति</td><td>प्रचुर धन, अक्षुण्ण यश, उच्च विद्या, राजसी सम्मान व धार्मिक प्रवृत्ति।</td><td>सर्वमान्य; प्रभाव दोनों ग्रहों के बलाबल पर निर्भर।</td></tr>
 <tr><td class="primary-col"><strong>बुधादित्य योग</strong></td><td>एक ही भाव में सूर्य और बुध की युति</td><td>तीक्ष्ण कुशाग्र बुद्धि, वाकपटुता, प्रशासनिक कुशलता, सामाजिक ख्याति।</td><td>अत्यंत लोकप्रिय; बुध के अस्त होने पर भी फलदायी।</td></tr>
 <tr><td class="primary-col"><strong>रुचक महापुरुष योग</strong></td><td>मंगल स्वराशि (मेष/वृश्चिक) या उच्च (मकर) होकर केंद्र में हो</td><td>शूरवीर, सेनाध्यक्ष, अदम्य पराक्रमी, भूमि-भवन का स्वामी, विजयी व्यक्तित्व।</td><td>पंच महापुरुष योगों में सर्वोच्च शौर्य कारक।</td></tr>
 <tr><td class="primary-col"><strong>भद्र महापुरुष योग</strong></td><td>बुध स्वराशि (मिथुन/कन्या) या उच्च (कन्या) होकर केंद्र में हो</td><td>असाधारण प्रज्ञा, शास्त्रज्ञ, विद्वान, कुशल वक्ता, दीर्घायु, व्यापार में अग्रणी।</td><td>पंच महापुरुष योगों में सर्वोच्च बौद्धिक कारक।</td></tr>
@@ -214,19 +214,19 @@ PAGE_21_HI_TABLE = """
 <table class="astro-table">
 <thead><tr>
 <th>ग्रह</th>
-<th>१२ राशियों का कक्षा भ्रमण काल</th>
+<th>12 राशियों का कक्षा भ्रमण काल</th>
 <th>विंशोत्तरी महादशा (वर्ष)</th>
 <th>औसत राशि गोचर काल</th>
 </tr></thead><tbody>
-<tr><td class="primary-col"><strong>केतु</strong></td><td>१८.६१ वर्ष</td><td>७ वर्ष</td><td>१.५५ वर्ष (१८ माह)</td></tr>
-<tr><td class="primary-col"><strong>शुक्र</strong></td><td>०.६२ वर्ष</td><td>२० वर्ष</td><td>१८.७३ दिन</td></tr>
-<tr><td class="primary-col"><strong>सूर्य</strong></td><td>१.०० वर्ष</td><td>६ वर्ष</td><td>३०.४४ दिन (१ माह)</td></tr>
-<tr><td class="primary-col"><strong>चन्द्रमा</strong></td><td>२७.३२ दिन</td><td>१० वर्ष</td><td>२.२८ दिन (सवा दो दिन)</td></tr>
-<tr><td class="primary-col"><strong>मंगल</strong></td><td>१.८८ वर्ष</td><td>७ वर्ष</td><td>५७.२५ दिन (लगभग २ माह)</td></tr>
-<tr><td class="primary-col"><strong>राहु</strong></td><td>१८.६१ वर्ष</td><td>१८ वर्ष</td><td>१.५५ वर्ष (१८ माह)</td></tr>
-<tr><td class="primary-col"><strong>गुरु (बृहस्पति)</strong></td><td>११.८६ वर्ष</td><td>१६ वर्ष</td><td>३६१ दिन (लगभग १ वर्ष)</td></tr>
-<tr><td class="primary-col"><strong>शनि</strong></td><td>२९.४६ वर्ष</td><td>१९ वर्ष</td><td>२.४६ वर्ष (ढाई वर्ष)</td></tr>
-<tr><td class="primary-col"><strong>बुध</strong></td><td>०.२४ वर्ष</td><td>१७ वर्ष</td><td>७.३३ दिन</td></tr>
+<tr><td class="primary-col"><strong>केतु</strong></td><td>18.61 वर्ष</td><td>7 वर्ष</td><td>1.55 वर्ष (18 माह)</td></tr>
+<tr><td class="primary-col"><strong>शुक्र</strong></td><td>0.62 वर्ष</td><td>20 वर्ष</td><td>18.73 दिन</td></tr>
+<tr><td class="primary-col"><strong>सूर्य</strong></td><td>1.00 वर्ष</td><td>6 वर्ष</td><td>30.44 दिन (1 माह)</td></tr>
+<tr><td class="primary-col"><strong>चन्द्रमा</strong></td><td>27.32 दिन</td><td>10 वर्ष</td><td>2.28 दिन (सवा दो दिन)</td></tr>
+<tr><td class="primary-col"><strong>मंगल</strong></td><td>1.88 वर्ष</td><td>7 वर्ष</td><td>57.25 दिन (लगभग 2 माह)</td></tr>
+<tr><td class="primary-col"><strong>राहु</strong></td><td>18.61 वर्ष</td><td>18 वर्ष</td><td>1.55 वर्ष (18 माह)</td></tr>
+<tr><td class="primary-col"><strong>गुरु (बृहस्पति)</strong></td><td>11.86 वर्ष</td><td>16 वर्ष</td><td>361 दिन (लगभग 1 वर्ष)</td></tr>
+<tr><td class="primary-col"><strong>शनि</strong></td><td>29.46 वर्ष</td><td>19 वर्ष</td><td>2.46 वर्ष (ढाई वर्ष)</td></tr>
+<tr><td class="primary-col"><strong>बुध</strong></td><td>0.24 वर्ष</td><td>17 वर्ष</td><td>7.33 दिन</td></tr>
 </tbody></table>
 """
 
@@ -258,15 +258,15 @@ PAGE_22_HI_TABLE = """
 <th>विशेष दृष्टि</th>
 <th>कुल दृष्टि विस्तार</th>
 </tr></thead><tbody>
-<tr><td class="primary-col"><strong>सूर्य देव</strong></td><td>७वां भाव (समसप्तक)</td><td>कोई नहीं</td><td>१ दिशा</td></tr>
-<tr><td class="primary-col"><strong>चन्द्र देव</strong></td><td>७वां भाव (समसप्तक)</td><td>कोई नहीं</td><td>१ दिशा</td></tr>
-<tr><td class="primary-col"><strong>मंगल देव</strong></td><td>७वां भाव (समसप्तक)</td><td>४था एवं ८वां भाव</td><td>३ दिशाएं</td></tr>
-<tr><td class="primary-col"><strong>बुध देव</strong></td><td>७वां भाव (समसप्तक)</td><td>कोई नहीं</td><td>१ दिशा</td></tr>
-<tr><td class="primary-col"><strong>गुरु देव</strong></td><td>७वां भाव (समसप्तक)</td><td>५वां एवं ९वां भाव (त्रिकोण दृष्टि)</td><td>३ दिशाएं</td></tr>
-<tr><td class="primary-col"><strong>शुक्र देव</strong></td><td>७वां भाव (समसप्तक)</td><td>कोई नहीं</td><td>१ दिशा</td></tr>
-<tr><td class="primary-col"><strong>शनि देव</strong></td><td>७वां भाव (समसप्तक)</td><td>३रा एवं १०वां भाव</td><td>३ दिशाएं</td></tr>
-<tr><td class="primary-col"><strong>राहु देव</strong></td><td>५वां, ७वां एवं ९वां भाव</td><td>कतिपय ग्रंथों में २रा व १२वां भाव</td><td>३ दिशाएं (त्रिकोण व समसप्तक)</td></tr>
-<tr><td class="primary-col"><strong>केतु देव</strong></td><td>५वां, ७वां एवं ९वां भाव</td><td>कतिपय ग्रंथों में २रा व १२वां भाव</td><td>३ दिशाएं (त्रिकोण व समसप्तक)</td></tr>
+<tr><td class="primary-col"><strong>सूर्य देव</strong></td><td>7वां भाव (समसप्तक)</td><td>कोई नहीं</td><td>1 दिशा</td></tr>
+<tr><td class="primary-col"><strong>चन्द्र देव</strong></td><td>7वां भाव (समसप्तक)</td><td>कोई नहीं</td><td>1 दिशा</td></tr>
+<tr><td class="primary-col"><strong>मंगल देव</strong></td><td>7वां भाव (समसप्तक)</td><td>4था एवं 8वां भाव</td><td>3 दिशाएं</td></tr>
+<tr><td class="primary-col"><strong>बुध देव</strong></td><td>7वां भाव (समसप्तक)</td><td>कोई नहीं</td><td>1 दिशा</td></tr>
+<tr><td class="primary-col"><strong>गुरु देव</strong></td><td>7वां भाव (समसप्तक)</td><td>5वां एवं 9वां भाव (त्रिकोण दृष्टि)</td><td>3 दिशाएं</td></tr>
+<tr><td class="primary-col"><strong>शुक्र देव</strong></td><td>7वां भाव (समसप्तक)</td><td>कोई नहीं</td><td>1 दिशा</td></tr>
+<tr><td class="primary-col"><strong>शनि देव</strong></td><td>7वां भाव (समसप्तक)</td><td>3रा एवं 10वां भाव</td><td>3 दिशाएं</td></tr>
+<tr><td class="primary-col"><strong>राहु देव</strong></td><td>5वां, 7वां एवं 9वां भाव</td><td>कतिपय ग्रंथों में 2रा व 12वां भाव</td><td>3 दिशाएं (त्रिकोण व समसप्तक)</td></tr>
+<tr><td class="primary-col"><strong>केतु देव</strong></td><td>5वां, 7वां एवं 9वां भाव</td><td>कतिपय ग्रंथों में 2रा व 12वां भाव</td><td>3 दिशाएं (त्रिकोण व समसप्तक)</td></tr>
 </tbody></table>
 """
 
@@ -297,33 +297,33 @@ PAGE_23_HI_TABLE = """
 <th>प्रारंभिक अंश व राशि</th>
 <th>समाप्ति अंश व राशि</th>
 </tr></thead><tbody>
-<tr><td class="primary-col"><strong>१. अश्विनी</strong></td><td>००° ००' मेष</td><td>१३° २०' मेष</td></tr>
-<tr><td class="primary-col"><strong>२. भरणी</strong></td><td>१३° २०' मेष</td><td>२६° ४०' मेष</td></tr>
-<tr><td class="primary-col"><strong>३. कृत्तिका</strong></td><td>२६° ४०' मेष</td><td>१०° ००' वृष</td></tr>
-<tr><td class="primary-col"><strong>४. रोहिणी</strong></td><td>१०° ००' वृष</td><td>२३° २०' वृष</td></tr>
-<tr><td class="primary-col"><strong>५. मृगशिरा</strong></td><td>२३° २०' वृष</td><td>०६° ४०' मिथुन</td></tr>
-<tr><td class="primary-col"><strong>६. आर्द्रा</strong></td><td>०६° ४०' मिथुन</td><td>२०° ००' मिथुन</td></tr>
-<tr><td class="primary-col"><strong>७. पुनर्वसु</strong></td><td>२०° ००' मिथुन</td><td>०३° २०' कर्क</td></tr>
-<tr><td class="primary-col"><strong>८. पुष्य</strong></td><td>०३° २०' कर्क</td><td>१६° ४०' कर्क</td></tr>
-<tr><td class="primary-col"><strong>९. आश्लेषा</strong></td><td>१६° ४०' कर्क</td><td>३०° ००' कर्क</td></tr>
-<tr><td class="primary-col"><strong>१०. मघा</strong></td><td>००° ००' सिंह</td><td>१३° २०' सिंह</td></tr>
-<tr><td class="primary-col"><strong>११. पूर्व फाल्गुनी</strong></td><td>१३° २०' सिंह</td><td>२६° ४०' सिंह</td></tr>
-<tr><td class="primary-col"><strong>१२. उत्तर फाल्गुनी</strong></td><td>२६° ४०' सिंह</td><td>१०° ००' कन्या</td></tr>
-<tr><td class="primary-col"><strong>१३. हस्त</strong></td><td>१०° ००' कन्या</td><td>२३° २०' कन्या</td></tr>
-<tr><td class="primary-col"><strong>१४. चित्रा</strong></td><td>२३° २०' कन्या</td><td>०६° ४०' तुला</td></tr>
-<tr><td class="primary-col"><strong>१५. स्वाति</strong></td><td>०६° ४०' तुला</td><td>२०° ००' तुला</td></tr>
-<tr><td class="primary-col"><strong>१६. विशाखा</strong></td><td>२०° ००' तुला</td><td>०३° २०' वृश्चिक</td></tr>
-<tr><td class="primary-col"><strong>१७. अनुराधा</strong></td><td>०३° २०' वृश्चिक</td><td>१६° ४०' वृश्चिक</td></tr>
-<tr><td class="primary-col"><strong>१८. ज्येष्ठा</strong></td><td>१६° ४०' वृश्चिक</td><td>३०° ००' वृश्चिक</td></tr>
-<tr><td class="primary-col"><strong>१९. मूल</strong></td><td>००° ००' धनु</td><td>१३° २०' धनु</td></tr>
-<tr><td class="primary-col"><strong>२०. पूर्वाषाढ़ा</strong></td><td>१३° २०' धनु</td><td>२६° ४०' धनु</td></tr>
-<tr><td class="primary-col"><strong>२१. उत्तराषाढ़ा</strong></td><td>२६° ४०' धनु</td><td>१०° ००' मकर</td></tr>
-<tr><td class="primary-col"><strong>२२. श्रवण</strong></td><td>१०° ००' मकर</td><td>२३° २०' मकर</td></tr>
-<tr><td class="primary-col"><strong>२३. धनिष्ठा</strong></td><td>२३° २०' मकर</td><td>०६° ४०' कुंभ</td></tr>
-<tr><td class="primary-col"><strong>२४. शतभिषा</strong></td><td>०६° ४०' कुंभ</td><td>२०° ००' कुंभ</td></tr>
-<tr><td class="primary-col"><strong>२५. पूर्व भाद्रपद</strong></td><td>२०° ००' कुंभ</td><td>०३° २०' मीन</td></tr>
-<tr><td class="primary-col"><strong>२६. उत्तर भाद्रपद</strong></td><td>०३° २०' मीन</td><td>१६° ४०' मीन</td></tr>
-<tr><td class="primary-col"><strong>२७. रेवती</strong></td><td>१६° ४०' मीन</td><td>३०° ००' मीन</td></tr>
+<tr><td class="primary-col"><strong>1. अश्विनी</strong></td><td>00° 00' मेष</td><td>13° 20' मेष</td></tr>
+<tr><td class="primary-col"><strong>2. भरणी</strong></td><td>13° 20' मेष</td><td>26° 40' मेष</td></tr>
+<tr><td class="primary-col"><strong>3. कृत्तिका</strong></td><td>26° 40' मेष</td><td>10° 00' वृष</td></tr>
+<tr><td class="primary-col"><strong>4. रोहिणी</strong></td><td>10° 00' वृष</td><td>23° 20' वृष</td></tr>
+<tr><td class="primary-col"><strong>5. मृगशिरा</strong></td><td>23° 20' वृष</td><td>06° 40' मिथुन</td></tr>
+<tr><td class="primary-col"><strong>6. आर्द्रा</strong></td><td>06° 40' मिथुन</td><td>20° 00' मिथुन</td></tr>
+<tr><td class="primary-col"><strong>7. पुनर्वसु</strong></td><td>20° 00' मिथुन</td><td>03° 20' कर्क</td></tr>
+<tr><td class="primary-col"><strong>8. पुष्य</strong></td><td>03° 20' कर्क</td><td>16° 40' कर्क</td></tr>
+<tr><td class="primary-col"><strong>9. आश्लेषा</strong></td><td>16° 40' कर्क</td><td>30° 00' कर्क</td></tr>
+<tr><td class="primary-col"><strong>10. मघा</strong></td><td>00° 00' सिंह</td><td>13° 20' सिंह</td></tr>
+<tr><td class="primary-col"><strong>11. पूर्व फाल्गुनी</strong></td><td>13° 20' सिंह</td><td>26° 40' सिंह</td></tr>
+<tr><td class="primary-col"><strong>12. उत्तर फाल्गुनी</strong></td><td>26° 40' सिंह</td><td>10° 00' कन्या</td></tr>
+<tr><td class="primary-col"><strong>13. हस्त</strong></td><td>10° 00' कन्या</td><td>23° 20' कन्या</td></tr>
+<tr><td class="primary-col"><strong>14. चित्रा</strong></td><td>23° 20' कन्या</td><td>06° 40' तुला</td></tr>
+<tr><td class="primary-col"><strong>15. स्वाति</strong></td><td>06° 40' तुला</td><td>20° 00' तुला</td></tr>
+<tr><td class="primary-col"><strong>16. विशाखा</strong></td><td>20° 00' तुला</td><td>03° 20' वृश्चिक</td></tr>
+<tr><td class="primary-col"><strong>17. अनुराधा</strong></td><td>03° 20' वृश्चिक</td><td>16° 40' वृश्चिक</td></tr>
+<tr><td class="primary-col"><strong>18. ज्येष्ठा</strong></td><td>16° 40' वृश्चिक</td><td>30° 00' वृश्चिक</td></tr>
+<tr><td class="primary-col"><strong>19. मूल</strong></td><td>00° 00' धनु</td><td>13° 20' धनु</td></tr>
+<tr><td class="primary-col"><strong>20. पूर्वाषाढ़ा</strong></td><td>13° 20' धनु</td><td>26° 40' धनु</td></tr>
+<tr><td class="primary-col"><strong>21. उत्तराषाढ़ा</strong></td><td>26° 40' धनु</td><td>10° 00' मकर</td></tr>
+<tr><td class="primary-col"><strong>22. श्रवण</strong></td><td>10° 00' मकर</td><td>23° 20' मकर</td></tr>
+<tr><td class="primary-col"><strong>23. धनिष्ठा</strong></td><td>23° 20' मकर</td><td>06° 40' कुंभ</td></tr>
+<tr><td class="primary-col"><strong>24. शतभिषा</strong></td><td>06° 40' कुंभ</td><td>20° 00' कुंभ</td></tr>
+<tr><td class="primary-col"><strong>25. पूर्व भाद्रपद</strong></td><td>20° 00' कुंभ</td><td>03° 20' मीन</td></tr>
+<tr><td class="primary-col"><strong>26. उत्तर भाद्रपद</strong></td><td>03° 20' मीन</td><td>16° 40' मीन</td></tr>
+<tr><td class="primary-col"><strong>27. रेवती</strong></td><td>16° 40' मीन</td><td>30° 00' मीन</td></tr>
 </tbody></table>
 """
 
@@ -375,33 +375,33 @@ PAGE_24_HI_TABLE = """
 <th>तृतीय पद</th>
 <th>चतुर्थ पद</th>
 </tr></thead><tbody>
-<tr><td class="primary-col">१</td><td>अश्विनी</td><td>अश्विनी कुमार</td><td>चु</td><td>चे</td><td>चो</td><td>ला</td></tr>
-<tr><td class="primary-col">२</td><td>भरणी</td><td>यम</td><td>ली</td><td>लू</td><td>ले</td><td>लो</td></tr>
-<tr><td class="primary-col">३</td><td>कृत्तिका</td><td>अग्नि / सूर्य</td><td>अ</td><td>ई</td><td>उ</td><td>ए</td></tr>
-<tr><td class="primary-col">४</td><td>रोहिणी</td><td>ब्रह्मा</td><td>ओ</td><td>वा</td><td>वी</td><td>वु</td></tr>
-<tr><td class="primary-col">५</td><td>मृगशिरा</td><td>सोम (चन्द्र)</td><td>वे</td><td>वो</td><td>का</td><td>की</td></tr>
-<tr><td class="primary-col">६</td><td>आर्द्रा</td><td>रुद्र</td><td>कु</td><td>घ</td><td>ङ</td><td>छ</td></tr>
-<tr><td class="primary-col">७</td><td>पुनर्वसु</td><td>अदिति</td><td>के</td><td>को</td><td>हा</td><td>ही</td></tr>
-<tr><td class="primary-col">८</td><td>पुष्य</td><td>बृहस्पति</td><td>हु</td><td>हे</td><td>हो</td><td>ड</td></tr>
-<tr><td class="primary-col">९</td><td>आश्लेषा</td><td>सर्प</td><td>डी</td><td>डु</td><td>डे</td><td>डो</td></tr>
-<tr><td class="primary-col">१०</td><td>मघा</td><td>पितृ</td><td>मा</td><td>मी</td><td>मु</td><td>मे</td></tr>
-<tr><td class="primary-col">११</td><td>पूर्व फाल्गुनी</td><td>भग</td><td>नो</td><td>ता</td><td>ती</td><td>तु</td></tr>
-<tr><td class="primary-col">१२</td><td>उत्तर फाल्गुनी</td><td>अर्यमा</td><td>टे</td><td>टो</td><td>पा</td><td>पी</td></tr>
-<tr><td class="primary-col">१३</td><td>हस्त</td><td>सविता</td><td>पू</td><td>ष</td><td>ण</td><td>ठ</td></tr>
-<tr><td class="primary-col">१४</td><td>चित्रा</td><td>विश्वकर्मा</td><td>पे</td><td>पो</td><td>रा</td><td>री</td></tr>
-<tr><td class="primary-col">१५</td><td>स्वाति</td><td>वायु</td><td>रु</td><td>रे</td><td>रो</td><td>ता</td></tr>
-<tr><td class="primary-col">१६</td><td>विशाखा</td><td>इन्द्राग्नि</td><td>ती</td><td>तु</td><td>ते</td><td>तो</td></tr>
-<tr><td class="primary-col">१७</td><td>अनुराधा</td><td>मित्र</td><td>ना</td><td>नी</td><td>नु</td><td>ने</td></tr>
-<tr><td class="primary-col">१८</td><td>ज्येष्ठा</td><td>इन्द्र</td><td>नो</td><td>या</td><td>यी</td><td>यू</td></tr>
-<tr><td class="primary-col">१९</td><td>मूल</td><td>निरृति</td><td>ये</td><td>यो</td><td>भा</td><td>भी</td></tr>
-<tr><td class="primary-col">२०</td><td>पूर्वाषाढ़ा</td><td>अप्सरा / जल</td><td>भू</td><td>धा</td><td>फा</td><td>ढा</td></tr>
-<tr><td class="primary-col">२१</td><td>उत्तराषाढ़ा</td><td>विश्वेदेव</td><td>ते</td><td>थो</td><td>जा</td><td>दी</td></tr>
-<tr><td class="primary-col">२२</td><td>श्रवण</td><td>विष्णु</td><td>जु</td><td>जे</td><td>जो</td><td>घो</td></tr>
-<tr><td class="primary-col">२३</td><td>धनिष्ठा</td><td>वसु</td><td>गा</td><td>गी</td><td>गु</td><td>गे</td></tr>
-<tr><td class="primary-col">२४</td><td>शतभिषा</td><td>वरुण</td><td>गो</td><td>सा</td><td>सी</td><td>सू</td></tr>
-<tr><td class="primary-col">२५</td><td>पूर्व भाद्रपद</td><td>अजैकपाद</td><td>से</td><td>सो</td><td>दा</td><td>दी</td></tr>
-<tr><td class="primary-col">२६</td><td>उत्तर भाद्रपद</td><td>अहिरबुध्न्य</td><td>दू</td><td>थ</td><td>झ</td><td>त्र</td></tr>
-<tr><td class="primary-col">२७</td><td>रेवती</td><td>पूषा</td><td>दे</td><td>दो</td><td>चा</td><td>ची</td></tr>
+<tr><td class="primary-col">1</td><td>अश्विनी</td><td>अश्विनी कुमार</td><td>चु</td><td>चे</td><td>चो</td><td>ला</td></tr>
+<tr><td class="primary-col">2</td><td>भरणी</td><td>यम</td><td>ली</td><td>लू</td><td>ले</td><td>लो</td></tr>
+<tr><td class="primary-col">3</td><td>कृत्तिका</td><td>अग्नि / सूर्य</td><td>अ</td><td>ई</td><td>उ</td><td>ए</td></tr>
+<tr><td class="primary-col">4</td><td>रोहिणी</td><td>ब्रह्मा</td><td>ओ</td><td>वा</td><td>वी</td><td>वु</td></tr>
+<tr><td class="primary-col">5</td><td>मृगशिरा</td><td>सोम (चन्द्र)</td><td>वे</td><td>वो</td><td>का</td><td>की</td></tr>
+<tr><td class="primary-col">6</td><td>आर्द्रा</td><td>रुद्र</td><td>कु</td><td>घ</td><td>ङ</td><td>छ</td></tr>
+<tr><td class="primary-col">7</td><td>पुनर्वसु</td><td>अदिति</td><td>के</td><td>को</td><td>हा</td><td>ही</td></tr>
+<tr><td class="primary-col">8</td><td>पुष्य</td><td>बृहस्पति</td><td>हु</td><td>हे</td><td>हो</td><td>ड</td></tr>
+<tr><td class="primary-col">9</td><td>आश्लेषा</td><td>सर्प</td><td>डी</td><td>डु</td><td>डे</td><td>डो</td></tr>
+<tr><td class="primary-col">10</td><td>मघा</td><td>पितृ</td><td>मा</td><td>मी</td><td>मु</td><td>मे</td></tr>
+<tr><td class="primary-col">11</td><td>पूर्व फाल्गुनी</td><td>भग</td><td>नो</td><td>ता</td><td>ती</td><td>तु</td></tr>
+<tr><td class="primary-col">12</td><td>उत्तर फाल्गुनी</td><td>अर्यमा</td><td>टे</td><td>टो</td><td>पा</td><td>पी</td></tr>
+<tr><td class="primary-col">13</td><td>हस्त</td><td>सविता</td><td>पू</td><td>ष</td><td>ण</td><td>ठ</td></tr>
+<tr><td class="primary-col">14</td><td>चित्रा</td><td>विश्वकर्मा</td><td>पे</td><td>पो</td><td>रा</td><td>री</td></tr>
+<tr><td class="primary-col">15</td><td>स्वाति</td><td>वायु</td><td>रु</td><td>रे</td><td>रो</td><td>ता</td></tr>
+<tr><td class="primary-col">16</td><td>विशाखा</td><td>इन्द्राग्नि</td><td>ती</td><td>तु</td><td>ते</td><td>तो</td></tr>
+<tr><td class="primary-col">17</td><td>अनुराधा</td><td>मित्र</td><td>ना</td><td>नी</td><td>नु</td><td>ने</td></tr>
+<tr><td class="primary-col">18</td><td>ज्येष्ठा</td><td>इन्द्र</td><td>नो</td><td>या</td><td>यी</td><td>यू</td></tr>
+<tr><td class="primary-col">19</td><td>मूल</td><td>निरृति</td><td>ये</td><td>यो</td><td>भा</td><td>भी</td></tr>
+<tr><td class="primary-col">20</td><td>पूर्वाषाढ़ा</td><td>अप्सरा / जल</td><td>भू</td><td>धा</td><td>फा</td><td>ढा</td></tr>
+<tr><td class="primary-col">21</td><td>उत्तराषाढ़ा</td><td>विश्वेदेव</td><td>ते</td><td>थो</td><td>जा</td><td>दी</td></tr>
+<tr><td class="primary-col">22</td><td>श्रवण</td><td>विष्णु</td><td>जु</td><td>जे</td><td>जो</td><td>घो</td></tr>
+<tr><td class="primary-col">23</td><td>धनिष्ठा</td><td>वसु</td><td>गा</td><td>गी</td><td>गु</td><td>गे</td></tr>
+<tr><td class="primary-col">24</td><td>शतभिषा</td><td>वरुण</td><td>गो</td><td>सा</td><td>सी</td><td>सू</td></tr>
+<tr><td class="primary-col">25</td><td>पूर्व भाद्रपद</td><td>अजैकपाद</td><td>से</td><td>सो</td><td>दा</td><td>दी</td></tr>
+<tr><td class="primary-col">26</td><td>उत्तर भाद्रपद</td><td>अहिरबुध्न्य</td><td>दू</td><td>थ</td><td>झ</td><td>त्र</td></tr>
+<tr><td class="primary-col">27</td><td>रेवती</td><td>पूषा</td><td>दे</td><td>दो</td><td>चा</td><td>ची</td></tr>
 </tbody></table>
 """
 
@@ -454,15 +454,15 @@ PAGE_26_HI_TABLE = """
 <th>नक्षत्र नाम</th>
 <th>शास्त्रीय स्मरण सूत्र एवं प्रभाव</th>
 </tr></thead><tbody>
-<tr><td class="primary-col"><strong>केतु</strong></td><td>१, १०, १९</td><td>अश्विनी, मघा, मूल</td><td> 'आदि, मध्य, अंत' नक्षत्र – प्रत्येक ९वें नक्षत्र पर पुनरावृत्ति; मोक्ष व आत्म-शोधन।</td></tr>
-<tr><td class="primary-col"><strong>शुक्र</strong></td><td>२, ११, २०</td><td>भरणी, पूर्व फाल्गुनी, पूर्वाषाढ़ा</td><td> 'आनंद एवं प्रेम' त्रयी – कला, सौन्दर्य, आकर्षण, प्रणय व ऐश्वर्य प्रधान।</td></tr>
-<tr><td class="primary-col"><strong>सूर्य</strong></td><td>३, १२, २१</td><td>कृत्तिका, उत्तर फाल्गुनी, उत्तराषाढ़ा</td><td> 'नेतृत्व एवं वर्चस्व' श्रृंखला – उत्तर नक्षत्रों का प्रभाव; प्रभुत्व, प्रतिष्ठा व ओज।</td></tr>
-<tr><td class="primary-col"><strong>चन्द्र</strong></td><td>४, १३, २२</td><td>रोहिणी, हस्त, श्रवण</td><td> 'कोमलता एवं पोषण' त्रयी – रचनात्मकता, संवेदनशीलता, जनप्रियता व अंतर्ज्ञान।</td></tr>
-<tr><td class="primary-col"><strong>मंगल</strong></td><td>५, १४, २३</td><td>मृगशिरा, चित्रा, धनिष्ठा</td><td> 'ऊर्जा एवं सौन्दर्य' त्रयी – तीव्र जिज्ञासा, शिल्प-कौशल, पराक्रम व आकर्षण।</td></tr>
-<tr><td class="primary-col"><strong>राहु</strong></td><td>६, १५, २४</td><td>आर्द्रा, स्वाति, शतभिषा</td><td> 'वायु तत्व' त्रयी – गूढ़ अनुसंधान, स्वतंत्र चिंतन, एकांतप्रियता व अप्रत्याशितता।</td></tr>
-<tr><td class="primary-col"><strong>गुरु</strong></td><td>७, १६, २५</td><td>पुनर्वसु, विशाखा, पूर्व भाद्रपद</td><td> 'ज्ञान त्रयी' – द्वि-स्वभाव प्रज्ञा, उच्च मार्गदर्शन, अध्यात्म व दार्शनिक विस्तार।</td></tr>
-<tr><td class="primary-col"><strong>शनि</strong></td><td>८, १७, २६</td><td>पुष्य, अनुराधा, उत्तर भाद्रपद</td><td> 'अनुशासित साधना' त्रयी – कर्तव्यनिष्ठा, धैर्य, निष्कपट सेवा व आध्यात्मिक समर्पण।</td></tr>
-<tr><td class="primary-col"><strong>बुध</strong></td><td>९, १८, २७</td><td>आश्लेषा, ज्येष्ठा, रेवती</td><td> 'मानसिक प्रखरता' त्रयी – रणनीतिक बुद्धि, गूढ़ विद्याएं, वाकपटुता व मुक्ति।</td></tr>
+<tr><td class="primary-col"><strong>केतु</strong></td><td>1, 10, 19</td><td>अश्विनी, मघा, मूल</td><td> 'आदि, मध्य, अंत' नक्षत्र – प्रत्येक 9वें नक्षत्र पर पुनरावृत्ति; मोक्ष व आत्म-शोधन।</td></tr>
+<tr><td class="primary-col"><strong>शुक्र</strong></td><td>2, 11, 20</td><td>भरणी, पूर्व फाल्गुनी, पूर्वाषाढ़ा</td><td> 'आनंद एवं प्रेम' त्रयी – कला, सौन्दर्य, आकर्षण, प्रणय व ऐश्वर्य प्रधान।</td></tr>
+<tr><td class="primary-col"><strong>सूर्य</strong></td><td>3, 12, 21</td><td>कृत्तिका, उत्तर फाल्गुनी, उत्तराषाढ़ा</td><td> 'नेतृत्व एवं वर्चस्व' श्रृंखला – उत्तर नक्षत्रों का प्रभाव; प्रभुत्व, प्रतिष्ठा व ओज।</td></tr>
+<tr><td class="primary-col"><strong>चन्द्र</strong></td><td>4, 13, 22</td><td>रोहिणी, हस्त, श्रवण</td><td> 'कोमलता एवं पोषण' त्रयी – रचनात्मकता, संवेदनशीलता, जनप्रियता व अंतर्ज्ञान।</td></tr>
+<tr><td class="primary-col"><strong>मंगल</strong></td><td>5, 14, 23</td><td>मृगशिरा, चित्रा, धनिष्ठा</td><td> 'ऊर्जा एवं सौन्दर्य' त्रयी – तीव्र जिज्ञासा, शिल्प-कौशल, पराक्रम व आकर्षण।</td></tr>
+<tr><td class="primary-col"><strong>राहु</strong></td><td>6, 15, 24</td><td>आर्द्रा, स्वाति, शतभिषा</td><td> 'वायु तत्व' त्रयी – गूढ़ अनुसंधान, स्वतंत्र चिंतन, एकांतप्रियता व अप्रत्याशितता।</td></tr>
+<tr><td class="primary-col"><strong>गुरु</strong></td><td>7, 16, 25</td><td>पुनर्वसु, विशाखा, पूर्व भाद्रपद</td><td> 'ज्ञान त्रयी' – द्वि-स्वभाव प्रज्ञा, उच्च मार्गदर्शन, अध्यात्म व दार्शनिक विस्तार।</td></tr>
+<tr><td class="primary-col"><strong>शनि</strong></td><td>8, 17, 26</td><td>पुष्य, अनुराधा, उत्तर भाद्रपद</td><td> 'अनुशासित साधना' त्रयी – कर्तव्यनिष्ठा, धैर्य, निष्कपट सेवा व आध्यात्मिक समर्पण।</td></tr>
+<tr><td class="primary-col"><strong>बुध</strong></td><td>9, 18, 27</td><td>आश्लेषा, ज्येष्ठा, रेवती</td><td> 'मानसिक प्रखरता' त्रयी – रणनीतिक बुद्धि, गूढ़ विद्याएं, वाकपटुता व मुक्ति।</td></tr>
 </tbody></table>
 """
 
@@ -497,18 +497,18 @@ PAGE_28_HI_TABLE = """
 <th>लिंग</th>
 <th>प्रकृति</th>
 </tr></thead><tbody>
-<tr><td class="primary-col"><strong>१</strong></td><td>मेष</td><td>मंगल</td><td>अग्नि</td><td>चर</td><td>पुरुष</td><td>धनात्मक</td></tr>
-<tr><td class="primary-col"><strong>२</strong></td><td>वृष</td><td>शुक्र</td><td>पृथ्वी</td><td>स्थिर</td><td>स्त्री</td><td>ऋणात्मक</td></tr>
-<tr><td class="primary-col"><strong>३</strong></td><td>मिथुन</td><td>बुध</td><td>वायु</td><td>द्विस्वभाव</td><td>पुरुष</td><td>धनात्मक</td></tr>
-<tr><td class="primary-col"><strong>४</strong></td><td>कर्क</td><td>चन्द्रमा</td><td>जल</td><td>चर</td><td>स्त्री</td><td>ऋणात्मक</td></tr>
-<tr><td class="primary-col"><strong>५</strong></td><td>सिंह</td><td>सूर्य</td><td>अग्नि</td><td>स्थिर</td><td>पुरुष</td><td>धनात्मक</td></tr>
-<tr><td class="primary-col"><strong>६</strong></td><td>कन्या</td><td>बुध</td><td>पृथ्वी</td><td>द्विस्वभाव</td><td>स्त्री</td><td>ऋणात्मक</td></tr>
-<tr><td class="primary-col"><strong>७</strong></td><td>तुला</td><td>शुक्र</td><td>वायु</td><td>चर</td><td>पुरुष</td><td>धनात्मक</td></tr>
-<tr><td class="primary-col"><strong>८</strong></td><td>वृश्चिक</td><td>मंगल</td><td>जल</td><td>स्थिर</td><td>स्त्री</td><td>ऋणात्मक</td></tr>
-<tr><td class="primary-col"><strong>९</strong></td><td>धनु</td><td>गुरु</td><td>अग्नि</td><td>द्विस्वभाव</td><td>पुरुष</td><td>धनात्मक</td></tr>
-<tr><td class="primary-col"><strong>१०</strong></td><td>मकर</td><td>शनि</td><td>पृथ्वी</td><td>चर</td><td>स्त्री</td><td>ऋणात्मक</td></tr>
-<tr><td class="primary-col"><strong>११</strong></td><td>कुंभ</td><td>शनि</td><td>वायु</td><td>स्थिर</td><td>पुरुष</td><td>धनात्मक</td></tr>
-<tr><td class="primary-col"><strong>१२</strong></td><td>मीन</td><td>गुरु</td><td>जल</td><td>द्विस्वभाव</td><td>स्त्री</td><td>ऋणात्मक</td></tr>
+<tr><td class="primary-col"><strong>1</strong></td><td>मेष</td><td>मंगल</td><td>अग्नि</td><td>चर</td><td>पुरुष</td><td>धनात्मक</td></tr>
+<tr><td class="primary-col"><strong>2</strong></td><td>वृष</td><td>शुक्र</td><td>पृथ्वी</td><td>स्थिर</td><td>स्त्री</td><td>ऋणात्मक</td></tr>
+<tr><td class="primary-col"><strong>3</strong></td><td>मिथुन</td><td>बुध</td><td>वायु</td><td>द्विस्वभाव</td><td>पुरुष</td><td>धनात्मक</td></tr>
+<tr><td class="primary-col"><strong>4</strong></td><td>कर्क</td><td>चन्द्रमा</td><td>जल</td><td>चर</td><td>स्त्री</td><td>ऋणात्मक</td></tr>
+<tr><td class="primary-col"><strong>5</strong></td><td>सिंह</td><td>सूर्य</td><td>अग्नि</td><td>स्थिर</td><td>पुरुष</td><td>धनात्मक</td></tr>
+<tr><td class="primary-col"><strong>6</strong></td><td>कन्या</td><td>बुध</td><td>पृथ्वी</td><td>द्विस्वभाव</td><td>स्त्री</td><td>ऋणात्मक</td></tr>
+<tr><td class="primary-col"><strong>7</strong></td><td>तुला</td><td>शुक्र</td><td>वायु</td><td>चर</td><td>पुरुष</td><td>धनात्मक</td></tr>
+<tr><td class="primary-col"><strong>8</strong></td><td>वृश्चिक</td><td>मंगल</td><td>जल</td><td>स्थिर</td><td>स्त्री</td><td>ऋणात्मक</td></tr>
+<tr><td class="primary-col"><strong>9</strong></td><td>धनु</td><td>गुरु</td><td>अग्नि</td><td>द्विस्वभाव</td><td>पुरुष</td><td>धनात्मक</td></tr>
+<tr><td class="primary-col"><strong>10</strong></td><td>मकर</td><td>शनि</td><td>पृथ्वी</td><td>चर</td><td>स्त्री</td><td>ऋणात्मक</td></tr>
+<tr><td class="primary-col"><strong>11</strong></td><td>कुंभ</td><td>शनि</td><td>वायु</td><td>स्थिर</td><td>पुरुष</td><td>धनात्मक</td></tr>
+<tr><td class="primary-col"><strong>12</strong></td><td>मीन</td><td>गुरु</td><td>जल</td><td>द्विस्वभाव</td><td>स्त्री</td><td>ऋणात्मक</td></tr>
 </tbody></table>
 """
 
@@ -815,10 +815,10 @@ PAGE_42_HI_TABLE = """
 <th>संबंध का प्रकार</th>
 <th>शास्त्रीय परिभाषा एवं फलित शक्ति</th>
 </tr></thead><tbody>
-<tr><td class="primary-col"><strong>१</strong></td><td>परिवर्तन योग (क्षेत्र संबंध)</td><td>जब दो ग्रह परस्पर एक-दूसरे की राशि में स्थित हों। इसे 'अति उत्तम संबंध' माना जाता है; दोनों ग्रह परस्पर अत्यधिक बली होते हैं।</td></tr>
-<tr><td class="primary-col"><strong>२</strong></td><td>दृष्टि संबंध (परस्पर दृष्टि)</td><td>जब दो ग्रह एक-दूसरे पर पूर्ण दृष्टि डालते हों (जैसे सातवें भाव में समसप्तक)। इसे 'उत्तम संबंध' माना जाता है।</td></tr>
-<tr><td class="primary-col"><strong>३</strong></td><td>युति संबंध (सहवास संबंध)</td><td>जब दो ग्रह एक ही भाव और राशि में एक साथ स्थित हों। यह 'मध्यम संबंध' कहलाता है; फलों का एकीकरण होता है।</td></tr>
-<tr><td class="primary-col"><strong>४</strong></td><td>एकतरफा दृष्टि संबंध</td><td>जब एक ग्रह दूसरे को देखता है, किंतु दूसरा ग्रह उसे नहीं देखता (जैसे मंगल की ४/८, गुरु की ५/९, शनि की ३/१० दृष्टि)। इसे 'साधारण संबंध' माना जाता है।</td></tr>
+<tr><td class="primary-col"><strong>1</strong></td><td>परिवर्तन योग (क्षेत्र संबंध)</td><td>जब दो ग्रह परस्पर एक-दूसरे की राशि में स्थित हों। इसे 'अति उत्तम संबंध' माना जाता है; दोनों ग्रह परस्पर अत्यधिक बली होते हैं।</td></tr>
+<tr><td class="primary-col"><strong>2</strong></td><td>दृष्टि संबंध (परस्पर दृष्टि)</td><td>जब दो ग्रह एक-दूसरे पर पूर्ण दृष्टि डालते हों (जैसे सातवें भाव में समसप्तक)। इसे 'उत्तम संबंध' माना जाता है।</td></tr>
+<tr><td class="primary-col"><strong>3</strong></td><td>युति संबंध (सहवास संबंध)</td><td>जब दो ग्रह एक ही भाव और राशि में एक साथ स्थित हों। यह 'मध्यम संबंध' कहलाता है; फलों का एकीकरण होता है।</td></tr>
+<tr><td class="primary-col"><strong>4</strong></td><td>एकतरफा दृष्टि संबंध</td><td>जब एक ग्रह दूसरे को देखता है, किंतु दूसरा ग्रह उसे नहीं देखता (जैसे मंगल की 4/8, गुरु की 5/9, शनि की 3/10 दृष्टि)। इसे 'साधारण संबंध' माना जाता है।</td></tr>
 </tbody></table>
 """
 
@@ -884,10 +884,10 @@ PAGE_72_HI_TABLE = """
 <th>शास्त्रीय एवं आधुनिक शोध द्वारा सत्यापित फलित सूत्र</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>मुख्य कारक ग्रह</strong></td><td>चन्द्रमा (शारीरिक द्रव, लसीका, स्तन); मंगल (तीव्र प्रदाह, रक्त, ट्यूमर); राहु (असामान्य अनियंत्रित कोशिका वृद्धि); शनि (दीर्घकालिक जीर्ण व्याधि); बुध (त्वचा, कोशिका आवरण); गुरु (रोग प्रतिरोधक क्षमता)।</td></tr>
-<tr><td class="primary-col"><strong>प्रभावित भाव</strong></td><td>६ठा भाव (रोग उत्पत्ति); ८वां भाव (असाध्य जीर्ण रोग, अस्थि मज्जा); १२वां भाव (अस्पताल वास, पृथक्करण); ४था भाव (वक्षस्थल, स्तन, रक्त संचरण)।</td></tr>
-<tr><td class="primary-col"><strong>ग्रह दृष्टि व संबंध</strong></td><td>६ठे/८वें भाव के स्वामियों की चन्द्रमा या मंगल पर पाप दृष्टि; राहु-शनि की युति का लग्न अथवा लग्नेश पर अशुभ प्रभाव।</td></tr>
+<tr><td class="primary-col"><strong>प्रभावित भाव</strong></td><td>6ठा भाव (रोग उत्पत्ति); 8वां भाव (असाध्य जीर्ण रोग, अस्थि मज्जा); 12वां भाव (अस्पताल वास, पृथक्करण); 4था भाव (वक्षस्थल, स्तन, रक्त संचरण)।</td></tr>
+<tr><td class="primary-col"><strong>ग्रह दृष्टि व संबंध</strong></td><td>6ठे/8वें भाव के स्वामियों की चन्द्रमा या मंगल पर पाप दृष्टि; राहु-शनि की युति का लग्न अथवा लग्नेश पर अशुभ प्रभाव।</td></tr>
 <tr><td class="primary-col"><strong>उच्च / नीच व दहन स्थिति</strong></td><td>नीचस्थ चन्द्रमा (वृश्चिक), अस्त अथवा नीच गुरु, वक्री शनि या मंगल का त्रिक भावों में स्थित होना।</td></tr>
-<tr><td class="primary-col"><strong>बृहत्पाराशर होरा शास्त्र</strong></td><td>जब लग्नेश ६ठे या ८वें भाव में स्थित हो और उस पर पापी ग्रहों की दृष्टि हो, तो शरीर में असाध्य गाँठ (अर्बुद) की उत्पत्ति होती है।</td></tr>
+<tr><td class="primary-col"><strong>बृहत्पाराशर होरा शास्त्र</strong></td><td>जब लग्नेश 6ठे या 8वें भाव में स्थित हो और उस पर पापी ग्रहों की दृष्टि हो, तो शरीर में असाध्य गाँठ (अर्बुद) की उत्पत्ति होती है।</td></tr>
 <tr><td class="primary-col"><strong>लाल किताब सिद्धांत</strong></td><td>शनि-राहु की अशुभ युति को 'जहरीला प्रभाव' कहा गया है, जो शरीर के किसी विशेष अंग में रक्त व वायु को दूषित कर विकार उत्पन्न करता है।</td></tr>
 <tr><td class="primary-col"><strong>फलदीपिका (मन्त्रेश्वर)</strong></td><td>यदि चन्द्रमा पाप ग्रहों के मध्य हो (पापकर्तरी) और मंगल से दृष्ट हो, तो रक्त एवं ग्रंथियों के गंभीर विकार प्रकट होते हैं।</td></tr>
 <tr><td class="primary-col"><strong>भृगु नन्दी नाड़ी</strong></td><td>चन्द्र+राहु+मंगल का संयोजन किसी जल तत्व राशि (कर्क/वृश्चिक/मीन) में कोशिका स्तर पर अनियंत्रित वृद्धि को दर्शाता है।</td></tr>
@@ -919,13 +919,13 @@ PAGE_73_HI_TABLE = """
 <th>चिकित्सीय व ज्योतिषीय संदर्भ</th>
 <th>अंग-विशिष्ट अर्बुद (कैंसर) के सत्यापित शास्त्रीय सूत्र</th>
 </tr></thead><tbody>
-<tr><td class="primary-col"><strong>ग्रह संयोजन</strong></td><td>चन्द्रमा पर शनि/मंगल/राहु की अशुभ युति; निर्बल गुरु; ६ठे/८वें भाव में सूर्य-मंगल या राहु-शनि की स्थिति।</td></tr>
-<tr><td class="primary-col"><strong>प्रभावित भाव</strong></td><td>६ठा (रोग), ८वां (जीर्ण व्याधि), ४था (स्तन/फेफड़े), ५वां (आमाशय), १०वां (हड्डियाँ), १२वां (अस्पताल)।</td></tr>
+<tr><td class="primary-col"><strong>ग्रह संयोजन</strong></td><td>चन्द्रमा पर शनि/मंगल/राहु की अशुभ युति; निर्बल गुरु; 6ठे/8वें भाव में सूर्य-मंगल या राहु-शनि की स्थिति।</td></tr>
+<tr><td class="primary-col"><strong>प्रभावित भाव</strong></td><td>6ठा (रोग), 8वां (जीर्ण व्याधि), 4था (स्तन/फेफड़े), 5वां (आमाशय), 10वां (हड्डियाँ), 12वां (अस्पताल)।</td></tr>
 <tr><td class="primary-col"><strong>दृष्टि प्रभाव</strong></td><td>पापी ग्रहों (राहु, शनि, मंगल) की चन्द्रमा, लग्नेश अथवा त्रिक भावों पर प्रत्यक्ष अशुभ दृष्टि।</td></tr>
 <tr><td class="primary-col"><strong>उच्च / नीच व वक्री स्थिति</strong></td><td>नीच राशि में चन्द्रमा (वृश्चिक), अस्त गुरु, वक्री शनि का अशुभ भावों में स्थित होना।</td></tr>
 <tr><td class="primary-col"><strong>बृहत्पाराशर होरा शास्त्र</strong></td><td>पापी ग्रह जब जल राशियों में स्थित होकर चन्द्रमा को पीड़ित करते हैं, तो छाती, स्तन एवं उदर के गंभीर विकार होते हैं।</td></tr>
-<tr><td class="primary-col"><strong>लाल किताब सिद्धांत</strong></td><td>खाना नंबर ४ या ८ में चन्द्र-शनि या मंगल-केतु की युति अंग-विशिष्ट गांठों का कारण बनती है।</td></tr>
-<tr><td class="primary-col"><strong>फलदीपिका</strong></td><td>८वें भाव में स्थित मंगल यदि राहु से दृष्ट हो, तो शरीर के आंतरिक अवयवों में शल्य क्रिया व ट्यूमर का योग बनता है।</td></tr>
+<tr><td class="primary-col"><strong>लाल किताब सिद्धांत</strong></td><td>खाना नंबर 4 या 8 में चन्द्र-शनि या मंगल-केतु की युति अंग-विशिष्ट गांठों का कारण बनती है।</td></tr>
+<tr><td class="primary-col"><strong>फलदीपिका</strong></td><td>8वें भाव में स्थित मंगल यदि राहु से दृष्ट हो, तो शरीर के आंतरिक अवयवों में शल्य क्रिया व ट्यूमर का योग बनता है।</td></tr>
 <tr><td class="primary-col"><strong>भृगु नन्दी नाड़ी</strong></td><td>गुरु (जीव) जब राहु (विस्तार/विष) और मंगल (रक्त/सूजन) के संपर्क में आता है, तो अनियंत्रित अर्बुद का विकास होता है।</td></tr>
 <tr><td class="primary-col"><strong>सूक्ष्म कारण एवं भेद</strong></td><td>सौम्य ट्यूमर में गुरु का शुभ प्रभाव रहता है, जबकि घातक अर्बुद (मैलिग्नेंट) में राहु-शनि की क्रूर युति प्रबल होती है।</td></tr>
 </tbody></table>
@@ -955,12 +955,12 @@ PAGE_75_HI_TABLE = """
 <th>चिकित्सीय व ज्योतिषीय संदर्भ</th>
 <th>त्वचा कैंसर  के प्रामाणिक फलित सूत्र</th>
 </tr></thead><tbody>
-<tr><td class="primary-col"><strong>ग्रह संयोजन</strong></td><td>बुध (त्वचा का नैसर्गिक कारक) मंगल अथवा राहु से अत्यधिक पीड़ित हो; मंगल-राहु की युति ६ठे, ८वें या लग्न भाव में हो।</td></tr>
+<tr><td class="primary-col"><strong>ग्रह संयोजन</strong></td><td>बुध (त्वचा का नैसर्गिक कारक) मंगल अथवा राहु से अत्यधिक पीड़ित हो; मंगल-राहु की युति 6ठे, 8वें या लग्न भाव में हो।</td></tr>
 <tr><td class="primary-col"><strong>प्रभावित भाव</strong></td><td>प्रथम भाव (समग्र शरीर व त्वचा का रंग-रूप), षष्ठ भाव (रोग), अष्टम भाव (जीर्ण असाध्य व्याधि)।</td></tr>
 <tr><td class="primary-col"><strong>दृष्टि संबंध</strong></td><td>शनि, राहु या मंगल की बुध अथवा लग्न भाव पर अशुभ दृष्टि होना।</td></tr>
 <tr><td class="primary-col"><strong>उच्च / नीच व दहन स्थिति</strong></td><td>बुध का मीन राशि में नीच होना, सूर्य से पूर्ण अस्त होना, अथवा वक्री मंगल के साथ पाप प्रभाव में होना।</td></tr>
 <tr><td class="primary-col"><strong>बृहत्पाराशर होरा शास्त्र</strong></td><td>पीड़ित व निर्बल बुध त्वचा के गंभीर रोगों, कुष्ठ तथा असामान्य चर्म विकारों का मुख्य कारक होता है।</td></tr>
-<tr><td class="primary-col"><strong>लाल किताब सिद्धांत</strong></td><td>६ठे या ८वें भाव में मंगल-बुध की युति त्वचा की रक्षात्मक परत को नष्ट कर रक्त व चर्म में विषाक्तता लाती है।</td></tr>
+<tr><td class="primary-col"><strong>लाल किताब सिद्धांत</strong></td><td>6ठे या 8वें भाव में मंगल-बुध की युति त्वचा की रक्षात्मक परत को नष्ट कर रक्त व चर्म में विषाक्तता लाती है।</td></tr>
 <tr><td class="primary-col"><strong>फलदीपिका</strong></td><td>मंगल-राहु की बुध पर युति अथवा दृष्टि त्वचा की कोशिकाओं में विकृति और घातक चर्म अर्बुद उत्पन्न करती है।</td></tr>
 <tr><td class="primary-col"><strong>भृगु नन्दी नाड़ी</strong></td><td>बुध (त्वचा) + राहु (असामान्य अनियंत्रित वृद्धि) त्वचा की कोशिकाओं के अनियंत्रित विभाजन का अचूक योग है।</td></tr>
 <tr><td class="primary-col"><strong>आधुनिक अनुसंधान</strong></td><td>मेलेनोमा व चर्म कैंसर के अधिकांश मामलों में बुध-राहु तथा षष्ठेश का घनिष्ठ संबंध प्रमाणित देखा गया है।</td></tr>
@@ -1065,10 +1065,10 @@ PAGE_81_HI_TABLE = """
 <table class="astro-table">
 <thead><tr>
 <th>ग्रह / विषय</th>
-<th>पद १ – धनु नवमांश (गुरु)</th>
-<th>पद २ – मकर नवमांश (शनि)</th>
-<th>पद ३ – कुंभ नवमांश (शनि)</th>
-<th>पद ४ – मीन नवमांश (गुरु)</th>
+<th>पद 1 – धनु नवमांश (गुरु)</th>
+<th>पद 2 – मकर नवमांश (शनि)</th>
+<th>पद 3 – कुंभ नवमांश (शनि)</th>
+<th>पद 4 – मीन नवमांश (गुरु)</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>नवमांश विषय</strong></td><td>धर्मनिष्ठ संयम; आश्लेषा की शक्ति का ज्ञानपरक मार्गदर्शन</td><td>नियंत्रित संरचना; शक्ति का रणनीतिक एकत्रीकरण</td><td>बौद्धिक गूढ़ता; सामाजिक व गुप्त अनुसंधान</td><td>आध्यात्मिक समर्पण; बंधनों से मुक्ति व मोक्ष</td></tr>
 <tr><td class="primary-col"><strong>सूर्य</strong></td><td>नैतिक प्रभाव, मार्गदर्शक नेतृत्व</td><td>संस्थागत अधिकार, अनुशासित नियंत्रण</td><td>गोपनीय सत्ता, गहन रणनीतिकार</td><td>अहंकार विसर्जन, आध्यात्मिक सेवा</td></tr>
@@ -1087,10 +1087,10 @@ PAGE_82_HI_TABLE = """
 <table class="astro-table">
 <thead><tr>
 <th>ग्रह</th>
-<th>पद १ – सिंह नवमांश (सूर्य)</th>
-<th>पद २ – कन्या नवमांश (बुध)</th>
-<th>पद ३ – तुला नवमांश (शुक्र)</th>
-<th>पद ४ – वृश्चिक नवमांश (मंगल)</th>
+<th>पद 1 – सिंह नवमांश (सूर्य)</th>
+<th>पद 2 – कन्या नवमांश (बुध)</th>
+<th>पद 3 – तुला नवमांश (शुक्र)</th>
+<th>पद 4 – वृश्चिक नवमांश (मंगल)</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>नवमांश प्रभाव</strong></td><td>पोषण पर सत्ता व अधिकार; राजसी संरक्षण</td><td>पोषण का विश्लेषणात्मक परिशोधन; सेवा</td><td>सौहार्दपूर्ण पोषण; कला, सौंदर्य व संतुलन</td><td>गहन रक्षात्मक पोषण; संकट में रक्षण</td></tr>
 <tr><td class="primary-col"><strong>सूर्य</strong></td><td>राजसी दायित्व, कर्तव्यनिष्ठ नेतृत्व</td><td>सेवाभावी कार्यकुशलता व सूक्ष्मता</td><td>कूटनीतिक समन्वय व संतुलन</td><td>संकट रक्षक, अदम्य पराक्रम</td></tr>
@@ -1107,14 +1107,14 @@ PAGE_83_HI_TABLE = """
 <table class="astro-table">
 <thead><tr>
 <th>अश्विनी पद</th>
-<th>मुख्य राशि (डी-१)</th>
-<th>नवमांश राशि (डी-९)</th>
+<th>मुख्य राशि (डी-1)</th>
+<th>नवमांश राशि (डी-9)</th>
 <th>नवमांश स्वामी</th>
 </tr></thead><tbody>
-<tr><td class="primary-col"><strong>पद १</strong></td><td>मेष</td><td>मेष</td><td>मंगल (साहस, ऊर्जा, अग्नि)</td></tr>
-<tr><td class="primary-col"><strong>पद २</strong></td><td>मेष</td><td>वृषभ</td><td>शुक्र (धन, सौंदर्य, स्थिरता)</td></tr>
-<tr><td class="primary-col"><strong>पद ३</strong></td><td>मेष</td><td>मिथुन</td><td>बुध (बुद्धि, संचार, तर्क)</td></tr>
-<tr><td class="primary-col"><strong>पद ४</strong></td><td>मेष</td><td>कर्क</td><td>चन्द्रमा (मन, करुणा, जल)</td></tr>
+<tr><td class="primary-col"><strong>पद 1</strong></td><td>मेष</td><td>मेष</td><td>मंगल (साहस, ऊर्जा, अग्नि)</td></tr>
+<tr><td class="primary-col"><strong>पद 2</strong></td><td>मेष</td><td>वृषभ</td><td>शुक्र (धन, सौंदर्य, स्थिरता)</td></tr>
+<tr><td class="primary-col"><strong>पद 3</strong></td><td>मेष</td><td>मिथुन</td><td>बुध (बुद्धि, संचार, तर्क)</td></tr>
+<tr><td class="primary-col"><strong>पद 4</strong></td><td>मेष</td><td>कर्क</td><td>चन्द्रमा (मन, करुणा, जल)</td></tr>
 </tbody></table>
 """
 
@@ -1127,10 +1127,10 @@ PAGE_84_HI_TABLE = """
 <th>नामाक्षर ध्वनि</th>
 <th>अश्विनी में मूल विशेषता</th>
 </tr></thead><tbody>
-<tr><td class="primary-col"><strong>पद १</strong></td><td>मेष</td><td>मंगल</td><td>चू</td><td>शुद्ध पराक्रम, पहल, साहसी नेतृत्व व तीव्र गति</td></tr>
-<tr><td class="primary-col"><strong>पद २</strong></td><td>वृषभ</td><td>शुक्र</td><td>चे</td><td>व्यावहारिक कुशलता, संसाधन संचय, सौंदर्य व स्थिरता</td></tr>
-<tr><td class="primary-col"><strong>पद ३</strong></td><td>मिथुन</td><td>बुध</td><td>चो</td><td>वाकपटुता, संचार कौशल, बौद्धिक जिज्ञासा व बहुमुखी प्रतिभा</td></tr>
-<tr><td class="primary-col"><strong>पद ४</strong></td><td>कर्क</td><td>चन्द्रमा</td><td>ला</td><td>करुणामयी चिकित्सा, संवेदनशील मन, परोपकार व जनसेवा</td></tr>
+<tr><td class="primary-col"><strong>पद 1</strong></td><td>मेष</td><td>मंगल</td><td>चू</td><td>शुद्ध पराक्रम, पहल, साहसी नेतृत्व व तीव्र गति</td></tr>
+<tr><td class="primary-col"><strong>पद 2</strong></td><td>वृषभ</td><td>शुक्र</td><td>चे</td><td>व्यावहारिक कुशलता, संसाधन संचय, सौंदर्य व स्थिरता</td></tr>
+<tr><td class="primary-col"><strong>पद 3</strong></td><td>मिथुन</td><td>बुध</td><td>चो</td><td>वाकपटुता, संचार कौशल, बौद्धिक जिज्ञासा व बहुमुखी प्रतिभा</td></tr>
+<tr><td class="primary-col"><strong>पद 4</strong></td><td>कर्क</td><td>चन्द्रमा</td><td>ला</td><td>करुणामयी चिकित्सा, संवेदनशील मन, परोपकार व जनसेवा</td></tr>
 </tbody></table>
 """
 
@@ -1156,10 +1156,10 @@ PAGE_86_HI_TABLE = """
 <table class="astro-table">
 <thead><tr>
 <th>ग्रह</th>
-<th>पद १: मेष नवमांश (चू)</th>
-<th>पद २: वृष नवमांश (चे)</th>
-<th>पद ३: मिथुन नवमांश (चो)</th>
-<th>पद ४: कर्क नवमांश (ला)</th>
+<th>पद 1: मेष नवमांश (चू)</th>
+<th>पद 2: वृष नवमांश (चे)</th>
+<th>पद 3: मिथुन नवमांश (चो)</th>
+<th>पद 4: कर्क नवमांश (ला)</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>नवमांश स्वामी</strong></td><td>मंगल (पराक्रम, ऊर्जा, अग्नि)</td><td>शुक्र (धन, सौंदर्य, पृथ्वी)</td><td>बुध (बुद्धि, संचार, वायु)</td><td>चन्द्रमा (मन, करुणा, जल)</td></tr>
 <tr><td class="primary-col"><strong>सूर्य</strong></td><td>वर्गोत्तम (उच्च): शीर्ष प्रशासनिक नेतृत्व</td><td>व्यावहारिक प्रबंधक, संसाधन संचय</td><td>बौद्धिक रणनीतिकार, वाकपटु</td><td>करुणामयी संरक्षक, जनकल्याण</td></tr>
@@ -1241,14 +1241,14 @@ PAGE_20_HI_TABLE = """
 <th>शास्त्रीय विवरण एवं फल</th>
 <th>विद्वानों का शास्त्रीय मत</th>
 </tr></thead><tbody>
-<tr><td class="primary-col"><strong>गजकेसरी योग</strong></td><td>चन्द्रमा से केंद्र (१, ४, ७, १०) में गुरु की स्थिति</td><td>प्रचुर समृद्धि, बुद्धिमत्ता, उच्च यश और अखंड सफलता प्रदान करता है।</td><td>सर्वमान्य; प्रभाव कुंडली के संपूर्ण बलबल पर निर्भर करता है।</td></tr>
+<tr><td class="primary-col"><strong>गजकेसरी योग</strong></td><td>चन्द्रमा से केंद्र (1, 4, 7, 10) में गुरु की स्थिति</td><td>प्रचुर समृद्धि, बुद्धिमत्ता, उच्च यश और अखंड सफलता प्रदान करता है।</td><td>सर्वमान्य; प्रभाव कुंडली के संपूर्ण बलबल पर निर्भर करता है।</td></tr>
 <tr><td class="primary-col"><strong>धर्म कर्माधिपति योग</strong></td><td>नवमेश (धर्म) व दशमेश (कर्म) की युति अथवा दृष्टि</td><td>कर्तव्य और कर्म के समन्वय से उच्च पद, प्रशासनिक सम्मान और प्रतिष्ठा।</td><td>अत्यंत शक्तिशाली व प्रतिष्ठित राजयोग।</td></tr>
 <tr><td class="primary-col"><strong>बुधादित्य योग</strong></td><td>एक ही भाव में सूर्य और बुध की युति</td><td>कुशाग्र बुद्धि, वाकपटुता, तार्किक क्षमता और ज्ञान का विस्तार।</td><td>सर्वमान्य; बौद्धिक व सामाजिक प्रतिष्ठा में विशेष फलदायी।</td></tr>
-<tr><td class="primary-col"><strong>विपरीत राजयोग</strong></td><td>६ठे, ८वें, १२वें (त्रिक) भावों के स्वामियों का परस्पर त्रिक में संबंध</td><td>कठिन संघर्षों, संकटों व शत्रुओं के दमन के पश्चात अप्रत्याशित सफलता।</td><td>पाराशरी व फलदीपिका द्वारा विशेष रूप से समर्थित।</td></tr>
+<tr><td class="primary-col"><strong>विपरीत राजयोग</strong></td><td>6ठे, 8वें, 12वें (त्रिक) भावों के स्वामियों का परस्पर त्रिक में संबंध</td><td>कठिन संघर्षों, संकटों व शत्रुओं के दमन के पश्चात अप्रत्याशित सफलता।</td><td>पाराशरी व फलदीपिका द्वारा विशेष रूप से समर्थित।</td></tr>
 <tr><td class="primary-col"><strong>नीचभंग राजयोग</strong></td><td>नीच ग्रह की नीचता का शास्त्रीय नियमों से भंग होना</td><td>प्रारंभिक संघर्षों के बाद जातक को राजा के समान ऐश्वर्य व अधिकार।</td><td>शास्त्रीय फलित में अत्यंत प्रभावी व चमत्कारी नियम।</td></tr>
 <tr><td class="primary-col"><strong>चंद्र-मंगल योग</strong></td><td>चन्द्रमा और मंगल की युति अथवा परस्पर दृष्टि</td><td>प्रचुर धन लाभ, व्यापारिक सफलता, पराक्रम से संपत्ति अर्जन।</td><td>आर्थिक दृष्टिकोण से 'महालक्ष्मी योग' तुल्य।</td></tr>
 <tr><td class="primary-col"><strong>अमला योग</strong></td><td>लग्न अथवा चन्द्र से दशम भाव में केवल शुभ ग्रह</td><td>निष्कपट आचरण, समाज में बेदाग प्रतिष्ठा, स्थायी यश और कीर्ति।</td><td>बृहत्पाराशर में उच्च कोटि का योग माना गया है।</td></tr>
-<tr><td class="primary-col"><strong>पर्वत योग</strong></td><td>केंद्र में शुभ ग्रह हों और ६ठे व ८वें भाव रिक्त हों</td><td>स्थिर संपत्ति, अचल ऐश्वर्य, विद्या व समाज में उच्च सम्मान।</td><td>शास्त्रीय ग्रंथों में सर्वमान्य शुभ फलदाता।</td></tr>
+<tr><td class="primary-col"><strong>पर्वत योग</strong></td><td>केंद्र में शुभ ग्रह हों और 6ठे व 8वें भाव रिक्त हों</td><td>स्थिर संपत्ति, अचल ऐश्वर्य, विद्या व समाज में उच्च सम्मान।</td><td>शास्त्रीय ग्रंथों में सर्वमान्य शुभ फलदाता।</td></tr>
 <tr><td class="primary-col"><strong>काहल योग</strong></td><td>चतुर्थेश और गुरु परस्पर केंद्र में हों तथा लग्नेश बली हो</td><td>साहस, सेना अथवा प्रशासन में उच्च नेतृत्व, अदम्य पराक्रम।</td><td>फलदीपिका में विशेष रूप से प्रशंसित।</td></tr>
 <tr><td class="primary-col"><strong>शंख योग</strong></td><td>पंचमेश और षष्ठेश परस्पर केंद्र में हों और लग्नेश शक्तिशाली हो</td><td>शास्त्रज्ञ, दयालु, पुण्यात्मा, उच्च विद्या व सुखी जीवन।</td><td>जातक पारिजात में वर्णित प्रामाणिक योग।</td></tr>
 </tbody></table>
@@ -1291,7 +1291,7 @@ PAGE_12_HI_TABLE = """
 <tr><td class="primary-col"><strong>कार्यक्षेत्र</strong></td><td>न्यायपालिका, वकालत, शिक्षण, धर्मपीठ, बैंकिंग, वित्त, प्रशासनिक परामर्श, प्रकाशन</td></tr>
 <tr><td class="primary-col"><strong>धातु व रत्न</strong></td><td>स्वर्ण (सोना), पीतल, पीला पुखराज (Yellow Sapphire), सुनहला</td></tr>
 <tr><td class="primary-col"><strong>तत्व व दिशा</strong></td><td>आकाश तत्व (ईथर), उत्तर-पूर्व (ईशान) दिशा</td></tr>
-<tr><td class="primary-col"><strong>राशि व गरिमा</strong></td><td>धनु व मीन का स्वामी; कर्क (५°) में उच्च, मकर (५°) में नीच, धनु (०-१०°) मूलत्रिकोण</td></tr>
+<tr><td class="primary-col"><strong>राशि व गरिमा</strong></td><td>धनु व मीन का स्वामी; कर्क (5°) में उच्च, मकर (5°) में नीच, धनु (0-10°) मूलत्रिकोण</td></tr>
 </tbody></table>
 """
 
@@ -1330,7 +1330,7 @@ PAGE_13_HI_TABLE = """
 <tr><td class="primary-col"><strong>कार्यक्षेत्र</strong></td><td>फिल्म उद्योग, फैशन डिजाइनिंग, सौंदर्य प्रसाधन, आभूषण, होटल व आतिथ्य, ललित कलाएं</td></tr>
 <tr><td class="primary-col"><strong>धातु व रत्न</strong></td><td>चांदी, श्वेत स्वर्ण, प्लैटिनम, हीरा (Diamond), ओपल, सफेद जरकन</td></tr>
 <tr><td class="primary-col"><strong>तत्व व दिशा</strong></td><td>जल तत्व (आपः), दक्षिण-पूर्व (आग्नेय) दिशा</td></tr>
-<tr><td class="primary-col"><strong>राशि व गरिमा</strong></td><td>वृषभ व तुला का स्वामी; मीन (२७°) में उच्च, कन्या (२७°) में नीच, तुला (०-१५°) मूलत्रिकोण</td></tr>
+<tr><td class="primary-col"><strong>राशि व गरिमा</strong></td><td>वृषभ व तुला का स्वामी; मीन (27°) में उच्च, कन्या (27°) में नीच, तुला (0-15°) मूलत्रिकोण</td></tr>
 </tbody></table>
 """
 
@@ -1350,7 +1350,7 @@ PAGE_14_HI_TABLE = """
 <tr><td class="primary-col"><strong>कार्यक्षेत्र</strong></td><td>न्यायपालिका, खनन, तेल व पेट्रोलियम, इस्पात व लोहा, भारी उद्योग, कृषि, श्रम संगठन</td></tr>
 <tr><td class="primary-col"><strong>धातु व रत्न</strong></td><td>लोहा, सीसा, काला पत्थर, नीलम (Blue Sapphire), जामुनिया (Amethyst)</td></tr>
 <tr><td class="primary-col"><strong>तत्व व दिशा</strong></td><td>वायु तत्व (वात), पश्चिम दिशा</td></tr>
-<tr><td class="primary-col"><strong>राशि व गरिमा</strong></td><td>मकर व कुंभ का स्वामी; तुला (२०°) में उच्च, मेष (२०°) में नीच, कुंभ (०-२०°) मूलत्रिकोण</td></tr>
+<tr><td class="primary-col"><strong>राशि व गरिमा</strong></td><td>मकर व कुंभ का स्वामी; तुला (20°) में उच्च, मेष (20°) में नीच, कुंभ (0-20°) मूलत्रिकोण</td></tr>
 </tbody></table>
 """
 
@@ -1405,7 +1405,7 @@ PAGE_16_HI_TABLE = """
 <tr><td class="primary-col"><strong>कार्यक्षेत्र</strong></td><td>पत्रकारिता, सॉफ्टवेयर कोडिंग, डेटा विश्लेषण, अध्यापन, लेखन, प्रकाशन, वकालत, सीए</td></tr>
 <tr><td class="primary-col"><strong>धातु व रत्न</strong></td><td>कांसा, पीतल, पन्ना (Emerald), पेरिडॉट, हरा टूमलाइन</td></tr>
 <tr><td class="primary-col"><strong>तत्व व दिशा</strong></td><td>पृथ्वी तत्व (भू), उत्तर दिशा</td></tr>
-<tr><td class="primary-col"><strong>राशि व गरिमा</strong></td><td>मिथुन व कन्या का स्वामी; कन्या (१५°) में उच्च, मीन (१५°) में नीच, कन्या (१६-२०°) मूलत्रिकोण</td></tr>
+<tr><td class="primary-col"><strong>राशि व गरिमा</strong></td><td>मिथुन व कन्या का स्वामी; कन्या (15°) में उच्च, मीन (15°) में नीच, कन्या (16-20°) मूलत्रिकोण</td></tr>
 </tbody></table>
 """
 
@@ -1690,13 +1690,13 @@ PAGE_37_HI_TABLE = """
 <th>मित्र राशियां</th>
 <th>शत्रु राशियां</th>
 </tr></thead><tbody>
-<tr><td class="primary-col"><strong>सूर्य</strong></td><td>सिंह (५)</td><td>मेष (१०°)</td><td>तुला (१०°)</td><td>सिंह (०-२०°)</td><td>कर्क, वृश्चिक, धनु, मीन</td><td>वृषभ, तुला, मकर, कुंभ</td></tr>
-<tr><td class="primary-col"><strong>चन्द्रमा</strong></td><td>कर्क (४)</td><td>वृषभ (३°)</td><td>वृश्चिक (३°)</td><td>वृषभ (४-३०°)</td><td>मेष, सिंह, धनु</td><td>कोई नहीं (सम भाव)</td></tr>
-<tr><td class="primary-col"><strong>मंगल</strong></td><td>मेष (१), वृश्चिक (८)</td><td>मकर (२८°)</td><td>कर्क (२८°)</td><td>मेष (०-१२°)</td><td>सिंह, धनु, मीन, कर्क</td><td>मिथुन, कन्या</td></tr>
-<tr><td class="primary-col"><strong>बुध</strong></td><td>मिथुन (३), कन्या (६)</td><td>कन्या (१५°)</td><td>मीन (१५°)</td><td>कन्या (१६-२०°)</td><td>वृषभ, तुला, मकर, कुंभ</td><td>कर्क</td></tr>
-<tr><td class="primary-col"><strong>गुरु</strong></td><td>धनु (९), मीन (१२)</td><td>कर्क (५°)</td><td>मकर (५°)</td><td>धनु (०-१०°)</td><td>मेष, सिंह, वृश्चिक</td><td>मिथुन, कन्या, तुला</td></tr>
-<tr><td class="primary-col"><strong>शुक्र</strong></td><td>वृषभ (२), तुला (७)</td><td>मीन (२७°)</td><td>कन्या (२७°)</td><td>तुला (०-१५°)</td><td>मिथुन, कन्या, मकर, कुंभ</td><td>सिंह, कर्क</td></tr>
-<tr><td class="primary-col"><strong>शनि</strong></td><td>मकर (१०), कुंभ (११)</td><td>तुला (२०°)</td><td>मेष (२०°)</td><td>कुंभ (०-२०°)</td><td>वृषभ, मिथुन, कन्या, तुला</td><td>मेष, सिंह, वृश्चिक</td></tr>
+<tr><td class="primary-col"><strong>सूर्य</strong></td><td>सिंह (5)</td><td>मेष (10°)</td><td>तुला (10°)</td><td>सिंह (0-20°)</td><td>कर्क, वृश्चिक, धनु, मीन</td><td>वृषभ, तुला, मकर, कुंभ</td></tr>
+<tr><td class="primary-col"><strong>चन्द्रमा</strong></td><td>कर्क (4)</td><td>वृषभ (3°)</td><td>वृश्चिक (3°)</td><td>वृषभ (4-30°)</td><td>मेष, सिंह, धनु</td><td>कोई नहीं (सम भाव)</td></tr>
+<tr><td class="primary-col"><strong>मंगल</strong></td><td>मेष (1), वृश्चिक (8)</td><td>मकर (28°)</td><td>कर्क (28°)</td><td>मेष (0-12°)</td><td>सिंह, धनु, मीन, कर्क</td><td>मिथुन, कन्या</td></tr>
+<tr><td class="primary-col"><strong>बुध</strong></td><td>मिथुन (3), कन्या (6)</td><td>कन्या (15°)</td><td>मीन (15°)</td><td>कन्या (16-20°)</td><td>वृषभ, तुला, मकर, कुंभ</td><td>कर्क</td></tr>
+<tr><td class="primary-col"><strong>गुरु</strong></td><td>धनु (9), मीन (12)</td><td>कर्क (5°)</td><td>मकर (5°)</td><td>धनु (0-10°)</td><td>मेष, सिंह, वृश्चिक</td><td>मिथुन, कन्या, तुला</td></tr>
+<tr><td class="primary-col"><strong>शुक्र</strong></td><td>वृषभ (2), तुला (7)</td><td>मीन (27°)</td><td>कन्या (27°)</td><td>तुला (0-15°)</td><td>मिथुन, कन्या, मकर, कुंभ</td><td>सिंह, कर्क</td></tr>
+<tr><td class="primary-col"><strong>शनि</strong></td><td>मकर (10), कुंभ (11)</td><td>तुला (20°)</td><td>मेष (20°)</td><td>कुंभ (0-20°)</td><td>वृषभ, मिथुन, कन्या, तुला</td><td>मेष, सिंह, वृश्चिक</td></tr>
 <tr><td class="primary-col"><strong>राहु</strong></td><td>छाया ग्रह (सह-कुंभ)</td><td>वृषभ / मिथुन</td><td>वृश्चिक / धनु</td><td>कुंभ राशि</td><td>वृषभ, तुला, मकर, कुंभ</td><td>मेष, कर्क, सिंह</td></tr>
 <tr><td class="primary-col"><strong>केतु</strong></td><td>छाया ग्रह (सह-वृश्चिक)</td><td>वृश्चिक / धनु</td><td>वृषभ / मिथुन</td><td>धनु / मीन</td><td>मेष, कर्क, सिंह, धनु</td><td>मिथुन, कन्या</td></tr>
 </tbody></table>
@@ -1774,9 +1774,9 @@ PAGE_44_HI_TABLE = """
 <th>सूर्य देव (आत्म कारक)</th>
 <th>लग्न भाव (भौतिक व्यक्तित्व व देह)</th>
 </tr></thead><tbody>
-<tr><td class="primary-col"><strong>परिवर्तन गति</strong></td><td>लगभग १ माह में १ राशि (~१° प्रतिदिन)</td><td>प्रत्येक २ घंटे में १ राशि (~१ दिन में १२ राशियां)</td></tr>
-<tr><td class="primary-col"><strong>खगोलीय आधार</strong></td><td>सूर्य की वार्षिक प्रत्यक्ष परिक्रमा</td><td>पृथ्वी का अपनी धुरी पर २४ घंटे का दैनिक घूर्णन</td></tr>
-<tr><td class="primary-col"><strong>राशि स्थिरता</strong></td><td>पूरे दिन में जन्म लेने वाले सभी जातकों की राशि समान रहती है</td><td>समय के प्रति अत्यंत संवेदनशील; प्रत्येक २ घंटे में बदल जाता है</td></tr>
+<tr><td class="primary-col"><strong>परिवर्तन गति</strong></td><td>लगभग 1 माह में 1 राशि (~1° प्रतिदिन)</td><td>प्रत्येक 2 घंटे में 1 राशि (~1 दिन में 12 राशियां)</td></tr>
+<tr><td class="primary-col"><strong>खगोलीय आधार</strong></td><td>सूर्य की वार्षिक प्रत्यक्ष परिक्रमा</td><td>पृथ्वी का अपनी धुरी पर 24 घंटे का दैनिक घूर्णन</td></tr>
+<tr><td class="primary-col"><strong>राशि स्थिरता</strong></td><td>पूरे दिन में जन्म लेने वाले सभी जातकों की राशि समान रहती है</td><td>समय के प्रति अत्यंत संवेदनशील; प्रत्येक 2 घंटे में बदल जाता है</td></tr>
 <tr><td class="primary-col"><strong>ज्योतिषीय फलित</strong></td><td>आत्मा, जीवन शक्ति, पिता, राजसत्ता, आत्म-सम्मान व संकल्प</td><td>भौतिक काया, रूप-रंग, शारीरिक गठन, स्वास्थ्य व लौकिक दृष्टिकोण</td></tr>
 </tbody></table>
 """
@@ -2077,7 +2077,7 @@ PAGE_58_HI_TABLE = """
 <th>संबंधित रोग व व्याधियां</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>पाराशर होरा शास्त्र / फल दीपिका</strong></td><td>सिर, मस्तिष्क, शरीर का ऊपरी भाग, त्वचा, बाल, शारीरिक गठन, समग्र स्वास्थ्य, जीवन शक्ति, हड्डियाँ</td><td>सिरदर्द, मस्तिष्क विकार, चक्कर आना, मानसिक अस्थिरता, बुखार, त्वचा रोग, बालों का झड़ना, शारीरिक कमजोरी, रोग प्रतिरोधक क्षमता में कमी, जन्मजात रोग, समग्र रूप से बीमार स्वास्थ्य   .            .</td></tr>
-<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर १ -  . 1</strong></td><td>सिर, मस्तिष्क, ऊपरी शरीर, सामान्य स्वास्थ्य, चेहरा, सूर्य से संबंधित अंग     -, heart vitality)</td><td>सिरदर्द, मस्तिष्क संबंधी समस्याएं, दृष्टि दोष, हृदय की कमजोरी, हड्डियों की समस्या, तेज बुखार, आत्मविश्वास की कमी से स्वास्थ्य समस्याएं      .            .       .</td></tr>
+<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर 1 -  . 1</strong></td><td>सिर, मस्तिष्क, ऊपरी शरीर, सामान्य स्वास्थ्य, चेहरा, सूर्य से संबंधित अंग     -, heart vitality)</td><td>सिरदर्द, मस्तिष्क संबंधी समस्याएं, दृष्टि दोष, हृदय की कमजोरी, हड्डियों की समस्या, तेज बुखार, आत्मविश्वास की कमी से स्वास्थ्य समस्याएं      .            .       .</td></tr>
 <tr><td class="primary-col"><strong>भृगु नंदी नाड़ी, (Bhrigu Nandi Nadi)</strong></td><td>समग्र शरीर, सिर, व्यक्तित्व   ., and Lagna lord&#x27, s condition are key.</td><td>(Dependent on planets involved), E.g., Saturn in Lagna: Chronic illness, weak constitution, long-standing health issues. Mars in Lagna: Injuries, fevers, inflammations. Rahu in Lagna: Mysterious illnesses, phobias, skin issues. Weak Lagna lord: General susceptibility to diseases.</td></tr>
 <tr><td class="primary-col"><strong>रहस्य, / Esoteric</strong></td><td>प्राणिक शरीर, केंद्रीय तंत्रिका तंत्र का मूल, चेतना का आसन</td><td>जीवन शक्ति का क्षय, पुरानी थकान, मनोवैज्ञानिक विकार जो शारीरिक रूप से प्रकट होते हैं, प्रतिरक्षा प्रणाली की शिथिलता, गहरी जड़ वाली जन्मजात प्रवृत्तियाँ -  .</td></tr>
 <tr><td class="primary-col"><strong>शोध/आधुनिक अनुसंधान</strong></td><td>संपूर्ण शारीरिक और मानसिक स्वास्थ्य, प्रतिरक्षा प्रणाली, आनुवंशिक प्रवृत्तियाँ, व्यक्तित्व और स्वास्थ्य के बीच संबंध</td><td>तनाव संबंधी विकार, ऑटोइम्यून रोग, जन्मजात स्थितियां, विकासात्मक मुद्दे, सामान्य जीवन शक्ति के निम्न स्तर, सिर की चोटें  .</td></tr>
@@ -2107,7 +2107,7 @@ PAGE_59_HI_TABLE = """
 <th>संबंधित रोग व व्याधियां</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>पाराशर होरा शास्त्र / फल दीपिका</strong></td><td>चेहरा, दाहिनी आँख, दांत, जीभ, मुँह, नाक, गला, गर्दन, स्वर रज्जु, हड्डियाँ, नाखून .</td><td>चेहरे के रोग, दाहिनी आँख के रोग, दंत समस्याएं, मसूड़ों के रोग, वाणी दोष, गले में खराश, टॉन्सिलाइटिस, गण्डमाला, नाक के रोग, खाने की आदत से संबंधित रोग, आवाज की हानि   .</td></tr>
-<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर २ -  . 2</strong></td><td>मुँह, दांत, जीभ, दाहिनी आँख, भोजन नली, परिवार के सदस्यों का स्वास्थ्य, बृहस्पति और शुक्र से संबंधित अंग     &, Venus).</td><td>दांत दर्द, मसूड़ों की समस्या, मुँह के छाले, दृष्टि दोष, बोलने में कठिनाई, गले की समस्याएं, भोजन से संबंधित विकार - ., can indicate problems with sustenance leading to weakness.</td></tr>
+<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर 2 -  . 2</strong></td><td>मुँह, दांत, जीभ, दाहिनी आँख, भोजन नली, परिवार के सदस्यों का स्वास्थ्य, बृहस्पति और शुक्र से संबंधित अंग     &, Venus).</td><td>दांत दर्द, मसूड़ों की समस्या, मुँह के छाले, दृष्टि दोष, बोलने में कठिनाई, गले की समस्याएं, भोजन से संबंधित विकार - ., can indicate problems with sustenance leading to weakness.</td></tr>
 <tr><td class="primary-col"><strong>भृगु नंदी नाड़ी, (Bhrigu Nandi Nadi)</strong></td><td>चेहरा, वाणी, दाहिनी आँख, भोजन का सेवन  .   2   2 &#27, s condition.</td><td>(Dependent on planets), E.g., Saturn in 2nd: Dental issues, restricted speech, problems with eating. Mars in 2nd: Mouth ulcers, harsh speech, eye inflammation. Rahu in 2nd: Unusual facial marks, speech issues, addiction to certain foods, eye problems. Weak 2nd lord can cause issues with nourishment.</td></tr>
 <tr><td class="primary-col"><strong>रहस्य, / Esoteric</strong></td><td>स्वाद कलिकाएँ, लार ग्रंथियाँ, थायरॉयड ग्रंथि, चेहरे की नसें  .</td><td>स्वाद की हानि, शुष्क मुँह, थायरॉयड असंतुलन, चेहरे का पक्षाघात    - &#27, s palsy if severely afflicted), वाणी में रुकावट   .</td></tr>
 <tr><td class="primary-col"><strong>शोध/आधुनिक अनुसंधान</strong></td><td>मुँह, दांत, मसूड़े, teeth, gums), गला, Larynx), दाहिनी आँख, आहार संबंधी आदतें, वाणी तंत्र  .</td><td>दंत क्षय, पेरियोडोंटल रोग, लैरींगाइटिस, फैरिन्जाइटिस, दाहिनी आँख के नेत्र रोग, खाने के विकार   -, bulimia if connected with psychological factors), वाणी विकार   -, mutism if psychologically linked).</td></tr>
@@ -2137,7 +2137,7 @@ PAGE_60_HI_TABLE = """
 <th>संबंधित रोग व व्याधियां</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>पाराशर होरा शास्त्र / फल दीपिका</strong></td><td>दाहिना कान, कंधे, भुजाएँ, हाथ, हंसली, गर्दन, श्वसन नली, तंत्रिका तंत्र   -    &, courage), फेफड़े  -  .</td><td>दाहिने कान के रोग, बहरापन, कंधे और बाहों में दर्द/चोट /   &, arms), हाथों में फ्रैक्चर, श्वसन संबंधी समस्याएं, दमा, ब्रोंकाइटिस, तपेदिक, तंत्रिका संबंधी विकार   -, restlessness affecting communication), गले में खराश, कॉलरबोन फ्रैक्चर  .</td></tr>
-<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर ३ -  . 3</strong></td><td>कंधे, भुजाएँ, हाथ, गला, दाहिना कान, भाई-बहनों का स्वास्थ्य &#27, health), मंगल से संबंधित अंग     -, energy).</td><td>भुजाओं में दर्द/कमजोरी, कंधे की समस्याएं, सुनने की समस्याएं, गले की समस्याएं, सांस लेने में कठिनाई, रक्त संबंधी समस्याएं      .       .</td></tr>
+<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर 3 -  . 3</strong></td><td>कंधे, भुजाएँ, हाथ, गला, दाहिना कान, भाई-बहनों का स्वास्थ्य &#27, health), मंगल से संबंधित अंग     -, energy).</td><td>भुजाओं में दर्द/कमजोरी, कंधे की समस्याएं, सुनने की समस्याएं, गले की समस्याएं, सांस लेने में कठिनाई, रक्त संबंधी समस्याएं      .       .</td></tr>
 <tr><td class="primary-col"><strong>भृगु नंदी नाड़ी, (Bhrigu Nandi Nadi)</strong></td><td>भुजाएँ, कंधे, दाहिना कान, संचार कौशल     .   3  3 .</td><td>(Dependent on planets), E.g., Saturn in 3rd: Chronic pain in arms/shoulders, hearing issues, speech impediments. Mars in 3rd: Injuries to arms/shoulders, ear infections. Rahu in 3rd: Skin issues on arms, unusual nerve pains, communication breakdown affecting mental health.</td></tr>
 <tr><td class="primary-col"><strong>रहस्य, / Esoteric</strong></td><td>ब्राचियल प्लेक्सस, ऊपरी पसलियाँ, डायाफ्राम की नसें, थाइमस ग्रंथि   -    .</td><td>तंत्रिका क्षति, पसलियों में दर्द, सांस लेने में कठिनाई, प्रतिरक्षा प्रतिक्रिया में कमी      .</td></tr>
 <tr><td class="primary-col"><strong>शोध/आधुनिक अनुसंधान</strong></td><td>कंधे, भुजाएँ, हाथ, arms, hands), श्वसन तंत्र   -, upper lungs), श्रवण तंत्र, परिधीय तंत्रिका तंत्र   .</td><td>फ्रोजन शोल्डर, कार्पल टनल सिंड्रोम, अस्थमा, ब्रोंकाइटिस, दाहिने कान में टिनिटस/बहरापन, न्यूरोपैथी, चिंता विकार   -   /.</td></tr>
@@ -2167,7 +2167,7 @@ PAGE_61_HI_TABLE = """
 <th>संबंधित रोग व व्याधियां</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>पाराशर होरा शास्त्र / फल दीपिका</strong></td><td>छाती, फेफड़े, स्तन, हृदय  -, not physical organ primarily), डायाफ्राम, पेट, पसलियाँ, शरीर के तरल पदार्थ   -  .</td><td>फेफड़ों के रोग   -, pleurisy), हृदय की भावनात्मक समस्याएं    -, sorrow leading to physical ailments), स्तन रोग, छाती में दर्द, पाचन संबंधी समस्याएं, जलोदर, कफ रोग, मानसिक शांति की कमी से उत्पन्न रोग, मिरगी  -  .</td></tr>
-<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर ४ -  . 4</strong></td><td>छाती, फेफड़े, हृदय, पेट  -  &#27, s nourishment), माँ का स्वास्थ्य &#27, s health), चंद्रमा से संबंधित अंग     -, mind).</td><td>फेफड़ों की समस्याएं   -, asthma), हृदय की घबराहट, पेट की समस्याएं, मानसिक अशांति, जलीय रोग, नींद की बीमारी  .      .  -  .</td></tr>
+<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर 4 -  . 4</strong></td><td>छाती, फेफड़े, हृदय, पेट  -  &#27, s nourishment), माँ का स्वास्थ्य &#27, s health), चंद्रमा से संबंधित अंग     -, mind).</td><td>फेफड़ों की समस्याएं   -, asthma), हृदय की घबराहट, पेट की समस्याएं, मानसिक अशांति, जलीय रोग, नींद की बीमारी  .      .  -  .</td></tr>
 <tr><td class="primary-col"><strong>भृगु नंदी नाड़ी, (Bhrigu Nandi Nadi)</strong></td><td>छाती, फेफड़े, हृदय, घर का वातावरण    .   4  4 .</td><td>(Dependent on planets), E.g., Saturn in 4th: Chronic lung issues, depression, heart heaviness (emotional). Mars in 4th: Chest inflammation, accidents at home affecting chest, high BP due to domestic stress. Rahu in 4th: Vague chest pains, phobias related to home, poisoning at home.</td></tr>
 <tr><td class="primary-col"><strong>रहस्य, / Esoteric</strong></td><td>पेरीकार्डियम, फुफ्फुस, लसीका ग्रंथियां, भावनात्मक मस्तिष्क      .</td><td>पेरिकार्डिटिस, फुफ्फुस बहाव, स्तन में सिस्ट, गहरी भावनात्मक आघात से शारीरिक रोग, चिंता से प्रेरित सांस की तकलीफ - .</td></tr>
 <tr><td class="primary-col"><strong>शोध/आधुनिक अनुसंधान</strong></td><td>श्वसन प्रणाली, हृदय, स्तन, पाचन तंत्र   -, stomach), मनोवैज्ञानिक स्वास्थ्य     /.</td><td>निमोनिया, तपेदिक, स्तन कैंसर, गैस्ट्रोओसोफेगल रिफ्लक्स रोग, चिंता, अवसाद, पैनिक अटैक, सोमैटोफॉर्म विकार   -     .</td></tr>
@@ -2197,7 +2197,7 @@ PAGE_62_HI_TABLE = """
 <th>संबंधित रोग व व्याधियां</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>पाराशर होरा शास्त्र / फल दीपिका</strong></td><td>हृदय, ऊपरी पीठ, रीढ़ की हड्डी, पेट / -, digestion), यकृत, प्लीहा, बुद्धि, मन, गर्भ  -  .</td><td>हृदय रोग   -, palpitations), रीढ़ की हड्डी के विकार, पीठ दर्द, अपच, पेट दर्द, यकृत/प्लीहा के रोग, अम्लता, गर्भपात, बांझपन, मानसिक क्षमता में कमी, याददाश्त कमजोर होना, बुखार .</td></tr>
-<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर ५ -  . 5</strong></td><td>हृदय, पीठ, पेट, संतान का स्वास्थ्य &#27, s health), बृहस्पति और सूर्य से संबंधित अंग     &, Sun - liver, vitality).</td><td>हृदय की समस्याएं, पीठ दर्द, पेट की समस्याएं, बच्चों के स्वास्थ्य में परेशानी   &#27, s health), बुखार ., problems in progeny, education and speculative losses can cause mental stress leading to health issues.</td></tr>
+<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर 5 -  . 5</strong></td><td>हृदय, पीठ, पेट, संतान का स्वास्थ्य &#27, s health), बृहस्पति और सूर्य से संबंधित अंग     &, Sun - liver, vitality).</td><td>हृदय की समस्याएं, पीठ दर्द, पेट की समस्याएं, बच्चों के स्वास्थ्य में परेशानी   &#27, s health), बुखार ., problems in progeny, education and speculative losses can cause mental stress leading to health issues.</td></tr>
 <tr><td class="primary-col"><strong>भृगु नंदी नाड़ी, (Bhrigu Nandi Nadi)</strong></td><td>हृदय, पेट, बुद्धि, संतान   .   5  5 .</td><td>(Dependent on planets), E.g., Saturn in 5th: Chronic heart issues, slow digestion, depression affecting intellect, problems with children&#x27, s health. Mars in 5th: Heart inflammation, fevers, acidity, miscarriages. Rahu in 5th: Sudden heart issues, food poisoning, phobias, unusual problems with progeny.</td></tr>
 <tr><td class="primary-col"><strong>रहस्य, / Esoteric</strong></td><td>मेरुदंड, हृदय की मांसपेशियां, सौर जाल, मस्तिष्क का रचनात्मक केंद्र     .</td><td>रीढ़ की हड्डी में विकृति, कार्डियोमायोपैथी, पाचन एंजाइमों का असंतुलन, रचनात्मकता में रुकावट से मानसिक तनाव, सीखने की अक्षमता      .</td></tr>
 <tr><td class="primary-col"><strong>शोध/आधुनिक अनुसंधान</strong></td><td>हृदय, रीढ़ की हड्डी, ऊपरी पेट   -, duodenum), यकृत, प्लीहा, अग्न्याशय, प्रजनन स्वास्थ्य   -   .</td><td>कोरोनरी धमनी रोग, स्पोंडिलाइटिस, गैस्ट्राइटिस, पेप्टिक अल्सर, हेपेटाइटिस, अग्नाशयशोथ, बांझपन, गर्भपात, सीखने संबंधी विकार, जुआ या अटकलों से तनाव संबंधी बीमारियाँ -     .</td></tr>
@@ -2227,7 +2227,7 @@ PAGE_63_HI_TABLE = """
 <th>संबंधित रोग व व्याधियां</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>पाराशर होरा शास्त्र / फल दीपिका</strong></td><td>पेट, आंतें  -  &, large), नाभि क्षेत्र, अपेंडिक्स, गुर्दे, कमर, पाचन तंत्र, रोग स्थान   .</td><td>सभी प्रकार के रोग, पाचन संबंधी विकार, अपेंडिसाइटिस, हर्निया, आंत्र रोग   -, diarrhea, dysentery), गुर्दे की पथरी/रोग, घाव, चोटें, सूजन, फोड़े, अल्सर, भोजन विषाक्तता, कुपोषण, ज्वर, मानसिक चिंता, शल्य चिकित्सा .       -.</td></tr>
-<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर ६ -  . 6</strong></td><td>पेट, आंतें, नाभि, गुर्दे, मामा का स्वास्थ्य  &#27, s health), बुध और केतु से संबंधित अंग     &, Ketu - skin, nerves, hidden issues).</td><td>पेट की बीमारियाँ, आंतों की समस्या, हर्निया, गुर्दे की समस्याएं, त्वचा रोग, एलर्जी, ऋण और शत्रुओं के कारण स्वास्थ्य समस्याएं, दुर्घटनाएं, मुकदमेबाजी से तनाव   .</td></tr>
+<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर 6 -  . 6</strong></td><td>पेट, आंतें, नाभि, गुर्दे, मामा का स्वास्थ्य  &#27, s health), बुध और केतु से संबंधित अंग     &, Ketu - skin, nerves, hidden issues).</td><td>पेट की बीमारियाँ, आंतों की समस्या, हर्निया, गुर्दे की समस्याएं, त्वचा रोग, एलर्जी, ऋण और शत्रुओं के कारण स्वास्थ्य समस्याएं, दुर्घटनाएं, मुकदमेबाजी से तनाव   .</td></tr>
 <tr><td class="primary-col"><strong>भृगु नंदी नाड़ी, (Bhrigu Nandi Nadi)</strong></td><td>रोग स्थान, आंतें, कमर .   6, 6th lord, and planets aspecting.</td><td>(Indicates the nature of disease based on planets), E.g., Saturn in 6th: Chronic diseases, long suffering, diseases due to malnutrition. Mars in 6th: Acute illnesses, inflammations, injuries, surgeries, blood disorders. Rahu in 6th: Mysterious/undiagnosable diseases, poisoning, phobias, diseases from addictions. Ketu in 6th: Diseases due to past karma, sudden acute issues, surgeries, fevers.</td></tr>
 <tr><td class="primary-col"><strong>रहस्य, / Esoteric</strong></td><td>प्रतिरक्षा प्रतिक्रिया, शरीर की उपचार क्षमता &#27, s healing capacity), सूक्ष्म पोषक तत्वों का अवशोषण, तनाव और प्रतिरक्षा के बीच संबंध - .</td><td>ऑटोइम्यून विकार, धीमी गति से घाव भरना, पोषक तत्वों की कमी से होने वाले रोग, तनाव-प्रेरित बीमारियाँ, सेवा या काम से संबंधित स्वास्थ्य समस्याएं        .</td></tr>
 <tr><td class="primary-col"><strong>शोध/आधुनिक अनुसंधान</strong></td><td>पाचन तंत्र   -, appendix), गुर्दे, अधिवृक्क ग्रंथियां, प्रतिरक्षा प्रणाली, दैनिक दिनचर्या और स्वास्थ्य   &, health).</td><td>चिड़चिड़ा आंत्र सिंड्रोम, इंफ्लेमेटरी बाउल डिजीज  - &#27, s, Ulcerative Colitis), अपेंडिसाइटिस, गुर्दे का संक्रमण, अधिवृक्क थकान, तीव्र संक्रामक रोग, काम से संबंधित तनाव और स्वास्थ्य पर इसके प्रभाव, आहार संबंधी असंतुलन से रोग    .</td></tr>
@@ -2257,7 +2257,7 @@ PAGE_64_HI_TABLE = """
 <th>संबंधित रोग व व्याधियां</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>पाराशर होरा शास्त्र / फल दीपिका</strong></td><td>निचली कमर, गुर्दे, मूत्र प्रणाली, मूत्राशय, मूत्रमार्ग, प्रजनन अंग, गर्भाशय, अंडाशय, प्रोस्टेट, वीर्य .</td><td>गुर्दे के रोग, मूत्र पथ के संक्रमण, मूत्राशय की समस्याएं, यौन संचारित रोग, बांझपन, नपुंसकता, प्रोस्टेट वृद्धि, गर्भाशय/अंडाशय के विकार, ल्यूकोरिया, मधुमेह, निचली कमर में दर्द, साथी के स्वास्थ्य संबंधी समस्याएं &#27, s health issues).</td></tr>
-<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर ७ -  . 7</strong></td><td>निचला पेट, गुर्दे, यौन अंग, मूत्र प्रणाली, जीवनसाथी का स्वास्थ्य &#27, s health), शुक्र और बुध से संबंधित अंग     &, Mercury).</td><td>गुर्दे की समस्याएं, मूत्र संबंधी रोग, यौन समस्याएं, मधुमेह, पथरी, गुप्त रोग  .      .</td></tr>
+<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर 7 -  . 7</strong></td><td>निचला पेट, गुर्दे, यौन अंग, मूत्र प्रणाली, जीवनसाथी का स्वास्थ्य &#27, s health), शुक्र और बुध से संबंधित अंग     &, Mercury).</td><td>गुर्दे की समस्याएं, मूत्र संबंधी रोग, यौन समस्याएं, मधुमेह, पथरी, गुप्त रोग  .      .</td></tr>
 <tr><td class="primary-col"><strong>भृगु नंदी नाड़ी, (Bhrigu Nandi Nadi)</strong></td><td>प्रजनन अंग, गुर्दे, निचली कमर  .   7  7 .</td><td>(Dependent on planets), E.g., Saturn in 7th: Chronic kidney issues, sexual debility, problems with spouse&#x27, s health. Mars in 7th: UTIs, inflammation in reproductive organs, surgeries. Rahu in 7th: Unusual sexual problems, STDs, issues with spouse&#x27, s health.</td></tr>
 <tr><td class="primary-col"><strong>रहस्य, / Esoteric</strong></td><td>अधिवृक्क ग्रंथियां, श्रोणि क्षेत्र में नसें, शरीर का जल संतुलन &#27, s water balance related to kidneys).</td><td>हार्मोनल असंतुलन से प्रजनन समस्याएं, श्रोणि सूजन की बीमारी, यौन रोग, जल प्रतिधारण      .</td></tr>
 <tr><td class="primary-col"><strong>शोध/आधुनिक अनुसंधान</strong></td><td>मूत्रजननांगी प्रणाली   -, bladder, ureters, urethra, reproductive organs), निचली पीठ, अधिवृक्क ग्रंथियां  .</td><td>नेफ्रैटिस, सिस्टिटिस, यौन संचारित संक्रमण, पॉलीसिस्टिक ओवरी सिंड्रोम, एंडोमेट्रियोसिस, प्रोस्टेटाइटिस, स्तंभन दोष, बांझपन, पीठ की पुरानी समस्याएं, रिश्ते के तनाव से जुड़ी बीमारियाँ     .</td></tr>
@@ -2287,7 +2287,7 @@ PAGE_65_HI_TABLE = """
 <th>संबंधित रोग व व्याधियां</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>पाराशर होरा शास्त्र / फल दीपिका</strong></td><td>बाह्य जननांग, मलमार्ग   -, rectum, colon), श्रोणि, पुरानी बीमारियाँ, जीवन शक्ति का ह्रास, मृत्यु का कारण, गुप्त अंग  .</td><td>पुरानी और असाध्य बीमारियाँ, यौन रोग, बवासीर, फिस्टुला, भगंदर, दुर्घटनाएँ, शल्य चिकित्सा, मानसिक पीड़ा, अवसाद, यौन दुर्बलता, गुप्त अंगों के रोग, जहर, अल्सर, कैंसर, दीर्घायु से संबंधित मुद्दे  .</td></tr>
-<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर ८ -  . 8</strong></td><td>मलमार्ग, यौन अंग, पुरानी बीमारियाँ, मृत्यु का स्थान, शनि और मंगल से संबंधित अंग     &, Mars).</td><td>बवासीर, भगंदर, पुरानी बीमारियाँ, दुर्घटनाएं, सर्जरी, मानसिक तनाव, गुप्त रोग  ., long-term health issues or accidents.</td></tr>
+<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर 8 -  . 8</strong></td><td>मलमार्ग, यौन अंग, पुरानी बीमारियाँ, मृत्यु का स्थान, शनि और मंगल से संबंधित अंग     &, Mars).</td><td>बवासीर, भगंदर, पुरानी बीमारियाँ, दुर्घटनाएं, सर्जरी, मानसिक तनाव, गुप्त रोग  ., long-term health issues or accidents.</td></tr>
 <tr><td class="primary-col"><strong>भृगु नंदी नाड़ी, (Bhrigu Nandi Nadi)</strong></td><td>पुरानी बीमारियाँ, दीर्घायु, बाह्य जननांग  .   8  8 .</td><td>(Indicates nature of chronic illness or cause of concern for longevity), E.g., Saturn in 8th: Long, debilitating chronic illness. Mars in 8th: Accidents, surgeries, acute critical illness. Rahu in 8th: Mysterious incurable diseases, poisoning, sudden death. Ketu in 8th: Diseases difficult to diagnose, surgeries, genetic disorders.</td></tr>
 <tr><td class="primary-col"><strong>रहस्य, / Esoteric</strong></td><td>कोशिका पुनर्जनन और अध: पतन, कुंडलिनी शक्ति, गहरी मनोवैज्ञानिक आघात, आनुवंशिक कोड  .</td><td>अपक्षयी रोग   - &#27, s, Parkinson&#x27, s), कैंसर, ऑटोइम्यून रोग, गहरे बैठा हुआ डर और चिंताएं जो शारीरिक स्वास्थ्य को प्रभावित करती हैं, आनुवंशिक विकार  .</td></tr>
 <tr><td class="primary-col"><strong>शोध/आधुनिक अनुसंधान</strong></td><td>मलमार्ग, बाह्य जननांग, श्रोणि, प्रतिरक्षा प्रणाली, कोशिका स्वास्थ्य, मृत्यु और मरणासन्न प्रक्रिया    .</td><td>कोलोरेक्टल कैंसर, बवासीर, एनल फिस्टुला, पुरानी यौन संचारित संक्रमण, अपक्षयी तंत्रिका संबंधी रोग, एड्स, गंभीर दुर्घटनाएँ, आत्महत्या की प्रवृत्ति, मृत्यु का भय .</td></tr>
@@ -2317,7 +2317,7 @@ PAGE_66_HI_TABLE = """
 <th>संबंधित रोग व व्याधियां</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>पाराशर होरा शास्त्र / फल दीपिका</strong></td><td>कूल्हे, जांघें, नितंब, धमनियाँ, नसें, यकृत, रक्त, पोषण .</td><td>कूल्हे और जांघों के रोग, साइटिका, गठिया, धमनी संबंधी समस्याएं, रक्त विकार   -, poor quality), यकृत की समस्याएं, पक्षाघात, पोषण की कमी से रोग, लंबी यात्राओं से थकावट/बीमारी, वसा चयापचय के मुद्दे   .</td></tr>
-<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर ९ -  . 9</strong></td><td>कूल्हे, जांघें, पैर, बुजुर्गों का स्वास्थ्य, बृहस्पति से संबंधित अंग     -, fat).</td><td>कूल्हे का दर्द, जांघ की समस्याएं, यकृत विकार, मोटापा, मधुमेह, पैरों में कमजोरी   .      ., can cause health issues.</td></tr>
+<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर 9 -  . 9</strong></td><td>कूल्हे, जांघें, पैर, बुजुर्गों का स्वास्थ्य, बृहस्पति से संबंधित अंग     -, fat).</td><td>कूल्हे का दर्द, जांघ की समस्याएं, यकृत विकार, मोटापा, मधुमेह, पैरों में कमजोरी   .      ., can cause health issues.</td></tr>
 <tr><td class="primary-col"><strong>भृगु नंदी नाड़ी, (Bhrigu Nandi Nadi)</strong></td><td>कूल्हे, जांघें, पिता का स्वास्थ्य &#27, s health). Planets in 9th and 9th lord.</td><td>(Dependent on planets), E.g., Saturn in 9th: Chronic hip/thigh pain, issues with father&#x27, s health (if Sun also afflicted). Mars in 9th: Injuries to hips/thighs, fevers during travel. Rahu in 9th: Unusual problems in hips/thighs, issues with father.</td></tr>
 <tr><td class="primary-col"><strong>रहस्य, / Esoteric</strong></td><td>ऊरु तंत्रिका, बड़ी रक्त वाहिकाएं, शरीर की समग्र जीवन शक्ति        /.</td><td>तंत्रिका संपीड़न, गहरी शिरा घनास्त्रता, विश्वास और आस्था की कमी से स्वास्थ्य पर प्रभाव, लंबी दूरी की यात्रा से संबंधित अज्ञात बीमारियाँ     - .</td></tr>
 <tr><td class="primary-col"><strong>शोध/आधुनिक अनुसंधान</strong></td><td>कूल्हे, जांघें, thighs, femur bone), धमनी प्रणाली, यकृत, पित्ताशय, तंत्रिका तंत्र   -  .</td><td>कूल्हे का ऑस्टियोआर्थराइटिस, साइटिका, ऊरु धमनी रोग, हेपेटाइटिस, सिरोसिस, पित्त पथरी, मोटापा, चयापचय सिंड्रोम, यात्रा से संबंधित बीमारियाँ -  -, infections).</td></tr>
@@ -2347,7 +2347,7 @@ PAGE_67_HI_TABLE = """
 <th>संबंधित रोग व व्याधियां</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>पाराशर होरा शास्त्र / फल दीपिका</strong></td><td>घुटने, पटेला, जोड़, हड्डियाँ  -, density), रीढ़ की हड्डी, त्वचा  -  .</td><td>घुटने के रोग, गठिया, आमवाती रोग, हड्डियों के फ्रैक्चर/विकार, जोड़ों का दर्द, त्वचा रोग   -, psoriasis, leprosy), दुर्बलता, ऊंचाई से गिरना, पक्षाघात, थकान, पेशेवर खतरे     .</td></tr>
-<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर १० -  . 10</strong></td><td>घुटने, हड्डियाँ, जोड़, सरकार से संबंधित परेशानियाँ जो स्वास्थ्य को प्रभावित करती हैं, शनि से संबंधित अंग     -, teeth, hair).</td><td>घुटनों का दर्द, गठिया, हड्डियों की कमजोरी, दांतों की समस्या, बालों का झड़ना, त्वचा की समस्याएं  .         .</td></tr>
+<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर 10 -  . 10</strong></td><td>घुटने, हड्डियाँ, जोड़, सरकार से संबंधित परेशानियाँ जो स्वास्थ्य को प्रभावित करती हैं, शनि से संबंधित अंग     -, teeth, hair).</td><td>घुटनों का दर्द, गठिया, हड्डियों की कमजोरी, दांतों की समस्या, बालों का झड़ना, त्वचा की समस्याएं  .         .</td></tr>
 <tr><td class="primary-col"><strong>भृगु नंदी नाड़ी, (Bhrigu Nandi Nadi)</strong></td><td>घुटने, जोड़, हड्डियाँ, करियर से संबंधित तनाव -   .   10  10 .</td><td>(Dependent on planets), E.g., Saturn in 10th: Chronic knee/joint pain, bone density issues. Mars in 10th: Knee injuries, inflammation in joints, accidents at work. Rahu in 10th: Unusual joint pains, skin issues related to work environment.</td></tr>
 <tr><td class="primary-col"><strong>रहस्य, / Esoteric</strong></td><td>कंकाल प्रणाली की संरचनात्मक अखंडता, श्लेष द्रव, शरीर की मुद्रा और संरेखण    .</td><td>ऑस्टियोपोरोसिस, अपक्षयी डिस्क रोग, जोड़ों में जकड़न, काम से संबंधित दोहरावदार तनाव की चोटें, मान-सम्मान की हानि से मनोदैहिक रोग      .</td></tr>
 <tr><td class="primary-col"><strong>शोध/आधुनिक अनुसंधान</strong></td><td>घुटने, हड्डियाँ, जोड़, bones, joints - especially knee joint), त्वचा, दांत, बाल, रीढ़ की हड्डी  .</td><td>ऑस्टियोआर्थराइटिस, रुमेटीइड गठिया, बर्साइटिस, हड्डियों का फ्रैक्चर, त्वचा कैंसर, सोरायसिस, काम से संबंधित मस्कुलोस्केलेटल विकार, बर्नआउट सिंड्रोम     .</td></tr>
@@ -2377,7 +2377,7 @@ PAGE_68_HI_TABLE = """
 <th>संबंधित रोग व व्याधियां</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>पाराशर होरा शास्त्र / फल दीपिका</strong></td><td>पिंडलियाँ, टखने, बायां कान, बायां पैर, रक्त परिसंचरण, नसें .</td><td>पिंडलियों और टखनों के रोग/चोटें, पैरों की ऐंठन, टखने की मोच, वैरिकोज वेन्स, परिसंचरण संबंधी समस्याएं   -, clots), बाएं कान के रोग, बहरापन, गाउट, हड्डी का टूटना, तंत्रिका संबंधी दर्द, दोस्तों या सामाजिक दायरे से फैलने वाले संक्रामक रोग        .</td></tr>
-<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर ११ -  . 11</strong></td><td>पिंडलियां, टखने, पैर, कान, आय और लाभ से संबंधित स्वास्थ्य, शनि से संबंधित अंग     -  .</td><td>पैरों में दर्द, पिंडलियों में ऐंठन, टखने की समस्याएं, सुनने की समस्याएं  .          .</td></tr>
+<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर 11 -  . 11</strong></td><td>पिंडलियां, टखने, पैर, कान, आय और लाभ से संबंधित स्वास्थ्य, शनि से संबंधित अंग     -  .</td><td>पैरों में दर्द, पिंडलियों में ऐंठन, टखने की समस्याएं, सुनने की समस्याएं  .          .</td></tr>
 <tr><td class="primary-col"><strong>भृगु नंदी नाड़ी, (Bhrigu Nandi Nadi)</strong></td><td>पिंडलियां, टखने, बायां कान, लाभ/इच्छाओं की पूर्ति से संबंधित स्वास्थ्य      /.   11  11 .</td><td>(Dependent on planets), E.g., Saturn in 11th: Chronic pain in calves/ankles, hearing issues (left ear). Mars in 11th: Injuries to ankles/calves, ear infections. Rahu in 11th: Unusual pains/cramps in legs, sudden hearing issues.</td></tr>
 <tr><td class="primary-col"><strong>रहस्य, / Esoteric</strong></td><td>शिरापरक रक्त प्रवाह, परिधीय तंत्रिका तंत्र, शरीर की आकांक्षाओं और स्वास्थ्य के बीच संबंध   &#27, s aspirations and health).</td><td>गहरी शिरा घनास्त्रता, परिधीय न्यूरोपैथी, बेचैन पैर सिंड्रोम, सामाजिक अलगाव या अधूरी इच्छाओं से मनोदैहिक रोग        .</td></tr>
 <tr><td class="primary-col"><strong>शोध/आधुनिक अनुसंधान</strong></td><td>निचला पैर (पिंडली, टखने), (Lower legs - shins, calves, ankles), परिसंचरण तंत्र   -, arteries in legs), श्रवण तंत्र, लसीका प्रणाली   -  .</td><td>वैरिकाज़ नसें, एडिमा, एच्लीस टेंडोनाइटिस, टखने का गठिया, परिधीय धमनी रोग, बाएं कान में टिनिटस/बहरापन, सामाजिक गतिविधियों या आकांक्षाओं से संबंधित तनाव संबंधी बीमारियाँ -       .</td></tr>
@@ -2407,7 +2407,7 @@ PAGE_69_HI_TABLE = """
 <th>संबंधित रोग व व्याधियां</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>पाराशर होरा शास्त्र / फल दीपिका</strong></td><td>पैर, पैर की उंगलियां, बाईं आँख, लसीका प्रणाली, अस्पताल, नींद, गुप्त अंग, शारीरिक बर्बादी   .</td><td>पैरों के रोग/चोटें /   -, bunions, gout), बाईं आँख के रोग, नींद न आना, नींद संबंधी विकार, अस्पताल में भर्ती होना, गुप्त रोग, मानसिक असंतुलन   -, anxieties, depression), व्यसन  -, alcohol), अंग हानि, शारीरिक कमजोरी, प्रतिरक्षा संबंधी विकार, एलर्जी, गुप्त शत्रुओं के कारण रोग, कारावास से संबंधित रोग    .</td></tr>
-<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर १२ -  . 12</strong></td><td>पैर, बाईं आँख, नींद, अस्पताल, छिपे हुए दुश्मन, बृहस्पति और राहु से संबंधित अंग     &, Rahu - expansiveness, hidden issues).</td><td>पैरों की समस्याएं, दृष्टि दोष, नींद की कमी, अस्पताल में भर्ती होना, अज्ञात कारण के रोग, व्यसन, मानसिक तनाव     /.   .</td></tr>
+<tr><td class="primary-col"><strong>लाल किताब, खाना नंबर 12 -  . 12</strong></td><td>पैर, बाईं आँख, नींद, अस्पताल, छिपे हुए दुश्मन, बृहस्पति और राहु से संबंधित अंग     &, Rahu - expansiveness, hidden issues).</td><td>पैरों की समस्याएं, दृष्टि दोष, नींद की कमी, अस्पताल में भर्ती होना, अज्ञात कारण के रोग, व्यसन, मानसिक तनाव     /.   .</td></tr>
 <tr><td class="primary-col"><strong>भृगु नंदी नाड़ी, (Bhrigu Nandi Nadi)</strong></td><td>पैर, बाईं आँख, नींद, अस्पताल में भर्ती होना, हानि   .   12  12 .</td><td>(Dependent on planets), E.g., Saturn in 12th: Chronic foot problems, sleep disorders, long hospitalization, depression. Mars in 12th: Foot injuries, eye infections, accidents leading to hospitalization. Rahu in 12th: Mysterious illnesses leading to hospitalization, addictions, sleep disturbances, phobias. Ketu in 12th: Moksha karaka, but if afflicted can give peculiar foot/eye issues, detachment leading to self-neglect.</td></tr>
 <tr><td class="primary-col"><strong>रहस्य, / Esoteric</strong></td><td>अवचेतन मन, पीनियल ग्रंथि   -, subtle energies), शरीर के विषहरण मार्ग &#27, s detoxification pathways - lymphatic system), कर्मिक रोग        .</td><td>नींद संबंधी विकार   -, nightmares), मनोवैज्ञानिक विकार   -, dissociative disorders), व्यसन, प्रतिरक्षा प्रणाली की पुरानी समस्याएं, अज्ञात मूल के रोग, अलगाव और कारावास से संबंधित स्वास्थ्य समस्याएं       .</td></tr>
 <tr><td class="primary-col"><strong>शोध/आधुनिक अनुसंधान</strong></td><td>पैर, पैर की उंगलियां, toes), बाईं आँख, लसीका प्रणाली, नींद चक्र, मानसिक स्वास्थ्य   -, dreams), व्यसन, अस्पताल और संस्थागत देखभाल  &, institutional care).</td><td>पैरों की विकृति, डायबिटिक फुट, बाईं आँख के नेत्र रोग, लिम्फेडेमा, अनिद्रा, स्लीप एपनिया, मादक द्रव्यों के सेवन संबंधी विकार, अवसाद, चिंता, अस्पताल में भर्ती होने की आवश्यकता वाली बीमारियाँ, आत्म-विनाशकारी प्रवृत्तियाँ -   .</td></tr>

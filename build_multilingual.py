@@ -37,16 +37,16 @@ HINDI_TITLES = [
     'बुध देव के संपूर्ण कारकत्व व बुद्धि-विवेक',
     'राहु देव के संपूर्ण कारकत्व व मायावी प्रभाव',
     'केतु देव के संपूर्ण कारकत्व व मोक्ष मार्ग',
-    '१७ शास्त्रीय राजयोग एवं पंच महापुरुष योग (भाग १)',
-    '१७ शास्त्रीय राजयोग एवं विपरीत राजयोग (भाग २)',
+    '17 शास्त्रीय राजयोग एवं पंच महापुरुष योग (भाग 1)',
+    '17 शास्त्रीय राजयोग एवं विपरीत राजयोग (भाग 2)',
     'ग्रह गति, गोचर अवधि एवं विंशोत्तरी महादशा चक्र',
     'ग्रह दृष्टि तालिका एवं शास्त्रीय दृष्टि नियम',
-    '२७ नक्षत्र, विस्तार व राशि सीमा तालिका',
-    '२७ नक्षत्र, अधिष्ठाता देवता व पद नामाक्षर',
+    '27 नक्षत्र, विस्तार व राशि सीमा तालिका',
+    '27 नक्षत्र, अधिष्ठाता देवता व पद नामाक्षर',
     'नक्षत्र, अधिष्ठाता देवता और स्वामी तालिका',
     'नक्षत्र स्वामी व दशा अधिपति सूत्र',
-    '२७ नक्षत्र एवं स्वामी शास्त्रीय तालिका',
-    '१२ राशियां, स्वामी व पंचमहाभूत तत्व',
+    '27 नक्षत्र एवं स्वामी शास्त्रीय तालिका',
+    '12 राशियां, स्वामी व पंचमहाभूत तत्व',
     'राशियों के गुण, तत्व एवं स्वभाव वर्गीकरण',
     'राशियों का लिंग वर्गीकरण (पुरुष व स्त्री राशियां)',
     'राशियों की ध्रुवता (धनात्मक एवं ऋणात्मक स्वभाव)',
@@ -56,15 +56,15 @@ HINDI_TITLES = [
     'जल तत्व राशियां: कर्क, वृश्चिक, मीन',
     'तत्व एवं गतिशीलता का संयुक्त वर्गीकरण',
     'चर, स्थिर, द्विस्वभाव व तत्व फलित नियम',
-    'दीप्तादि ९ अवस्थाएं: ग्रहों की स्थिति व फल',
+    'दीप्तादि 9 अवस्थाएं: ग्रहों की स्थिति व फल',
     'ग्रहों की नैसर्गिक व तात्कालिक मैत्री वर्गीकरण',
     'दीप्तादि अवस्थाएं, मूलत्रिकोण व स्वराशि तालिका',
     'ग्रह अवस्थाओं के व्यावहारिक फलित नियम',
     'ग्रहों के पांच प्रकार के संबंध (पंच संबंध)',
-    '१२ भावों के स्थिर कारक ग्रह',
+    '12 भावों के स्थिर कारक ग्रह',
     'भाव कारक व भावेश का शास्त्रीय अंतर एवं विश्लेषण',
-    'सूर्य देव: भाव १ से ६ फलित विचार',
-    'सूर्य देव: भाव ७ से १२ फलित विचार',
+    'सूर्य देव: भाव 1 से 6 फलित विचार',
+    'सूर्य देव: भाव 7 से 12 फलित विचार',
     'सूर्य देव: मेष से कन्या राशि फल',
     'सूर्य देव: तुला से मीन राशि फल',
     'सूर्य देव: शारीरिक अंग व रोग संबंध',
@@ -88,23 +88,23 @@ HINDI_TITLES = [
     'दशम भाव: शारीरिक अंग व रोग निदान',
     'एकादश भाव: शारीरिक अंग व रोग निदान',
     'द्वादश भाव: शारीरिक अंग व रोग निदान',
-    '१२ भाव, शारीरिक अंग एवं व्याधि समन्वय तालिका',
-    '१२ राशियां, शारीरिक अंग और विशिष्ट रोग तालिका',
+    '12 भाव, शारीरिक अंग एवं व्याधि समन्वय तालिका',
+    '12 राशियां, शारीरिक अंग और विशिष्ट रोग तालिका',
     'कैंसर (अर्भुद रोग) के ज्योतिषीय कारण व मुख्य बिंदु',
     'सामान्य कैंसर (स्तन व फेफड़े): ग्रह योग व विश्लेषण',
     'रक्त कैंसर (ल्यूकीमिया): ज्योतिषीय योग व विश्लेषण',
     'त्वचा कैंसर (मेलानोमा): ग्रह योग व विश्लेषण',
-    '२७ नक्षत्र, विस्तार व राशि सीमा विभाजन',
-    '२७ नक्षत्र, देवता व पद नामाक्षर तालिका',
+    '27 नक्षत्र, विस्तार व राशि सीमा विभाजन',
+    '27 नक्षत्र, देवता व पद नामाक्षर तालिका',
     'नक्षत्र, देवता एवं ग्रह स्वामी तालिका',
     'नक्षत्र स्वामी व दशा अधिपति शास्त्रीय सूत्र',
-    '२७ नक्षत्र एवं स्वामी सम्पूर्ण ज्ञानकोश तालिका',
-    'आश्लेषा नक्षत्र: ४ पद एवं ग्रह फल विश्लेषण',
-    'पुष्य नक्षत्र: ४ पद एवं नवमांश ग्रह प्रभाव',
-    'अश्विनी नक्षत्र: ४ पद व नवमांश अधिपति तालिका',
+    '27 नक्षत्र एवं स्वामी सम्पूर्ण ज्ञानकोश तालिका',
+    'आश्लेषा नक्षत्र: 4 पद एवं ग्रह फल विश्लेषण',
+    'पुष्य नक्षत्र: 4 पद एवं नवमांश ग्रह प्रभाव',
+    'अश्विनी नक्षत्र: 4 पद व नवमांश अधिपति तालिका',
     'अश्विनी नक्षत्र: पद ध्वनि, प्रतीक व मूल स्वभाव',
-    'अश्विनी नक्षत्र में ९ ग्रहों का फलित विश्लेषण',
-    'अश्विनी नक्षत्र: ४ पद, नवमांश व ग्रह संबंध सारांश',
+    'अश्विनी नक्षत्र में 9 ग्रहों का फलित विश्लेषण',
+    'अश्विनी नक्षत्र: 4 पद, नवमांश व ग्रह संबंध सारांश',
     'समापन पृष्ठ • उपसंहार व वैदिक मंगल कामना'
 ]
 
@@ -207,11 +207,11 @@ def get_chapter_name(page_idx, lang='hindi'):
         if page_idx == 3: return "अध्ययन निर्देशिका • Study Guide"
         if page_idx == 4: return "आचार संहिता • Code of Conduct"
         if page_idx == 5: return "अनुक्रमणिका • Index"
-        if 6 <= page_idx <= 20: return "अध्याय २: नवग्रह कारकत्व व राजयोग"
-        if 21 <= page_idx <= 37: return "अध्याय ३: राशि, नक्षत्र एवं ग्रह गति"
-        if 38 <= page_idx <= 48: return "अध्याय ४: भाव एवं राशियों में ग्रह"
-        if 49 <= page_idx <= 75: return "अध्याय ५: आयुर्वेद-ज्योतिष व स्वास्थ्य"
-        if 76 <= page_idx <= 86: return "अध्याय ६: नक्षत्र पद व ग्रह विश्लेषण"
+        if 6 <= page_idx <= 20: return "अध्याय 2: नवग्रह कारकत्व व राजयोग"
+        if 21 <= page_idx <= 37: return "अध्याय 3: राशि, नक्षत्र एवं ग्रह गति"
+        if 38 <= page_idx <= 48: return "अध्याय 4: भाव एवं राशियों में ग्रह"
+        if 49 <= page_idx <= 75: return "अध्याय 5: आयुर्वेद-ज्योतिष व स्वास्थ्य"
+        if 76 <= page_idx <= 86: return "अध्याय 6: नक्षत्र पद व ग्रह विश्लेषण"
         return "उपसंहार • Back Cover"
     else:
         if page_idx == 0: return "Front Cover"
@@ -233,10 +233,10 @@ def get_chapter_name(page_idx, lang='hindi'):
 hindi_headers = {
     '#': 'क्र.',
     'No.': 'क्र.',
-    '1st Pada': 'प्रथम पद (१)',
-    '2nd Pada': 'द्वितीय पद (२)',
-    '3rd Pada': 'तृतीय पद (३)',
-    '4th Pada': 'चतुर्थ पद (४)',
+    '1st Pada': 'प्रथम पद (1)',
+    '2nd Pada': 'द्वितीय पद (2)',
+    '3rd Pada': 'तृतीय पद (3)',
+    '4th Pada': 'चतुर्थ पद (4)',
     'Ashwini Pad': 'अश्विनी पद',
     'Avastha (State)': 'ग्रह अवस्था',
     'Avg. Time per Rashi': 'औसत गोचर अवधि (प्रति राशि)',
@@ -275,7 +275,7 @@ hindi_headers = {
     'Kopi (Combust)': 'कोप अवस्था (अस्त ग्रह)',
     'Lord': 'स्वामी ग्रह',
     'Lord (Planet)': 'स्वामी ग्रह',
-    'Main Sign (D1)': 'लग्न राशि (डी-१)',
+    'Main Sign (D1)': 'लग्न राशि (डी-1)',
     'Meaning and Characteristics': 'अर्थ एवं शास्त्रीय विशेषताएं',
     'Mercury (English)': 'बुध विवरण',
     'Mitra Rashi (Friendly Signs)': 'मित्र राशियां',
@@ -291,22 +291,22 @@ hindi_headers = {
     'Nakshatra (नक्षत्र)': 'नक्षत्र',
     'Navamsa Lord': 'नवमांश स्वामी',
     'Navamsa Sign': 'नवमांश राशि',
-    'Navamsa Sign (D9)': 'नवमांश राशि (डी-९)',
+    'Navamsa Sign (D9)': 'नवमांश राशि (डी-9)',
     'Neutral': 'सम ग्रह',
-    'Orbital Period/Total for 12 Rashis': 'भचक्र भ्रमण काल (१२ राशियां)',
+    'Orbital Period/Total for 12 Rashis': 'भचक्र भ्रमण काल (12 राशियां)',
     'Pada': 'पद',
-    'Pada 1 – Leo Navamsha (Sun)': 'पद १ – सिंह नवमांश (सूर्य)',
-    'Pada 1 – Sagittarius (Jupiter)': 'पद १ – धनु नवमांश (गुरु)',
-    'Pada 1: Aries Navamsa (Chu)': 'पद १: मेष नवमांश (चू)',
-    'Pada 2 – Capricorn (Saturn)': 'पद २ – मकर नवमांश (शनि)',
-    'Pada 2 – Virgo Navamsha (Mercury)': 'पद २ – कन्या नवमांश (बुध)',
-    'Pada 2: Taurus Navamsa (Che)': 'पद २: वृष नवमांश (चे)',
-    'Pada 3 – Aquarius (Saturn)': 'पद ३ – कुंभ नवमांश (शनि)',
-    'Pada 3 – Libra Navamsha (Venus)': 'पद ३ – तुला नवमांश (शुक्र)',
-    'Pada 3: Gemini Navamsa (Cho)': 'पद ३: मिथुन नवमांश (चो)',
-    'Pada 4 – Pisces (Jupiter)': 'पद ४ – मीन नवमांश (गुरु)',
-    'Pada 4 – Scorpio Navamsha (Mars)': 'पद ४ – वृश्चिक नवमांश (मंगल)',
-    'Pada 4: Cancer Navamsa (La)': 'पद ४: कर्क नवमांश (ला)',
+    'Pada 1 – Leo Navamsha (Sun)': 'पद 1 – सिंह नवमांश (सूर्य)',
+    'Pada 1 – Sagittarius (Jupiter)': 'पद 1 – धनु नवमांश (गुरु)',
+    'Pada 1: Aries Navamsa (Chu)': 'पद 1: मेष नवमांश (चू)',
+    'Pada 2 – Capricorn (Saturn)': 'पद 2 – मकर नवमांश (शनि)',
+    'Pada 2 – Virgo Navamsha (Mercury)': 'पद 2 – कन्या नवमांश (बुध)',
+    'Pada 2: Taurus Navamsa (Che)': 'पद 2: वृष नवमांश (चे)',
+    'Pada 3 – Aquarius (Saturn)': 'पद 3 – कुंभ नवमांश (शनि)',
+    'Pada 3 – Libra Navamsha (Venus)': 'पद 3 – तुला नवमांश (शुक्र)',
+    'Pada 3: Gemini Navamsa (Cho)': 'पद 3: मिथुन नवमांश (चो)',
+    'Pada 4 – Pisces (Jupiter)': 'पद 4 – मीन नवमांश (गुरु)',
+    'Pada 4 – Scorpio Navamsha (Mars)': 'पद 4 – वृश्चिक नवमांश (मंगल)',
+    'Pada 4: Cancer Navamsa (La)': 'पद 4: कर्क नवमांश (ला)',
     'Phonetic Sound': 'नामाक्षर ध्वनि',
     'Planet': 'ग्रह',
     'Planet (ग्रह)': 'ग्रह',
@@ -961,14 +961,14 @@ PAGE_20_HI_TABLE = """
 <th>शास्त्रीय विवरण एवं फल</th>
 <th>विद्वानों का शास्त्रीय मत</th>
 </tr></thead><tbody>
-<tr><td class="primary-col"><strong>गजकेसरी योग</strong></td><td>चन्द्रमा से केंद्र (१, ४, ७, १०) में गुरु की स्थिति</td><td>प्रचुर समृद्धि, बुद्धिमत्ता, उच्च यश और अखंड सफलता प्रदान करता है।</td><td>सर्वमान्य; प्रभाव कुंडली के संपूर्ण बलबल पर निर्भर करता है।</td></tr>
+<tr><td class="primary-col"><strong>गजकेसरी योग</strong></td><td>चन्द्रमा से केंद्र (1, 4, 7, 10) में गुरु की स्थिति</td><td>प्रचुर समृद्धि, बुद्धिमत्ता, उच्च यश और अखंड सफलता प्रदान करता है।</td><td>सर्वमान्य; प्रभाव कुंडली के संपूर्ण बलबल पर निर्भर करता है।</td></tr>
 <tr><td class="primary-col"><strong>धर्म कर्माधिपति योग</strong></td><td>नवमेश (धर्म) व दशमेश (कर्म) की युति अथवा दृष्टि</td><td>कर्तव्य और कर्म के समन्वय से उच्च पद, प्रशासनिक सम्मान और प्रतिष्ठा।</td><td>अत्यंत शक्तिशाली व प्रतिष्ठित राजयोग।</td></tr>
 <tr><td class="primary-col"><strong>बुधादित्य योग</strong></td><td>एक ही भाव में सूर्य और बुध की युति</td><td>कुशाग्र बुद्धि, वाकपटुता, तार्किक क्षमता और ज्ञान का विस्तार।</td><td>सर्वमान्य; बौद्धिक व सामाजिक प्रतिष्ठा में विशेष फलदायी।</td></tr>
-<tr><td class="primary-col"><strong>विपरीत राजयोग</strong></td><td>६ठे, ८वें, १२वें (त्रिक) भावों के स्वामियों का परस्पर त्रिक में संबंध</td><td>कठिन संघर्षों, संकटों व शत्रुओं के दमन के पश्चात अप्रत्याशित सफलता।</td><td>पाराशरी व फलदीपिका द्वारा विशेष रूप से समर्थित।</td></tr>
+<tr><td class="primary-col"><strong>विपरीत राजयोग</strong></td><td>6ठे, 8वें, 12वें (त्रिक) भावों के स्वामियों का परस्पर त्रिक में संबंध</td><td>कठिन संघर्षों, संकटों व शत्रुओं के दमन के पश्चात अप्रत्याशित सफलता।</td><td>पाराशरी व फलदीपिका द्वारा विशेष रूप से समर्थित।</td></tr>
 <tr><td class="primary-col"><strong>नीचभंग राजयोग</strong></td><td>नीच ग्रह की नीचता का शास्त्रीय नियमों से भंग होना</td><td>प्रारंभिक संघर्षों के बाद जातक को राजा के समान ऐश्वर्य व अधिकार।</td><td>शास्त्रीय फलित में अत्यंत प्रभावी व चमत्कारी नियम।</td></tr>
 <tr><td class="primary-col"><strong>चंद्र-मंगल योग</strong></td><td>चन्द्रमा और मंगल की युति अथवा परस्पर दृष्टि</td><td>प्रचुर धन लाभ, व्यापारिक सफलता, पराक्रम से संपत्ति अर्जन।</td><td>आर्थिक दृष्टिकोण से 'महालक्ष्मी योग' तुल्य।</td></tr>
 <tr><td class="primary-col"><strong>अमला योग</strong></td><td>लग्न अथवा चन्द्र से दशम भाव में केवल शुभ ग्रह</td><td>निष्कपट आचरण, समाज में बेदाग प्रतिष्ठा, स्थायी यश और कीर्ति।</td><td>बृहत्पाराशर में उच्च कोटि का योग माना गया है।</td></tr>
-<tr><td class="primary-col"><strong>पर्वत योग</strong></td><td>केंद्र में शुभ ग्रह हों और ६ठे व ८वें भाव रिक्त हों</td><td>स्थिर संपत्ति, अचल ऐश्वर्य, विद्या व समाज में उच्च सम्मान।</td><td>शास्त्रीय ग्रंथों में सर्वमान्य शुभ फलदाता।</td></tr>
+<tr><td class="primary-col"><strong>पर्वत योग</strong></td><td>केंद्र में शुभ ग्रह हों और 6ठे व 8वें भाव रिक्त हों</td><td>स्थिर संपत्ति, अचल ऐश्वर्य, विद्या व समाज में उच्च सम्मान।</td><td>शास्त्रीय ग्रंथों में सर्वमान्य शुभ फलदाता।</td></tr>
 <tr><td class="primary-col"><strong>काहल योग</strong></td><td>चतुर्थेश और गुरु परस्पर केंद्र में हों तथा लग्नेश बली हो</td><td>साहस, सेना अथवा प्रशासन में उच्च नेतृत्व, अदम्य पराक्रम।</td><td>फलदीपिका में विशेष रूप से प्रशंसित।</td></tr>
 <tr><td class="primary-col"><strong>शंख योग</strong></td><td>पंचमेश और षष्ठेश परस्पर केंद्र में हों और लग्नेश शक्तिशाली हो</td><td>शास्त्रज्ञ, दयालु, पुण्यात्मा, उच्च विद्या व सुखी जीवन।</td><td>जातक पारिजात में वर्णित प्रामाणिक योग।</td></tr>
 </tbody></table>
@@ -978,10 +978,10 @@ PAGE_81_HI_TABLE = """
 <table class="astro-table">
 <thead><tr>
 <th>ग्रह / विषय</th>
-<th>पद १ – धनु नवमांश (गुरु)</th>
-<th>पद २ – मकर नवमांश (शनि)</th>
-<th>पद ३ – कुंभ नवमांश (शनि)</th>
-<th>पद ४ – मीन नवमांश (गुरु)</th>
+<th>पद 1 – धनु नवमांश (गुरु)</th>
+<th>पद 2 – मकर नवमांश (शनि)</th>
+<th>पद 3 – कुंभ नवमांश (शनि)</th>
+<th>पद 4 – मीन नवमांश (गुरु)</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>नवमांश विषय</strong></td><td>धर्मनिष्ठ संयम; आश्लेषा की शक्ति का ज्ञानपरक मार्गदर्शन</td><td>नियंत्रित संरचना; शक्ति का रणनीतिक एकत्रीकरण</td><td>बौद्धिक गूढ़ता; सामाजिक व गुप्त अनुसंधान</td><td>आध्यात्मिक समर्पण; बंधनों से मुक्ति व मोक्ष</td></tr>
 <tr><td class="primary-col"><strong>सूर्य</strong></td><td>नैतिक प्रभाव, मार्गदर्शक नेतृत्व</td><td>संस्थागत अधिकार, अनुशासित नियंत्रण</td><td>गोपनीय सत्ता, गहन रणनीतिकार</td><td>अहंकार विसर्जन, आध्यात्मिक सेवा</td></tr>
@@ -1000,10 +1000,10 @@ PAGE_82_HI_TABLE = """
 <table class="astro-table">
 <thead><tr>
 <th>ग्रह</th>
-<th>पद १ – सिंह नवमांश (सूर्य)</th>
-<th>पद २ – कन्या नवमांश (बुध)</th>
-<th>पद ३ – तुला नवमांश (शुक्र)</th>
-<th>पद ४ – वृश्चिक नवमांश (मंगल)</th>
+<th>पद 1 – सिंह नवमांश (सूर्य)</th>
+<th>पद 2 – कन्या नवमांश (बुध)</th>
+<th>पद 3 – तुला नवमांश (शुक्र)</th>
+<th>पद 4 – वृश्चिक नवमांश (मंगल)</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>नवमांश प्रभाव</strong></td><td>पोषण पर सत्ता व अधिकार; राजसी संरक्षण</td><td>पोषण का विश्लेषणात्मक परिशोधन; सेवा</td><td>सौहार्दपूर्ण पोषण; कला, सौंदर्य व संतुलन</td><td>गहन रक्षात्मक पोषण; संकट में रक्षण</td></tr>
 <tr><td class="primary-col"><strong>सूर्य</strong></td><td>राजसी दायित्व, कर्तव्यनिष्ठ नेतृत्व</td><td>सेवाभावी कार्यकुशलता व सूक्ष्मता</td><td>कूटनीतिक समन्वय व संतुलन</td><td>संकट रक्षक, अदम्य पराक्रम</td></tr>
@@ -1020,14 +1020,14 @@ PAGE_83_HI_TABLE = """
 <table class="astro-table">
 <thead><tr>
 <th>अश्विनी पद</th>
-<th>मुख्य राशि (डी-१)</th>
-<th>नवमांश राशि (डी-९)</th>
+<th>मुख्य राशि (डी-1)</th>
+<th>नवमांश राशि (डी-9)</th>
 <th>नवमांश स्वामी</th>
 </tr></thead><tbody>
-<tr><td class="primary-col"><strong>पद १</strong></td><td>मेष</td><td>मेष</td><td>मंगल (साहस, ऊर्जा, अग्नि)</td></tr>
-<tr><td class="primary-col"><strong>पद २</strong></td><td>मेष</td><td>वृषभ</td><td>शुक्र (धन, सौंदर्य, स्थिरता)</td></tr>
-<tr><td class="primary-col"><strong>पद ३</strong></td><td>मेष</td><td>मिथुन</td><td>बुध (बुद्धि, संचार, तर्क)</td></tr>
-<tr><td class="primary-col"><strong>पद ४</strong></td><td>मेष</td><td>कर्क</td><td>चन्द्रमा (मन, करुणा, जल)</td></tr>
+<tr><td class="primary-col"><strong>पद 1</strong></td><td>मेष</td><td>मेष</td><td>मंगल (साहस, ऊर्जा, अग्नि)</td></tr>
+<tr><td class="primary-col"><strong>पद 2</strong></td><td>मेष</td><td>वृषभ</td><td>शुक्र (धन, सौंदर्य, स्थिरता)</td></tr>
+<tr><td class="primary-col"><strong>पद 3</strong></td><td>मेष</td><td>मिथुन</td><td>बुध (बुद्धि, संचार, तर्क)</td></tr>
+<tr><td class="primary-col"><strong>पद 4</strong></td><td>मेष</td><td>कर्क</td><td>चन्द्रमा (मन, करुणा, जल)</td></tr>
 </tbody></table>
 """
 
@@ -1040,10 +1040,10 @@ PAGE_84_HI_TABLE = """
 <th>नामाक्षर ध्वनि</th>
 <th>अश्विनी में मूल विशेषता</th>
 </tr></thead><tbody>
-<tr><td class="primary-col"><strong>पद १</strong></td><td>मेष</td><td>मंगल</td><td>चू</td><td>शुद्ध पराक्रम, पहल, साहसी नेतृत्व व तीव्र गति</td></tr>
-<tr><td class="primary-col"><strong>पद २</strong></td><td>वृषभ</td><td>शुक्र</td><td>चे</td><td>व्यावहारिक कुशलता, संसाधन संचय, सौंदर्य व स्थिरता</td></tr>
-<tr><td class="primary-col"><strong>पद ३</strong></td><td>मिथुन</td><td>बुध</td><td>चो</td><td>वाकपटुता, संचार कौशल, बौद्धिक जिज्ञासा व बहुमुखी प्रतिभा</td></tr>
-<tr><td class="primary-col"><strong>पद ४</strong></td><td>कर्क</td><td>चन्द्रमा</td><td>ला</td><td>करुणामयी चिकित्सा, संवेदनशील मन, परोपकार व जनसेवा</td></tr>
+<tr><td class="primary-col"><strong>पद 1</strong></td><td>मेष</td><td>मंगल</td><td>चू</td><td>शुद्ध पराक्रम, पहल, साहसी नेतृत्व व तीव्र गति</td></tr>
+<tr><td class="primary-col"><strong>पद 2</strong></td><td>वृषभ</td><td>शुक्र</td><td>चे</td><td>व्यावहारिक कुशलता, संसाधन संचय, सौंदर्य व स्थिरता</td></tr>
+<tr><td class="primary-col"><strong>पद 3</strong></td><td>मिथुन</td><td>बुध</td><td>चो</td><td>वाकपटुता, संचार कौशल, बौद्धिक जिज्ञासा व बहुमुखी प्रतिभा</td></tr>
+<tr><td class="primary-col"><strong>पद 4</strong></td><td>कर्क</td><td>चन्द्रमा</td><td>ला</td><td>करुणामयी चिकित्सा, संवेदनशील मन, परोपकार व जनसेवा</td></tr>
 </tbody></table>
 """
 
@@ -1069,10 +1069,10 @@ PAGE_86_HI_TABLE = """
 <table class="astro-table">
 <thead><tr>
 <th>ग्रह</th>
-<th>पद १: मेष नवमांश (चू)</th>
-<th>पद २: वृष नवमांश (चे)</th>
-<th>पद ३: मिथुन नवमांश (चो)</th>
-<th>पद ४: कर्क नवमांश (ला)</th>
+<th>पद 1: मेष नवमांश (चू)</th>
+<th>पद 2: वृष नवमांश (चे)</th>
+<th>पद 3: मिथुन नवमांश (चो)</th>
+<th>पद 4: कर्क नवमांश (ला)</th>
 </tr></thead><tbody>
 <tr><td class="primary-col"><strong>नवमांश स्वामी</strong></td><td>मंगल (पराक्रम, ऊर्जा, अग्नि)</td><td>शुक्र (धन, सौंदर्य, पृथ्वी)</td><td>बुध (बुद्धि, संचार, वायु)</td><td>चन्द्रमा (मन, करुणा, जल)</td></tr>
 <tr><td class="primary-col"><strong>सूर्य</strong></td><td>वर्गोत्तम (उच्च): शीर्ष प्रशासनिक नेतृत्व</td><td>व्यावहारिक प्रबंधक, संसाधन संचय</td><td>बौद्धिक रणनीतिकार, वाकपटु</td><td>करुणामयी संरक्षक, जनकल्याण</td></tr>
@@ -1108,46 +1108,46 @@ def localize_html_table(table_html, page_idx, target_lang='hindi'):
 def generate_sun_houses_content(page_num, lang='hindi'):
     is_hindi = (lang == 'hindi')
     if page_num == 46:
-        header_title = "सूर्य देव: भाव १ से ६ फलित विचार" if is_hindi else "Sun in Houses 1 to 6 (Classical Interpretations)"
+        header_title = "सूर्य देव: भाव 1 से 6 फलित विचार" if is_hindi else "Sun in Houses 1 to 6 (Classical Interpretations)"
         houses_data = [
-            ("१. प्रथम भाव (लग्न भाव):", "1. 1st House (Ascendant / Lagna):",
+            ("1. प्रथम भाव (लग्न भाव):", "1. 1st House (Ascendant / Lagna):",
              "जातक स्वाभिमानी, चतुर, प्रभावी, राजसी व्यक्तित्व तथा आकर्षक होता है। नेतृत्व क्षमता प्रबल होती है। नेत्र अथवा नासिका संबंधी संवेदनशीलता, पित्त प्रकृति एवं अहंकार की प्रवृत्ति हो सकती है।",
              "The native is self-respecting, intelligent, authoritative, and charismatic. Possesses natural leadership qualities. May experience eye or nasal sensitivities, high pitta (internal heat), and egoistic pride."),
-            ("२. द्वितीय भाव (धन भाव):", "2. 2nd House (Dhana Bhava):",
+            ("2. द्वितीय भाव (धन भाव):", "2. 2nd House (Dhana Bhava):",
              "वाणी में ओज व कभी-कभी कठोरता, धन उपार्जन में निरंतर परिश्रम, कुटुंब में वैचारिक मतभेद तथा नेत्र विकारों की संभावना रहती है। जातक स्वावलंबी होता है।",
              "The native speaks with commanding authority but may possess a sharp tongue. Financial accumulation requires persistent effort. Family friction and potential eye ailments."),
-            ("३. तृतीय भाव (सहज / पराक्रम भाव):", "3. 3rd House (Sahaja / Valor Bhava):",
+            ("3. तृतीय भाव (सहज / पराक्रम भाव):", "3. 3rd House (Sahaja / Valor Bhava):",
              "अत्यंत साहसी, शूरवीर, समाज में प्रभावशाली तथा बाहुबल से ख्याति अर्जित करने वाला होता है। छोटे भाइयों से मतभेद संभव हैं, किंतु समाज में यश प्राप्त होता है।",
              "Immense valor, courage, fame, and societal influence. Earns distinction and wealth through individual bravery. May have ideological friction with younger siblings."),
-            ("४. चतुर्थ भाव (सुख भाव):", "4. 4th House (Sukha Bhava):",
+            ("4. चतुर्थ भाव (सुख भाव):", "4. 4th House (Sukha Bhava):",
              "मातृ सुख में न्यूनता अथवा माता के स्वास्थ्य की चिंता, मानसिक शांति में बाधा, पैतृक संपत्ति व वाहन सुख में उतार-चढ़ाव। हृदय व रक्तचाप के प्रति सजग रहना आवश्यक है।",
              "Challenges regarding domestic tranquility, maternal health, or strained emotional peace. Fluctuations in vehicle and real estate comforts. Prone to cardiovascular sensitivity."),
-            ("५. पंचम भाव (सुत / बुद्धि भाव):", "5. 5th House (Suta / Intellect Bhava):",
+            ("5. पंचम भाव (सुत / बुद्धि भाव):", "5. 5th House (Suta / Intellect Bhava):",
              "तीक्ष्ण कुशाग्र बुद्धि, मन्त्र विद्या व गूढ़ शास्त्रों में रुचि, राजनैतिक प्रभाव, संतान प्राप्ति में विलंब अथवा संतान से वैचारिक भेद, पित्त विकार की आशंका।",
              "Sharp intellect, spiritual wisdom, political acumen, and keen interest in sacred mantras. Delay in progeny or friction with children. Vulnerable to gastric fire imbalances."),
-            ("६. षष्ठ भाव (शत्रु व रोग भाव):", "6. 6th House (Shatru / Disease Bhava):",
+            ("6. षष्ठ भाव (शत्रु व रोग भाव):", "6. 6th House (Shatru / Disease Bhava):",
              "शत्रुहंता योग, प्रतिस्पर्धा में अजेय, मुकदमों व विवादों में विजय, उत्तम रोग प्रतिरोधक क्षमता। प्रशासनिक कार्यों में सफलता प्राप्त होती है। मामा पक्ष से मतभेद संभव।",
              "Destroyer of adversaries (Shatru-Hanta Yoga). Highly competitive, victorious in legal or institutional disputes, and possesses strong vitality. Overcomes acute ailments.")
         ]
     else:
-        header_title = "सूर्य देव: भाव ७ से १२ फलित विचार" if is_hindi else "Sun in Houses 7 to 12 (Classical Interpretations)"
+        header_title = "सूर्य देव: भाव 7 से 12 फलित विचार" if is_hindi else "Sun in Houses 7 to 12 (Classical Interpretations)"
         houses_data = [
-            ("७. सप्तम भाव (जाया भाव):", "7. 7th House (Kalatra / Spouse Bhava):",
+            ("7. सप्तम भाव (जाया भाव):", "7. 7th House (Kalatra / Spouse Bhava):",
              "दांपत्य जीवन में अहं का टकराव, जीवनसाथी का स्वाभिमानी व प्रभावशाली व्यक्तित्व, साझेदारी के व्यापार में सतर्कता की आवश्यकता, व्यवसायिक यात्राएं अधिक।",
              "Marital friction caused by ego clashes and pride. The spouse is self-respecting, authoritative, and dominant. Demands caution in business partnerships; frequent travels."),
-            ("८. अष्टम भाव (आयु / रंध्र भाव):", "8. 8th House (Ayur / Chronic Bhava):",
+            ("8. अष्टम भाव (आयु / रंध्र भाव):", "8. 8th House (Ayur / Chronic Bhava):",
              "गूढ़ रहस्यों, तंत्र-ज्योतिष व वसीयत से लाभ। गुप्त शत्रुओं से सजगता आवश्यक। नेत्र दुर्बलता अथवा आकस्मिक स्वास्थ्य उतार-चढ़ाव। आध्यात्मिक दृष्टिकोण से शुभ।",
              "Deep inclination toward esoteric research, mysticism, and inheritance gains. Eye sensitivities and sudden unforeseen events. Highly favorable for spiritual transformation."),
-            ("९. नवम भाव (भाग्य व धर्म भाव):", "9. 9th House (Bhagya / Dharma Bhava):",
+            ("9. नवम भाव (भाग्य व धर्म भाव):", "9. 9th House (Bhagya / Dharma Bhava):",
              "परम धार्मिक, पुण्यात्मा, तीर्थ यात्रा प्रेमी, पिता का सहयोगी अथवा पिता के समान मान-सम्मान प्राप्त करने वाला। समाज में धर्मात्मा के रूप में पूजित।",
              "Deeply religious, righteous, fortunate, and devoted to pilgrimage. Elevates paternal reputation, though ideological independence exists. Respected as a principled guide."),
-            ("१०. दशम भाव (कर्म भाव - दिशाबली):", "10. 10th House (Karma Bhava - Digbala):",
+            ("10. दशम भाव (कर्म भाव - दिशाबली):", "10. 10th House (Karma Bhava - Digbala):",
              "सूर्य को दशम में पूर्ण दिशाबल प्राप्त होता है। कुलदीपक योग, शासन-सत्ता में शीर्ष पद, प्रशासनिक अधिकार, सरकारी मान-प्रतिष्ठा तथा अद्वितीय कार्यकुशलता।",
              "Sun attains full directional strength (Digbala). Bestows Kuladeepaka Yoga, supreme executive authority, government honors, high status, and extraordinary professional success."),
-            ("११. एकादश भाव (आय व लाभ भाव):", "11. 11th House (Labha Bhava):",
+            ("11. एकादश भाव (आय व लाभ भाव):", "11. 11th House (Labha Bhava):",
              "अथाह धन लाभ, सत्ता व उच्च पदस्थ मित्रों का सहयोग, महत्वाकांक्षाओं की पूर्ण सिद्धि, दीर्घायु तथा समाज में धनाढ्य व प्रतिष्ठित स्थिति।",
              "Abundant financial prosperity, patronage from high-ranking government dignitaries, fulfillment of major ambitions, high vitality, and respected social prominence."),
-            ("१२. द्वादश भाव (व्यय व मोक्ष भाव):", "12. 12th House (Vyaya / Moksha Bhava):",
+            ("12. द्वादश भाव (व्यय व मोक्ष भाव):", "12. 12th House (Vyaya / Moksha Bhava):",
              "आध्यात्मिक चेतना, विदेश प्रवास अथवा सुदूर स्थानों पर प्रतिष्ठा, स्वास्थ्य व धर्मार्थ कार्यों पर अत्यधिक व्यय, शयन सुख में कमी, नेत्र संवेदनशीलता।",
              "Spiritual awakening, foreign residency or travels to distant realms, high philanthropic and medical expenditures, sleep sensitivities, and left eye vulnerability.")
         ]
@@ -1165,7 +1165,7 @@ def generate_sun_houses_content(page_num, lang='hindi'):
         </div>
         """)
 
-    sec_label = f"अध्याय ४ • खण्ड {page_num - 45 + 6}" if is_hindi else f"Chapter 4 • Sun in Houses (Part {page_num - 45})"
+    sec_label = f"अध्याय 4 • खण्ड {page_num - 45 + 6}" if is_hindi else f"Chapter 4 • Sun in Houses (Part {page_num - 45})"
     return f"""
     <div class="page-inner-content">
       <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -1185,44 +1185,44 @@ def generate_sun_signs_content(page_num, lang='hindi'):
     if page_num == 48:
         header_title = "सूर्य देव: मेष से कन्या राशि फल" if is_hindi else "Sun in Signs 1 to 6 (Aries to Virgo Interpretations)"
         signs_data = [
-            ("१. मेष राशि (परम उच्च फल):", "1. Aries (Exalted Sign - Uchcha):",
+            ("1. मेष राशि (परम उच्च फल):", "1. Aries (Exalted Sign - Uchcha):",
              "जातक अत्यंत प्रतापी, कांतिवान, शूरवीर, स्वाभिमानी, कुशाग्र बुद्धि, साहसी तथा समाज में शीर्ष ख्याति प्राप्त करता है। स्वतंत्र निर्णय व प्रशासनिक क्षमता बेजोड़ होती है।",
              "The native becomes noble, majestic, valorous, self-respecting, highly intelligent, courageous, and attains widespread renown. Supreme leadership and independent vision."),
-            ("२. वृषभ राशि (शत्रु क्षेत्री):", "2. Taurus (Enemy Sign - Shukra Kshetra):",
+            ("2. वृषभ राशि (शत्रु क्षेत्री):", "2. Taurus (Enemy Sign - Shukra Kshetra):",
              "जातक कलात्मक, संगीत प्रिय, आकर्षक, वाणी में प्रभाव, धन संचय में कुशल, पारिवारिक सुख का प्रेमी तथा स्थिर स्वभाव वाला होता है।",
              "The native possesses an artistic temperament, appreciation for music, handsome appearance, skill in capital accumulation, and devotion to family comforts."),
-            ("३. मिथुन राशि (सम क्षेत्री):", "3. Gemini (Neutral Sign - Budha Kshetra):",
+            ("3. मिथुन राशि (सम क्षेत्री):", "3. Gemini (Neutral Sign - Budha Kshetra):",
              "जातक वाकपटु, बहुमुखी प्रतिभा का धनी, लेखक, पत्रकारिता, वाणिज्य व गणित में प्रवीण, तर्कशील तथा सामाजिक संपर्क बनाने में अत्यंत कुशल होता है।",
              "The native is an eloquent orator, versatile thinker, distinguished writer, skilled in commerce and mathematics, witty, and socially dynamic."),
-            ("४. कर्क राशि (मित्र क्षेत्री):", "4. Cancer (Friendly Sign - Chandra Kshetra):",
+            ("4. कर्क राशि (मित्र क्षेत्री):", "4. Cancer (Friendly Sign - Chandra Kshetra):",
              "जातक भावुक, संवेदनशील, कल्पनाशील, जल यात्रा प्रिय, मातृभक्त, सेवाभावी तथा जनकल्याण के कार्यों में तत्पर रहने वाला होता है। मनोदशा परिवर्तनशील रहती है।",
              "The native is intuitive, deeply compassionate, fond of aquatic travels, devoted to parents, philanthropic, and emotionally sensitive."),
-            ("५. सिंह राशि (स्वक्षेत्री - मूलत्रिकोण):", "5. Leo (Own & Moolatrikona Sign):",
+            ("5. सिंह राशि (स्वक्षेत्री - मूलत्रिकोण):", "5. Leo (Own & Moolatrikona Sign):",
              "जातक राजा के समान तेजस्वी, उदार हृदय, उच्च स्वाभिमानी, शासन-सत्ता में शीर्ष स्थान प्राप्त करने वाला, निष्पक्ष न्यायप्रिय तथा चुंबकीय व्यक्तित्व का स्वामी होता है।",
              "Regal authority, immense charisma, generous spirit, supreme dignity, natural command in administrative governance, and unwavering righteous pride."),
-            ("६. कन्या राशि (मित्र क्षेत्री):", "6. Virgo (Friendly Sign - Budha Kshetra):",
+            ("6. कन्या राशि (मित्र क्षेत्री):", "6. Virgo (Friendly Sign - Budha Kshetra):",
              "जातक विश्लेषणात्मक बुद्धि, गणना व लेखा में निपुण, सूक्ष्मदर्शी, सेवाभावी, व्यावहारिक, विनम्र तथा कार्यकुशल होता है।",
              "The native possesses sharp analytical acumen, mathematical skill, meticulous eye for detail, service orientation, and pragmatic wisdom.")
         ]
     else:
         header_title = "सूर्य देव: तुला से मीन राशि फल" if is_hindi else "Sun in Signs 7 to 12 (Libra to Pisces Interpretations)"
         signs_data = [
-            ("७. तुला राशि (परम नीच फल):", "7. Libra (Debilitation Sign - Neecha):",
+            ("7. तुला राशि (परम नीच फल):", "7. Libra (Debilitation Sign - Neecha):",
              "आत्मविश्वास में संकोच, दूसरों पर अधिक निर्भरता, मान-सम्मान हेतु निरंतर संघर्ष, त्वचा अथवा नेत्र संवेदनशीलता। परिश्रम के पश्चात सफलता प्राप्त होती है।",
              "Fluctuating self-confidence, excessive dependence on partners, struggles for public recognition, and prone to renal or skin imbalances. Success comes through humility."),
-            ("८. वृश्चिक राशि (मित्र क्षेत्री):", "8. Scorpio (Friendly Sign - Mangal Kshetra):",
+            ("8. वृश्चिक राशि (मित्र क्षेत्री):", "8. Scorpio (Friendly Sign - Mangal Kshetra):",
              "जातक गूढ़ अन्वेषक, रहस्यमयी स्वभाव, अदम्य साहसी, तीव्र स्मरण शक्ति, शल्य चिकित्सा अथवा संकट प्रबंधन में प्रवीण तथा कठिन परिस्थितियों में भी दृढ़ रहने वाला होता है।",
              "Deep esoteric researcher, secretive demeanor, intense tenacity, unyielding courage, interest in surgical or crisis management, and indomitable endurance."),
-            ("९. धनु राशि (मित्र क्षेत्री):", "9. Sagittarius (Friendly Sign - Guru Kshetra):",
+            ("9. धनु राशि (मित्र क्षेत्री):", "9. Sagittarius (Friendly Sign - Guru Kshetra):",
              "जातक गुरु तुल्य मार्गदर्शक, धर्मनिष्ठ, न्यायप्रिय, उच्च दार्शनिक चिंतक, सत्यवादी, समाज सुधारक तथा उच्च विद्या में प्रतिष्ठा प्राप्त करने वाला होता है।",
              "Preceptor qualities, deeply righteous, judicial mindset, profound philosophical elevation, truthful, and distinguished in higher academia and spiritual wisdom."),
-            ("१०. मकर राशि (शत्रु क्षेत्री):", "10. Capricorn (Enemy Sign - Shani Kshetra):",
+            ("10. मकर राशि (शत्रु क्षेत्री):", "10. Capricorn (Enemy Sign - Shani Kshetra):",
              "जातक घोर परिश्रमी, व्यावहारिक, अनुशासित, जीवन में संघर्षों के उपरांत स्थिर शिखर पर पहुंचने वाला, मितव्ययी तथा संगठन संचालन में दक्ष होता है।",
              "Indefatigable work ethic, pragmatic, disciplined, systematically ascends to career pinnacles through perseverance, frugal, and an adept organizational manager."),
-            ("११. कुंभ राशि (शत्रु क्षेत्री):", "11. Aquarius (Enemy Sign - Shani Kshetra):",
+            ("11. कुंभ राशि (शत्रु क्षेत्री):", "11. Aquarius (Enemy Sign - Shani Kshetra):",
              "जातक मानवतावादी, नवीन अन्वेषक, सामाजिक समरसता का पक्षधर, एकांतप्रिय विचारक, स्वतंत्र विचारों वाला तथा दूरदर्शी दृष्टिकोण का स्वामी होता है।",
              "Humanitarian vision, unconventional innovator, advocate of social reform, introspective thinker, and endowed with cosmic, future-oriented consciousness."),
-            ("१२. मीन राशि (मित्र क्षेत्री):", "12. Pisces (Friendly Sign - Guru Kshetra):",
+            ("12. मीन राशि (मित्र क्षेत्री):", "12. Pisces (Friendly Sign - Guru Kshetra):",
              "जातक आध्यात्मिक, करुणामयी, शांत स्वभाव, मोक्ष मार्ग का खोजी, जल यात्राओं से लाभान्वित, दानी तथा परोपकारी होता है।",
              "Deeply spiritual, compassionate, tranquil, seeker of mystical liberation (Moksha), benefited by maritime travels, philanthropic, and altruistic.")
         ]
@@ -1240,7 +1240,7 @@ def generate_sun_signs_content(page_num, lang='hindi'):
         </div>
         """)
 
-    sec_label = f"अध्याय ४ • खण्ड {page_num - 47 + 8}" if is_hindi else f"Chapter 4 • Sun in Signs (Part {page_num - 47})"
+    sec_label = f"अध्याय 4 • खण्ड {page_num - 47 + 8}" if is_hindi else f"Chapter 4 • Sun in Signs (Part {page_num - 47})"
     return f"""
     <div class="page-inner-content">
       <div class="chapter-header" style="margin-bottom:0.75rem;">
@@ -1272,9 +1272,9 @@ def generate_drishti_rules_content(lang='hindi'):
               <li><strong>सामान्य दृष्टि (सप्तम भाव):</strong> सभी ग्रह अपने अधिष्ठित भाव से सप्तम भाव पर पूर्ण दृष्टि डालते हैं।</li>
               <li><strong>विशेष पूर्ण दृष्टियां:</strong>
                 <ul>
-                  <li><strong>मंगल:</strong> चतुर्थ (४था), सप्तम (७वां) और अष्टम (८वां) भाव।</li>
-                  <li><strong>गुरु (बृहस्पति):</strong> पंचम (५वां), सप्तम (७वां) और नवम (९वां) भाव।</li>
-                  <li><strong>शनि:</strong> तृतीय (३रा), सप्तम (७वां) और दशम (१०वां) भाव।</li>
+                  <li><strong>मंगल:</strong> चतुर्थ (4था), सप्तम (7वां) और अष्टम (8वां) भाव।</li>
+                  <li><strong>गुरु (बृहस्पति):</strong> पंचम (5वां), सप्तम (7वां) और नवम (9वां) भाव।</li>
+                  <li><strong>शनि:</strong> तृतीय (3रा), सप्तम (7वां) और दशम (10वां) भाव।</li>
                 </ul>
               </li>
               <li><strong>राहु एवं केतु:</strong> आधुनिक फलित ज्योतिष में पंचम, सप्तम व नवम दृष्टि व्यापक रूप से मान्य है।</li>
@@ -1311,7 +1311,7 @@ def generate_nakshatra_degrees_card(lang='hindi'):
         return """
         <div class="rule-card">
           <div class="rule-body" style="font-size:0.88rem; line-height:1.6;">
-            वैदिक ज्योतिष में संपूर्ण ३६०° भचक्र को २७ समान नक्षत्रों में विभाजित किया गया है। प्रत्येक नक्षत्र का विस्तार <strong>१३°२०’ (१३ अंश और २० कला)</strong> होता है। नीचे प्रत्येक नक्षत्र के प्रारंभिक एवं समापन अंश व्यवस्थित रूप से दिए गए हैं।
+            वैदिक ज्योतिष में संपूर्ण 360° भचक्र को 27 समान नक्षत्रों में विभाजित किया गया है। प्रत्येक नक्षत्र का विस्तार <strong>13°20’ (13 अंश और 20 कला)</strong> होता है। नीचे प्रत्येक नक्षत्र के प्रारंभिक एवं समापन अंश व्यवस्थित रूप से दिए गए हैं।
           </div>
         </div>
         """
@@ -1330,16 +1330,16 @@ def generate_deeptadi_9_states_content(lang='hindi'):
         return """
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
-            <div class="chapter-number">अध्याय ४ • खण्ड १</div>
-            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">दीप्तादि ९ अवस्थाएं: ग्रहों की स्थिति व फल</h3>
+            <div class="chapter-number">अध्याय 4 • खण्ड 1</div>
+            <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">दीप्तादि 9 अवस्थाएं: ग्रहों की स्थिति व फल</h3>
           </div>
           <div class="rule-card">
             <div class="rule-header">
-              <div class="rule-title">दीप्तादि ९ अवस्थाएं (ग्रहों की स्थितियां व फल)</div>
+              <div class="rule-title">दीप्तादि 9 अवस्थाएं (ग्रहों की स्थितियां व फल)</div>
               <span class="badge-chip badge-gold">पाराशरी सूत्र</span>
             </div>
             <div class="rule-body" style="font-size:0.86rem; line-height:1.65;">
-              <p>महर्षि पाराशर के अनुसार ग्रहों की राशि स्थिति के आधार पर ९ अवस्थाएं होती हैं:</p>
+              <p>महर्षि पाराशर के अनुसार ग्रहों की राशि स्थिति के आधार पर 9 अवस्थाएं होती हैं:</p>
               <ol style="margin:0; padding-left:1.25rem;">
                 <li><strong>दीप्त अवस्था:</strong> ग्रह जब अपनी उच्च राशि में स्थित हो (परम शुभ एवं शक्तिशाली फल)।</li>
                 <li><strong>स्वस्थ अवस्था:</strong> ग्रह जब अपनी स्वराशि में स्थित हो (आत्मबल, स्थिरता एवं अनुकूलता)।</li>
@@ -1391,7 +1391,7 @@ def generate_leukemia_rules_content(lang='hindi'):
         return """
         <div class="page-inner-content">
           <div class="chapter-header" style="margin-bottom:0.75rem;">
-            <div class="chapter-number">अध्याय ५ • स्वास्थ्य खण्ड २६</div>
+            <div class="chapter-number">अध्याय 5 • स्वास्थ्य खण्ड 26</div>
             <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">रक्त कैंसर (ल्यूकीमिया): ज्योतिषीय योग व शास्त्रीय सूत्र</h3>
           </div>
           <div class="rule-card">
@@ -1400,10 +1400,10 @@ def generate_leukemia_rules_content(lang='hindi'):
               <span class="badge-chip badge-crimson">शास्त्रीय निदान</span>
             </div>
             <div class="rule-body" style="font-size:0.86rem; line-height:1.65;">
-              <p><strong>सूत्र १ (त्रिग्रह संयोजन):</strong> चन्द्रमा और मंगल की युति पर राहु का प्रभाव हो तथा शनि की पूर्ण दृष्टि हो। चन्द्र या मंगल ६ठे, ८वें अथवा १२वें भाव में स्थित हों और गुरु निर्बल या अस्त हों, तो रक्त कोशिकाओं में तीव्र विकृति (ल्यूकीमिया) की आशंका बनती है।</p>
-              <p><strong>सूक्ष्म जैविक व ज्योतिषीय तर्क:</strong> चन्द्रमा = रक्त रस व शारीरिक द्रव ; मंगल = लाल रक्त कणिकाएं  व हीमोग्लोबिन; शनि = अवरोध व संकुचन; राहु = अनियंत्रित कोशिकीय म्यूटेशन; ६/८/१२ भाव = असाध्य रोग स्थान; गुरु = अस्थि मज्जा (अस्थि मज्जा) का प्राकृतिक रक्षक।</p>
-              <p><strong>सूत्र २ (नीच ग्रह योग):</strong> वृश्चिक का नीचस्थ चन्द्रमा + कर्क का नीचस्थ मंगल, जिन पर राहु या शनि की दृष्टि हो और गुरु का त्रिक भावों पर कोई शुभ प्रभाव न हो।</p>
-              <p><strong>सूत्र ३ (ग्रहण व रक्त दोष):</strong> चन्द्र-राहु ग्रहण योग के साथ मंगल षष्ठ अथवा अष्टम भाव में स्थित हो और गुरु बलहीन हों।</p>
+              <p><strong>सूत्र 1 (त्रिग्रह संयोजन):</strong> चन्द्रमा और मंगल की युति पर राहु का प्रभाव हो तथा शनि की पूर्ण दृष्टि हो। चन्द्र या मंगल 6ठे, 8वें अथवा 12वें भाव में स्थित हों और गुरु निर्बल या अस्त हों, तो रक्त कोशिकाओं में तीव्र विकृति (ल्यूकीमिया) की आशंका बनती है।</p>
+              <p><strong>सूक्ष्म जैविक व ज्योतिषीय तर्क:</strong> चन्द्रमा = रक्त रस व शारीरिक द्रव ; मंगल = लाल रक्त कणिकाएं  व हीमोग्लोबिन; शनि = अवरोध व संकुचन; राहु = अनियंत्रित कोशिकीय म्यूटेशन; 6/8/12 भाव = असाध्य रोग स्थान; गुरु = अस्थि मज्जा (अस्थि मज्जा) का प्राकृतिक रक्षक।</p>
+              <p><strong>सूत्र 2 (नीच ग्रह योग):</strong> वृश्चिक का नीचस्थ चन्द्रमा + कर्क का नीचस्थ मंगल, जिन पर राहु या शनि की दृष्टि हो और गुरु का त्रिक भावों पर कोई शुभ प्रभाव न हो।</p>
+              <p><strong>सूत्र 3 (ग्रहण व रक्त दोष):</strong> चन्द्र-राहु ग्रहण योग के साथ मंगल षष्ठ अथवा अष्टम भाव में स्थित हो और गुरु बलहीन हों।</p>
               <p><strong>गोचर सक्रियता:</strong> शनि अथवा राहु का जन्म चन्द्र या षष्ठ भाव पर से गोचर, तथा चन्द्र, मंगल, राहु या षष्ठेश/अष्टमेश की दशा-अंतर्दशा में रोग का प्रकटीकरण होता है।</p>
             </div>
           </div>
@@ -1465,7 +1465,7 @@ def generate_hindi_pages(orig_pages):
       </div>
 
       <div class="cover-footer-brand">
-        <div class="cover-tag">तंत्र ज्ञान शोध संस्थान • २०२६ • सम्पूर्ण हिन्दी संस्करण</div>
+        <div class="cover-tag">तंत्र ज्ञान शोध संस्थान • 2026 • सम्पूर्ण हिन्दी संस्करण</div>
       </div>
     </div>
     """
@@ -1604,32 +1604,32 @@ def generate_hindi_pages(orig_pages):
 
       <div class="pillar-grid">
         <div class="pillar-card">
-          <div class="pillar-number">स्तम्भ १ • अध्याय २</div>
-          <div class="pillar-title">नवग्रह कारकत्व व १७ राजयोग</div>
-          <div class="pillar-desc">सूर्य से केतु तक ९ ग्रहों के संपूर्ण शारीरिक, मानसिक, संबंधपरक कारकत्व एवं पंच महापुरुष आदि १७ राजयोग।</div>
+          <div class="pillar-number">स्तम्भ 1 • अध्याय 2</div>
+          <div class="pillar-title">नवग्रह कारकत्व व 17 राजयोग</div>
+          <div class="pillar-desc">सूर्य से केतु तक 9 ग्रहों के संपूर्ण शारीरिक, मानसिक, संबंधपरक कारकत्व एवं पंच महापुरुष आदि 17 राजयोग।</div>
         </div>
         <div class="pillar-card">
-          <div class="pillar-number">स्तम्भ २ • अध्याय ३</div>
+          <div class="pillar-number">स्तम्भ 2 • अध्याय 3</div>
           <div class="pillar-title">राशि, नक्षत्र व ग्रह गति</div>
-          <div class="pillar-desc">ग्रहों की गति, कक्षा भ्रमण, गोचर अवधि, दृष्टि नियम, २७ नक्षत्रों का विस्तार, देवता एवं चार तत्व।</div>
+          <div class="pillar-desc">ग्रहों की गति, कक्षा भ्रमण, गोचर अवधि, दृष्टि नियम, 27 नक्षत्रों का विस्तार, देवता एवं चार तत्व।</div>
         </div>
         <div class="pillar-card">
-          <div class="pillar-number">स्तम्भ ३ • अध्याय ४</div>
-          <div class="pillar-title">दीप्तादि ९ अवस्थाएं व सूर्य फल</div>
-          <div class="pillar-desc">ग्रहों की ९ अवस्थाएं, १२ भावों के स्थिर कारक तथा सूर्य का १२ भावों व १२ राशियों में विस्तृत फल।</div>
+          <div class="pillar-number">स्तम्भ 3 • अध्याय 4</div>
+          <div class="pillar-title">दीप्तादि 9 अवस्थाएं व सूर्य फल</div>
+          <div class="pillar-desc">ग्रहों की 9 अवस्थाएं, 12 भावों के स्थिर कारक तथा सूर्य का 12 भावों व 12 राशियों में विस्तृत फल।</div>
         </div>
         <div class="pillar-card">
-          <div class="pillar-number">स्तम्भ ४ • अध्याय ५</div>
+          <div class="pillar-number">स्तम्भ 4 • अध्याय 5</div>
           <div class="pillar-title">आयुर्वेद-ज्योतिष व स्वास्थ्य</div>
-          <div class="pillar-desc">१२ भावों, १२ राशियों और ९ ग्रहों का शारीरिक अंग-रोग संबंध तथा रोग प्रकटीकरण के शास्त्रीय सूत्र।</div>
+          <div class="pillar-desc">12 भावों, 12 राशियों और 9 ग्रहों का शारीरिक अंग-रोग संबंध तथा रोग प्रकटीकरण के शास्त्रीय सूत्र।</div>
         </div>
         <div class="pillar-card">
-          <div class="pillar-number">स्तम्भ ५ • अध्याय ६</div>
+          <div class="pillar-number">स्तम्भ 5 • अध्याय 6</div>
           <div class="pillar-title">नक्षत्र पद व सूक्ष्म विश्लेषण</div>
-          <div class="pillar-desc">२७ नक्षत्रों के १०८ पदों का नवांश गणित, अश्विनी, पुष्य व आश्लेषा के ४ पदों का मनोवैज्ञानिक विश्लेषण।</div>
+          <div class="pillar-desc">27 नक्षत्रों के 108 पदों का नवांश गणित, अश्विनी, पुष्य व आश्लेषा के 4 पदों का मनोवैज्ञानिक विश्लेषण।</div>
         </div>
         <div class="pillar-card">
-          <div class="pillar-number">स्तम्भ ६ • संदर्भ</div>
+          <div class="pillar-number">स्तम्भ 6 • संदर्भ</div>
           <div class="pillar-title">शास्त्रीय ग्रंथ संदर्भ</div>
           <div class="pillar-desc">बृहत्पाराशर होरा शास्त्र, सारावली, फलदीपिका, जातक पारिजात, नंदी नाड़ी एवं लाल किताब के प्रामाणिक संदर्भ।</div>
         </div>
@@ -1694,52 +1694,52 @@ def generate_hindi_pages(orig_pages):
       <div class="toc-notebook-list">
         <div class="toc-notebook-row">
           <div>
-            <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय १</span>
+            <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय 1</span>
             <strong style="font-size:0.88rem;">प्रस्तावना, मंगलाचरण, लेखक परिचय, अध्ययन निर्देशिका व आचार संहिता</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ १ - ६</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ 1 - 6</span>
         </div>
         <div class="toc-notebook-row">
           <div>
-            <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय २</span>
-            <strong style="font-size:0.88rem;">नवग्रह कारकत्व एवं १७ शास्त्रीय राजयोग</strong>
+            <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय 2</span>
+            <strong style="font-size:0.88rem;">नवग्रह कारकत्व एवं 17 शास्त्रीय राजयोग</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ७ - २१</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ 7 - 21</span>
         </div>
         <div class="toc-notebook-row">
           <div>
-            <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय ३</span>
+            <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय 3</span>
             <strong style="font-size:0.88rem;">राशि, नक्षत्र, ग्रह गति एवं विंशोत्तरी महादशा चक्र</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ २२ - ३८</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ 22 - 38</span>
         </div>
         <div class="toc-notebook-row">
           <div>
-            <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय ४</span>
-            <strong style="font-size:0.88rem;">भाव एवं राशियों में ग्रह (दीप्तादि ९ अवस्थाएं व सूर्य फल)</strong>
+            <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय 4</span>
+            <strong style="font-size:0.88rem;">भाव एवं राशियों में ग्रह (दीप्तादि 9 अवस्थाएं व सूर्य फल)</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ३९ - ४९</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ 39 - 49</span>
         </div>
         <div class="toc-notebook-row">
           <div>
-            <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय ५</span>
-            <strong style="font-size:0.88rem;">आयुर्वेद-ज्योतिष व स्वास्थ्य विश्लेषण (२७ तालिकाएं)</strong>
+            <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय 5</span>
+            <strong style="font-size:0.88rem;">आयुर्वेद-ज्योतिष व स्वास्थ्य विश्लेषण (27 तालिकाएं)</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ५० - ७६</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ 50 - 76</span>
         </div>
         <div class="toc-notebook-row">
           <div>
-            <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय ६</span>
-            <strong style="font-size:0.88rem;">नक्षत्रों का गहन पद एवं ग्रह विश्लेषण (११ तालिकाएं)</strong>
+            <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">अध्याय 6</span>
+            <strong style="font-size:0.88rem;">नक्षत्रों का गहन पद एवं ग्रह विश्लेषण (11 तालिकाएं)</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ७७ - ८७</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ 77 - 87</span>
         </div>
         <div class="toc-notebook-row">
           <div>
             <span class="badge-chip badge-gold" style="font-size:0.7rem; margin-right:0.4rem;">समापन</span>
             <strong style="font-size:0.88rem;">समापन पृष्ठ, उपनिषद् मंगल श्लोक व आधिकारिक संपर्क</strong>
           </div>
-          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ ८८</span>
+          <span style="font-family:var(--font-heading); color:var(--accent-gold); font-size:0.82rem; font-weight:700;">पृष्ठ 88</span>
         </div>
       </div>
     </div>
@@ -1764,7 +1764,7 @@ def generate_hindi_pages(orig_pages):
             content = f"""
             <div class="page-inner-content">
               <div class="chapter-header" style="margin-bottom:0.75rem;">
-                <div class="chapter-number">अध्याय ३ • खण्ड २</div>
+                <div class="chapter-number">अध्याय 3 • खण्ड 2</div>
                 <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{page_title}</h3>
               </div>
               {card_html}
@@ -1780,7 +1780,7 @@ def generate_hindi_pages(orig_pages):
             content = f"""
             <div class="page-inner-content">
               <div class="chapter-header" style="margin-bottom:0.75rem;">
-                <div class="chapter-number">अध्याय ३ • खण्ड ३</div>
+                <div class="chapter-number">अध्याय 3 • खण्ड 3</div>
                 <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">{page_title}</h3>
               </div>
               {card_html}
@@ -1806,7 +1806,7 @@ def generate_hindi_pages(orig_pages):
                 <span class="badge-chip badge-gold">चिकित्सा ज्योतिष</span>
               </div>
               <div class="rule-body">
-                <p><strong>मूल शास्त्रीय सिद्धांत:</strong> त्वचा का नैसर्गिक कारक ग्रह <strong>बुध</strong> है तथा रक्त व ऊतकों में तीव्र प्रदाह का कारक <strong>मंगल</strong> है। जब बुध पर पापी ग्रहों (राहु/शनि/मंगल) की क्रूर युति या दृष्टि हो और वह ६ठे, ८वें या लग्न भाव में स्थित होकर पीड़ित हो, तो असामान्य कोशिका विभाजन एवं त्वचा कैंसर का योग बनता है।</p>
+                <p><strong>मूल शास्त्रीय सिद्धांत:</strong> त्वचा का नैसर्गिक कारक ग्रह <strong>बुध</strong> है तथा रक्त व ऊतकों में तीव्र प्रदाह का कारक <strong>मंगल</strong> है। जब बुध पर पापी ग्रहों (राहु/शनि/मंगल) की क्रूर युति या दृष्टि हो और वह 6ठे, 8वें या लग्न भाव में स्थित होकर पीड़ित हो, तो असामान्य कोशिका विभाजन एवं त्वचा कैंसर का योग बनता है।</p>
               </div>
             </div>
             """
@@ -1815,7 +1815,7 @@ def generate_hindi_pages(orig_pages):
             content = f"""
             <div class="page-inner-content">
               <div class="chapter-header" style="margin-bottom:0.75rem;">
-                <div class="chapter-number">अध्याय ५ • स्वास्थ्य खण्ड २७</div>
+                <div class="chapter-number">अध्याय 5 • स्वास्थ्य खण्ड 27</div>
                 <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-crimson);">{page_title}</h3>
               </div>
               {rule_card}
@@ -1886,7 +1886,7 @@ def generate_hindi_pages(orig_pages):
       <div class="back-cover-colophon">
         <div style="font-weight:700; color:var(--accent-gold); font-size:0.95rem; margin-bottom:0.25rem;">तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)</div>
         <div style="color:var(--text-secondary); font-size:0.85rem;">लेखक एवं ज्योतिषाचार्य: <strong>ज्योतिषाचार्य आशुतोष कुमार चौबे</strong></div>
-        <div style="font-size:0.8rem; color:var(--text-muted); margin-top:0.35rem;">सर्वाधिकार सुरक्षित © २०२६. All rights reserved.</div>
+        <div style="font-size:0.8rem; color:var(--text-muted); margin-top:0.35rem;">सर्वाधिकार सुरक्षित © 2026. All rights reserved.</div>
       </div>
 
       <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.6rem; margin-top:0.4rem;">
@@ -2452,7 +2452,7 @@ def render_edition_html(pages_list, edition_lang='hindi'):
     en_btn_cls = "lang-btn active" if not is_hindi else "lang-btn"
     hi_opt_cls = "settings-opt-btn active" if is_hindi else "settings-opt-btn"
     en_opt_cls = "settings-opt-btn active" if not is_hindi else "settings-opt-btn"
-    page_counter_initial = f"मुखपृष्ठ • Cover (१ / {total_pages})" if is_hindi else f"Cover • 1 / {total_pages}"
+    page_counter_initial = f"मुखपृष्ठ • Cover (1 / {total_pages})" if is_hindi else f"Cover • 1 / {total_pages}"
 
     settings_title = "सेटिंग्स और विकल्प" if is_hindi else "Settings & Options"
     settings_nav_title = "नेविगेशन और अध्ययन" if is_hindi else "Navigation & Reading"
@@ -2484,7 +2484,7 @@ def render_edition_html(pages_list, edition_lang='hindi'):
           },
           {
             "@type": "Chapter",
-            "name": "नवग्रह कारकत्व एवं १७ शास्त्रीय राजयोग",
+            "name": "नवग्रह कारकत्व एवं 17 शास्त्रीय राजयोग",
             "position": 2,
             "pageStart": 6,
             "pageEnd": 20
@@ -2498,7 +2498,7 @@ def render_edition_html(pages_list, edition_lang='hindi'):
           },
           {
             "@type": "Chapter",
-            "name": "भाव एवं राशियों में ग्रह (दीप्तादि ९ अवस्थाएं)",
+            "name": "भाव एवं राशियों में ग्रह (दीप्तादि 9 अवस्थाएं)",
             "position": 4,
             "pageStart": 38,
             "pageEnd": 47
@@ -2528,15 +2528,15 @@ def render_edition_html(pages_list, edition_lang='hindi'):
             "name": "तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ क्या है?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "तंत्र ज्ञान (Tantra Gyan) ज्योतिषाचार्य आशुतोष कुमार चौबे द्वारा रचित ८८ पृष्ठों का सम्पूर्ण प्रामाणिक शास्त्रीय फलित ज्ञानकोश है। इसमें महर्षि पराशर, सारावली, फलदीपिका, जातक पारिजात एवं नाड़ी ज्योतिष के सूत्रों का आधुनिक विश्लेषणात्मक समन्वय प्रस्तुत किया गया है, जो 100% ऑफ़लाइन PWA तकनीक पर निःशुल्क उपलब्ध है।"
+              "text": "तंत्र ज्ञान (Tantra Gyan) ज्योतिषाचार्य आशुतोष कुमार चौबे द्वारा रचित 88 पृष्ठों का सम्पूर्ण प्रामाणिक शास्त्रीय फलित ज्ञानकोश है। इसमें महर्षि पराशर, सारावली, फलदीपिका, जातक पारिजात एवं नाड़ी ज्योतिष के सूत्रों का आधुनिक विश्लेषणात्मक समन्वय प्रस्तुत किया गया है, जो 100% ऑफ़लाइन PWA तकनीक पर निःशुल्क उपलब्ध है।"
             }
           },
           {
             "@type": "Question",
-            "name": "वैदिक ज्योतिष में १७ शास्त्रीय राजयोग कौन-से हैं?",
+            "name": "वैदिक ज्योतिष में 17 शास्त्रीय राजयोग कौन-से हैं?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "इस ग्रंथ के पृष्ठ २०-२१ में ५ पंच महापुरुष योग (रुचक, भद्र, हंस, मालव्य, शश), गजकेसरी योग, बुधादित्य योग, धर्म-कर्माधिपति योग, चन्द्र-मंगल योग, नीचभंग राजयोग, तथा त्रिक भावों से निर्मित ३ विपरीत राजयोग (हर्ष, सरल, विमल योग) का विस्तृत शास्त्रीय फलित दिया गया है।"
+              "text": "इस ग्रंथ के पृष्ठ 20-21 में 5 पंच महापुरुष योग (रुचक, भद्र, हंस, मालव्य, शश), गजकेसरी योग, बुधादित्य योग, धर्म-कर्माधिपति योग, चन्द्र-मंगल योग, नीचभंग राजयोग, तथा त्रिक भावों से निर्मित 3 विपरीत राजयोग (हर्ष, सरल, विमल योग) का विस्तृत शास्त्रीय फलित दिया गया है।"
             }
           },
           {
@@ -2544,7 +2544,7 @@ def render_edition_html(pages_list, edition_lang='hindi'):
             "name": "पंच महापुरुष योग जन्मकुंडली में कैसे बनते हैं?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "जब मंगल (रुचक योग), बुध (भद्र योग), गुरु (हंस योग), शुक्र (मालव्य योग), या शनि (शश योग) अपनी स्वराशि, मूलत्रिकोण या उच्च राशि में होकर केंद्र भाव (१, ४, ७, १०) में स्थित होते हैं, तब पंच महापुरुष योग का निर्माण होता है।"
+              "text": "जब मंगल (रुचक योग), बुध (भद्र योग), गुरु (हंस योग), शुक्र (मालव्य योग), या शनि (शश योग) अपनी स्वराशि, मूलत्रिकोण या उच्च राशि में होकर केंद्र भाव (1, 4, 7, 10) में स्थित होते हैं, तब पंच महापुरुष योग का निर्माण होता है।"
             }
           },
           {
@@ -2552,7 +2552,7 @@ def render_edition_html(pages_list, edition_lang='hindi'):
             "name": "विपरीत राजयोग (हर्ष, सरल, विमल) का क्या नियम है?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "जब त्रिक भावों (६, ८, १२) के स्वामी ग्रह आपस में केवल ६, ८, या १२वें भाव में ही स्थित हों और शुभ भावों के स्वामियों से युक्त न हों: ६ठे भाव का स्वामी ६/८/१२ में हो तो हर्ष योग; ८वें भाव का स्वामी ६/८/१२ में हो तो सरल योग; तथा १२वें भाव का स्वामी ६/८/१२ में हो तो विमल योग बनता है।"
+              "text": "जब त्रिक भावों (6, 8, 12) के स्वामी ग्रह आपस में केवल 6, 8, या 12वें भाव में ही स्थित हों और शुभ भावों के स्वामियों से युक्त न हों: 6ठे भाव का स्वामी 6/8/12 में हो तो हर्ष योग; 8वें भाव का स्वामी 6/8/12 में हो तो सरल योग; तथा 12वें भाव का स्वामी 6/8/12 में हो तो विमल योग बनता है।"
             }
           },
           {
@@ -2560,31 +2560,31 @@ def render_edition_html(pages_list, edition_lang='hindi'):
             "name": "आयुर्-ज्योतिष (Medical Astrology) में कैंसर रोग का ज्योतिषीय विश्लेषण कैसे होता है?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "ग्रंथ के पृष्ठ ४८ से ७४ में कैंसर के ज्योतिषीय योग दिए गए हैं। यह मुख्य रूप से त्रिक भावों (६, ८, १२), जल तत्व व रक्त के कारक ग्रह चन्द्रमा व मंगल, रोगकारक राहु (अनियंत्रित कोशिका विभाजन) तथा शनि (दीर्घकालिक ऊतक क्षय) के अशुभ गठबंधन तथा लग्न व सूर्य (जीवन शक्ति) के पीड़ित होने से उत्पन्न होता है।"
+              "text": "ग्रंथ के पृष्ठ 48 से 74 में कैंसर के ज्योतिषीय योग दिए गए हैं। यह मुख्य रूप से त्रिक भावों (6, 8, 12), जल तत्व व रक्त के कारक ग्रह चन्द्रमा व मंगल, रोगकारक राहु (अनियंत्रित कोशिका विभाजन) तथा शनि (दीर्घकालिक ऊतक क्षय) के अशुभ गठबंधन तथा लग्न व सूर्य (जीवन शक्ति) के पीड़ित होने से उत्पन्न होता है।"
             }
           },
           {
             "@type": "Question",
-            "name": "ग्रहों की दीप्तादि ९ अवस्थाएं कौन-सी हैं?",
+            "name": "ग्रहों की दीप्तादि 9 अवस्थाएं कौन-सी हैं?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "दीप्तादि ९ अवस्थाएं हैं: १. दीप्त (उच्च राशि), २. स्वस्थ (स्वराशि), ३. मुदित (अधिमित्र राशि), ४. शांत (मित्र राशि), ५. दीन (सम राशि), ६. दुखित (शत्रु राशि), ७. विकल (अस्त ग्रह), ८. खल (नीच राशि), और ९. कोप (ग्रह युद्ध में पराजित)। यह अवस्थाएं ग्रह के वास्तविक शुभाशुभ फल की तीव्रता निर्धारित करती हैं।"
+              "text": "दीप्तादि 9 अवस्थाएं हैं: 1. दीप्त (उच्च राशि), 2. स्वस्थ (स्वराशि), 3. मुदित (अधिमित्र राशि), 4. शांत (मित्र राशि), 5. दीन (सम राशि), 6. दुखित (शत्रु राशि), 7. विकल (अस्त ग्रह), 8. खल (नीच राशि), और 9. कोप (ग्रह युद्ध में पराजित)। यह अवस्थाएं ग्रह के वास्तविक शुभाशुभ फल की तीव्रता निर्धारित करती हैं।"
             }
           },
           {
             "@type": "Question",
-            "name": "१२० वर्षीय विंशोत्तरी महादशा चक्र का क्रम और अवधि क्या है?",
+            "name": "120 वर्षीय विंशोत्तरी महादशा चक्र का क्रम और अवधि क्या है?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "विंशोत्तरी महादशा का क्रम है: केतु (७ वर्ष), शुक्र (२० वर्ष), सूर्य (६ वर्ष), चन्द्रमा (१० वर्ष), मंगल (७ वर्ष), राहु (१८ वर्ष), गुरु (१६ वर्ष), शनि (१९ वर्ष), और बुध (१७ वर्ष) — कुल १२० वर्ष।"
+              "text": "विंशोत्तरी महादशा का क्रम है: केतु (7 वर्ष), शुक्र (20 वर्ष), सूर्य (6 वर्ष), चन्द्रमा (10 वर्ष), मंगल (7 वर्ष), राहु (18 वर्ष), गुरु (16 वर्ष), शनि (19 वर्ष), और बुध (17 वर्ष) — कुल 120 वर्ष।"
             }
           },
           {
             "@type": "Question",
-            "name": "२७ नक्षत्र और १०८ पदों का क्या महत्व है?",
+            "name": "27 नक्षत्र और 108 पदों का क्या महत्व है?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "प्रत्येक नक्षत्र १३°२०' का होता है जो ३°२०' के ४ नवमांश पदों में विभाजित है। सम्पूर्ण भचक्र में २७ नक्षत्र × ४ = १०८ पद होते हैं। प्रत्येक पद का विशिष्ट तत्व, अधिष्ठाता देवता, नवमांश स्वामी व नामाक्षर होता है।"
+              "text": "प्रत्येक नक्षत्र 13°20' का होता है जो 3°20' के 4 नवमांश पदों में विभाजित है। सम्पूर्ण भचक्र में 27 नक्षत्र × 4 = 108 पद होते हैं। प्रत्येक पद का विशिष्ट तत्व, अधिष्ठाता देवता, नवमांश स्वामी व नामाक्षर होता है।"
             }
           },
           {
@@ -2592,7 +2592,7 @@ def render_edition_html(pages_list, edition_lang='hindi'):
             "name": "क्या तंत्र ज्ञान ग्रंथ बिना इंटरनेट या ऐप डाउनलोड किए पढ़ा जा सकता है?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "हाँ, तंत्र ज्ञान एक अत्याधुनिक Progressive Web App (PWA) है। वेबसाइट https://t.worldgyan.com/hindi.html पर एक बार आने पर ही सम्पूर्ण ८८ पृष्ठ स्वतः कैश हो जाते हैं और बिना इंटरनेट या एयरप्लेन मोड में भी पूर्णतः कार्य करते हैं।"
+              "text": "हाँ, तंत्र ज्ञान एक अत्याधुनिक Progressive Web App (PWA) है। वेबसाइट https://t.worldgyan.com/hindi.html पर एक बार आने पर ही सम्पूर्ण 88 पृष्ठ स्वतः कैश हो जाते हैं और बिना इंटरनेट या एयरप्लेन मोड में भी पूर्णतः कार्य करते हैं।"
             }
           }
         ]
@@ -2606,37 +2606,37 @@ def render_edition_html(pages_list, edition_lang='hindi'):
           {
             "@type": "ListItem",
             "position": 1,
-            "name": "प्रस्तावना, मंगलाचरण एवं लेखक परिचय (पृष्ठ १–५)",
+            "name": "प्रस्तावना, मंगलाचरण एवं लेखक परिचय (पृष्ठ 1–5)",
             "url": "https://t.worldgyan.com/hindi.html#page-1"
           },
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "नवग्रह कारकत्व एवं १७ शास्त्रीय राजयोग (पृष्ठ ६–२०)",
+            "name": "नवग्रह कारकत्व एवं 17 शास्त्रीय राजयोग (पृष्ठ 6–20)",
             "url": "https://t.worldgyan.com/hindi.html#page-6"
           },
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "राशि, नक्षत्र, ग्रह गति एवं विंशोत्तरी महादशा (पृष्ठ २१–३७)",
+            "name": "राशि, नक्षत्र, ग्रह गति एवं विंशोत्तरी महादशा (पृष्ठ 21–37)",
             "url": "https://t.worldgyan.com/hindi.html#page-21"
           },
           {
             "@type": "ListItem",
             "position": 4,
-            "name": "भाव एवं राशियों में ग्रह (दीप्तादि ९ अवस्थाएं) (पृष्ठ ३८–४७)",
+            "name": "भाव एवं राशियों में ग्रह (दीप्तादि 9 अवस्थाएं) (पृष्ठ 38–47)",
             "url": "https://t.worldgyan.com/hindi.html#page-38"
           },
           {
             "@type": "ListItem",
             "position": 5,
-            "name": "मेडिकल एस्ट्रोलॉजी एवं कैंसर रोग विश्लेषण (पृष्ठ ४८–७४)",
+            "name": "मेडिकल एस्ट्रोलॉजी एवं कैंसर रोग विश्लेषण (पृष्ठ 48–74)",
             "url": "https://t.worldgyan.com/hindi.html#page-48"
           },
           {
             "@type": "ListItem",
             "position": 6,
-            "name": "नक्षत्रों का गहन पद एवं ग्रह विश्लेषण (पृष्ठ ७५–८८)",
+            "name": "नक्षत्रों का गहन पद एवं ग्रह विश्लेषण (पृष्ठ 75–88)",
             "url": "https://t.worldgyan.com/hindi.html#page-75"
           }
         ]
@@ -2868,7 +2868,7 @@ def render_edition_html(pages_list, edition_lang='hindi'):
   <meta name="twitter:site" content="@TantraGyan108">
   <meta name="twitter:creator" content="@TantraGyan108">
   <meta name="twitter:title" content="{doc_title}">
-  <meta name="twitter:description" content="सम्पूर्ण प्रामाणिक फलित ज्ञानकोश: नवग्रह कारकत्व, १७ शास्त्रीय राजयोग, २७ नक्षत्र, १०८ पद, दीप्तादि ९ अवस्थाएं एवं आयुर्-ज्योतिष।">
+  <meta name="twitter:description" content="सम्पूर्ण प्रामाणिक फलित ज्ञानकोश: नवग्रह कारकत्व, 17 शास्त्रीय राजयोग, 27 नक्षत्र, 108 पद, दीप्तादि 9 अवस्थाएं एवं आयुर्-ज्योतिष।">
   <meta name="twitter:image" content="https://t.worldgyan.com/assets/og-image.jpg">
 
   <!-- Academic & AI Citation Metadata -->

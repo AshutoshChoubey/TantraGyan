@@ -72,3 +72,4 @@ if shutil.which("pdftoppm"):
     print(f"Rendered {len(proof_files)} proof images:")
     for pf in sorted(proof_files):
         print(f"  - {pf.name} ({pf.stat().st_size / 1024:.1f} KB)")
+
