@@ -27,6 +27,60 @@ from chart_generator import (
 
 SAMPLE_CHARTS = generate_sample_kundlis()
 
+def format_callout_body(raw_text: str) -> str:
+    """
+    Converts markdown bold, italics, math formulas, lists, and lines
+    into clean semantic HTML for embedding inside callout block divs.
+    """
+    t = raw_text
+    t = re.sub(r'\$\\to\$', '→', t)
+    t = re.sub(r'\\to', '→', t)
+    t = re.sub(r'\^\\circ', '°', t)
+    t = re.sub(r'\\circ', '°', t)
+    t = re.sub(r'\$([^\$]+)\$', r'\1', t)
+    t = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', t)
+    t = re.sub(r'(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)', r'<em>\1</em>', t)
+
+    lines = t.split("\n")
+    formatted = []
+    in_list = False
+
+    for line in lines:
+        s = line.strip()
+        if not s:
+            if in_list:
+                formatted.append("</ul>")
+                in_list = False
+            continue
+
+        if s.startswith("- ") or s.startswith("* "):
+            if not in_list:
+                formatted.append('<ul class="callout-list">')
+                in_list = True
+            formatted.append(f"  <li>{s[2:].strip()}</li>")
+        elif re.match(r'^\d+\.\s+', s):
+            if in_list:
+                formatted.append("</ul>")
+                in_list = False
+            m = re.match(r'^(\d+)\.\s+(.*)$', s)
+            num_val = m.group(1)
+            item_text = m.group(2).strip()
+            formatted.append(f'<div class="callout-num-row"><span class="callout-num-badge">{num_val}.</span> <span class="callout-num-content">{item_text}</span></div>')
+        else:
+            if in_list:
+                formatted.append("</ul>")
+                in_list = False
+            if s.endswith("  "):
+                formatted.append(f'<p class="callout-line">{s[:-2].strip()}<br/></p>')
+            else:
+                formatted.append(f'<p class="callout-line">{s}</p>')
+
+    if in_list:
+        formatted.append("</ul>")
+
+    return "\n".join(formatted)
+
+
 class AstrologyCalloutPreprocessor(Preprocessor):
     """
     Transforms custom triple-colon block directives into structured HTML containers.
@@ -60,37 +114,40 @@ class AstrologyCalloutPreprocessor(Preprocessor):
 
             elif block_type == "yoga":
                 yoga_title = title.strip() or "शास्त्रीय राजयोग (Classical Raja Yoga)"
+                body_html = format_callout_body(content)
                 return f"""<div class="callout callout-yoga">
   <div class="callout-header">
     <span class="callout-badge">RAJA YOGA</span>
     <span class="callout-title">{html.escape(yoga_title)}</span>
   </div>
   <div class="callout-body">
-{content}
+{body_html}
   </div>
 </div>"""
 
             elif block_type == "formula":
                 formula_title = title.strip() or "फलित सूत्र (Predictive Sutra)"
+                body_html = format_callout_body(content)
                 return f"""<div class="callout callout-formula">
   <div class="callout-header">
     <span class="callout-badge">SUTRA / सूत्र</span>
     <span class="callout-title">{html.escape(formula_title)}</span>
   </div>
   <div class="callout-body">
-{content}
+{body_html}
   </div>
 </div>"""
 
             elif block_type == "warning":
                 warning_title = title.strip() or "ज्योतिषीय चेतावनी एवं सावधानियां"
+                body_html = format_callout_body(content)
                 return f"""<div class="callout callout-warning">
   <div class="callout-header">
     <span class="callout-badge">CAVEAT / सावधान</span>
     <span class="callout-title">{html.escape(warning_title)}</span>
   </div>
   <div class="callout-body">
-{content}
+{body_html}
   </div>
 </div>"""
 
@@ -209,6 +266,14 @@ class PlanetColoringPostprocessor(Postprocessor):
                 out.append(p)
             else:
                 txt = p
+                # Convert any lingering **bold** or math tokens
+                txt = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', txt)
+                txt = re.sub(r'\$\\to\$', '→', txt)
+                txt = re.sub(r'\\to', '→', txt)
+                txt = re.sub(r'\^\\circ', '°', txt)
+                txt = re.sub(r'\\circ', '°', txt)
+                txt = re.sub(r'\$([^\$]+)\$', r'\1', txt)
+
                 # Inject 3D Planet Badges
                 for p_key, p_icon, pat in PLANET_RULES:
                     txt = re.sub(

@@ -24,7 +24,9 @@ from visualizer.specialized_charts import (
     generate_upachaya_diamond_chart,
     generate_kendra_trikona_diamond_chart,
     generate_nakshatra_mandala_wheel,
-    generate_bhava_karaka_diamond_chart
+    generate_bhava_karaka_diamond_chart,
+    generate_kalpurush_bhavas_diamond_chart,
+    generate_panch_mahapurush_rajyogas_chart
 )
 
 RASHI_NAMES = [
@@ -152,34 +154,8 @@ def generate_sample_kundlis():
         }
     )
 
-    # 2. 17 Classical Raja Yogas (Cancer Ascendant / Sign index 3)
-    charts["raja_yogas_chart"] = generate_enterprise_kundli(
-        lagna_sign_idx=3,
-        occupants={
-            1: [
-                {"symbol": "Ju", "dms": "05°00'", "dignity_code": "EXALTED"},
-                {"symbol": "Mo", "dms": "14°20'", "dignity_code": "OWN"}
-            ],
-            4: [
-                {"symbol": "Ve", "dms": "18°40'", "dignity_code": "OWN"}
-            ],
-            7: [
-                {"symbol": "Ma", "dms": "28°00'", "dignity_code": "EXALTED"}
-            ],
-            10: [
-                {"symbol": "Su", "dms": "06°10'", "dignity_code": "EXALTED"},
-                {"symbol": "Me", "dms": "12°50'", "dignity_code": "FRIEND"}
-            ]
-        },
-        chart_title="पंच महापुरुष एवं गजकेसरी राजयोग",
-        birth_meta={
-            "name": "हंस, मालव्य, रुचक एवं बुधादित्य योग विन्यास",
-            "dob": "कर्क लग्न विन्यास",
-            "tob": "मध्याह्न",
-            "place": "काशी (Varanasi, India)",
-            "ayanamsa": "Lahiri (Chitrapaksha)"
-        }
-    )
+    # 2. Pancha Mahapurusha & Gajakesari Raja Yogas (Comprehensive Master Chart)
+    charts["raja_yogas_chart"] = generate_panch_mahapurush_rajyogas_chart()
 
     # 3. Viparita Raja Yogas (Libra Ascendant / Sign index 6)
     charts["viparita_chart"] = generate_enterprise_kundli(
@@ -254,6 +230,9 @@ def generate_sample_kundlis():
 
     # 10. Bhava Karakatva & Planetary Rulers Diamond Chart
     charts["bhava_karaka_diamond_chart"] = generate_bhava_karaka_diamond_chart()
+
+    # 11. Kalpurush Bhava Classification Master Diamond Chart
+    charts["kalpurush_bhavas_diamond_chart"] = generate_kalpurush_bhavas_diamond_chart()
 
     return charts
 

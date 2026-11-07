@@ -103,7 +103,7 @@ def generate_elements_diamond_chart(width: int = 560, height: int = 700) -> str:
     }
 
     svg = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="auto" class="astro-chart-svg astro-elements-chart">',
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="100%" class="astro-chart-svg astro-elements-chart">',
         '  <defs>',
         '    <!-- Background parchment gradient -->',
         '    <linearGradient id="parchmentBg" x1="0%" y1="0%" x2="100%" y2="100%">',
@@ -252,7 +252,7 @@ def generate_upachaya_diamond_chart(width: int = 560, height: int = 700) -> str:
     }
 
     svg = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="auto" class="astro-chart-svg astro-upachaya-chart">',
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="100%" class="astro-chart-svg astro-upachaya-chart">',
         '  <defs>',
         '    <linearGradient id="upachayaParchment" x1="0%" y1="0%" x2="100%" y2="100%">',
         '      <stop offset="0%" stop-color="#fffdfa"/>',
@@ -357,7 +357,7 @@ def generate_kendra_trikona_diamond_chart(width: int = 560, height: int = 700) -
     Vishnu Sthanas (Kendras: 1, 4, 7, 10) and Lakshmi Sthanas (Trikonas: 1, 5, 9).
     """
     svg = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="auto" class="astro-chart-svg astro-kendra-trikona-chart">',
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="100%" class="astro-chart-svg astro-kendra-trikona-chart">',
         '  <defs>',
         '    <linearGradient id="ktBg" x1="0%" y1="0%" x2="100%" y2="100%">',
         '      <stop offset="0%" stop-color="#fffefc"/>',
@@ -536,7 +536,7 @@ def generate_nakshatra_mandala_wheel(width: int = 650, height: int = 650) -> str
     ]
 
     svg = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="auto" class="astro-chart-svg astro-nakshatra-mandala">',
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="100%" class="astro-chart-svg astro-nakshatra-mandala">',
         '  <defs>',
         '    <linearGradient id="mandalaBg" x1="0%" y1="0%" x2="100%" y2="100%">',
         '      <stop offset="0%" stop-color="#fffefb"/>',
@@ -669,22 +669,22 @@ def generate_bhava_karaka_diamond_chart(width: int = 560, height: int = 700) -> 
     Classical Sthira Karakas (Fixed Significators) for all 12 Houses.
     """
     karakas = {
-        1:  {"graha": "Su", "name": "तनु भाव (Body & Soul)", "karaka_title": "सूर्य (Sun)", "sig": "आत्मबल, तेज, देह, आरोग्यता"},
-        2:  {"graha": "Ju", "name": "धन भाव (Wealth & Speech)", "karaka_title": "गुरु (Jupiter)", "sig": "संचित कोष, वाणी, कुटुंब संस्कार"},
-        3:  {"graha": "Ma", "name": "सहज भाव (Courage & Siblings)", "karaka_title": "मंगल (Mars)", "sig": "शौर्य, पराक्रम, अनुज भ्राता, उद्यम"},
-        4:  {"graha": "Mo", "name": "सुख भाव (Mother & Vehicles)", "karaka_title": "चन्द्र व शुक्र", "sig": "मातृ सुख, गृह, वाहन, मानसिक शांति"},
-        5:  {"graha": "Ju", "name": "पुत्र भाव (Wisdom & Children)", "karaka_title": "गुरु (Jupiter)", "sig": "संतति, पूर्वपुण्य, मेधा, मंत्र साधना"},
-        6:  {"graha": "Sa", "name": "रिपु भाव (Debts & Disease)", "karaka_title": "शनि व मंगल", "sig": "शत्रु विजय, रोग निदान, ऋण मुक्ति"},
-        7:  {"graha": "Ve", "name": "जाया भाव (Spouse & Trade)", "karaka_title": "शुक्र (Venus)", "sig": "जीवनसाथी, काम सुख, व्यापार साझेदारी"},
-        8:  {"graha": "Sa", "name": "आयु भाव (Longevity & Occult)", "karaka_title": "शनि (Saturn)", "sig": "दीर्घायु, गूढ़ विद्या, आकस्मिक धन"},
-        9:  {"graha": "Ju", "name": "भाग्य भाव (Dharma & Guru)", "karaka_title": "गुरु व सूर्य", "sig": "धर्म, पिता, ईश्वरीय कृपा, तीर्थाटन"},
-        10: {"graha": "Su", "name": "कर्म भाव (Career & Authority)", "karaka_title": "सूर्य/बुध/शनि", "sig": "राज्य पद, प्रतिष्ठा, आजीविका शिखर"},
-        11: {"graha": "Ju", "name": "लाभ भाव (Income & Gains)", "karaka_title": "गुरु (Jupiter)", "sig": "सर्व कामना सिद्धि, प्रचुर धनोपार्जन"},
-        12: {"graha": "Sa", "name": "व्यय भाव (Moksha & Foreign)", "karaka_title": "शनि व केतु", "sig": "मोक्ष, विसर्जन, विदेश वास, एकांत"}
+        1:  {"graha": "Su", "name": "तनु भाव (Body &amp; Soul)", "karaka_title": "सूर्य (Sun)", "sig": "आत्मबल, तेज, देह, आरोग्यता"},
+        2:  {"graha": "Ju", "name": "धन भाव (Wealth &amp; Speech)", "karaka_title": "गुरु (Jupiter)", "sig": "संचित कोष, वाणी, कुटुंब संस्कार"},
+        3:  {"graha": "Ma", "name": "सहज भाव (Courage &amp; Siblings)", "karaka_title": "मंगल (Mars)", "sig": "शौर्य, पराक्रम, अनुज भ्राता, उद्यम"},
+        4:  {"graha": "Mo", "name": "सुख भाव (Mother &amp; Vehicles)", "karaka_title": "चन्द्र व शुक्र", "sig": "मातृ सुख, गृह, वाहन, मानसिक शांति"},
+        5:  {"graha": "Ju", "name": "पुत्र भाव (Wisdom &amp; Children)", "karaka_title": "गुरु (Jupiter)", "sig": "संतति, पूर्वपुण्य, मेधा, मंत्र साधना"},
+        6:  {"graha": "Sa", "name": "रिपु भाव (Debts &amp; Disease)", "karaka_title": "शनि व मंगल", "sig": "शत्रु विजय, रोग निदान, ऋण मुक्ति"},
+        7:  {"graha": "Ve", "name": "जाया भाव (Spouse &amp; Trade)", "karaka_title": "शुक्र (Venus)", "sig": "जीवनसाथी, काम सुख, व्यापार साझेदारी"},
+        8:  {"graha": "Sa", "name": "आयु भाव (Longevity &amp; Occult)", "karaka_title": "शनि (Saturn)", "sig": "दीर्घायु, गूढ़ विद्या, आकस्मिक धन"},
+        9:  {"graha": "Ju", "name": "भाग्य भाव (Dharma &amp; Guru)", "karaka_title": "गुरु व सूर्य", "sig": "धर्म, पिता, ईश्वरीय कृपा, तीर्थाटन"},
+        10: {"graha": "Su", "name": "कर्म भाव (Career &amp; Authority)", "karaka_title": "सूर्य/बुध/शनि", "sig": "राज्य पद, प्रतिष्ठा, आजीविका शिखर"},
+        11: {"graha": "Ju", "name": "लाभ भाव (Income &amp; Gains)", "karaka_title": "गुरु (Jupiter)", "sig": "सर्व कामना सिद्धि, प्रचुर धनोपार्जन"},
+        12: {"graha": "Sa", "name": "व्यय भाव (Moksha &amp; Foreign)", "karaka_title": "शनि व केतु", "sig": "मोक्ष, विसर्जन, विदेश वास, एकांत"}
     }
 
     svg = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="auto" class="astro-chart-svg astro-karaka-chart">',
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="100%" class="astro-chart-svg astro-karaka-chart">',
         '  <defs>',
         '    <linearGradient id="karakaBg" x1="0%" y1="0%" x2="100%" y2="100%">',
         '      <stop offset="0%" stop-color="#fffefd"/>',
@@ -750,3 +750,475 @@ def generate_bhava_karaka_diamond_chart(width: int = 560, height: int = 700) -> 
 
     return "\n".join(svg)
 
+
+
+# ==============================================================================
+# 6. KALPURUSH BHAVA CLASSIFICATION MASTER DIAMOND CHART (कालपुरुष भाव वर्गीकरण महाचक्र)
+# ==============================================================================
+
+def generate_kalpurush_bhavas_diamond_chart(width: int = 560, height: int = 770) -> str:
+    """
+    Renders an authoritative Kalpurusha Kundali (Mesha / Aries Lagna) illustrating all
+    12 Bhavas categorized into Kendra, Trikona, Upachaya, Trik (Dusthana), and
+    Maraka houses with complete significations, planetary rulers, and exaltations
+    directly inside each diamond and triangle.
+    """
+    svg = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="100%" class="astro-chart-svg astro-kalpurush-bhavas-chart">',
+        '  <defs>',
+        '    <style>',
+        '      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800&amp;display=swap");',
+        '    </style>',
+        '    <linearGradient id="kpPlateBg" x1="0%" y1="0%" x2="100%" y2="100%">',
+        '      <stop offset="0%" stop-color="#fffefc"/>',
+        '      <stop offset="100%" stop-color="#faf5ea"/>',
+        '    </linearGradient>',
+        '    <!-- Distinct Category Gradients -->',
+        '    <linearGradient id="kpGradKendraTrikona" x1="0%" y1="0%" x2="100%" y2="100%">',
+        '      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.96"/>',
+        '      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0.96"/>',
+        '    </linearGradient>',
+        '    <linearGradient id="kpGradKendra" x1="0%" y1="0%" x2="100%" y2="100%">',
+        '      <stop offset="0%" stop-color="#eff6ff" stop-opacity="0.96"/>',
+        '      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.96"/>',
+        '    </linearGradient>',
+        '    <linearGradient id="kpGradTrikona" x1="0%" y1="0%" x2="100%" y2="100%">',
+        '      <stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.96"/>',
+        '      <stop offset="100%" stop-color="#d1fae5" stop-opacity="0.96"/>',
+        '    </linearGradient>',
+        '    <linearGradient id="kpGradUpachaya" x1="0%" y1="0%" x2="100%" y2="100%">',
+        '      <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.96"/>',
+        '      <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.96"/>',
+        '    </linearGradient>',
+        '    <linearGradient id="kpGradMaraka" x1="0%" y1="0%" x2="100%" y2="100%">',
+        '      <stop offset="0%" stop-color="#ffe4e6" stop-opacity="0.96"/>',
+        '      <stop offset="100%" stop-color="#fecdd3" stop-opacity="0.96"/>',
+        '    </linearGradient>',
+        '    <linearGradient id="kpGradTrik" x1="0%" y1="0%" x2="100%" y2="100%">',
+        '      <stop offset="0%" stop-color="#fdf2f8" stop-opacity="0.96"/>',
+        '      <stop offset="100%" stop-color="#fce7f3" stop-opacity="0.96"/>',
+        '    </linearGradient>',
+        '    <linearGradient id="kpGradTrikDeep" x1="0%" y1="0%" x2="100%" y2="100%">',
+        '      <stop offset="0%" stop-color="#faf5ff" stop-opacity="0.96"/>',
+        '      <stop offset="100%" stop-color="#f3e8ff" stop-opacity="0.96"/>',
+        '    </linearGradient>',
+        '    <filter id="kpShadow" x="-5%" y="-5%" width="110%" height="110%">',
+        '      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08"/>',
+        '    </filter>',
+        '  </defs>',
+
+        '  <!-- Outer Plate Frame -->',
+        f'  <rect x="6" y="6" width="{width-12}" height="{height-12}" rx="12" fill="url(#kpPlateBg)" stroke="#b45309" stroke-width="2" filter="url(#kpShadow)"/>',
+        f'  <rect x="12" y="12" width="{width-24}" height="{height-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>',
+
+        '  <!-- Top Header Banner -->',
+        f'  <rect x="24" y="20" width="{width-48}" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>',
+        f'  <text x="{width//2}" y="42" font-family="{SVG_SERIF_FAMILY}" font-size="16" font-weight="800" fill="#78350f" text-anchor="middle">कालपुरुष कुण्डली भाव वर्गीकरण महाचक्र</text>',
+        f'  <text x="{width//2}" y="60" font-family="{SVG_FONT_FAMILY}" font-size="11" font-weight="600" fill="#b45309" text-anchor="middle">केन्द्र (1, 4, 7, 10) • त्रिकोण (1, 5, 9) • उपचय (3, 6, 10, 11) • त्रिक (6, 8, 12) • मारक (2, 7)</text>',
+        f'  <text x="{width//2}" y="74" font-family="{SVG_FONT_FAMILY}" font-size="9" fill="#78716c" text-anchor="middle">मेष लग्न विन्यास • महर्षि पाराशर प्रतिपादित भाव व्यवस्था, प्राकृतिक कारकत्व व फलित मर्म</text>',
+
+        '  <!-- Diamond Kundali Outer Frame (X: 30 to 530, Y: 96 to 596) -->',
+        '  <g transform="translate(10, 0)">'
+    ]
+
+    # Map house polygons with styles
+    house_styles = {
+        1:  ("url(#kpGradKendraTrikona)", "#b45309", 2.6), # Kendra + Trikona
+        2:  ("url(#kpGradMaraka)",        "#e11d48", 1.8), # Maraka 2
+        3:  ("url(#kpGradUpachaya)",      "#0284c7", 1.8), # Upachaya 3
+        4:  ("url(#kpGradKendra)",        "#1d4ed8", 2.2), # Kendra 4 (Vishnu)
+        5:  ("url(#kpGradTrikona)",       "#059669", 2.2), # Trikona 5 (Lakshmi)
+        6:  ("url(#kpGradTrik)",          "#9f1239", 1.8), # Trik 6 + Upachaya
+        7:  ("url(#kpGradMaraka)",        "#dc2626", 2.2), # Kendra 7 + Primary Maraka
+        8:  ("url(#kpGradTrikDeep)",      "#7e22ce", 1.8), # Major Trik 8
+        9:  ("url(#kpGradTrikona)",       "#047857", 2.4), # Supreme Trikona 9
+        10: ("url(#kpGradKendraTrikona)", "#d97706", 2.4), # Supreme Kendra 10 + Upachaya
+        11: ("url(#kpGradUpachaya)",      "#4338ca", 2.0), # Supreme Upachaya 11
+        12: ("url(#kpGradTrik)",          "#9f1239", 1.8)  # Trik 12 (Moksha)
+    }
+
+    for h in range(1, 13):
+        poly = HOUSE_POLYGONS[h]
+        fill, stroke, sw = house_styles[h]
+        svg.append(f'    <polygon points="{poly}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"/>')
+
+    # Accent Crossing Lines & Center Dot
+    svg.extend([
+        '    <polygon points="270,100 520,350 270,600 20,350" fill="none" stroke="#78350f" stroke-width="1.2" opacity="0.65"/>',
+        '    <line x1="20" y1="100" x2="520" y2="600" stroke="#78350f" stroke-width="1.0" opacity="0.5"/>',
+        '    <line x1="520" y1="100" x2="20" y2="600" stroke="#78350f" stroke-width="1.0" opacity="0.5"/>',
+        '    <circle cx="270" cy="350" r="4.5" fill="#f59e0b" stroke="#78350f" stroke-width="1.5"/>'
+    ])
+
+    # Rashi Numbers on Crossing Points
+    rashi_coords = {
+        1: (270, 318), 2: (200, 128), 3: (55, 275), 4: (230, 350),
+        5: (55, 420), 6: (200, 570), 7: (270, 380), 8: (340, 570),
+        9: (485, 420), 10: (310, 350), 11: (485, 275), 12: (340, 128)
+    }
+    for h, (rx, ry) in rashi_coords.items():
+        svg.append(f'    <!-- Rashi {h} Badge -->')
+        svg.append(f'    <circle cx="{rx}" cy="{ry}" r="10" fill="#ffffff" stroke="#78350f" stroke-width="1.2"/>')
+        svg.append(f'    <text x="{rx}" y="{ry + 3.5}" font-family="{SVG_FONT_FAMILY}" font-size="10.5" font-weight="900" fill="#78350f" text-anchor="middle">{h}</text>')
+
+    # Detailed House Annotations inside Centroids
+    house_annotations = {
+        1: {
+            "title": "भाव 1 • तनु (Lagna)",
+            "title_fill": "#9a3412",
+            "tag": "केन्द्र व त्रिकोण (सर्वोच्च)",
+            "tag_bg": "#fef3c7",
+            "tag_fill": "#b45309",
+            "sig": "देह • आत्मबल • वर्ण • स्वास्थ्य",
+            "ruler": "मंगल (स्वराशि) • सूर्य (उच्च 10°)",
+            "y_offsets": (-26, -11, 7, 23)
+        },
+        2: {
+            "title": "भाव 2 • धन भाव",
+            "title_fill": "#9f1239",
+            "tag": "द्वितीय मारक भाव",
+            "tag_bg": "#ffe4e6",
+            "tag_fill": "#be123c",
+            "sig": "संचित धन • कुटुंब • वाणी",
+            "ruler": "शुक्र (स्व) • चन्द्र (उच्च 3°)",
+            "y_offsets": (-18, -4, 10, 24)
+        },
+        3: {
+            "title": "भाव 3 • सहज",
+            "title_fill": "#075985",
+            "tag": "प्रथम उपचय भाव",
+            "tag_bg": "#e0f2fe",
+            "tag_fill": "#0284c7",
+            "sig": "पराक्रम • साहस • अनुज",
+            "ruler": "बुध (स्व) • पुरुषार्थ साधन",
+            "y_offsets": (-18, -4, 10, 24)
+        },
+        4: {
+            "title": "भाव 4 • सुख (विष्णु)",
+            "title_fill": "#1e3a8a",
+            "tag": "केन्द्र भाव (चतुर्थ केन्द्र)",
+            "tag_bg": "#eff6ff",
+            "tag_fill": "#1d4ed8",
+            "sig": "माता • गृह • भूमि • वाहन • मन",
+            "ruler": "चन्द्र (स्व) • गुरु (उच्च 5°)",
+            "y_offsets": (-26, -11, 7, 23)
+        },
+        5: {
+            "title": "भाव 5 • पुत्र/धी",
+            "title_fill": "#064e3b",
+            "tag": "त्रिकोण भाव (लक्ष्मी)",
+            "tag_bg": "#ecfdf5",
+            "tag_fill": "#047857",
+            "sig": "संतान • पूर्वपुण्य • मेधा",
+            "ruler": "सूर्य (स्व) • मंत्र साधना",
+            "y_offsets": (-18, -4, 10, 24)
+        },
+        6: {
+            "title": "भाव 6 • शत्रु/रोग",
+            "title_fill": "#881337",
+            "tag": "त्रिक (दुःस्थान) + उपचय",
+            "tag_bg": "#fdf2f8",
+            "tag_fill": "#9f1239",
+            "sig": "रोग • ऋण • शत्रु • सेवा",
+            "ruler": "बुध (उच्च 15°) • षडरिपु जय",
+            "y_offsets": (-18, -4, 10, 24)
+        },
+        7: {
+            "title": "भाव 7 • जाया (कलत्र)",
+            "title_fill": "#7f1d1d",
+            "tag": "केन्द्र व प्रबल मारक भाव",
+            "tag_bg": "#fee2e2",
+            "tag_fill": "#dc2626",
+            "sig": "दांपत्य • साझेदारी • व्यापार",
+            "ruler": "शुक्र (स्व) • शनि (उच्च 20°)",
+            "y_offsets": (-26, -11, 7, 23)
+        },
+        8: {
+            "title": "भाव 8 • रन्ध्र भाव",
+            "title_fill": "#4c1d95",
+            "tag": "प्रबल त्रिक (घोर दुःस्थान)",
+            "tag_bg": "#faf5ff",
+            "tag_fill": "#7e22ce",
+            "sig": "आयु • मृत्यु • गुप्त ज्ञान",
+            "ruler": "मंगल (स्व) • गूढ़ परिवर्तन",
+            "y_offsets": (-18, -4, 10, 24)
+        },
+        9: {
+            "title": "भाव 9 • भाग्य/धर्म",
+            "title_fill": "#064e3b",
+            "tag": "सर्वोच्च त्रिकोण (लक्ष्मी)",
+            "tag_bg": "#d1fae5",
+            "tag_fill": "#059669",
+            "sig": "धर्म • गुरु • पिता • तीर्थ",
+            "ruler": "गुरु (स्व) • ईश्वरीय अनुग्रह",
+            "y_offsets": (-18, -4, 10, 24)
+        },
+        10: {
+            "title": "भाव 10 • कर्म (विष्णु)",
+            "title_fill": "#78350f",
+            "tag": "सर्वोच्च केन्द्र व उपचय",
+            "tag_bg": "#fef3c7",
+            "tag_fill": "#b45309",
+            "sig": "राज्य पद • आजीविका • सत्ता",
+            "ruler": "शनि (स्व) • मंगल (उच्च 28°)",
+            "y_offsets": (-26, -11, 7, 23)
+        },
+        11: {
+            "title": "भाव 11 • लाभ भाव",
+            "title_fill": "#312e81",
+            "tag": "सर्वोत्तम उपचय भाव",
+            "tag_bg": "#e0e7ff",
+            "tag_fill": "#4338ca",
+            "sig": "आय • सर्वाभीष्ट सिद्धि",
+            "ruler": "शनि (स्व) • पूर्ण मनोरथ",
+            "y_offsets": (-18, -4, 10, 24)
+        },
+        12: {
+            "title": "भाव 12 • व्यय/मोक्ष",
+            "title_fill": "#701a75",
+            "tag": "त्रिक भाव (मोक्ष स्थान)",
+            "tag_bg": "#fdf2f8",
+            "tag_fill": "#9f1239",
+            "sig": "व्यय • मोक्ष • विदेश • शयन",
+            "ruler": "गुरु (स्व) • शुक्र (उच्च 27°)",
+            "y_offsets": (-18, -4, 10, 24)
+        }
+    }
+
+    for h in range(1, 13):
+        cx, cy = HOUSE_CENTROIDS[h]
+        ann = house_annotations[h]
+        y1, y2, y3, y4 = ann["y_offsets"]
+        is_diamond = h in [1, 4, 7, 10]
+        font_main = "11.5" if is_diamond else "10.0"
+        font_sub = "8.8" if is_diamond else "7.8"
+        font_ruler = "8.5" if is_diamond else "7.5"
+
+        svg.append(f'    <!-- House {h} Text Plate -->')
+        svg.append(f'    <text x="{cx}" y="{cy + y1}" font-family="{SVG_FONT_FAMILY}" font-size="{font_main}" font-weight="900" fill="{ann["title_fill"]}" text-anchor="middle">{ann["title"]}</text>')
+        svg.append(f'    <text x="{cx}" y="{cy + y2}" font-family="{SVG_FONT_FAMILY}" font-size="{font_sub}" font-weight="800" fill="{ann["tag_fill"]}" text-anchor="middle">{ann["tag"]}</text>')
+        svg.append(f'    <text x="{cx}" y="{cy + y3}" font-family="{SVG_FONT_FAMILY}" font-size="{font_sub}" font-weight="600" fill="#1e293b" text-anchor="middle">{ann["sig"]}</text>')
+        svg.append(f'    <text x="{cx}" y="{cy + y4}" font-family="{SVG_FONT_FAMILY}" font-size="{font_ruler}" font-weight="700" fill="#854d0e" text-anchor="middle">{ann["ruler"]}</text>')
+
+    svg.append('  </g>')
+
+    # -------------------------------------------------------------
+    # 5 Structured Categorization Cards at the Bottom
+    # -------------------------------------------------------------
+    svg.append('  <!-- 5 Functional Classification Cards -->')
+    cards_data = [
+        (18,  "केन्द्र (1, 4, 7, 10)", "विष्णु स्थान", "देह, सुख, दांपत्य, कर्म", "#eff6ff", "#2563eb", "#1e3a8a"),
+        (124, "त्रिकोण (1, 5, 9)",    "लक्ष्मी स्थान", "धर्म, धी, भाग्य, पुण्य", "#ecfdf5", "#059669", "#064e3b"),
+        (230, "उपचय (3, 6, 10, 11)", "सतत पुरुषार्थ", "साहस, विजय, सत्ता, लाभ", "#e0f2fe", "#0284c7", "#075985"),
+        (336, "त्रिक (6, 8, 12)",     "दुःस्थान / संकट", "रोग, ऋण, मृत्यु, मोक्ष", "#fdf2f8", "#be185d", "#701a75"),
+        (442, "मारक (2, 7)",         "जीवन मर्यादा", "धन, कुटुंब, जाया, आयु अंत", "#ffe4e6", "#e11d48", "#9f1239")
+    ]
+
+    for x_pos, c_title, c_role, c_desc, bg_col, border_col, text_col in cards_data:
+        svg.append(f'  <g transform="translate({x_pos}, 606)">')
+        svg.append(f'    <rect x="0" y="0" width="100" height="66" rx="6" fill="{bg_col}" stroke="{border_col}" stroke-width="1.2"/>')
+        svg.append(f'    <text x="50" y="18" font-family="{SVG_FONT_FAMILY}" font-size="9.0" font-weight="900" fill="{text_col}" text-anchor="middle">{c_title}</text>')
+        svg.append(f'    <text x="50" y="34" font-family="{SVG_FONT_FAMILY}" font-size="8.5" font-weight="700" fill="{border_col}" text-anchor="middle">{c_role}</text>')
+        svg.append(f'    <text x="50" y="50" font-family="{SVG_FONT_FAMILY}" font-size="7.5" font-weight="600" fill="#334155" text-anchor="middle">{c_desc}</text>')
+        svg.append('  </g>')
+
+    # Bottom Master Shloka / Principle Banner
+    svg.extend([
+        f'  <g transform="translate(18, 680)">',
+        f'    <rect x="0" y="0" width="{width-36}" height="76" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>',
+        f'    <text x="18" y="20" font-family="{SVG_SERIF_FAMILY}" font-size="11" font-weight="800" fill="#78350f">महर्षि पराशर फलित सार • पाराशरी भाव वर्गीकरण सूत्र</text>',
+        f'    <text x="18" y="37" font-family="{SVG_FONT_FAMILY}" font-size="9" font-weight="600" fill="#78350f">1. केन्द्र (विष्णु) एवं त्रिकोण (लक्ष्मी) का युति/दृष्टि संबंध जन्मकुण्डली में सर्वोच्च राजयोग का निर्माण करता है।</text>',
+        f'    <text x="18" y="52" font-family="{SVG_FONT_FAMILY}" font-size="9" font-weight="600" fill="#78350f">2. उपचय भावों (3, 6, 10, 11) में क्रूर ग्रह (शनि, मंगल, राहु) कालान्तर में प्रचंड पुरुषार्थ एवं सर्व-शत्रु विजय प्रदान करते हैं।</text>',
+        f'    <text x="18" y="67" font-family="{SVG_FONT_FAMILY}" font-size="9" font-weight="600" fill="#78350f">3. त्रिक (6, 8, 12) दुःस्थान हैं; इनके स्वामी परस्पर त्रिक में ही बैठें तो &quot;हर्ष, सरल, विमल&quot; नामक विपरीत राजयोग बनता है।</text>',
+        f'  </g>',
+
+        '</svg>'
+    ])
+
+    return "\n".join(svg)
+
+
+# ==============================================================================
+# 7. PANCHA MAHAPURUSHA & GAJAKESARI RAJYOGA MASTER CHART
+# ==============================================================================
+
+def generate_panch_mahapurush_rajyogas_chart(width: int = 560, height: int = 770) -> str:
+    """
+    Renders an authoritative North Indian Diamond Kundali (Cancer / Karka Lagna)
+    illustrating the 5 Imperial Mahapurusha Yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa)
+    plus Gajakesari Rajyoga and Budhaditya Yoga right inside the Bhavas with
+    exalted / own sign placements, planetary degrees, and comprehensive explanatory cards.
+    """
+    svg = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="100%" class="astro-chart-svg astro-rajayogas-master-chart">',
+        '  <defs>',
+        '    <style>',
+        '      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800&amp;display=swap");',
+        '    </style>',
+        '    <linearGradient id="ryPlateBg" x1="0%" y1="0%" x2="100%" y2="100%">',
+        '      <stop offset="0%" stop-color="#fffefc"/>',
+        '      <stop offset="100%" stop-color="#faf5e8"/>',
+        '    </linearGradient>',
+        '    <linearGradient id="ryGradGold" x1="0%" y1="0%" x2="100%" y2="100%">',
+        '      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.96"/>',
+        '      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0.96"/>',
+        '    </linearGradient>',
+        '    <linearGradient id="ryGradRuby" x1="0%" y1="0%" x2="100%" y2="100%">',
+        '      <stop offset="0%" stop-color="#fee2e2" stop-opacity="0.96"/>',
+        '      <stop offset="100%" stop-color="#fecaca" stop-opacity="0.96"/>',
+        '    </linearGradient>',
+        '    <linearGradient id="ryGradEmerald" x1="0%" y1="0%" x2="100%" y2="100%">',
+        '      <stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.96"/>',
+        '      <stop offset="100%" stop-color="#d1fae5" stop-opacity="0.96"/>',
+        '    </linearGradient>',
+        '    <linearGradient id="ryGradRose" x1="0%" y1="0%" x2="100%" y2="100%">',
+        '      <stop offset="0%" stop-color="#fdf2f8" stop-opacity="0.96"/>',
+        '      <stop offset="100%" stop-color="#fce7f3" stop-opacity="0.96"/>',
+        '    </linearGradient>',
+        '    <linearGradient id="ryGradAzure" x1="0%" y1="0%" x2="100%" y2="100%">',
+        '      <stop offset="0%" stop-color="#eff6ff" stop-opacity="0.96"/>',
+        '      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.96"/>',
+        '    </linearGradient>',
+        '    <filter id="ryShadow" x="-5%" y="-5%" width="110%" height="110%">',
+        '      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08"/>',
+        '    </filter>',
+        '  </defs>',
+
+        '  <!-- Outer Plate Frame -->',
+        f'  <rect x="6" y="6" width="{width-12}" height="{height-12}" rx="12" fill="url(#ryPlateBg)" stroke="#b45309" stroke-width="2" filter="url(#ryShadow)"/>',
+        f'  <rect x="12" y="12" width="{width-24}" height="{height-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>',
+
+        '  <!-- Top Header Banner -->',
+        f'  <rect x="24" y="20" width="{width-48}" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>',
+        f'  <text x="{width//2}" y="42" font-family="{SVG_SERIF_FAMILY}" font-size="16" font-weight="800" fill="#78350f" text-anchor="middle">पंच महापुरुष एवं गजकेसरी राजयोग चक्र</text>',
+        f'  <text x="{width//2}" y="60" font-family="{SVG_FONT_FAMILY}" font-size="11" font-weight="600" fill="#b45309" text-anchor="middle">हंस (गुरु) • मालव्य (शुक्र) • रुचक (मंगल) • भद्र (बुध) • शश (शनि) • गजकेसरी (गुरु+चन्द्र)</text>',
+        f'  <text x="{width//2}" y="74" font-family="{SVG_FONT_FAMILY}" font-size="9" fill="#78716c" text-anchor="middle">कर्क लग्न विन्यास • केन्द्र-त्रिकोण में उच्च व स्वराशि ग्रहों का अखंड साम्राज्य योग</text>',
+
+        '  <!-- Diamond Kundali Outer Frame (X: 30 to 530, Y: 96 to 596) -->',
+        '  <g transform="translate(10, 0)">'
+    ]
+
+    # Cancer Ascendant (कर्क लग्न): House 1 is sign 4, House 2 is sign 5, etc.
+    karka_styles = {
+        1:  ("url(#ryGradGold)",    "#b45309", 2.6), # Hamsa + Gaja Kesari (Ju Exalted + Mo Own)
+        2:  ("#fffdf7",              "#cbd5e1", 1.2), # House 2 (Leo)
+        3:  ("#fffdf7",              "#cbd5e1", 1.2), # House 3 (Virgo)
+        4:  ("url(#ryGradRose)",    "#db2777", 2.4), # Malavya (Ve Own) + Sasa (Sa Exalted)
+        5:  ("#f0fdf4",              "#86efac", 1.4), # House 5 (Scorpio - Trikona)
+        6:  ("url(#ryGradEmerald)", "#059669", 1.8), # Bhadra (Me Exalted in Virgo)
+        7:  ("url(#ryGradRuby)",    "#dc2626", 2.4), # Ruchaka (Ma Exalted in Capricorn)
+        8:  ("#fffdf7",              "#cbd5e1", 1.2), # House 8 (Aquarius)
+        9:  ("#f0fdf4",              "#86efac", 1.4), # House 9 (Pisces - Trikona)
+        10: ("url(#ryGradAzure)",   "#2563eb", 2.4), # Budhaditya (Su Exalted + Me) in Aries
+        11: ("#f8fafc",              "#cbd5e1", 1.2), # House 11 (Taurus)
+        12: ("#fffdf7",              "#cbd5e1", 1.2)  # House 12 (Gemini)
+    }
+
+    for h in range(1, 13):
+        poly = HOUSE_POLYGONS[h]
+        fill, stroke, sw = karka_styles[h]
+        svg.append(f'    <polygon points="{poly}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"/>')
+
+    # Accent Crossing Lines & Center Dot
+    svg.extend([
+        '    <polygon points="270,100 520,350 270,600 20,350" fill="none" stroke="#78350f" stroke-width="1.2" opacity="0.65"/>',
+        '    <line x1="20" y1="100" x2="520" y2="600" stroke="#78350f" stroke-width="1.0" opacity="0.5"/>',
+        '    <line x1="520" y1="100" x2="20" y2="600" stroke="#78350f" stroke-width="1.0" opacity="0.5"/>',
+        '    <circle cx="270" cy="350" r="4.5" fill="#f59e0b" stroke="#78350f" stroke-width="1.5"/>'
+    ])
+
+    # Rashi Numbers for Cancer Ascendant: 1=4, 2=5, 3=6, 4=7, 5=8, 6=9, 7=10, 8=11, 9=12, 10=1, 11=2, 12=3
+    rashi_nums = {
+        1: 4, 2: 5, 3: 6, 4: 7, 5: 8, 6: 9, 7: 10, 8: 11, 9: 12, 10: 1, 11: 2, 12: 3
+    }
+    rashi_coords = {
+        1: (270, 318), 2: (200, 128), 3: (55, 275), 4: (230, 350),
+        5: (55, 420), 6: (200, 570), 7: (270, 380), 8: (340, 570),
+        9: (485, 420), 10: (310, 350), 11: (485, 275), 12: (340, 128)
+    }
+    for h, (rx, ry) in rashi_coords.items():
+        svg.append(f'    <circle cx="{rx}" cy="{ry}" r="10" fill="#ffffff" stroke="#78350f" stroke-width="1.2"/>')
+        svg.append(f'    <text x="{rx}" y="{ry + 3.5}" font-family="{SVG_FONT_FAMILY}" font-size="10" font-weight="900" fill="#78350f" text-anchor="middle">{rashi_nums[h]}</text>')
+
+    # Major Yogas Placements inside Bhavas
+    # House 1 (Lagna): Hamsa + Gaja Kesari
+    cx1, cy1 = HOUSE_CENTROIDS[1]
+    svg.extend([
+        f'    <text x="{cx1}" y="{cy1 - 28}" font-family="{SVG_FONT_FAMILY}" font-size="12" font-weight="900" fill="#78350f" text-anchor="middle">भाव 1 • हंस व गजकेसरी योग</text>',
+        f'    <text x="{cx1}" y="{cy1 - 12}" font-family="{SVG_FONT_FAMILY}" font-size="9.5" font-weight="800" fill="#b45309" text-anchor="middle">गुरु (Jupiter) 05°20′ [उच्च]</text>',
+        f'    <text x="{cx1}" y="{cy1 + 4}" font-family="{SVG_FONT_FAMILY}" font-size="9.5" font-weight="800" fill="#475569" text-anchor="middle">चन्द्र (Moon) 18°40′ [स्वराशि]</text>',
+        f'    <text x="{cx1}" y="{cy1 + 22}" font-family="{SVG_FONT_FAMILY}" font-size="8.5" font-weight="600" fill="#92400e" text-anchor="middle">अखंड साम्राज्य • सात्विक कीर्ति • प्रखर प्रज्ञा</text>'
+    ])
+
+    # House 4 (Sukha): Malavya + Sasa
+    cx4, cy4 = HOUSE_CENTROIDS[4]
+    svg.extend([
+        f'    <text x="{cx4}" y="{cy4 - 24}" font-family="{SVG_FONT_FAMILY}" font-size="11.5" font-weight="900" fill="#9d174d" text-anchor="middle">भाव 4 • मालव्य व शश योग</text>',
+        f'    <text x="{cx4}" y="{cy4 - 9}" font-family="{SVG_FONT_FAMILY}" font-size="9.5" font-weight="800" fill="#be185d" text-anchor="middle">शुक्र (Venus) 27°15′ [स्वराशि]</text>',
+        f'    <text x="{cx4}" y="{cy4 + 7}" font-family="{SVG_FONT_FAMILY}" font-size="9.0" font-weight="800" fill="#1d4ed8" text-anchor="middle">शनि 20°00′ [उच्च क्षेत्र संबंध]</text>',
+        f'    <text x="{cx4}" y="{cy4 + 23}" font-family="{SVG_FONT_FAMILY}" font-size="8.5" font-weight="600" fill="#831843" text-anchor="middle">विपुल ऐश्वर्य • कला • राजसी वाहन</text>'
+    ])
+
+    # House 7 (Jaya): Ruchaka Yoga (Mars Exalted)
+    cx7, cy7 = HOUSE_CENTROIDS[7]
+    svg.extend([
+        f'    <text x="{cx7}" y="{cy7 - 26}" font-family="{SVG_FONT_FAMILY}" font-size="12" font-weight="900" fill="#991b1b" text-anchor="middle">भाव 7 • रुचक महापुरुष योग</text>',
+        f'    <text x="{cx7}" y="{cy7 - 10}" font-family="{SVG_FONT_FAMILY}" font-size="10" font-weight="800" fill="#dc2626" text-anchor="middle">मंगल (Mars) 28°00′ [परम उच्च]</text>',
+        f'    <text x="{cx7}" y="{cy7 + 8}" font-family="{SVG_FONT_FAMILY}" font-size="8.8" font-weight="700" fill="#7f1d1d" text-anchor="middle">मकर राशि (10) केन्द्र स्थित</text>',
+        f'    <text x="{cx7}" y="{cy7 + 24}" font-family="{SVG_FONT_FAMILY}" font-size="8.5" font-weight="600" fill="#991b1b" text-anchor="middle">अदम्य पराक्रम • सेनापति तुल्य प्रभुत्व • अजेय शौर्य</text>'
+    ])
+
+    # House 10 (Karma): Budhaditya & Sun Exalted
+    cx10, cy10 = HOUSE_CENTROIDS[10]
+    svg.extend([
+        f'    <text x="{cx10}" y="{cy10 - 24}" font-family="{SVG_FONT_FAMILY}" font-size="11.5" font-weight="900" fill="#1e3a8a" text-anchor="middle">भाव 10 • बुधादित्य योग</text>',
+        f'    <text x="{cx10}" y="{cy10 - 9}" font-family="{SVG_FONT_FAMILY}" font-size="9.5" font-weight="800" fill="#c2410c" text-anchor="middle">सूर्य (Sun) 06°10′ [परम उच्च]</text>',
+        f'    <text x="{cx10}" y="{cy10 + 7}" font-family="{SVG_FONT_FAMILY}" font-size="9.5" font-weight="800" fill="#047857" text-anchor="middle">बुध (Mercury) 12°50′ [मित्र]</text>',
+        f'    <text x="{cx10}" y="{cy10 + 23}" font-family="{SVG_FONT_FAMILY}" font-size="8.5" font-weight="600" fill="#1e40af" text-anchor="middle">सर्वोच्च प्रशासनिक पद • अमर कीर्ति</text>'
+    ])
+
+    # House 6: Bhadra Yoga Principle Note (Mercury Exalted in Virgo)
+    cx6, cy6 = HOUSE_CENTROIDS[6]
+    svg.extend([
+        f'    <text x="{cx6}" y="{cy6 - 12}" font-family="{SVG_FONT_FAMILY}" font-size="9.5" font-weight="900" fill="#047857" text-anchor="middle">भद्र योग सूत्र</text>',
+        f'    <text x="{cx6}" y="{cy6 + 2}" font-family="{SVG_FONT_FAMILY}" font-size="8.0" font-weight="700" fill="#065f46" text-anchor="middle">बुध कन्या (6) में स्वराशि</text>',
+        f'    <text x="{cx6}" y="{cy6 + 16}" font-family="{SVG_FONT_FAMILY}" font-size="7.5" fill="#334155" text-anchor="middle">कुशाग्र वाणिज्य प्रज्ञा</text>'
+    ])
+
+    svg.append('  </g>')
+
+    # -------------------------------------------------------------
+    # 6 Structured Imperial Raja Yoga Cards at the Bottom
+    # -------------------------------------------------------------
+    svg.append('  <!-- 6 Imperial Raja Yoga Cards -->')
+    yogas_data = [
+        (18,  "रुचक (मंगल)", "मेष/वृश्चिक/मकर केन्द्र", "शौर्य, भूमि, सेनाधिपति", "#fee2e2", "#ef4444", "#991b1b"),
+        (104, "भद्र (बुध)",   "मिथुन/कन्या केन्द्र",   "कुशाग्र मेधा, वाक्पटुता", "#ecfdf5", "#10b981", "#064e3b"),
+        (190, "हंस (गुरु)",   "कर्क/धनु/मीन केन्द्र",   "सात्विक विवेक, राज्य प्रतिष्ठा", "#fef3c7", "#f59e0b", "#78350f"),
+        (276, "मालव्य (शुक्र)", "वृषभ/तुला/मीन केन्द्र", "कला, ऐश्वर्य, वाहन, सौंदर्य", "#fdf2f8", "#f43f5e", "#9d174d"),
+        (362, "शश (शनि)",    "तुला/मकर/कुंभ केन्द्र",  "जननायक, कूटनीति, संगठन", "#eff6ff", "#3b82f6", "#1e3a8a"),
+        (448, "गजकेसरी (गुरु+चन्द्र)", "चन्द्र से केन्द्र में गुरु", "सिंह समान शौर्य, अमर यश", "#fffbeb", "#d97706", "#78350f")
+    ]
+
+    for x_pos, y_name, y_rule, y_result, bg_c, border_c, text_c in yogas_data:
+        svg.append(f'  <g transform="translate({x_pos}, 606)">')
+        svg.append(f'    <rect x="0" y="0" width="82" height="66" rx="6" fill="{bg_c}" stroke="{border_c}" stroke-width="1.2"/>')
+        svg.append(f'    <text x="41" y="16" font-family="{SVG_FONT_FAMILY}" font-size="8.2" font-weight="900" fill="{text_c}" text-anchor="middle">{y_name}</text>')
+        svg.append(f'    <text x="41" y="32" font-family="{SVG_FONT_FAMILY}" font-size="7.0" font-weight="700" fill="{border_c}" text-anchor="middle">{y_rule}</text>')
+        svg.append(f'    <text x="41" y="48" font-family="{SVG_FONT_FAMILY}" font-size="6.8" font-weight="600" fill="#334155" text-anchor="middle">{y_result}</text>')
+        svg.append('  </g>')
+
+    # Bottom Master Shloka / Principle Banner
+    svg.extend([
+        f'  <g transform="translate(18, 680)">',
+        f'    <rect x="0" y="0" width="{width-36}" height="76" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>',
+        f'    <text x="18" y="20" font-family="{SVG_SERIF_FAMILY}" font-size="11" font-weight="800" fill="#78350f">बृहत्पाराशर होरा शास्त्र • पंच महापुरुष एवं गजकेसरी राजयोग विधान</text>',
+        f'    <text x="18" y="37" font-family="{SVG_FONT_FAMILY}" font-size="9" font-weight="600" fill="#78350f">1. भौमादि पंच ग्रह (मंगल, बुध, गुरु, शुक्र, शनि) स्वराशि या उच्च होकर लग्न/चन्द्र से केन्द्र में स्थित हों तभी महापुरुष योग बनता है।</text>',
+        f'    <text x="18" y="52" font-family="{SVG_FONT_FAMILY}" font-size="9" font-weight="600" fill="#78350f">2. गजकेसरी योग: चन्द्रमा से केन्द्र (1, 4, 7, 10) में शुभ बृहस्पति की स्थिति जातक को समाज में अमर कीर्ति व अटूट धन-संपदा प्रदान करती है।</text>',
+        f'    <text x="18" y="67" font-family="{SVG_FONT_FAMILY}" font-size="9" font-weight="600" fill="#78350f">3. यह योग अस्त, नीच अथवा षष्ठ/अष्टम/द्वादश भाव के दूषित प्रभाव से मुक्त होने पर ही पूर्ण फलित होता है।</text>',
+        f'  </g>',
+
+        '</svg>'
+    ])
+
+    return "\n".join(svg)

@@ -10,9 +10,9 @@
  * - Dynamic Google Fonts Caching: Offline typography support for Vedic Devanagari fonts
  */
 
-const APP_VERSION = '2.0.0';
+const APP_VERSION = '2.1.0';
 const CACHE_NAME = `tantragyan-v${APP_VERSION}`;
-const FONT_CACHE_NAME = 'tantragyan-fonts-v2.0';
+const FONT_CACHE_NAME = 'tantragyan-fonts-v2.1';
 
 // Critical core assets and editions for complete offline functioning
 // Uses './' instead of 'index.html' to prevent Cloudflare 307 canonical redirects
@@ -33,6 +33,7 @@ const PRECACHE_ASSETS = [
   'assets/icons/kendra_trikona_diamond_chart.svg',
   'assets/icons/nakshatra_mandala_wheel.svg',
   'assets/icons/bhava_karaka_diamond_chart.svg',
+  'assets/icons/kalpurush_bhavas_diamond_chart.svg',
   'assets/icons/aspect_wheel.svg',
   'assets/icons/lagna_chart.svg',
   'assets/icons/raja_yogas_chart.svg',

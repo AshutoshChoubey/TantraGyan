@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%" class="astro-chart-svg astro-kalpurush-bhavas-chart">
+  <defs>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800&amp;display=swap");
+    </style>
+    <linearGradient id="kpPlateBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefc"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
+    </linearGradient>
+    <!-- Distinct Category Gradients -->
+    <linearGradient id="kpGradKendraTrikona" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="kpGradKendra" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="kpGradTrikona" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#d1fae5" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="kpGradUpachaya" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="kpGradMaraka" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe4e6" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fecdd3" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="kpGradTrik" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf2f8" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fce7f3" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="kpGradTrikDeep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#f3e8ff" stop-opacity="0.96"/>
+    </linearGradient>
+    <filter id="kpShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <!-- Outer Plate Frame -->
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#kpPlateBg)" stroke="#b45309" stroke-width="2" filter="url(#kpShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+  <!-- Top Header Banner -->
+  <rect x="24" y="20" width="512" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+  <text x="280" y="42" font-family="'Noto Serif Devanagari', 'Georgia', serif" font-size="16" font-weight="800" fill="#78350f" text-anchor="middle">कालपुरुष कुण्डली भाव वर्गीकरण महाचक्र</text>
+  <text x="280" y="60" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="600" fill="#b45309" text-anchor="middle">केन्द्र (1, 4, 7, 10) • त्रिकोण (1, 5, 9) • उपचय (3, 6, 10, 11) • त्रिक (6, 8, 12) • मारक (2, 7)</text>
+  <text x="280" y="74" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#78716c" text-anchor="middle">मेष लग्न विन्यास • महर्षि पाराशर प्रतिपादित भाव व्यवस्था, प्राकृतिक कारकत्व व फलित मर्म</text>
+  <!-- Diamond Kundali Outer Frame (X: 30 to 530, Y: 96 to 596) -->
+  <g transform="translate(10, 0)">
+    <polygon points="270,100 395,225 270,350 145,225" fill="url(#kpGradKendraTrikona)" stroke="#b45309" stroke-width="2.6"/>
+    <polygon points="20,100 270,100 145,225" fill="url(#kpGradMaraka)" stroke="#e11d48" stroke-width="1.8"/>
+    <polygon points="20,100 145,225 20,350" fill="url(#kpGradUpachaya)" stroke="#0284c7" stroke-width="1.8"/>
+    <polygon points="20,350 145,225 270,350 145,475" fill="url(#kpGradKendra)" stroke="#1d4ed8" stroke-width="2.2"/>
+    <polygon points="20,350 145,475 20,600" fill="url(#kpGradTrikona)" stroke="#059669" stroke-width="2.2"/>
+    <polygon points="20,600 145,475 270,600" fill="url(#kpGradTrik)" stroke="#9f1239" stroke-width="1.8"/>
+    <polygon points="270,350 395,475 270,600 145,475" fill="url(#kpGradMaraka)" stroke="#dc2626" stroke-width="2.2"/>
+    <polygon points="270,600 395,475 520,600" fill="url(#kpGradTrikDeep)" stroke="#7e22ce" stroke-width="1.8"/>
+    <polygon points="520,600 395,475 520,350" fill="url(#kpGradTrikona)" stroke="#047857" stroke-width="2.4"/>
+    <polygon points="270,350 395,225 520,350 395,475" fill="url(#kpGradKendraTrikona)" stroke="#d97706" stroke-width="2.4"/>
+    <polygon points="520,350 395,225 520,100" fill="url(#kpGradUpachaya)" stroke="#4338ca" stroke-width="2.0"/>
+    <polygon points="520,100 395,225 270,100" fill="url(#kpGradTrik)" stroke="#9f1239" stroke-width="1.8"/>
+    <polygon points="270,100 520,350 270,600 20,350" fill="none" stroke="#78350f" stroke-width="1.2" opacity="0.65"/>
+    <line x1="20" y1="100" x2="520" y2="600" stroke="#78350f" stroke-width="1.0" opacity="0.5"/>
+    <line x1="520" y1="100" x2="20" y2="600" stroke="#78350f" stroke-width="1.0" opacity="0.5"/>
+    <circle cx="270" cy="350" r="4.5" fill="#f59e0b" stroke="#78350f" stroke-width="1.5"/>
+    <!-- Rashi 1 Badge -->
+    <circle cx="270" cy="318" r="10" fill="#ffffff" stroke="#78350f" stroke-width="1.2"/>
+    <text x="270" y="321.5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#78350f" text-anchor="middle">1</text>
+    <!-- Rashi 2 Badge -->
+    <circle cx="200" cy="128" r="10" fill="#ffffff" stroke="#78350f" stroke-width="1.2"/>
+    <text x="200" y="131.5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#78350f" text-anchor="middle">2</text>
+    <!-- Rashi 3 Badge -->
+    <circle cx="55" cy="275" r="10" fill="#ffffff" stroke="#78350f" stroke-width="1.2"/>
+    <text x="55" y="278.5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#78350f" text-anchor="middle">3</text>
+    <!-- Rashi 4 Badge -->
+    <circle cx="230" cy="350" r="10" fill="#ffffff" stroke="#78350f" stroke-width="1.2"/>
+    <text x="230" y="353.5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#78350f" text-anchor="middle">4</text>
+    <!-- Rashi 5 Badge -->
+    <circle cx="55" cy="420" r="10" fill="#ffffff" stroke="#78350f" stroke-width="1.2"/>
+    <text x="55" y="423.5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#78350f" text-anchor="middle">5</text>
+    <!-- Rashi 6 Badge -->
+    <circle cx="200" cy="570" r="10" fill="#ffffff" stroke="#78350f" stroke-width="1.2"/>
+    <text x="200" y="573.5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#78350f" text-anchor="middle">6</text>
+    <!-- Rashi 7 Badge -->
+    <circle cx="270" cy="380" r="10" fill="#ffffff" stroke="#78350f" stroke-width="1.2"/>
+    <text x="270" y="383.5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#78350f" text-anchor="middle">7</text>
+    <!-- Rashi 8 Badge -->
+    <circle cx="340" cy="570" r="10" fill="#ffffff" stroke="#78350f" stroke-width="1.2"/>
+    <text x="340" y="573.5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#78350f" text-anchor="middle">8</text>
+    <!-- Rashi 9 Badge -->
+    <circle cx="485" cy="420" r="10" fill="#ffffff" stroke="#78350f" stroke-width="1.2"/>
+    <text x="485" y="423.5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#78350f" text-anchor="middle">9</text>
+    <!-- Rashi 10 Badge -->
+    <circle cx="310" cy="350" r="10" fill="#ffffff" stroke="#78350f" stroke-width="1.2"/>
+    <text x="310" y="353.5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#78350f" text-anchor="middle">10</text>
+    <!-- Rashi 11 Badge -->
+    <circle cx="485" cy="275" r="10" fill="#ffffff" stroke="#78350f" stroke-width="1.2"/>
+    <text x="485" y="278.5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#78350f" text-anchor="middle">11</text>
+    <!-- Rashi 12 Badge -->
+    <circle cx="340" cy="128" r="10" fill="#ffffff" stroke="#78350f" stroke-width="1.2"/>
+    <text x="340" y="131.5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#78350f" text-anchor="middle">12</text>
+    <!-- House 1 Text Plate -->
+    <text x="270.0" y="199.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="11.5" font-weight="900" fill="#9a3412" text-anchor="middle">भाव 1 • तनु (Lagna)</text>
+    <text x="270.0" y="214.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#b45309" text-anchor="middle">केन्द्र व त्रिकोण (सर्वोच्च)</text>
+    <text x="270.0" y="232.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="600" fill="#1e293b" text-anchor="middle">देह • आत्मबल • वर्ण • स्वास्थ्य</text>
+    <text x="270.0" y="248.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="700" fill="#854d0e" text-anchor="middle">मंगल (स्वराशि) • सूर्य (उच्च 10°)</text>
+    <!-- House 2 Text Plate -->
+    <text x="145.0" y="124.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.0" font-weight="900" fill="#9f1239" text-anchor="middle">भाव 2 • धन भाव</text>
+    <text x="145.0" y="138.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.8" font-weight="800" fill="#be123c" text-anchor="middle">द्वितीय मारक भाव</text>
+    <text x="145.0" y="152.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.8" font-weight="600" fill="#1e293b" text-anchor="middle">संचित धन • कुटुंब • वाणी</text>
+    <text x="145.0" y="166.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" font-weight="700" fill="#854d0e" text-anchor="middle">शुक्र (स्व) • चन्द्र (उच्च 3°)</text>
+    <!-- House 3 Text Plate -->
+    <text x="62.0" y="207.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.0" font-weight="900" fill="#075985" text-anchor="middle">भाव 3 • सहज</text>
+    <text x="62.0" y="221.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.8" font-weight="800" fill="#0284c7" text-anchor="middle">प्रथम उपचय भाव</text>
+    <text x="62.0" y="235.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.8" font-weight="600" fill="#1e293b" text-anchor="middle">पराक्रम • साहस • अनुज</text>
+    <text x="62.0" y="249.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" font-weight="700" fill="#854d0e" text-anchor="middle">बुध (स्व) • पुरुषार्थ साधन</text>
+    <!-- House 4 Text Plate -->
+    <text x="145.0" y="324.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="11.5" font-weight="900" fill="#1e3a8a" text-anchor="middle">भाव 4 • सुख (विष्णु)</text>
+    <text x="145.0" y="339.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#1d4ed8" text-anchor="middle">केन्द्र भाव (चतुर्थ केन्द्र)</text>
+    <text x="145.0" y="357.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="600" fill="#1e293b" text-anchor="middle">माता • गृह • भूमि • वाहन • मन</text>
+    <text x="145.0" y="373.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="700" fill="#854d0e" text-anchor="middle">चन्द्र (स्व) • गुरु (उच्च 5°)</text>
+    <!-- House 5 Text Plate -->
+    <text x="62.0" y="457.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.0" font-weight="900" fill="#064e3b" text-anchor="middle">भाव 5 • पुत्र/धी</text>
+    <text x="62.0" y="471.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.8" font-weight="800" fill="#047857" text-anchor="middle">त्रिकोण भाव (लक्ष्मी)</text>
+    <text x="62.0" y="485.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.8" font-weight="600" fill="#1e293b" text-anchor="middle">संतान • पूर्वपुण्य • मेधा</text>
+    <text x="62.0" y="499.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" font-weight="700" fill="#854d0e" text-anchor="middle">सूर्य (स्व) • मंत्र साधना</text>
+    <!-- House 6 Text Plate -->
+    <text x="145.0" y="540.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.0" font-weight="900" fill="#881337" text-anchor="middle">भाव 6 • शत्रु/रोग</text>
+    <text x="145.0" y="554.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.8" font-weight="800" fill="#9f1239" text-anchor="middle">त्रिक (दुःस्थान) + उपचय</text>
+    <text x="145.0" y="568.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.8" font-weight="600" fill="#1e293b" text-anchor="middle">रोग • ऋण • शत्रु • सेवा</text>
+    <text x="145.0" y="582.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" font-weight="700" fill="#854d0e" text-anchor="middle">बुध (उच्च 15°) • षडरिपु जय</text>
+    <!-- House 7 Text Plate -->
+    <text x="270.0" y="449.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="11.5" font-weight="900" fill="#7f1d1d" text-anchor="middle">भाव 7 • जाया (कलत्र)</text>
+    <text x="270.0" y="464.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#dc2626" text-anchor="middle">केन्द्र व प्रबल मारक भाव</text>
+    <text x="270.0" y="482.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="600" fill="#1e293b" text-anchor="middle">दांपत्य • साझेदारी • व्यापार</text>
+    <text x="270.0" y="498.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="700" fill="#854d0e" text-anchor="middle">शुक्र (स्व) • शनि (उच्च 20°)</text>
+    <!-- House 8 Text Plate -->
+    <text x="395.0" y="540.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.0" font-weight="900" fill="#4c1d95" text-anchor="middle">भाव 8 • रन्ध्र भाव</text>
+    <text x="395.0" y="554.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.8" font-weight="800" fill="#7e22ce" text-anchor="middle">प्रबल त्रिक (घोर दुःस्थान)</text>
+    <text x="395.0" y="568.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.8" font-weight="600" fill="#1e293b" text-anchor="middle">आयु • मृत्यु • गुप्त ज्ञान</text>
+    <text x="395.0" y="582.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" font-weight="700" fill="#854d0e" text-anchor="middle">मंगल (स्व) • गूढ़ परिवर्तन</text>
+    <!-- House 9 Text Plate -->
+    <text x="478.0" y="457.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.0" font-weight="900" fill="#064e3b" text-anchor="middle">भाव 9 • भाग्य/धर्म</text>
+    <text x="478.0" y="471.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.8" font-weight="800" fill="#059669" text-anchor="middle">सर्वोच्च त्रिकोण (लक्ष्मी)</text>
+    <text x="478.0" y="485.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.8" font-weight="600" fill="#1e293b" text-anchor="middle">धर्म • गुरु • पिता • तीर्थ</text>
+    <text x="478.0" y="499.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" font-weight="700" fill="#854d0e" text-anchor="middle">गुरु (स्व) • ईश्वरीय अनुग्रह</text>
+    <!-- House 10 Text Plate -->
+    <text x="395.0" y="324.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="11.5" font-weight="900" fill="#78350f" text-anchor="middle">भाव 10 • कर्म (विष्णु)</text>
+    <text x="395.0" y="339.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#b45309" text-anchor="middle">सर्वोच्च केन्द्र व उपचय</text>
+    <text x="395.0" y="357.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="600" fill="#1e293b" text-anchor="middle">राज्य पद • आजीविका • सत्ता</text>
+    <text x="395.0" y="373.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="700" fill="#854d0e" text-anchor="middle">शनि (स्व) • मंगल (उच्च 28°)</text>
+    <!-- House 11 Text Plate -->
+    <text x="478.0" y="207.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.0" font-weight="900" fill="#312e81" text-anchor="middle">भाव 11 • लाभ भाव</text>
+    <text x="478.0" y="221.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.8" font-weight="800" fill="#4338ca" text-anchor="middle">सर्वोत्तम उपचय भाव</text>
+    <text x="478.0" y="235.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.8" font-weight="600" fill="#1e293b" text-anchor="middle">आय • सर्वाभीष्ट सिद्धि</text>
+    <text x="478.0" y="249.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" font-weight="700" fill="#854d0e" text-anchor="middle">शनि (स्व) • पूर्ण मनोरथ</text>
+    <!-- House 12 Text Plate -->
+    <text x="395.0" y="124.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.0" font-weight="900" fill="#701a75" text-anchor="middle">भाव 12 • व्यय/मोक्ष</text>
+    <text x="395.0" y="138.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.8" font-weight="800" fill="#9f1239" text-anchor="middle">त्रिक भाव (मोक्ष स्थान)</text>
+    <text x="395.0" y="152.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.8" font-weight="600" fill="#1e293b" text-anchor="middle">व्यय • मोक्ष • विदेश • शयन</text>
+    <text x="395.0" y="166.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" font-weight="700" fill="#854d0e" text-anchor="middle">गुरु (स्व) • शुक्र (उच्च 27°)</text>
+  </g>
+  <!-- 5 Functional Classification Cards -->
+  <g transform="translate(18, 606)">
+    <rect x="0" y="0" width="100" height="66" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.2"/>
+    <text x="50" y="18" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9.0" font-weight="900" fill="#1e3a8a" text-anchor="middle">केन्द्र (1, 4, 7, 10)</text>
+    <text x="50" y="34" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="700" fill="#2563eb" text-anchor="middle">विष्णु स्थान</text>
+    <text x="50" y="50" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" font-weight="600" fill="#334155" text-anchor="middle">देह, सुख, दांपत्य, कर्म</text>
+  </g>
+  <g transform="translate(124, 606)">
+    <rect x="0" y="0" width="100" height="66" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="1.2"/>
+    <text x="50" y="18" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9.0" font-weight="900" fill="#064e3b" text-anchor="middle">त्रिकोण (1, 5, 9)</text>
+    <text x="50" y="34" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="700" fill="#059669" text-anchor="middle">लक्ष्मी स्थान</text>
+    <text x="50" y="50" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" font-weight="600" fill="#334155" text-anchor="middle">धर्म, धी, भाग्य, पुण्य</text>
+  </g>
+  <g transform="translate(230, 606)">
+    <rect x="0" y="0" width="100" height="66" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.2"/>
+    <text x="50" y="18" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9.0" font-weight="900" fill="#075985" text-anchor="middle">उपचय (3, 6, 10, 11)</text>
+    <text x="50" y="34" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="700" fill="#0284c7" text-anchor="middle">सतत पुरुषार्थ</text>
+    <text x="50" y="50" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" font-weight="600" fill="#334155" text-anchor="middle">साहस, विजय, सत्ता, लाभ</text>
+  </g>
+  <g transform="translate(336, 606)">
+    <rect x="0" y="0" width="100" height="66" rx="6" fill="#fdf2f8" stroke="#be185d" stroke-width="1.2"/>
+    <text x="50" y="18" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9.0" font-weight="900" fill="#701a75" text-anchor="middle">त्रिक (6, 8, 12)</text>
+    <text x="50" y="34" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="700" fill="#be185d" text-anchor="middle">दुःस्थान / संकट</text>
+    <text x="50" y="50" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" font-weight="600" fill="#334155" text-anchor="middle">रोग, ऋण, मृत्यु, मोक्ष</text>
+  </g>
+  <g transform="translate(442, 606)">
+    <rect x="0" y="0" width="100" height="66" rx="6" fill="#ffe4e6" stroke="#e11d48" stroke-width="1.2"/>
+    <text x="50" y="18" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9.0" font-weight="900" fill="#9f1239" text-anchor="middle">मारक (2, 7)</text>
+    <text x="50" y="34" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="700" fill="#e11d48" text-anchor="middle">जीवन मर्यादा</text>
+    <text x="50" y="50" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" font-weight="600" fill="#334155" text-anchor="middle">धन, कुटुंब, जाया, आयु अंत</text>
+  </g>
+  <g transform="translate(18, 680)">
+    <rect x="0" y="0" width="524" height="76" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+    <text x="18" y="20" font-family="'Noto Serif Devanagari', 'Georgia', serif" font-size="11" font-weight="800" fill="#78350f">महर्षि पराशर फलित सार • पाराशरी भाव वर्गीकरण सूत्र</text>
+    <text x="18" y="37" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#78350f">1. केन्द्र (विष्णु) एवं त्रिकोण (लक्ष्मी) का युति/दृष्टि संबंध जन्मकुण्डली में सर्वोच्च राजयोग का निर्माण करता है।</text>
+    <text x="18" y="52" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#78350f">2. उपचय भावों (3, 6, 10, 11) में क्रूर ग्रह (शनि, मंगल, राहु) कालान्तर में प्रचंड पुरुषार्थ एवं सर्व-शत्रु विजय प्रदान करते हैं।</text>
+    <text x="18" y="67" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#78350f">3. त्रिक (6, 8, 12) दुःस्थान हैं; इनके स्वामी परस्पर त्रिक में ही बैठें तो &quot;हर्ष, सरल, विमल&quot; नामक विपरीत राजयोग बनता है।</text>
+  </g>
+</svg>

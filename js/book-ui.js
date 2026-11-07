@@ -1200,7 +1200,7 @@ class BookUIController {
   // 11. Progressive Web App (PWA) & Offline Capabilities
   // ============================================================================
   initPWA() {
-    this.currentAppVersion = '2.0.0';
+    this.currentAppVersion = '2.1.0';
     this.deferredInstallPrompt = null;
     this.updateWorker = null;
     this.isDownloading = false;
@@ -1234,17 +1234,17 @@ class BookUIController {
     const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-    // A. Register Modern v2.0.0 Service Worker (Zero-Redirect Guarantee)
+    // A. Register Modern v2.1.0 Service Worker (Zero-Redirect Guarantee)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('sw.js')
           .then((reg) => {
-            console.log('[TantraGyan] PWA Service Worker v2.0.0 active:', reg.scope);
+            console.log('[TantraGyan] PWA Service Worker v2.1.0 active:', reg.scope);
             
-            // If user previously downloaded an older offline version, auto-download v2.0.0 in the background
+            // If user previously downloaded an older offline version, auto-download v2.1.0 in the background
             if (hadPreviousDownload && navigator.onLine) {
               setTimeout(() => {
-                console.log('[TantraGyan] Automatically downloading v2.0.0 offline assets in the background...');
+                console.log('[TantraGyan] Automatically downloading v2.1.0 offline assets in the background...');
                 this.triggerDownloadOrUpdate(true);
               }, 2500);
             }
@@ -1256,7 +1256,7 @@ class BookUIController {
 
       // Controlling Service Worker Change: Strictly NEVER auto-reload
       navigator.serviceWorker.addEventListener('controllerchange', () => {
-        console.log('[TantraGyan] PWA controller updated to v2.0.0');
+        console.log('[TantraGyan] PWA controller updated to v2.1.0');
       });
 
       // Listen for download progress & completion messages
@@ -1273,8 +1273,8 @@ class BookUIController {
           this.updateDownloadUI();
           const isHindi = document.documentElement.getAttribute('data-lang-mode') === 'hindi';
           this.showToast(isHindi
-            ? '🎉 सम्पूर्ण ग्रंथ (v2.0.0) सफलतापूर्वक ऑफ़लाइन डाउनलोड हो गया! अब आप बिना इंटरनेट पढ़ सकते हैं।'
-            : '🎉 Full Compendium (v2.0.0) Downloaded Successfully! You can now read completely offline.', 5000);
+            ? '🎉 सम्पूर्ण ग्रंथ (v2.1.0) सफलतापूर्वक ऑफ़लाइन डाउनलोड हो गया! अब आप बिना इंटरनेट पढ़ सकते हैं।'
+            : '🎉 Full Compendium (v2.1.0) Downloaded Successfully! You can now read completely offline.', 5000);
         }
       });
     }
@@ -1403,7 +1403,7 @@ class BookUIController {
     this.offlineState = 'downloading';
     this.updateDownloadUI();
     if (!isSilent) {
-      this.showToast(isHindi ? 'सम्पूर्ण ग्रंथ (v2.0.0) डाउनलोड प्रारम्भ हो गया...' : 'Downloading complete book (v2.0.0) for offline use...', 3000);
+      this.showToast(isHindi ? 'सम्पूर्ण ग्रंथ (v2.1.0) डाउनलोड प्रारम्भ हो गया...' : 'Downloading complete book (v2.1.0) for offline use...', 3000);
     }
 
     if (navigator.serviceWorker && navigator.serviceWorker.controller) {

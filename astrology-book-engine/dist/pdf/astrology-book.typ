@@ -367,7 +367,13 @@
 
 === 1.2 भावों का शास्त्रीय वर्गीकरण (Functional Classification of Houses)
 
-महर्षि पराशर ने फलित के गहन विश्लेषण हेतु भावों को चार प्रमुख आध्यात्मिक व भौतिक श्रेणियों में विभाजित किया है:
+महर्षि पराशर ने फलित के गहन विश्लेषण हेतु भावों को पांच प्रमुख आध्यात्मिक व भौतिक श्रेणियों में विभाजित किया है:
+
+
+#align(center)[
+  #image("assets/icons/kalpurush_bhavas_diamond_chart.svg", width: 85%)
+]
+#align(center)[#text(size: 8pt, style: "italic", fill: rgb("#64748b"))[चित्र 1.2: कालपुरुष कुण्डली भाव वर्गीकरण महाचक्र — केन्द्र (विष्णु), त्रिकोण (लक्ष्मी), उपचय (वृद्धि), त्रिक (दुःस्थान) एवं मारक भाव व्यवस्था]]
 
 
 #rect(
@@ -405,7 +411,7 @@
 #align(center)[
   #image("assets/icons/aspect_wheel.svg", width: 85%)
 ]
-#align(center)[#text(size: 8pt, style: "italic", fill: rgb("#64748b"))[चित्र 1.2: ग्रहीय दृष्टि चक्र (Planetary Aspects & Drishti Matrix)]]
+#align(center)[#text(size: 8pt, style: "italic", fill: rgb("#64748b"))[चित्र 1.3: ग्रहीय दृष्टि चक्र (Planetary Aspects & Drishti Matrix)]]
 
 - #strong[सर्वग्रह दृष्टि:] समस्त ग्रह अपने स्थित भाव से #strong[7वें भाव] को पूर्ण (100%) दृष्टि से देखते हैं।
 - #strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#image("/assets/images/planets/mars.png", width: 7pt) #h(1pt)#text(fill: rgb("#dc2626"), weight: "bold")[मंगल]] की विशेष दृष्टियां:] 7वें भाव के अतिरिक्त #strong[4थे] एवं #strong[8वें] भाव पर पूर्ण दृष्टि।
@@ -462,7 +468,9 @@
 
 === 2.1 नवग्रह शास्त्रीय कारकत्व सारणी (Navagraha Significator Matrix)
 
-नीचे दी गई सारणी में नवग्रहों के संपूर्ण शास्त्रीय कारकत्व, #box(baseline: 15%, inset: (x: 1.8pt, y: 0.8pt), radius: 2pt, fill: rgb("#d1fae5"), stroke: 0.35pt + rgb("#10b981"))[#text(fill: rgb("#047857"), weight: "bold", size: 0.85em)[उच्च]]-#box(baseline: 15%, inset: (x: 1.8pt, y: 0.8pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#text(fill: rgb("#dc2626"), weight: "bold", size: 0.85em)[नीच]] अंश तथा ग्रंथ संदर्भ संकलित किए गए हैं:
+नीचे दी गई सारणियों में नवग्रहों के संपूर्ण शास्त्रीय कारकत्व, देह अवयव, #box(baseline: 15%, inset: (x: 1.8pt, y: 0.8pt), radius: 2pt, fill: rgb("#d1fae5"), stroke: 0.35pt + rgb("#10b981"))[#text(fill: rgb("#047857"), weight: "bold", size: 0.85em)[उच्च]]-#box(baseline: 15%, inset: (x: 1.8pt, y: 0.8pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#text(fill: rgb("#dc2626"), weight: "bold", size: 0.85em)[नीच]] अंश तथा ग्रंथ संदर्भ दो सुव्यवस्थित भागों में संकलित किए गए हैं:
+
+==== तालिका 2.1 (क): प्रत्यक्ष एवं देव-गुरु ग्रह कारकत्व (सूर्य, चन्द्र, मंगल, बुध, गुरु)
 
 
 #align(center)[
@@ -473,7 +481,23 @@
       stroke: (x, y) => if y == 0 { (bottom: 1.2pt + rgb("#b45309"), rest: 0.4pt + rgb("#cbd5e1")) } else { 0.4pt + rgb("#cbd5e1") },
       inset: (x: 2.8pt, y: 3.5pt),
       align: (x, y) => if y == 0 { center + horizon } else { left + horizon },
-      [#text(weight: "bold", fill: rgb("#78350f"))[ग्रह]], [#text(weight: "bold", fill: rgb("#78350f"))[देह व अवयव]], [#text(weight: "bold", fill: rgb("#78350f"))[स्वभाव व मानसिक वृत्ति]], [#text(weight: "bold", fill: rgb("#78350f"))[संबंध व स्वजन]], [#text(weight: "bold", fill: rgb("#78350f"))[#box(baseline: 15%, inset: (x: 1.8pt, y: 0.8pt), radius: 2pt, fill: rgb("#d1fae5"), stroke: 0.35pt + rgb("#10b981"))[#text(fill: rgb("#047857"), weight: "bold", size: 0.85em)[उच्च]] राशि (अंश)]], [#text(weight: "bold", fill: rgb("#78350f"))[#box(baseline: 15%, inset: (x: 1.8pt, y: 0.8pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#text(fill: rgb("#dc2626"), weight: "bold", size: 0.85em)[नीच]] राशि (अंश)]], [#text(weight: "bold", fill: rgb("#78350f"))[#box(baseline: 15%, inset: (x: 1.8pt, y: 0.8pt), radius: 2pt, fill: rgb("#f3e8ff"), stroke: 0.35pt + rgb("#c084fc"))[#text(fill: rgb("#6b21a8"), weight: "bold", size: 0.85em)[मूलत्रिकोण]]]], [#strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#ffedd5"), stroke: 0.35pt + rgb("#ea580c"))[#image("/assets/images/planets/sun.png", width: 7pt) #h(1pt)#text(fill: rgb("#c2410c"), weight: "bold")[सूर्य (Sun)]]]], [हृदय, अस्थि, नेत्र तेज, प्राण-शक्ति], [आत्मसम्मान, राजसी तेज, नेतृत्व], [पिता, शासक, नरेश], [मेष (10°)], [तुला (10°)], [सिंह (0°-20°)], [#strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f1f5f9"), stroke: 0.35pt + rgb("#94a3b8"))[#image("/assets/images/planets/moon.png", width: 7pt) #h(1pt)#text(fill: rgb("#334155"), weight: "bold")[चन्द्र (Moon)]]]], [रक्त संचार, शारीरिक द्रव, आमाशय, मन], [संवेदनशीलता, शांति, कल्पनाशक्ति], [माता, राजसी स्त्रियां], [वृषभ (3°)], [वृश्चिक (3°)], [वृषभ (4°-30°)], [#strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#image("/assets/images/planets/mars.png", width: 7pt) #h(1pt)#text(fill: rgb("#dc2626"), weight: "bold")[मंगल (Mars)]]]], [मज्जा, रक्त कणिकाएं, मांसपेशियां, पित्त], [पराक्रम, क्रोध, त्वरित निर्णय, साहस], [अनुज (छोटा भाई), सेनापति], [मकर (28°)], [कर्क (28°)], [मेष (0°-12°)], [#strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#d1fae5"), stroke: 0.35pt + rgb("#10b981"))[#image("/assets/images/planets/mercury.png", width: 7pt) #h(1pt)#text(fill: rgb("#047857"), weight: "bold")[बुध (Mercury)]]]], [तंत्रिका तंत्र, त्वचा, वाणी, मस्तिष्क], [तर्क, हास्य-विनोद, व्यापारिक बुद्धि], [मामा, मित्र, बहन, दूत], [कन्या (15°)], [मीन (15°)], [कन्या (16°-20°)], [#strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fef3c7"), stroke: 0.35pt + rgb("#f59e0b"))[#image("/assets/images/planets/jupiter.png", width: 7pt) #h(1pt)#text(fill: rgb("#b45309"), weight: "bold")[गुरु (Jupiter)]]]], [यकृत (लिवर), वसा, कान, धमनियां], [सात्विकता, दया, धर्म-निष्ठा, विवेक], [#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fef3c7"), stroke: 0.35pt + rgb("#f59e0b"))[#image("/assets/images/planets/jupiter.png", width: 7pt) #h(1pt)#text(fill: rgb("#b45309"), weight: "bold")[गुरु]], पुत्र, विद्वान, ब्राह्मण], [कर्क (5°)], [मकर (5°)], [धनु (0°-10°)], [#strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fce7f3"), stroke: 0.35pt + rgb("#f43f5e"))[#image("/assets/images/planets/venus.png", width: 7pt) #h(1pt)#text(fill: rgb("#be185d"), weight: "bold")[शुक्र (Venus)]]]], [वीर्य, प्रजनन अंग, सौंदर्य, नेत्र ज्योति], [रसिकता, कला, परिष्कार, ऐश्वर्य], [पत्नी, प्रेमिका, कलाकार], [मीन (27°)], [कन्या (27°)], [तुला (0°-15°)], [#strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#dbeafe"), stroke: 0.35pt + rgb("#3b82f6"))[#image("/assets/images/planets/saturn.png", width: 7pt) #h(1pt)#text(fill: rgb("#1d4ed8"), weight: "bold")[शनि (Saturn)]]]], [स्नायु, पैर, दांत, अस्थि संधियां (जोड़)], [धैर्य, वैराग्य, अनुशासन, कर्मठता], [सेवक, श्रमिक, वृद्ध जन], [तुला (20°)], [मेष (20°)], [कुंभ (0°-20°)], [#strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f4f4f5"), stroke: 0.35pt + rgb("#27272a"))[#image("/assets/images/planets/rahu.png", width: 7pt) #h(1pt)#text(fill: rgb("#09090b"), weight: "bold")[राहु (Rahu)]]]], [श्वसन तंत्र, त्वचा रोग, विषाक्तता], [महत्वाकांक्षा, कूटनीति, विद्रोही भाव], [दादा, विदेशी जन, विधर्मी], [मिथुन / वृषभ], [धनु / वृश्चिक], [कुंभ], [#strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f4f4f5"), stroke: 0.35pt + rgb("#71717a"))[#image("/assets/images/planets/ketu.png", width: 7pt) #h(1pt)#text(fill: rgb("#52525b"), weight: "bold")[केतु (Ketu)]]]], [रीढ़, सूक्ष्म नाड़ियां, मोक्ष द्वार], [वैराग्य, अंतर्ज्ञान, मौन, संन्यास], [नाना, तपस्वी, गुप्त शत्रु], [धनु / वृश्चिक], [मिथुन / वृषभ], [मीन]
+      [#text(weight: "bold", fill: rgb("#78350f"))[ग्रह]], [#text(weight: "bold", fill: rgb("#78350f"))[देह व अवयव]], [#text(weight: "bold", fill: rgb("#78350f"))[स्वभाव व मानसिक वृत्ति]], [#text(weight: "bold", fill: rgb("#78350f"))[संबंध व स्वजन]], [#text(weight: "bold", fill: rgb("#78350f"))[#box(baseline: 15%, inset: (x: 1.8pt, y: 0.8pt), radius: 2pt, fill: rgb("#d1fae5"), stroke: 0.35pt + rgb("#10b981"))[#text(fill: rgb("#047857"), weight: "bold", size: 0.85em)[उच्च]] राशि (अंश)]], [#text(weight: "bold", fill: rgb("#78350f"))[#box(baseline: 15%, inset: (x: 1.8pt, y: 0.8pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#text(fill: rgb("#dc2626"), weight: "bold", size: 0.85em)[नीच]] राशि (अंश)]], [#text(weight: "bold", fill: rgb("#78350f"))[#box(baseline: 15%, inset: (x: 1.8pt, y: 0.8pt), radius: 2pt, fill: rgb("#f3e8ff"), stroke: 0.35pt + rgb("#c084fc"))[#text(fill: rgb("#6b21a8"), weight: "bold", size: 0.85em)[मूलत्रिकोण]]]], [#strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#ffedd5"), stroke: 0.35pt + rgb("#ea580c"))[#image("/assets/images/planets/sun.png", width: 7pt) #h(1pt)#text(fill: rgb("#c2410c"), weight: "bold")[सूर्य (Sun)]]]], [हृदय, अस्थि, नेत्र तेज, प्राण-शक्ति], [आत्मसम्मान, राजसी तेज, नेतृत्व], [पिता, शासक, नरेश], [मेष (10°)], [तुला (10°)], [सिंह (0°-20°)], [#strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f1f5f9"), stroke: 0.35pt + rgb("#94a3b8"))[#image("/assets/images/planets/moon.png", width: 7pt) #h(1pt)#text(fill: rgb("#334155"), weight: "bold")[चन्द्र (Moon)]]]], [रक्त संचार, शारीरिक द्रव, आमाशय, मन], [संवेदनशीलता, शांति, कल्पनाशक्ति], [माता, राजसी स्त्रियां], [वृषभ (3°)], [वृश्चिक (3°)], [वृषभ (4°-30°)], [#strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#image("/assets/images/planets/mars.png", width: 7pt) #h(1pt)#text(fill: rgb("#dc2626"), weight: "bold")[मंगल (Mars)]]]], [मज्जा, रक्त कणिकाएं, मांसपेशियां, पित्त], [पराक्रम, क्रोध, त्वरित निर्णय, साहस], [अनुज (छोटा भाई), सेनापति], [मकर (28°)], [कर्क (28°)], [मेष (0°-12°)], [#strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#d1fae5"), stroke: 0.35pt + rgb("#10b981"))[#image("/assets/images/planets/mercury.png", width: 7pt) #h(1pt)#text(fill: rgb("#047857"), weight: "bold")[बुध (Mercury)]]]], [तंत्रिका तंत्र, त्वचा, वाणी, मस्तिष्क], [तर्क, हास्य-विनोद, व्यापारिक बुद्धि], [मामा, मित्र, बहन, दूत], [कन्या (15°)], [मीन (15°)], [कन्या (16°-20°)], [#strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fef3c7"), stroke: 0.35pt + rgb("#f59e0b"))[#image("/assets/images/planets/jupiter.png", width: 7pt) #h(1pt)#text(fill: rgb("#b45309"), weight: "bold")[गुरु (Jupiter)]]]], [यकृत (लिवर), वसा, कान, धमनियां], [सात्विकता, दया, धर्म-निष्ठा, विवेक], [#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fef3c7"), stroke: 0.35pt + rgb("#f59e0b"))[#image("/assets/images/planets/jupiter.png", width: 7pt) #h(1pt)#text(fill: rgb("#b45309"), weight: "bold")[गुरु]], पुत्र, विद्वान, ब्राह्मण], [कर्क (5°)], [मकर (5°)], [धनु (0°-10°)]
+    )
+  ]
+]
+
+==== तालिका 2.1 (ख): ऐश्वर्य, कर्मदंड एवं छाया ग्रह कारकत्व (शुक्र, शनि, राहु, केतु)
+
+
+#align(center)[
+  #text(font: ("Noto Sans Devanagari", "Noto Serif Devanagari"), size: 6.8pt)[
+    #table(
+      columns: (1.0fr, 1.5fr, 1.5fr, 1.2fr, 1.0fr, 1.0fr, 1.0fr),
+      fill: (x, y) => if y == 0 { rgb("#fef3c7") } else if calc.odd(y) { rgb("#f8fafc") } else { rgb("#ffffff") },
+      stroke: (x, y) => if y == 0 { (bottom: 1.2pt + rgb("#b45309"), rest: 0.4pt + rgb("#cbd5e1")) } else { 0.4pt + rgb("#cbd5e1") },
+      inset: (x: 2.8pt, y: 3.5pt),
+      align: (x, y) => if y == 0 { center + horizon } else { left + horizon },
+      [#text(weight: "bold", fill: rgb("#78350f"))[ग्रह]], [#text(weight: "bold", fill: rgb("#78350f"))[देह व अवयव]], [#text(weight: "bold", fill: rgb("#78350f"))[स्वभाव व मानसिक वृत्ति]], [#text(weight: "bold", fill: rgb("#78350f"))[संबंध व स्वजन]], [#text(weight: "bold", fill: rgb("#78350f"))[#box(baseline: 15%, inset: (x: 1.8pt, y: 0.8pt), radius: 2pt, fill: rgb("#d1fae5"), stroke: 0.35pt + rgb("#10b981"))[#text(fill: rgb("#047857"), weight: "bold", size: 0.85em)[उच्च]] राशि (अंश)]], [#text(weight: "bold", fill: rgb("#78350f"))[#box(baseline: 15%, inset: (x: 1.8pt, y: 0.8pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#text(fill: rgb("#dc2626"), weight: "bold", size: 0.85em)[नीच]] राशि (अंश)]], [#text(weight: "bold", fill: rgb("#78350f"))[#box(baseline: 15%, inset: (x: 1.8pt, y: 0.8pt), radius: 2pt, fill: rgb("#f3e8ff"), stroke: 0.35pt + rgb("#c084fc"))[#text(fill: rgb("#6b21a8"), weight: "bold", size: 0.85em)[मूलत्रिकोण]]]], [#strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fce7f3"), stroke: 0.35pt + rgb("#f43f5e"))[#image("/assets/images/planets/venus.png", width: 7pt) #h(1pt)#text(fill: rgb("#be185d"), weight: "bold")[शुक्र (Venus)]]]], [वीर्य, प्रजनन अंग, सौंदर्य, नेत्र ज्योति], [रसिकता, कला, परिष्कार, ऐश्वर्य], [पत्नी, प्रेमिका, कलाकार], [मीन (27°)], [कन्या (27°)], [तुला (0°-15°)], [#strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#dbeafe"), stroke: 0.35pt + rgb("#3b82f6"))[#image("/assets/images/planets/saturn.png", width: 7pt) #h(1pt)#text(fill: rgb("#1d4ed8"), weight: "bold")[शनि (Saturn)]]]], [स्नायु, पैर, दांत, अस्थि संधियां (जोड़)], [धैर्य, वैराग्य, अनुशासन, कर्मठता], [सेवक, श्रमिक, वृद्ध जन], [तुला (20°)], [मेष (20°)], [कुंभ (0°-20°)], [#strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f4f4f5"), stroke: 0.35pt + rgb("#27272a"))[#image("/assets/images/planets/rahu.png", width: 7pt) #h(1pt)#text(fill: rgb("#09090b"), weight: "bold")[राहु (Rahu)]]]], [श्वसन तंत्र, त्वचा रोग, विषाक्तता], [महत्वाकांक्षा, कूटनीति, विद्रोही भाव], [दादा, विदेशी जन, विधर्मी], [मिथुन / वृषभ], [धनु / वृश्चिक], [कुंभ], [#strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f4f4f5"), stroke: 0.35pt + rgb("#71717a"))[#image("/assets/images/planets/ketu.png", width: 7pt) #h(1pt)#text(fill: rgb("#52525b"), weight: "bold")[केतु (Ketu)]]]], [रीढ़, सूक्ष्म नाड़ियां, मोक्ष द्वार], [वैराग्य, अंतर्ज्ञान, मौन, संन्यास], [नाना, तपस्वी, गुप्त शत्रु], [धनु / वृश्चिक], [मिथुन / वृषभ], [मीन]
     )
   ]
 ]
@@ -1081,6 +1105,204 @@
 - #strong[यूट्यूब शोध मंच:] [\@TantraGyan108](https://www.youtube.com/\@TantraGyan108)
 - #strong[ईमेल:] [tantraresearchcenter\@gmail.com](mailto:tantraresearchcenter\@gmail.com)
 - #strong[संस्करण वर्ष:] 2026 (Digital & Print Masterwork Edition)
+
+
+
+
+#pagebreak()
+
+= अध्याय 7: चित्रात्मक कुण्डली एटलस — महाभूत, उपचय एवं नक्षत्र मण्डल
+== Chapter 7: Visual Kundali Atlas — Elements, Upachaya & Nakshatra Mandala
+
+
+#rect(
+  fill: rgb("#fffdf7"),
+  stroke: (left: 3.5pt + rgb("#b45309"), rest: 0.5pt + rgb("#e2e8f0")),
+  radius: (right: 4pt),
+  width: 100%,
+  inset: (x: 12pt, y: 10pt)
+)[
+  #align(center)[
+    #rect(fill: rgb("#fef3c7"), stroke: 0.5pt + rgb("#d97706"), radius: 3pt, inset: (x: 6pt, y: 2pt))[
+      #text(size: 8pt, weight: "bold", fill: rgb("#78350f"))[ॐ बृहत्पाराशर होरा शास्त्र — भाव स्वरूप एवं तत्त्व विचार]
+    ]
+  ]
+  #v(0.2cm)
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[तत्रादौ पञ्चभूतानां पृथिव्यादीनां स्वभावतः।]]
+  #align(center)[#text(font: ("Noto Serif Devanagari", "Devanagari MT", "Georgia"), size: 10.5pt, weight: "bold", style: "italic", fill: rgb("#451a03"))[शरीरं सर्वजन्तूनां जायते कालयोगतः॥]]
+]
+
+वैदिक ज्योतिष में फलित का आधार केवल गणितीय गणना नहीं, अपितु सम्पूर्ण ब्रह्माण्ड का प्रतीकात्मक ज्यामितीय प्रकटीकरण है। प्राचीन ऋषियों ने कुण्डली के 12 भावों और 27 नक्षत्रों को एक ऐसी ज्यामितीय संरचना (Diamond Chart एवं Circle Wheel) में ढाला है, जो जीवन के समस्त भौतिक, मानसिक एवं आध्यात्मिक आयामों का साक्षात् दर्शन कराती है।
+
+इस अध्याय में सारणियों (Tables) के समस्त गूढ़ सिद्धांतों को 5 प्रमुख पूर्ण-पृष्ठ मास्टर चार्ट्स (Full-Page Vector Charts) के माध्यम से चित्रात्मक रूप में प्रस्तुत किया गया है।
+
+
+#v(0.3cm)
+#align(center)[#line(length: 60%, stroke: 0.6pt + rgb("#d97706"))]
+#v(0.3cm)
+
+=== 7.1 चतुर्विध महाभूत कुण्डली चक्र (The Four Elements Diamond Kundali)
+
+सम्पूर्ण 12 भाव चार मूलभूत तत्वों — #strong[अग्नि (Fire), पृथ्वी (Earth), वायु (Air) एवं जल (Water)] में विभक्त हैं, जो पुरुषार्थ चतुष्टय (धर्म, अर्थ, काम, मोक्ष) का संचालन करते हैं:
+
+
+#align(center)[
+  #image("assets/icons/elements_diamond_chart.svg", width: 85%)
+]
+#align(center)[#text(size: 8pt, style: "italic", fill: rgb("#64748b"))[चित्र 7.1: चतुर्विध महाभूत कुण्डली चक्र (The Four Elements Diamond Kundali) — अग्नि, पृथ्वी, वायु एवं जल तत्वों का संपूर्ण भाव समन्वय]]
+
+==== महाभूत एवं त्रिकोण फलित सारणी का चित्रात्मक विश्लेषण (Elemental Synthesis):
+
+1. #strong[अग्नि तत्व (Fire Element — धर्म त्रिकोण: भाव 1, 5, 9):]
+- #strong[भाव 1 (तनु):] मेष राशि का प्राकृतिक वास। जातक का आत्मबल, प्राण-ऊर्जा, नेतृत्व और शारीरिक पराक्रम।
+- #strong[भाव 5 (पुत्र/धी):] सिंह राशि का प्राकृतिक वास। पूर्वजन्म के संचित संस्कार, अंतःप्रज्ञा, आध्यात्मिक विवेक और मंत्र सिद्धि।
+- #strong[भाव 9 (भाग्य/धर्म):] धनु राशि का प्राकृतिक वास। ईश्वरीय कृपा, #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fef3c7"), stroke: 0.35pt + rgb("#f59e0b"))[#image("/assets/images/planets/jupiter.png", width: 7pt) #h(1pt)#text(fill: rgb("#b45309"), weight: "bold")[गुरु]]-आशीर्वाद, जीवन का अंतिम धर्म और परम पुरुषार्थ।
+- #emph[ग्रहीय ऊर्जा:] #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#ffedd5"), stroke: 0.35pt + rgb("#ea580c"))[#image("/assets/images/planets/sun.png", width: 7pt) #h(1pt)#text(fill: rgb("#c2410c"), weight: "bold")[सूर्य]], #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#image("/assets/images/planets/mars.png", width: 7pt) #h(1pt)#text(fill: rgb("#dc2626"), weight: "bold")[मंगल]] एवं #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fef3c7"), stroke: 0.35pt + rgb("#f59e0b"))[#image("/assets/images/planets/jupiter.png", width: 7pt) #h(1pt)#text(fill: rgb("#b45309"), weight: "bold")[बृहस्पति]] अग्नि तत्व के मुख्य संचालक हैं। जब अग्नि तत्व संतुलित होता है, तो जातक समाज का पथ-प्रदर्शक बनता है।
+
+2. #strong[पृथ्वी तत्व (Earth Element — अर्थ त्रिकोण: भाव 2, 6, 10):]
+- #strong[भाव 2 (धन):] वृषभ राशि का प्राकृतिक वास। भौतिक संपदा का संचय, पारिवारिक सुरक्षा और वाणी का प्रभाव।
+- #strong[भाव 6 (ऋण/रोग/सेवा):] कन्या राशि का प्राकृतिक वास। दैनिक कार्य, सेवा, अनुशासन, प्रतिस्पर्धा और व्यावहारिक कौशल।
+- #strong[भाव 10 (कर्म/साम्राज्य):] मकर राशि का प्राकृतिक वास। सामाजिक प्रतिष्ठा, राज्य सत्ता, करियर की पराकाष्ठा और उत्तरदायित्व।
+- #emph[ग्रहीय ऊर्जा:] #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fce7f3"), stroke: 0.35pt + rgb("#f43f5e"))[#image("/assets/images/planets/venus.png", width: 7pt) #h(1pt)#text(fill: rgb("#be185d"), weight: "bold")[शुक्र]], #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#d1fae5"), stroke: 0.35pt + rgb("#10b981"))[#image("/assets/images/planets/mercury.png", width: 7pt) #h(1pt)#text(fill: rgb("#047857"), weight: "bold")[बुध]] एवं #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#dbeafe"), stroke: 0.35pt + rgb("#3b82f6"))[#image("/assets/images/planets/saturn.png", width: 7pt) #h(1pt)#text(fill: rgb("#1d4ed8"), weight: "bold")[शनि]] पृथ्वी तत्व को भौतिक रूप देते हैं। यह तत्व जातक को यथार्थवादी, परिश्रमी और स्थिर बनाता है।
+
+3. #strong[वायु तत्व (Air Element — काम त्रिकोण: भाव 3, 7, 11):]
+- #strong[भाव 3 (सहज):] मिथुन राशि का प्राकृतिक वास। साहस, लेखन, संवाद, मीडिया और बौद्धिक उद्यम।
+- #strong[भाव 7 (जाया/व्यापार):] तुला राशि का प्राकृतिक वास। सामाजिक अनुबंध, साझेदारी, लोक-व्यवहार और वैवाहिक संतुलन।
+- #strong[भाव 11 (लाभ):] कुंभ राशि का प्राकृतिक वास। जनसंपर्क तंत्र (Networking), दीर्घकालिक लाभ और समस्त इच्छाओं की पूर्ति।
+- #emph[ग्रहीय ऊर्जा:] #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#d1fae5"), stroke: 0.35pt + rgb("#10b981"))[#image("/assets/images/planets/mercury.png", width: 7pt) #h(1pt)#text(fill: rgb("#047857"), weight: "bold")[बुध]], #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fce7f3"), stroke: 0.35pt + rgb("#f43f5e"))[#image("/assets/images/planets/venus.png", width: 7pt) #h(1pt)#text(fill: rgb("#be185d"), weight: "bold")[शुक्र]] और #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#dbeafe"), stroke: 0.35pt + rgb("#3b82f6"))[#image("/assets/images/planets/saturn.png", width: 7pt) #h(1pt)#text(fill: rgb("#1d4ed8"), weight: "bold")[शनि]] वायु तत्व के बौद्धिक प्रेरक हैं। यह तत्व नवीन विचारों और संपर्कों का विस्तार करता है।
+
+4. #strong[जल तत्व (Water Element — मोक्ष त्रिकोण: भाव 4, 8, 12):]
+- #strong[भाव 4 (सुख/मन):] कर्क राशि का प्राकृतिक वास। अंतःकरण, मातृ-प्रेम, मानसिक स्थिरता और आत्मिक शांति।
+- #strong[भाव 8 (आयु/गूढ़):] वृश्चिक राशि का प्राकृतिक वास। मनोवैज्ञानिक गभीरता, कायाकल्प, गूढ़ तंत्र-विद्या और छिपे सत्य।
+- #strong[भाव 12 (मोक्ष/व्यय):] मीन राशि का प्राकृतिक वास। भौतिक विसर्जन, ध्यान, समाधि, विदेश वास और परम मोक्ष।
+- #emph[ग्रहीय ऊर्जा:] #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f1f5f9"), stroke: 0.35pt + rgb("#94a3b8"))[#image("/assets/images/planets/moon.png", width: 7pt) #h(1pt)#text(fill: rgb("#334155"), weight: "bold")[चन्द्रमा]], #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#image("/assets/images/planets/mars.png", width: 7pt) #h(1pt)#text(fill: rgb("#dc2626"), weight: "bold")[मंगल]]/#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f4f4f5"), stroke: 0.35pt + rgb("#71717a"))[#image("/assets/images/planets/ketu.png", width: 7pt) #h(1pt)#text(fill: rgb("#52525b"), weight: "bold")[केतु]] एवं #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fef3c7"), stroke: 0.35pt + rgb("#f59e0b"))[#image("/assets/images/planets/jupiter.png", width: 7pt) #h(1pt)#text(fill: rgb("#b45309"), weight: "bold")[बृहस्पति]] जल तत्व के भावात्मक नियामक हैं।
+
+
+#v(0.3cm)
+#align(center)[#line(length: 60%, stroke: 0.6pt + rgb("#d97706"))]
+#v(0.3cm)
+
+=== 7.2 उपचय भाव साधन एवं सतत वृद्धि चक्र (Upachaya Compounding Mandala)
+
+
+#rect(
+  fill: rgb("#f8fafc"),
+  stroke: (left: 3.5pt + rgb("#334155"), rest: 0.5pt + rgb("#cbd5e1")),
+  radius: (right: 4pt),
+  width: 100%,
+  inset: (x: 12pt, y: 10pt)
+)[
+  #rect(fill: rgb("#f1f5f9"), stroke: 0.6pt + rgb("#64748b"), radius: 3pt, inset: (x: 6pt, y: 2pt))[
+    #text(size: 8pt, weight: "bold", fill: rgb("#1e293b"))[SUTRA • महर्षि पराशर उपचय सूत्र]
+  ]
+  #v(0.2cm)
+"त्रिषडायैकादशे क्रूराः शुभाः" — भाव 3, 6, 10 एवं 11 में क्रूर व पापी ग्रह समय के साथ स्वर्ण-तुल्य फल देते हैं।
+]
+
+उपचय भाव वे भाव हैं जिनमें जातक की आयु और अनुभव बढ़ने के साथ-साथ फलों में सतत वृद्धि (Compounding) होती है:
+
+
+#align(center)[
+  #image("assets/icons/upachaya_diamond_chart.svg", width: 85%)
+]
+#align(center)[#text(size: 8pt, style: "italic", fill: rgb("#64748b"))[चित्र 7.2: उपचय भाव साधन चक्र (Upachaya Growth Mandala) — संघर्ष से विजय, आयु सोपान एवं क्रूर ग्रहों का सिद्धि योग]]
+
+==== उपचय सोपान क्रम (The Compounding Stages of Life):
+- #strong[भाव 3 (आयु 28+):] पराक्रम और नए उद्यम का समय। जातक पैतृक सीमाओं को तोड़कर अपनी भुजाओं के बल पर आजीविका स्थापित करता है। कारक: #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#image("/assets/images/planets/mars.png", width: 7pt) #h(1pt)#text(fill: rgb("#dc2626"), weight: "bold")[मंगल]]।
+- #strong[भाव 6 (आयु 32+):] शत्रुओं और बाधाओं के पराभव का समय। षडरिपुओं (काम, क्रोध, मद, लोभ, मोह, मत्सर) पर विजय प्राप्त होती है। कारक: #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#image("/assets/images/planets/mars.png", width: 7pt) #h(1pt)#text(fill: rgb("#dc2626"), weight: "bold")[मंगल]] व #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#dbeafe"), stroke: 0.35pt + rgb("#3b82f6"))[#image("/assets/images/planets/saturn.png", width: 7pt) #h(1pt)#text(fill: rgb("#1d4ed8"), weight: "bold")[शनि]]।
+- #strong[भाव 10 (आयु 36+):] राज्य सत्ता और करियर की पराकाष्ठा। समाज में अधिकार और पद-प्रतिष्ठा का चरमोत्कर्ष होता है। कारक: #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#ffedd5"), stroke: 0.35pt + rgb("#ea580c"))[#image("/assets/images/planets/sun.png", width: 7pt) #h(1pt)#text(fill: rgb("#c2410c"), weight: "bold")[सूर्य]], #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#d1fae5"), stroke: 0.35pt + rgb("#10b981"))[#image("/assets/images/planets/mercury.png", width: 7pt) #h(1pt)#text(fill: rgb("#047857"), weight: "bold")[बुध]], #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#dbeafe"), stroke: 0.35pt + rgb("#3b82f6"))[#image("/assets/images/planets/saturn.png", width: 7pt) #h(1pt)#text(fill: rgb("#1d4ed8"), weight: "bold")[शनि]]।
+- #strong[भाव 11 (आयु 40+):] सर्व-मनोरथ सिद्धि। पूर्व में किए गए समस्त निवेशों और कर्मों का बहुगुणित लाभ (Compounded Returns) प्राप्त होता है। कारक: #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fef3c7"), stroke: 0.35pt + rgb("#f59e0b"))[#image("/assets/images/planets/jupiter.png", width: 7pt) #h(1pt)#text(fill: rgb("#b45309"), weight: "bold")[बृहस्पति]]।
+
+
+#v(0.3cm)
+#align(center)[#line(length: 60%, stroke: 0.6pt + rgb("#d97706"))]
+#v(0.3cm)
+
+=== 7.3 लक्ष्मी-नारायण राजयोग एवं केन्द्र-त्रिकोण ज्यामिति (Kendra & Trikona Architecture)
+
+
+#rect(
+  fill: rgb("#fffbeb"),
+  stroke: (left: 3.5pt + rgb("#d97706"), rest: 0.5pt + rgb("#fde68a")),
+  radius: (right: 4pt),
+  width: 100%,
+  inset: (x: 12pt, y: 10pt)
+)[
+  #rect(fill: rgb("#fef3c7"), stroke: 0.6pt + rgb("#ca8a04"), radius: 3pt, inset: (x: 6pt, y: 2pt))[
+    #text(size: 8pt, weight: "bold", fill: rgb("#78350f"))[RAJA YOGA • धर्म-कर्माधिपति राजयोग]
+  ]
+  #v(0.2cm)
+केन्द्र भाव (1, 4, 7, 10) साक्षात् भगवान विष्णु के स्वरूप हैं, जो सृष्टि का पालन और कर्म का विस्तार करते हैं।
+त्रिकोण भाव (1, 5, 9) देवी महालक्ष्मी के स्वरूप हैं, जो सौभाग्य और दैवीय कृपा का वरदान देती हैं।
+]
+
+
+#align(center)[
+  #image("assets/icons/kendra_trikona_diamond_chart.svg", width: 85%)
+]
+#align(center)[#text(size: 8pt, style: "italic", fill: rgb("#64748b"))[चित्र 7.3: लक्ष्मी-नारायण योग एवं केन्द्र-त्रिकोण ज्यामिति चक्र (Kendra-Trikona Divine Resonance)]]
+
+- #strong[लग्न की अद्वितीय महिमा:] प्रथम भाव (Lagna) केन्द्र और त्रिकोण दोनों की श्रेणी में आने से कुण्डली का सर्वाधिक पवित्र व समर्थ बिंदु है।
+- #strong[राजयोग का निर्माण:] जब किसी भी केन्द्रेश (विष्णु) का संबंध किसी भी त्रिकोणेश (लक्ष्मी) से दृष्टि, युति अथवा राशि-परिवर्तन द्वारा बनता है, तब जातक का जीवन साधारण से असाधारण की ओर रूपांतरित हो जाता है।
+
+
+#v(0.3cm)
+#align(center)[#line(length: 60%, stroke: 0.6pt + rgb("#d97706"))]
+#v(0.3cm)
+
+=== 7.4 सप्तविंशति नक्षत्र व 108 पद 360° महामण्डल (The 360° Nakshatra & Pada Mandala)
+
+सम्पूर्ण भचक्र (360° Zodiac) 27 नक्षत्रों और 108 पदों में विभाजित है:
+
+
+#align(center)[
+  #image("assets/icons/nakshatra_mandala_wheel.svg", width: 85%)
+]
+#align(center)[#text(size: 8pt, style: "italic", fill: rgb("#64748b"))[चित्र 7.4: सप्तविंशति नक्षत्र व 108 पद 360° महामण्डल चक्र (The 360° Circular Nakshatra & Pada Wheel)]]
+
+==== गणितीय अनुपात एवं प्रतिशत विभाजन (Mathematical Proportion):
+- #strong[सम्पूर्ण भचक्र (Full Circle):] 360° = 100%
+- #strong[12 राशियां (12 Rashis):] प्रत्येक राशि 30° = 8.333%
+- #strong[27 नक्षत्र (27 Nakshatras):] प्रत्येक नक्षत्र 13°20′ = 3.704%
+- #strong[108 पद (108 Padas):] प्रत्येक पद 3°20′ = 0.926%
+- #strong[नक्षत्र स्वामी चक्र (3 चक्र):]
+1. #emph[प्रथम चक्र (अश्विनी से आश्लेषा):] #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f4f4f5"), stroke: 0.35pt + rgb("#71717a"))[#image("/assets/images/planets/ketu.png", width: 7pt) #h(1pt)#text(fill: rgb("#52525b"), weight: "bold")[केतु]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fce7f3"), stroke: 0.35pt + rgb("#f43f5e"))[#image("/assets/images/planets/venus.png", width: 7pt) #h(1pt)#text(fill: rgb("#be185d"), weight: "bold")[शुक्र]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#ffedd5"), stroke: 0.35pt + rgb("#ea580c"))[#image("/assets/images/planets/sun.png", width: 7pt) #h(1pt)#text(fill: rgb("#c2410c"), weight: "bold")[सूर्य]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f1f5f9"), stroke: 0.35pt + rgb("#94a3b8"))[#image("/assets/images/planets/moon.png", width: 7pt) #h(1pt)#text(fill: rgb("#334155"), weight: "bold")[चन्द्र]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#image("/assets/images/planets/mars.png", width: 7pt) #h(1pt)#text(fill: rgb("#dc2626"), weight: "bold")[मंगल]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f4f4f5"), stroke: 0.35pt + rgb("#27272a"))[#image("/assets/images/planets/rahu.png", width: 7pt) #h(1pt)#text(fill: rgb("#09090b"), weight: "bold")[राहु]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fef3c7"), stroke: 0.35pt + rgb("#f59e0b"))[#image("/assets/images/planets/jupiter.png", width: 7pt) #h(1pt)#text(fill: rgb("#b45309"), weight: "bold")[गुरु]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#dbeafe"), stroke: 0.35pt + rgb("#3b82f6"))[#image("/assets/images/planets/saturn.png", width: 7pt) #h(1pt)#text(fill: rgb("#1d4ed8"), weight: "bold")[शनि]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#d1fae5"), stroke: 0.35pt + rgb("#10b981"))[#image("/assets/images/planets/mercury.png", width: 7pt) #h(1pt)#text(fill: rgb("#047857"), weight: "bold")[बुध]]
+2. #emph[द्वितीय चक्र (मघा से ज्येष्ठा):] #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f4f4f5"), stroke: 0.35pt + rgb("#71717a"))[#image("/assets/images/planets/ketu.png", width: 7pt) #h(1pt)#text(fill: rgb("#52525b"), weight: "bold")[केतु]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fce7f3"), stroke: 0.35pt + rgb("#f43f5e"))[#image("/assets/images/planets/venus.png", width: 7pt) #h(1pt)#text(fill: rgb("#be185d"), weight: "bold")[शुक्र]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#ffedd5"), stroke: 0.35pt + rgb("#ea580c"))[#image("/assets/images/planets/sun.png", width: 7pt) #h(1pt)#text(fill: rgb("#c2410c"), weight: "bold")[सूर्य]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f1f5f9"), stroke: 0.35pt + rgb("#94a3b8"))[#image("/assets/images/planets/moon.png", width: 7pt) #h(1pt)#text(fill: rgb("#334155"), weight: "bold")[चन्द्र]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#image("/assets/images/planets/mars.png", width: 7pt) #h(1pt)#text(fill: rgb("#dc2626"), weight: "bold")[मंगल]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f4f4f5"), stroke: 0.35pt + rgb("#27272a"))[#image("/assets/images/planets/rahu.png", width: 7pt) #h(1pt)#text(fill: rgb("#09090b"), weight: "bold")[राहु]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fef3c7"), stroke: 0.35pt + rgb("#f59e0b"))[#image("/assets/images/planets/jupiter.png", width: 7pt) #h(1pt)#text(fill: rgb("#b45309"), weight: "bold")[गुरु]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#dbeafe"), stroke: 0.35pt + rgb("#3b82f6"))[#image("/assets/images/planets/saturn.png", width: 7pt) #h(1pt)#text(fill: rgb("#1d4ed8"), weight: "bold")[शनि]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#d1fae5"), stroke: 0.35pt + rgb("#10b981"))[#image("/assets/images/planets/mercury.png", width: 7pt) #h(1pt)#text(fill: rgb("#047857"), weight: "bold")[बुध]]
+3. #emph[तृतीय चक्र (मूल से रेवती):] #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f4f4f5"), stroke: 0.35pt + rgb("#71717a"))[#image("/assets/images/planets/ketu.png", width: 7pt) #h(1pt)#text(fill: rgb("#52525b"), weight: "bold")[केतु]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fce7f3"), stroke: 0.35pt + rgb("#f43f5e"))[#image("/assets/images/planets/venus.png", width: 7pt) #h(1pt)#text(fill: rgb("#be185d"), weight: "bold")[शुक्र]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#ffedd5"), stroke: 0.35pt + rgb("#ea580c"))[#image("/assets/images/planets/sun.png", width: 7pt) #h(1pt)#text(fill: rgb("#c2410c"), weight: "bold")[सूर्य]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f1f5f9"), stroke: 0.35pt + rgb("#94a3b8"))[#image("/assets/images/planets/moon.png", width: 7pt) #h(1pt)#text(fill: rgb("#334155"), weight: "bold")[चन्द्र]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#image("/assets/images/planets/mars.png", width: 7pt) #h(1pt)#text(fill: rgb("#dc2626"), weight: "bold")[मंगल]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#f4f4f5"), stroke: 0.35pt + rgb("#27272a"))[#image("/assets/images/planets/rahu.png", width: 7pt) #h(1pt)#text(fill: rgb("#09090b"), weight: "bold")[राहु]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fef3c7"), stroke: 0.35pt + rgb("#f59e0b"))[#image("/assets/images/planets/jupiter.png", width: 7pt) #h(1pt)#text(fill: rgb("#b45309"), weight: "bold")[गुरु]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#dbeafe"), stroke: 0.35pt + rgb("#3b82f6"))[#image("/assets/images/planets/saturn.png", width: 7pt) #h(1pt)#text(fill: rgb("#1d4ed8"), weight: "bold")[शनि]] → #box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#d1fae5"), stroke: 0.35pt + rgb("#10b981"))[#image("/assets/images/planets/mercury.png", width: 7pt) #h(1pt)#text(fill: rgb("#047857"), weight: "bold")[बुध]]
+
+
+#v(0.3cm)
+#align(center)[#line(length: 60%, stroke: 0.6pt + rgb("#d97706"))]
+#v(0.3cm)
+
+=== 7.5 द्वादश भाव कारकत्व व स्थिर ग्रह चक्र (12 Houses Karakatva Diamond Chart)
+
+
+#rect(
+  fill: rgb("#fff1f2"),
+  stroke: (left: 3.5pt + rgb("#dc2626"), rest: 0.5pt + rgb("#fecaca")),
+  radius: (right: 4pt),
+  width: 100%,
+  inset: (x: 12pt, y: 10pt)
+)[
+  #rect(fill: rgb("#fee2e2"), stroke: 0.6pt + rgb("#ef4444"), radius: 3pt, inset: (x: 6pt, y: 2pt))[
+    #text(size: 8pt, weight: "bold", fill: rgb("#991b1b"))[CAVEAT • भावेश बनाम कारक का सिद्धांत]
+  ]
+  #v(0.2cm)
+केवल भावेश का बली होना पर्याप्त नहीं है; यदि भाव का स्थिर कारक ग्रह अस्त, #box(baseline: 15%, inset: (x: 1.8pt, y: 0.8pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#text(fill: rgb("#dc2626"), weight: "bold", size: 0.85em)[नीच]] अथवा षष्ठ/अष्टम/द्वादश भाव में पीड़ित हो, तो उस भाव के प्राकृतिक सुखों में बाधा आती है।
+]
+
+
+#align(center)[
+  #image("assets/icons/bhava_karaka_diamond_chart.svg", width: 85%)
+]
+#align(center)[#text(size: 8pt, style: "italic", fill: rgb("#64748b"))[चित्र 7.5: द्वादश भाव कारकत्व व स्थिर ग्रह चक्र (The 12 Houses Karakatva Diamond Chart)]]
+
+- #strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#ffedd5"), stroke: 0.35pt + rgb("#ea580c"))[#image("/assets/images/planets/sun.png", width: 7pt) #h(1pt)#text(fill: rgb("#c2410c"), weight: "bold")[सूर्य]]:] प्रथम भाव (आत्मबल) एवं दशम भाव (राज्य प्रतिष्ठा) के स्थिर कारक।
+- #strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fef3c7"), stroke: 0.35pt + rgb("#f59e0b"))[#image("/assets/images/planets/jupiter.png", width: 7pt) #h(1pt)#text(fill: rgb("#b45309"), weight: "bold")[बृहस्पति]] (#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fef3c7"), stroke: 0.35pt + rgb("#f59e0b"))[#image("/assets/images/planets/jupiter.png", width: 7pt) #h(1pt)#text(fill: rgb("#b45309"), weight: "bold")[गुरु]]):] द्वितीय (धन), पंचम (संतान/धी), नवम (धर्म/भाग्य) एवं एकादश (लाभ) के सर्वाधिक व्यापक कारक।
+- #strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fee2e2"), stroke: 0.35pt + rgb("#ef4444"))[#image("/assets/images/planets/mars.png", width: 7pt) #h(1pt)#text(fill: rgb("#dc2626"), weight: "bold")[मंगल]]:] तृतीय (साहस/भ्राता) एवं षष्ठ (शत्रु विजय) के कारक।
+- #strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#fce7f3"), stroke: 0.35pt + rgb("#f43f5e"))[#image("/assets/images/planets/venus.png", width: 7pt) #h(1pt)#text(fill: rgb("#be185d"), weight: "bold")[शुक्र]]:] चतुर्थ (वाहन/ऐश्वर्य) एवं सप्तम (वैवाहिक सुख) के कारक।
+- #strong[#box(baseline: 15%, inset: (x: 2pt, y: 1pt), radius: 2pt, fill: rgb("#dbeafe"), stroke: 0.35pt + rgb("#3b82f6"))[#image("/assets/images/planets/saturn.png", width: 7pt) #h(1pt)#text(fill: rgb("#1d4ed8"), weight: "bold")[शनि]]:] षष्ठ (रोग निवारण), अष्टम (दीर्घायु) एवं द्वादश (मोक्ष) के कारक।
 
 
 
