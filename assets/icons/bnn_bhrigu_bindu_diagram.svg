@@ -48,14 +48,14 @@
   <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
   <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">भृगु बिंदु (BB) प्रारब्ध संवाहक बिंदु ज्यामितीय चक्र</text>
   <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">Bhrigu Bindu (BB) Destiny Trigger &amp; Rahu-Moon Midpoint Physics</text>
-  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">गणितीय सूत्र: (राहु स्पष्ट अंश + चन्द्र स्पष्ट अंश) ÷ २ = भृगु बिंदु</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">गणितीय सूत्र: (राहु स्पष्ट अंश + चन्द्र स्पष्ट अंश) ÷ 2 = भृगु बिंदु</text>
 
 
   <!-- Formula Highlight Card -->
   <g transform="translate(24, 96)">
     <rect width="512" height="66" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.6"/>
     <text x="256" y="28" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#78350f" text-anchor="middle">भृगु बिंदु (Bhrigu Bindu - BB) की गणितीय गणना</text>
-    <text x="256" y="50" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700" fill="#dc2626" text-anchor="middle">BB = (राहु के निरयण अंश + चन्द्र के निरयण अंश) / २</text>
+    <text x="256" y="50" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700" fill="#dc2626" text-anchor="middle">BB = (राहु के निरयण अंश + चन्द्र के निरयण अंश) / 2</text>
   </g>
 
   <!-- Geometric Illustration Circle Area -->
@@ -68,7 +68,7 @@
 
     <!-- Center Pivot -->
     <circle cx="256" cy="170" r="4" fill="#78350f"/>
-    <text x="256" y="195" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#64748b" text-anchor="middle">केन्द्र (३६०° भचक्र)</text>
+    <text x="256" y="195" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#64748b" text-anchor="middle">केन्द्र (360° भचक्र)</text>
 
     <!-- Point 1: Rahu (Top Left) -->
     <line x1="256" y1="170" x2="160" y2="85" stroke="#4338ca" stroke-width="2"/>
@@ -97,27 +97,27 @@
     <!-- Legend inside geometric box -->
     <rect x="20" y="240" width="472" height="85" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
     <text x="256" y="260" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#0f172a" text-anchor="middle">उदाहरण गणना (Practical Calculation Example):</text>
-    <text x="256" y="280" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" fill="#334155" text-anchor="middle">यदि राहु मेष १५° (१५°) एवं चन्द्र वृषभ १५° (४५°) हो, तो BB = (१५ + ४५)/२ = ३०° (वृषभ ०°)</text>
-    <text x="256" y="302" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#dc2626" text-anchor="middle">वृषभ ०° वह संवेदनशील बिंदु है जहां गोचर करते ही घटना का विस्फोट होगा।</text>
+    <text x="256" y="280" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" fill="#334155" text-anchor="middle">यदि राहु मेष 15° (15°) एवं चन्द्र वृषभ 15° (45°) हो, तो BB = (15 + 45)/2 = 30° (वृषभ 0°)</text>
+    <text x="256" y="302" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#dc2626" text-anchor="middle">वृषभ 0° वह संवेदनशील बिंदु है जहां गोचर करते ही घटना का विस्फोट होगा।</text>
   </g>
 
   <!-- Transit Activation Rules Card -->
   <g transform="translate(24, 522)">
     <rect width="512" height="225" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
-    <text x="256" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#78350f" text-anchor="middle">★ भृगु बिंदु पर गोचर सक्रियण के ३ अचूक नियम ★</text>
+    <text x="256" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#78350f" text-anchor="middle">★ भृगु बिंदु पर गोचर सक्रियण के 3 अचूक नियम ★</text>
 
     <!-- Rule 1 -->
-    <text x="20" y="52" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#059669">१. गुरु का BB पर गोचर (Jupiter Transit over BB):</text>
+    <text x="20" y="52" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#059669">1. गुरु का BB पर गोचर (Jupiter Transit over BB):</text>
     <text x="20" y="72" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• जीवन का सबसे बड़ा भाग्योदय; अप्रत्याशित धन लाभ, विवाह, सन्तान प्राप्ति अथवा प्रतिष्ठा की प्राप्ति।</text>
     <text x="20" y="90" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#64748b">जातक को लगता है कि ईश्वर ने अचानक सारे द्वार खोल दिए हैं।</text>
 
     <!-- Rule 2 -->
-    <text x="20" y="116" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#dc2626">२. शनि का BB पर गोचर (Saturn Transit over BB):</text>
+    <text x="20" y="116" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#dc2626">2. शनि का BB पर गोचर (Saturn Transit over BB):</text>
     <text x="20" y="136" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• प्रारब्ध कर्म का कठोर शोधन; स्वास्थ्य संकट, कार्यक्षेत्र में भारी परिवर्तन या अत्यधिक दायित्व का भार।</text>
     <text x="20" y="154" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#64748b">धैर्य और धर्म के पालन से यही काल स्थायी नींव का निर्माण करता है।</text>
 
     <!-- Rule 3 -->
-    <text x="20" y="180" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#7c3aed">३. राहु या केतु का BB पर गोचर (Nodes Transit over BB):</text>
+    <text x="20" y="180" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#7c3aed">3. राहु या केतु का BB पर गोचर (Nodes Transit over BB):</text>
     <text x="20" y="200" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• आकस्मिक दिशा परिवर्तन, विदेश गमन, पुराने भ्रमों का टूटना अथवा असाधारण आध्यात्मिक अनुभव।</text>
   </g>
 </svg>

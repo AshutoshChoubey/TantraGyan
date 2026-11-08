@@ -48,7 +48,7 @@
   <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
   <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">बी.एन.एन. प्रमुख द्वि-ग्रहीय राजयोग एवं कर्म-संयोग चक्र</text>
   <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">Master 2-Planet Combinations in Bhrigu Nandi Nadi</text>
-  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">३६ प्रमुख ग्रहीय संयोगों में से शीर्ष ६ शास्त्रीय राजयोग</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">36 प्रमुख ग्रहीय संयोगों में से शीर्ष 6 शास्त्रीय राजयोग</text>
 
 
   
@@ -121,7 +121,7 @@
   <!-- Bottom Legend Footer -->
   <rect x="24" y="625" width="512" height="120" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.3"/>
   <text x="280" y="648" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" fill="#78350f" text-anchor="middle">★ नाड़ी ग्रहीय संयोग गणितीय नियम ★</text>
-  <text x="280" y="670" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">• एक ही राशि में युति (०°) अथवा १-५-९ त्रिकोण में स्थिति = समान शक्तिशाली फल</text>
+  <text x="280" y="670" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">• एक ही राशि में युति (0°) अथवा 1-5-9 त्रिकोण में स्थिति = समान शक्तिशाली फल</text>
   <text x="280" y="692" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">• निम्न अंश वाला ग्रह पूर्ववर्ती एवं उच्च अंश वाला ग्रह परवर्ती प्रभाव डालता है</text>
   <text x="280" y="714" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#6d28d9" text-anchor="middle">• यदि दोनों में से कोई वक्री हो तो पूर्व राशि से भी संयोग प्रभाव की गणना करें</text>
   <text x="280" y="734" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">स्रोत: भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र • तंत्र ज्ञान शोध संस्थान</text>

@@ -109,9 +109,9 @@
 
   <!-- Bottom Legend Footer -->
   <rect x="24" y="625" width="512" height="120" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.3"/>
-  <text x="280" y="648" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" fill="#78350f" text-anchor="middle">★ त्रि-ग्रहीय संयोजन के ३ मूलभूत घटक ★</text>
-  <text x="280" y="670" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">१. मूल कारण (Root): प्रथम ग्रह घटना का बीज व संकल्प निर्धारित करता है</text>
-  <text x="280" y="692" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#0284c7" text-anchor="middle">२. माध्यम (Carrier): द्वितीय ग्रह साधन, वातावरण एवं कार्य-प्रणाली प्रदान करता है</text>
-  <text x="280" y="714" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">३. अंतिम फल (Fruit): तृतीय ग्रह परिणाम का अंतिम स्वरूप व प्रभाव तय करता है</text>
+  <text x="280" y="648" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" fill="#78350f" text-anchor="middle">★ त्रि-ग्रहीय संयोजन के 3 मूलभूत घटक ★</text>
+  <text x="280" y="670" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">1. मूल कारण (Root): प्रथम ग्रह घटना का बीज व संकल्प निर्धारित करता है</text>
+  <text x="280" y="692" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#0284c7" text-anchor="middle">2. माध्यम (Carrier): द्वितीय ग्रह साधन, वातावरण एवं कार्य-प्रणाली प्रदान करता है</text>
+  <text x="280" y="714" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">3. अंतिम फल (Fruit): तृतीय ग्रह परिणाम का अंतिम स्वरूप व प्रभाव तय करता है</text>
   <text x="280" y="734" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">सूत्र: तीन ग्रहों का त्रिकोण सम्मिश्रण जातक के जीवन की सबसे बड़ी दिशा तय करता है।</text>
 </svg>

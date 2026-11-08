@@ -46,7 +46,7 @@
   
   <!-- Top Header Banner -->
   <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
-  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">शनि ३०-वर्षीय पर्याय एवं गुरु प्रगति काल-चक्र</text>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">शनि 30-वर्षीय पर्याय एवं गुरु प्रगति काल-चक्र</text>
   <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">BNN Saturn 30-Year Paryaya Cycles &amp; Jupiter 1-Year Progression Engine</text>
   <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">दशा-महादशा के बिना अचूक घटना समय-निर्धारण (Timing of Events)</text>
 
@@ -54,7 +54,7 @@
   <!-- Saturn 3 Paryayas Header -->
   <g transform="translate(24, 96)">
     <rect width="512" height="32" rx="4" fill="#0f172a"/>
-    <text x="256" y="21" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" text-anchor="middle">शनि के ३ प्रमुख ३०-वर्षीय पर्याय चक्र (Saturn 30-Year Cycles)</text>
+    <text x="256" y="21" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" text-anchor="middle">शनि के 3 प्रमुख 30-वर्षीय पर्याय चक्र (Saturn 30-Year Cycles)</text>
   </g>
 
   <!-- Paryaya 1 -->
@@ -62,11 +62,11 @@
     <rect width="512" height="88" rx="8" fill="#ffffff" stroke="#0284c7" stroke-width="1.4"/>
     <rect width="130" height="88" rx="8" fill="#e0f2fe"/>
     <text x="65" y="38" text-anchor="middle" fill="#0369a1" font-family="'Noto Serif Devanagari', serif" font-size="14" font-weight="900">प्रथम पर्याय</text>
-    <text x="65" y="58" text-anchor="middle" fill="#0284c7" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">आयु ० से ३० वर्ष</text>
+    <text x="65" y="58" text-anchor="middle" fill="#0284c7" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">आयु 0 से 30 वर्ष</text>
 
     <text x="145" y="28" fill="#0369a1" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800">बाल्यावस्था, शिक्षा, संघर्ष एवं आधार निर्माण</text>
     <text x="145" y="50" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600">• शिक्षा, शारीरिक वृद्धि, पारिवारिक निर्भरता एवं प्रथम कर्म का चयन</text>
-    <text x="145" y="70" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9">२८वें-३०वें वर्ष में शनि की पहली वापसी (Saturn Return) जीवन को नई दिशा देती है।</text>
+    <text x="145" y="70" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9">28वें-30वें वर्ष में शनि की पहली वापसी (Saturn Return) जीवन को नई दिशा देती है।</text>
   </g>
 
   <!-- Paryaya 2 -->
@@ -74,11 +74,11 @@
     <rect width="512" height="88" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
     <rect width="130" height="88" rx="8" fill="#fef3c7"/>
     <text x="65" y="38" text-anchor="middle" fill="#78350f" font-family="'Noto Serif Devanagari', serif" font-size="14" font-weight="900">द्वितीय पर्याय</text>
-    <text x="65" y="58" text-anchor="middle" fill="#b45309" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">आयु ३० से ६० वर्ष</text>
+    <text x="65" y="58" text-anchor="middle" fill="#b45309" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">आयु 30 से 60 वर्ष</text>
 
     <text x="145" y="28" fill="#78350f" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800">कर्म विस्तार, पद-प्रतिष्ठा, विवाह, सन्तान एवं गृह</text>
     <text x="145" y="50" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600">• जीवन का सबसे फलदायी काल; आजीविका में स्थायित्व व सामाजिक प्रतिष्ठा</text>
-    <text x="145" y="70" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9">५८वें-६०वें वर्ष में शनि की दूसरी वापसी से कर्म चक्र की पूर्णता होती है।</text>
+    <text x="145" y="70" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9">58वें-60वें वर्ष में शनि की दूसरी वापसी से कर्म चक्र की पूर्णता होती है।</text>
   </g>
 
   <!-- Paryaya 3 -->
@@ -86,7 +86,7 @@
     <rect width="512" height="88" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-width="1.4"/>
     <rect width="130" height="88" rx="8" fill="#ede9fe"/>
     <text x="65" y="38" text-anchor="middle" fill="#6d28d9" font-family="'Noto Serif Devanagari', serif" font-size="14" font-weight="900">तृतीय पर्याय</text>
-    <text x="65" y="58" text-anchor="middle" fill="#7c3aed" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">आयु ६० से ९० वर्ष</text>
+    <text x="65" y="58" text-anchor="middle" fill="#7c3aed" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">आयु 60 से 90 वर्ष</text>
 
     <text x="145" y="28" fill="#6d28d9" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800">सेवानिवृत्ति, नाती-पोते, अध्यात्म एवं मोक्ष चिंतन</text>
     <text x="145" y="50" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600">• भौतिक उत्तरदायित्वों से मुक्ति, आध्यात्मिक साधना व अंतर्मुखी शांति</text>
@@ -96,7 +96,7 @@
   <!-- Jupiter Progression Header -->
   <g transform="translate(24, 428)">
     <rect width="512" height="32" rx="4" fill="#0f172a"/>
-    <text x="256" y="21" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" text-anchor="middle">गुरु १-वर्षीय प्रगति नियम (Jupiter 1-Year Progression)</text>
+    <text x="256" y="21" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" text-anchor="middle">गुरु 1-वर्षीय प्रगति नियम (Jupiter 1-Year Progression)</text>
   </g>
 
   <!-- Jupiter Rules Card -->
@@ -104,19 +104,19 @@
     <rect width="512" height="155" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="1.4"/>
     <text x="256" y="26" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#78350f" text-anchor="middle">★ गुरु प्रगति से विवाह, सन्तान एवं भाग्योदय का वर्ष निर्धारण ★</text>
     
-    <text x="20" y="54" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#059669">१. गति:</text>
-    <text x="65" y="54" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="600" fill="#1e293b">गुरु प्रति वर्ष ठीक १ राशि (३०°) आगे बढ़ता है (१२ वर्ष में १ परिक्रमा)।</text>
+    <text x="20" y="54" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#059669">1. गति:</text>
+    <text x="65" y="54" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="600" fill="#1e293b">गुरु प्रति वर्ष ठीक 1 राशि (30°) आगे बढ़ता है (12 वर्ष में 1 परिक्रमा)।</text>
 
-    <text x="20" y="78" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#059669">२. विवाह वर्ष:</text>
+    <text x="20" y="78" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#059669">2. विवाह वर्ष:</text>
     <text x="100" y="78" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="600" fill="#1e293b">प्रगतिशील गुरु जब जन्मकालिक शुक्र (पुरुष हेतु) या मंगल (स्त्री हेतु) पर आए।</text>
 
-    <text x="20" y="102" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#059669">३. पदोन्नति:</text>
+    <text x="20" y="102" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#059669">3. पदोन्नति:</text>
     <text x="95" y="102" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="600" fill="#1e293b">प्रगतिशील गुरु जब जन्मकालिक शनि अथवा सूर्य के ऊपर या त्रिकोण में गोचर करे।</text>
 
-    <text x="20" y="126" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#059669">४. सन्तान जन्म:</text>
-    <text x="105" y="126" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="600" fill="#1e293b">प्रगतिशील गुरु का ५वें भाव या जन्मकालिक गुरु के त्रिकोण में गोचर काल।</text>
+    <text x="20" y="126" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#059669">4. सन्तान जन्म:</text>
+    <text x="105" y="126" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="600" fill="#1e293b">प्रगतिशील गुरु का 5वें भाव या जन्मकालिक गुरु के त्रिकोण में गोचर काल।</text>
 
-    <text x="256" y="146" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">सूत्र: १२, २४, ३६, ४८वें वर्ष में गुरु की वापसी अत्यंत महत्वपूर्ण घटनाक्रम लाती है।</text>
+    <text x="256" y="146" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">सूत्र: 12, 24, 36, 48वें वर्ष में गुरु की वापसी अत्यंत महत्वपूर्ण घटनाक्रम लाती है।</text>
   </g>
 
   <!-- Bottom Legend Footer -->

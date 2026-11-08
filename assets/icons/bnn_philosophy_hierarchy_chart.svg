@@ -46,7 +46,7 @@
   
   <!-- Top Header Banner -->
   <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
-  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">भृगु नंदी नाड़ी का ५-स्तरीय फलित निर्णय पदानुक्रम</text>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">भृगु नंदी नाड़ी का 5-स्तरीय फलित निर्णय पदानुक्रम</text>
   <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">BNN 5-Tier Hierarchical Predictive Architecture</text>
   <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">महर्षि भृगु एवं नंदीश्वर प्रोक्त प्रामाणिक पदानुक्रम • Karaka to Timing Protocol</text>
 
@@ -55,7 +55,7 @@
   <g transform="translate(24, 96)">
     <rect width="512" height="96" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.6"/>
     <rect width="130" height="96" rx="8" fill="#b45309"/>
-    <text x="65" y="42" text-anchor="middle" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="15" font-weight="900">स्तर १</text>
+    <text x="65" y="42" text-anchor="middle" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="15" font-weight="900">स्तर 1</text>
     <text x="65" y="64" text-anchor="middle" fill="#fef3c7" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">ग्रह कारकत्व</text>
     
     <text x="145" y="30" fill="#78350f" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800">नैसर्गिक ग्रह कारकत्व (Planetary Significations)</text>
@@ -71,11 +71,11 @@
   <g transform="translate(24, 216)">
     <rect width="512" height="96" rx="8" fill="#ffffff" stroke="#0284c7" stroke-width="1.6"/>
     <rect width="130" height="96" rx="8" fill="#0284c7"/>
-    <text x="65" y="42" text-anchor="middle" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="15" font-weight="900">स्तर २</text>
-    <text x="65" y="64" text-anchor="middle" fill="#e0f2fe" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">१-५-९ त्रिकोण</text>
+    <text x="65" y="42" text-anchor="middle" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="15" font-weight="900">स्तर 2</text>
+    <text x="65" y="64" text-anchor="middle" fill="#e0f2fe" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">1-5-9 त्रिकोण</text>
     
     <text x="145" y="30" fill="#0369a1" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800">दिशा-संयोजन त्रिकोण (Directional Harmony)</text>
-    <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• पूर्व (१,५,९ अग्नि), दक्षिण (२,६,१० पृथ्वी), पश्चिम (३,७,११ वायु), उत्तर (४,८,१२ जल)</text>
+    <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• पूर्व (1,5,9 अग्नि), दक्षिण (2,6,10 पृथ्वी), पश्चिम (3,7,11 वायु), उत्तर (4,8,12 जल)</text>
     <text x="145" y="74" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5">नियम: समान दिशा के ग्रह एक साथ कार्य करते हैं; नाड़ी में यह मुख्य युति संबंध है।</text>
   </g>
 
@@ -87,11 +87,11 @@
   <g transform="translate(24, 336)">
     <rect width="512" height="96" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.6"/>
     <rect width="130" height="96" rx="8" fill="#059669"/>
-    <text x="65" y="42" text-anchor="middle" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="15" font-weight="900">स्तर ३</text>
-    <text x="65" y="64" text-anchor="middle" fill="#d1fae5" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">२-१२ कर्तरी</text>
+    <text x="65" y="42" text-anchor="middle" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="15" font-weight="900">स्तर 3</text>
+    <text x="65" y="64" text-anchor="middle" fill="#d1fae5" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">2-12 कर्तरी</text>
     
     <text x="145" y="30" fill="#047857" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800">अग्रिम, पृष्ठ एवं कर्तरी वेध (Flank Influences)</text>
-    <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• अग्र (+१ राशि) भविष्य व गति • पृष्ठ (-१ राशि) अतीत व संचित पृष्ठभूमि</text>
+    <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• अग्र (+1 राशि) भविष्य व गति • पृष्ठ (-1 राशि) अतीत व संचित पृष्ठभूमि</text>
     <text x="145" y="74" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5">नियम: दोनों ओर शुभ = सुरक्षा कवच (सुरक्षा); दोनों ओर पापी = बन्धन योग (रुकावट)।</text>
   </g>
 
@@ -103,12 +103,12 @@
   <g transform="translate(24, 456)">
     <rect width="512" height="96" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-width="1.6"/>
     <rect width="130" height="96" rx="8" fill="#7c3aed"/>
-    <text x="65" y="42" text-anchor="middle" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="15" font-weight="900">स्तर ४</text>
+    <text x="65" y="42" text-anchor="middle" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="15" font-weight="900">स्तर 4</text>
     <text x="65" y="64" text-anchor="middle" fill="#ede9fe" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">अंश व विनिमय</text>
     
     <text x="145" y="30" fill="#6d28d9" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800">ग्रह अंश-क्रम एवं वक्री विनिमय (Degree Ordering &amp; Retro Swap)</text>
     <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• निम्न अंश ग्रह आगे, उच्च अंश पीछे • पीछे वाला ग्रह आगे वाले की ओर गतिमान</text>
-    <text x="145" y="74" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5">नियम: वक्री ग्रह का ५०% अस्तित्व पूर्व राशि में होता है; राशि विनिमय से दोहरा फल मिलता है।</text>
+    <text x="145" y="74" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5">नियम: वक्री ग्रह का 50% अस्तित्व पूर्व राशि में होता है; राशि विनिमय से दोहरा फल मिलता है।</text>
   </g>
 
   <!-- Flow Arrow 4 -->
@@ -119,11 +119,11 @@
   <g transform="translate(24, 576)">
     <rect width="512" height="96" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1.6"/>
     <rect width="130" height="96" rx="8" fill="#dc2626"/>
-    <text x="65" y="42" text-anchor="middle" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="15" font-weight="900">स्तर ५</text>
+    <text x="65" y="42" text-anchor="middle" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="15" font-weight="900">स्तर 5</text>
     <text x="65" y="64" text-anchor="middle" fill="#fee2e2" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">काल निर्धारण</text>
     
     <text x="145" y="30" fill="#b91c1c" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800">प्रगति एवं गोचर काल-निर्धारण (Timing of Events)</text>
-    <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• गुरु १ वर्ष/राशि प्रगति • शनि ३० वर्ष पर्याय चक्र • भृगु बिंदु (BB) सक्रियण</text>
+    <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• गुरु 1 वर्ष/राशि प्रगति • शनि 30 वर्ष पर्याय चक्र • भृगु बिंदु (BB) सक्रियण</text>
     <text x="145" y="74" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5">नियम: प्रगतिशील गुरु का जन्मकालिक सूर्य/शुक्र/शनि पर गोचर भाग्योदय कराता है।</text>
   </g>
 

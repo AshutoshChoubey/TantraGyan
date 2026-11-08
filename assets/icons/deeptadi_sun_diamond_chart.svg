@@ -15,7 +15,7 @@
   <rect x="15" y="15" width="970" height="890" fill="none" stroke="url(#goldGrad)" stroke-width="1.8" rx="8" opacity="0.65" />
 
   <!-- Header -->
-  <text x="500.0" y="52" text-anchor="middle" fill="url(#goldGrad)" font-size="24" font-weight="800">ग्रहों की दीप्तादि ९ अवस्थाएं एवं द्वादश भावों में सूर्य फल चक्र</text>
+  <text x="500.0" y="52" text-anchor="middle" fill="url(#goldGrad)" font-size="24" font-weight="800">ग्रहों की दीप्तादि 9 अवस्थाएं एवं द्वादश भावों में सूर्य फल चक्र</text>
   <text x="500.0" y="78" text-anchor="middle" fill="#94a3b8" font-size="14">Deeptadi 9 Planetary Dignities &amp; Sun Across 12 Houses Diamond Chart (Kalyana Varma Saravali)</text>
 
   <!-- Diamond Kundli Layout: Center (500, 430), Size 520 -->
@@ -34,82 +34,82 @@
 
     <!-- H2: Top-Left Triangle -->
     <polygon points="0,0 260,0 130,130" fill="rgba(245, 158, 11, 0.15)" stroke="#d97706" stroke-width="1.8" />
-    <text x="130" y="45" text-anchor="middle" fill="#fde68a" font-size="15" font-weight="800">२. धन व कुटुंब</text>
+    <text x="130" y="45" text-anchor="middle" fill="#fde68a" font-size="15" font-weight="800">2. धन व कुटुंब</text>
     <text x="130" y="68" text-anchor="middle" fill="#e2e8f0" font-size="12">स्पष्ट वाणी, पैतृक लाभ</text>
     <text x="130" y="88" text-anchor="middle" fill="#94a3b8" font-size="11">नेत्र तेज, धन संचय</text>
 
     <!-- H12: Top-Right Triangle -->
     <polygon points="260,0 520,0 390,130" fill="rgba(239, 68, 68, 0.15)" stroke="#ef4444" stroke-width="1.8" />
-    <text x="390" y="45" text-anchor="middle" fill="#fca5a5" font-size="15" font-weight="800">१२. व्यय व मोक्ष</text>
+    <text x="390" y="45" text-anchor="middle" fill="#fca5a5" font-size="15" font-weight="800">12. व्यय व मोक्ष</text>
     <text x="390" y="68" text-anchor="middle" fill="#e2e8f0" font-size="12">विदेश प्रवास, एकांत</text>
     <text x="390" y="88" text-anchor="middle" fill="#94a3b8" font-size="11">आध्यात्मिक चेतना</text>
 
     <!-- H3: Left-Top Triangle -->
     <polygon points="0,0 130,130 0,260" fill="rgba(56, 189, 248, 0.15)" stroke="#38bdf8" stroke-width="1.8" />
-    <text x="50" y="120" text-anchor="middle" fill="#bae6fd" font-size="14" font-weight="800">३. पराक्रम</text>
+    <text x="50" y="120" text-anchor="middle" fill="#bae6fd" font-size="14" font-weight="800">3. पराक्रम</text>
     <text x="50" y="140" text-anchor="middle" fill="#e2e8f0" font-size="11.5">शत्रुजयी, शौर्य</text>
 
     <!-- H4: Left Diamond -->
     <polygon points="0,260 130,130 260,260 130,390" fill="rgba(6, 182, 212, 0.15)" stroke="#06b6d4" stroke-width="1.8" />
-    <text x="130" y="245" text-anchor="middle" fill="#67e8f9" font-size="16" font-weight="800">४. सुख व गृह</text>
+    <text x="130" y="245" text-anchor="middle" fill="#67e8f9" font-size="16" font-weight="800">4. सुख व गृह</text>
     <text x="130" y="268" text-anchor="middle" fill="#e2e8f0" font-size="12">हृदय तेज, वाहन</text>
     <text x="130" y="288" text-anchor="middle" fill="#94a3b8" font-size="11">गृह से दूर भाग्योदय</text>
 
     <!-- H5: Left-Bottom Triangle -->
     <polygon points="0,260 130,390 0,520" fill="rgba(245, 158, 11, 0.18)" stroke="#f59e0b" stroke-width="1.8" />
-    <text x="50" y="375" text-anchor="middle" fill="#fde68a" font-size="14" font-weight="800">५. बुद्धि व मंत्र</text>
+    <text x="50" y="375" text-anchor="middle" fill="#fde68a" font-size="14" font-weight="800">5. बुद्धि व मंत्र</text>
     <text x="50" y="395" text-anchor="middle" fill="#e2e8f0" font-size="11.5">प्रज्ञा, मंत्रसिद्धि</text>
 
     <!-- H6: Bottom-Left Triangle -->
     <polygon points="0,520 260,520 130,390" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="1.8" />
-    <text x="130" y="475" text-anchor="middle" fill="#6ee7b7" font-size="15" font-weight="800">६. शत्रुहंता (उपचय)</text>
+    <text x="130" y="475" text-anchor="middle" fill="#6ee7b7" font-size="15" font-weight="800">6. शत्रुहंता (उपचय)</text>
     <text x="130" y="495" text-anchor="middle" fill="#e2e8f0" font-size="12">रोग व ऋण पर विजय</text>
 
     <!-- H7: Bottom Diamond -->
     <polygon points="260,260 390,390 260,520 130,390" fill="rgba(244, 63, 94, 0.18)" stroke="#f43f5e" stroke-width="2" />
-    <text x="260" y="380" text-anchor="middle" fill="#fda4af" font-size="16" font-weight="800">७. जाया व साझेदारी</text>
+    <text x="260" y="380" text-anchor="middle" fill="#fda4af" font-size="16" font-weight="800">7. जाया व साझेदारी</text>
     <text x="260" y="405" text-anchor="middle" fill="#ffffff" font-size="13">नीच स्थान (तुला 10° = खल अवस्था)</text>
     <text x="260" y="426" text-anchor="middle" fill="#cbd5e1" font-size="11.5">जीवनसाथी से मतभेद, लोकव्यवहार</text>
 
     <!-- H8: Bottom-Right Triangle -->
     <polygon points="260,520 520,520 390,390" fill="rgba(225, 29, 72, 0.15)" stroke="#e11d48" stroke-width="1.8" />
-    <text x="390" y="475" text-anchor="middle" fill="#fda4af" font-size="15" font-weight="800">८. आयु व शोध</text>
+    <text x="390" y="475" text-anchor="middle" fill="#fda4af" font-size="15" font-weight="800">8. आयु व शोध</text>
     <text x="390" y="495" text-anchor="middle" fill="#e2e8f0" font-size="12">गूढ़ विद्या, दीर्घायु</text>
 
     <!-- H9: Right-Bottom Triangle -->
     <polygon points="520,260 390,390 520,520" fill="rgba(245, 158, 11, 0.18)" stroke="#f59e0b" stroke-width="1.8" />
-    <text x="470" y="375" text-anchor="middle" fill="#fde68a" font-size="14" font-weight="800">९. भाग्य व धर्म</text>
+    <text x="470" y="375" text-anchor="middle" fill="#fde68a" font-size="14" font-weight="800">9. भाग्य व धर्म</text>
     <text x="470" y="395" text-anchor="middle" fill="#e2e8f0" font-size="11.5">तीर्थ, पिता कीर्ति</text>
 
     <!-- H10: Right Diamond -->
     <polygon points="520,260 390,130 260,260 390,390" fill="rgba(245, 158, 11, 0.22)" stroke="#f59e0b" stroke-width="2" />
-    <text x="390" y="245" text-anchor="middle" fill="#fde047" font-size="17" font-weight="900">१०. कर्म व पदवी</text>
+    <text x="390" y="245" text-anchor="middle" fill="#fde047" font-size="17" font-weight="900">10. कर्म व पदवी</text>
     <text x="390" y="270" text-anchor="middle" fill="#ffffff" font-size="13">दिग्बल (Directional Strength)</text>
     <text x="390" y="290" text-anchor="middle" fill="#cbd5e1" font-size="11.5">सर्वोच्च राजसत्ता, ख्याति</text>
 
     <!-- H11: Right-Top Triangle -->
     <polygon points="520,0 390,130 520,260" fill="rgba(16, 185, 129, 0.18)" stroke="#10b981" stroke-width="1.8" />
-    <text x="470" y="120" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="800">११. लाभ व सिद्धि</text>
+    <text x="470" y="120" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="800">11. लाभ व सिद्धि</text>
     <text x="470" y="140" text-anchor="middle" fill="#e2e8f0" font-size="11.5">अखंड धन, प्रतिष्ठा</text>
   </g>
 
   <!-- Bottom Legend: 9 Deeptadi States Summary -->
   <g transform="translate(50, 670)" filter="url(#shadow)">
     <rect width="900" height="195" rx="10" fill="#0f172a" stroke="#d97706" stroke-width="1.5" />
-    <text x="30" y="30" fill="#fde047" font-size="15" font-weight="800">👑 ग्रहों की ९ दीप्तादि अवस्थाएं एवं फल की तीव्रता (Potency Scale):</text>
+    <text x="30" y="30" fill="#fde047" font-size="15" font-weight="800">👑 ग्रहों की 9 दीप्तादि अवस्थाएं एवं फल की तीव्रता (Potency Scale):</text>
 
     <g transform="translate(30, 50)">
-      <text x="0" y="20" fill="#34d399" font-size="13" font-weight="700">१. दीप्त (Deepta • उच्च): १००%</text>
-      <text x="210" y="20" fill="#38bdf8" font-size="13" font-weight="700">२. स्वस्थ (Swastha • स्वराशि): ८५%</text>
-      <text x="430" y="20" fill="#a7f3d0" font-size="13" font-weight="700">३. मुदित (Mudita • अधिमित्र): ७५%</text>
-      <text x="650" y="20" fill="#fde68a" font-size="13" font-weight="700">४. शांत (Shanta • मित्र): ६०%</text>
+      <text x="0" y="20" fill="#34d399" font-size="13" font-weight="700">1. दीप्त (Deepta • उच्च): 100%</text>
+      <text x="210" y="20" fill="#38bdf8" font-size="13" font-weight="700">2. स्वस्थ (Swastha • स्वराशि): 85%</text>
+      <text x="430" y="20" fill="#a7f3d0" font-size="13" font-weight="700">3. मुदित (Mudita • अधिमित्र): 75%</text>
+      <text x="650" y="20" fill="#fde68a" font-size="13" font-weight="700">4. शांत (Shanta • मित्र): 60%</text>
 
-      <text x="0" y="50" fill="#cbd5e1" font-size="13" font-weight="700">५. दीन (Deena • सम): ४०%</text>
-      <text x="210" y="50" fill="#fbbf24" font-size="13" font-weight="700">६. दुखित (Dukhita • शत्रु): २५%</text>
-      <text x="430" y="50" fill="#fca5a5" font-size="13" font-weight="700">७. विकल (Vikala • अस्त): १०%</text>
-      <text x="650" y="50" fill="#f87171" font-size="13" font-weight="700">८. खल (Khala • नीच): ०–१५%</text>
+      <text x="0" y="50" fill="#cbd5e1" font-size="13" font-weight="700">5. दीन (Deena • सम): 40%</text>
+      <text x="210" y="50" fill="#fbbf24" font-size="13" font-weight="700">6. दुखित (Dukhita • शत्रु): 25%</text>
+      <text x="430" y="50" fill="#fca5a5" font-size="13" font-weight="700">7. विकल (Vikala • अस्त): 10%</text>
+      <text x="650" y="50" fill="#f87171" font-size="13" font-weight="700">8. खल (Khala • नीच): 0–15%</text>
 
-      <text x="0" y="80" fill="#ef4444" font-size="13" font-weight="700">९. कोप (Kopa • युद्ध पराजित): अनिष्ट</text>
+      <text x="0" y="80" fill="#ef4444" font-size="13" font-weight="700">9. कोप (Kopa • युद्ध पराजित): अनिष्ट</text>
       <text x="210" y="80" fill="#cbd5e1" font-size="12">सूत्र: "दीप्तः स्वोच्चे स्वस्थः स्वगृहे मुदितोऽधिमित्रे शान्तः सुहृदि॥"</text>
     </g>
 

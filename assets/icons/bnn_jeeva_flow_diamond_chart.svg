@@ -48,7 +48,7 @@
   <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
   <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">उत्तर भारतीय डायमंड चार्ट में जीव-लग्न भाव-प्रवाह</text>
   <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">BNN Jeeva Lagna Counter-Clockwise Momentum &amp; Step-by-Step Flow</text>
-  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">गुरु (जीव) की केंद्रीय स्थिति, १-५-९ त्रिकोण, २-१२ पार्श्व एवं ७वीं प्रत्यक्ष दृष्टि</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">गुरु (जीव) की केंद्रीय स्थिति, 1-5-9 त्रिकोण, 2-12 पार्श्व एवं 7वीं प्रत्यक्ष दृष्टि</text>
 
 
   <!-- Kundli Polygons -->
@@ -72,28 +72,28 @@
   <!-- Labels for Houses -->
   <!-- H1: Jeeva -->
   <text x="270" y="185" font-family="'Noto Serif Devanagari', serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">★ जीव (गुरु) ★</text>
-  <text x="270" y="208" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700" fill="#92400e" text-anchor="middle">१म भाव • स्वयं जातक</text>
+  <text x="270" y="208" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700" fill="#92400e" text-anchor="middle">1म भाव • स्वयं जातक</text>
   <text x="270" y="230" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" fill="#451a03" text-anchor="middle">शारीरिक अस्तित्व, बुद्धि व आत्मा</text>
 
   <!-- H2: Agre -->
-  <text x="145" y="140" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#0369a1" text-anchor="middle">अग्र (+१ भाव)</text>
-  <text x="145" y="160" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">२रा: धन, वाणी, भविष्य</text>
+  <text x="145" y="140" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#0369a1" text-anchor="middle">अग्र (+1 भाव)</text>
+  <text x="145" y="160" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">2रा: धन, वाणी, भविष्य</text>
 
   <!-- H12: Prishta -->
-  <text x="395" y="140" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#6d28d9" text-anchor="middle">पृष्ठ (-१ भाव)</text>
-  <text x="395" y="160" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">१२वां: संचित अतीत, व्यय</text>
+  <text x="395" y="140" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#6d28d9" text-anchor="middle">पृष्ठ (-1 भाव)</text>
+  <text x="395" y="160" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">12वां: संचित अतीत, व्यय</text>
 
   <!-- H5: Trikona 1 -->
-  <text x="70" y="465" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">त्रिकोण (५म)</text>
+  <text x="70" y="465" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">त्रिकोण (5म)</text>
   <text x="70" y="485" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">पूर्वपुण्य • सन्तान</text>
 
   <!-- H9: Trikona 2 -->
-  <text x="470" y="465" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">त्रिकोण (९म)</text>
+  <text x="470" y="465" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">त्रिकोण (9म)</text>
   <text x="470" y="485" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">भाग्य • धर्म • पिता</text>
 
   <!-- H7: Samukha -->
-  <text x="270" y="460" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800" fill="#b91c1c" text-anchor="middle">प्रत्यक्ष दृष्टि (७म भाव)</text>
-  <text x="270" y="480" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700" fill="#1e293b" text-anchor="middle">१८०° समसप्तक • जीवनसाथी, व्यापार</text>
+  <text x="270" y="460" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800" fill="#b91c1c" text-anchor="middle">प्रत्यक्ष दृष्टि (7म भाव)</text>
+  <text x="270" y="480" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700" fill="#1e293b" text-anchor="middle">180° समसप्तक • जीवनसाथी, व्यापार</text>
 
   <!-- Flow Arrows connecting 1-5-9 and 7 -->
   <path d="M 230 240 Q 140 320 80 430" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="5,3"/>
@@ -106,20 +106,20 @@
   <polygon points="266,435 274,435 270,443" fill="#dc2626"/>
 
   <!-- Other Bhavas -->
-  <text x="70" y="230" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">३रा: पराक्रम</text>
-  <text x="145" y="355" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">४था: सुख/माता</text>
-  <text x="145" y="550" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">६ठा: रोग/ऋण</text>
-  <text x="395" y="550" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">८वां: संकट/गूढ़</text>
-  <text x="395" y="355" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">१०वां: कर्म/पद</text>
-  <text x="470" y="230" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">११वां: लाभ/इच्छा</text>
+  <text x="70" y="230" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">3रा: पराक्रम</text>
+  <text x="145" y="355" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">4था: सुख/माता</text>
+  <text x="145" y="550" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">6ठा: रोग/ऋण</text>
+  <text x="395" y="550" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">8वां: संकट/गूढ़</text>
+  <text x="395" y="355" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">10वां: कर्म/पद</text>
+  <text x="470" y="230" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">11वां: लाभ/इच्छा</text>
 
   <!-- Bottom Legend Card -->
   <g transform="translate(20, 615)">
     <rect width="520" height="135" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
     <text x="260" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#78350f" text-anchor="middle">★ भृगु नंदी नाड़ी अग्र-पृष्ठ एवं दृष्टि सूत्र ★</text>
-    <text x="260" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#1e293b" text-anchor="middle">• अग्र नियम (+१ राशि): ग्रह का भविष्य व अगला कदम • पृष्ठ नियम (-१ राशि): संचित अतीत व पृष्ठभूमि बल</text>
-    <text x="260" y="72" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#047857" text-anchor="middle">• १-५-९ त्रिकोण संबंध: समान दिशा के ग्रह १००% सम्मिश्रित होकर संयुक्त परिणाम देते हैं</text>
-    <text x="260" y="96" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#b91c1c" text-anchor="middle">• ७वां भाव (१८०°): प्रत्यक्ष दृष्टि — जीवनसाथी, साझेदारी व लोक-व्यवहार में प्रत्यक्ष प्रभाव</text>
-    <text x="260" y="118" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">• १२वें व २रे में पापी ग्रह = बन्धन योग • १२वें व २रे में शुभ ग्रह = सुरक्षा कवच (सहज सफलता)</text>
+    <text x="260" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#1e293b" text-anchor="middle">• अग्र नियम (+1 राशि): ग्रह का भविष्य व अगला कदम • पृष्ठ नियम (-1 राशि): संचित अतीत व पृष्ठभूमि बल</text>
+    <text x="260" y="72" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#047857" text-anchor="middle">• 1-5-9 त्रिकोण संबंध: समान दिशा के ग्रह 100% सम्मिश्रित होकर संयुक्त परिणाम देते हैं</text>
+    <text x="260" y="96" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#b91c1c" text-anchor="middle">• 7वां भाव (180°): प्रत्यक्ष दृष्टि — जीवनसाथी, साझेदारी व लोक-व्यवहार में प्रत्यक्ष प्रभाव</text>
+    <text x="260" y="118" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">• 12वें व 2रे में पापी ग्रह = बन्धन योग • 12वें व 2रे में शुभ ग्रह = सुरक्षा कवच (सहज सफलता)</text>
   </g>
 </svg>

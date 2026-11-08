@@ -69,40 +69,40 @@
   </g>
 
   <!-- 12 Bhavas Meaning relative to Guru -->
-  <text x="270" y="195" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#78350f" text-anchor="middle">१म: जीव स्वयं</text>
+  <text x="270" y="195" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#78350f" text-anchor="middle">1म: जीव स्वयं</text>
   <text x="270" y="215" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#b45309" text-anchor="middle">आत्मज्ञानी, सात्विक, दीर्घायु</text>
 
-  <text x="145" y="145" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">२रा: धन/वाणी</text>
+  <text x="145" y="145" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">2रा: धन/वाणी</text>
   <text x="145" y="165" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#059669" text-anchor="middle">मधुर वक्ता, उत्तम कुल</text>
 
-  <text x="70" y="225" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#0369a1" text-anchor="middle">३रा: पराक्रम</text>
+  <text x="70" y="225" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#0369a1" text-anchor="middle">3रा: पराक्रम</text>
   <text x="70" y="245" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#0284c7" text-anchor="middle">लेखक, सहोदर सुख</text>
 
-  <text x="145" y="345" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">४था: सुख/गृह</text>
+  <text x="145" y="345" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">4था: सुख/गृह</text>
   <text x="145" y="365" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">मातृभक्त, वाहन, विद्या</text>
 
-  <text x="70" y="470" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">५वां: मन्त्र/सन्तान</text>
+  <text x="70" y="470" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">5वां: मन्त्र/सन्तान</text>
   <text x="70" y="490" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#b45309" text-anchor="middle">पूर्वपुण्य, उच्च बुद्धि</text>
 
-  <text x="145" y="545" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">६ठा: सेवा/आरोग्य</text>
+  <text x="145" y="545" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">6ठा: सेवा/आरोग्य</text>
   <text x="145" y="565" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#059669" text-anchor="middle">शत्रुहन्ता, ऋणमुक्ति</text>
 
-  <text x="270" y="465" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800" fill="#b91c1c" text-anchor="middle">७वां: जीवनसाथी</text>
+  <text x="270" y="465" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800" fill="#b91c1c" text-anchor="middle">7वां: जीवनसाथी</text>
   <text x="270" y="485" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">गुणी पत्नी/पति, व्यापार</text>
 
-  <text x="395" y="545" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">८वां: गूढ़ ज्ञान</text>
+  <text x="395" y="545" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">8वां: गूढ़ ज्ञान</text>
   <text x="395" y="565" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">दीर्घायु, वसीयत, साधना</text>
 
-  <text x="470" y="470" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">९वां: धर्म/भाग्य</text>
+  <text x="470" y="470" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">9वां: धर्म/भाग्य</text>
   <text x="470" y="490" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#b45309" text-anchor="middle">तीर्थयात्री, पिता-भक्त</text>
 
-  <text x="395" y="345" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">१०वां: आजीविका</text>
+  <text x="395" y="345" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">10वां: आजीविका</text>
   <text x="395" y="365" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#059669" text-anchor="middle">प्रतिष्ठित कर्म, शासन</text>
 
-  <text x="470" y="225" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#0369a1" text-anchor="middle">११वां: सर्व लाभ</text>
+  <text x="470" y="225" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#0369a1" text-anchor="middle">11वां: सर्व लाभ</text>
   <text x="470" y="245" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#0284c7" text-anchor="middle">इच्छापूर्ति, आय, सिद्धि</text>
 
-  <text x="395" y="145" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">१२वां: मोक्ष/त्याग</text>
+  <text x="395" y="145" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">12वां: मोक्ष/त्याग</text>
   <text x="395" y="165" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">विदेश गमन, वैराग्य</text>
 
   <!-- Bottom Legend Card -->

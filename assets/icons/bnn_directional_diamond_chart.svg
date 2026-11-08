@@ -48,7 +48,7 @@
   <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
   <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">भृगु नंदी नाड़ी दिशा-आधारित डायमंड चक्र</text>
   <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">BNN 4 Directional Trines &amp; 1-5-9 Conjunction Matrix</text>
-  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">पूर्व (१,५,९ अग्नि) • दक्षिण (२,६,१० पृथ्वी) • पश्चिम (३,७,११ वायु) • उत्तर (४,८,१२ जल)</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">पूर्व (1,5,9 अग्नि) • दक्षिण (2,6,10 पृथ्वी) • पश्चिम (3,7,11 वायु) • उत्तर (4,8,12 जल)</text>
 
 
   <!-- Kundli Polygons -->
@@ -71,54 +71,54 @@
 
   <!-- Direction Badges in Kundli -->
   <!-- H1: East / Mesha -->
-  <text x="270" y="195" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#78350f" text-anchor="middle">१. पूर्व (अग्नि)</text>
+  <text x="270" y="195" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#78350f" text-anchor="middle">1. पूर्व (अग्नि)</text>
   <text x="270" y="215" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">मेष • धर्म त्रिकोण</text>
 
   <!-- H5: East / Simha -->
-  <text x="70" y="470" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">५. पूर्व (अग्नि)</text>
+  <text x="70" y="470" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">5. पूर्व (अग्नि)</text>
   <text x="70" y="490" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">सिंह राशि</text>
 
   <!-- H9: East / Dhanu -->
-  <text x="470" y="470" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">९. पूर्व (अग्नि)</text>
+  <text x="470" y="470" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">9. पूर्व (अग्नि)</text>
   <text x="470" y="490" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">धनु राशि</text>
 
   <!-- South: 2, 6, 10 -->
-  <text x="145" y="145" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">२. दक्षिण (पृथ्वी)</text>
+  <text x="145" y="145" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">2. दक्षिण (पृथ्वी)</text>
   <text x="145" y="165" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">वृषभ राशि</text>
 
-  <text x="145" y="545" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">६. दक्षिण (पृथ्वी)</text>
+  <text x="145" y="545" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">6. दक्षिण (पृथ्वी)</text>
   <text x="145" y="565" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">कन्या राशि</text>
 
-  <text x="395" y="345" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">१०. दक्षिण (पृथ्वी)</text>
+  <text x="395" y="345" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">10. दक्षिण (पृथ्वी)</text>
   <text x="395" y="365" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">मकर राशि</text>
 
   <!-- West: 3, 7, 11 -->
-  <text x="70" y="225" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#0369a1" text-anchor="middle">३. पश्चिम (वायु)</text>
+  <text x="70" y="225" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#0369a1" text-anchor="middle">3. पश्चिम (वायु)</text>
   <text x="70" y="245" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#0284c7" text-anchor="middle">मिथुन राशि</text>
 
-  <text x="270" y="465" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800" fill="#0369a1" text-anchor="middle">७. पश्चिम (वायु)</text>
+  <text x="270" y="465" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800" fill="#0369a1" text-anchor="middle">7. पश्चिम (वायु)</text>
   <text x="270" y="485" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700" fill="#0284c7" text-anchor="middle">तुला • काम त्रिकोण</text>
 
-  <text x="470" y="225" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#0369a1" text-anchor="middle">११. पश्चिम (वायु)</text>
+  <text x="470" y="225" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#0369a1" text-anchor="middle">11. पश्चिम (वायु)</text>
   <text x="470" y="245" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#0284c7" text-anchor="middle">कुम्भ राशि</text>
 
   <!-- North: 4, 8, 12 -->
-  <text x="145" y="345" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">४. उत्तर (जल)</text>
+  <text x="145" y="345" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">4. उत्तर (जल)</text>
   <text x="145" y="365" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#7c3aed" text-anchor="middle">कर्क राशि</text>
 
-  <text x="395" y="545" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">८. उत्तर (जल)</text>
+  <text x="395" y="545" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">8. उत्तर (जल)</text>
   <text x="395" y="565" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#7c3aed" text-anchor="middle">वृश्चिक राशि</text>
 
-  <text x="395" y="145" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">१२. उत्तर (जल)</text>
+  <text x="395" y="145" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">12. उत्तर (जल)</text>
   <text x="395" y="165" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#7c3aed" text-anchor="middle">मीन राशि</text>
 
   <!-- Bottom Legend Card -->
   <g transform="translate(20, 615)">
     <rect width="520" height="135" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
     <text x="260" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#78350f" text-anchor="middle">★ नाड़ी दिशा-त्रिकोण संयोजन सूत्र (Directional Conjunction Law) ★</text>
-    <text x="260" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#b45309" text-anchor="middle">• पूर्व (१, ५, ९): मेष, सिंह, धनु = अग्नि तत्व • आत्मा, धर्म, जीवन ऊर्जा, नेतृत्व</text>
-    <text x="260" y="72" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">• दक्षिण (२, ६, १०): वृषभ, कन्या, मकर = पृथ्वी तत्व • धन, आजीविका, भौतिक स्थिरता</text>
-    <text x="260" y="96" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#0284c7" text-anchor="middle">• पश्चिम (३, ७, ११): मिथुन, तुला, कुम्भ = वायु तत्व • बुद्धि, व्यापार, सामाजिक संबंध</text>
-    <text x="260" y="118" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#7c3aed" text-anchor="middle">• उत्तर (४, ८, १२): कर्क, वृश्चिक, मीन = जल तत्व • भावना, अंतर्ज्ञान, वैराग्य, मोक्ष</text>
+    <text x="260" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#b45309" text-anchor="middle">• पूर्व (1, 5, 9): मेष, सिंह, धनु = अग्नि तत्व • आत्मा, धर्म, जीवन ऊर्जा, नेतृत्व</text>
+    <text x="260" y="72" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">• दक्षिण (2, 6, 10): वृषभ, कन्या, मकर = पृथ्वी तत्व • धन, आजीविका, भौतिक स्थिरता</text>
+    <text x="260" y="96" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#0284c7" text-anchor="middle">• पश्चिम (3, 7, 11): मिथुन, तुला, कुम्भ = वायु तत्व • बुद्धि, व्यापार, सामाजिक संबंध</text>
+    <text x="260" y="118" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#7c3aed" text-anchor="middle">• उत्तर (4, 8, 12): कर्क, वृश्चिक, मीन = जल तत्व • भावना, अंतर्ज्ञान, वैराग्य, मोक्ष</text>
   </g>
 </svg>

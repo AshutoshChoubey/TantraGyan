@@ -71,15 +71,15 @@
 
   <!-- H1: Middle Planet -->
   <text x="270" y="195" font-family="'Noto Serif Devanagari', serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">★ मध्य ग्रह (Target) ★</text>
-  <text x="270" y="218" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700" fill="#92400e" text-anchor="middle">१म भाव • फलित का केंद्र</text>
+  <text x="270" y="218" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700" fill="#92400e" text-anchor="middle">1म भाव • फलित का केंद्र</text>
   <text x="270" y="238" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" fill="#451a03" text-anchor="middle">(उदा. गुरु = जीव, शनि = कर्म)</text>
 
   <!-- H2: Front Flank -->
-  <text x="145" y="140" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800" fill="#0369a1" text-anchor="middle">अग्रिम ग्रह (+१ राशि)</text>
+  <text x="145" y="140" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800" fill="#0369a1" text-anchor="middle">अग्रिम ग्रह (+1 राशि)</text>
   <text x="145" y="160" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#1e293b" text-anchor="middle">भविष्य, दिशा, अगला कदम</text>
 
   <!-- H12: Rear Flank -->
-  <text x="395" y="140" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800" fill="#6d28d9" text-anchor="middle">पृष्ठ ग्रह (-१ राशि)</text>
+  <text x="395" y="140" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800" fill="#6d28d9" text-anchor="middle">पृष्ठ ग्रह (-1 राशि)</text>
   <text x="395" y="160" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#1e293b" text-anchor="middle">अतीत, संचित बल, पृष्ठभूमि</text>
 
   <!-- Flank Pressure Arrows -->
@@ -90,22 +90,22 @@
   <polygon points="316,204 306,202 312,194" fill="#7c3aed"/>
 
   <!-- Neutral text in other houses -->
-  <text x="70" y="230" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">३रा भाव</text>
-  <text x="145" y="355" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">४था भाव</text>
-  <text x="70" y="475" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">५वां भाव</text>
-  <text x="145" y="550" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">६ठा भाव</text>
-  <text x="270" y="475" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">७वां भाव</text>
-  <text x="395" y="550" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">८वां भाव</text>
-  <text x="470" y="475" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">९वां भाव</text>
-  <text x="395" y="355" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">१०वां भाव</text>
-  <text x="470" y="230" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">११वां भाव</text>
+  <text x="70" y="230" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">3रा भाव</text>
+  <text x="145" y="355" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">4था भाव</text>
+  <text x="70" y="475" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">5वां भाव</text>
+  <text x="145" y="550" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">6ठा भाव</text>
+  <text x="270" y="475" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">7वां भाव</text>
+  <text x="395" y="550" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">8वां भाव</text>
+  <text x="470" y="475" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">9वां भाव</text>
+  <text x="395" y="355" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">10वां भाव</text>
+  <text x="470" y="230" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">11वां भाव</text>
 
   <!-- Bottom Comparison Cards -->
   <g transform="translate(20, 615)">
     <!-- Shubha Kartari -->
     <rect x="0" y="0" width="255" height="135" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.4"/>
     <text x="127" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#047857" text-anchor="middle">🛡️ शुभ कर्तरी योग (Suraksha Kavach)</text>
-    <text x="127" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#1e293b" text-anchor="middle">१२वें में शुक्र/बुध + २रे में गुरु/चन्द्र</text>
+    <text x="127" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#1e293b" text-anchor="middle">12वें में शुक्र/बुध + 2रे में गुरु/चन्द्र</text>
     <text x="127" y="70" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#334155" text-anchor="middle">• जातक को हर संकट में दैवीय सुरक्षा मिलती है</text>
     <text x="127" y="90" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#334155" text-anchor="middle">• बिना बड़े श्रम के भी कार्य सहज सिद्ध होते हैं</text>
     <text x="127" y="112" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#047857" text-anchor="middle">परिणाम: सुख, समृद्धि, राजकृपा व सम्मान</text>
@@ -113,7 +113,7 @@
     <!-- Papa Kartari -->
     <rect x="265" y="0" width="255" height="135" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1.4"/>
     <text x="392" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#b91c1c" text-anchor="middle">⛓️ पाप कर्तरी योग (Bandhana Yoga)</text>
-    <text x="392" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#1e293b" text-anchor="middle">१२वें में शनि/राहु + २रे में मंगल/केतु</text>
+    <text x="392" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#1e293b" text-anchor="middle">12वें में शनि/राहु + 2रे में मंगल/केतु</text>
     <text x="392" y="70" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#334155" text-anchor="middle">• मध्य ग्रह पिस जाता है; जातक बंधन महसूस करता है</text>
     <text x="392" y="90" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#334155" text-anchor="middle">• आगे बढ़ने पर रुकावट, पीछे मुड़ने पर पछतावा</text>
     <text x="392" y="112" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#b91c1c" text-anchor="middle">परिणाम: विलंब, मानसिक तनाव, संघर्ष</text>
