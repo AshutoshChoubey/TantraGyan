@@ -1,0 +1,107 @@
+<svg viewBox="0 0 600 680" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" class="select-none">
+  <defs>
+    <linearGradient id="bnnBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffef9"/>
+      <stop offset="50%" stop-color="#fdfbf3"/>
+      <stop offset="100%" stop-color="#faf4e6"/>
+    </linearGradient>
+    <linearGradient id="bnnHeaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fefcf6"/>
+    </linearGradient>
+    <filter id="bnnShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <style>
+    .header-box { fill: url(#bnnHeaderGrad); stroke: #b45309; stroke-width: 1.8; filter: url(#bnnShadow); }
+    .header-inner { fill: none; stroke: #d97706; stroke-width: 0.8; stroke-dasharray: 4,2; }
+    .header-sub-tag { font-size: 11px; font-weight: 800; fill: #b45309; letter-spacing: 0.08em; font-family: 'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif; text-anchor: middle; }
+    .header-title { font-size: 16px; font-weight: 900; fill: #78350f; font-family: 'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif; text-anchor: middle; }
+    .header-meta { font-size: 10.5px; font-weight: 600; fill: #44403c; font-family: 'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif; text-anchor: middle; }
+    .chart-bg { fill: url(#bnnBg); filter: url(#bnnShadow); }
+    .grid-line { fill: none; stroke: #09090b; stroke-width: 2.0; stroke-linejoin: round; }
+    .rashi-num { font-size: 14px; font-weight: 900; fill: #09090b; font-family: -apple-system, sans-serif; paint-order: stroke fill; stroke: #fffdf7; stroke-width: 3px; }
+    .dir-badge { font-family: 'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif; font-size: 11px; font-weight: 800; text-anchor: middle; }
+    .desc-text { font-family: 'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif; font-size: 9px; font-weight: 600; text-anchor: middle; }
+    .arrow-line { stroke-width: 2.5; stroke-dasharray: 5,3; marker-end: url(#arrow); }
+  </defs>
+
+  <!-- Top Header Box -->
+  <rect x="18" y="10" width="564" height="80" rx="8" class="header-box"/>
+  <rect x="22" y="14" width="556" height="72" rx="6" class="header-inner"/>
+  <text x="300" y="32" class="header-sub-tag">भृगु नंदी नाड़ी • BHRIGU NANDI NADI (BNN)</text>
+  <text x="300" y="54" class="header-title">दिशा-आधारित डायमंड चार्ट एवं विपरीत दृष्टि चक्र</text>
+  <text x="300" y="74" class="header-meta">4 मुख्य दिशाएं (1-5-9 त्रिकोण) • 4 महाभूत तत्व • 50% समसप्तक दृष्टि संबंध</text>
+
+  <!-- Diamond Outer Frame (X: 18 to 582, Y: 100 to 570) Width=564, Height=470 -->
+  <rect x="18" y="100" width="564" height="470" rx="10" class="chart-bg" stroke="#b45309" stroke-width="2.6"/>
+
+  <!-- Main Diagonal Cross Lines -->
+  <line x1="18" y1="100" x2="582" y2="570" class="grid-line" stroke="#78350f"/>
+  <line x1="582" y1="100" x2="18" y2="570" class="grid-line" stroke="#78350f"/>
+
+  <!-- Inner Rhombus Diamond (Midpoints: 300,100 -> 582,335 -> 300,570 -> 18,335) -->
+  <polygon points="300,100 582,335 300,570 18,335" class="grid-line" stroke="#b45309" stroke-width="2.4" fill="none"/>
+
+  <!-- Shading 4 Directional Trines -->
+  <!-- House 1 Top (East / Fire) -->
+  <polygon points="300,100 441,217.5 300,335 159,217.5" fill="rgba(239, 68, 68, 0.08)"/>
+  <!-- House 4 Left (North / Water) -->
+  <polygon points="18,335 159,217.5 300,335 159,452.5" fill="rgba(14, 165, 233, 0.08)"/>
+  <!-- House 7 Bottom (West / Air) -->
+  <polygon points="300,335 441,452.5 300,570 159,452.5" fill="rgba(139, 92, 246, 0.08)"/>
+  <!-- House 10 Right (South / Earth) -->
+  <polygon points="300,335 441,217.5 582,335 441,452.5" fill="rgba(217, 119, 6, 0.08)"/>
+
+  <!-- House 1: East / Fire -->
+  <text x="300" y="295" class="rashi-num" text-anchor="middle">1</text>
+  <text x="300" y="190" class="dir-badge" fill="#dc2626">पूर्व दिशा • EAST (अग्नि तत्व / धर्म)</text>
+  <text x="300" y="210" class="desc-text" fill="#991b1b">राशियां: मेष (1), सिंह (5), धनु (9)</text>
+  <text x="300" y="226" class="desc-text" fill="#78350f">1-5-9 त्रिकोण: 75% से 100% सीधा संयोग</text>
+
+  <!-- House 4: North / Water -->
+  <text x="260" y="340" class="rashi-num" text-anchor="middle">4</text>
+  <text x="160" y="315" class="dir-badge" fill="#0284c7">उत्तर • NORTH</text>
+  <text x="160" y="332" class="desc-text" fill="#0369a1">जल तत्व / मोक्ष</text>
+  <text x="160" y="348" class="desc-text" fill="#0f172a">कर्क (4), वृश्चिक (8), मीन (12)</text>
+
+  <!-- House 7: West / Air -->
+  <text x="300" y="375" class="rashi-num" text-anchor="middle">7</text>
+  <text x="300" y="460" class="dir-badge" fill="#7c3aed">पश्चिम दिशा • WEST (वायु तत्व / काम)</text>
+  <text x="300" y="480" class="desc-text" fill="#6d28d9">राशियां: मिथुन (3), तुला (7), कुंभ (11)</text>
+  <text x="300" y="496" class="desc-text" fill="#4c1d95">3-7-11 त्रिकोण: व्यापार, संचार, सर्वलाभ</text>
+
+  <!-- House 10: South / Earth -->
+  <text x="340" y="340" class="rashi-num" text-anchor="middle">10</text>
+  <text x="440" y="315" class="dir-badge" fill="#d97706">दक्षिण • SOUTH</text>
+  <text x="440" y="332" class="desc-text" fill="#b45309">पृथ्वी तत्व / अर्थ</text>
+  <text x="440" y="348" class="desc-text" fill="#78350f">वृषभ (2), कन्या (6), मकर (10)</text>
+
+  <!-- Other Rashi Numbers in Corners -->
+  <text x="230" y="125" class="rashi-num" text-anchor="middle">2</text>
+  <text x="80" y="225" class="rashi-num" text-anchor="middle">3</text>
+  <text x="80" y="450" class="rashi-num" text-anchor="middle">5</text>
+  <text x="230" y="555" class="rashi-num" text-anchor="middle">6</text>
+  <text x="370" y="555" class="rashi-num" text-anchor="middle">8</text>
+  <text x="520" y="450" class="rashi-num" text-anchor="middle">9</text>
+  <text x="520" y="225" class="rashi-num" text-anchor="middle">11</text>
+  <text x="370" y="125" class="rashi-num" text-anchor="middle">12</text>
+
+  <!-- Center Opposite Aspect Arrows -->
+  <g stroke="#dc2626" stroke-width="2.2" stroke-dasharray="4,3">
+    <line x1="300" y1="240" x2="300" y2="275"/>
+    <line x1="300" y1="395" x2="300" y2="435"/>
+  </g>
+  <g stroke="#0284c7" stroke-width="2.2" stroke-dasharray="4,3">
+    <line x1="220" y1="335" x2="245" y2="335"/>
+    <line x1="355" y1="335" x2="380" y2="335"/>
+  </g>
+
+  <!-- Bottom Legend Banner -->
+  <rect x="18" y="585" width="564" height="80" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+  <text x="300" y="607" font-family="'Noto Serif Devanagari', serif" font-size="12px" font-weight="800" fill="#78350f" text-anchor="middle">★ भृगु नंदी नाड़ी दृष्टि एवं संबंध सूत्र (BNN Aspect Rules) ★</text>
+  <text x="300" y="627" font-family="'Kohinoor Devanagari', 'Poppins', sans-serif" font-size="10.5px" font-weight="600" fill="#1e293b" text-anchor="middle">• 1-5-9 त्रिकोण (समान दिशा) = 75% से 100% प्रबल युति प्रभाव • 1-7 समसप्तक (विपरीत दिशा) = 50% प्रत्यक्ष दृष्टि</text>
+  <text x="300" y="647" font-family="'Kohinoor Devanagari', 'Poppins', sans-serif" font-size="10px" font-weight="500" fill="#57534e" text-anchor="middle">• पूर्व ↔ पश्चिम (अग्नि ↔ वायु) परस्पर सक्रिय • उत्तर ↔ दक्षिण (जल ↔ पृथ्वी) सृजन व कर्म फलित</text>
+</svg>
