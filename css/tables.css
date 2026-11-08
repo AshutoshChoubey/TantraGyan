@@ -382,6 +382,23 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
+.planet-conjunction-wrap {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  vertical-align: middle;
+}
+
+.conjunction-plus {
+  display: inline-block;
+  font-weight: 900;
+  font-size: 0.95em;
+  color: var(--accent-gold, #d97706);
+  margin: 0 0.22rem;
+  vertical-align: middle;
+}
+
 .planet-icon {
   width: 14px;
   height: 14px;

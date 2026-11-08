@@ -34,12 +34,21 @@
       <stop offset="0%" stop-color="#ffe4e6" stop-opacity="0.96"/>
       <stop offset="100%" stop-color="#fecdd3" stop-opacity="0.96"/>
     </linearGradient>
+    <!-- Planetary Radiant Gradients -->
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffedd5"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <linearGradient id="jupGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+    <linearGradient id="venGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#fbcfe8"/></linearGradient>
+    <linearGradient id="satGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#eff6ff"/><stop offset="100%" stop-color="#bfdbfe"/></linearGradient>
+    <linearGradient id="marsGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fee2e2"/><stop offset="100%" stop-color="#fecaca"/></linearGradient>
+    <linearGradient id="mercGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d1fae5"/><stop offset="100%" stop-color="#a7f3d0"/></linearGradient>
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f0f9ff"/><stop offset="100%" stop-color="#e0f2fe"/></linearGradient>
+    <linearGradient id="rahuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ede9fe"/><stop offset="100%" stop-color="#ddd6fe"/></linearGradient>
+    <linearGradient id="ketuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
     <filter id="cardPlateShadow" x="-3%" y="-3%" width="106%" height="106%">
       <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
     </filter>
   </defs>
 
-  <!-- Outer Plate Frame -->
   <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
   <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
 
@@ -48,10 +57,9 @@
   <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
   <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">भृगु नंदी नाड़ी दिशा-आधारित डायमंड चक्र</text>
   <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">BNN 4 Directional Trines &amp; 1-5-9 Conjunction Matrix</text>
-  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">पूर्व (1,5,9 अग्नि) • दक्षिण (2,6,10 पृथ्वी) • पश्चिम (3,7,11 वायु) • उत्तर (4,8,12 जल)</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">पूर्व (1, 5, 9 अग्नि) • दक्षिण (2, 6, 10 पृथ्वी) • पश्चिम (3, 7, 11 वायु) • उत्तर (4, 8, 12 जल)</text>
 
 
-  <!-- Kundli Polygons -->
   <g>
     <polygon points="270,100 395,225 270,350 145,225" fill="url(#kendraGrad)" stroke="#b45309" stroke-width="1.8" stroke-linejoin="round"/>
     <polygon points="20,100 270,100 145,225" fill="url(#trikonaGrad)" stroke="#059669" stroke-width="1.8" stroke-linejoin="round"/>

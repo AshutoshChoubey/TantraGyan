@@ -35,6 +35,12 @@ class BookEngine {
     this.pages = Array.from(rawPages);
     this.totalPages = this.pages.length;
 
+    // Decorate all raw pages in store with authentic colorful planet badges
+    const store = document.getElementById('book-pages-store');
+    if (store) {
+      this.decoratePlanetBadges(store);
+    }
+
     this.leftPageEl = document.getElementById('left-page-container');
     this.rightPageEl = document.getElementById('right-page-container');
     this.prevBtn = document.getElementById('btn-prev-page');
@@ -1272,33 +1278,111 @@ class BookEngine {
   }
 
   /**
-   * Automatically decorates planet names with authentic Vedic Jyotish color badges and 3D icons
+   * Automatically decorates planet names and multi-planet conjunctions with authentic
+   * Vedic Jyotish color badges, astronomical symbols (☉, ☽, ♂, ☿, ♃, ♀, ♄, ☊, ☋), and 3D icons
    */
   decoratePlanetBadges(container) {
     if (!container) return;
-    const planetMap = [
-      { key: 'sun', icon: 'sun.png', names: ['Sun', 'सूर्य'] },
-      { key: 'moon', icon: 'moon.png', names: ['Moon', 'चन्द्र', 'चंद्र'] },
-      { key: 'mars', icon: 'mars.png', names: ['Mars', 'मंगल'] },
-      { key: 'mercury', icon: 'mercury.png', names: ['Mercury', 'बुध'] },
-      { key: 'jupiter', icon: 'jupiter.png', names: ['Jupiter', 'गुरु', 'बृहस्पति'] },
-      { key: 'venus', icon: 'venus.png', names: ['Venus', 'शुक्र'] },
-      { key: 'saturn', icon: 'saturn.png', names: ['Saturn', 'शनि'] },
-      { key: 'rahu', icon: 'rahu.png', names: ['Rahu', 'राहु'] },
-      { key: 'ketu', icon: 'ketu.png', names: ['Ketu', 'केतु'] }
+    const PLANETS = [
+      { key: 'sun', symbol: '☉', icon: 'sun.png', names: ['सूर्य', 'रवि', 'आदित्य', 'Sun'] },
+      { key: 'moon', symbol: '☽', icon: 'moon.png', names: ['चन्द्रमा', 'चन्द्र', 'चंद्रमा', 'चंद्र', 'सोम', 'Moon'] },
+      { key: 'mars', symbol: '♂', icon: 'mars.png', names: ['मंगल', 'भौम', 'कुज', 'Mars'] },
+      { key: 'mercury', symbol: '☿', icon: 'mercury.png', names: ['बुध', 'सौम्य', 'Mercury'] },
+      { key: 'jupiter', symbol: '♃', icon: 'jupiter.png', names: ['बृहस्पति', 'गुरु', 'जीव', 'Jupiter'] },
+      { key: 'venus', symbol: '♀', icon: 'venus.png', names: ['शुक्र', 'भार्गव', 'Venus'] },
+      { key: 'saturn', symbol: '♄', icon: 'saturn.png', names: ['शनैश्चर', 'शनि', 'मंद', 'Saturn'] },
+      { key: 'rahu', symbol: '☊', icon: 'rahu.png', names: ['राहु', 'Rahu'] },
+      { key: 'ketu', symbol: '☋', icon: 'ketu.png', names: ['केतु', 'Ketu'] }
     ];
 
-    const tableCells = container.querySelectorAll('.astro-table td.primary-col, .astro-table td:first-child');
-    tableCells.forEach(cell => {
-      const strong = cell.querySelector('strong') || cell;
-      const text = strong.textContent.trim();
-      for (const p of planetMap) {
-        if (p.names.some(n => text === n || text.startsWith(n + ' ') || text.startsWith(n + ' ('))) {
-          if (!cell.classList.contains(`planet-col-${p.key}`)) {
-            cell.classList.add(`planet-col-${p.key}`);
-            strong.innerHTML = `<span class="planet-badge planet-${p.key}"><img src="assets/images/planets/${p.icon}" class="planet-icon" alt="${p.key}"/> ${text}</span>`;
+    function matchPlanet(str) {
+      if (!str) return null;
+      const clean = str.trim();
+      for (const p of PLANETS) {
+        for (const name of p.names) {
+          if (clean === name || clean.startsWith(name + ' ') || clean.startsWith(name + '(')) {
+            return { planet: p, label: name };
           }
-          break;
+        }
+      }
+      return null;
+    }
+
+    function renderSingleOrSlash(token) {
+      if (token.includes('/')) {
+        const subParts = token.split('/').map(s => s.trim());
+        const subDecorated = [];
+        for (const sp of subParts) {
+          const m = matchPlanet(sp);
+          if (m) {
+            subDecorated.push(`<span class="planet-badge planet-${m.planet.key}"><img src="assets/images/planets/${m.planet.icon}" class="planet-icon" alt="${m.planet.key}"/> ${m.planet.symbol} ${m.label}</span>`);
+          } else {
+            return null;
+          }
+        }
+        return subDecorated.join('<span style="margin:0 2px; font-weight:bold; color:var(--text-muted,#64748b);">/</span>');
+      }
+      const m = matchPlanet(token);
+      if (m) {
+        return `<span class="planet-badge planet-${m.planet.key}"><img src="assets/images/planets/${m.planet.icon}" class="planet-icon" alt="${m.planet.key}"/> ${m.planet.symbol} ${m.label}</span>`;
+      }
+      return null;
+    }
+
+    function formatConjunctionOrPlanet(text) {
+      if (!text || text.includes('planet-badge')) return text;
+      let extra = '';
+      let base = text.trim();
+      const parenMatch = base.match(/^(.*?)\s*(\([^)]+\))$/);
+      if (parenMatch) {
+        base = parenMatch[1].trim();
+        extra = ' ' + parenMatch[2].trim();
+      }
+
+      if (base.includes('+')) {
+        const parts = base.split('+').map(s => s.trim());
+        const decoratedParts = [];
+        let allMatched = true;
+        for (const part of parts) {
+          const formatted = renderSingleOrSlash(part);
+          if (formatted) {
+            decoratedParts.push(formatted);
+          } else {
+            allMatched = false;
+            break;
+          }
+        }
+        if (allMatched && decoratedParts.length > 0) {
+          return `<span class="planet-conjunction-wrap">${decoratedParts.join('<span class="conjunction-plus">+</span>')}</span>` +
+            (extra ? `<span style="font-size:0.82em; opacity:0.85; margin-left:4px; font-weight:normal;">${extra}</span>` : '');
+        }
+      }
+
+      const single = renderSingleOrSlash(base);
+      if (single) {
+        return single + (extra ? `<span style="font-size:0.82em; opacity:0.85; margin-left:4px; font-weight:normal;">${extra}</span>` : '');
+      }
+      return text;
+    }
+
+    const targetCells = container.querySelectorAll(
+      '.astro-table td.primary-col, .astro-table td:first-child, ' +
+      '.bnn-table td:first-child, .comparison-table td:first-child, ' +
+      '.content-table td:first-child, td.col-highlight, ' +
+      '.bnn-table td strong, .astro-table td strong'
+    );
+
+    targetCells.forEach(cell => {
+      if (cell.querySelector('.planet-badge') || cell.closest('.planet-badge')) return;
+      const originalText = cell.textContent.trim();
+      if (!originalText) return;
+      const decorated = formatConjunctionOrPlanet(originalText);
+      if (decorated !== originalText) {
+        cell.innerHTML = decorated;
+        const firstToken = originalText.split('+')[0].split('/')[0].trim();
+        const firstPlanet = matchPlanet(firstToken);
+        if (firstPlanet && !cell.classList.contains(`planet-col-${firstPlanet.planet.key}`)) {
+          cell.classList.add(`planet-col-${firstPlanet.planet.key}`);
         }
       }
     });

@@ -34,12 +34,21 @@
       <stop offset="0%" stop-color="#ffe4e6" stop-opacity="0.96"/>
       <stop offset="100%" stop-color="#fecdd3" stop-opacity="0.96"/>
     </linearGradient>
+    <!-- Planetary Radiant Gradients -->
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffedd5"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <linearGradient id="jupGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+    <linearGradient id="venGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#fbcfe8"/></linearGradient>
+    <linearGradient id="satGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#eff6ff"/><stop offset="100%" stop-color="#bfdbfe"/></linearGradient>
+    <linearGradient id="marsGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fee2e2"/><stop offset="100%" stop-color="#fecaca"/></linearGradient>
+    <linearGradient id="mercGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d1fae5"/><stop offset="100%" stop-color="#a7f3d0"/></linearGradient>
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f0f9ff"/><stop offset="100%" stop-color="#e0f2fe"/></linearGradient>
+    <linearGradient id="rahuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ede9fe"/><stop offset="100%" stop-color="#ddd6fe"/></linearGradient>
+    <linearGradient id="ketuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
     <filter id="cardPlateShadow" x="-3%" y="-3%" width="106%" height="106%">
       <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
     </filter>
   </defs>
 
-  <!-- Outer Plate Frame -->
   <rect x="6" y="6" width="548" height="738" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
   <rect x="12" y="12" width="536" height="726" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
 
@@ -58,9 +67,27 @@
     <text x="65" y="42" text-anchor="middle" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="15" font-weight="900">स्तर 1</text>
     <text x="65" y="64" text-anchor="middle" fill="#fef3c7" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">ग्रह कारकत्व</text>
     
-    <text x="145" y="30" fill="#78350f" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800">नैसर्गिक ग्रह कारकत्व (Planetary Significations)</text>
-    <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• गुरु (जीव कारक), शुक्र (स्त्री कारक), शनि (कर्म कारक), सूर्य (आत्मा/पिता)</text>
-    <text x="145" y="74" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5">नियम: ग्रह स्वयं व्यक्ति व वस्तु दोनों है; भाव स्वामी की तुलना में कारकत्व प्रधान है।</text>
+    <text x="145" y="28" fill="#78350f" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800">नैसर्गिक ग्रह कारकत्व (Planetary Significations)</text>
+    
+    <!-- Colorful Planet Pills in Tier 1 -->
+    
+    <rect x="145" y="36" width="58" height="20" rx="10.0" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.3"/>
+    <text x="174.0" y="49.6" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#b45309">♃ गुरु</text>
+    
+    <rect x="210" y="36" width="58" height="20" rx="10.0" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
+    <text x="239.0" y="49.6" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#be185d">♀ शुक्र</text>
+    
+    <rect x="275" y="36" width="58" height="20" rx="10.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="304.0" y="49.6" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8">♄ शनि</text>
+    
+    <rect x="340" y="36" width="58" height="20" rx="10.0" fill="#ffedd5" stroke="#ea580c" stroke-width="1.3"/>
+    <text x="369.0" y="49.6" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#c2410c">☉ सूर्य</text>
+    
+    <rect x="405" y="36" width="58" height="20" rx="10.0" fill="#fee2e2" stroke="#ef4444" stroke-width="1.3"/>
+    <text x="434.0" y="49.6" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#dc2626">♂ मंगल</text>
+
+    <text x="145" y="74" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700">• गुरु (जीव), शुक्र (स्त्री/धन), शनि (कर्म), सूर्य (आत्मा/पिता), मंगल (पराक्रम)</text>
+    <text x="145" y="88" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5">नियम: ग्रह स्वयं व्यक्ति व परिस्थिति दोनों है; भाव स्वामी की अपेक्षा कारकत्व सर्वोपरि है।</text>
   </g>
 
   <!-- Flow Arrow 1 -->
@@ -75,8 +102,8 @@
     <text x="65" y="64" text-anchor="middle" fill="#e0f2fe" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">1-5-9 त्रिकोण</text>
     
     <text x="145" y="30" fill="#0369a1" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800">दिशा-संयोजन त्रिकोण (Directional Harmony)</text>
-    <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• पूर्व (1,5,9 अग्नि), दक्षिण (2,6,10 पृथ्वी), पश्चिम (3,7,11 वायु), उत्तर (4,8,12 जल)</text>
-    <text x="145" y="74" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5">नियम: समान दिशा के ग्रह एक साथ कार्य करते हैं; नाड़ी में यह मुख्य युति संबंध है।</text>
+    <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• पूर्व (1, 5, 9 अग्नि), दक्षिण (2, 6, 10 पृथ्वी), पश्चिम (3, 7, 11 वायु), उत्तर (4, 8, 12 जल)</text>
+    <text x="145" y="74" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5">नियम: समान दिशा के ग्रह एक ही कक्ष में बैठकर 100% संयुक्त फल देते हैं।</text>
   </g>
 
   <!-- Flow Arrow 2 -->
@@ -92,7 +119,7 @@
     
     <text x="145" y="30" fill="#047857" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800">अग्रिम, पृष्ठ एवं कर्तरी वेध (Flank Influences)</text>
     <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• अग्र (+1 राशि) भविष्य व गति • पृष्ठ (-1 राशि) अतीत व संचित पृष्ठभूमि</text>
-    <text x="145" y="74" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5">नियम: दोनों ओर शुभ = सुरक्षा कवच (सुरक्षा); दोनों ओर पापी = बन्धन योग (रुकावट)।</text>
+    <text x="145" y="74" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5">नियम: दोनों ओर शुभ ग्रह = सुरक्षा कवच; दोनों ओर पापी ग्रह = बन्धन योग।</text>
   </g>
 
   <!-- Flow Arrow 3 -->
@@ -107,7 +134,7 @@
     <text x="65" y="64" text-anchor="middle" fill="#ede9fe" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">अंश व विनिमय</text>
     
     <text x="145" y="30" fill="#6d28d9" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800">ग्रह अंश-क्रम एवं वक्री विनिमय (Degree Ordering &amp; Retro Swap)</text>
-    <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• निम्न अंश ग्रह आगे, उच्च अंश पीछे • पीछे वाला ग्रह आगे वाले की ओर गतिमान</text>
+    <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• निम्न अंश ग्रह आगे, उच्च अंश पीछे (पीछे वाला ग्रह आगे वाले की ओर गतिमान)</text>
     <text x="145" y="74" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5">नियम: वक्री ग्रह का 50% अस्तित्व पूर्व राशि में होता है; राशि विनिमय से दोहरा फल मिलता है।</text>
   </g>
 

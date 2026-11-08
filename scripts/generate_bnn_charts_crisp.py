@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Generate the complete suite of 12 ULTRA-CRISP, HIGH-DEFINITION, SACRED PARCHMENT
+Generate the complete suite of 12 ULTRA-CRISP, VIBRANTLY COLORFUL, SACRED PARCHMENT
 SVG Diamond Charts & Diagrams for Bhrigu Nandi Nadi: Karma-Samyojan Sutra.
 
-Invariants:
+Key Features:
+- Authentic Planet Colors & Astronomical Symbols (☉, ☽, ♂, ☿, ♃, ♀, ♄, ☊, ☋)
+- Distinct colored pill badges for every planet in conjunctions and triplets
 - 100% Valid XML (all & escaped as &amp;)
 - Pure Vector Sharpness: NO filters or feGaussianBlur on text/path groups
 - Standard parchment aesthetic matching Vedic Astrology Compendium (lagna_chart, kalpurush_bhavas)
 - Tailored 560px width coordinate space for 1:1 crisp rendering in 3D book & mobile web view
+- Standard English numerals (1, 2, 3, 4, 5, 6, 7, 8, 9, 0)
 """
 
 import os
@@ -24,6 +27,26 @@ def write_and_verify(filename, svg_content):
     # Validate XML
     ET.parse(filepath)
     print(f"✅ Generated & Validated: {filename} ({os.path.getsize(filepath):,} bytes)")
+
+# Planetary color and symbol constants
+P_STYLE = {
+    "sun": {"sym": "☉", "hi": "सूर्य", "en": "Sun", "bg": "#ffedd5", "border": "#ea580c", "text": "#c2410c", "grad": "sunGrad"},
+    "moon": {"sym": "☽", "hi": "चन्द्र", "en": "Moon", "bg": "#f0f9ff", "border": "#0284c7", "text": "#0369a1", "grad": "moonGrad"},
+    "mars": {"sym": "♂", "hi": "मंगल", "en": "Mars", "bg": "#fee2e2", "border": "#ef4444", "text": "#dc2626", "grad": "marsGrad"},
+    "mercury": {"sym": "☿", "hi": "बुध", "en": "Mercury", "bg": "#d1fae5", "border": "#10b981", "text": "#047857", "grad": "mercGrad"},
+    "jupiter": {"sym": "♃", "hi": "गुरु", "en": "Jupiter", "bg": "#fef3c7", "border": "#f59e0b", "text": "#b45309", "grad": "jupGrad"},
+    "venus": {"sym": "♀", "hi": "शुक्र", "en": "Venus", "bg": "#fce7f3", "border": "#ec4899", "text": "#be185d", "grad": "venGrad"},
+    "saturn": {"sym": "♄", "hi": "शनि", "en": "Saturn", "bg": "#eff6ff", "border": "#3b82f6", "text": "#1d4ed8", "grad": "satGrad"},
+    "rahu": {"sym": "☊", "hi": "राहु", "en": "Rahu", "bg": "#ede9fe", "border": "#8b5cf6", "text": "#4338ca", "grad": "rahuGrad"},
+    "ketu": {"sym": "☋", "hi": "केतु", "en": "Ketu", "bg": "#fef3c7", "border": "#b45309", "text": "#78350f", "grad": "ketuGrad"},
+}
+
+def planet_badge_svg(p_key, x, y, width=62, height=24):
+    p = P_STYLE[p_key]
+    rx = height / 2
+    return f"""
+    <rect x="{x}" y="{y}" width="{width}" height="{height}" rx="{rx}" fill="{p['bg']}" stroke="{p['border']}" stroke-width="1.3"/>
+    <text x="{x + width/2}" y="{y + height*0.68}" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="{p['text']}">{p['sym']} {p['hi']}</text>"""
 
 COMMON_DEFS = """
   <defs>
@@ -60,6 +83,16 @@ COMMON_DEFS = """
       <stop offset="0%" stop-color="#ffe4e6" stop-opacity="0.96"/>
       <stop offset="100%" stop-color="#fecdd3" stop-opacity="0.96"/>
     </linearGradient>
+    <!-- Planetary Radiant Gradients -->
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffedd5"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <linearGradient id="jupGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+    <linearGradient id="venGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#fbcfe8"/></linearGradient>
+    <linearGradient id="satGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#eff6ff"/><stop offset="100%" stop-color="#bfdbfe"/></linearGradient>
+    <linearGradient id="marsGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fee2e2"/><stop offset="100%" stop-color="#fecaca"/></linearGradient>
+    <linearGradient id="mercGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d1fae5"/><stop offset="100%" stop-color="#a7f3d0"/></linearGradient>
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f0f9ff"/><stop offset="100%" stop-color="#e0f2fe"/></linearGradient>
+    <linearGradient id="rahuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ede9fe"/><stop offset="100%" stop-color="#ddd6fe"/></linearGradient>
+    <linearGradient id="ketuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
     <filter id="cardPlateShadow" x="-3%" y="-3%" width="106%" height="106%">
       <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
     </filter>
@@ -75,14 +108,37 @@ def header_banner(title, sub, meta, height=66):
   <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">{meta}</text>
 """
 
+def draw_north_indian_kundli_polygons(fills, strokes):
+    coords = [
+        ("270,100 395,225 270,350 145,225", 1),
+        ("20,100 270,100 145,225", 2),
+        ("20,100 145,225 20,350", 3),
+        ("20,350 145,225 270,350 145,475", 4),
+        ("20,350 145,475 20,600", 5),
+        ("20,600 145,475 270,600", 6),
+        ("270,350 395,475 270,600 145,475", 7),
+        ("270,600 395,475 520,600", 8),
+        ("520,600 395,475 520,350", 9),
+        ("270,350 395,225 520,350 395,475", 10),
+        ("520,350 395,225 520,100", 11),
+        ("520,100 395,225 270,100", 12),
+    ]
+    svg_parts = []
+    for (pts, h_num) in coords:
+        f = fills.get(h_num, "#ffffff")
+        s = strokes.get(h_num, "#09090b")
+        svg_parts.append(f'<polygon points="{pts}" fill="{f}" stroke="{s}" stroke-width="1.8" stroke-linejoin="round"/>')
+    svg_parts.append('<rect x="20" y="100" width="500" height="500" fill="none" stroke="#78350f" stroke-width="2.4"/>')
+    svg_parts.append('<polygon points="270,100 520,350 270,600 20,350" fill="none" stroke="#b45309" stroke-width="1.8"/>')
+    return "\n    ".join(svg_parts)
+
 # ==============================================================================
 # 1. Philosophy Hierarchy Chart (5-Tier Decision Model)
 # ==============================================================================
 def make_philosophy_hierarchy():
     w, h = 560, 750
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
 {COMMON_DEFS}
-  <!-- Outer Plate Frame -->
   <rect x="6" y="6" width="548" height="{h-12}" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
   <rect x="12" y="12" width="536" height="{h-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
 
@@ -95,9 +151,17 @@ def make_philosophy_hierarchy():
     <text x="65" y="42" text-anchor="middle" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="15" font-weight="900">स्तर 1</text>
     <text x="65" y="64" text-anchor="middle" fill="#fef3c7" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">ग्रह कारकत्व</text>
     
-    <text x="145" y="30" fill="#78350f" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800">नैसर्गिक ग्रह कारकत्व (Planetary Significations)</text>
-    <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• गुरु (जीव कारक), शुक्र (स्त्री कारक), शनि (कर्म कारक), सूर्य (आत्मा/पिता)</text>
-    <text x="145" y="74" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5">नियम: ग्रह स्वयं व्यक्ति व वस्तु दोनों है; भाव स्वामी की तुलना में कारकत्व प्रधान है।</text>
+    <text x="145" y="28" fill="#78350f" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800">नैसर्गिक ग्रह कारकत्व (Planetary Significations)</text>
+    
+    <!-- Colorful Planet Pills in Tier 1 -->
+    {planet_badge_svg("jupiter", 145, 36, 58, 20)}
+    {planet_badge_svg("venus", 210, 36, 58, 20)}
+    {planet_badge_svg("saturn", 275, 36, 58, 20)}
+    {planet_badge_svg("sun", 340, 36, 58, 20)}
+    {planet_badge_svg("mars", 405, 36, 58, 20)}
+
+    <text x="145" y="74" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700">• गुरु (जीव), शुक्र (स्त्री/धन), शनि (कर्म), सूर्य (आत्मा/पिता), मंगल (पराक्रम)</text>
+    <text x="145" y="88" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5">नियम: ग्रह स्वयं व्यक्ति व परिस्थिति दोनों है; भाव स्वामी की अपेक्षा कारकत्व सर्वोपरि है।</text>
   </g>
 
   <!-- Flow Arrow 1 -->
@@ -112,8 +176,8 @@ def make_philosophy_hierarchy():
     <text x="65" y="64" text-anchor="middle" fill="#e0f2fe" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">1-5-9 त्रिकोण</text>
     
     <text x="145" y="30" fill="#0369a1" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800">दिशा-संयोजन त्रिकोण (Directional Harmony)</text>
-    <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• पूर्व (1,5,9 अग्नि), दक्षिण (2,6,10 पृथ्वी), पश्चिम (3,7,11 वायु), उत्तर (4,8,12 जल)</text>
-    <text x="145" y="74" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5">नियम: समान दिशा के ग्रह एक साथ कार्य करते हैं; नाड़ी में यह मुख्य युति संबंध है।</text>
+    <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• पूर्व (1, 5, 9 अग्नि), दक्षिण (2, 6, 10 पृथ्वी), पश्चिम (3, 7, 11 वायु), उत्तर (4, 8, 12 जल)</text>
+    <text x="145" y="74" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5">नियम: समान दिशा के ग्रह एक ही कक्ष में बैठकर 100% संयुक्त फल देते हैं।</text>
   </g>
 
   <!-- Flow Arrow 2 -->
@@ -129,7 +193,7 @@ def make_philosophy_hierarchy():
     
     <text x="145" y="30" fill="#047857" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800">अग्रिम, पृष्ठ एवं कर्तरी वेध (Flank Influences)</text>
     <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• अग्र (+1 राशि) भविष्य व गति • पृष्ठ (-1 राशि) अतीत व संचित पृष्ठभूमि</text>
-    <text x="145" y="74" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5">नियम: दोनों ओर शुभ = सुरक्षा कवच (सुरक्षा); दोनों ओर पापी = बन्धन योग (रुकावट)।</text>
+    <text x="145" y="74" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5">नियम: दोनों ओर शुभ ग्रह = सुरक्षा कवच; दोनों ओर पापी ग्रह = बन्धन योग।</text>
   </g>
 
   <!-- Flow Arrow 3 -->
@@ -144,7 +208,7 @@ def make_philosophy_hierarchy():
     <text x="65" y="64" text-anchor="middle" fill="#ede9fe" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700">अंश व विनिमय</text>
     
     <text x="145" y="30" fill="#6d28d9" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800">ग्रह अंश-क्रम एवं वक्री विनिमय (Degree Ordering &amp; Retro Swap)</text>
-    <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• निम्न अंश ग्रह आगे, उच्च अंश पीछे • पीछे वाला ग्रह आगे वाले की ओर गतिमान</text>
+    <text x="145" y="52" fill="#1e293b" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700">• निम्न अंश ग्रह आगे, उच्च अंश पीछे (पीछे वाला ग्रह आगे वाले की ओर गतिमान)</text>
     <text x="145" y="74" fill="#64748b" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5">नियम: वक्री ग्रह का 50% अस्तित्व पूर्व राशि में होता है; राशि विनिमय से दोहरा फल मिलता है।</text>
   </g>
 
@@ -169,83 +233,6 @@ def make_philosophy_hierarchy():
   <text x="280" y="704" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#334155" text-anchor="middle">★ नाड़ी सिद्धांत: दशा-अन्तर्दशा की अपेक्षा गोचर-संयोजन से तात्कालिक अचूक फलित होता है ★</text>
   <text x="280" y="720" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">प्रत्येक स्तर क्रमशः विश्लेषित करने पर शत-प्रतिशत सटीक भविष्यवाणी संभव है।</text>
 </svg>"""
-    return svg
-
-# ==============================================================================
-# Helper to draw North Indian Diamond Grid
-# ==============================================================================
-def draw_north_indian_kundli_polygons(fills, strokes):
-    """
-    Returns the standard 12 polygons for North Indian Kundli:
-    Bounds: x: 20-520, y: 100-600. Center: (270, 350)
-    """
-    coords = [
-        # H1
-        ("270,100 395,225 270,350 145,225", 1),
-        # H2
-        ("20,100 270,100 145,225", 2),
-        # H3
-        ("20,100 145,225 20,350", 3),
-        # H4
-        ("20,350 145,225 270,350 145,475", 4),
-        # H5
-        ("20,350 145,475 20,600", 5),
-        # H6
-        ("20,600 145,475 270,600", 6),
-        # H7
-        ("270,350 395,475 270,600 145,475", 7),
-        # H8
-        ("270,600 395,475 520,600", 8),
-        # H9
-        ("520,600 395,475 520,350", 9),
-        # H10
-        ("270,350 395,225 520,350 395,475", 10),
-        # H11
-        ("520,350 395,225 520,100", 11),
-        # H12
-        ("520,100 395,225 270,100", 12),
-    ]
-    svg_parts = []
-    for (pts, h_num) in coords:
-        f = fills.get(h_num, "#ffffff")
-        s = strokes.get(h_num, "#09090b")
-        svg_parts.append(f'<polygon points="{pts}" fill="{f}" stroke="{s}" stroke-width="1.8" stroke-linejoin="round"/>')
-    # Outer frame square
-    svg_parts.append('<rect x="20" y="100" width="500" height="500" fill="none" stroke="#78350f" stroke-width="2.4"/>')
-    # Inner diamond frame
-    svg_parts.append('<polygon points="270,100 520,350 270,600 20,350" fill="none" stroke="#b45309" stroke-width="1.8"/>')
-    return "\n    ".join(svg_parts)
-
-# Rashi centers for text placement
-HOUSE_CENTERS = {
-    1: (270, 225),
-    2: (145, 150),
-    3: (70, 225),
-    4: (145, 350),
-    5: (70, 475),
-    6: (145, 545),
-    7: (270, 475),
-    8: (395, 545),
-    9: (470, 475),
-    10: (395, 350),
-    11: (470, 225),
-    12: (395, 150)
-}
-
-RASHI_LABEL_POS = {
-    1: (270, 125),
-    2: (250, 115),
-    3: (35, 130),
-    4: (160, 250),
-    5: (35, 370),
-    6: (160, 580),
-    7: (270, 375),
-    8: (380, 580),
-    9: (505, 370),
-    10: (380, 250),
-    11: (505, 130),
-    12: (290, 115)
-}
 
 # ==============================================================================
 # 2. Jeeva Flow Diamond Chart
@@ -253,41 +240,27 @@ RASHI_LABEL_POS = {
 def make_jeeva_flow_chart():
     w, h = 560, 770
     fills = {
-        1: "url(#kendraGrad)", # Jeeva Lagna (Guru)
-        2: "url(#upachayaGrad)", # Agre (+1)
-        12: "url(#waterGrad)", # Prishta (-1)
-        5: "url(#trikonaGrad)", # Trikona 1
-        9: "url(#trikonaGrad)", # Trikona 2
-        7: "url(#marakaGrad)", # Samukha 180
+        1: "url(#kendraGrad)", 2: "url(#upachayaGrad)", 12: "url(#waterGrad)",
+        5: "url(#trikonaGrad)", 9: "url(#trikonaGrad)", 7: "url(#marakaGrad)",
     }
-    strokes = {
-        1: "#b45309",
-        2: "#0284c7",
-        12: "#7c3aed",
-        5: "#059669",
-        9: "#059669",
-        7: "#dc2626"
-    }
+    strokes = {1: "#b45309", 2: "#0284c7", 12: "#7c3aed", 5: "#059669", 9: "#059669", 7: "#dc2626"}
     kundli_svg = draw_north_indian_kundli_polygons(fills, strokes)
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
 {COMMON_DEFS}
-  <!-- Outer Plate Frame -->
   <rect x="6" y="6" width="548" height="{h-12}" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
   <rect x="12" y="12" width="536" height="{h-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
 
   {header_banner("उत्तर भारतीय डायमंड चार्ट में जीव-लग्न भाव-प्रवाह", "BNN Jeeva Lagna Counter-Clockwise Momentum &amp; Step-by-Step Flow", "गुरु (जीव) की केंद्रीय स्थिति, 1-5-9 त्रिकोण, 2-12 पार्श्व एवं 7वीं प्रत्यक्ष दृष्टि", 66)}
 
-  <!-- Kundli Polygons -->
   <g>
     {kundli_svg}
   </g>
 
-  <!-- Labels for Houses -->
-  <!-- H1: Jeeva -->
-  <text x="270" y="185" font-family="'Noto Serif Devanagari', serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">★ जीव (गुरु) ★</text>
-  <text x="270" y="208" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700" fill="#92400e" text-anchor="middle">1म भाव • स्वयं जातक</text>
-  <text x="270" y="230" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" fill="#451a03" text-anchor="middle">शारीरिक अस्तित्व, बुद्धि व आत्मा</text>
+  <!-- H1: Jeeva Badge -->
+  {planet_badge_svg("jupiter", 225, 175, 90, 26)}
+  <text x="270" y="218" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">1म भाव • जीव लग्न (स्वयं)</text>
+  <text x="270" y="235" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" fill="#451a03" text-anchor="middle">शारीरिक अस्तित्व, बुद्धि व संकल्प</text>
 
   <!-- H2: Agre -->
   <text x="145" y="140" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#0369a1" text-anchor="middle">अग्र (+1 भाव)</text>
@@ -337,7 +310,6 @@ def make_jeeva_flow_chart():
     <text x="260" y="118" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">• 12वें व 2रे में पापी ग्रह = बन्धन योग • 12वें व 2रे में शुभ ग्रह = सुरक्षा कवच (सहज सफलता)</text>
   </g>
 </svg>"""
-    return svg
 
 # ==============================================================================
 # 3. Directional Diamond Chart (4 Directions & 1-5-9)
@@ -345,22 +317,10 @@ def make_jeeva_flow_chart():
 def make_directional_diamond_chart():
     w, h = 560, 770
     fills = {
-        # East (Fire: 1, 5, 9)
-        1: "url(#kendraGrad)",
-        5: "url(#kendraGrad)",
-        9: "url(#kendraGrad)",
-        # South (Earth: 2, 6, 10)
-        2: "url(#trikonaGrad)",
-        6: "url(#trikonaGrad)",
-        10: "url(#trikonaGrad)",
-        # West (Air: 3, 7, 11)
-        3: "url(#upachayaGrad)",
-        7: "url(#upachayaGrad)",
-        11: "url(#upachayaGrad)",
-        # North (Water: 4, 8, 12)
-        4: "url(#waterGrad)",
-        8: "url(#waterGrad)",
-        12: "url(#waterGrad)",
+        1: "url(#kendraGrad)", 5: "url(#kendraGrad)", 9: "url(#kendraGrad)",
+        2: "url(#trikonaGrad)", 6: "url(#trikonaGrad)", 10: "url(#trikonaGrad)",
+        3: "url(#upachayaGrad)", 7: "url(#upachayaGrad)", 11: "url(#upachayaGrad)",
+        4: "url(#waterGrad)", 8: "url(#waterGrad)", 12: "url(#waterGrad)",
     }
     strokes = {
         1: "#b45309", 5: "#b45309", 9: "#b45309",
@@ -370,15 +330,13 @@ def make_directional_diamond_chart():
     }
     kundli_svg = draw_north_indian_kundli_polygons(fills, strokes)
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
 {COMMON_DEFS}
-  <!-- Outer Plate Frame -->
   <rect x="6" y="6" width="548" height="{h-12}" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
   <rect x="12" y="12" width="536" height="{h-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
 
-  {header_banner("भृगु नंदी नाड़ी दिशा-आधारित डायमंड चक्र", "BNN 4 Directional Trines &amp; 1-5-9 Conjunction Matrix", "पूर्व (1,5,9 अग्नि) • दक्षिण (2,6,10 पृथ्वी) • पश्चिम (3,7,11 वायु) • उत्तर (4,8,12 जल)", 66)}
+  {header_banner("भृगु नंदी नाड़ी दिशा-आधारित डायमंड चक्र", "BNN 4 Directional Trines &amp; 1-5-9 Conjunction Matrix", "पूर्व (1, 5, 9 अग्नि) • दक्षिण (2, 6, 10 पृथ्वी) • पश्चिम (3, 7, 11 वायु) • उत्तर (4, 8, 12 जल)", 66)}
 
-  <!-- Kundli Polygons -->
   <g>
     {kundli_svg}
   </g>
@@ -436,41 +394,30 @@ def make_directional_diamond_chart():
     <text x="260" y="118" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#7c3aed" text-anchor="middle">• उत्तर (4, 8, 12): कर्क, वृश्चिक, मीन = जल तत्व • भावना, अंतर्ज्ञान, वैराग्य, मोक्ष</text>
   </g>
 </svg>"""
-    return svg
 
 # ==============================================================================
 # 4. Kartari & Flank Diamond Chart
 # ==============================================================================
 def make_kartari_flank_chart():
     w, h = 560, 770
-    fills = {
-        1: "url(#kendraGrad)", # Center Target Planet
-        2: "url(#upachayaGrad)", # Agre (+1)
-        12: "url(#waterGrad)", # Prishta (-1)
-    }
-    strokes = {
-        1: "#b45309",
-        2: "#0284c7",
-        12: "#7c3aed",
-    }
+    fills = {1: "url(#kendraGrad)", 2: "url(#upachayaGrad)", 12: "url(#waterGrad)"}
+    strokes = {1: "#b45309", 2: "#0284c7", 12: "#7c3aed"}
     kundli_svg = draw_north_indian_kundli_polygons(fills, strokes)
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
 {COMMON_DEFS}
-  <!-- Outer Plate Frame -->
   <rect x="6" y="6" width="548" height="{h-12}" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
   <rect x="12" y="12" width="536" height="{h-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
 
   {header_banner("अग्रिम, पृष्ठ एवं शुभ/पाप-कर्तरी वेध डायमंड चक्र", "Next (+1) &amp; Rear (-1) Flank Influences &amp; Planetary Siege Mechanics", "किसी भी ग्रह के आगे व पीछे स्थित ग्रहों का जीवन पर नियंत्रणकारी प्रभाव", 66)}
 
-  <!-- Kundli Polygons -->
   <g>
     {kundli_svg}
   </g>
 
-  <!-- H1: Middle Planet -->
-  <text x="270" y="195" font-family="'Noto Serif Devanagari', serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">★ मध्य ग्रह (Target) ★</text>
-  <text x="270" y="218" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700" fill="#92400e" text-anchor="middle">1म भाव • फलित का केंद्र</text>
+  <!-- H1: Middle Planet Badge -->
+  {planet_badge_svg("jupiter", 215, 175, 110, 26)}
+  <text x="270" y="218" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="700" fill="#92400e" text-anchor="middle">1म भाव • फलित का केंद्र</text>
   <text x="270" y="238" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" fill="#451a03" text-anchor="middle">(उदा. गुरु = जीव, शनि = कर्म)</text>
 
   <!-- H2: Front Flank -->
@@ -481,14 +428,12 @@ def make_kartari_flank_chart():
   <text x="395" y="140" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800" fill="#6d28d9" text-anchor="middle">पृष्ठ ग्रह (-1 राशि)</text>
   <text x="395" y="160" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#1e293b" text-anchor="middle">अतीत, संचित बल, पृष्ठभूमि</text>
 
-  <!-- Flank Pressure Arrows -->
   <path d="M 180 170 L 230 200" stroke="#0284c7" stroke-width="2.5" stroke-dasharray="3,2"/>
   <polygon points="228,194 234,202 224,204" fill="#0284c7"/>
 
   <path d="M 360 170 L 310 200" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="3,2"/>
   <polygon points="316,204 306,202 312,194" fill="#7c3aed"/>
 
-  <!-- Neutral text in other houses -->
   <text x="70" y="230" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">3रा भाव</text>
   <text x="145" y="355" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">4था भाव</text>
   <text x="70" y="475" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">5वां भाव</text>
@@ -499,43 +444,59 @@ def make_kartari_flank_chart():
   <text x="395" y="355" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">10वां भाव</text>
   <text x="470" y="230" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">11वां भाव</text>
 
-  <!-- Bottom Comparison Cards -->
+  <!-- Bottom Comparison Cards with colorful planet icons -->
   <g transform="translate(20, 615)">
     <!-- Shubha Kartari -->
     <rect x="0" y="0" width="255" height="135" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.4"/>
     <text x="127" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#047857" text-anchor="middle">🛡️ शुभ कर्तरी योग (Suraksha Kavach)</text>
-    <text x="127" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#1e293b" text-anchor="middle">12वें में शुक्र/बुध + 2रे में गुरु/चन्द्र</text>
-    <text x="127" y="70" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#334155" text-anchor="middle">• जातक को हर संकट में दैवीय सुरक्षा मिलती है</text>
-    <text x="127" y="90" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#334155" text-anchor="middle">• बिना बड़े श्रम के भी कार्य सहज सिद्ध होते हैं</text>
-    <text x="127" y="112" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#047857" text-anchor="middle">परिणाम: सुख, समृद्धि, राजकृपा व सम्मान</text>
+    
+    <!-- Planets in Shubha Kartari -->
+    <g transform="translate(10, 36)">
+      {planet_badge_svg("venus", 5, 0, 52, 20)}
+      {planet_badge_svg("mercury", 62, 0, 52, 20)}
+      {planet_badge_svg("jupiter", 119, 0, 52, 20)}
+      {planet_badge_svg("moon", 176, 0, 52, 20)}
+    </g>
+
+    <text x="127" y="74" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#334155" text-anchor="middle">• 12वें में शुक्र/बुध + 2रे में गुरु/चन्द्र</text>
+    <text x="127" y="92" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#334155" text-anchor="middle">• जातक को हर संकट में दैवीय सुरक्षा मिलती है</text>
+    <text x="127" y="114" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#047857" text-anchor="middle">परिणाम: सुख, समृद्धि, राजकृपा व सम्मान</text>
 
     <!-- Papa Kartari -->
     <rect x="265" y="0" width="255" height="135" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1.4"/>
     <text x="392" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#b91c1c" text-anchor="middle">⛓️ पाप कर्तरी योग (Bandhana Yoga)</text>
-    <text x="392" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#1e293b" text-anchor="middle">12वें में शनि/राहु + 2रे में मंगल/केतु</text>
-    <text x="392" y="70" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#334155" text-anchor="middle">• मध्य ग्रह पिस जाता है; जातक बंधन महसूस करता है</text>
-    <text x="392" y="90" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#334155" text-anchor="middle">• आगे बढ़ने पर रुकावट, पीछे मुड़ने पर पछतावा</text>
-    <text x="392" y="112" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#b91c1c" text-anchor="middle">परिणाम: विलंब, मानसिक तनाव, संघर्ष</text>
+    
+    <!-- Planets in Papa Kartari -->
+    <g transform="translate(275, 36)">
+      {planet_badge_svg("saturn", 5, 0, 52, 20)}
+      {planet_badge_svg("rahu", 62, 0, 52, 20)}
+      {planet_badge_svg("mars", 119, 0, 52, 20)}
+      {planet_badge_svg("ketu", 176, 0, 52, 20)}
+    </g>
+
+    <text x="392" y="74" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#334155" text-anchor="middle">• 12वें में शनि/राहु + 2रे में मंगल/केतु</text>
+    <text x="392" y="92" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#334155" text-anchor="middle">• मध्य ग्रह पिस जाता है; रुकावट व विलंब</text>
+    <text x="392" y="114" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#b91c1c" text-anchor="middle">परिणाम: विलंब, मानसिक तनाव, कठोर संघर्ष</text>
   </g>
 </svg>"""
-    return svg
 
 # ==============================================================================
 # 5. Karaka Relationship Wheel
 # ==============================================================================
 def make_karaka_relationship_wheel():
     w, h = 560, 770
-    planets = [
-        ("सूर्य (Sun)", "आत्मा • पिता • शासन • अहंकार", "गुरु, मंगल", "बुध", "शुक्र, शनि, राहु", "#b45309", "#fef3c7"),
-        ("चन्द्र (Moon)", "मन • माता • जल • यात्रा • कला", "सूर्य, गुरु", "मंगल, बुध, शुक्र, शनि", "राहु, केतु", "#0284c7", "#e0f2fe"),
-        ("मंगल (Mars)", "पराक्रम • भ्राता • रक्त • भूमि • साहस", "सूर्य, चन्द्र, गुरु", "शुक्र, शनि", "बुध, राहु", "#dc2626", "#fee2e2"),
-        ("बुध (Mercury)", "बुद्धि • व्यापार • वाणी • शिक्षा • मित्र", "सूर्य, शुक्र, शनि", "मंगल, गुरु", "चन्द्र, राहु", "#059669", "#d1fae5"),
-        ("गुरु (Jupiter)", "जीव (पुरुष) • ज्ञान • सन्तान • धर्म", "सूर्य, चन्द्र, मंगल", "शनि, राहु", "शुक्र, बुध", "#d97706", "#fef3c7"),
-        ("शुक्र (Venus)", "जीव (स्त्री) • धन • पत्नी • वाहन • विलास", "बुध, शनि, राहु", "मंगल, चन्द्र", "सूर्य, गुरु, केतु", "#db2777", "#fce7f3"),
-        ("शनि (Saturn)", "कर्म • आजीविका • विलंब • श्रम • आयु", "बुध, शुक्र, राहु", "गुरु", "सूर्य, चन्द्र, मंगल", "#475569", "#f1f5f9"),
-        ("राहु (Rahu)", "भ्रम • विदेश • विस्तार • माया • तकनीक", "बुध, शुक्र, शनि", "गुरु", "सूर्य, चन्द्र, मंगल, केतु", "#4338ca", "#ede9fe"),
-        ("केतु (Ketu)", "मोक्ष • संन्यास • त्याग • सूक्ष्म ज्ञान • जड़", "गुरु, मंगल, सूर्य", "शुक्र, शनि", "बुध, राहु, चन्द्र", "#78350f", "#fef3c7"),
-    ]
+    planets_order = ["sun", "moon", "mars", "mercury", "jupiter", "venus", "saturn", "rahu", "ketu"]
+    karaka_data = {
+        "sun": ("आत्मा • पिता • शासन • अहंकार", "गुरु, मंगल", "बुध", "शुक्र, शनि, राहु"),
+        "moon": ("मन • माता • जल • यात्रा • कला", "सूर्य, गुरु", "मंगल, बुध, शुक्र, शनि", "राहु, केतु"),
+        "mars": ("पराक्रम • भ्राता • रक्त • भूमि • साहस", "सूर्य, चन्द्र, गुरु", "शुक्र, शनि", "बुध, राहु"),
+        "mercury": ("बुद्धि • व्यापार • वाणी • शिक्षा • मित्र", "सूर्य, शुक्र, शनि", "मंगल, गुरु", "चन्द्र, राहु"),
+        "jupiter": ("जीव (पुरुष) • ज्ञान • सन्तान • धर्म", "सूर्य, चन्द्र, मंगल", "शनि, राहु", "शुक्र, बुध"),
+        "venus": ("जीव (स्त्री) • धन • पत्नी • वाहन • विलास", "बुध, शनि, राहु", "मंगल, चन्द्र", "सूर्य, गुरु, केतु"),
+        "saturn": ("कर्म • आजीविका • विलंब • श्रम • आयु", "बुध, शुक्र, राहु", "गुरु", "सूर्य, चन्द्र, मंगल"),
+        "rahu": ("भ्रम • विदेश • विस्तार • माया • तकनीक", "बुध, शुक्र, शनि", "गुरु", "सूर्य, चन्द्र, मंगल, केतु"),
+        "ketu": ("मोक्ष • संन्यास • त्याग • सूक्ष्म ज्ञान • जड़", "गुरु, मंगल, सूर्य", "शुक्र, शनि", "बुध, राहु, चन्द्र"),
+    }
 
     cards_svg = []
     card_w = 512
@@ -543,27 +504,30 @@ def make_karaka_relationship_wheel():
     start_y = 96
     gap = 9
 
-    for i, (name, karaka, friends, neutral, enemies, stroke_col, bg_col) in enumerate(planets):
+    for i, p_key in enumerate(planets_order):
+        p = P_STYLE[p_key]
+        karaka, friends, neutral, enemies = karaka_data[p_key]
         cy = start_y + i * (card_h + gap)
         cards_svg.append(f"""
   <g transform="translate(24, {cy})">
-    <rect width="{card_w}" height="{card_h}" rx="6" fill="#ffffff" stroke="{stroke_col}" stroke-width="1.3"/>
-    <rect width="115" height="{card_h}" rx="6" fill="{bg_col}" stroke="{stroke_col}" stroke-width="0.8"/>
-    <text x="57" y="26" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="{stroke_col}">{name}</text>
-    <text x="57" y="44" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#334155">प्रमुख नाड़ी कारक</text>
+    <rect width="{card_w}" height="{card_h}" rx="6" fill="#ffffff" stroke="{p['border']}" stroke-width="1.3"/>
+    <rect width="125" height="{card_h}" rx="6" fill="{p['bg']}" stroke="{p['border']}" stroke-width="0.8"/>
+    
+    <!-- Planet Symbol & Name with authentic color -->
+    <text x="62" y="27" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="{p['text']}">{p['sym']} {p['hi']}</text>
+    <text x="62" y="45" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#475569">{p['en']}</text>
 
     <!-- Details -->
-    <text x="125" y="22" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="800" fill="#0f172a">कारकत्व: <tspan font-weight="600" fill="#334155">{karaka}</tspan></text>
-    <text x="125" y="44" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700">
+    <text x="135" y="23" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="800" fill="#0f172a">कारकत्व: <tspan font-weight="600" fill="#334155">{karaka}</tspan></text>
+    <text x="135" y="44" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700">
       <tspan fill="#059669">मित्र: {friends}</tspan> • <tspan fill="#64748b">सम: {neutral}</tspan> • <tspan fill="#dc2626">शत्रु: {enemies}</tspan>
     </text>
   </g>""")
 
     cards_str = "\n".join(cards_svg)
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
 {COMMON_DEFS}
-  <!-- Outer Plate Frame -->
   <rect x="6" y="6" width="548" height="{h-12}" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
   <rect x="12" y="12" width="536" height="{h-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
 
@@ -576,13 +540,11 @@ def make_karaka_relationship_wheel():
   <text x="280" y="720" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#78350f" text-anchor="middle">★ नाड़ी सूत्र: मित्र ग्रहों की युति भाग्योदय कराती है, शत्रु ग्रहों का योग संघर्ष पैदा करता है ★</text>
   <text x="280" y="736" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">गुरु-शुक्र दोनों जीव हैं, शनि कर्म है, सूर्य यश है, बुध व्यापार है, राहु भ्रम व केतु मोक्ष है।</text>
 </svg>"""
-    return svg
 
 # ==============================================================================
 # 6. Elemental Directional Diamond Chart
 # ==============================================================================
 def make_elemental_directional_chart():
-    # Similar to directional diamond, but focusing on elemental interactions
     w, h = 560, 770
     fills = {
         1: "url(#kendraGrad)", 5: "url(#kendraGrad)", 9: "url(#kendraGrad)",
@@ -598,54 +560,58 @@ def make_elemental_directional_chart():
     }
     kundli_svg = draw_north_indian_kundli_polygons(fills, strokes)
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
 {COMMON_DEFS}
-  <!-- Outer Plate Frame -->
   <rect x="6" y="6" width="548" height="{h-12}" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
   <rect x="12" y="12" width="536" height="{h-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
 
-  {header_banner("चतुर्विध महाभूत एवं दिशा-संयोजन डायमंड चक्र", "BNN 4 Elemental Trines &amp; Directional Harmony (1-5-9 Samyoga Matrix)", "अग्नि (1,5,9), पृथ्वी (2,6,10), वायु (3,7,11), जल (4,8,12) का सम्मिश्रण", 66)}
+  {header_banner("चतुर्विध महाभूत एवं दिशा-संयोजन डायमंड चक्र", "BNN 4 Elemental Trines &amp; Directional Harmony (1-5-9 Samyoga Matrix)", "अग्नि (1, 5, 9), पृथ्वी (2, 6, 10), वायु (3, 7, 11), जल (4, 8, 12) का सम्मिश्रण", 66)}
 
   <g>
     {kundli_svg}
   </g>
 
-  <!-- Labels -->
-  <text x="270" y="195" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#78350f" text-anchor="middle">अग्नि तत्व (1)</text>
-  <text x="270" y="215" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#b45309" text-anchor="middle">मेष • ऊर्जा व धर्म</text>
+  <!-- Labels & colorful planet lords in Bhavas -->
+  <!-- Fire (1, 5, 9) -->
+  <text x="270" y="185" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#78350f" text-anchor="middle">अग्नि तत्व (1)</text>
+  <text x="270" y="202" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#b45309" text-anchor="middle">मेष • धर्म त्रिकोण</text>
+  {planet_badge_svg("mars", 240, 210, 60, 20)}
 
   <text x="70" y="470" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">अग्नि (5)</text>
-  <text x="70" y="490" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#b45309" text-anchor="middle">सिंह राशि</text>
+  <text x="70" y="490" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#b45309" text-anchor="middle">सिंह (☉ सूर्य)</text>
 
   <text x="470" y="470" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">अग्नि (9)</text>
-  <text x="470" y="490" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#b45309" text-anchor="middle">धनु राशि</text>
+  <text x="470" y="490" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#b45309" text-anchor="middle">धनु (♃ गुरु)</text>
 
+  <!-- Earth (2, 6, 10) -->
   <text x="145" y="145" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">पृथ्वी (2)</text>
-  <text x="145" y="165" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#059669" text-anchor="middle">वृषभ • अर्थ</text>
+  <text x="145" y="165" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#059669" text-anchor="middle">वृषभ (♀ शुक्र)</text>
 
   <text x="145" y="545" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">पृथ्वी (6)</text>
-  <text x="145" y="565" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#059669" text-anchor="middle">कन्या राशि</text>
+  <text x="145" y="565" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#059669" text-anchor="middle">कन्या (☿ बुध)</text>
 
   <text x="395" y="345" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">पृथ्वी (10)</text>
-  <text x="395" y="365" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#059669" text-anchor="middle">मकर राशि</text>
+  <text x="395" y="365" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#059669" text-anchor="middle">मकर (♄ शनि)</text>
 
+  <!-- Air (3, 7, 11) -->
   <text x="70" y="225" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#0369a1" text-anchor="middle">वायु (3)</text>
-  <text x="70" y="245" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#0284c7" text-anchor="middle">मिथुन • काम</text>
+  <text x="70" y="245" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#0284c7" text-anchor="middle">मिथुन (☿ बुध)</text>
 
   <text x="270" y="465" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800" fill="#0369a1" text-anchor="middle">वायु तत्व (7)</text>
-  <text x="270" y="485" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#0284c7" text-anchor="middle">तुला राशि</text>
+  <text x="270" y="485" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#0284c7" text-anchor="middle">तुला • काम (♀ शुक्र)</text>
 
   <text x="470" y="225" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#0369a1" text-anchor="middle">वायु (11)</text>
-  <text x="470" y="245" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#0284c7" text-anchor="middle">कुम्भ राशि</text>
+  <text x="470" y="245" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#0284c7" text-anchor="middle">कुम्भ (♄ शनि)</text>
 
+  <!-- Water (4, 8, 12) -->
   <text x="145" y="345" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">जल (4)</text>
-  <text x="145" y="365" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">कर्क • मोक्ष</text>
+  <text x="145" y="365" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">कर्क (☽ चन्द्र)</text>
 
   <text x="395" y="545" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">जल (8)</text>
-  <text x="395" y="565" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">वृश्चिक राशि</text>
+  <text x="395" y="565" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">वृश्चिक (♂ मंगल)</text>
 
   <text x="395" y="145" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">जल (12)</text>
-  <text x="395" y="165" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">मीन राशि</text>
+  <text x="395" y="165" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">मीन (♃ गुरु)</text>
 
   <!-- Bottom Legend Card -->
   <g transform="translate(20, 615)">
@@ -657,7 +623,6 @@ def make_elemental_directional_chart():
     <text x="260" y="118" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#64748b" text-anchor="middle">• वायु + पृथ्वी = मध्यम सम्मिश्रण (धूल/उदासीनता: कठोर परिश्रम के बाद ही फल)</text>
   </g>
 </svg>"""
-    return svg
 
 # ==============================================================================
 # 7. Jeeva 12 Bhavas Diamond Chart
@@ -665,25 +630,16 @@ def make_elemental_directional_chart():
 def make_jeeva_12bhavas_chart():
     w, h = 560, 770
     fills = {
-        1: "url(#kendraGrad)",
-        2: "url(#trikonaGrad)",
-        3: "url(#upachayaGrad)",
-        4: "url(#waterGrad)",
-        5: "url(#kendraGrad)",
-        6: "url(#trikonaGrad)",
-        7: "url(#marakaGrad)",
-        8: "url(#waterGrad)",
-        9: "url(#kendraGrad)",
-        10: "url(#trikonaGrad)",
-        11: "url(#upachayaGrad)",
-        12: "url(#waterGrad)",
+        1: "url(#kendraGrad)", 2: "url(#trikonaGrad)", 3: "url(#upachayaGrad)",
+        4: "url(#waterGrad)", 5: "url(#kendraGrad)", 6: "url(#trikonaGrad)",
+        7: "url(#marakaGrad)", 8: "url(#waterGrad)", 9: "url(#kendraGrad)",
+        10: "url(#trikonaGrad)", 11: "url(#upachayaGrad)", 12: "url(#waterGrad)",
     }
     strokes = {i: "#78350f" for i in range(1, 13)}
     kundli_svg = draw_north_indian_kundli_polygons(fills, strokes)
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
 {COMMON_DEFS}
-  <!-- Outer Plate Frame -->
   <rect x="6" y="6" width="548" height="{h-12}" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
   <rect x="12" y="12" width="536" height="{h-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
 
@@ -693,9 +649,10 @@ def make_jeeva_12bhavas_chart():
     {kundli_svg}
   </g>
 
-  <!-- 12 Bhavas Meaning relative to Guru -->
-  <text x="270" y="195" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#78350f" text-anchor="middle">1म: जीव स्वयं</text>
-  <text x="270" y="215" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#b45309" text-anchor="middle">आत्मज्ञानी, सात्विक, दीर्घायु</text>
+  <!-- 12 Bhavas Meaning relative to Guru with Planet badges -->
+  <text x="270" y="185" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#78350f" text-anchor="middle">1म: जीव स्वयं</text>
+  {planet_badge_svg("jupiter", 240, 192, 60, 20)}
+  <text x="270" y="226" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">आत्मज्ञानी, सात्विक, दीर्घायु</text>
 
   <text x="145" y="145" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">2रा: धन/वाणी</text>
   <text x="145" y="165" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#059669" text-anchor="middle">मधुर वक्ता, उत्तम कुल</text>
@@ -740,20 +697,19 @@ def make_jeeva_12bhavas_chart():
     <text x="260" y="118" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#7c3aed" text-anchor="middle">• गुरु के साथ राहु = गुरु-चांडाल (विदेश/भ्रम); गुरु के साथ केतु = परम मोक्ष योग</text>
   </g>
 </svg>"""
-    return svg
 
 # ==============================================================================
-# 8. Major Conjunctions Diamond Chart
+# 8. Major Conjunctions Diamond Chart (VIBRANT PLANET BADGES)
 # ==============================================================================
 def make_major_conjunctions_chart():
     w, h = 560, 770
     conjunctions = [
-        ("गुरु + शनि", "धर्म-कर्माधिपति योग", "न्यायिक पद, सामाजिक प्रतिष्ठा, उच्च कर्मयोग, कर्तव्यपरायणता", "#b45309", "#fef3c7"),
-        ("सूर्य + गुरु", "राजकृपा / प्रतिष्ठा योग", "सरकारी सम्मान, उच्च पद, पिता का पूर्ण सहयोग, सात्विक सत्ता", "#d97706", "#fffbeb"),
-        ("शुक्र + शनि", "लक्ष्मी-कर्म योग", "स्थिर अचल संपत्ति, विलासिता, व्यापारिक सफलता, ऐश्वर्य", "#059669", "#ecfdf5"),
-        ("बुध + शुक्र", "सरस्वती-लक्ष्मी योग", "चतुर व्यापारी, वाक्पटु, कला-संगीत प्रेमी, उच्च एकाउंटिंग/सीए", "#0284c7", "#eff6ff"),
-        ("मंगल + शनि", "यांत्रिकी / इंजीनियरिंग योग", "तकनीकी विशेषज्ञ, उद्योगपति, कठिन परिश्रम से शिखर की प्राप्ति", "#dc2626", "#fef2f2"),
-        ("शुक्र + केतु", "मुक्ति-लक्ष्मी / संन्यास योग", "आध्यात्मिक समृद्धि, वस्त्र/रसायन व्यापार, वैराग्य में सुख", "#7c3aed", "#faf5ff"),
+        ("jupiter", "saturn", "धर्म-कर्माधिपति योग", "न्यायिक पद, सामाजिक प्रतिष्ठा, उच्च कर्मयोग, कर्तव्यपरायणता", "#b45309"),
+        ("sun", "jupiter", "राजकृपा / प्रतिष्ठा योग", "सरकारी सम्मान, उच्च पद, पिता का पूर्ण सहयोग, सात्विक सत्ता", "#d97706"),
+        ("venus", "saturn", "लक्ष्मी-कर्म योग", "स्थिर अचल संपत्ति, विलासिता, व्यापारिक सफलता, ऐश्वर्य", "#059669"),
+        ("mercury", "venus", "सरस्वती-लक्ष्मी योग", "चतुर व्यापारी, वाक्पटु, कला-संगीत प्रेमी, उच्च एकाउंटिंग/CA", "#0284c7"),
+        ("mars", "saturn", "यांत्रिकी / इंजीनियरिंग योग", "तकनीकी विशेषज्ञ, उद्योगपति, कठिन परिश्रम से शिखर की प्राप्ति", "#dc2626"),
+        ("venus", "ketu", "मुक्ति-लक्ष्मी / संन्यास योग", "आध्यात्मिक समृद्धि, वस्त्र/रसायन व्यापार, वैराग्य में सुख", "#7c3aed"),
     ]
 
     cards_svg = []
@@ -762,25 +718,30 @@ def make_major_conjunctions_chart():
     start_y = 96
     gap = 10
 
-    for i, (planets, yoga, fruit, stroke_col, bg_col) in enumerate(conjunctions):
+    for i, (p1_key, p2_key, yoga, fruit, stroke_col) in enumerate(conjunctions):
         cy = start_y + i * (card_h + gap)
         cards_svg.append(f"""
   <g transform="translate(24, {cy})">
     <rect width="{card_w}" height="{card_h}" rx="6" fill="#ffffff" stroke="{stroke_col}" stroke-width="1.4"/>
-    <rect width="130" height="{card_h}" rx="6" fill="{bg_col}" stroke="{stroke_col}" stroke-width="0.8"/>
-    <text x="65" y="32" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="14" font-weight="900" fill="{stroke_col}">{planets}</text>
-    <text x="65" y="54" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#334155">{yoga}</text>
+    
+    <!-- Left Planet Badges Container -->
+    <rect width="150" height="{card_h}" rx="6" fill="#f8fafc" stroke="{stroke_col}" stroke-width="0.8"/>
+    
+    <!-- Colorful Dual Planet Badges -->
+    {planet_badge_svg(p1_key, 10, 16, 58, 24)}
+    <text x="75" y="33" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="900" fill="#475569">+</text>
+    {planet_badge_svg(p2_key, 83, 16, 58, 24)}
+    <text x="75" y="58" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#334155">{yoga}</text>
 
-    <!-- Content -->
-    <text x="145" y="28" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="{stroke_col}">{yoga} (Conjunction Fruit)</text>
-    <text x="145" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• {fruit}</text>
+    <!-- Content on the right -->
+    <text x="165" y="28" font-family="'Noto Serif Devanagari', serif" font-size="12.5" font-weight="800" fill="{stroke_col}">{yoga} (Conjunction Fruit)</text>
+    <text x="165" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• {fruit}</text>
   </g>""")
 
     cards_str = "\n".join(cards_svg)
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
 {COMMON_DEFS}
-  <!-- Outer Plate Frame -->
   <rect x="6" y="6" width="548" height="{h-12}" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
   <rect x="12" y="12" width="536" height="{h-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
 
@@ -796,19 +757,18 @@ def make_major_conjunctions_chart():
   <text x="280" y="714" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#6d28d9" text-anchor="middle">• यदि दोनों में से कोई वक्री हो तो पूर्व राशि से भी संयोग प्रभाव की गणना करें</text>
   <text x="280" y="734" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">स्रोत: भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र • तंत्र ज्ञान शोध संस्थान</text>
 </svg>"""
-    return svg
 
 # ==============================================================================
-# 9. Triplet Rajyogas Diamond Chart
+# 9. Triplet Rajyogas Diamond Chart (VIBRANT PLANET BADGES)
 # ==============================================================================
 def make_triplet_rajyogas_chart():
     w, h = 560, 770
     triplets = [
-        ("गुरु + शनि + सूर्य", "सर्वोच्च प्रशासनिक योग (IAS / Cabinet)", "गुरु (जीव) + शनि (कर्म) + सूर्य (शासन) = देश/संस्थान का सर्वोच्च नेतृत्व, स्थायी मान-सम्मान व राजसत्ता।", "#b45309", "#fef3c7"),
-        ("गुरु + शुक्र + केतु", "ब्रह्मर्षि / आध्यात्मिक शिखर योग", "गुरु (ज्ञान) + शुक्र (तप) + केतु (मोक्ष) = संन्यास, अलौकिक अंतर्ज्ञान, जगद्गुरु पद, निःस्वार्थ लोकमंगल।", "#7c3aed", "#faf5ff"),
-        ("शनि + बुध + शुक्र", "महा-व्यापारी योग (कुबेर साम्राज्य)", "शनि (कर्म) + बुध (व्यापार) + शुक्र (धन/लक्ष्मी) = बहुराष्ट्रीय व्यापार, विशाल धन सम्पदा, वैश्विक ब्रांड।", "#059669", "#ecfdf5"),
-        ("मंगल + शनि + राहु", "अंतर्राष्ट्रीय तकनीकी / AI योग", "मंगल (यंत्र) + शनि (श्रम/उद्योग) + राहु (विदेशी/सॉफ्टवेयर) = रक्षा तकनीक, एयरोस्पेस, विदेश में बड़ा उद्योग।", "#dc2626", "#fef2f2"),
-        ("चन्द्र + केतु + गुरु", "सिद्ध योगी / प्रज्ञा-चक्षु योग", "चन्द्र (मन) + केतु (सूक्ष्म दृष्टि) + गुरु (ईश्वरीय कृपा) = सटीक भविष्यवाणी, त्रिकालज्ञ, निस्पृह तपस्वी।", "#0284c7", "#eff6ff"),
+        ("jupiter", "saturn", "sun", "सर्वोच्च प्रशासनिक योग (IAS / Cabinet)", "गुरु (जीव) + शनि (कर्म) + सूर्य (शासन) = देश/संस्थान का सर्वोच्च नेतृत्व, स्थायी मान-सम्मान व राजसत्ता।", "#b45309"),
+        ("jupiter", "venus", "ketu", "ब्रह्मर्षि / आध्यात्मिक शिखर योग", "गुरु (ज्ञान) + शुक्र (तप) + केतु (मोक्ष) = संन्यास, अलौकिक अंतर्ज्ञान, जगद्गुरु पद, निःस्वार्थ लोकमंगल।", "#7c3aed"),
+        ("saturn", "mercury", "venus", "महा-व्यापारी योग (कुबेर साम्राज्य)", "शनि (कर्म) + बुध (व्यापार) + शुक्र (धन/लक्ष्मी) = बहुराष्ट्रीय व्यापार, विशाल धन सम्पदा, वैश्विक ब्रांड।", "#059669"),
+        ("mars", "saturn", "rahu", "अंतर्राष्ट्रीय तकनीकी / AI योग", "मंगल (यंत्र) + शनि (श्रम/उद्योग) + राहु (विदेशी/सॉफ्टवेयर) = रक्षा तकनीक, एयरोस्पेस, विदेश में बड़ा उद्योग।", "#dc2626"),
+        ("moon", "ketu", "jupiter", "सिद्ध योगी / प्रज्ञा-चक्षु योग", "चन्द्र (मन) + केतु (सूक्ष्म दृष्टि) + गुरु (ईश्वरीय कृपा) = सटीक भविष्यवाणी, त्रिकालज्ञ, निस्पृह तपस्वी।", "#0284c7"),
     ]
 
     cards_svg = []
@@ -817,25 +777,31 @@ def make_triplet_rajyogas_chart():
     start_y = 96
     gap = 12
 
-    for i, (planets, title, desc, stroke_col, bg_col) in enumerate(triplets):
+    for i, (p1, p2, p3, title, desc, stroke_col) in enumerate(triplets):
         cy = start_y + i * (card_h + gap)
         cards_svg.append(f"""
   <g transform="translate(24, {cy})">
     <rect width="{card_w}" height="{card_h}" rx="6" fill="#ffffff" stroke="{stroke_col}" stroke-width="1.5"/>
-    <rect width="140" height="{card_h}" rx="6" fill="{bg_col}" stroke="{stroke_col}" stroke-width="0.8"/>
-    <text x="70" y="38" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="{stroke_col}">{planets}</text>
-    <text x="70" y="62" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#475569">त्रि-ग्रहीय संयोग</text>
+    <rect width="180" height="{card_h}" rx="6" fill="#f8fafc" stroke="{stroke_col}" stroke-width="0.8"/>
+    
+    <!-- 3 Colorful Planet Badges inline -->
+    {planet_badge_svg(p1, 6, 20, 50, 24)}
+    <text x="60" y="36" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="900" fill="#475569">+</text>
+    {planet_badge_svg(p2, 65, 20, 50, 24)}
+    <text x="119" y="36" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="900" fill="#475569">+</text>
+    {planet_badge_svg(p3, 124, 20, 50, 24)}
+    
+    <text x="90" y="66" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#475569">त्रि-ग्रहीय महायोग</text>
 
-    <!-- Description -->
-    <text x="155" y="30" font-family="'Noto Serif Devanagari', serif" font-size="12.5" font-weight="800" fill="{stroke_col}">{title}</text>
-    <text x="155" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• {desc}</text>
+    <!-- Description on the right -->
+    <text x="195" y="28" font-family="'Noto Serif Devanagari', serif" font-size="12.5" font-weight="800" fill="{stroke_col}">{title}</text>
+    <text x="195" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• {desc}</text>
   </g>""")
 
     cards_str = "\n".join(cards_svg)
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
 {COMMON_DEFS}
-  <!-- Outer Plate Frame -->
   <rect x="6" y="6" width="548" height="{h-12}" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
   <rect x="12" y="12" width="536" height="{h-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
 
@@ -851,22 +817,19 @@ def make_triplet_rajyogas_chart():
   <text x="280" y="714" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">3. अंतिम फल (Fruit): तृतीय ग्रह परिणाम का अंतिम स्वरूप व प्रभाव तय करता है</text>
   <text x="280" y="734" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">सूत्र: तीन ग्रहों का त्रिकोण सम्मिश्रण जातक के जीवन की सबसे बड़ी दिशा तय करता है।</text>
 </svg>"""
-    return svg
 
 # ==============================================================================
 # 10. Progression & Paryaya Chart
 # ==============================================================================
 def make_progression_paryaya_chart():
     w, h = 560, 770
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
 {COMMON_DEFS}
-  <!-- Outer Plate Frame -->
   <rect x="6" y="6" width="548" height="{h-12}" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
   <rect x="12" y="12" width="536" height="{h-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
 
   {header_banner("शनि 30-वर्षीय पर्याय एवं गुरु प्रगति काल-चक्र", "BNN Saturn 30-Year Paryaya Cycles &amp; Jupiter 1-Year Progression Engine", "दशा-महादशा के बिना अचूक घटना समय-निर्धारण (Timing of Events)", 66)}
 
-  <!-- Saturn 3 Paryayas Header -->
   <g transform="translate(24, 96)">
     <rect width="512" height="32" rx="4" fill="#0f172a"/>
     <text x="256" y="21" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" text-anchor="middle">शनि के 3 प्रमुख 30-वर्षीय पर्याय चक्र (Saturn 30-Year Cycles)</text>
@@ -942,65 +905,59 @@ def make_progression_paryaya_chart():
   <text x="280" y="720" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">• सूर्य व चन्द्र का गोचर निश्चित करता है घटना का सटीक माह एवं दिन (सूक्ष्म काल)</text>
   <text x="280" y="736" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" fill="#64748b" text-anchor="middle">स्रोत: भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र • ज्योतिषाचार्य आशुतोष कुमार चौबे</text>
 </svg>"""
-    return svg
 
 # ==============================================================================
 # 11. Bhrigu Bindu Diagram
 # ==============================================================================
 def make_bhrigu_bindu_diagram():
     w, h = 560, 770
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
 {COMMON_DEFS}
-  <!-- Outer Plate Frame -->
   <rect x="6" y="6" width="548" height="{h-12}" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
   <rect x="12" y="12" width="536" height="{h-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
 
   {header_banner("भृगु बिंदु (BB) प्रारब्ध संवाहक बिंदु ज्यामितीय चक्र", "Bhrigu Bindu (BB) Destiny Trigger &amp; Rahu-Moon Midpoint Physics", "गणितीय सूत्र: (राहु स्पष्ट अंश + चन्द्र स्पष्ट अंश) ÷ 2 = भृगु बिंदु", 66)}
 
-  <!-- Formula Highlight Card -->
   <g transform="translate(24, 96)">
     <rect width="512" height="66" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.6"/>
     <text x="256" y="28" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#78350f" text-anchor="middle">भृगु बिंदु (Bhrigu Bindu - BB) की गणितीय गणना</text>
     <text x="256" y="50" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700" fill="#dc2626" text-anchor="middle">BB = (राहु के निरयण अंश + चन्द्र के निरयण अंश) / 2</text>
   </g>
 
-  <!-- Geometric Illustration Circle Area -->
+  <!-- Geometric Illustration Area -->
   <g transform="translate(24, 172)">
     <rect width="512" height="340" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
 
-    <!-- Celestial Longitude Line / Arc -->
     <circle cx="256" cy="170" r="120" fill="none" stroke="#e2e8f0" stroke-width="2"/>
     <circle cx="256" cy="170" r="120" fill="none" stroke="#b45309" stroke-width="2.8" stroke-dasharray="8,4"/>
 
-    <!-- Center Pivot -->
     <circle cx="256" cy="170" r="4" fill="#78350f"/>
     <text x="256" y="195" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#64748b" text-anchor="middle">केन्द्र (360° भचक्र)</text>
 
-    <!-- Point 1: Rahu (Top Left) -->
+    <!-- Point 1: Rahu (Smoky Violet) -->
     <line x1="256" y1="170" x2="160" y2="85" stroke="#4338ca" stroke-width="2"/>
-    <circle cx="160" cy="85" r="14" fill="#4338ca"/>
-    <text x="160" y="90" font-family="'Noto Serif Devanagari', serif" font-size="10" font-weight="900" fill="#ffffff" text-anchor="middle">राहु</text>
+    <circle cx="160" cy="85" r="16" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="160" y="90" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#4338ca" text-anchor="middle">☊ राहु</text>
     <text x="160" y="60" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="800" fill="#4338ca" text-anchor="middle">राहु स्पष्ट अंश</text>
     <text x="160" y="115" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" fill="#64748b" text-anchor="middle">(प्रारब्ध / कर्म बीज)</text>
 
-    <!-- Point 2: Moon (Top Right) -->
+    <!-- Point 2: Moon (Pearl Blue) -->
     <line x1="256" y1="170" x2="352" y2="85" stroke="#0284c7" stroke-width="2"/>
-    <circle cx="352" cy="85" r="14" fill="#0284c7"/>
-    <text x="352" y="90" font-family="'Noto Serif Devanagari', serif" font-size="10" font-weight="900" fill="#ffffff" text-anchor="middle">चन्द्र</text>
+    <circle cx="352" cy="85" r="16" fill="#f0f9ff" stroke="#0284c7" stroke-width="2"/>
+    <text x="352" y="90" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#0369a1" text-anchor="middle">☽ चन्द्र</text>
     <text x="352" y="60" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="800" fill="#0284c7" text-anchor="middle">चन्द्र स्पष्ट अंश</text>
     <text x="352" y="115" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" fill="#64748b" text-anchor="middle">(मन / अनुभूति)</text>
 
-    <!-- Point 3: Bhrigu Bindu (Center Top Exact Midpoint) -->
+    <!-- Point 3: Bhrigu Bindu (Radiant Golden Crimson Midpoint) -->
     <line x1="256" y1="170" x2="256" y2="50" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="4,2"/>
-    <circle cx="256" cy="50" r="18" fill="#fef3c7" stroke="#dc2626" stroke-width="2.5"/>
-    <text x="256" y="55" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#dc2626" text-anchor="middle">BB</text>
+    <circle cx="256" cy="50" r="20" fill="#fef3c7" stroke="#dc2626" stroke-width="2.5"/>
+    <text x="256" y="55" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#dc2626" text-anchor="middle">★ BB</text>
     <text x="256" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#dc2626" text-anchor="middle">★ भृगु बिंदु (BB) ★</text>
-    <text x="256" y="80" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#78350f" text-anchor="middle">प्रारब्ध प्रकटीकरण बिंदु</text>
+    <text x="256" y="82" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#78350f" text-anchor="middle">प्रारब्ध प्रकटीकरण बिंदु</text>
 
     <!-- Arc between Rahu and Moon -->
     <path d="M 160 85 A 120 120 0 0 1 352 85" fill="none" stroke="#dc2626" stroke-width="2"/>
     
-    <!-- Legend inside geometric box -->
     <rect x="20" y="240" width="472" height="85" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
     <text x="256" y="260" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#0f172a" text-anchor="middle">उदाहरण गणना (Practical Calculation Example):</text>
     <text x="256" y="280" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" fill="#334155" text-anchor="middle">यदि राहु मेष 15° (15°) एवं चन्द्र वृषभ 15° (45°) हो, तो BB = (15 + 45)/2 = 30° (वृषभ 0°)</text>
@@ -1012,22 +969,18 @@ def make_bhrigu_bindu_diagram():
     <rect width="512" height="225" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
     <text x="256" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#78350f" text-anchor="middle">★ भृगु बिंदु पर गोचर सक्रियण के 3 अचूक नियम ★</text>
 
-    <!-- Rule 1 -->
-    <text x="20" y="52" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#059669">1. गुरु का BB पर गोचर (Jupiter Transit over BB):</text>
+    <text x="20" y="52" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#059669">1. ♃ गुरु का BB पर गोचर (Jupiter Transit over BB):</text>
     <text x="20" y="72" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• जीवन का सबसे बड़ा भाग्योदय; अप्रत्याशित धन लाभ, विवाह, सन्तान प्राप्ति अथवा प्रतिष्ठा की प्राप्ति।</text>
     <text x="20" y="90" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#64748b">जातक को लगता है कि ईश्वर ने अचानक सारे द्वार खोल दिए हैं।</text>
 
-    <!-- Rule 2 -->
-    <text x="20" y="116" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#dc2626">2. शनि का BB पर गोचर (Saturn Transit over BB):</text>
+    <text x="20" y="116" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#dc2626">2. ♄ शनि का BB पर गोचर (Saturn Transit over BB):</text>
     <text x="20" y="136" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• प्रारब्ध कर्म का कठोर शोधन; स्वास्थ्य संकट, कार्यक्षेत्र में भारी परिवर्तन या अत्यधिक दायित्व का भार।</text>
     <text x="20" y="154" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#64748b">धैर्य और धर्म के पालन से यही काल स्थायी नींव का निर्माण करता है।</text>
 
-    <!-- Rule 3 -->
-    <text x="20" y="180" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#7c3aed">3. राहु या केतु का BB पर गोचर (Nodes Transit over BB):</text>
+    <text x="20" y="180" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#7c3aed">3. ☊☋ राहु या केतु का BB पर गोचर (Nodes Transit over BB):</text>
     <text x="20" y="200" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• आकस्मिक दिशा परिवर्तन, विदेश गमन, पुराने भ्रमों का टूटना अथवा असाधारण आध्यात्मिक अनुभव।</text>
   </g>
 </svg>"""
-    return svg
 
 # ==============================================================================
 # 12. Protocol Flowchart (7-Step Predictive Algorithm)
@@ -1035,7 +988,7 @@ def make_bhrigu_bindu_diagram():
 def make_protocol_flowchart():
     w, h = 560, 770
     steps = [
-        ("चरण 1", "जीव कारक (गुरु) की स्थिति व अंश ज्ञात करें", "पुरुष जातक हेतु गुरु (जीव) एवं स्त्री हेतु शुक्र की राशि व स्पष्ट अंश देखें।", "#b45309", "#fef3c7"),
+        ("चरण 1", "जीव कारक (गुरु/शुक्र) की स्थिति व अंश ज्ञात करें", "पुरुष जातक हेतु ♃ गुरु (जीव) एवं स्त्री हेतु ♀ शुक्र की राशि व स्पष्ट अंश देखें।", "#b45309", "#fef3c7"),
         ("चरण 2", "1-5-9 त्रिकोण में स्थित ग्रहों का संयोजन बनाएं", "गुरु जिस दिशा (अग्नि, पृथ्वी, वायु, जल) में है, उस दिशा के शेष दो भावों के ग्रह जोड़ें।", "#0284c7", "#e0f2fe"),
         ("चरण 3", "2-12 भावों के अग्रिम व पृष्ठ प्रभाव (कर्तरी) का परीक्षण", "अग्र (+1 भाव) से भविष्य व पृष्ठ (-1 भाव) से संचित पृष्ठभूमि का आंकलन करें।", "#059669", "#d1fae5"),
         ("चरण 4", "7वें भाव (180° प्रत्यक्ष दृष्टि) के ग्रह का फल जोड़ें", "सामने बैठा ग्रह प्रत्यक्ष रूप से जीवनसाथी, साझेदारी व लोक-व्यवहार को प्रभावित करता है।", "#dc2626", "#fee2e2"),
@@ -1053,7 +1006,6 @@ def make_protocol_flowchart():
     for i, (step_num, title, desc, stroke_col, bg_col) in enumerate(steps):
         cy = start_y + i * (card_h + gap)
         cards_svg.append(f"""
-  <!-- {step_num} -->
   <g transform="translate(24, {cy})">
     <rect width="{card_w}" height="{card_h}" rx="6" fill="#ffffff" stroke="{stroke_col}" stroke-width="1.5"/>
     <rect width="90" height="{card_h}" rx="6" fill="{bg_col}" stroke="{stroke_col}" stroke-width="0.8"/>
@@ -1071,9 +1023,8 @@ def make_protocol_flowchart():
 
     cards_str = "\n".join(cards_svg)
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
 {COMMON_DEFS}
-  <!-- Outer Plate Frame -->
   <rect x="6" y="6" width="548" height="{h-12}" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
   <rect x="12" y="12" width="536" height="{h-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
 
@@ -1086,10 +1037,9 @@ def make_protocol_flowchart():
   <text x="280" y="720" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#334155" text-anchor="middle">★ नाड़ी निष्कर्ष: इन 7 चरणों का क्रमशः पालन करने पर कभी भविष्यवाणी विफल नहीं होती ★</text>
   <text x="280" y="736" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">स्रोत: भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र • तंत्र ज्ञान शोध संस्थान (2026)</text>
 </svg>"""
-    return svg
 
 def main():
-    print("🚀 Generating 12 Ultra-Crisp HD Sacred Parchment Diamond Charts for BNN...")
+    print("🚀 Generating 12 Ultra-Crisp, Vibrantly Colorful HD Sacred Parchment Diamond Charts for BNN...")
     write_and_verify("bnn_philosophy_hierarchy_chart.svg", make_philosophy_hierarchy())
     write_and_verify("bnn_jeeva_flow_diamond_chart.svg", make_jeeva_flow_chart())
     write_and_verify("bnn_directional_diamond_chart.svg", make_directional_diamond_chart())
@@ -1102,7 +1052,7 @@ def main():
     write_and_verify("bnn_progression_paryaya_chart.svg", make_progression_paryaya_chart())
     write_and_verify("bnn_bhrigu_bindu_diagram.svg", make_bhrigu_bindu_diagram())
     write_and_verify("bnn_protocol_flowchart.svg", make_protocol_flowchart())
-    print("🎉 All 12 charts generated and XML validated successfully!")
+    print("🎉 All 12 charts generated, enriched with colorful planet badges and XML validated successfully!")
 
 if __name__ == "__main__":
     main()
