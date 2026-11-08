@@ -1146,6 +1146,387 @@
         display: none;
       }
     }
+
+    /* ========================================================
+       FLAGSHIP SUITE & HIGH-END 3D AESTHETICS & ANIMATIONS
+       ======================================================== */
+    .flagship-suite-header {
+      text-align: center;
+      margin-bottom: 2.8rem;
+      position: relative;
+    }
+
+    .flagship-crest-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, rgba(200, 157, 61, 0.22), rgba(245, 158, 11, 0.08));
+      border: 1px solid rgba(245, 158, 11, 0.6);
+      border-radius: 9999px;
+      padding: 0.45rem 1.6rem;
+      margin-bottom: 1.1rem;
+      box-shadow: 0 4px 20px rgba(245, 158, 11, 0.2);
+      animation: crestGlow 3.5s ease-in-out infinite;
+    }
+
+    @keyframes crestGlow {
+      0%, 100% {
+        box-shadow: 0 4px 18px rgba(245, 158, 11, 0.2);
+        border-color: rgba(245, 158, 11, 0.5);
+      }
+      50% {
+        box-shadow: 0 4px 28px rgba(245, 158, 11, 0.45);
+        border-color: rgba(251, 191, 36, 0.9);
+      }
+    }
+
+    .flagship-crest-badge .crest-title {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: #fbbf24;
+      text-transform: uppercase;
+    }
+
+    .flagship-main-heading {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 0.8rem;
+      background: linear-gradient(135deg, #ffffff 0%, #fef08a 40%, #f59e0b 80%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+    }
+
+    .flagship-main-sub {
+      max-width: 840px;
+      margin: 0 auto 1.8rem auto;
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Flagship Quick Navigation Tabs */
+    .flagship-quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.6rem;
+      margin-bottom: 2.4rem;
+    }
+
+    .flagship-nav-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      background: rgba(23, 20, 18, 0.85);
+      border: 1.5px solid rgba(200, 157, 61, 0.35);
+      border-radius: 14px;
+      padding: 0.65rem 1.35rem;
+      text-decoration: none;
+      transition: all 0.35s cubic-bezier(0.2, 0.8, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .flagship-nav-tab::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.25), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .flagship-nav-tab:hover::before {
+      left: 100%;
+    }
+
+    .flagship-nav-tab:hover, .flagship-nav-tab.active {
+      border-color: #f59e0b;
+      background: rgba(43, 23, 12, 0.95);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
+    }
+
+    .flagship-nav-tab .tab-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .flagship-nav-tab .tab-info {
+      text-align: left;
+    }
+
+    .flagship-nav-tab .tab-vol {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: #fbbf24;
+    }
+
+    .flagship-nav-tab .tab-title {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fffdf8;
+    }
+
+    .flagship-nav-tab .tab-badge {
+      font-size: 0.68rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+    .flagship-nav-tab .tab-badge.gold {
+      background: rgba(200, 157, 61, 0.25);
+      color: #fef08a;
+      border: 1px solid rgba(200, 157, 61, 0.5);
+    }
+    .flagship-nav-tab .tab-badge.indigo {
+      background: rgba(99, 102, 241, 0.25);
+      color: #c7d2fe;
+      border: 1px solid rgba(99, 102, 241, 0.5);
+    }
+    .flagship-nav-tab .tab-badge.crimson {
+      background: rgba(234, 88, 12, 0.25);
+      color: #fed7aa;
+      border: 1px solid rgba(234, 88, 12, 0.5);
+    }
+
+    /* Flagship Corner Ribbon */
+    .flagship-corner-ribbon {
+      position: absolute;
+      top: 22px;
+      right: -36px;
+      transform: rotate(45deg);
+      width: 175px;
+      background: linear-gradient(135deg, #c89d3d 0%, #b45309 50%, #f59e0b 100%);
+      color: #1a0f08;
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-align: center;
+      padding: 0.35rem 0;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+      z-index: 10;
+      text-transform: uppercase;
+      border-top: 1px solid #fef08a;
+      border-bottom: 1px solid #78350f;
+    }
+    .flagship-corner-ribbon.indigo {
+      background: linear-gradient(135deg, #4338ca 0%, #6366f1 50%, #a5b4fc 100%);
+      color: #0f172a;
+      border-top-color: #e0e7ff;
+      border-bottom-color: #1e1b4b;
+    }
+    .flagship-corner-ribbon.crimson {
+      background: linear-gradient(135deg, #991b1b 0%, #dc2626 50%, #f97316 100%);
+      color: #fff;
+      border-top-color: #fed7aa;
+      border-bottom-color: #450a0a;
+    }
+
+    /* 3D Floating Levitation Animations */
+    .float-anim-1 {
+      animation: floatBook1 6s ease-in-out infinite;
+    }
+    .float-anim-2 {
+      animation: floatBook2 6.6s ease-in-out 0.8s infinite;
+    }
+    .float-anim-3 {
+      animation: floatBook3 7.2s ease-in-out 1.6s infinite;
+    }
+
+    @keyframes floatBook1 {
+      0%, 100% {
+        transform: rotateY(-18deg) rotateX(6deg) translateY(0px);
+      }
+      50% {
+        transform: rotateY(-22deg) rotateX(4deg) translateY(-14px);
+      }
+    }
+
+    @keyframes floatBook2 {
+      0%, 100% {
+        transform: rotateY(-18deg) rotateX(6deg) translateY(0px);
+      }
+      50% {
+        transform: rotateY(-15deg) rotateX(8deg) translateY(-14px);
+      }
+    }
+
+    @keyframes floatBook3 {
+      0%, 100% {
+        transform: rotateY(-18deg) rotateX(6deg) translateY(0px);
+      }
+      50% {
+        transform: rotateY(-20deg) rotateX(5deg) translateY(-14px);
+      }
+    }
+
+    .hardcover-bundle:hover {
+      animation-play-state: paused !important;
+      transform: rotateY(-8deg) rotateX(2deg) translateY(-12px) scale(1.03) !important;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6) !important;
+    }
+
+    /* Ambient Pulsing Backlight Aura */
+    .book-aura-glow {
+      position: absolute;
+      top: 20px;
+      left: 10px;
+      width: 260px;
+      height: 360px;
+      border-radius: 40px;
+      pointer-events: none;
+      z-index: 0;
+      animation: auraPulse 4.5s ease-in-out infinite;
+    }
+    .book-aura-glow.gold-aura {
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.42) 0%, rgba(200, 157, 61, 0.18) 45%, rgba(0, 0, 0, 0) 70%);
+    }
+    .book-aura-glow.indigo-aura {
+      background: radial-gradient(circle, rgba(129, 140, 248, 0.42) 0%, rgba(79, 70, 229, 0.2) 45%, rgba(0, 0, 0, 0) 70%);
+      animation-delay: 1s;
+    }
+    .book-aura-glow.crimson-aura {
+      background: radial-gradient(circle, rgba(239, 68, 68, 0.45) 0%, rgba(249, 115, 22, 0.22) 45%, rgba(0, 0, 0, 0) 70%);
+      animation-delay: 2s;
+    }
+
+    @keyframes auraPulse {
+      0%, 100% {
+        opacity: 0.45;
+        transform: scale(0.92);
+        filter: blur(28px);
+      }
+      50% {
+        opacity: 0.85;
+        transform: scale(1.12);
+        filter: blur(42px);
+      }
+    }
+
+    /* Floor Shadow Dynamic Breathing */
+    .book-shadow-floor {
+      width: 260px;
+      height: 24px;
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 70%);
+      margin-top: 1.8rem;
+      border-radius: 50%;
+      filter: blur(5px);
+      animation: shadowBreathe 6s ease-in-out infinite;
+    }
+    .hardcover-bundle.float-anim-2 + .book-shadow-floor {
+      animation-delay: 0.8s;
+      animation-duration: 6.6s;
+    }
+    .hardcover-bundle.float-anim-3 + .book-shadow-floor {
+      animation-delay: 1.6s;
+      animation-duration: 7.2s;
+    }
+
+    @keyframes shadowBreathe {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.65;
+        filter: blur(5px);
+      }
+      50% {
+        transform: scale(1.22);
+        opacity: 0.3;
+        filter: blur(8px);
+      }
+    }
+
+    /* Center Yantra Glowing Pulse */
+    .cover-center-yantra {
+      animation: yantraGlowPulse 4s ease-in-out infinite;
+    }
+    @keyframes yantraGlowPulse {
+      0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.45));
+      }
+      50% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 18px rgba(251, 191, 36, 0.9));
+      }
+    }
+
+    /* Animated Silk Bookmark Flutter */
+    .silk-ribbon {
+      animation: ribbonSway 5s ease-in-out infinite;
+      transform-origin: top center;
+    }
+    @keyframes ribbonSway {
+      0%, 100% {
+        transform: rotate(0deg) skewX(0deg);
+      }
+      50% {
+        transform: rotate(3deg) skewX(2deg);
+      }
+    }
+
+    /* Flagship Specifications Deck (Placed Under Book) */
+    .flagship-spec-deck {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.9rem;
+      margin-top: 1.8rem;
+      padding-top: 1.6rem;
+      border-top: 1px dashed rgba(200, 157, 61, 0.28);
+    }
+
+    .spec-card {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      background: rgba(15, 23, 42, 0.45);
+      border: 1px solid rgba(200, 157, 61, 0.22);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .spec-card:hover {
+      background: rgba(15, 23, 42, 0.8);
+      border-color: #f59e0b;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.2);
+    }
+
+    .spec-icon {
+      font-size: 1.45rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .spec-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .spec-text strong {
+      font-size: 0.84rem;
+      color: #fef08a;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .spec-text span {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
   </style>
 </head>
 <body>
@@ -1197,12 +1578,12 @@
       </div>
 
       <div class="metrics-bar">
-        <div class="metric-pill"><span>📚</span> <strong>146+</strong> प्रामाणिक पृष्ठ</div>
-        <div class="metric-pill"><span>💎</span> <strong>20+</strong> सम्पूर्ण कुण्डली महाचक्र</div>
+        <div class="metric-pill"><span>📚</span> <strong>183+</strong> प्रामाणिक पृष्ठ</div>
+        <div class="metric-pill"><span>💎</span> <strong>26+</strong> सम्पूर्ण कुण्डली व तांत्रिक महाचक्र</div>
         <div class="metric-pill"><span>👑</span> <strong>17</strong> शास्त्रीय राजयोग</div>
         <div class="metric-pill"><span>🌌</span> <strong>27</strong> नक्षत्र व 108 पद</div>
-        <div class="metric-pill"><span>📜</span> <strong>2</strong> पूर्ण प्रकाशित ग्रंथ</div>
-        <div class="metric-pill"><span>📖</span> 3D फ्लिपबुक, PDF व वेब पाठक</div>
+        <div class="metric-pill"><span>📜</span> <strong>3</strong> पूर्ण प्रकाशित फ्लैगशिप ग्रंथ</div>
+        <div class="metric-pill"><span>📖</span> 3D फ्लिपबुक, Vivliostyle PDF व वेब पाठक</div>
       </div>
     </div>
   </header>
@@ -1210,19 +1591,57 @@
   <!-- Main Library Portal -->
   <main class="portal-main">
     
-    <div class="section-title-wrap">
-      <h3 class="section-title">
-        <span>🌟</span> मुख्य प्रकाशित ग्रंथ (Featured Masterpiece)
-      </h3>
-      <span class="section-sub">प्रथम संस्करण • 100% खुला एवं निःशुल्क अध्ययन</span>
+    <!-- Flagship Masterpiece Section Header -->
+    <div class="flagship-suite-header">
+      <div class="flagship-crest-badge">
+        <span class="crest-icon">👑</span>
+        <span class="crest-title">TANTRA GYAN FLAGSHIP PUBLICATIONS • तंत्र ज्ञान फ्लैगशिप शोध महाग्रंथावली</span>
+        <span class="crest-icon">👑</span>
+      </div>
+      <h2 class="flagship-main-heading">
+        त्रिविध शास्त्रीय फ्लैगशिप महाग्रंथालय
+      </h2>
+      <p class="flagship-main-sub">
+        ऋषि-परंपरा (पाराशर, भृगु, नंदीश्वर व शिव-शक्ति तंत्र) के सर्वोच्च प्रामाणिक शोध ग्रंथ। प्रत्येक ग्रंथ <strong>3D इंटरएक्टिव फ्लिप बुक</strong>, <strong>Vivliostyle मास्टरपीस वेक्टर PDF</strong>, तथा <strong>डिजिटल वेब पाठक</strong> तीनों प्रारूपों में 100% निःशुल्क एवं खुले अध्ययन हेतु उपलब्ध हैं।
+      </p>
+
+      <!-- Flagship Book Quick Navigator Tabs -->
+      <div class="flagship-quick-nav">
+        <a href="#book-astrology" class="flagship-nav-tab active" data-target="book-astrology">
+          <span class="tab-icon">☸</span>
+          <div class="tab-info">
+            <span class="tab-vol">FLAGSHIP VOL 1</span>
+            <span class="tab-title">वैदिक ज्योतिष महाग्रंथ</span>
+          </div>
+          <span class="tab-badge gold">100 पृष्ठ • 12 चक्र</span>
+        </a>
+        <a href="#book-bnn" class="flagship-nav-tab" data-target="book-bnn">
+          <span class="tab-icon">📜</span>
+          <div class="tab-info">
+            <span class="tab-vol">FLAGSHIP VOL 2</span>
+            <span class="tab-title">भृगु नंदी नाड़ी सूत्र</span>
+          </div>
+          <span class="tab-badge indigo">47 पृष्ठ • 18 चक्र</span>
+        </a>
+        <a href="#book-sadhana" class="flagship-nav-tab" data-target="book-sadhana">
+          <span class="tab-icon">🔱</span>
+          <div class="tab-info">
+            <span class="tab-vol">FLAGSHIP VOL 3</span>
+            <span class="tab-title">तंत्र साधना सिद्धि</span>
+          </div>
+          <span class="tab-badge crimson">36 पृष्ठ • 6 चक्र</span>
+        </a>
+      </div>
     </div>
 
-    <!-- Featured Hardcover Book Showcase Card -->
-    <article class="featured-book-card" aria-label="वैदिक ज्योतिष महाग्रंथ सरलीकृत">
+    <!-- Featured Hardcover Book Showcase Card 1: Vedic Astrology -->
+    <article class="featured-book-card" id="book-astrology" aria-label="वैदिक ज्योतिष महाग्रंथ सरलीकृत">
+      <div class="flagship-corner-ribbon">👑 FLAGSHIP VOL 1</div>
       
       <!-- Left Column: Realistic 3D Hardcover Book Mockup -->
       <div class="book-3d-wrap">
-        <div class="hardcover-bundle" onclick="window.location.href='reader.html';" title="3D फ्लिप बुक खोलने के लिए क्लिक करें • Click to Open 3D Flip Book">
+        <div class="book-aura-glow gold-aura"></div>
+        <div class="hardcover-bundle float-anim-1" onclick="window.location.href='reader.html';" title="3D फ्लिप बुक खोलने के लिए क्लिक करें • Click to Open 3D Flip Book">
           
           <!-- Book Front Cover -->
           <div class="book-front-cover">
@@ -1336,16 +1755,50 @@
           <span>•</span>
           <a href="english" class="lang-pill-link">🌐 Complete English Edition</a>
         </div>
+
+        <!-- Animated Flagship Specifications Bar Under Book -->
+        <div class="flagship-spec-deck">
+          <div class="spec-card">
+            <div class="spec-icon">📖</div>
+            <div class="spec-text">
+              <strong>3D फ्लिप बुक इंजन</strong>
+              <span>60 FPS स्मूथ पृष्ठ फ्लिप, टच स्वाइप व ध्वनि</span>
+            </div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-icon">📄</div>
+            <div class="spec-text">
+              <strong>Vivliostyle मास्टर PDF</strong>
+              <span>100% वेक्टर ग्राफिक्स, प्रिंट-क्वालिटी</span>
+            </div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-icon">🌐</div>
+            <div class="spec-text">
+              <strong>वेब पाठक (Responsive)</strong>
+              <span>त्वरित खोज, अध्याय नेविगेशन, दिन/रात थीम</span>
+            </div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-icon">👑</div>
+            <div class="spec-text">
+              <strong>शास्त्रीय प्रमाणिकता</strong>
+              <span>पाराशर, वराहमिहिर, कल्याण वर्मा • 0-9 अंक</span>
+            </div>
+          </div>
+        </div>
       </div>
 
     </article>
 
     <!-- Featured Hardcover Book Showcase Card 2: Bhrigu Nandi Nadi -->
-    <article class="featured-book-card" aria-label="भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र">
+    <article class="featured-book-card" id="book-bnn" aria-label="भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र">
+      <div class="flagship-corner-ribbon indigo">👑 FLAGSHIP VOL 2</div>
       
       <!-- Left Column: Realistic 3D Hardcover Book Mockup -->
       <div class="book-3d-wrap">
-        <div class="hardcover-bundle" onclick="window.location.href='bnn-reader.html';" title="3D फ्लिप बुक खोलने के लिए क्लिक करें • Click to Open 3D Flip Book">
+        <div class="book-aura-glow indigo-aura"></div>
+        <div class="hardcover-bundle bnn-bundle float-anim-2" onclick="window.location.href='bnn-reader.html';" title="3D फ्लिप बुक खोलने के लिए क्लिक करें • Click to Open 3D Flip Book">
           
           <!-- Book Front Cover -->
           <div class="book-front-cover bnn-cover">
@@ -1465,16 +1918,50 @@
           <span>•</span>
           <a href="bnn-reader.html" class="lang-pill-link">📖 इंटरएक्टिव 3D संस्करण</a>
         </div>
+
+        <!-- Animated Flagship Specifications Bar Under Book -->
+        <div class="flagship-spec-deck">
+          <div class="spec-card">
+            <div class="spec-icon">💎</div>
+            <div class="spec-text">
+              <strong>18 डायमंड महाचक्र</strong>
+              <span>1-5-9 दिशा त्रिकोण व जीव-कर्म संयोजन</span>
+            </div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-icon">📄</div>
+            <div class="spec-text">
+              <strong>12.7 MB मास्टर PDF</strong>
+              <span>Vivliostyle A4 W3C Paged Media</span>
+            </div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-icon">📜</div>
+            <div class="spec-text">
+              <strong>16 बृहत् सारणियां</strong>
+              <span>36 द्वैत ग्रह-संयोग व त्रि-ग्रह सूत्र</span>
+            </div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-icon">⌛</div>
+            <div class="spec-text">
+              <strong>गोचर प्रगति गणित</strong>
+              <span>गुरु 12 वर्ष, शनि 30 वर्ष चक्र फलित</span>
+            </div>
+          </div>
+        </div>
       </div>
 
     </article>
 
     <!-- Featured Hardcover Book Showcase Card 3: Tantra Sadhana Siddhi Mahagranth -->
-    <article class="featured-book-card" aria-label="तंत्र साधना सिद्धि महाग्रंथ">
+    <article class="featured-book-card" id="book-sadhana" aria-label="तंत्र साधना सिद्धि महाग्रंथ">
+      <div class="flagship-corner-ribbon crimson">👑 FLAGSHIP VOL 3</div>
       
       <!-- Left Column: Realistic 3D Hardcover Book Mockup -->
       <div class="book-3d-wrap">
-        <div class="hardcover-bundle" onclick="window.location.href='sadhana-reader.html';" title="3D फ्लिप बुक खोलने के लिए क्लिक करें • Click to Open 3D Flip Book">
+        <div class="book-aura-glow crimson-aura"></div>
+        <div class="hardcover-bundle sadhana-bundle float-anim-3" onclick="window.location.href='sadhana-reader.html';" title="3D फ्लिप बुक खोलने के लिए क्लिक करें • Click to Open 3D Flip Book">
           
           <!-- Book Front Cover -->
           <div class="book-front-cover sadhana-cover">
@@ -1590,6 +2077,38 @@
           <a href="tantra-sadhana-siddhi.html" class="lang-pill-link">🔱 सम्पूर्ण साधना ग्रंथ (Web Reader)</a>
           <span>•</span>
           <a href="sadhana-reader.html" class="lang-pill-link">📖 इंटरएक्टिव 3D संस्करण</a>
+        </div>
+
+        <!-- Animated Flagship Specifications Bar Under Book -->
+        <div class="flagship-spec-deck">
+          <div class="spec-card">
+            <div class="spec-icon">🔱</div>
+            <div class="spec-text">
+              <strong>1,25,000 जप सिद्धि</strong>
+              <span>दैनिक 3,049 जप, 28-31 माला प्रदोष क्रम</span>
+            </div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-icon">🪔</div>
+            <div class="spec-text">
+              <strong>द्वैत दीप वेदी वास्तु</strong>
+              <span>घृत व सरसों तैल दीप द्वैत रक्षा विज्ञान</span>
+            </div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-icon">⏱️</div>
+            <div class="spec-text">
+              <strong>8:30–10:40 PM काल-तालिका</strong>
+              <span>मिनट-दर-मिनट अनुष्ठान व विश्राम विज्ञान</span>
+            </div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-icon">🌹</div>
+            <div class="spec-text">
+              <strong>कुंजिका संपुट विधान</strong>
+              <span>21 पाठों में 4-चरणीय संपुट व विवाह सिद्धि</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -2111,6 +2630,73 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Interactive 3D Physics & Mouse-Move Tilt for Flagship Books
+    document.querySelectorAll('.book-3d-wrap').forEach(wrap => {
+      const bundle = wrap.querySelector('.hardcover-bundle');
+      if (!bundle) return;
+
+      wrap.addEventListener('mousemove', e => {
+        const rect = wrap.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const rotateY = -18 + (x / rect.width) * 22;
+        const rotateX = 6 - (y / rect.height) * 18;
+        bundle.style.animation = 'none';
+        bundle.style.transform = `rotateY(${rotateY.toFixed(1)}deg) rotateX(${rotateX.toFixed(1)}deg) translateY(-10px) scale(1.025)`;
+      });
+
+      wrap.addEventListener('mouseleave', () => {
+        bundle.style.transform = '';
+        bundle.style.animation = '';
+      });
+    });
+
+    // Flagship Quick Navigation Smooth Scrolling with Highlight Aura
+    document.querySelectorAll('.flagship-nav-tab').forEach(tab => {
+      tab.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = tab.getAttribute('data-target');
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          document.querySelectorAll('.flagship-nav-tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          targetEl.style.transition = 'box-shadow 0.6s ease, border-color 0.6s ease';
+          targetEl.style.boxShadow = '0 0 50px rgba(245, 158, 11, 0.45)';
+          targetEl.style.borderColor = '#f59e0b';
+          setTimeout(() => {
+            targetEl.style.boxShadow = '';
+            targetEl.style.borderColor = '';
+          }, 2400);
+        }
+      });
+    });
+
+    // Highlight active nav tab on scroll
+    window.addEventListener('scroll', () => {
+      const bookIds = ['book-astrology', 'book-bnn', 'book-sadhana'];
+      const scrollPos = window.scrollY + window.innerHeight / 2;
+      for (const id of bookIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            document.querySelectorAll('.flagship-nav-tab').forEach(t => {
+              if (t.getAttribute('data-target') === id) {
+                t.classList.add('active');
+              } else {
+                t.classList.remove('active');
+              }
+            });
+            break;
+          }
+        }
+      }
+    }, { passive: true });
+  </script>
 
 </body>
 </html>
