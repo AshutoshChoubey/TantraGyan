@@ -73,34 +73,34 @@
     </g>
   </g>
 
-  <!-- Vitamin & Health Nutrition Section -->
+  <!-- Emergency Minimum & Recovery Protocol Section -->
   <g transform="translate(24, 345)">
     <rect width="512" height="150" rx="8" fill="#ffffff" stroke="#0284c7" stroke-width="1.4"/>
     <rect width="512" height="28" rx="8" fill="#0369a1"/>
-    <text x="256" y="19" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">२. तांत्रिक पोषण एवं विटामिन दिशानिर्देश (Nervous System Strength)</text>
+    <text x="256" y="19" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">२. आकस्मिक न्यूनतम अभ्यास एवं पाठ-भरपाई विधान (Recovery Matrix)</text>
 
     <g transform="translate(14, 38)">
       <rect width="150" height="98" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
-      <text x="75" y="24" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8" text-anchor="middle">B-Complex (B12)</text>
-      <text x="75" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">मानसिक ऊर्जा एवं</text>
-      <text x="75" y="62" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">तंत्रिका तंत्र (Nerves) को</text>
-      <text x="75" y="76" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">सुदृढ़ बनाए रखता है।</text>
+      <text x="75" y="24" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8" text-anchor="middle">समय एवं स्थान</text>
+      <text x="75" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">रात्रि 10:00 से 10:15 PM</text>
+      <text x="75" y="62" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">नियमित वेदी व साधना</text>
+      <text x="75" y="76" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">स्थल पर ही सम्मुख बैठें।</text>
     </g>
 
     <g transform="translate(180, 38)">
       <rect width="150" height="98" rx="6" fill="#fffbeb" stroke="#fde047" stroke-width="1"/>
-      <text x="75" y="24" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#b45309" text-anchor="middle">Vitamin D3</text>
-      <text x="75" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">मूड स्टेबिलिटी, शांति एवं</text>
-      <text x="75" y="62" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">गहरी सात्विक निद्रा</text>
-      <text x="75" y="76" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">की गुणवत्ता सुनिश्चित करता है।</text>
+      <text x="75" y="24" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#b45309" text-anchor="middle">न्यूनतम पाठ संख्या</text>
+      <text x="75" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">सिद्ध कुंजिका के केवल</text>
+      <text x="75" y="62" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">1 से 3 पाठ करें और</text>
+      <text x="75" y="76" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">2 मिनट क्षमा प्रार्थना करें।</text>
     </g>
 
     <g transform="translate(346, 38)">
-      <rect width="150" height="98" rx="6" fill="#fdf4ff" stroke="#f0abfc" stroke-width="1"/>
-      <text x="75" y="24" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#a21caf" text-anchor="middle">Magnesium</text>
-      <text x="75" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">मांसपेशियों का तनाव कम</text>
-      <text x="75" y="62" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">करता है और 8 घंटे</text>
-      <text x="75" y="76" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">भूमि शयन को सुगम बनाता है।</text>
+      <rect width="150" height="98" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
+      <text x="75" y="24" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#15803d" text-anchor="middle">41-दिवसीय भरपाई</text>
+      <text x="75" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">स्वस्थ होने के उपरांत</text>
+      <text x="75" y="62" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">छूटे हुए दिनों को 41 दिन</text>
+      <text x="75" y="76" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">के बाद जोड़कर पूर्ण करें।</text>
     </g>
   </g>
 

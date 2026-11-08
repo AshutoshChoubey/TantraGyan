@@ -114,7 +114,7 @@ page_specs = [
     <li><strong>अध्याय 1:</strong> 41-दिवसीय पंचाक्षरी साधना व 1,25,000 जप गणित (पृष्ठ 6–9)</li>
     <li><strong>अध्याय 2:</strong> तांत्रिक वेदी निर्माण, द्वैत दीप व 7-पद सामग्री (पृष्ठ 10–14)</li>
     <li><strong>अध्याय 3:</strong> दैनिक काल-तालिका (8:30 PM–10:40 PM) (पृष्ठ 15–20)</li>
-    <li><strong>अध्याय 4:</strong> त्रि-स्तरीय स्वास्थ्य प्रबंधन व विटामिन नियम (पृष्ठ 21–25)</li>
+    <li><strong>अध्याय 4:</strong> त्रि-स्तरीय स्वास्थ्य प्रबंधन व महिला साधक नियम (पृष्ठ 21–25)</li>
     <li><strong>अध्याय 5:</strong> षड्विध यम-नियम, प्राणायाम व स्वप्न-स्वर (पृष्ठ 26–30)</li>
     <li><strong>अध्याय 6:</strong> संपुट विधान, विवाह सिद्धि व 21 पाठ चक्र (पृष्ठ 31–33)</li>
     <li><strong>अध्याय 7:</strong> सिद्ध कुंजिका स्तोत्र सम्पूर्ण मूल पाठ (पृष्ठ 34)</li>
@@ -290,21 +290,22 @@ page_specs = [
     <strong>अंत:</strong> 2 मिनट क्षमा प्रार्थना अवश्य करें।
   </div>
 </div>'''),
-    (23, "अध्याय 4 • आरेख 4.1", "स्वास्थ्य प्रबंधन एवं विटामिन महाचक्र", '''<div class="visual-chart-plate full-page-chart" style="text-align:center;">
-  <img src="assets/icons/sadhana_health_emergency_matrix.svg" alt="स्वास्थ्य प्रबंधन एवं विटामिन चक्र" style="width:100%; max-width:520px; height:auto; display:block; margin:0 auto; border-radius:8px;">
+    (23, "अध्याय 4 • आरेख 4.1", "स्वास्थ्य प्रबंधन एवं आपातकालीन महाचक्र", '''<div class="visual-chart-plate full-page-chart" style="text-align:center;">
+  <img src="assets/icons/sadhana_health_emergency_matrix.svg" alt="स्वास्थ्य प्रबंधन एवं आपातकालीन चक्र" style="width:100%; max-width:520px; height:auto; display:block; margin:0 auto; border-radius:8px;">
   <div style="font-size:0.82rem; font-style:italic; color:var(--text-muted); margin-top:0.4rem;">
-    आरेख 4.1: साधना काल में स्वास्थ्य प्रबंधन एवं पोषण दिशानिर्देश
+    आरेख 4.1: साधना काल में स्वास्थ्य प्रबंधन एवं त्रि-स्तरीय आपातकालीन प्रोटोकॉल
   </div>
 </div>'''),
-    (24, "अध्याय 4 • तांत्रिक पोषण", "विटामिन B12, D3 एवं मैग्नीशियम", '''<div style="font-size:0.88rem; line-height:1.7;">
-  <p><strong>तांत्रिक पोषण एवं विटामिन दिशानिर्देश:</strong></p>
-  <ul style="padding-left:1.2rem;">
-    <li><strong>B-Complex (विशेषकर B12):</strong> मानसिक ऊर्जा एवं तंत्रिका तंत्र (Nervous System) को सुदृढ़ बनाए रखता है।</li>
-    <li><strong>Vitamin D3:</strong> मूड स्टेबिलिटी, शांति एवं गहरी सात्विक निद्रा सुनिश्चित करता है।</li>
-    <li><strong>Magnesium:</strong> मांसपेशियों का तनाव दूर करता है और 8 घंटे के भूमि शयन को सुगम बनाता है।</li>
-  </ul>
-  <div class="rule-card info" style="margin-top:0.6rem;">
-    ⚠ नोट: विटामिन का सेवन चिकित्सीय परामर्श से ही करें।
+    (24, "अध्याय 4 • स्वास्थ्य दर्शन", "रोग-निवृत्ति एवं तांत्रिक स्वास्थ्य सुरक्षा", '''<div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>तांत्रिक स्वास्थ्य दर्शन एवं प्रारब्ध शोधन:</strong></p>
+  <div class="rule-card" style="border-left-color:#0284c7; margin-bottom:0.6rem;">
+    • <strong>प्रारब्ध कर्म शोधन:</strong> 41-दिवसीय तीव्र साधना में शरीर की ऊर्जा में तीव्र परिवर्तन आता है। कभी-कभी शारीरिक अस्वस्थता संचित प्रारब्ध की कर्म-शुद्धि का साधन बनकर उभरती है। साधक विचलित न हों।
+  </div>
+  <div class="rule-card" style="border-left-color:#b45309; margin-bottom:0.6rem;">
+    • <strong>महामृत्युंजय व भैरव रक्षा:</strong> अस्वस्थता की दशा में मानसिक रूप से 11 बार महामृत्युंजय मंत्र अथवा बटुक भैरव आपदुद्धारक मंत्र का स्मरण कर साधना की रक्षा करें।
+  </div>
+  <div class="rule-card" style="border-left-color:#15803d;">
+    • <strong>शरीरं खलु धर्मसाधनम्:</strong> शरीर ही समस्त साधनाओं का प्राथमिक आधार है। चिकित्सा में कभी उपेक्षा न करें।
   </div>
 </div>'''),
     (25, "अध्याय 4 • महिला साधक नियम", "मासिक धर्म प्रोटोकॉल व पाठ भरपाई", '''<div style="font-size:0.88rem; line-height:1.7;">

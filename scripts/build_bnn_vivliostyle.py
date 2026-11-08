@@ -565,3 +565,4 @@ def compile_pdf():
 if __name__ == "__main__":
     generate_print_html()
     compile_pdf()
+

@@ -580,7 +580,7 @@ def generate_print_html():
       <li class="toc-item"><a href="#ch1"><span class="toc-item-title">अध्याय 1: 41-दिवसीय पंचाक्षरी महासाधना एवं 1,25,000 जप सिद्धि</span><span class="toc-dots"></span></a></li>
       <li class="toc-item"><a href="#ch2"><span class="toc-item-title">अध्याय 2: तांत्रिक वेदी निर्माण, द्वैत दीप विज्ञान एवं 7-पद सामग्री क्रम</span><span class="toc-dots"></span></a></li>
       <li class="toc-item"><a href="#ch3"><span class="toc-item-title">अध्याय 3: दैनिक साधना काल-तालिका (8:30 PM – 10:40 PM मिनट-दर-मिनट)</span><span class="toc-dots"></span></a></li>
-      <li class="toc-item"><a href="#ch4"><span class="toc-item-title">अध्याय 4: स्वास्थ्य प्रबंधन, त्रि-स्तरीय प्रोटोकॉल एवं पोषण दिशानिर्देश</span><span class="toc-dots"></span></a></li>
+      <li class="toc-item"><a href="#ch4"><span class="toc-item-title">अध्याय 4: स्वास्थ्य प्रबंधन एवं त्रि-स्तरीय आपातकालीन प्रोटोकॉल</span><span class="toc-dots"></span></a></li>
       <li class="toc-item"><a href="#ch5"><span class="toc-item-title">अध्याय 5: षड्विध तांत्रिक यम-नियम, प्राणायाम एवं स्वप्न-स्वर विज्ञान</span><span class="toc-dots"></span></a></li>
       <li class="toc-item"><a href="#ch6"><span class="toc-item-title">अध्याय 6: श्री सिद्ध कुंजिका स्तोत्र संपुट विधान एवं शीघ्र विवाह सिद्धि</span><span class="toc-dots"></span></a></li>
       <li class="toc-item"><a href="#ch7"><span class="toc-item-title">अध्याय 7: श्री सिद्ध कुंजिका स्तोत्र सम्पूर्ण मूल पाठ एवं न्यास-विधान</span><span class="toc-dots"></span></a></li>
@@ -627,3 +627,4 @@ def compile_pdf():
 if __name__ == "__main__":
     generate_print_html()
     compile_pdf()
+
