@@ -518,6 +518,119 @@ def generate_print_html():
       margin-bottom: 0;
       font-size: 8.8pt;
     }
+
+    /* Hawan Samagree Image Gallery Grid for Vivliostyle Print */
+    .hawan-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3.5mm;
+      margin: 4mm 0 5mm;
+      break-inside: auto;
+      page-break-inside: auto;
+    }
+
+    .hawan-card {
+      background: #ffffff;
+      border: 1pt solid #fed7aa;
+      border-radius: 4pt;
+      overflow: hidden;
+      break-inside: avoid;
+      page-break-inside: avoid;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1pt 3pt rgba(180,83,9,0.05);
+    }
+
+    .hawan-card-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 34mm;
+      overflow: hidden;
+      background: #180802;
+    }
+
+    .hawan-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hawan-badge {
+      position: absolute;
+      top: 1.5mm;
+      left: 1.5mm;
+      background: rgba(180, 83, 9, 0.95);
+      color: #ffffff;
+      font-size: 6.5pt;
+      font-weight: 800;
+      padding: 0.8mm 2mm;
+      border-radius: 2pt;
+    }
+
+    .hawan-card-body {
+      padding: 2mm 2.5mm;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .hawan-card-title {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 8.5pt;
+      font-weight: 800;
+      color: #78350f;
+      margin: 0 0 0.8mm 0;
+    }
+
+    .hawan-card-en {
+      font-size: 6pt;
+      color: #b45309;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.2mm;
+    }
+
+    .hawan-card-desc {
+      font-size: 7.2pt;
+      color: #334155;
+      line-height: 1.4;
+      margin-bottom: 1.5mm;
+    }
+
+    .hawan-card-purpose {
+      margin-top: auto;
+      background: #fef3c7;
+      border: 0.75pt solid #fde68a;
+      border-radius: 2pt;
+      padding: 1mm 2mm;
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: #92400e;
+    }
+
+    /* Features bullet grid */
+    .features-bullet-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2mm;
+      margin: 2mm 0;
+    }
+
+    .bullet-item {
+      display: flex;
+      gap: 2mm;
+      align-items: flex-start;
+      font-size: 8.2pt;
+      line-height: 1.4;
+      color: #334155;
+    }
+
+    .bullet-icon {
+      color: #b45309;
+      font-weight: 800;
+    }
     """
 
     # Assemble complete HTML

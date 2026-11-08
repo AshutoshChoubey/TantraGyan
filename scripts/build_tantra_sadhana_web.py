@@ -606,6 +606,110 @@ HTML_CONTENT = """<!DOCTYPE html>
       font-size: 0.94rem;
     }
 
+    /* Hawan Samagree Image Gallery Grid */
+    .hawan-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.4rem;
+      margin: 1.8rem 0 2.2rem;
+    }
+
+    .hawan-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-soft);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.35s cubic-bezier(0.2, 0.8, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hawan-card:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .hawan-card-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      background: #180802;
+    }
+
+    .hawan-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+
+    .hawan-card:hover .hawan-card-img {
+      transform: scale(1.06);
+    }
+
+    .hawan-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(180, 83, 9, 0.92);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+
+    .hawan-card-body {
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .hawan-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 0.2rem;
+    }
+
+    .hawan-card-en {
+      font-size: 0.72rem;
+      color: var(--accent-gold);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .hawan-card-desc {
+      font-size: 0.88rem;
+      color: var(--text-main);
+      line-height: 1.55;
+      margin-bottom: 0.65rem;
+    }
+
+    .hawan-card-purpose {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(200, 157, 61, 0.12);
+      border: 1px solid rgba(200, 157, 61, 0.35);
+      border-radius: 6px;
+      padding: 0.35rem 0.65rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-heading);
+    }
+
     /* Footer Colophon */
     .reader-footer {
       border-top: 2px solid var(--border-gold);
@@ -1323,66 +1427,382 @@ HTML_CONTENT = """<!DOCTYPE html>
     <section class="chapter-section" id="ch8">
       <div class="chapter-header">
         <span class="chapter-num">अध्याय 8 • CHAPTER 8</span>
-        <h2 class="chapter-title">अनुष्ठान समापन, दशांश हवन, आरती एवं आसन-उत्थापन</h2>
-        <div class="chapter-subtitle">41वें दिन की पूर्णाहुति, दशांश हवन, विसर्जन एवं ऊर्जा स्थापन</div>
+        <h2 class="chapter-title">41-दिवसीय साधना समापन, विशेष हवन विधि एवं आसन-उत्थापन</h2>
+        <div class="chapter-subtitle">41वें दिन की पूर्णाहुति, षड्विध सचित्र हवन सामग्री, 9-चरणीय अनुक्रम, आहुति निर्णय (108 बनाम 12,500) एवं ऊर्जा स्थापन</div>
       </div>
 
       <p>
-        41वें दिन साधना की सिद्धि को स्थायित्व प्रदान करने हेतु पूर्णाहुति हवन किया जाता है। यदि साधक पंचाक्षरी साधना कर रहा है, तो सवा लाख जप का दशांश (12,500) अथवा समयाभाव में 108 आहुतियों का विशेष हवन आम की समिधा, शुद्ध घृत, काले तिल, जौ एवं कमलगट्टे से करें।
+        शास्त्रों के अनुसार, यह हवन कोई सामान्य दैनिक होम नहीं है। यह 41वें दिन की पंचाक्षरी महासाधना एवं श्री सिद्ध कुंजिका स्तोत्र के 21 पाठों के पूर्ण होने के उपरांत किया जाने वाला <strong>अनुष्ठान समापन हवन (पूर्णाहुति एवं दशांश होम)</strong> है। यह 41 दिनों तक अर्जित प्रचंड मंत्र-ऊर्जा को स्थायी रूप से साधक के सूक्ष्म शरीर व चक्रों में कीलित (Seal) करता है।
       </p>
 
-      <h3 class="subhead">8.1 41वें दिन का समापन क्रम</h3>
-      <ul class="step-list">
-        <li class="step-item">
+      <div class="rule-card success" style="margin-bottom:1.8rem;">
+        <strong>★ विशेष शास्त्रीय स्पष्टीकरण:</strong> पंचाक्षरी मंत्र (1,25,000 जप) का वास्तविक दशांश 12,500 आहुतियां हैं। 41 दिनों में कुंजिका स्तोत्र के कुल 861 पाठ (21 × 41) होते हैं, जिनकी अलग से दशांश आहुति शास्त्र में निर्धारित नहीं है। अतः दोनों मंत्रों की आहुतियों को मिलाकर 12,500 बताना अनुचित है। ताम्र हवन कुंड में समयाभाव एवं गृहस्थ मर्यादा अनुसार <strong>108 विशेष आहुतियों की समापन विधि</strong> एक प्रामाणिक एवं व्यावहारिक विकल्प है।
+      </div>
+
+      <h3 class="subhead">8.1 षड्विध प्रधान हवन सामग्री (6 Sacred Hawan Ingredients — सचित्र दर्शन)</h3>
+      <p>
+        इस तांत्रिक अनुष्ठान के समापन हवन हेतु पांच मुख्य एवं एक सहायक कुल 6 पवित्र हवन सामग्रियां शास्त्रोक्त रूप से निर्धारित हैं। नीचे प्रत्येक सामग्री का सचित्र विवरण एवं उसका आध्यात्मिक महत्व दिया गया है:
+      </p>
+
+      <!-- 6-Item Hawan Samagree Image Gallery Grid -->
+      <div class="hawan-gallery-grid">
+        
+        <!-- 1. Mango Samidha -->
+        <div class="hawan-card">
+          <div class="hawan-card-img-wrap">
+            <img src="assets/images/hawan/samidha_mango.jpg" alt="आम की समिधा - Mango Tree Sticks for Hawan" class="hawan-card-img" loading="lazy">
+            <span class="hawan-badge">1 • समिधा</span>
+          </div>
+          <div class="hawan-card-body">
+            <h4 class="hawan-card-title">आम की समिधा</h4>
+            <div class="hawan-card-en">Mango Tree Sticks (Samidha)</div>
+            <p class="hawan-card-desc">
+              अग्नि प्रज्वलन एवं आहुति का मुख्य काष्ठ आधार। आम की सूखी लकड़ी में प्राकृतिक रूप से वाष्पशील पवित्र तैलीय तत्व होते हैं जो वायुमंडल को शुद्ध एवं प्राणवान बनाते हैं।
+            </p>
+            <div class="hawan-card-purpose">
+              <span>🔥</span> <strong>प्रयोजन:</strong> अग्नि प्रज्वलन एवं मुख्य काष्ठ आहुति
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Pure Cow Ghee -->
+        <div class="hawan-card">
+          <div class="hawan-card-img-wrap">
+            <img src="assets/images/hawan/cow_ghee.jpg" alt="शुद्ध गाय का घी - Pure Desi Cow Ghee for Havan" class="hawan-card-img" loading="lazy">
+            <span class="hawan-badge">2 • घृत</span>
+          </div>
+          <div class="hawan-card-body">
+            <h4 class="hawan-card-title">शुद्ध गाय का देशी घी</h4>
+            <div class="hawan-card-en">Pure Desi Cow Ghee (Ghrita)</div>
+            <p class="hawan-card-desc">
+              अग्निदेव का प्रत्यक्ष भोजन एवं हविष्य का सर्वोच्च माध्यम। शुद्ध देशी गो-घृत की आहुति से वातावरण में सात्विक ओज, तेज और देवताओं की तृप्ति सुनिश्चित होती है।
+            </p>
+            <div class="hawan-card-purpose">
+              <span>🪔</span> <strong>प्रयोजन:</strong> घृत आहुति एवं अग्नि प्रदीप्ति
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Black Sesame Seeds -->
+        <div class="hawan-card">
+          <div class="hawan-card-img-wrap">
+            <img src="assets/images/hawan/black_sesame.jpg" alt="काले तिल - Organic Black Sesame Seeds" class="hawan-card-img" loading="lazy">
+            <span class="hawan-badge">3 • काले तिल</span>
+          </div>
+          <div class="hawan-card-body">
+            <h4 class="hawan-card-title">काले तिल</h4>
+            <div class="hawan-card-en">Black Sesame Seeds (Krishna Tila)</div>
+            <p class="hawan-card-desc">
+              प्रधान हवन सामग्री। तंत्र शास्त्र में काले तिल समस्त नकारात्मक ऊर्जा, प्रारब्ध के पाप-संस्कार, तथा शनि-राहु-केतु के दुष्प्रभावों के भस्म हेतु सर्वोपरि माने गए हैं।
+            </p>
+            <div class="hawan-card-purpose">
+              <span>✦</span> <strong>प्रयोजन:</strong> प्रधान आहुति व कर्म-दोष भस्म
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Barley (Jau) -->
+        <div class="hawan-card">
+          <div class="hawan-card-img-wrap">
+            <img src="assets/images/hawan/barley_jau.jpg" alt="जौ - Sacred Barley Grain for Hawan" class="hawan-card-img" loading="lazy">
+            <span class="hawan-badge">4 • जौ</span>
+          </div>
+          <div class="hawan-card-body">
+            <h4 class="hawan-card-title">जौ (यव)</h4>
+            <div class="hawan-card-en">Sacred Barley Grain (Yava)</div>
+            <p class="hawan-card-desc">
+              वैदिक एवं तांत्रिक यज्ञों में समृद्धि, आरोग्य और वंश-वृद्धि का कारक। तिल के साथ जौ का सम्मिश्रण हविष्य को पूर्ण और कल्याणकारी बनाता है।
+            </p>
+            <div class="hawan-card-purpose">
+              <span>🌾</span> <strong>प्रयोजन:</strong> आहुति एवं आरोग्य-समृद्धि सिद्धि
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Kamal Gatta -->
+        <div class="hawan-card">
+          <div class="hawan-card-img-wrap">
+            <img src="assets/images/hawan/kamalgatta.jpg" alt="कमलगट्टा - Lotus Seeds for Durga & Lakshmi Puja" class="hawan-card-img" loading="lazy">
+            <span class="hawan-badge">5 • कमलगट्टा</span>
+          </div>
+          <div class="hawan-card-body">
+            <h4 class="hawan-card-title">कमलगट्टा (कमल बीज)</h4>
+            <div class="hawan-card-en">Lotus Seeds (Kamal Gatta)</div>
+            <p class="hawan-card-desc">
+              माँ महालक्ष्मी, त्रिपुरसुन्दरी एवं दुर्गा साधना की परम प्रिय आहुति। कमलगट्टे की आहुति से दारिद्रय नाश, वैभव, आकर्षण एवं सर्व-मनोकामना सिद्धि प्राप्त होती है।
+            </p>
+            <div class="hawan-card-purpose">
+              <span>🪷</span> <strong>प्रयोजन:</strong> देवी साधना की विशेष फलप्रद आहुति
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Shuddha Hawan Samagri -->
+        <div class="hawan-card">
+          <div class="hawan-card-img-wrap">
+            <img src="assets/images/hawan/hawan_samagri.jpg" alt="शुद्ध हवन सामग्री - Pure Herbal Hawan Samagri Mixture" class="hawan-card-img" loading="lazy">
+            <span class="hawan-badge">6 • हवन सामग्री</span>
+          </div>
+          <div class="hawan-card-body">
+            <h4 class="hawan-card-title">शुद्ध हवन सामग्री</h4>
+            <div class="hawan-card-en">Herbal Hawan Samagri Mixture</div>
+            <p class="hawan-card-desc">
+              सुगंधित जड़ी-बूटियों (कपूर कचरी, गूलर, अगर-तगर, जटामांसी, चंदन, जायफल व लौंग) का शास्त्रीय सहायक मिश्रण। यह आहुति की गंध को दिव्य एवं सूक्ष्म बनाता है।
+            </p>
+            <div class="hawan-card-purpose">
+              <span>🌿</span> <strong>प्रयोजन:</strong> सहायक दिव्य औषधीय सुगंध मिश्रण
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Additional Ritual Items -->
+      <div class="rule-card" style="background:rgba(200,157,61,0.06); margin-bottom:1.8rem;">
+        <h4 style="font-family:var(--font-heading); font-size:1.05rem; color:var(--text-heading); margin-bottom:0.6rem;">
+          📦 आवश्यक सहायक उपकरण एवं सामग्री सूची:
+        </h4>
+        <div class="features-bullet-grid" style="grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));">
+          <div class="bullet-item"><span class="bullet-icon">✦</span> <div><strong>ताम्र हवन कुंड:</strong> शुद्ध चौकोर तांबे का हवन कुंड (अग्निरोधक ईंट/थाली पर स्थापित)</div></div>
+          <div class="bullet-item"><span class="bullet-icon">✦</span> <div><strong>घृत पात्र व काष्ठ स्रुवा:</strong> आम या पलाश की लकड़ी की आहुति चम्मच (स्रुवा) व तांबे/पीतल का घृत पात्र</div></div>
+          <div class="bullet-item"><span class="bullet-icon">✦</span> <div><strong>भीमसेनी कर्पूर:</strong> अग्नि प्रज्वलन एवं स्विष्टकृत आहुति हेतु शुद्ध कर्पूर</div></div>
+          <div class="bullet-item"><span class="bullet-icon">✦</span> <div><strong>पूजन द्रव्य:</strong> रक्त पुष्प, अक्षत, रोली, चंदन, पान का पत्ता, लौंग, इलायची, व सुपारी</div></div>
+          <div class="bullet-item"><span class="bullet-icon">✦</span> <div><strong>जल पात्र व आचमनी:</strong> गंगाजल युक्त शुद्ध तांबे का लोटा व आचमनी</div></div>
+          <div class="bullet-item"><span class="bullet-icon">✦</span> <div><strong>पूर्णाहुति द्रव्य:</strong> सूखा नारियल (गोला), कलावा, अतिरिक्त घृत व समिधा</div></div>
+        </div>
+        <div style="font-size:0.88rem; color:var(--text-muted); margin-top:0.85rem; border-top:1px dashed var(--border-soft); padding-top:0.65rem;">
+          <strong>मिश्रण तैयार करने की विधि:</strong> एक चौड़े कांस्य अथवा पीतल के थाल में जौ, काले तिल, कमलगट्टा (छोटे टुकड़ों में) और शुद्ध हवन सामग्री को परस्पर मिलाएं। देशी घी को अलग पात्र में गुनगुना रखें। आहुति देते समय स्रुवा में सामग्री लेकर उस पर घी की कुछ बूंदें डालकर ही अग्नि में अर्पित करें। (ग्रंथ में किसी सामग्री का मनमाना ग्राम-अनुपात नहीं बांधा गया है; पवित्रता एवं संतुलन ही मान्य है)।
+        </div>
+      </div>
+
+      <h3 class="subhead">8.2 हवन में प्रयुक्त होने वाले मुख्य मंत्र (Core Hawan Mantras)</h3>
+      <p>इस अनुष्ठान में दो मुख्य मंत्र-परंपराओं की प्रधान आहुतियां दी जाती हैं:</p>
+
+      <div class="mantra-box" style="margin-bottom:1.4rem;">
+        <div style="font-size:0.82rem; font-weight:800; color:#b45309; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.4rem;">
+          A. भगवान शिव — पंचाक्षरी आहुति मंत्र
+        </div>
+        <div class="mantra-sanskrit" style="font-size:1.3rem;">
+          ॥ ॐ नमः शिवाय स्वाहा ॥
+        </div>
+        <div class="mantra-meaning">
+          <strong>प्रयोग:</strong> प्रत्येक आहुति के साथ समिधा, तिल, जौ व घृत का सम्मिश्रण दाहिने हाथ की मृगी मुद्रा (अंगूठा, मध्यमा व अनामिका) से अर्पित करें।
+        </div>
+      </div>
+
+      <div class="mantra-box" style="margin-bottom:1.8rem; border-color:#991b1b; background:#fffbfb;">
+        <div style="font-size:0.82rem; font-weight:800; color:#991b1b; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.4rem;">
+          B. माँ चामुण्डा — सिद्ध कुंजिका सम्पूर्ण मूल मंत्र (अध्याय 7)
+        </div>
+        <div class="mantra-sanskrit" style="font-size:1.1rem; line-height:1.8; color:#7f1d1d;">
+          ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे।<br>
+          ॐ ग्लौं हुं क्लीं जूं सः ज्वालय ज्वालय ज्वल ज्वल प्रज्वल प्रज्वल<br>
+          ऐं ह्रीं क्लीं चामुण्डायै विच्चे ज्वल हं सं लं क्षं फट् स्वाहा॥
+        </div>
+        <div class="mantra-meaning" style="border-left-color:#dc2626;">
+          <strong>विशेष शास्त्रीय सावधानी:</strong> सिद्ध कुंजिका मूल मंत्र के अंत में पहले से <em>"स्वाहा"</em> विद्यमान है। इसके उपरांत पुनः अलग से दूसरा 'स्वाहा' न जोड़ें। प्रत्येक पाठ के पूर्ण होते ही स्वाहा शब्द के साथ आहुति प्रज्वलित अग्नि के मध्य में समर्पित करें।
+        </div>
+      </div>
+
+      <h3 class="subhead">8.3 41वें दिन हवन का संपूर्ण 9-चरणीय अनुक्रम (Complete 9-Step Sequence)</h3>
+      <p>हवन का आरंभ से विसर्जन तक का संपूर्ण शास्त्रसम्मत अनुक्रम निम्नलिखित 9 चरणों में संपन्न करें:</p>
+
+      <div class="step-list">
+        
+        <div class="step-item">
           <div class="step-badge">1</div>
           <div class="step-content">
-            <strong>दशांश हवन एवं आहुति</strong>
-            <p>हवन कुंड में अग्नि प्रज्वलित कर प्रत्येक आहुति के साथ 'ॐ नमः शिवाय स्वाहा' अथवा 'ऐं ह्रीं क्लीं चामुण्डायै विच्चे स्वाहा' बोलकर आहुति दें।</p>
+            <strong>चरण 1: गणेश पूजन (विघ्नहर्ता स्मरण)</strong>
+            <p>सर्वप्रथम भगवान श्री गणेश का ध्यान करें। हाथ में रक्त पुष्प व अक्षत लेकर निम्न मंत्र का 11 बार जप करें तथा गणेश जी के चरणों में अर्पित करें:</p>
+            <div style="font-family:var(--font-serif); font-weight:700; color:var(--accent-gold); margin:0.35rem 0;">
+              ॥ ॐ गं गणपतये नमः ॥
+            </div>
           </div>
-        </li>
-        <li class="step-item">
+        </div>
+
+        <div class="step-item">
           <div class="step-badge">2</div>
           <div class="step-content">
-            <strong>मंदिर में प्रसाद वितरण एवं कन्या पूजन</strong>
-            <p>साधना पूर्ण होने पर समीपस्थ शिव/दुर्गा मंदिर में भोग लगाएं, श्रद्धालुओं में प्रसाद वितरित करें तथा संभव हो तो कन्याओं को सात्विक भोजन कराकर आशीर्वाद लें।</p>
+            <strong>चरण 2: शास्त्रीय संकल्प (Sankalpa)</strong>
+            <p>दाहिने हाथ में जल, अक्षत, पुष्प और दक्षिणा लेकर उत्तर या पूर्व मुखी होकर संकल्प पढ़ें:</p>
+            <div class="mantra-box" style="margin:0.5rem 0; padding:0.85rem; font-size:0.95rem;">
+              <span style="font-family:var(--font-serif); font-weight:700; color:#78350f;">
+                "मम उपात्त समस्त दुरितक्षयद्वारा श्री सदाशिव प्रीत्यर्थं, श्री चामुण्डा भगवती प्रसादसिद्ध्यर्थं, कृतस्य एकचत्वारिंशद्दिवसीय पंचाक्षरी एवं सिद्धकुंजिका साधनानुष्ठानस्य पूर्णाहुत्यर्थं हवनं करिष्ये।"
+              </span>
+            </div>
+            <p style="font-size:0.86rem; color:var(--text-muted);">संकल्प पाठ के उपरांत हाथ का जल ताम्र पात्र अथवा भूमि पर छोड़ दें।</p>
           </div>
-        </li>
-        <li class="step-item">
+        </div>
+
+        <div class="step-item">
           <div class="step-badge">3</div>
           <div class="step-content">
-            <strong>मंत्र-पत्र एवं ऊर्जा मंजूषा स्थापन</strong>
-            <p>संकल्प पत्र अथवा जिस भोजपत्र पर मंत्र लिखा गया हो, उसे शुद्ध ताम्र अथवा रजत (चांदी) के डिब्बे में रखकर अपने पूजा घर में स्थापित करें।</p>
+            <strong>चरण 3: अग्नि स्थापना एवं अग्नि पूजन (Agni Sthapana)</strong>
+            <p>ताम्र कुंड में समिधा सजाकर कर्पूर की सहायता से अग्नि प्रज्वलित करें। अग्निदेव का ध्यान करते हुए पुष्प-अक्षत अर्पित करें: <em>॥ ॐ अग्नये नमः ॥</em></p>
+            <p>तदुपरांत स्रुवा से शुद्ध गो-घृत की 5 प्रारंभिक आहुतियां दें:</p>
+            <ul style="padding-left:1.2rem; margin-top:0.3rem; font-size:0.9rem; line-height:1.6;">
+              <li>1. <code>ॐ अग्नये स्वाहा</code> (अग्नये इदं न मम)</li>
+              <li>2. <code>ॐ सोमाय स्वाहा</code> (सोमाय इदं न मम)</li>
+              <li>3. <code>ॐ अग्निसोमाभ्यां स्वाहा</code> (अग्निसोमाभ्यां इदं न मम)</li>
+              <li>4. <code>ॐ प्रजापतये स्वाहा</code> (प्रजापतये इदं न मम)</li>
+              <li>5. <code>ॐ इन्द्राय स्वाहा</code> (इन्द्राय इदं न मम)</li>
+            </ul>
           </div>
-        </li>
-      </ul>
-
-      <h3 class="subhead">8.2 गुप्त आसन-उत्थापन महामंत्र (ऊर्जा रक्षा सूत्र)</h3>
-      <p>
-        साधना के उपरांत यदि साधक सीधे आसन से उठ जाता है, तो उस जप का संपूर्ण पुण्य देवराज इन्द्र को प्राप्त हो जाता है। अतः आसन छोड़ने से पूर्व यह क्रिया अनिवार्य रूप से करें:
-      </p>
-
-      <div class="mantra-box" style="border-color:#b45309; background:#fffdf5;">
-        <div class="mantra-sanskrit" style="color:#78350f;">
-          ॥ आसन-उत्थापन मन्त्र ॥<br>
-          ॐ शक्राय नमः । ॐ इन्द्राय नमः ॥
         </div>
-        <div class="mantra-meaning">
-          <strong>विधि:</strong> आचमनी से दो बूंद जल अपने आसन के नीचे भूमि पर छोड़ें। अनामिका उंगली से उस जल को स्पर्श कर अपने मस्तक, दोनों नेत्रों और कंठ पर लगाएं। इसके बाद ही आसन समेटें।
+
+        <div class="step-item">
+          <div class="step-badge">4</div>
+          <div class="step-content">
+            <strong>चरण 4: भगवान शिव की प्रधान आहुति (Shiva Ahuti)</strong>
+            <p>यदि पंचाक्षरी जप इस अनुष्ठान का मुख्य संकल्प है, तो निर्धारित संख्या (108 अथवा दशांश) के अनुसार प्रत्येक बार हवन सामग्री व घृत मिलाकर अर्पित करें:</p>
+            <div style="font-family:var(--font-serif); font-weight:700; color:var(--accent-gold); margin:0.35rem 0;">
+              ॥ ॐ नमः शिवाय स्वाहा ॥
+            </div>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-badge">5</div>
+          <div class="step-content">
+            <strong>चरण 5: माँ चामुण्डा की प्रधान आहुति (Chamunda Ahuti)</strong>
+            <p>सिद्ध कुंजिका साधना हेतु अध्याय 7 में वर्णित सम्पूर्ण कुंजिका मूल मंत्र का पाठ करें और अंत में स्वाहा के साथ कमलगट्टा, तिल, जौ व घृत की आहुति दें:</p>
+            <div style="font-family:var(--font-serif); font-weight:700; color:#991b1b; margin:0.35rem 0; font-size:0.92rem;">
+              ॥ ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे... ज्वल हं सं लं क्षं फट् स्वाहा ॥
+            </div>
+            <p style="font-size:0.84rem; color:var(--text-muted);">(नोट: यहाँ सम्पूर्ण 21 पाठ दोबारा नहीं करने हैं; यह समापन हवन हेतु विशिष्ट मंत्र-आहुति है)।</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-badge">6</div>
+          <div class="step-content">
+            <strong>चरण 6: स्विष्टकृत आहुति (दोष निवारण)</strong>
+            <p>हवन के मध्य में यदि कोई उच्चारण या क्रम दोष हुआ हो, तो उसके निवारण हेतु घृत व मीठे हविष्य से स्विष्टकृत आहुति दें:</p>
+            <div style="font-family:var(--font-serif); font-weight:700; color:var(--accent-gold); margin:0.35rem 0;">
+              ॥ ॐ अग्नये स्विष्टकृते स्वाहा ॥ (अग्नये स्विष्टकृते इदं न मम)
+            </div>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-badge">7</div>
+          <div class="step-content">
+            <strong>चरण 7: पूर्णाहुति (The Final Mahāhuti)</strong>
+            <p>साधक खड़े होकर दोनों हाथों में स्रुवा अथवा कांस्य पात्र में सूखा नारियल (गोला), सुपारी, कमलगट्टा, समिधा व प्रचुर घृत लेकर संपूर्ण श्रद्धा से अंतिम पूर्णाहुति दें:</p>
+            <div class="mantra-box" style="margin:0.4rem 0; padding:0.65rem;">
+              <span style="font-family:var(--font-serif); font-weight:700; color:#78350f;">
+                ॥ ॐ पूर्णमदः पूर्णमिदं पूर्णात्पूर्णमुदच्यते। पूर्णस्य पूर्णमादाय पूर्णमेवावशिष्यते॥<br>
+                ॥ ॐ सर्वं वै पूर्णं स्वाहा॥
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-badge">8</div>
+          <div class="step-content">
+            <strong>चरण 8: क्षमा प्रार्थना (Forgiveness Mantra)</strong>
+            <p>हाथ जोड़कर माँ भगवती एवं भगवान शिव के सम्मुख अपनी न्यूनता या अधिकता हेतु क्षमा याचना करें:</p>
+            <div class="mantra-box" style="margin:0.4rem 0; padding:0.75rem;">
+              <p class="mantra-sanskrit" style="font-size:0.95rem; margin-bottom:0.3rem;">
+                अज्ञानाद्विस्मृतेर्भ्रान्त्या यन्न्यूनमधिकं कृतम्।<br>
+                तत्सर्वं क्षम्यतां देवि प्रसीद परमेश्वरि॥<br>
+                कामेश्वरि जगन्मातः सच्चिदानन्दविग्रहे।<br>
+                गृहाणार्चामिमां प्रीत्या प्रसीद परमेश्वरि॥
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-badge">9</div>
+          <div class="step-content">
+            <strong>चरण 9: आरती, प्रसाद एवं गुप्त आसन-उत्थापन महामंत्र</strong>
+            <p>कर्पूर से माँ भगवती व शिवजी की आरती करें, भोग लगाएं तथा प्रसाद वितरण करें। इसके उपरांत आसन छोड़ने से पूर्व अनिवार्य रूप से यह क्रिया करें:</p>
+            <div class="mantra-box" style="border-color:#b45309; background:#fffdf5; margin:0.5rem 0; padding:0.8rem;">
+              <div class="mantra-sanskrit" style="color:#78350f; font-size:1.15rem;">
+                ॥ गुप्त आसन-उत्थापन मन्त्र ॥<br>
+                ॐ शक्राय नमः । ॐ इन्द्राय नमः ॥
+              </div>
+              <div class="mantra-meaning" style="font-size:0.86rem;">
+                <strong>विधि:</strong> आचमनी से दो बूंद जल अपने आसन के नीचे भूमि पर छोड़ें। अनामिका उंगली से उस जल को स्पर्श कर अपने मस्तक, दोनों नेत्रों और कंठ पर लगाएं। ऐसा न करने पर साधना का फल देवराज इन्द्र को प्राप्त हो जाता है।
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <h3 class="subhead">8.4 कितनी आहुतियां देनी चाहिए? — दो स्पष्ट संस्करण (Clarification & 2 Options)</h3>
+      <p>साधक अपनी सुविधा, स्थान, समय और संकल्प के अनुसार निम्नलिखित दो में से किसी एक विधि का चयन करें:</p>
+
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>संस्करण</th>
+              <th>आहुति संख्या</th>
+              <th>स्थिति एवं प्रयोजन</th>
+              <th>अनुशंसित कुंड / स्थान</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>विधि A: संक्षिप्त समापन हवन</strong></td>
+              <td><strong>108 आहुतियां</strong></td>
+              <td>गृहस्थ साधकों हेतु समयाभाव में ग्रंथ का अनुशंसित व्यावहारिक समापन। 108 आहुतियों में शिव व चामुण्डा मंत्र की आहुतियां सम्मिलित हैं।</td>
+              <td>घरेलू ताम्र हवन कुंड (Apartment / Home Friendly)</td>
+            </tr>
+            <tr>
+              <td><strong>विधि B: पूर्ण पंचाक्षरी दशांश हवन</strong></td>
+              <td><strong>12,500 आहुतियां</strong></td>
+              <td>1,25,000 पंचाक्षरी जप का वास्तविक 10% दशांश। यह वृहद यज्ञ है जिसमें पर्याप्त समय, प्रचुर समिधा व घृत अपेक्षित है।</td>
+              <td>मंदिर, यज्ञशाला अथवा खुला सुरक्षित स्थान</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="rule-card warning" style="margin-top:1.2rem;">
+        <strong>★ 861 कुंजिका पाठों का शास्त्रीय स्पष्टीकरण:</strong> 41 दिनों में कुल 861 कुंजिका पाठ (21 × 41) संपन्न होते हैं। प्राचीन तंत्र ग्रंथों में कुंजिका स्तोत्र के लिए अलग से संख्यात्मक दशांश आहुति नहीं बांधी गई है, क्योंकि यह स्वयं में जाग्रत सिद्ध स्तोत्र है। अतः 12,500 पंचाक्षरी आहुतियों के साथ इसे मनमाने रूप से न जोड़ें।
+      </div>
+
+      <h3 class="subhead">8.5 हवनोपरांत अनुष्ठानिक कर्तव्य (Post-Hawan Sacred Duties)</h3>
+      <p>हवन संपन्न होने के उपरांत साधना की पूर्ण फल-प्राप्ति हेतु इन कार्यों का संपादन करें:</p>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-badge">1</div>
+          <div class="step-content">
+            <strong>मंदिर में भोग एवं प्रसाद वितरण:</strong> समीपस्थ शिव अथवा माँ दुर्गा के मंदिर में पंचमेवा, मिष्ठान अथवा खीर का भोग लगाएं और भक्तों में प्रसाद वितरित करें।
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-badge">2</div>
+          <div class="step-content">
+            <strong>कन्या पूजन एवं सात्विक भोजन:</strong> 1 से 9 कन्याओं (2 से 10 वर्ष आयु) का पाद प्रक्षालन कर उन्हें हलवा, पूरी, चना आदि सात्विक भोजन कराएं तथा दक्षिणा देकर आशीर्वाद प्राप्त करें।
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-badge">3</div>
+          <div class="step-content">
+            <strong>मंत्र-मंजूषा स्थापन (Energy Enclosure):</strong> संकल्प पत्र अथवा जिस भोजपत्र पर मंत्र लिखा गया था, उसे शुद्ध ताम्र अथवा चांदी के डिब्बे (मंजूषा) में रखकर अपने पूजा घर में उत्तर-पूर्व दिशा में स्थापित करें। यह आजीवन रक्षा कवच का कार्य करता है।
+          </div>
         </div>
       </div>
 
-      <h3 class="subhead">8.3 क्षमा प्रार्थना</h3>
-      <div class="mantra-box">
-        <p class="mantra-sanskrit">
-          अज्ञानाद्विस्मृतेर्भ्रान्त्या यन्न्यूनमधिकं कृतम् ।<br>
-          तत्सर्वं क्षम्यतां देवि प्रसीद परमेश्वरि ॥<br>
-          कामेश्वरि जगन्मातः सच्चिदानन्दविग्रहे ।<br>
-          गृहाणार्चामिमां प्रीत्या प्रसीद परमेश्वरि ॥
+      <h3 class="subhead">8.6 अग्नि सुरक्षा एवं आवश्यक सावधानियां (Fire Safety Protocols)</h3>
+      <div class="rule-card" style="border-left-color:#ef4444; background:rgba(239,68,68,0.04);">
+        <p style="font-weight:700; color:#b91c1c; margin-bottom:0.4rem;">
+          ⚠️ साधक सुरक्षा दिशानिर्देश:
         </p>
-        <div class="mantra-meaning">
-          हे माँ परमेश्वरी! अज्ञान, विस्मृति अथवा भ्रमवश जो कुछ भी न्यून या अधिक हुआ हो, उसे क्षमा करें और मुझ पर अपनी अविरल कृपा बनाए रखें।
-        </div>
+        <ul style="padding-left:1.2rem; font-size:0.92rem; line-height:1.65;">
+          <li><strong>पर्याप्त वेंटिलेशन:</strong> ताम्र हवन कुंड को बंद कमरे में कभी न जलाएं। खिड़कियां व द्वार खुले रखें ताकि धुआं आसानी से बाहर निकल सके।</li>
+          <li><strong>अग्निरोधक आधार:</strong> हवन कुंड को लकड़ी की मेज या कालीन पर न रखें। इसके नीचे पत्थर की स्लैब, सिरेमिक टाइल अथवा बालू से भरी धातु की थाली रखें।</li>
+          <li><strong>जल व अग्निशामक व्यवस्था:</strong> हवन कुंड के पास 1 बाल्टी जल और एक गीला सूती तौलिया आपातकालीन सुरक्षा हेतु अवश्य रखें।</li>
+          <li><strong>घृत एवं कर्पूर नियंत्रण:</strong> एक साथ अधिक मात्रा में घी या कर्पूर न डालें, जिससे अग्नि अनियंत्रित होकर भड़कने न पाए।</li>
+        </ul>
       </div>
+
     </section>
 
     <!-- AUTHOR & DEDICATION -->

@@ -46,17 +46,58 @@ top_part = re.sub(r'<meta property="og:title" content="[^"]*">', '<meta property
 top_part = re.sub(r'<meta property="og:description" content="[^"]*">', '<meta property="og:description" content="41-दिवसीय प्रत्यक्ष प्रयोग, सवा लाख पंचाक्षरी जप, श्री सिद्ध कुंजिका स्तोत्र 21 पाठ, वेदी द्वैत दीप विज्ञान एवं संपुट विधान। लेखक: ज्योतिषाचार्य Ashutosh Kumar Choubey।">', top_part)
 
 top_part = top_part.replace('tantra_bnn_flip_page', 'tantra_sadhana_flip_page')
-top_part = top_part.replace('p > 40', 'p > 36')
-top_part = top_part.replace('p > 46', 'p > 36')
-top_part = top_part.replace('max="46"', 'max="36"')
-top_part = top_part.replace('Cover • 1 / 46', 'Cover • 1 / 36')
-top_part = top_part.replace('goToPage(46, true)', 'goToPage(36, true)')
+top_part = top_part.replace('p > 40', 'p > 38')
+top_part = top_part.replace('p > 46', 'p > 38')
+top_part = top_part.replace('max="46"', 'max="38"')
+top_part = top_part.replace('Cover • 1 / 46', 'Cover • 1 / 38')
+top_part = top_part.replace('goToPage(46, true)', 'goToPage(38, true)')
 top_part = top_part.replace('href="bhrigu-nandi-nadi-karma-samyojan.pdf"', 'href="tantra-sadhana-siddhi-protocol.pdf"')
 top_part = top_part.replace('download="Bhrigu-Nandi-Nadi-Karma-Samyojan-Sutra.pdf"', 'download="Tantra-Sadhana-Siddhi-Protocol.pdf"')
 top_part = top_part.replace('href="bhrigu-nandi-nadi.html"', 'href="tantra-sadhana-siddhi.html"')
 top_part = top_part.replace('वैदिक ज्योतिष महाग्रंथ सरलीकृत', 'तंत्र साधना सिद्धि महाग्रंथ')
 top_part = top_part.replace('Complete Vedic Astrology Compendium Simplified', '41-Day Empirical Sadhana Protocol & Secret Rituals')
 top_part = top_part.replace('सम्पूर्ण प्रामाणिक शास्त्रीय फलित ज्ञानकोश', 'श्री सिद्ध कुंजिका स्तोत्र एवं पंचाक्षरी महासाधना प्रत्यक्ष कल्प')
+
+# Inject custom styling for hawan gallery, rule cards, and shloka boxes
+custom_sadhana_styles = """
+  <style>
+    .hawan-flip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 6px 0;
+    }
+    .rule-card {
+      background: rgba(200, 157, 61, 0.08);
+      border-left: 3px solid #b45309;
+      border-radius: 4px;
+      padding: 6px 10px;
+      margin: 6px 0;
+    }
+    .rule-card.success {
+      border-left-color: #059669;
+      background: rgba(5, 150, 105, 0.08);
+    }
+    .rule-card.warning {
+      border-left-color: #dc2626;
+      background: rgba(220, 38, 38, 0.08);
+    }
+    .rule-card.info {
+      border-left-color: #0284c7;
+      background: rgba(2, 132, 199, 0.08);
+    }
+    .shloka-box, .mantra-box {
+      background: rgba(200, 157, 61, 0.06);
+      border: 1px solid #d97706;
+      border-radius: 6px;
+      padding: 6px 10px;
+      margin: 6px 0;
+    }
+  </style>
+"""
+if '</head>' in top_part:
+    top_part = top_part.replace('</head>', f'{custom_sadhana_styles}\n</head>')
+
 
 # Page data definition
 page_specs = [
@@ -118,7 +159,8 @@ page_specs = [
     <li><strong>अध्याय 5:</strong> षड्विध यम-नियम, प्राणायाम व स्वप्न-स्वर (पृष्ठ 26–30)</li>
     <li><strong>अध्याय 6:</strong> संपुट विधान, विवाह सिद्धि व 21 पाठ चक्र (पृष्ठ 31–33)</li>
     <li><strong>अध्याय 7:</strong> सिद्ध कुंजिका स्तोत्र सम्पूर्ण मूल पाठ (पृष्ठ 34)</li>
-    <li><strong>अध्याय 8:</strong> 41वें दिन पूर्णाहुति हवन, आसन उत्थापन व समाप्ति (पृष्ठ 35–36)</li>
+    <li><strong>अध्याय 8:</strong> 41वें दिन पूर्णाहुति हवन, षट्द्रव्य सामग्री, 9-चरणीय क्रम व आसन उत्थापन (पृष्ठ 35–37)</li>
+    <li><strong>उपसंहार:</strong> ग्रंथ समापन, शांति पाठ एवं प्रणेता परिचय (पृष्ठ 38)</li>
   </ul>
 </div>'''),
     (6, "अध्याय 1 • पंचाक्षरी साधना", "1,25,000 जप सिद्धि एवं प्रारम्भ नियम", '''<div style="font-size:0.88rem; line-height:1.7;">
@@ -405,31 +447,167 @@ page_specs = [
     </div>
   </div>
 </div>'''),
-    (35, "अध्याय 8 • पूर्णाहुति", "दशांश हवन व आसन-उत्थापन महामंत्र", '''<div style="font-size:0.88rem; line-height:1.7;">
-  <p><strong>41वें दिन पूर्णाहुति एवं गुप्त आसन-उत्थापन मंत्र:</strong></p>
-  <div class="rule-card success">
-    <strong>दशांश हवन:</strong> 108 आहुतियां आम की समिधा, घृत व तिल से दें।
-  </div>
-  <div class="shloka-box" style="padding:0.8rem; margin:0.6rem 0;">
-    <div style="font-family:'Noto Serif Devanagari',serif; font-size:1.05rem; font-weight:700; color:#78350f;">
-      ॥ आसन-उत्थापन मन्त्र ॥<br>
-      ॐ शक्राय नमः । ॐ इन्द्राय नमः ॥
+    (35, "अध्याय 8 • पूर्णाहुति हवन", "षड्विध सचित्र हवन सामग्री एवं ताम्र कुंड", '''<div style="font-size:0.86rem; line-height:1.65;">
+  <p><strong>41वें दिन अनुष्ठान समापन हवन (षड्विध पवित्र सामग्री दर्शन):</strong></p>
+  <div class="hawan-flip-grid" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; margin:0.4rem 0;">
+    <div style="background:rgba(200,157,61,0.06); border:1px solid #d97706; border-radius:6px; overflow:hidden; text-align:center;">
+      <div style="position:relative; height:80px; background:#180802;">
+        <img src="assets/images/hawan/samidha_mango.jpg" alt="आम की समिधा" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <span style="position:absolute; top:3px; left:3px; background:rgba(180,83,9,0.92); color:#fff; font-size:0.6rem; font-weight:800; padding:1px 4px; border-radius:3px;">1. समिधा</span>
+      </div>
+      <div style="padding:4px 5px;">
+        <strong style="color:#78350f; font-size:0.75rem; display:block;">आम की समिधा</strong>
+        <span style="color:#b45309; font-size:0.62rem; font-weight:700;">Mango Sticks</span>
+        <div style="font-size:0.66rem; color:#475569; line-height:1.25; margin-top:2px;">अग्नि प्रज्वलन व मुख्य काष्ठ आधार</div>
+      </div>
+    </div>
+    <div style="background:rgba(200,157,61,0.06); border:1px solid #d97706; border-radius:6px; overflow:hidden; text-align:center;">
+      <div style="position:relative; height:80px; background:#180802;">
+        <img src="assets/images/hawan/cow_ghee.jpg" alt="शुद्ध गाय का घी" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <span style="position:absolute; top:3px; left:3px; background:rgba(180,83,9,0.92); color:#fff; font-size:0.6rem; font-weight:800; padding:1px 4px; border-radius:3px;">2. घृत</span>
+      </div>
+      <div style="padding:4px 5px;">
+        <strong style="color:#78350f; font-size:0.75rem; display:block;">देशी गो-घृत</strong>
+        <span style="color:#b45309; font-size:0.62rem; font-weight:700;">Pure Cow Ghee</span>
+        <div style="font-size:0.66rem; color:#475569; line-height:1.25; margin-top:2px;">अग्निदेव का प्रत्यक्ष हविष्य भोजन</div>
+      </div>
+    </div>
+    <div style="background:rgba(200,157,61,0.06); border:1px solid #d97706; border-radius:6px; overflow:hidden; text-align:center;">
+      <div style="position:relative; height:80px; background:#180802;">
+        <img src="assets/images/hawan/black_sesame.jpg" alt="काले तिल" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <span style="position:absolute; top:3px; left:3px; background:rgba(180,83,9,0.92); color:#fff; font-size:0.6rem; font-weight:800; padding:1px 4px; border-radius:3px;">3. काले तिल</span>
+      </div>
+      <div style="padding:4px 5px;">
+        <strong style="color:#78350f; font-size:0.75rem; display:block;">काले तिल</strong>
+        <span style="color:#b45309; font-size:0.62rem; font-weight:700;">Black Sesame</span>
+        <div style="font-size:0.66rem; color:#475569; line-height:1.25; margin-top:2px;">प्रधान हविष्य व कर्मदोष भस्म</div>
+      </div>
+    </div>
+    <div style="background:rgba(200,157,61,0.06); border:1px solid #d97706; border-radius:6px; overflow:hidden; text-align:center;">
+      <div style="position:relative; height:80px; background:#180802;">
+        <img src="assets/images/hawan/barley_jau.jpg" alt="जौ" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <span style="position:absolute; top:3px; left:3px; background:rgba(180,83,9,0.92); color:#fff; font-size:0.6rem; font-weight:800; padding:1px 4px; border-radius:3px;">4. जौ</span>
+      </div>
+      <div style="padding:4px 5px;">
+        <strong style="color:#78350f; font-size:0.75rem; display:block;">जौ (यव)</strong>
+        <span style="color:#b45309; font-size:0.62rem; font-weight:700;">Sacred Barley</span>
+        <div style="font-size:0.66rem; color:#475569; line-height:1.25; margin-top:2px;">आरोग्य, पुष्टि व समृद्धि सिद्धि</div>
+      </div>
+    </div>
+    <div style="background:rgba(200,157,61,0.06); border:1px solid #d97706; border-radius:6px; overflow:hidden; text-align:center;">
+      <div style="position:relative; height:80px; background:#180802;">
+        <img src="assets/images/hawan/kamalgatta.jpg" alt="कमलगट्टा" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <span style="position:absolute; top:3px; left:3px; background:rgba(180,83,9,0.92); color:#fff; font-size:0.6rem; font-weight:800; padding:1px 4px; border-radius:3px;">5. कमलगट्टा</span>
+      </div>
+      <div style="padding:4px 5px;">
+        <strong style="color:#78350f; font-size:0.75rem; display:block;">कमलगट्टा बीज</strong>
+        <span style="color:#b45309; font-size:0.62rem; font-weight:700;">Lotus Seeds</span>
+        <div style="font-size:0.66rem; color:#475569; line-height:1.25; margin-top:2px;">देवी महालक्ष्मी व दुर्गा प्रिय आहुति</div>
+      </div>
+    </div>
+    <div style="background:rgba(200,157,61,0.06); border:1px solid #d97706; border-radius:6px; overflow:hidden; text-align:center;">
+      <div style="position:relative; height:80px; background:#180802;">
+        <img src="assets/images/hawan/hawan_samagri.jpg" alt="हवन सामग्री" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <span style="position:absolute; top:3px; left:3px; background:rgba(180,83,9,0.92); color:#fff; font-size:0.6rem; font-weight:800; padding:1px 4px; border-radius:3px;">6. मिश्रण</span>
+      </div>
+      <div style="padding:4px 5px;">
+        <strong style="color:#78350f; font-size:0.75rem; display:block;">हवन सामग्री</strong>
+        <span style="color:#b45309; font-size:0.62rem; font-weight:700;">Herbal Mix</span>
+        <div style="font-size:0.66rem; color:#475569; line-height:1.25; margin-top:2px;">दिव्य सुगंधित जड़ी-बूटी मिश्रण</div>
+      </div>
     </div>
   </div>
-  <p>आसन के नीचे दो बूंद जल छोड़ें, अनामिका से स्पर्श कर मस्तक व नेत्रों पर लगाएं।</p>
+  <div class="rule-card" style="padding:6px 10px; margin:4px 0; font-size:0.78rem;">
+    <strong>📦 सहायक उपकरण:</strong> ताम्र हवन कुंड, काष्ठ स्रुवा, घृत पात्र, भीमसेनी कर्पूर, पुष्प-अक्षत, सूखा गोला (नारियल) व कलावा।
+  </div>
 </div>'''),
-    (36, "उपसंहार • Colophon", "ग्रंथ समापन व शांति पाठ", '''<div style="text-align:center; padding:1.5rem 1rem;">
-  <div style="font-size:1.8rem; margin-bottom:0.8rem;">☸ ॥ ॐ शान्तिः शान्तिः शान्तिः ॥ ☸</div>
-  <h3 style="font-size:1.35rem; color:var(--accent-gold); font-family:'Noto Serif Devanagari',serif; font-weight:800; margin-bottom:0.8rem;">
+    (36, "अध्याय 8 • हवन विधि", "मुख्य मंत्र एवं नव-चरणीय शास्त्रीय अनुक्रम", '''<div style="font-size:0.84rem; line-height:1.6;">
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:6px;">
+    <div class="rule-card" style="padding:5px 8px; margin:0;">
+      <strong style="color:#78350f; font-size:0.78rem;">A. शिव पंचाक्षरी आहुति मंत्र:</strong>
+      <div style="font-family:'Noto Serif Devanagari',serif; font-size:0.9rem; font-weight:700; color:#b45309; margin-top:2px;">
+        ॥ ॐ नमः शिवाय स्वाहा ॥
+      </div>
+    </div>
+    <div class="rule-card warning" style="padding:5px 8px; margin:0;">
+      <strong style="color:#991b1b; font-size:0.78rem;">B. चामुण्डा सिद्ध कुंजिका मंत्र:</strong>
+      <div style="font-family:'Noto Serif Devanagari',serif; font-size:0.76rem; font-weight:700; color:#7f1d1d; margin-top:2px;">
+        ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे... फट् स्वाहा॥
+      </div>
+      <span style="font-size:0.65rem; color:#dc2626;">(अंत में स्वाहा है, पुनः अतिरिक्त स्वाहा न जोड़ें)</span>
+    </div>
+  </div>
+  <div style="font-weight:800; color:var(--accent-gold); font-size:0.82rem; margin:4px 0 2px;">
+    9-चरणीय हवन क्रम (9-Step Ritual Sequence):
+  </div>
+  <ol style="padding-left:1.1rem; margin:0; font-size:0.8rem; line-height:1.55;">
+    <li><strong>गणेश पूजन:</strong> ॐ गं गणपतये नमः (11 बार स्मरण व पुष्प समर्पण)</li>
+    <li><strong>संकल्प:</strong> "मम उपात्त समस्त दुरितक्षयद्वारा... पूर्णाहुत्यर्थं हवनं करिष्ये"</li>
+    <li><strong>अग्नि स्थापना:</strong> 5 घृत आहुतियां (अग्नये, सोमाय, अग्निसोमाभ्यां, प्रजापतये, इन्द्राय स्वाहा)</li>
+    <li><strong>शिव पंचाक्षरी आहुति:</strong> ॐ नमः शिवाय स्वाहा (मृगी मुद्रा से)</li>
+    <li><strong>चामुण्डा कुंजिका आहुति:</strong> कमलगट्टा, तिल, जौ व घृत से आहुति</li>
+    <li><strong>स्विष्टकृत आहुति:</strong> ॐ अग्नये स्विष्टकृते स्वाहा (दोष निवारण)</li>
+    <li><strong>पूर्णाहुति:</strong> सूखा गोला (नारियल), सुपारी व घृत से ॐ पूर्णमदः पूर्णमिदं... स्वाहा</li>
+    <li><strong>क्षमा प्रार्थना:</strong> अज्ञानाद्विस्मृतेर्भ्रान्त्या यन्न्यूनमधिकं कृतम्... क्षम्यतां देवि</li>
+    <li><strong>आरती व प्रसाद:</strong> कर्पूर आरती, प्रसाद वितरण व ऊर्जा कीलन</li>
+  </ol>
+</div>'''),
+    (37, "अध्याय 8 • आहुति निर्णय", "आहुति संख्या (108 बनाम 12,500), कर्तव्य व अग्नि सुरक्षा", '''<div style="font-size:0.84rem; line-height:1.6;">
+  <div style="margin-bottom:6px;">
+    <strong style="color:var(--accent-gold); font-size:0.82rem;">आहुति संख्या निर्णय (Clarification & 2 Editions):</strong>
+    <table class="data-table" style="width:100%; font-size:0.76rem; margin:4px 0;">
+      <thead>
+        <tr>
+          <th>संस्करण</th>
+          <th>आहुति संख्या</th>
+          <th>प्रयोजन व उपयुक्तता</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>विधि A (संक्षिप्त)</strong></td>
+          <td><strong>108 आहुतियां</strong></td>
+          <td>गृहस्थ साधकों हेतु ताम्र कुंड में व्यावहारिक समापन हवन।</td>
+        </tr>
+        <tr>
+          <td><strong>विधि B (पूर्ण दशांश)</strong></td>
+          <td><strong>12,500 आहुतियां</strong></td>
+          <td>1,25,000 जप का वास्तविक 10% दशांश (यज्ञशाला/मंदिर)।</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="rule-card success" style="padding:5px 8px; margin:4px 0; font-size:0.75rem;">
+    <strong>★ 861 कुंजिका पाठों का नियम:</strong> 21 × 41 = 861 पाठों की अलग से दशांश आहुति शास्त्र में नहीं है; यह स्वयंसिद्ध जाग्रत स्तोत्र है। इसे 12,500 पंचाक्षरी आहुतियों में न मिलाएं।
+  </div>
+  <div style="font-size:0.78rem; line-height:1.45; margin:5px 0;">
+    <strong>हवनोपरांत 3 पवित्र कर्तव्य:</strong> 1. मंदिर भोग व प्रसाद वितरण • 2. कन्या पूजन (1-9 कन्याएं) • 3. भोजपत्र यंत्र/मंजूषा स्थापन पूजा घर में।
+  </div>
+  <div class="shloka-box" style="padding:6px 10px; margin:4px 0; border-color:#b45309; background:#fffdf5;">
+    <div style="font-family:'Noto Serif Devanagari',serif; font-size:0.95rem; font-weight:700; color:#78350f;">
+      ॥ गुप्त आसन-उत्थापन मन्त्र ॥<br>
+      ॐ शक्राय नमः । ॐ इन्द्राय नमः ॥
+    </div>
+    <div style="font-size:0.72rem; color:#475569; margin-top:2px;">
+      आसन के नीचे 2 बूंद जल छोड़ें, अनामिका से स्पर्श कर मस्तक, दोनों नेत्रों व कंठ पर लगाएं।
+    </div>
+  </div>
+  <div class="rule-card warning" style="padding:5px 8px; margin:4px 0; font-size:0.72rem;">
+    <strong>⚠️ अग्नि सुरक्षा:</strong> पर्याप्त वेंटिलेशन (खुली खिड़कियां), अग्निरोधक आधार (पत्थर/टाइल), पास में जल व गीला कपड़ा रखें।
+  </div>
+</div>'''),
+    (38, "उपसंहार • Colophon", "ग्रंथ समापन व शांति पाठ", '''<div style="text-align:center; padding:1.2rem 1rem;">
+  <div style="font-size:1.8rem; margin-bottom:0.6rem;">☸ ॥ ॐ शान्तिः शान्तिः शान्तिः ॥ ☸</div>
+  <h3 style="font-size:1.3rem; color:var(--accent-gold); font-family:'Noto Serif Devanagari',serif; font-weight:800; margin-bottom:0.6rem;">
     महाग्रंथ समापन एवं मंगल आशीर्वाद
   </h3>
-  <p style="font-size:0.9rem; color:var(--text-main); line-height:1.7; max-width:480px; margin:0 auto 1.2rem auto;">
-    यह महाग्रंथ समस्त जिज्ञासु साधकों हेतु पूर्णतः प्रामाणिक ज्ञानकोश के रूप में तंत्र ज्ञान शोध संस्थान द्वारा समर्पित है।
+  <p style="font-size:0.86rem; color:var(--text-main); line-height:1.7; max-width:480px; margin:0 auto 1rem auto;">
+    यह महाग्रंथ समस्त निष्ठावान साधकों हेतु पूर्णतः प्रामाणिक ज्ञानकोश के रूप में तंत्र ज्ञान शोध संस्थान द्वारा समर्पित है। 41 दिनों की यह साधना साधक के जीवन में आध्यात्मिक रूपांतरण, विघ्न-निवारण एवं अभीष्ट सिद्धि प्रदान करने में समर्थ है।
   </p>
-  <div style="border-top:1px solid #d97706; padding-top:0.8rem; max-width:420px; margin:0 auto; font-size:0.84rem; color:var(--text-muted);">
+  <div style="border-top:1px solid #d97706; padding-top:0.8rem; max-width:420px; margin:0 auto; font-size:0.82rem; color:var(--text-muted); line-height:1.6;">
     <strong>प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे</strong><br>
     तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)<br>
-    वेबसाइट: <a href="https://t.worldgyan.com" target="_blank">t.worldgyan.com</a> • 2026 सर्वाधिकार सुरक्षित
+    आधिकारिक मंच: <a href="https://t.worldgyan.com" target="_blank" style="color:var(--accent-gold); font-weight:700;">t.worldgyan.com</a> • 2026 सर्वाधिकार सुरक्षित
   </div>
 </div>''')
 ]
@@ -450,13 +628,16 @@ for p_num, ch_title, p_title, _ in page_specs:
 
 new_toc_body = "\n".join(toc_items_html)
 
-# Replace TOC list in top_part
+# Replace TOC list in top_part and close toc-overlay properly
 top_part = re.sub(
     r'<div class="toc-list">.*?</div>\s*</div>\s*</div>\s*<!-- Bookmark Drawer',
-    f'<div class="toc-list">\n{new_toc_body}\n      </div>\n    </div>\n  </div>\n\n  <!-- Bookmark Drawer',
+    f'<div class="toc-list">\n{new_toc_body}\n      </div>\n    </div>\n  </div>\n</div>\n\n  <!-- Bookmark Drawer',
     top_part,
     flags=re.DOTALL
 )
+
+# Clean up duplicate </main> in bot_part
+bot_part = bot_part.replace('</main>\n    \n  </main>', '</main>')
 
 # Build articles
 articles_html = []
