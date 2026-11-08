@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="hi" data-theme="parchment" data-lang-mode="bilingual">
+<head>
+  <meta charset="utf-8">
+  <!-- Tantra Gyan Session & Online Architecture Initialization -->
+  <script>
+    (function() {
+      try {
+        // Clear any lingering reload / crash markers
+        sessionStorage.removeItem('tg_pwa_reload_ts');
+        sessionStorage.removeItem('tg_pwa_reload_cnt');
+        sessionStorage.removeItem('tg_last_reload');
+
+        // Automatic migration & purge of legacy offline caches
+        var CURRENT_VERSION = '2.4.0';
+        var storedVersion = localStorage.getItem('tantragyan_downloaded_version');
+        if (storedVersion && storedVersion !== CURRENT_VERSION && 'caches' in window) {
+          caches.keys().then(function(names) {
+            names.forEach(function(name) {
+              if (name !== 'tantragyan-v' + CURRENT_VERSION && name !== 'tantragyan-fonts-v2.4') {
+                caches.delete(name);
+              }
+            });
+          }).catch(function() {});
+        }
+
+        // If user has NOT explicitly enabled offline mode, ensure clean online operation
+        var isOfflineEnabled = localStorage.getItem('tantragyan_offline_enabled');
+        if (isOfflineEnabled !== 'true' && 'serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function(regs) {
+            for (var i = 0; i < regs.length; i++) {
+              regs[i].unregister();
+            }
+          }).catch(function() {});
+        }
+
+        // Bounds sanity check for saved page
+        var savedPage = localStorage.getItem('tantra_sadhana_flip_page');
+        if (savedPage) {
+          var p = parseInt(savedPage, 10);
+          if (isNaN(p) || p < 1 || p > 36) {
+            localStorage.setItem('tantra_sadhana_flip_page', '1');
+          }
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>तंत्र साधना सिद्धि महाग्रंथ (3D फ्लिप बुक) • Tantra Sadhana Siddhi 3D Flip Book</title>
+  
+  <!-- Primary SEO Meta Tags -->
+  <meta name="description" content="तंत्र साधना सिद्धि महाग्रंथ: 41-दिवसीय प्रत्यक्ष प्रयोग एवं गुप्त विधि-विधान by ज्योतिषाचार्य Ashutosh Kumar Choubey. सवा लाख पंचाक्षरी जप, 21 सिद्ध कुंजिका पाठ, वेदी निर्माण एवं संपुट रहस्य।">
+  <meta name="keywords" content="Tantra Sadhana Siddhi, Siddha Kunjika Stotra, Panchakshari Sadhana, Om Namah Shivaya 125000, Samput Vidhan, Vivaha Sadhana, Batuk Bhairav, Durga Kavach, Ashutosh Kumar Choubey, Tantra Gyan">
+  <meta name="author" content="Ashutosh Kumar Choubey">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <!-- Progressive Web App (PWA) & Mobile Application Meta -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#312e81">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Tantra Sadhana Siddhi 3D Flip Book">
+  <meta name="application-name" content="Tantra Sadhana Siddhi 3D Flip Book">
+  <meta name="msapplication-TileColor" content="#312e81">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Canonical & Multi-Language Hreflang Tags (Google & Bing Best Practice) -->
+  <link rel="canonical" href="https://t.worldgyan.com/sadhana-reader.html">
+  <link rel="alternate" hreflang="hi" href="https://t.worldgyan.com/tantra-sadhana-siddhi.html">
+  <link rel="alternate" hreflang="x-default" href="https://t.worldgyan.com/sadhana-reader.html">
+
+  <!-- OpenGraph Metadata for Social & Search Snippets -->
+  <meta property="og:site_name" content="तंत्र ज्ञान (Tantra Gyan)">
+  <meta property="og:title" content="तंत्र साधना सिद्धि महाग्रंथ | Tantra Sadhana Siddhi 3D Flip Book">
+  <meta property="og:description" content="41-दिवसीय प्रत्यक्ष प्रयोग, सवा लाख पंचाक्षरी जप, श्री सिद्ध कुंजिका स्तोत्र 21 पाठ, वेदी द्वैत दीप विज्ञान एवं संपुट विधान। लेखक: ज्योतिषाचार्य Ashutosh Kumar Choubey।">
+  <meta property="og:type" content="book">
+  <meta property="og:url" content="https://t.worldgyan.com/">
+  <meta property="og:image" content="https://t.worldgyan.com/assets/og-image.jpg">
+  <meta property="og:image:secure_url" content="https://t.worldgyan.com/assets/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:image:alt" content="भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र (BNN) - Sacred Sri Yantra & Celestial Astrology Charts">
+  <meta property="og:locale" content="hi_IN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="book:author" content="Ashutosh Kumar Choubey">
+  <meta property="book:release_date" content="2026-01-01">
+  <meta property="book:tag" content="Vedic Astrology">
+  <meta property="book:tag" content="Jyotish Shastra">
+  <meta property="book:tag" content="Medical Astrology">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@TantraGyan108">
+  <meta name="twitter:creator" content="@TantraGyan108">
+  <meta name="twitter:title" content="तंत्र साधना सिद्धि महाग्रंथ | Complete Vedic Astrology Compendium">
+  <meta name="twitter:description" content="सम्पूर्ण प्रामाणिक फलित ज्ञानकोश: नवग्रह कारकत्व, 17 शास्त्रीय राजयोग, 27 नक्षत्र, 108 पद, दीप्तादि 9 अवस्थाएं एवं आयुर्-ज्योतिष।">
+  <meta name="twitter:image" content="https://t.worldgyan.com/assets/og-image.jpg">
+
+  <!-- Academic & AI Citation Metadata -->
+  <meta name="ai-content-declaration" content="authentic-vedic-astrology, human-authored, educational-compendium">
+  <meta name="citation_title" content="तंत्र साधना सिद्धि महाग्रंथ: Complete Vedic Astrology Compendium">
+  <meta name="citation_author" content="Choubey, Ashutosh Kumar">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_publisher" content="Tantra Gyan Research Center">
+  <meta name="citation_language" content="hi, en">
+  <meta name="citation_fulltext_world_readable" content="https://t.worldgyan.com/llms-full.txt">
+  <meta name="citation_abstract_html_url" content="https://t.worldgyan.com/">
+
+  <!-- AI Search Engine Discovery (llms.txt standard & sitemap) -->
+  <link rel="help" type="text/plain" href="/llms.txt" title="LLM Context Specification">
+  <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full Knowledge Base for AI Models">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- Standard High-Quality Google Fonts for Vedic & Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- Standard CSS Files for Maximum Maintainability -->
+  <link rel="stylesheet" href="css/book.css?v=5.0">
+  <link rel="stylesheet" href="css/tables.css?v=5.0">
+
+  <!-- Ultra-Rich Schema.org JSON-LD Educational Book & Knowledge Graph Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://t.worldgyan.com/#website",
+        "url": "https://t.worldgyan.com/",
+        "name": "तंत्र ज्ञान (Tantra Gyan)",
+        "alternateName": ["Tantra Gyan Vedic Astrology", "Vedic Astrology Compendium"],
+        "publisher": { "@id": "https://t.worldgyan.com/#organization" },
+        "inLanguage": ["hi", "en"],
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://t.worldgyan.com/#search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://t.worldgyan.com/#organization",
+        "name": "तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)",
+        "url": "https://t.worldgyan.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://t.worldgyan.com/assets/icon-512.png",
+          "width": 512,
+          "height": 512
+        },
+        "sameAs": [
+          "https://www.youtube.com/@TantraGyan108",
+          "https://t.worldgyan.com"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+919658476170",
+          "contactType": "Customer Support",
+          "email": "tantraresearchcenter@gmail.com",
+          "availableLanguage": ["Hindi", "English"]
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://t.worldgyan.com/#author",
+        "name": "Ashutosh Kumar Choubey",
+        "alternateName": "आशुतोष कुमार चौबे",
+        "jobTitle": "Vedic Astrologer & Researcher",
+        "url": "https://t.worldgyan.com",
+        "sameAs": [
+          "https://www.youtube.com/@TantraGyan108"
+        ],
+        "email": "tantraresearchcenter@gmail.com",
+        "telephone": "+919658476170",
+        "worksFor": { "@id": "https://t.worldgyan.com/#organization" }
+      },
+      {
+        "@type": "Book",
+        "@id": "https://t.worldgyan.com/#book",
+        "name": "तंत्र साधना सिद्धि महाग्रंथ (41-Day Empirical Sadhana Protocol & Secret Rituals)",
+        "alternateName": "41-Day Empirical Sadhana Protocol & Secret Rituals",
+        "url": "https://t.worldgyan.com/",
+        "author": { "@id": "https://t.worldgyan.com/#author" },
+        "publisher": { "@id": "https://t.worldgyan.com/#organization" },
+        "datePublished": "2026-01-01",
+        "inLanguage": ["hi", "en"],
+        "bookFormat": "https://schema.org/EBook",
+        "numberOfPages": 88,
+        "genre": ["Vedic Astrology", "Jyotish Shastra", "Medical Astrology", "Ayur-Jyotish"],
+        "educationalLevel": "Beginner to Advanced Jyotish Practitioner",
+        "citation": "Choubey, Ashutosh Kumar. Tantra Gyan: 41-Day Empirical Sadhana Protocol & Secret Rituals. Tantra Gyan Research Center, 2026. Web. https://t.worldgyan.com",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock"
+        },
+        "teaches": [
+          "Navagraha Karakatvas (9 Planetary Significations)",
+          "17 Classical Raja Yogas including Pancha Mahapurusha and Viparita Raja Yogas",
+          "27 Nakshatras and 108 Padas breakdown",
+          "9 Deeptadi Planetary States (Deepta, Swastha, Mudita, Shanta, etc.)",
+          "Ayur-Jyotish Anatomical Rulerships and Cancer Disease Astrological Diagnosis",
+          "Vimshottari Mahadasha 120-year cycle calculations"
+        ],
+        "about": [
+          { "@type": "Thing", "name": "Vedic Astrology" },
+          { "@type": "Thing", "name": "Navagraha Karakatva" },
+          { "@type": "Thing", "name": "Raja Yoga" },
+          { "@type": "Thing", "name": "Medical Astrology" },
+          { "@type": "Thing", "name": "Cancer in Astrology (Arbuda Roga)" },
+          { "@type": "Thing", "name": "Nakshatra Padas" }
+        ],
+        "hasPart": [
+          {
+            "@type": "Chapter",
+            "name": "प्रस्तावना, मंगलाचरण एवं लेखक परिचय",
+            "position": 1,
+            "pageStart": 1,
+            "pageEnd": 5
+          },
+          {
+            "@type": "Chapter",
+            "name": "नवग्रह कारकत्व एवं 17 शास्त्रीय राजयोग",
+            "position": 2,
+            "pageStart": 6,
+            "pageEnd": 20
+          },
+          {
+            "@type": "Chapter",
+            "name": "राशि, नक्षत्र, ग्रह गति एवं विंशोत्तरी महादशा",
+            "position": 3,
+            "pageStart": 21,
+            "pageEnd": 37
+          },
+          {
+            "@type": "Chapter",
+            "name": "भाव एवं राशियों में ग्रह (दीप्तादि 9 अवस्थाएं)",
+            "position": 4,
+            "pageStart": 38,
+            "pageEnd": 47
+          },
+          {
+            "@type": "Chapter",
+            "name": "मेडिकल एस्ट्रोलॉजी एवं कैंसर रोग विश्लेषण",
+            "position": 5,
+            "pageStart": 48,
+            "pageEnd": 74
+          },
+          {
+            "@type": "Chapter",
+            "name": "नक्षत्रों का गहन पद एवं ग्रह विश्लेषण",
+            "position": 6,
+            "pageStart": 75,
+            "pageEnd": 87
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://t.worldgyan.com/#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://t.worldgyan.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Vedic Astrology Compendium",
+            "item": "https://t.worldgyan.com/index.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://t.worldgyan.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र (BNN) क्या है? (What is Tantra Gyan Vedic Astrology Compendium?)",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "तंत्र ज्ञान (Tantra Gyan) ज्योतिषाचार्य आशुतोष कुमार चौबे द्वारा रचित 88 पृष्ठों का एक प्रामाणिक शास्त्रीय फलित ज्ञानकोश है। यह महर्षि पराशर, सारावली, फलदीपिका, जातक पारिजात एवं नाड़ी ज्योतिष के सूत्रों का आधुनिक विश्लेषणात्मक समन्वय प्रस्तुत करता है, जो 100% ऑफ़लाइन PWA तकनीक पर निःशुल्क उपलब्ध है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "वैदिक ज्योतिष में 17 शास्त्रीय राजयोग कौन-से हैं? (What are the 17 Classical Raja Yogas in Vedic Astrology?)",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "इस ग्रंथ के पृष्ठ 20-21 में 5 पंच महापुरुष योग (रुचक, भद्र, हंस, मालव्य, शश), गजकेसरी योग, बुधादित्य योग, धर्म-कर्माधिपति योग, चन्द्र-मंगल योग, नीचभंग राजयोग, तथा त्रिक भावों से निर्मित 3 विपरीत राजयोग (हर्ष, सरल, विमल योग) का विस्तृत शास्त्रीय फलित दिया गया है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "पंच महापुरुष योग (Pancha Mahapurusha Yogas) कैसे बनते हैं?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "जब मंगल (रुचक योग), बुध (भद्र योग), गुरु (हंस योग), शुक्र (मालव्य योग), या शनि (शश योग) अपनी स्वराशि, मूलत्रिकोण या उच्च राशि में होकर केंद्र भाव (1, 4, 7, 10) में स्थित होते हैं, तब पंच महापुरुष योग का निर्माण होता है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "विपरीत राजयोग (हर्ष, सरल, विमल) का क्या नियम है? (How do Viparita Raja Yogas function?)",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "जब त्रिक भावों (6, 8, 12) के स्वामी ग्रह आपस में केवल 6, 8, या 12वें भाव में ही स्थित हों और शुभ भावों के स्वामियों से युक्त न हों: 6ठे भाव का स्वामी 6/8/12 में हो तो हर्ष योग; 8वें भाव का स्वामी 6/8/12 में हो तो सरल योग; तथा 12वें भाव का स्वामी 6/8/12 में हो तो विमल योग बनता है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "आयुर्-ज्योतिष (Medical Astrology) में कैंसर रोग (Arbuda Roga) का ज्योतिषीय विश्लेषण कैसे होता है?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ग्रंथ के पृष्ठ 48 से 74 में कैंसर के ज्योतिषीय योग दिए गए हैं। यह मुख्य रूप से त्रिक भावों (6, 8, 12), जल तत्व व रक्त के कारक ग्रह चन्द्रमा व मंगल, रोगकारक राहु (अनियंत्रित कोशिका विभाजन) तथा शनि (दीर्घकालिक ऊतक क्षय) के अशुभ गठबंधन तथा लग्न व सूर्य (जीवन शक्ति) के पीड़ित होने से उत्पन्न होता है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ग्रहों की दीप्तादि 9 अवस्थाएं (Deeptadi 9 Planetary States) कौन-सी हैं?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "दीप्तादि 9 अवस्थाएं हैं: 1. दीप्त (उच्च राशि), 2. स्वस्थ (स्वराशि), 3. मुदित (अधिमित्र राशि), 4. शांत (मित्र राशि), 5. दीन (सम राशि), 6. दुखित (शत्रु राशि), 7. विकल (अस्त ग्रह), 8. खल (नीच राशि), और 9. कोप (ग्रह युद्ध में पराजित)। यह अवस्थाएं ग्रह के वास्तविक शुभाशुभ फल की तीव्रता निर्धारित करती हैं।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "120 वर्षीय विंशोत्तरी महादशा चक्र का क्रम और अवधि क्या है? (What is the Vimshottari Dasha sequence?)",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "विंशोत्तरी महादशा का क्रम है: केतु (7 वर्ष), शुक्र (20 वर्ष), सूर्य (6 वर्ष), चन्द्रमा (10 वर्ष), मंगल (7 वर्ष), राहु (18 वर्ष), गुरु (16 वर्ष), शनि (19 वर्ष), और बुध (17 वर्ष) — कुल 120 वर्ष।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "27 नक्षत्र और 108 पदों का क्या महत्व है? (What is the role of 27 Nakshatras and 108 Padas?)",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "प्रत्येक नक्षत्र 13°20' का होता है जो 3°20' के 4 नवमांश पदों में विभाजित है। सम्पूर्ण भचक्र में 27 नक्षत्र × 4 = 108 पद होते हैं। प्रत्येक पद का विशिष्ट तत्व, अधिष्ठाता देवता, नवमांश स्वामी व नामाक्षर होता है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "क्या तंत्र ज्ञान ग्रंथ बिना इंटरनेट या ऐप डाउनलोड किए पढ़ा जा सकता है? (Is it offline-capable?)",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "हाँ, तंत्र ज्ञान एक अत्याधुनिक Progressive Web App (PWA) है। वेबसाइट https://t.worldgyan.com पर एक बार आने पर ही सम्पूर्ण 88 पृष्ठ, तालिकाएं और ऑडियो स्वतः कैश हो जाते हैं और बिना इंटरनेट या एयरप्लेन मोड में भी पूर्णतः कार्य करते हैं।"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://t.worldgyan.com/#table-of-contents",
+        "name": "तंत्र ज्ञान: विषय-सूची (Table of Contents)",
+        "numberOfItems": 6,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "प्रस्तावना, मंगलाचरण एवं लेखक परिचय (Pages 1–5)",
+            "url": "https://t.worldgyan.com/#page-1"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "नवग्रह कारकत्व एवं 17 शास्त्रीय राजयोग (Pages 6–20)",
+            "url": "https://t.worldgyan.com/#page-6"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "राशि, नक्षत्र, ग्रह गति एवं विंशोत्तरी महादशा चक्र (Pages 21–37)",
+            "url": "https://t.worldgyan.com/#page-21"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "भाव एवं राशियों में ग्रह, दीप्तादि 9 अवस्थाएं (Pages 38–47)",
+            "url": "https://t.worldgyan.com/#page-38"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "मेडिकल एस्ट्रोलॉजी एवं कैंसर रोग विश्लेषण (Pages 48–74)",
+            "url": "https://t.worldgyan.com/#page-48"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "नक्षत्रों का गहन पद एवं ग्रह विश्लेषण (Pages 75–88)",
+            "url": "https://t.worldgyan.com/#page-75"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Floating Book App Header -->
+  <header class="app-header">
+    <div class="header-top-row">
+      <a href="#page-1" class="brand-section" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true); return false;" title="तंत्र ज्ञान (Tantra Gyan) - Home">
+        <div class="brand-logo">
+          <img src="assets/yantra.svg" alt="Tantra Gyan Mandala" width="34" height="34">
+        </div>
+        <div class="brand-titles">
+          <span class="brand-name">तंत्र ज्ञान <span>Tantra Gyan</span></span>
+          <span class="brand-tagline">ज्योतिषाचार्य Ashutosh Kumar Choubey</span>
+        </div>
+      </a>
+
+      <!-- Mobile Search Trigger Pill (Inside header-top-row on mobile, hidden on desktop) -->
+      <button type="button" class="mobile-search-trigger-btn" id="mobile-search-trigger" aria-label="Search">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <span>Search</span>
+      </button>
+
+      <!-- Mobile Header Actions (Home, PDF, Web View, Download/Update, Gear Settings) -->
+      <div class="mobile-header-actions">
+        <!-- Library Home Link -->
+        <a href="index.html" class="tool-btn mobile-action-btn" title="ग्रंथालय मुख्य पृष्ठ • Library Portal Home" aria-label="Library Home" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; color:var(--accent-gold); border-color:rgba(200, 157, 61, 0.45);">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        </a>
+        <!-- PDF Download Icon (Mobile) -->
+        <a href="tantra-sadhana-siddhi-protocol.pdf" download="Tantra-Sadhana-Siddhi-Protocol.pdf" class="tool-btn mobile-action-btn" title="सम्पूर्ण ग्रंथ PDF डाउनलोड करें • Tantra Gyan: Vedic Jyotish Maha Granth" aria-label="Download PDF" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; color:var(--accent-gold); border-color:rgba(200, 157, 61, 0.45);">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="12" y2="18"></line><line x1="15" y1="15" x2="12" y2="18"></line></svg>
+        </a>
+        <!-- Web View Icon (Mobile) -->
+        <a href="tantra-sadhana-siddhi.html" class="tool-btn mobile-action-btn" title="डिजिटल वेब पाठक में पढ़ें • Web View" aria-label="Web View" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; color:#38bdf8; border-color:rgba(56, 189, 248, 0.45);">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+        </a>
+        <!-- Offline Download Button -->
+        <button class="tool-btn mobile-action-btn mobile-download-btn" id="mobile-btn-download" title="ग्रंथ ऑफ़लाइन डाउनलोड करें / नया संस्करण अपडेट करें" aria-label="Download or Update Book">
+          <span id="mobile-download-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></span>
+        </button>
+        <!-- Gear Settings Button -->
+        <button class="tool-btn mobile-action-btn mobile-gear-btn" id="btn-settings-toggle" title="Settings & Options (सेटिंग्स और विकल्प)" aria-label="Open Settings">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Input Container with Dropdown Results (Centered on Desktop) -->
+    <div class="search-box" id="search-box-container">
+      <div class="search-input-wrapper">
+        <span class="search-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
+        <input type="text" id="book-search" class="search-input" placeholder="Search / खोजें (e.g. Moon, सूर्य)..." aria-label="Search Book" autocomplete="off">
+        <button type="button" id="search-clear-btn" class="search-clear-btn" title="Clear search" aria-label="Clear search" style="display:none;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <button type="button" id="search-close-mobile-btn" class="search-close-mobile-btn" title="Close search" aria-label="Close search" style="display:none;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <span id="search-counter" class="search-count" style="display:none;" title="Click to view all matching pages"></span>
+      
+      <!-- Live Search Results Dropdown -->
+      <div id="search-dropdown" class="search-dropdown" style="display:none;" role="region" aria-label="Search Results">
+        <div class="search-dropdown-header">
+          <span id="search-dropdown-title" class="search-dropdown-title">Search Results (परिणाम)</span>
+          <button type="button" id="search-dropdown-close" class="search-dropdown-close" title="Close" aria-label="Close search">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+        <div id="search-results-list" class="search-results-list"></div>
+      </div>
+    </div>
+
+    <!-- Toolbar Controls (Desktop Only - Hidden on Mobile) -->
+    <div class="toolbar-controls desktop-tools">
+      <!-- TOC Toggle Button -->
+      <button class="tool-btn" id="btn-toc-toggle" title="विषय-सूची (Table of Contents)">
+        <span>📖</span> <span>Contents</span>
+      </button>
+
+      <!-- Bookmark Button -->
+      <button class="tool-btn" id="btn-bookmark-toggle" title="सहेजे गए बुकमार्क (Saved Bookmarks)">
+        <span>🔖</span> <span id="bookmark-btn-label">Bookmarks</span>
+        <span id="bookmark-count-badge" class="badge-count" style="display:none;">0</span>
+      </button>
+
+      <!-- YouTube Channel Link (Sleek Compact Icon) -->
+      <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="tool-btn yt-header-btn" title="YouTube: @TantraGyan108" aria-label="YouTube Channel @TantraGyan108" style="padding:0.42rem 0.58rem; color:#ef4444; border-color:rgba(239,68,68,0.4); text-decoration:none;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#ef4444" style="vertical-align:middle; display:inline-block;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+
+      <!-- Language Mode Switcher -->
+      <div class="lang-switcher" title="Switch Reading Language">
+        <button class="lang-btn" data-lang="hindi">हिंदी</button>
+        <button class="lang-btn" data-lang="english">English</button>
+        <button class="lang-btn active" data-lang="bilingual">द्विभाषी</button>
+      </div>
+
+      <!-- Theme Switcher -->
+      <button class="tool-btn" id="btn-theme-toggle" title="थीम (Theme: Parchment / Dark / Light)">
+        <span>📜</span> <span>Parchment</span>
+      </button>
+
+      <!-- Dual / Single Spread Toggle -->
+      <button class="tool-btn" id="btn-layout-toggle" title="दृश्य (View: Two Pages / Single Page)">
+        <span>📖</span> <span>Two Pages</span>
+      </button>
+
+      <!-- Sound Mute Toggle -->
+      <button class="tool-btn" id="btn-sound-toggle" title="Page Turn Sound Effect" style="padding:0.45rem 0.55rem;">
+        <span>🔊</span>
+      </button>
+
+      <!-- Font Zoom Segmented Control -->
+      <div class="font-zoom-group" title="Adjust Text Size">
+        <button class="font-zoom-btn" id="btn-font-dec" title="Decrease Font Size">A−</button>
+        <button class="font-zoom-btn" id="btn-font-inc" title="Increase Font Size">A+</button>
+      </div>
+
+      <!-- Fullscreen -->
+      <button class="tool-btn" id="btn-fullscreen" title="Toggle Fullscreen" style="padding:0.45rem 0.6rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>
+
+      <!-- Modern Rich-Text Web Reader Button -->
+      <a href="tantra-sadhana-siddhi.html" class="tool-btn" id="btn-paged-reader" title="✨ डिजिटल वेब पाठक • Modern Web Reader" style="color:#38bdf8; border-color:rgba(56,189,248,0.5); text-decoration:none;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; display:inline-block;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+        <span>Web View</span>
+      </a>
+
+      <!-- Primary Masterwork PDF Download Button (Tantra Gyan: Vedic Jyotish Maha Granth) -->
+      <a href="tantra-sadhana-siddhi-protocol.pdf" download="Tantra-Sadhana-Siddhi-Protocol.pdf" class="tool-btn" id="btn-download-pdf-primary" title="📥 सम्पूर्ण वैदिक ज्योतिष महाग्रंथ PDF डाउनलोड करें (Tantra Gyan: Vedic Jyotish Maha Granth)" style="color:var(--accent-gold); border-color:rgba(200,157,61,0.5); text-decoration:none;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; display:inline-block;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="12" y2="18"></line><line x1="15" y1="15" x2="12" y2="18"></line></svg>
+        <span>PDF</span>
+      </a>
+
+      <!-- Download / Update Book Offline Button -->
+      <button class="tool-btn" id="btn-download-offline" title="सम्पूर्ण ग्रंथ ऑफ़लाइन डाउनलोड करें (Download Book Offline)">
+        <span id="btn-download-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></span> <span id="btn-download-label">Download Offline</span>
+      </button>
+
+      <!-- Install PWA App Button -->
+      <button class="tool-btn" id="btn-install-app" title="डिवाइस पर इंस्टॉल करें (Install App to Desktop / Mobile)" style="color:var(--accent-gold); border-color:var(--accent-gold);">
+        <span id="btn-install-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="5" y="2" width="14" height="20" rx="3" ry="3"></rect><path d="M12 18h.01"></path><path d="M12 7v5"></path><polyline points="9 10 12 13 15 10"></polyline></svg></span> <span id="btn-install-label">Install App</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-track">
+    <div class="reading-progress-fill" id="reading-progress-fill"></div>
+  </div>
+
+  <!-- Main Book Reading Stage -->
+  <main class="main-stage">
+    <!-- Cosmic Void & Celestial Singularity Backdrop -->
+    <div class="cosmic-stage-backdrop" aria-hidden="true">
+      <div class="cosmic-singularity-core"></div>
+      <div class="cosmic-accretion-ring"></div>
+      <div class="cosmic-stardust-dust"></div>
+      <div class="cosmic-yantra-halo">
+        <svg class="cosmic-sri-yantra" viewBox="0 0 200 200" fill="none" stroke="currentColor">
+          <circle cx="100" cy="100" r="95" stroke="rgba(217, 119, 6, 0.28)" stroke-width="1.2" stroke-dasharray="3,3"/>
+          <circle cx="100" cy="100" r="82" stroke="rgba(147, 51, 234, 0.3)" stroke-width="1"/>
+          <polygon points="100,18 178,148 22,148" stroke="rgba(217, 119, 6, 0.25)" stroke-width="1.2"/>
+          <polygon points="100,182 178,52 22,52" stroke="rgba(147, 51, 234, 0.25)" stroke-width="1.2"/>
+          <polygon points="100,32 165,140 35,140" stroke="rgba(217, 119, 6, 0.2)" stroke-width="0.9"/>
+          <polygon points="100,168 165,60 35,60" stroke="rgba(147, 51, 234, 0.2)" stroke-width="0.9"/>
+          <circle cx="100" cy="100" r="4" fill="rgba(255, 215, 0, 0.7)"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="book-container cover-closed-front">
+      <!-- Decorative Gilded Corners -->
+      <div class="corner-ornament corner-tl"></div>
+      <div class="corner-ornament corner-tr"></div>
+      <div class="corner-ornament corner-bl"></div>
+      <div class="corner-ornament corner-br"></div>
+
+      <!-- Silk Ribbon Bookmark -->
+      <div class="silk-bookmark" title="Click to bookmark this page"></div>
+
+      <!-- Center Spine Crease & Shadow -->
+      <div class="book-spine-crease"></div>
+
+      <!-- Turn Page Arrow Buttons -->
+      <button class="nav-arrow-btn nav-prev" id="btn-prev-page" title="Previous Page (Left Arrow)">‹</button>
+      <button class="nav-arrow-btn nav-next" id="btn-next-page" title="Next Page (Right Arrow / Spacebar)">›</button>
+
+      <!-- Two-Page Spread Container -->
+      <div class="book-pages-wrapper">
+        <section class="page-sheet left-page" id="left-page-container" aria-label="Left Page">
+
+        </section>
+        <section class="page-sheet right-page" id="right-page-container" aria-label="Right Page">
+
+        <div class="page-body cover-page-wrapper">
+          
+<div class="cover-page-inner">
+  <div class="cover-ornament-corner top-left"></div>
+  <div class="cover-ornament-corner top-right"></div>
+  <div class="cover-ornament-corner bottom-left"></div>
+  <div class="cover-ornament-corner bottom-right"></div>
+
+  <div class="cover-yantra">
+    <img src="assets/yantra.svg" alt="Sacred Sri Yantra Emblem" width="135" height="135">
+  </div>
+
+  <h1 class="cover-title-hindi">तंत्र साधना सिद्धि महाग्रंथ</h1>
+  <div class="cover-title-english">41-Day Empirical Sadhana Protocol & Secret Rituals</div>
+
+  <div class="cover-divider-flourish">⚜ ☸ ⚜</div>
+
+  <div class="cover-subtitle-minimal">श्री सिद्ध कुंजिका स्तोत्र एवं पंचाक्षरी महासाधना प्रत्यक्ष कल्प</div>
+
+  <div class="cover-open-prompt" title="Click to open the book">
+    <span class="prompt-icon">✧</span>
+    <span class="prompt-text">ग्रंथ का अनावरण करें • Click to Open Book</span>
+    <span class="prompt-icon">✧</span>
+  </div>
+
+  <div class="cover-action-links">
+    <a href="tantra-sadhana-siddhi-protocol.pdf" download="Tantra-Sadhana-Siddhi-Protocol.pdf" class="cover-action-pill pill-pdf" title="सम्पूर्ण ग्रंथ PDF डाउनलोड करें • Tantra Gyan: Vedic Jyotish Maha Granth">
+      <span>📥</span> <span>Download PDF</span>
+    </a>
+    <a href="tantra-sadhana-siddhi.html" class="cover-action-pill pill-reader" title="डिजिटल वेब पाठक में पढ़ें • Modern Web Reader">
+      <span>📖</span> <span>Web Reader</span>
+    </a>
+  </div>
+
+  <div class="cover-footer-brand">
+    <div class="cover-tag">तंत्र ज्ञान शोध संस्थान • 2026</div>
+  </div>
+</div>
+
+        </div>
+        
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom Reading Controller Bar (Exact 2-Line Mobile Layout) -->
+  <nav class="bottom-reading-bar" aria-label="Book Navigation Bar">
+    <!-- Line 1: Slider spanning full width across top -->
+    <div class="bottom-slider-row">
+      <input type="range" id="page-slider" class="page-slider" min="1" max="36" value="1" aria-label="Page Position">
+    </div>
+
+    <!-- Line 2: Single combined controls row: [«][‹]  [Counter Badge]  [›][»] -->
+    <div class="bottom-controls-row">
+      <div class="nav-group-left">
+        <button class="tool-btn nav-edge-btn" id="btn-first-bottom" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="प्रारंभ (First Page)" disabled>«<span class="nav-btn-text"> First</span></button>
+        <button class="tool-btn nav-step-btn" id="btn-prev-bottom" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="पिछला (Previous Page)" disabled>‹<span class="nav-btn-text"> Prev</span></button>
+      </div>
+
+      <div class="bottom-counter-container">
+        <span class="page-counter-badge" id="page-counter-badge">Cover • 1 / 36</span>
+      </div>
+
+      <div class="nav-group-right">
+        <button class="tool-btn nav-step-btn" id="btn-next-bottom" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="अगला (Next Page)"><span class="nav-btn-text">Next </span>›</button>
+        <button class="tool-btn nav-edge-btn" id="btn-last-bottom" onclick="if(window.bookEngine) window.bookEngine.goToPage(36, true);" title="अंतिम (Last Page)"><span class="nav-btn-text">Last </span>»</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Table of Contents Modal Drawer -->
+  <div class="toc-overlay" id="toc-overlay" role="dialog" aria-modal="true" aria-labelledby="toc-modal-title">
+    <div class="toc-modal">
+      <div class="toc-header">
+        <h3 class="toc-title" id="toc-modal-title">
+          <span>📖</span> विषय-सूची (Table of Contents)
+        </h3>
+        <button class="toc-close-btn" id="toc-close-btn" title="Close Index" aria-label="Close Table of Contents">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="toc-body">
+        <div class="toc-list">
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 मुखपृष्ठ • Cover</span>
+        </div>
+    <a href="#page-1" class="toc-item" data-goto="1">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.1</span>
+        <span class="toc-item-title">तंत्र साधना सिद्धि महाग्रंथ</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 मंगलाचरण • Invocation</span>
+        </div>
+    <a href="#page-2" class="toc-item" data-goto="2">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.2</span>
+        <span class="toc-item-title">शिव-शक्ति व बटुक भैरव स्मरण</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 लेखक परिचय • About Author</span>
+        </div>
+    <a href="#page-3" class="toc-item" data-goto="3">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.3</span>
+        <span class="toc-item-title">ज्योतिषाचार्य आशुतोष कुमार चौबे</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 ग्रंथ परिचय • Preface</span>
+        </div>
+    <a href="#page-4" class="toc-item" data-goto="4">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.4</span>
+        <span class="toc-item-title">साधना का वैज्ञानिक व आध्यात्मिक आधार</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अनुक्रमणिका • Contents</span>
+        </div>
+    <a href="#page-5" class="toc-item" data-goto="5">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.5</span>
+        <span class="toc-item-title">संपूर्ण 8 अध्यायों की रूपरेखा</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 1 • पंचाक्षरी साधना</span>
+        </div>
+    <a href="#page-6" class="toc-item" data-goto="6">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.6</span>
+        <span class="toc-item-title">1,25,000 जप सिद्धि एवं प्रारम्भ नियम</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 1 • जप गणित</span>
+        </div>
+    <a href="#page-7" class="toc-item" data-goto="7">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.7</span>
+        <span class="toc-item-title">दैनिक 3,049 जप एवं माला संख्या</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 1 • आरेख 1.1</span>
+        </div>
+    <a href="#page-8" class="toc-item" data-goto="8">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.8</span>
+        <span class="toc-item-title">1,25,000 पंचाक्षरी जप महाचक्र</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 1 • विल्वपत्र विधान</span>
+        </div>
+    <a href="#page-9" class="toc-item" data-goto="9">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.9</span>
+        <span class="toc-item-title">पंचोपचार व 41वें दिन का समापन</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 2 • वेदी निर्माण</span>
+        </div>
+    <a href="#page-10" class="toc-item" data-goto="10">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.10</span>
+        <span class="toc-item-title">पवित्र काष्ठ चौकी एवं दिशा विन्यास</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 2 • द्वैत दीप विज्ञान</span>
+        </div>
+    <a href="#page-11" class="toc-item" data-goto="11">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.11</span>
+        <span class="toc-item-title">घृत दीप (सत्व) एवं सरसों तैल दीप (रक्षा)</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 2 • सामग्री क्रम</span>
+        </div>
+    <a href="#page-12" class="toc-item" data-goto="12">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.12</span>
+        <span class="toc-item-title">7-पद शास्त्रीय अर्पण अनुक्रम</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 2 • आरेख 2.1</span>
+        </div>
+    <a href="#page-13" class="toc-item" data-goto="13">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.13</span>
+        <span class="toc-item-title">वेदी निर्माण एवं द्वैत दीप महाचक्र</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 2 • आचमन विधि</span>
+        </div>
+    <a href="#page-14" class="toc-item" data-goto="14">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.14</span>
+        <span class="toc-item-title">काया, प्राण व बुद्धि शुद्धि मंत्र</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 3 • दैनिक काल-तालिका</span>
+        </div>
+    <a href="#page-15" class="toc-item" data-goto="15">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.15</span>
+        <span class="toc-item-title">8:30 PM से 10:40 PM साधना चक्र</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 3 • पूर्वांग क्रम</span>
+        </div>
+    <a href="#page-16" class="toc-item" data-goto="16">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.16</span>
+        <span class="toc-item-title">8:30 PM से 8:56 PM मंत्र क्रम</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 3 • कवच व स्तुति</span>
+        </div>
+    <a href="#page-17" class="toc-item" data-goto="17">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.17</span>
+        <span class="toc-item-title">8:57 PM से 9:27 PM रक्षा विधान</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 3 • मुख्य कुंजिका पाठ</span>
+        </div>
+    <a href="#page-18" class="toc-item" data-goto="18">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.18</span>
+        <span class="toc-item-title">9:28 PM से 10:40 PM समापन</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 3 • आरेख 3.1</span>
+        </div>
+    <a href="#page-19" class="toc-item" data-goto="19">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.19</span>
+        <span class="toc-item-title">दैनिक साधना काल-तालिका महाचक्र</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 3 • शयन विज्ञान</span>
+        </div>
+    <a href="#page-20" class="toc-item" data-goto="20">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.20</span>
+        <span class="toc-item-title">साधना पश्चात ऊर्जा संचय का नियम</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 4 • स्वास्थ्य प्रबंधन</span>
+        </div>
+    <a href="#page-21" class="toc-item" data-goto="21">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.21</span>
+        <span class="toc-item-title">त्रि-स्तरीय बीमारी प्रबंधन प्रोटोकॉल</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 4 • आकस्मिक न्यूनतम</span>
+        </div>
+    <a href="#page-22" class="toc-item" data-goto="22">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.22</span>
+        <span class="toc-item-title">10:00-10:15 PM पर 1 से 3 पाठ</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 4 • आरेख 4.1</span>
+        </div>
+    <a href="#page-23" class="toc-item" data-goto="23">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.23</span>
+        <span class="toc-item-title">स्वास्थ्य प्रबंधन एवं विटामिन महाचक्र</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 4 • तांत्रिक पोषण</span>
+        </div>
+    <a href="#page-24" class="toc-item" data-goto="24">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.24</span>
+        <span class="toc-item-title">विटामिन B12, D3 एवं मैग्नीशियम</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 4 • महिला साधक नियम</span>
+        </div>
+    <a href="#page-25" class="toc-item" data-goto="25">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.25</span>
+        <span class="toc-item-title">मासिक धर्म प्रोटोकॉल व पाठ भरपाई</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 5 • यम-नियम (भाग 1)</span>
+        </div>
+    <a href="#page-26" class="toc-item" data-goto="26">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.26</span>
+        <span class="toc-item-title">ब्रह्मचर्य, सात्विक आहार व मौन व्रत</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 5 • यम-नियम (भाग 2)</span>
+        </div>
+    <a href="#page-27" class="toc-item" data-goto="27">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.27</span>
+        <span class="toc-item-title">भूमि शयन, स्थिर आसन व मेरुदंड शुद्धि</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 5 • प्रातः प्राणायाम</span>
+        </div>
+    <a href="#page-28" class="toc-item" data-goto="28">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.28</span>
+        <span class="toc-item-title">7:30-8:00 AM कपालभाति व अनुलोम-विलोम</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 5 • स्वप्न-स्वर विज्ञान</span>
+        </div>
+    <a href="#page-29" class="toc-item" data-goto="29">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.29</span>
+        <span class="toc-item-title">अचेतन मन का शोधन व देव संकेत</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 5 • आरेख 5.1</span>
+        </div>
+    <a href="#page-30" class="toc-item" data-goto="30">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.30</span>
+        <span class="toc-item-title">षड्विध तांत्रिक यम-नियम महाचक्र</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 6 • संपुट विधान</span>
+        </div>
+    <a href="#page-31" class="toc-item" data-goto="31">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.31</span>
+        <span class="toc-item-title">मंत्र ऊर्जा का संपुट एवं विवाह सिद्धि</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 6 • 21 पाठ चक्र</span>
+        </div>
+    <a href="#page-32" class="toc-item" data-goto="32">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.32</span>
+        <span class="toc-item-title">संपुट सहित प्रत्येक पाठ का संपूर्ण अनुक्रम</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 6 • आरेख 6.1</span>
+        </div>
+    <a href="#page-33" class="toc-item" data-goto="33">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.33</span>
+        <span class="toc-item-title">संपुट विधान एवं विवाह सिद्धि महाचक्र</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 7 • सिद्ध कुंजिका</span>
+        </div>
+    <a href="#page-34" class="toc-item" data-goto="34">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.34</span>
+        <span class="toc-item-title">स्तोत्र सम्पूर्ण मूल संस्कृत पाठ</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अध्याय 8 • पूर्णाहुति</span>
+        </div>
+    <a href="#page-35" class="toc-item" data-goto="35">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.35</span>
+        <span class="toc-item-title">दशांश हवन व आसन-उत्थापन महामंत्र</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 उपसंहार • Colophon</span>
+        </div>
+    <a href="#page-36" class="toc-item" data-goto="36">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.36</span>
+        <span class="toc-item-title">ग्रंथ समापन व शांति पाठ</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bookmark Drawer Modal -->
+  <div class="bookmark-overlay" id="bookmark-overlay" role="dialog" aria-modal="true" aria-labelledby="bookmark-modal-title">
+    <div class="bookmark-modal" id="bookmark-modal">
+      <div class="bookmark-header">
+        <h3 class="bookmark-title" id="bookmark-modal-title">
+          <span>🔖</span> सहेजे गए बुकमार्क (Saved Bookmarks)
+        </h3>
+        <button class="bookmark-close-btn" id="bookmark-close-btn" title="Close Bookmarks" aria-label="Close Bookmarks">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="bookmark-action-bar">
+        <button id="btn-bookmark-current" class="btn-bookmark-action">
+          <span id="bookmark-current-icon">➕</span>
+          <span id="bookmark-current-text">वर्तमान पृष्ठ बुकमार्क करें</span>
+        </button>
+      </div>
+      <div class="bookmark-body">
+        <div id="bookmark-list" class="bookmark-list">
+          <!-- Dynamically populated bookmarks -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Settings Drawer Modal (⚙️) -->
+  <div class="settings-overlay" id="settings-overlay" role="dialog" aria-modal="true" aria-labelledby="settings-modal-title">
+    <div class="settings-modal" id="settings-modal">
+      <div class="settings-header">
+        <h3 class="settings-title" id="settings-modal-title">
+          <span>⚙️</span> सेटिंग्स और विकल्प (Settings)
+        </h3>
+        <button class="settings-close-btn" id="settings-close-btn" title="Close Settings" aria-label="Close Settings">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <div class="settings-body">
+        <!-- Section: Navigation & Highlights -->
+        <div class="settings-section">
+          <div class="settings-section-title">Navigation & Reading (नेविगेशन)</div>
+          <div class="settings-grid">
+            <button class="settings-action-btn" id="settings-btn-toc">
+              <span class="settings-btn-icon">📖</span>
+              <span class="settings-btn-label">Contents (विषय-सूची)</span>
+            </button>
+            <button class="settings-action-btn" id="settings-btn-bookmark">
+              <span class="settings-btn-icon">🔖</span>
+              <span class="settings-btn-label">Bookmarks (बुकमार्क)</span>
+              <span id="settings-bookmark-badge" class="badge-count" style="display:none;">0</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Section: Language Switcher -->
+        <div class="settings-section">
+          <div class="settings-section-title">Language Mode (भाषा)</div>
+          <div class="settings-lang-row">
+            <button class="settings-opt-btn" data-lang="hindi">हिंदी</button>
+            <button class="settings-opt-btn" data-lang="english">English</button>
+            <button class="settings-opt-btn active" data-lang="bilingual">द्विभाषी (Bilingual)</button>
+          </div>
+        </div>
+
+        <!-- Section: Appearance & Reading -->
+        <div class="settings-section">
+          <div class="settings-section-title">Appearance & Reading (पठन अनुभव)</div>
+          <div class="settings-grid">
+            <button class="settings-action-btn" id="settings-btn-fullscreen">
+              <span class="settings-btn-icon">⛶</span>
+              <span class="settings-btn-label">Fullscreen: <strong id="settings-fs-label">Enter</strong></span>
+            </button>
+            <button class="settings-action-btn" id="settings-btn-theme">
+              <span class="settings-btn-icon">📜</span>
+              <span class="settings-btn-label">Theme: <strong id="settings-theme-label">Parchment</strong></span>
+            </button>
+            <button class="settings-action-btn" id="settings-btn-layout">
+              <span class="settings-btn-icon">📄</span>
+              <span class="settings-btn-label">View: <strong id="settings-layout-label">Two Pages</strong></span>
+            </button>
+            <button class="settings-action-btn" id="settings-btn-sound">
+              <span class="settings-btn-icon">🔊</span>
+              <span class="settings-btn-label">Sound: <strong id="settings-sound-label">On</strong></span>
+            </button>
+            <div class="settings-font-row">
+              <span class="settings-font-title">🔤 Font Size:</span>
+              <div class="font-zoom-group">
+                <button class="font-zoom-btn" id="settings-font-dec" title="Decrease Font">A−</button>
+                <button class="font-zoom-btn" id="settings-font-inc" title="Increase Font">A+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section: App & Offline (ऐप व ऑफ़लाइन) -->
+        <div class="settings-section">
+          <div class="settings-section-title">App & Offline (ऐप व ऑफ़लाइन)</div>
+          <div class="settings-grid">
+            <!-- Modern Web Reader Action -->
+            <a href="tantra-sadhana-siddhi.html" class="settings-action-btn" style="color:#38bdf8; font-weight:600; text-decoration:none;">
+              <span class="settings-btn-icon">📖</span>
+              <span class="settings-btn-label">✨ Web Reader (डिजिटल पाठक)</span>
+            </a>
+
+            <!-- Download Primary PDF Action -->
+            <a href="tantra-sadhana-siddhi-protocol.pdf" download="Tantra-Sadhana-Siddhi-Protocol.pdf" class="settings-action-btn" style="color:var(--accent-gold); font-weight:600; text-decoration:none;">
+              <span class="settings-btn-icon">📥</span>
+              <span class="settings-btn-label">📥 Download PDF (वैदिक ज्योतिष महाग्रंथ)</span>
+            </a>
+
+            <!-- Full Interactive Download & Update Card -->
+            <div class="settings-download-card" id="settings-download-card" role="button" tabindex="0" title="Click to download full book offline or update">
+              <div class="settings-download-top">
+                <span class="settings-download-icon" id="settings-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></span>
+                <div class="settings-download-titles">
+                  <div class="settings-download-heading" id="settings-card-heading">
+                    <span id="settings-card-title">सम्पूर्ण ग्रंथ डाउनलोड करें</span>
+                    <span class="pulse-badge" id="settings-update-badge" style="display:none;">NEW</span>
+                  </div>
+                  <div class="settings-download-sub" id="settings-card-sub">सभी पृष्ठ, तालिकाएं व ऑडियो ऑफ़लाइन पढ़ें • 100% Offline</div>
+                </div>
+              </div>
+              <div class="settings-download-progress-bar" id="settings-download-progress-bar">
+                <div class="settings-download-progress-fill" id="settings-download-progress-fill"></div>
+              </div>
+            </div>
+
+            <!-- Install App button -->
+            <button class="settings-action-btn" id="settings-btn-install" style="color:var(--accent-gold); font-weight:600;">
+              <span class="settings-btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="5" y="2" width="14" height="20" rx="3" ry="3"></rect><path d="M12 18h.01"></path><path d="M12 7v5"></path><polyline points="9 10 12 13 15 10"></polyline></svg></span>
+              <span class="settings-btn-label" id="settings-install-label">ऐप इंस्टॉल करें (Install App)</span>
+            </button>
+
+            <!-- Clear Offline Cache / Online Only Button -->
+            <button class="settings-action-btn" id="settings-btn-clear-cache" style="color:#ef4444; font-weight:600; display:none;">
+              <span class="settings-btn-icon">🗑️</span>
+              <span class="settings-btn-label" id="settings-clear-cache-label">ऑफ़लाइन डेटा हटाएं (Online Only)</span>
+            </button>
+
+            <!-- Check for updates button -->
+            <button class="settings-action-btn" id="settings-btn-check-update">
+              <span class="settings-btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l6.73-1.19"></path></svg></span>
+              <span class="settings-btn-label" id="settings-check-update-label">अपडेट जांचें (Check Updates)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Section: Official Links -->
+        <div class="settings-section">
+          <div class="settings-section-title">आधिकारिक संपर्क (Official Links)</div>
+          <div class="settings-grid">
+            <a href="https://t.worldgyan.com" target="_blank" rel="noopener" class="settings-action-btn" style="color:var(--accent-gold); text-decoration:none;">
+              <span class="settings-btn-icon">🌐</span>
+              <span class="settings-btn-label">t.worldgyan.com</span>
+            </a>
+            <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="settings-action-btn" style="color:#ef4444; text-decoration:none;">
+              <span class="settings-btn-icon">▶</span>
+              <span class="settings-btn-label">@TantraGyan108</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Toast Notification -->
+  <div id="book-toast" class="book-toast" role="status" aria-live="polite"></div>
+
+  <!-- Noscript Fallback for Search Engines & Non-JS Browsers -->
+  <noscript>
+    <div class="noscript-banner">
+      <h2>भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र (BNN) सरलीकृत • Complete Vedic Astrology Compendium</h2>
+      <p>यह शास्त्रीय ग्रंथ पूर्णतः जावास्क्रिप्ट 3D फ्लिपबुक, 100% ऑफ़लाइन PWA तथा समृद्ध अनुक्रमणिका के साथ उपलब्ध है। यदि आपके ब्राउज़र में जावास्क्रिप्ट निष्क्रिय है, तो भी नीचे सम्पूर्ण 88 पृष्ठों का प्रामाणिक ज्ञानकोश, तालिकाएं व सूत्र पूर्णतः पठनीय हैं।</p>
+      <p>AI Models & Search Crawlers can also access the full machine-readable knowledge base at <a href="/llms-full.txt">llms-full.txt</a> and <a href="/llms.txt">llms.txt</a>.</p>
+    </div>
+  </noscript>
+
+  <!-- Complete Canonical Book Corpus for Search Engines (Google, Bing), Screen Readers & AI Bots -->
+  <main id="book-pages-store" class="book-corpus-store" itemscope itemtype="https://schema.org/Book" aria-label="Tantra Gyan Vedic Astrology Compendium">
+
+        <article class="book-page-data" id="page-data-1" data-page="1" data-chapter="मुखपृष्ठ • Cover" data-title="तंत्र साधना सिद्धि महाग्रंथ" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 1: तंत्र साधना सिद्धि महाग्रंथ">
+      <meta itemprop="position" content="1">
+      <meta itemprop="name" content="तंत्र साधना सिद्धि महाग्रंथ">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">मुखपृष्ठ • Cover</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">तंत्र साधना सिद्धि महाग्रंथ</h3>
+        </div>
+        <div class="cover-page-wrapper" style="text-align:center; padding:2rem 1rem;">
+  <div style="font-size:1.1rem; color:#fde047; font-weight:700; margin-bottom:1rem;">॥ ॐ नमः शिवाय • ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे ॥</div>
+  <div style="margin:1.5rem auto;"><img src="assets/yantra.svg" alt="Yantra" width="115" height="115"></div>
+  <h2 style="font-size:1.85rem; color:#fde047; font-family:'Noto Serif Devanagari',serif; font-weight:900; margin:1rem 0 0.4rem 0;">तंत्र साधना सिद्धि महाग्रंथ</h2>
+  <div style="font-size:1.05rem; color:#a5b4fc; font-weight:600; margin-bottom:1.3rem;">41-Day Empirical Sadhana Protocols & Secret Rituals</div>
+  <p style="font-size:0.88rem; color:#e2e8f0; max-width:480px; margin:0 auto 1.3rem auto; line-height:1.6;">
+    सवा लाख (1,25,000) पंचाक्षरी जप, श्री सिद्ध कुंजिका स्तोत्र 21 पाठ, वेदी निर्माण, 8:30 PM–10:40 PM मिनट-दर-मिनट अनुष्ठान, स्वास्थ्य प्रबंधन एवं संपुट रहस्य।
+  </p>
+  <div style="border-top:1px solid #d97706; border-bottom:1px solid #d97706; padding:0.8rem 0; max-width:440px; margin:0 auto; color:#fef3c7; font-size:0.88rem;">
+    <strong>प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे</strong><br>
+    <span style="font-size:0.8rem; color:#cbd5e1;">तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center) • 2026</span>
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-2" data-page="2" data-chapter="मंगलाचरण • Invocation" data-title="शिव-शक्ति व बटुक भैरव स्मरण" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 2: शिव-शक्ति व बटुक भैरव स्मरण">
+      <meta itemprop="position" content="2">
+      <meta itemprop="name" content="शिव-शक्ति व बटुक भैरव स्मरण">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">मंगलाचरण • Invocation</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">शिव-शक्ति व बटुक भैरव स्मरण</h3>
+        </div>
+        <div style="text-align:center; padding:1.5rem;">
+  <div style="font-size:1.8rem; margin-bottom:0.8rem;">🔱 卐 🪔</div>
+  <div class="shloka-box" style="background:rgba(200,157,61,0.08); border:1px solid #d97706; border-radius:8px; padding:1.2rem; margin:1rem auto; max-width:540px;">
+    <div style="font-family:'Noto Serif Devanagari',serif; font-size:1.05rem; font-weight:700; color:#b45309; line-height:1.8;">
+      ॥ नमो देव्यै महादेव्यै शिवायै सततं नमः ।<br>
+      नमः प्रकृत्यै भद्रायै नियताः प्रणताः स्म ताम् ॥<br>
+      ॥ ॐ ह्रीं बटुकाय आपदुद्धारणाय कुरु कुरु बटुकाय ह्रीं ॐ ॥
+    </div>
+  </div>
+  <p style="font-size:0.92rem; color:var(--text-main); line-height:1.7; max-width:520px; margin:1rem auto;">
+    यह महाग्रंथ तंत्र-शास्त्र के उन प्रत्यक्ष, गोपनीय एवं वैज्ञानिक विधि-विधानों को प्रस्तुत करता है जो साधक को बिना किसी भ्रम अथवा भय के आत्म-शुद्धि, देव-कृपा एवं मंत्र-सिद्धि का मार्ग प्रशस्त करते हैं।
+  </p>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-3" data-page="3" data-chapter="लेखक परिचय • About Author" data-title="ज्योतिषाचार्य आशुतोष कुमार चौबे" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 3: ज्योतिषाचार्य आशुतोष कुमार चौबे">
+      <meta itemprop="position" content="3">
+      <meta itemprop="name" content="ज्योतिषाचार्य आशुतोष कुमार चौबे">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">लेखक परिचय • About Author</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">ज्योतिषाचार्य आशुतोष कुमार चौबे</h3>
+        </div>
+        <div class="rule-card">
+  <div class="rule-title"><span>✍️</span> प्रणेता परिचय (About Astrologer Ashutosh Kumar Choubey)</div>
+  <div class="rule-body" style="font-size:0.9rem; line-height:1.7;">
+    <strong>ज्योतिषाचार्य आशुतोष कुमार चौबे</strong> तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center) के संस्थापक एवं मुख्य शोध-अन्वेषक हैं। वे वैदिक ज्योतिष, भृगु नंदी नाड़ी, तंत्र साधना एवं आयुर्वेद के दुर्लभ सूत्रों के वैज्ञानिक अनुसंधान हेतु समर्पित हैं।
+    <br><br>
+    <strong>आधिकारिक मंच:</strong>
+    <br>• वेबसाइट: <a href="https://t.worldgyan.com" target="_blank">t.worldgyan.com</a>
+    <br>• यूट्यूब: <a href="https://www.youtube.com/@TantraGyan108" target="_blank">@TantraGyan108</a>
+    <br>• ईमेल: tantraresearchcenter@gmail.com
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-4" data-page="4" data-chapter="ग्रंथ परिचय • Preface" data-title="साधना का वैज्ञानिक व आध्यात्मिक आधार" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 4: साधना का वैज्ञानिक व आध्यात्मिक आधार">
+      <meta itemprop="position" content="4">
+      <meta itemprop="name" content="साधना का वैज्ञानिक व आध्यात्मिक आधार">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">ग्रंथ परिचय • Preface</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">साधना का वैज्ञानिक व आध्यात्मिक आधार</h3>
+        </div>
+        <div class="rule-card">
+  <div class="rule-title"><span>✦</span> ग्रंथ का उद्देश्य एवं वैज्ञानिक दृष्टिकोण</div>
+  <div class="rule-body" style="font-size:0.9rem; line-height:1.7;">
+    तांत्रिक साधना कोई जादू-टोना नहीं, बल्कि मानव शरीर के स्नायु-तंत्र (Central Nervous System), श्वास की गति और चेतना (Consciousness) को परा-चेतना से जोड़ने का एक अत्यंत सुव्यवस्थित विज्ञान है।
+    <br><br>
+    इस ग्रंथ में:
+    <br>1. <strong>सवा लाख पंचाक्षरी जप</strong> द्वारा सूक्ष्म शरीर की शुद्धि।
+    <br>2. <strong>द्वैत दीप विज्ञान</strong> द्वारा नकारात्मक ऊर्जा का पूर्ण शमन।
+    <br>3. <strong>मिनट-दर-मिनट समय अनुशासन</strong> (8:30 PM–10:40 PM) से ऊर्जा का अधिकतम संचय सुनिश्चित किया गया है।
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-5" data-page="5" data-chapter="अनुक्रमणिका • Contents" data-title="संपूर्ण 8 अध्यायों की रूपरेखा" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 5: संपूर्ण 8 अध्यायों की रूपरेखा">
+      <meta itemprop="position" content="5">
+      <meta itemprop="name" content="संपूर्ण 8 अध्यायों की रूपरेखा">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अनुक्रमणिका • Contents</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">संपूर्ण 8 अध्यायों की रूपरेखा</h3>
+        </div>
+        <div style="font-size:0.86rem; line-height:1.75;">
+  <div style="font-weight:800; color:var(--accent-gold); margin-bottom:0.4rem;">अनुक्रमणिका (Table of Contents):</div>
+  <ul style="list-style:none; padding-left:0;">
+    <li><strong>अध्याय 1:</strong> 41-दिवसीय पंचाक्षरी साधना व 1,25,000 जप गणित (पृष्ठ 6–9)</li>
+    <li><strong>अध्याय 2:</strong> तांत्रिक वेदी निर्माण, द्वैत दीप व 7-पद सामग्री (पृष्ठ 10–14)</li>
+    <li><strong>अध्याय 3:</strong> दैनिक काल-तालिका (8:30 PM–10:40 PM) (पृष्ठ 15–20)</li>
+    <li><strong>अध्याय 4:</strong> त्रि-स्तरीय स्वास्थ्य प्रबंधन व विटामिन नियम (पृष्ठ 21–25)</li>
+    <li><strong>अध्याय 5:</strong> षड्विध यम-नियम, प्राणायाम व स्वप्न-स्वर (पृष्ठ 26–30)</li>
+    <li><strong>अध्याय 6:</strong> संपुट विधान, विवाह सिद्धि व 21 पाठ चक्र (पृष्ठ 31–33)</li>
+    <li><strong>अध्याय 7:</strong> सिद्ध कुंजिका स्तोत्र सम्पूर्ण मूल पाठ (पृष्ठ 34)</li>
+    <li><strong>अध्याय 8:</strong> 41वें दिन पूर्णाहुति हवन, आसन उत्थापन व समाप्ति (पृष्ठ 35–36)</li>
+  </ul>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-6" data-page="6" data-chapter="अध्याय 1 • पंचाक्षरी साधना" data-title="1,25,000 जप सिद्धि एवं प्रारम्भ नियम" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 6: 1,25,000 जप सिद्धि एवं प्रारम्भ नियम">
+      <meta itemprop="position" content="6">
+      <meta itemprop="name" content="1,25,000 जप सिद्धि एवं प्रारम्भ नियम">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 1 • पंचाक्षरी साधना</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">1,25,000 जप सिद्धि एवं प्रारम्भ नियम</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p>41 दिनों का काल-खंड तांत्रिक परंपरा में एक <strong>'मंडल काल'</strong> कहलाता है। किसी भी उच्च महाविद्या अथवा देवी साधना के प्रवेश हेतु साधक को भगवान शिव के पंचाक्षरी महामंत्र <strong>'ॐ नमः शिवाय'</strong> का सवा लाख (1,25,000) जप पूर्ण करना अनिवार्य है।</p>
+  <div class="rule-card success">
+    <strong>शुभारम्भ काल:</strong>
+    <br>• सर्वोत्तम: कृष्ण पक्ष त्रयोदशी (प्रदोष काल)।
+    <br>• विकल्प: सोमवार अथवा शुक्ल पक्ष प्रदोष तिथि।
+    <br>• आरम्भ के दिन प्रातः स्नान, स्वच्छ वस्त्र एवं हल्का सात्विक आहार लें।
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-7" data-page="7" data-chapter="अध्याय 1 • जप गणित" data-title="दैनिक 3,049 जप एवं माला संख्या" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 7: दैनिक 3,049 जप एवं माला संख्या">
+      <meta itemprop="position" content="7">
+      <meta itemprop="name" content="दैनिक 3,049 जप एवं माला संख्या">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 1 • जप गणित</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">दैनिक 3,049 जप एवं माला संख्या</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>सवा लाख जप का दैनिक गणितीय विभाजन:</strong></p>
+  <table class="data-table" style="width:100%; font-size:0.84rem; margin:0.6rem 0;">
+    <thead>
+      <tr><th>मापदंड</th><th>संख्या / विवरण</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>कुल जप लक्ष्य</td><td>1,25,000 मंत्र</td></tr>
+      <tr><td>साधना अवधि</td><td>41 दिन (एक मंडल)</td></tr>
+      <tr><td>दैनिक जप लक्ष्य</td><td>3,049 मंत्र प्रति दिन</td></tr>
+      <tr><td>दैनिक माला संख्या</td><td>28 से 31 माला (रुद्राक्ष माला 108)</td></tr>
+      <tr><td>दैनिक समय</td><td>2 से 2.5 घंटे एकनिष्ठ अभ्यास</td></tr>
+    </tbody>
+  </table>
+  <div class="rule-card info" style="margin-top:0.6rem;">
+    <strong>सूत्र:</strong> 3,049 जप × 41 दिन = 1,25,009 मंत्र (सवा लाख जप सिद्ध)।
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-8" data-page="8" data-chapter="अध्याय 1 • आरेख 1.1" data-title="1,25,000 पंचाक्षरी जप महाचक्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 8: 1,25,000 पंचाक्षरी जप महाचक्र">
+      <meta itemprop="position" content="8">
+      <meta itemprop="name" content="1,25,000 पंचाक्षरी जप महाचक्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 1 • आरेख 1.1</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">1,25,000 पंचाक्षरी जप महाचक्र</h3>
+        </div>
+        <div class="visual-chart-plate full-page-chart" style="text-align:center;">
+  <img src="assets/icons/sadhana_panchakshari_125k_wheel.svg" alt="पंचाक्षरी जप सिद्धि चक्र" style="width:100%; max-width:520px; height:auto; display:block; margin:0 auto; border-radius:8px;">
+  <div style="font-size:0.82rem; font-style:italic; color:var(--text-muted); margin-top:0.4rem;">
+    आरेख 1.1: 41-दिवसीय पंचाक्षरी महासाधना एवं 1,25,000 जप सिद्धि चक्र
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-9" data-page="9" data-chapter="अध्याय 1 • विल्वपत्र विधान" data-title="पंचोपचार व 41वें दिन का समापन" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 9: पंचोपचार व 41वें दिन का समापन">
+      <meta itemprop="position" content="9">
+      <meta itemprop="name" content="पंचोपचार व 41वें दिन का समापन">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 1 • विल्वपत्र विधान</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">पंचोपचार व 41वें दिन का समापन</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>दैनिक पंचोपचार एवं विल्वपत्र अर्पण:</strong></p>
+  <ul style="padding-left:1.2rem; margin-bottom:0.8rem;">
+    <li><strong>पंचोपचार:</strong> गंध (श्वेत चंदन), पुष्प, धूप, दीप एवं नैवेद्य अर्पित करें।</li>
+    <li><strong>विल्वपत्र:</strong> चिकने भाग पर चंदन से ॐ नमः शिवाय लिखकर शिवलिंग/प्रतिमा पर उल्टी दिशा में अर्पित करें।</li>
+    <li><strong>माला नियम:</strong> रुद्राक्ष माला को गोमुखी में रखें; अनामिका और अंगुष्ठ से फेरें; सुमेरु न लांघें।</li>
+  </ul>
+  <div class="rule-card">
+    41वें दिन दशांश हवन (108 आहुति), मंदिर में प्रसाद वितरण एवं ताम्र/रजत पात्र में मंत्र स्थापन करें।
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-10" data-page="10" data-chapter="अध्याय 2 • वेदी निर्माण" data-title="पवित्र काष्ठ चौकी एवं दिशा विन्यास" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 10: पवित्र काष्ठ चौकी एवं दिशा विन्यास">
+      <meta itemprop="position" content="10">
+      <meta itemprop="name" content="पवित्र काष्ठ चौकी एवं दिशा विन्यास">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 2 • वेदी निर्माण</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">पवित्र काष्ठ चौकी एवं दिशा विन्यास</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>तांत्रिक वेदी निर्माण एवं दिशा विन्यास:</strong></p>
+  <p>साधना कक्ष में काष्ठ (लकड़ी) की एक पवित्र चौकी स्थापित करें। चौकी पर शुद्ध लाल अथवा पीला वस्त्र बिछाएं।</p>
+  <div class="rule-card success">
+    <strong>दिशा नियम:</strong> साधक का मुख सदैव <strong>उत्तर (North)</strong> अथवा <strong>पूर्व (East)</strong> दिशा की ओर होना चाहिए। उत्तर दिशा सदाशिव और कुबेर की दिशा है जो चेतना को उर्ध्वगामी बनाती है।
+  </div>
+  <p>41 दिनों तक वेदी और आसन का स्थान कभी न बदलें; एक ही स्थान पर ऊर्जा का संचय होता है।</p>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-11" data-page="11" data-chapter="अध्याय 2 • द्वैत दीप विज्ञान" data-title="घृत दीप (सत्व) एवं सरसों तैल दीप (रक्षा)" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 11: घृत दीप (सत्व) एवं सरसों तैल दीप (रक्षा)">
+      <meta itemprop="position" content="11">
+      <meta itemprop="name" content="घृत दीप (सत्व) एवं सरसों तैल दीप (रक्षा)">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 2 • द्वैत दीप विज्ञान</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">घृत दीप (सत्व) एवं सरसों तैल दीप (रक्षा)</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>द्वैत दीप विज्ञान (Dual Diya Physics):</strong></p>
+  <div class="rule-card" style="border-left-color:#f59e0b; margin-bottom:0.6rem;">
+    <strong>1. शुद्ध गो-घृत दीपक (दाहिनी ओर / Right):</strong>
+    <br>सत्व गुण का प्रतीक; माँ दुर्गा व भगवान शिव की सात्विक चेतना को आकर्षित करता है।
+  </div>
+  <div class="rule-card" style="border-left-color:#334155; margin-bottom:0.6rem;">
+    <strong>2. सरसों तैल दीपक (बाईं ओर / Left):</strong>
+    <br>भैरव रक्षा कवच; समस्त नकारात्मक शक्तियों, भूत-प्रेत एवं तंद्रा से साधक की रक्षा करता है।
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-12" data-page="12" data-chapter="अध्याय 2 • सामग्री क्रम" data-title="7-पद शास्त्रीय अर्पण अनुक्रम" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 12: 7-पद शास्त्रीय अर्पण अनुक्रम">
+      <meta itemprop="position" content="12">
+      <meta itemprop="name" content="7-पद शास्त्रीय अर्पण अनुक्रम">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 2 • सामग्री क्रम</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">7-पद शास्त्रीय अर्पण अनुक्रम</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>शास्त्रीय 7-पद सामग्री अर्पण क्रम:</strong></p>
+  <div class="rule-card info">
+    <strong>1. जल (आचमन) ➔ 2. अक्षत (अखंडित) ➔ 3. चंदन (रक्त/श्वेत) ➔ 4. इत्र (गुलाब/चंदन) ➔ 5. धूप (गुग्गुल) ➔ 6. दीप (दर्शन) ➔ 7. प्रसाद (नैवेद्य)</strong>
+  </div>
+  <p>इस शास्त्रीय क्रम से पंचभूतों का आदर होता है और वेदी का चुंबकीय क्षेत्र संतुलित रहता है।</p>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-13" data-page="13" data-chapter="अध्याय 2 • आरेख 2.1" data-title="वेदी निर्माण एवं द्वैत दीप महाचक्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 13: वेदी निर्माण एवं द्वैत दीप महाचक्र">
+      <meta itemprop="position" content="13">
+      <meta itemprop="name" content="वेदी निर्माण एवं द्वैत दीप महाचक्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 2 • आरेख 2.1</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">वेदी निर्माण एवं द्वैत दीप महाचक्र</h3>
+        </div>
+        <div class="visual-chart-plate full-page-chart" style="text-align:center;">
+  <img src="assets/icons/sadhana_altar_mandala.svg" alt="तांत्रिक वेदी निर्माण एवं द्वैत दीप चक्र" style="width:100%; max-width:520px; height:auto; display:block; margin:0 auto; border-radius:8px;">
+  <div style="font-size:0.82rem; font-style:italic; color:var(--text-muted); margin-top:0.4rem;">
+    आरेख 2.1: तांत्रिक वेदी निर्माण, द्वैत दीप विज्ञान एवं 7-पद सामग्री क्रम
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-14" data-page="14" data-chapter="अध्याय 2 • आचमन विधि" data-title="काया, प्राण व बुद्धि शुद्धि मंत्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 14: काया, प्राण व बुद्धि शुद्धि मंत्र">
+      <meta itemprop="position" content="14">
+      <meta itemprop="name" content="काया, प्राण व बुद्धि शुद्धि मंत्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 2 • आचमन विधि</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">काया, प्राण व बुद्धि शुद्धि मंत्र</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>आचमन / याच्यापान विधि (3 बार जल ग्रहण):</strong></p>
+  <div class="shloka-box" style="padding:0.8rem; margin:0.6rem 0;">
+    <div style="font-family:'Noto Serif Devanagari',serif; font-size:0.95rem; font-weight:700; color:#b45309; line-height:1.8;">
+      1. ॐ केशवाय नमः स्वाहा। (काया शुद्धि)<br>
+      2. ॐ नारायणाय नमः स्वाहा। (प्राण शुद्धि)<br>
+      3. ॐ माधवाय नमः स्वाहा। (मन-बुद्धि शुद्धि)
+    </div>
+  </div>
+  <p>दाहिनी हथेली से तीन बार आचमन कर 'ॐ हृषीकेशाय नमः' बोलकर हाथ धोएं।</p>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-15" data-page="15" data-chapter="अध्याय 3 • दैनिक काल-तालिका" data-title="8:30 PM से 10:40 PM साधना चक्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 15: 8:30 PM से 10:40 PM साधना चक्र">
+      <meta itemprop="position" content="15">
+      <meta itemprop="name" content="8:30 PM से 10:40 PM साधना चक्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 3 • दैनिक काल-तालिका</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">8:30 PM से 10:40 PM साधना चक्र</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>दैनिक साधना काल-तालिका (8:30 PM – 10:40 PM):</strong></p>
+  <p>साधना में समय की पाबंदी सर्वोपरि है। 8:00 से 8:30 PM के मध्य स्नान कर शुद्ध वस्त्र धारण करें। ঠিক 8:30 PM पर वेदी पर उपस्थित हों।</p>
+  <div class="rule-card warning">
+    <strong>नियम:</strong> प्रत्येक मंत्र के पश्चात <strong>1 मिनट का गहरा श्वास (Deep Breathing Rest)</strong> अनिवार्य है।
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-16" data-page="16" data-chapter="अध्याय 3 • पूर्वांग क्रम" data-title="8:30 PM से 8:56 PM मंत्र क्रम" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 16: 8:30 PM से 8:56 PM मंत्र क्रम">
+      <meta itemprop="position" content="16">
+      <meta itemprop="name" content="8:30 PM से 8:56 PM मंत्र क्रम">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 3 • पूर्वांग क्रम</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">8:30 PM से 8:56 PM मंत्र क्रम</h3>
+        </div>
+        <div style="font-size:0.86rem; line-height:1.65;">
+  <table class="data-table" style="width:100%; font-size:0.82rem;">
+    <thead><tr><th>समय</th><th>क्रिया</th><th>अवधि</th></tr></thead>
+    <tbody>
+      <tr><td>8:30 PM</td><td>वेदी तैयारी व दीप प्रज्वलन</td><td>5 min</td></tr>
+      <tr><td>8:35 PM</td><td>संकल्प एवं पूर्वांग आचमन</td><td>10 min</td></tr>
+      <tr><td>8:45 PM</td><td>ॐ नमः शिवाय (11 बार) + विश्राम</td><td>1+1 min</td></tr>
+      <tr><td>8:47 PM</td><td>ॐ गं गणपतये नमः (11 बार) + विश्राम</td><td>1+1 min</td></tr>
+      <tr><td>8:49 PM</td><td>बटुक भैरव रक्षा मंत्र (11 बार) + विश्राम</td><td>3+1 min</td></tr>
+      <tr><td>8:53 PM</td><td>हरे कृष्ण महामंत्र (11 बार) + विश्राम</td><td>3+1 min</td></tr>
+    </tbody>
+  </table>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-17" data-page="17" data-chapter="अध्याय 3 • कवच व स्तुति" data-title="8:57 PM से 9:27 PM रक्षा विधान" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 17: 8:57 PM से 9:27 PM रक्षा विधान">
+      <meta itemprop="position" content="17">
+      <meta itemprop="name" content="8:57 PM से 9:27 PM रक्षा विधान">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 3 • कवच व स्तुति</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">8:57 PM से 9:27 PM रक्षा विधान</h3>
+        </div>
+        <div style="font-size:0.86rem; line-height:1.65;">
+  <table class="data-table" style="width:100%; font-size:0.82rem;">
+    <thead><tr><th>समय</th><th>क्रिया</th><th>अवधि</th></tr></thead>
+    <tbody>
+      <tr><td>8:57 PM</td><td>श्री हनुमान चालीसा (1 सम्पूर्ण पाठ) + विश्राम</td><td>5+1 min</td></tr>
+      <tr><td>9:03 PM</td><td>श्री दुर्गा कवच (सम्पूर्ण पाठ) + विश्राम</td><td>20+1 min</td></tr>
+      <tr><td>9:24 PM</td><td>महामृत्युंजय मंत्र (11 बार) + विश्राम</td><td>3+1 min</td></tr>
+    </tbody>
+  </table>
+  <div class="rule-card success" style="margin-top:0.6rem;">
+    दुर्गा कवच से दशों दिशाओं में सुरक्षा चक्र बनता है और महामृत्युंजय मंत्र संजीवनी शक्ति देता है।
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-18" data-page="18" data-chapter="अध्याय 3 • मुख्य कुंजिका पाठ" data-title="9:28 PM से 10:40 PM समापन" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 18: 9:28 PM से 10:40 PM समापन">
+      <meta itemprop="position" content="18">
+      <meta itemprop="name" content="9:28 PM से 10:40 PM समापन">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 3 • मुख्य कुंजिका पाठ</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">9:28 PM से 10:40 PM समापन</h3>
+        </div>
+        <div style="font-size:0.86rem; line-height:1.65;">
+  <table class="data-table" style="width:100%; font-size:0.82rem;">
+    <thead><tr><th>समय</th><th>मुख्य साधना</th><th>अवधि</th></tr></thead>
+    <tbody>
+      <tr><td>9:28 PM</td><td>★ सिद्ध कुंजिका स्तोत्र (21 पाठ)</td><td>65 min</td></tr>
+      <tr><td>10:33 PM</td><td>क्षमा प्रार्थना (Forgiveness)</td><td>2 min</td></tr>
+      <tr><td>10:35 PM</td><td>आरती एवं आसन उत्थापन</td><td>5 min</td></tr>
+      <tr><td>10:40 PM</td><td>सीधे मौन शयन (Immediate Sleep)</td><td>तत्काल</td></tr>
+    </tbody>
+  </table>
+  <div class="rule-card" style="margin-top:0.6rem;">
+    शिव उवाच केवल 1st एवं 21st पाठ में ही पढ़ें; मध्यवर्ती 19 पाठों में केवल मूल मंत्र।
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-19" data-page="19" data-chapter="अध्याय 3 • आरेख 3.1" data-title="दैनिक साधना काल-तालिका महाचक्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 19: दैनिक साधना काल-तालिका महाचक्र">
+      <meta itemprop="position" content="19">
+      <meta itemprop="name" content="दैनिक साधना काल-तालिका महाचक्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 3 • आरेख 3.1</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">दैनिक साधना काल-तालिका महाचक्र</h3>
+        </div>
+        <div class="visual-chart-plate full-page-chart" style="text-align:center;">
+  <img src="assets/icons/sadhana_timeline_clock.svg" alt="दैनिक साधना काल-तालिका चक्र" style="width:100%; max-width:520px; height:auto; display:block; margin:0 auto; border-radius:8px;">
+  <div style="font-size:0.82rem; font-style:italic; color:var(--text-muted); margin-top:0.4rem;">
+    आरेख 3.1: दैनिक साधना काल-तालिका (8:30 PM – 10:40 PM) मिनट-दर-मिनट अनुक्रम
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-20" data-page="20" data-chapter="अध्याय 3 • शयन विज्ञान" data-title="साधना पश्चात ऊर्जा संचय का नियम" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 20: साधना पश्चात ऊर्जा संचय का नियम">
+      <meta itemprop="position" content="20">
+      <meta itemprop="name" content="साधना पश्चात ऊर्जा संचय का नियम">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 3 • शयन विज्ञान</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">साधना पश्चात ऊर्जा संचय का नियम</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>साधना पश्चात तत्काल शयन विज्ञान:</strong></p>
+  <p>10:40 PM पर साधना समाप्त होते ही बिना किसी से बात किए, बिना फोन देखे सीधे शयन करें।</p>
+  <div class="rule-card info">
+    <strong>तांत्रिक रहस्य:</strong> साधना में अर्जित ब्रह्मांडीय ऊर्जा निद्रा काल में साधक के सूक्ष्म शरीर (Astral Body) में संचित होती है। किसी से भी बोलने या स्क्रीन देखने से ऊर्जा तुरंत नष्ट हो जाती है।
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-21" data-page="21" data-chapter="अध्याय 4 • स्वास्थ्य प्रबंधन" data-title="त्रि-स्तरीय बीमारी प्रबंधन प्रोटोकॉल" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 21: त्रि-स्तरीय बीमारी प्रबंधन प्रोटोकॉल">
+      <meta itemprop="position" content="21">
+      <meta itemprop="name" content="त्रि-स्तरीय बीमारी प्रबंधन प्रोटोकॉल">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 4 • स्वास्थ्य प्रबंधन</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">त्रि-स्तरीय बीमारी प्रबंधन प्रोटोकॉल</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>त्रि-स्तरीय बीमारी प्रबंधन प्रोटोकॉल:</strong></p>
+  <div class="rule-card success" style="margin-bottom:0.5rem;">
+    <strong>स्तर 1 (हल्की बीमारी):</strong> सर्दी, खांसी, बुखार। तुरंत उपचार लें; साधना को <strong>100% जारी रखें</strong>।
+  </div>
+  <div class="rule-card" style="border-left-color:#f59e0b; margin-bottom:0.5rem;">
+    <strong>स्तर 2 (मध्यम समस्या):</strong> तेज दर्द, कमजोरी। डॉक्टर से परामर्श लें; दिन में कम से कम 1 पाठ उसी स्थान व समय पर करें।
+  </div>
+  <div class="rule-card" style="border-left-color:#dc2626;">
+    <strong>स्तर 3 (गंभीर आपात स्थिति):</strong> अस्पताल भर्ती। साधना तुरंत रोकें; स्वस्थ होने पर पुनः संकल्प लेकर शुरू करें।
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-22" data-page="22" data-chapter="अध्याय 4 • आकस्मिक न्यूनतम" data-title="10:00-10:15 PM पर 1 से 3 पाठ" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 22: 10:00-10:15 PM पर 1 से 3 पाठ">
+      <meta itemprop="position" content="22">
+      <meta itemprop="name" content="10:00-10:15 PM पर 1 से 3 पाठ">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 4 • आकस्मिक न्यूनतम</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">10:00-10:15 PM पर 1 से 3 पाठ</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>आकस्मिक न्यूनतम अभ्यास (Emergency Minimum):</strong></p>
+  <p>यदि शारीरिक अस्वस्थता या अपरिहार्य कारण से 21 पाठ संभव न हों:</p>
+  <div class="rule-card warning">
+    <strong>समय:</strong> 10:00 PM – 10:15 PM<br>
+    <strong>अभ्यास:</strong> सिद्ध कुंजिका स्तोत्र के 1 से 3 पाठ करें।<br>
+    <strong>स्थान:</strong> नियमित साधना का ही स्थान हो।<br>
+    <strong>अंत:</strong> 2 मिनट क्षमा प्रार्थना अवश्य करें।
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-23" data-page="23" data-chapter="अध्याय 4 • आरेख 4.1" data-title="स्वास्थ्य प्रबंधन एवं विटामिन महाचक्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 23: स्वास्थ्य प्रबंधन एवं विटामिन महाचक्र">
+      <meta itemprop="position" content="23">
+      <meta itemprop="name" content="स्वास्थ्य प्रबंधन एवं विटामिन महाचक्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 4 • आरेख 4.1</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">स्वास्थ्य प्रबंधन एवं विटामिन महाचक्र</h3>
+        </div>
+        <div class="visual-chart-plate full-page-chart" style="text-align:center;">
+  <img src="assets/icons/sadhana_health_emergency_matrix.svg" alt="स्वास्थ्य प्रबंधन एवं विटामिन चक्र" style="width:100%; max-width:520px; height:auto; display:block; margin:0 auto; border-radius:8px;">
+  <div style="font-size:0.82rem; font-style:italic; color:var(--text-muted); margin-top:0.4rem;">
+    आरेख 4.1: साधना काल में स्वास्थ्य प्रबंधन एवं पोषण दिशानिर्देश
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-24" data-page="24" data-chapter="अध्याय 4 • तांत्रिक पोषण" data-title="विटामिन B12, D3 एवं मैग्नीशियम" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 24: विटामिन B12, D3 एवं मैग्नीशियम">
+      <meta itemprop="position" content="24">
+      <meta itemprop="name" content="विटामिन B12, D3 एवं मैग्नीशियम">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 4 • तांत्रिक पोषण</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">विटामिन B12, D3 एवं मैग्नीशियम</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>तांत्रिक पोषण एवं विटामिन दिशानिर्देश:</strong></p>
+  <ul style="padding-left:1.2rem;">
+    <li><strong>B-Complex (विशेषकर B12):</strong> मानसिक ऊर्जा एवं तंत्रिका तंत्र (Nervous System) को सुदृढ़ बनाए रखता है।</li>
+    <li><strong>Vitamin D3:</strong> मूड स्टेबिलिटी, शांति एवं गहरी सात्विक निद्रा सुनिश्चित करता है।</li>
+    <li><strong>Magnesium:</strong> मांसपेशियों का तनाव दूर करता है और 8 घंटे के भूमि शयन को सुगम बनाता है।</li>
+  </ul>
+  <div class="rule-card info" style="margin-top:0.6rem;">
+    ⚠ नोट: विटामिन का सेवन चिकित्सीय परामर्श से ही करें।
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-25" data-page="25" data-chapter="अध्याय 4 • महिला साधक नियम" data-title="मासिक धर्म प्रोटोकॉल व पाठ भरपाई" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 25: मासिक धर्म प्रोटोकॉल व पाठ भरपाई">
+      <meta itemprop="position" content="25">
+      <meta itemprop="name" content="मासिक धर्म प्रोटोकॉल व पाठ भरपाई">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 4 • महिला साधक नियम</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">मासिक धर्म प्रोटोकॉल व पाठ भरपाई</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>महिला साधक विशेष नियम (Women’s Protocol):</strong></p>
+  <div class="rule-card" style="border-left-color:#be185d;">
+    • <strong>मासिक धर्म के दिन:</strong> शारीरिक रूप से वेदी स्पर्श न करें। शयन कक्ष में बैठकर मानसिक रूप से प्रतिदिन केवल 1 पाठ करें व क्षमा प्रार्थना करें।<br>
+    • <strong>अन्य मंत्रों का निषेध:</strong> इन दिनों में केवल कुंजिका पाठ करें; अन्य उग्र मंत्र न पढ़ें।<br>
+    • <strong>छूटे पाठों की भरपाई:</strong> शुद्धि के उपरांत 5 दिनों के छूटे हुए पाठ 41 दिनों के बाद अतिरिक्त दिन जोड़कर पूर्ण करें।
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-26" data-page="26" data-chapter="अध्याय 5 • यम-नियम (भाग 1)" data-title="ब्रह्मचर्य, सात्विक आहार व मौन व्रत" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 26: ब्रह्मचर्य, सात्विक आहार व मौन व्रत">
+      <meta itemprop="position" content="26">
+      <meta itemprop="name" content="ब्रह्मचर्य, सात्विक आहार व मौन व्रत">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 5 • यम-नियम (भाग 1)</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">ब्रह्मचर्य, सात्विक आहार व मौन व्रत</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>षड्विध तांत्रिक यम-नियम (प्रथम 3 स्तम्भ):</strong></p>
+  <div class="rule-card" style="border-left-color:#991b1b; margin-bottom:0.5rem;">
+    <strong>1. ब्रह्मचर्य (Complete Celibacy):</strong> कायिक, मानसिक व दृश्य ब्रह्मचर्य। कामुक विचारों एवं उत्तेजक दृश्यों से पूर्ण विरक्ति।
+  </div>
+  <div class="rule-card" style="border-left-color:#15803d; margin-bottom:0.5rem;">
+    <strong>2. सात्विक आहार:</strong> लहसुन, प्याज, मांसाहार, मद्य, तंबाकू पूर्ण वर्जित। 3 घंटे से अधिक पुराना भोजन न लें।
+  </div>
+  <div class="rule-card" style="border-left-color:#1d4ed8;">
+    <strong>3. मौन एवं वाणी संयम:</strong> केवल अनिवार्य संवाद। फोन दूसरे कमरे में रखें; सोशल मीडिया व फिल्में वर्जित।
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-27" data-page="27" data-chapter="अध्याय 5 • यम-नियम (भाग 2)" data-title="भूमि शयन, स्थिर आसन व मेरुदंड शुद्धि" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 27: भूमि शयन, स्थिर आसन व मेरुदंड शुद्धि">
+      <meta itemprop="position" content="27">
+      <meta itemprop="name" content="भूमि शयन, स्थिर आसन व मेरुदंड शुद्धि">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 5 • यम-नियम (भाग 2)</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">भूमि शयन, स्थिर आसन व मेरुदंड शुद्धि</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>शारीरिक अनुशासन (Physical Austerities):</strong></p>
+  <ul style="padding-left:1.2rem;">
+    <li><strong>भूमि शयन:</strong> 41 दिनों तक स्वच्छ चटाई व चादर पर फर्श पर शयन करें। गद्देदार पलंग वर्जित।</li>
+    <li><strong>स्थिर आसन:</strong> प्रतिदिन एक ही कुशासन अथवा ऊनी कम्बल पर बैठें।</li>
+    <li><strong>रीढ़ सीधी:</strong> मेरुदंड पूर्णतः सीधा रहे जिससे सुषुम्ना नाड़ी में प्राण-ऊर्जा का प्रवाह अबाध रहे।</li>
+  </ul>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-28" data-page="28" data-chapter="अध्याय 5 • प्रातः प्राणायाम" data-title="7:30-8:00 AM कपालभाति व अनुलोम-विलोम" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 28: 7:30-8:00 AM कपालभाति व अनुलोम-विलोम">
+      <meta itemprop="position" content="28">
+      <meta itemprop="name" content="7:30-8:00 AM कपालभाति व अनुलोम-विलोम">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 5 • प्रातः प्राणायाम</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">7:30-8:00 AM कपालभाति व अनुलोम-विलोम</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>प्रातः दिनचर्या एवं प्राणायाम (7:00 AM – 8:00 AM):</strong></p>
+  <div class="rule-card success">
+    <strong>7:00 AM:</strong> 8 घंटे की गहरी निद्रा के उपरांत प्राकृतिक जागरण।<br>
+    <strong>7:00–7:30 AM:</strong> शौच-स्नान एवं शारीरिक शुद्धि।<br>
+    <strong>7:30–7:40 AM:</strong> कपालभाति प्राणायाम (10 मिनट - विषाक्त वायु निष्कासन)।<br>
+    <strong>7:40–7:50 AM:</strong> अनुलोम-विलोम प्राणायाम (10 मिनट - इड़ा-पिंगला संतुलन)।<br>
+    <strong>7:50–8:00 AM:</strong> विश्राम एवं दैनिक कार्यों में प्रवेश।
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-29" data-page="29" data-chapter="अध्याय 5 • स्वप्न-स्वर विज्ञान" data-title="अचेतन मन का शोधन व देव संकेत" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 29: अचेतन मन का शोधन व देव संकेत">
+      <meta itemprop="position" content="29">
+      <meta itemprop="name" content="अचेतन मन का शोधन व देव संकेत">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 5 • स्वप्न-स्वर विज्ञान</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">अचेतन मन का शोधन व देव संकेत</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>स्वप्न एवं स्वर विज्ञान (Dream & Swara Practice):</strong></p>
+  <ul style="padding-left:1.2rem;">
+    <li><strong>स्वप्न डायरी:</strong> जागते ही बिना बत्ती जलाए स्वप्न डायरी में लिखें (फोन में नहीं)।</li>
+    <li><strong>स्वर परीक्षण:</strong> जागते समय कौन सा नथुना (बायां इड़ा / दायां पिंगला) सक्रिय था, नोट करें।</li>
+    <li><strong>तांत्रिक रहस्य:</strong> साधना काल के स्वप्न आंतरिक शुद्धि और देवी संकेतों के प्रत्यक्ष दर्पण होते हैं।</li>
+  </ul>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-30" data-page="30" data-chapter="अध्याय 5 • आरेख 5.1" data-title="षड्विध तांत्रिक यम-नियम महाचक्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 30: षड्विध तांत्रिक यम-नियम महाचक्र">
+      <meta itemprop="position" content="30">
+      <meta itemprop="name" content="षड्विध तांत्रिक यम-नियम महाचक्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 5 • आरेख 5.1</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">षड्विध तांत्रिक यम-नियम महाचक्र</h3>
+        </div>
+        <div class="visual-chart-plate full-page-chart" style="text-align:center;">
+  <img src="assets/icons/sadhana_lifestyle_disciplines_chart.svg" alt="षड्विध तांत्रिक यम-नियम चक्र" style="width:100%; max-width:520px; height:auto; display:block; margin:0 auto; border-radius:8px;">
+  <div style="font-size:0.82rem; font-style:italic; color:var(--text-muted); margin-top:0.4rem;">
+    आरेख 5.1: षड्विध तांत्रिक यम-नियम, प्राणायाम एवं स्वप्न-स्वर विज्ञान
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-31" data-page="31" data-chapter="अध्याय 6 • संपुट विधान" data-title="मंत्र ऊर्जा का संपुट एवं विवाह सिद्धि" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 31: मंत्र ऊर्जा का संपुट एवं विवाह सिद्धि">
+      <meta itemprop="position" content="31">
+      <meta itemprop="name" content="मंत्र ऊर्जा का संपुट एवं विवाह सिद्धि">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 6 • संपुट विधान</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">मंत्र ऊर्जा का संपुट एवं विवाह सिद्धि</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>संपुट विधान का तांत्रिक रहस्य:</strong></p>
+  <p>संपुट का अर्थ है — किसी विशेष उद्देश्य की पूर्ति हेतु मूल मंत्र के आगे और पीछे अभीष्ट श्लोक को जोड़कर ऊर्जा को लॉक (Lock) कर देना।</p>
+  <div class="rule-card success">
+    <strong>शीघ्र विवाह संपुट श्लोक:</strong><br>
+    “पत्नीं मनोरमां देहि मनोवृत्तानुसारिणीम् ।<br>
+    तारिणीं दुर्गसंसारसागरस्य कुलोद्भवाम् ॥”
+  </div>
+  <p>यह प्रयोग वैवाहिक बाधा, मांगलिक दोष एवं विवाह में विलंब का अचूक समाधान करता है।</p>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-32" data-page="32" data-chapter="अध्याय 6 • 21 पाठ चक्र" data-title="संपुट सहित प्रत्येक पाठ का संपूर्ण अनुक्रम" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 32: संपुट सहित प्रत्येक पाठ का संपूर्ण अनुक्रम">
+      <meta itemprop="position" content="32">
+      <meta itemprop="name" content="संपुट सहित प्रत्येक पाठ का संपूर्ण अनुक्रम">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 6 • 21 पाठ चक्र</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">संपुट सहित प्रत्येक पाठ का संपूर्ण अनुक्रम</h3>
+        </div>
+        <div style="font-size:0.86rem; line-height:1.65;">
+  <p><strong>21 पाठों में प्रत्येक पाठ का संपुट चक्र:</strong></p>
+  <div class="rule-card" style="margin-bottom:0.4rem;">
+    <strong>1. आदि संपुट:</strong> “पत्नीं मनोरमां देहि मनोवृत्तानुसारिणीम्... कुलोद्भवाम् ॥”
+  </div>
+  <div class="rule-card info" style="margin-bottom:0.4rem;">
+    <strong>2. अथ मन्त्रः:</strong> ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे... फट् स्वाहा ॥
+  </div>
+  <div class="rule-card warning" style="margin-bottom:0.4rem;">
+    <strong>3. इति मन्त्रः:</strong> नमस्ते रुद्ररूपिण्यै... मंत्रसिद्धिं कुरूष्व मे ॥
+  </div>
+  <div class="rule-card" style="margin-bottom:0.4rem;">
+    <strong>4. अंत संपुट:</strong> “पत्नीं मनोरमां देहि मनोवृत्तानुसारिणीम्... कुलोद्भवाम् ॥”
+  </div>
+  <p style="font-size:0.8rem; color:#64748b;">(पाठ 1 से 21 तक प्रत्येक बार यह 4-चरणीय चक्र चलेगा।)</p>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-33" data-page="33" data-chapter="अध्याय 6 • आरेख 6.1" data-title="संपुट विधान एवं विवाह सिद्धि महाचक्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 33: संपुट विधान एवं विवाह सिद्धि महाचक्र">
+      <meta itemprop="position" content="33">
+      <meta itemprop="name" content="संपुट विधान एवं विवाह सिद्धि महाचक्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 6 • आरेख 6.1</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">संपुट विधान एवं विवाह सिद्धि महाचक्र</h3>
+        </div>
+        <div class="visual-chart-plate full-page-chart" style="text-align:center;">
+  <img src="assets/icons/sadhana_samput_architecture.svg" alt="सिद्ध कुंजिका संपुट विधान चक्र" style="width:100%; max-width:520px; height:auto; display:block; margin:0 auto; border-radius:8px;">
+  <div style="font-size:0.82rem; font-style:italic; color:var(--text-muted); margin-top:0.4rem;">
+    आरेख 6.1: सिद्ध कुंजिका स्तोत्र संपुट विधान एवं विवाह सिद्धि चक्र
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-34" data-page="34" data-chapter="अध्याय 7 • सिद्ध कुंजिका" data-title="स्तोत्र सम्पूर्ण मूल संस्कृत पाठ" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 34: स्तोत्र सम्पूर्ण मूल संस्कृत पाठ">
+      <meta itemprop="position" content="34">
+      <meta itemprop="name" content="स्तोत्र सम्पूर्ण मूल संस्कृत पाठ">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 7 • सिद्ध कुंजिका</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">स्तोत्र सम्पूर्ण मूल संस्कृत पाठ</h3>
+        </div>
+        <div style="font-size:0.84rem; line-height:1.65;">
+  <div class="shloka-box" style="padding:0.75rem; margin-bottom:0.6rem;">
+    <div style="font-family:'Noto Serif Devanagari',serif; font-size:0.88rem; font-weight:700; color:#b91c1c; line-height:1.7;">
+      ॥ शिव उवाच ॥<br>
+      शृणु देवि प्रवक्ष्यामि कुञ्जिकास्तोत्रमुत्तमम् । येन मन्त्रप्रभावेण चण्डीजापः शुभो भवेत् ॥ 1 ॥<br>
+      न कवचं नार्गलास्तोत्रं कीलकं न रहस्यकम् । न सूक्तं नापि ध्यानं च न न्यासो न च वाचनम् ॥ 2 ॥<br>
+      कुञ्जिकापाठमात्रेण दुर्गापाठफलं लभेत् । अति गुह्यतरं देवि देवानामपि दुर्लभम् ॥ 3 ॥<br>
+      ॥ अथ मन्त्रः ॥<br>
+      ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे । ॐ ग्लौं हुं क्लीं जूं सः ज्वालय ज्वालय ज्वल ज्वल प्रज्वल प्रज्वल ऐं ह्रीं क्लीं चामुण्डायै विच्चे ज्वल हं सं लं क्षं फट् स्वाहा ॥<br>
+      ॥ इति मन्त्रः ॥ नमस्ते रुद्ररूपिण्यै... सां सीं सूं सप्तशती देव्या मन्त्रसिद्धिं कुरुष्व मे ॥
+    </div>
+  </div>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-35" data-page="35" data-chapter="अध्याय 8 • पूर्णाहुति" data-title="दशांश हवन व आसन-उत्थापन महामंत्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 35: दशांश हवन व आसन-उत्थापन महामंत्र">
+      <meta itemprop="position" content="35">
+      <meta itemprop="name" content="दशांश हवन व आसन-उत्थापन महामंत्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय 8 • पूर्णाहुति</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">दशांश हवन व आसन-उत्थापन महामंत्र</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.7;">
+  <p><strong>41वें दिन पूर्णाहुति एवं गुप्त आसन-उत्थापन मंत्र:</strong></p>
+  <div class="rule-card success">
+    <strong>दशांश हवन:</strong> 108 आहुतियां आम की समिधा, घृत व तिल से दें।
+  </div>
+  <div class="shloka-box" style="padding:0.8rem; margin:0.6rem 0;">
+    <div style="font-family:'Noto Serif Devanagari',serif; font-size:1.05rem; font-weight:700; color:#78350f;">
+      ॥ आसन-उत्थापन मन्त्र ॥<br>
+      ॐ शक्राय नमः । ॐ इन्द्राय नमः ॥
+    </div>
+  </div>
+  <p>आसन के नीचे दो बूंद जल छोड़ें, अनामिका से स्पर्श कर मस्तक व नेत्रों पर लगाएं।</p>
+</div>
+      </div>
+    </article>
+    <article class="book-page-data" id="page-data-36" data-page="36" data-chapter="उपसंहार • Colophon" data-title="ग्रंथ समापन व शांति पाठ" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 36: ग्रंथ समापन व शांति पाठ">
+      <meta itemprop="position" content="36">
+      <meta itemprop="name" content="ग्रंथ समापन व शांति पाठ">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">उपसंहार • Colophon</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">ग्रंथ समापन व शांति पाठ</h3>
+        </div>
+        <div style="text-align:center; padding:1.5rem 1rem;">
+  <div style="font-size:1.8rem; margin-bottom:0.8rem;">☸ ॥ ॐ शान्तिः शान्तिः शान्तिः ॥ ☸</div>
+  <h3 style="font-size:1.35rem; color:var(--accent-gold); font-family:'Noto Serif Devanagari',serif; font-weight:800; margin-bottom:0.8rem;">
+    महाग्रंथ समापन एवं मंगल आशीर्वाद
+  </h3>
+  <p style="font-size:0.9rem; color:var(--text-main); line-height:1.7; max-width:480px; margin:0 auto 1.2rem auto;">
+    यह महाग्रंथ समस्त जिज्ञासु साधकों हेतु पूर्णतः प्रामाणिक ज्ञानकोश के रूप में तंत्र ज्ञान शोध संस्थान द्वारा समर्पित है।
+  </p>
+  <div style="border-top:1px solid #d97706; padding-top:0.8rem; max-width:420px; margin:0 auto; font-size:0.84rem; color:var(--text-muted);">
+    <strong>प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे</strong><br>
+    तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)<br>
+    वेबसाइट: <a href="https://t.worldgyan.com" target="_blank">t.worldgyan.com</a> • 2026 सर्वाधिकार सुरक्षित
+  </div>
+</div>
+      </div>
+    </article>
+
+
+  </main>
+    
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/sounds-data.js?v=5.1"></script>
+  <script src="js/sound.js?v=5.1"></script>
+  <script src="js/book-engine.js?v=5.1"></script>
+  <script src="js/book-ui.js?v=5.1"></script>
+</body>
+</html>

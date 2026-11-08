@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%">
+
+  <defs>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800;900&amp;display=swap");
+    </style>
+    <linearGradient id="parchmentBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefb"/>
+      <stop offset="50%" stop-color="#fdfbf5"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
+    </linearGradient>
+    <linearGradient id="goldHeadGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="shivaBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="durgaRedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef2f2"/>
+      <stop offset="100%" stop-color="#fee2e2"/>
+    </linearGradient>
+    <linearGradient id="bhairavDarkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="tantraShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#parchmentBg)" stroke="#b45309" stroke-width="2" filter="url(#tantraShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  
+  <!-- Top Header Banner -->
+  <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.3"/>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="14.5" font-weight="900" fill="#78350f" text-anchor="middle">साधना काल में स्वास्थ्य प्रबंधन एवं आपातकालीन प्रोटोकॉल</text>
+  <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">Sadhana Health Issue Management, Emergency Minimum &amp; Recovery Rules</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">शरीरं खलु धर्मसाधनम् • स्वास्थ्य सुरक्षा के साथ साधना की अखंडता</text>
+
+
+  <!-- 3-Tier Illness Protocol Table -->
+  <g transform="translate(24, 96)">
+    <rect width="512" height="235" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+    <rect width="512" height="28" rx="8" fill="#0f172a"/>
+    <text x="256" y="19" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">१. त्रि-स्तरीय बीमारी प्रबंधन प्रोटोकॉल (3-Tier Health Matrix)</text>
+
+    <!-- Tier 1: Minor -->
+    <g transform="translate(14, 38)">
+      <rect width="484" height="58" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.2"/>
+      <text x="12" y="22" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#15803d">हल्की बीमारी (सर्दी, खांसी, हल्का बुखार)</text>
+      <text x="12" y="40" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">➔ तुरंत घरेलू/चिकित्सीय उपचार लें; साधना को 100% जारी रखें।</text>
+      <text x="12" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#047857">नियम: समय एवं स्थान में कोई समझौता न करें।</text>
+    </g>
+
+    <!-- Tier 2: Moderate -->
+    <g transform="translate(14, 102)">
+      <rect width="484" height="58" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.2"/>
+      <text x="12" y="22" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#b45309">मध्यम समस्या (तीव्र दर्द, चक्कर, अधिक कमजोरी)</text>
+      <text x="12" y="40" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">➔ चिकित्सक से परामर्श लें; दिन में कम से कम 1 पाठ उसी स्थान व समय पर करें।</text>
+      <text x="12" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#78350f">आकस्मिक न्यूनतम: 10:00–10:15 PM पर 1 से 3 पाठ + क्षमा प्रार्थना।</text>
+    </g>
+
+    <!-- Tier 3: Emergency -->
+    <g transform="translate(14, 166)">
+      <rect width="484" height="58" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1.2"/>
+      <text x="12" y="22" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#b91c1c">गंभीर आपात स्थिति (अस्पताल भर्ती / जीवन रक्षा)</text>
+      <text x="12" y="40" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">➔ साधना तुरंत रोकें; माँ भगवती से मानसिक क्षमा प्रार्थना करें।</text>
+      <text x="12" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#991b1b">पुनर्प्राप्ति: स्वस्थ होते ही स्नान, नवीन संकल्प लेकर साधना पुनः प्रारंभ करें।</text>
+    </g>
+  </g>
+
+  <!-- Vitamin & Health Nutrition Section -->
+  <g transform="translate(24, 345)">
+    <rect width="512" height="150" rx="8" fill="#ffffff" stroke="#0284c7" stroke-width="1.4"/>
+    <rect width="512" height="28" rx="8" fill="#0369a1"/>
+    <text x="256" y="19" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">२. तांत्रिक पोषण एवं विटामिन दिशानिर्देश (Nervous System Strength)</text>
+
+    <g transform="translate(14, 38)">
+      <rect width="150" height="98" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+      <text x="75" y="24" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8" text-anchor="middle">B-Complex (B12)</text>
+      <text x="75" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">मानसिक ऊर्जा एवं</text>
+      <text x="75" y="62" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">तंत्रिका तंत्र (Nerves) को</text>
+      <text x="75" y="76" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">सुदृढ़ बनाए रखता है।</text>
+    </g>
+
+    <g transform="translate(180, 38)">
+      <rect width="150" height="98" rx="6" fill="#fffbeb" stroke="#fde047" stroke-width="1"/>
+      <text x="75" y="24" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#b45309" text-anchor="middle">Vitamin D3</text>
+      <text x="75" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">मूड स्टेबिलिटी, शांति एवं</text>
+      <text x="75" y="62" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">गहरी सात्विक निद्रा</text>
+      <text x="75" y="76" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">की गुणवत्ता सुनिश्चित करता है।</text>
+    </g>
+
+    <g transform="translate(346, 38)">
+      <rect width="150" height="98" rx="6" fill="#fdf4ff" stroke="#f0abfc" stroke-width="1"/>
+      <text x="75" y="24" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#a21caf" text-anchor="middle">Magnesium</text>
+      <text x="75" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">मांसपेशियों का तनाव कम</text>
+      <text x="75" y="62" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">करता है और 8 घंटे</text>
+      <text x="75" y="76" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#1e293b" text-anchor="middle">भूमि शयन को सुगम बनाता है।</text>
+    </g>
+  </g>
+
+  <!-- Women's Sadhana Guidelines Section -->
+  <g transform="translate(24, 508)">
+    <rect width="512" height="120" rx="8" fill="#ffffff" stroke="#be185d" stroke-width="1.4"/>
+    <rect width="512" height="26" rx="8" fill="#9d174d"/>
+    <text x="256" y="18" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" text-anchor="middle">३. महिला साधक विशेष नियम (Women’s Menstrual Protocol)</text>
+
+    <text x="20" y="46" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#9d174d">• मासिक धर्म के दिन:</text>
+    <text x="140" y="46" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">शारीरिक वेदी स्पर्श न करें; मानसिक रूप से केवल 1 पाठ करें व क्षमा प्रार्थना करें।</text>
+
+    <text x="20" y="68" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#9d174d">• अन्य मंत्रों का निषेध:</text>
+    <text x="140" y="68" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">मासिक धर्म के दिनों में केवल कुंजिका पाठ करें, अन्य उग्र मंत्रों का जाप न करें।</text>
+
+    <text x="20" y="90" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#9d174d">• छूटे पाठों की भरपाई:</text>
+    <text x="140" y="90" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">शुद्धि के उपरांत 5 दिनों के छूटे हुए पाठ 41 दिनों के बाद अतिरिक्त दिन जोड़कर पूर्ण करें।</text>
+
+    <text x="256" y="110" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#64748b" text-anchor="middle">माँ भगवती परम दयालु हैं; भाव-शुद्धि और निष्ठा ही तांत्रिक सिद्धि का वास्तविक आधार है।</text>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="640" width="512" height="110" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="662" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ तांत्रिक स्वास्थ्य दर्शन ★</text>
+  <text x="280" y="682" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">• बीमारी कभी-कभी संचित प्रारब्ध की कर्म-शुद्धि का साधन होती है</text>
+  <text x="280" y="702" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">• महामृत्युंजय मंत्र रोगमुक्ति देता है तथा बटुक भैरव साधना समस्त भय व विपत्तियों से रक्षा करती है</text>
+  <text x="280" y="722" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">स्रोत: तंत्र साधना सिद्धि महाग्रंथ • प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे</text>
+</svg>
