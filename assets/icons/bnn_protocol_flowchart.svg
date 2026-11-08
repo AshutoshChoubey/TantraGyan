@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 940" width="100%" height="100%" style="background:#090d16; border-radius:12px; font-family:system-ui, -apple-system, 'Segoe UI', 'Noto Sans Devanagari', 'Kohinoor Devanagari', sans-serif;">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" /><stop offset="50%" stop-color="#d97706" /><stop offset="100%" stop-color="#92400e" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="940" fill="#090d16" rx="12" />
+  <rect x="15" y="15" width="970" height="910" fill="none" stroke="url(#goldGrad)" stroke-width="1.8" rx="8" opacity="0.65" />
+
+  <!-- Header -->
+  <text x="500.0" y="52" text-anchor="middle" fill="url(#goldGrad)" font-size="24" font-weight="800">बी.एन.एन. ७-चरणीय फलित निर्णय प्रवाह आरेख</text>
+  <text x="500.0" y="78" text-anchor="middle" fill="#94a3b8" font-size="14">BNN 7-Step Predictive Algorithm Protocol • तार्किक एवं अचूक कुण्डली विश्लेषण विधि</text>
+
+  <!-- 7 Stepped Pipeline Cards -->
+  <!-- Step 1 -->
+  <g transform="translate(60, 105)" filter="url(#shadow)">
+    <rect width="880" height="85" rx="8" fill="#0f172a" stroke="#d97706" stroke-width="1.5" />
+    <rect width="110" height="85" rx="8" fill="#b45309" />
+    <text x="55" y="38" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="900">चरण १</text>
+    <text x="55" y="60" text-anchor="middle" fill="#fde047" font-size="12">Step 1</text>
+    
+    <text x="135" y="34" fill="#fde047" font-size="15.5" font-weight="800">जीव एवं कर्म कारक की पहचान (Identify Jeeva &amp; Karma Karakas)</text>
+    <text x="135" y="58" fill="#e2e8f0" font-size="13">• पुरुष जातक = गुरु (Jupiter), स्त्री जातक = शुक्र (Venus), आजीविका/प्रारब्ध = शनि (Saturn)</text>
+    <text x="750" y="48" text-anchor="middle" fill="#34d399" font-size="13" font-weight="700">प्राथमिक धुरी</text>
+  </g>
+
+  <!-- Step 2 -->
+  <g transform="translate(60, 205)" filter="url(#shadow)">
+    <rect width="880" height="85" rx="8" fill="#0f172a" stroke="#0284c7" stroke-width="1.5" />
+    <rect width="110" height="85" rx="8" fill="#0369a1" />
+    <text x="55" y="38" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="900">चरण २</text>
+    <text x="55" y="60" text-anchor="middle" fill="#e0f2fe" font-size="12">Step 2</text>
+    
+    <text x="135" y="34" fill="#38bdf8" font-size="15.5" font-weight="800">१-५-९ दिशा त्रिकोण युति संकलन (Collate 1-5-9 Directional Trines)</text>
+    <text x="135" y="58" fill="#e2e8f0" font-size="13">• समान दिशा (अग्नि, पृथ्वी, वायु, जल) में बैठे सभी ग्रहों को एक साथ युत मानें (प्रभाव भार: ७५%–१००%)</text>
+    <text x="750" y="48" text-anchor="middle" fill="#fde047" font-size="13" font-weight="700">७५%-१००% युति</text>
+  </g>
+
+  <!-- Step 3 -->
+  <g transform="translate(60, 305)" filter="url(#shadow)">
+    <rect width="880" height="85" rx="8" fill="#0f172a" stroke="#059669" stroke-width="1.5" />
+    <rect width="110" height="85" rx="8" fill="#047857" />
+    <text x="55" y="38" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="900">चरण ३</text>
+    <text x="55" y="60" text-anchor="middle" fill="#d1fae5" font-size="12">Step 3</text>
+    
+    <text x="135" y="34" fill="#34d399" font-size="15.5" font-weight="800">१-७ सम्मुख दृष्टि प्रभाव (Inspect 1-7 Opposite Direction Aspects)</text>
+    <text x="135" y="58" fill="#e2e8f0" font-size="13">• ७वें भाव में स्थित ग्रह का ५०% प्रत्यक्ष प्रभाव; पूर्व ↔ पश्चिम एवं उत्तर ↔ दक्षिण कर्म-साक्षात्कार</text>
+    <text x="750" y="48" text-anchor="middle" fill="#38bdf8" font-size="13" font-weight="700">५०% प्रभाव</text>
+  </g>
+
+  <!-- Step 4 -->
+  <g transform="translate(60, 405)" filter="url(#shadow)">
+    <rect width="880" height="85" rx="8" fill="#0f172a" stroke="#7c3aed" stroke-width="1.5" />
+    <rect width="110" height="85" rx="8" fill="#6d28d9" />
+    <text x="55" y="38" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="900">चरण ४</text>
+    <text x="55" y="60" text-anchor="middle" fill="#ede9fe" font-size="12">Step 4</text>
+    
+    <text x="135" y="34" fill="#c084fc" font-size="15.5" font-weight="800">+१ अग्रिम एवं -१ पृष्ठ भाव संबंध (Evaluate +1 Next / -1 Rear Influences)</text>
+    <text x="135" y="58" fill="#e2e8f0" font-size="13">• +१ अगला भाव = भावी कर्म व दिशा (१५%); -१ पिछला भाव = संचित प्रारब्ध व पूर्व ऋण (१५%)</text>
+    <text x="750" y="48" text-anchor="middle" fill="#f472b6" font-size="13" font-weight="700">१५% अग्र/पृष्ठ</text>
+  </g>
+
+  <!-- Step 5 -->
+  <g transform="translate(60, 505)" filter="url(#shadow)">
+    <rect width="880" height="85" rx="8" fill="#0f172a" stroke="#ec4899" stroke-width="1.5" />
+    <rect width="110" height="85" rx="8" fill="#be185d" />
+    <text x="55" y="38" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="900">चरण ५</text>
+    <text x="55" y="60" text-anchor="middle" fill="#fce7f3" font-size="12">Step 5</text>
+    
+    <text x="135" y="34" fill="#f472b6" font-size="15.5" font-weight="800">ग्रहों का अंश-क्रम एवं वक्री विनिमय (Order by Degree &amp; Retrograde Adjustments)</text>
+    <text x="135" y="58" fill="#e2e8f0" font-size="13">• निम्न अंश ग्रह आगे, उच्च अंश ग्रह पीछे; वक्री ग्रह का पूर्व भाव में ५०% अस्तित्व, राशि परिवर्तन विनिमय</text>
+    <text x="750" y="48" text-anchor="middle" fill="#fde047" font-size="13" font-weight="700">अंश वक्री नियम</text>
+  </g>
+
+  <!-- Step 6 -->
+  <g transform="translate(60, 605)" filter="url(#shadow)">
+    <rect width="880" height="85" rx="8" fill="#0f172a" stroke="#e11d48" stroke-width="1.5" />
+    <rect width="110" height="85" rx="8" fill="#be123c" />
+    <text x="55" y="38" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="900">चरण ६</text>
+    <text x="55" y="60" text-anchor="middle" fill="#ffe4e6" font-size="12">Step 6</text>
+    
+    <text x="135" y="34" fill="#fb7185" font-size="15.5" font-weight="800">शुभ/पाप-कर्तरी वेध का निर्धारण (Determine Kartari Enclosure Status)</text>
+    <text x="135" y="58" fill="#e2e8f0" font-size="13">• २/१२ भावों में शुभ ग्रह = संरक्षण व निर्बाध सफलता; क्रूर ग्रह (राहु/शनि) = घेराबंदी व कार्मिक अवरोध</text>
+    <text x="750" y="48" text-anchor="middle" fill="#cbd5e1" font-size="13" font-weight="700">वेध सुरक्षा</text>
+  </g>
+
+  <!-- Step 7 -->
+  <g transform="translate(60, 705)" filter="url(#shadow)">
+    <rect width="880" height="85" rx="8" fill="#0f172a" stroke="#f59e0b" stroke-width="2" />
+    <rect width="110" height="85" rx="8" fill="url(#goldGrad)" />
+    <text x="55" y="38" text-anchor="middle" fill="#0f172a" font-size="16" font-weight="900">चरण ७</text>
+    <text x="55" y="60" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="700">Step 7</text>
+    
+    <text x="135" y="34" fill="#fde047" font-size="15.5" font-weight="800">गोचर, पर्याय एवं भृगु बिंदु द्वारा सक्रियण (Timing via Transits &amp; Bhrigu Bindu)</text>
+    <text x="135" y="58" fill="#e2e8f0" font-size="13">• शनि ३०-वर्षीय पर्याय, गुरु १ वर्ष/राशि प्रगति एवं भृगु बिंदु (BB) स्पर्श पर अचूक काल-निर्धारण</text>
+    <text x="750" y="48" text-anchor="middle" fill="#34d399" font-size="13" font-weight="900">अचूक फलित</text>
+  </g>
+
+  <!-- Footer -->
+  <g transform="translate(60, 810)">
+    <rect width="880" height="85" rx="8" fill="#131c2e" stroke="#334155" stroke-width="1" />
+    <text x="25" y="32" fill="#fde047" font-size="14.5" font-weight="750">⚡ फलित निष्पत्ति:</text>
+    <text x="145" y="32" fill="#cbd5e1" font-size="13.5">इन ७ चरणों का क्रमबद्ध पालन करने पर बिना किसी सॉफ्टवेयर अथवा जटिल गणित के अचूक फलित प्राप्त होता है।</text>
+    <text x="25" y="60" fill="#94a3b8" font-size="12.5">प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे • तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)</text>
+  </g>
+</svg>

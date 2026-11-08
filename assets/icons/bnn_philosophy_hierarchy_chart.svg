@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 840" width="100%" height="100%" style="background:#090d16; border-radius:12px; font-family:system-ui, -apple-system, 'Segoe UI', 'Noto Sans Devanagari', 'Kohinoor Devanagari', sans-serif;">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="50%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#92400e" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="tier1Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b45309" /><stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="tier2Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0369a1" /><stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="tier3Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#047857" /><stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="tier4Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6d28d9" /><stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+    <linearGradient id="tier5Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#be123c" /><stop offset="100%" stop-color="#e11d48" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Frame -->
+  <rect width="1000" height="840" fill="#090d16" rx="12" />
+  <rect x="15" y="15" width="970" height="810" fill="none" stroke="url(#goldGrad)" stroke-width="1.8" rx="8" opacity="0.65" />
+  <rect x="22" y="22" width="956" height="796" fill="none" stroke="rgba(217, 119, 6, 0.25)" stroke-width="1" rx="6" />
+
+  <!-- Title Header -->
+  <text x="500.0" y="55" text-anchor="middle" fill="url(#goldGrad)" font-size="24" font-weight="800" letter-spacing="1">भृगु नंदी नाड़ी: ५-स्तरीय फलित निर्णय पदानुक्रम</text>
+  <text x="500.0" y="82" text-anchor="middle" fill="#94a3b8" font-size="14">BNN 5-Tier Hierarchical Predictive Architecture • प्रामाणिक निर्णय संरचना</text>
+
+  <!-- 5 Horizontal Tiers -->
+  <!-- Tier 1 -->
+  <g transform="translate(60, 110)" filter="url(#shadow)">
+    <rect width="880" height="98" rx="10" fill="url(#cardGrad)" stroke="#d97706" stroke-width="1.5" />
+    <rect width="180" height="98" rx="10" fill="url(#tier1Grad)" />
+    <text x="90" y="42" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="800">स्तर १ (Level 1)</text>
+    <text x="90" y="66" text-anchor="middle" fill="#fef3c7" font-size="13" font-weight="700">कारक चयन</text>
+    
+    <text x="205" y="38" fill="#fde047" font-size="16" font-weight="800">जीव एवं कर्म कारक का निर्धारण (Primary Karaka Selection)</text>
+    <text x="205" y="62" fill="#e2e8f0" font-size="13.5">• पुरुष जातक = गुरु (Jeeva), स्त्री जातक = शुक्र (Female Jeeva) • आजीविका/प्रारब्ध = शनि (Karma Karaka)</text>
+    <text x="205" y="84" fill="#94a3b8" font-size="12.5">नियम: बिना लग्न पराधीनता के जातक के अस्तित्व एवं कर्म का प्राथमिक केन्द्र चिन्हित करना।</text>
+  </g>
+
+  <!-- Down Connector 1 -->
+  <path d="M 500 208 L 500 230" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="4,4" marker-end="url(#arrow)" />
+  <circle cx="500" cy="220" r="4" fill="#f59e0b" />
+
+  <!-- Tier 2 -->
+  <g transform="translate(60, 230)" filter="url(#shadow)">
+    <rect width="880" height="98" rx="10" fill="url(#cardGrad)" stroke="#0284c7" stroke-width="1.5" />
+    <rect width="180" height="98" rx="10" fill="url(#tier2Grad)" />
+    <text x="90" y="42" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="800">स्तर २ (Level 2)</text>
+    <text x="90" y="66" text-anchor="middle" fill="#e0f2fe" font-size="13" font-weight="700">दिशा एवं त्रिकोण</text>
+    
+    <text x="205" y="38" fill="#38bdf8" font-size="16" font-weight="800">१-५-९ दिशा त्रिकोण संबंध (Directional Trine Conjunction • 75%–100%)</text>
+    <text x="205" y="62" fill="#e2e8f0" font-size="13.5">• पूर्व (अग्नि: १, ५, ९) • दक्षिण (पृथ्वी: २, ६, १०) • पश्चिम (वायु: ३, ७, ११) • उत्तर (जल: ४, ८, १२)</text>
+    <text x="205" y="84" fill="#94a3b8" font-size="12.5">नियम: समान दिशा के ग्रह एक ही कक्ष में बैठे माने जाते हैं — भाव दूरी निरर्थक है।</text>
+  </g>
+
+  <!-- Down Connector 2 -->
+  <path d="M 500 328 L 500 350" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="4,4" />
+  <circle cx="500" cy="340" r="4" fill="#38bdf8" />
+
+  <!-- Tier 3 -->
+  <g transform="translate(60, 350)" filter="url(#shadow)">
+    <rect width="880" height="98" rx="10" fill="url(#cardGrad)" stroke="#059669" stroke-width="1.5" />
+    <rect width="180" height="98" rx="10" fill="url(#tier3Grad)" />
+    <text x="90" y="42" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="800">स्तर ३ (Level 3)</text>
+    <text x="90" y="66" text-anchor="middle" fill="#d1fae5" font-size="13" font-weight="700">सम्मुख व पार्श्व</text>
+    
+    <text x="205" y="38" fill="#34d399" font-size="16" font-weight="800">१-७ सम्मुख दृष्टि (50%) एवं २/१२ अग्रिम-पृष्ठ संबंध (15%)</text>
+    <text x="205" y="62" fill="#e2e8f0" font-size="13.5">• सम्मुख १-७: प्रत्यक्ष कर्म-साक्षात्कार (विपरीत दिशा) • +१ अग्रिम: भावी कदम • -१ पृष्ठ: पूर्व संचित ऋण</text>
+    <text x="205" y="84" fill="#94a3b8" font-size="12.5">नियम: शुभ/पाप कर्तरी वेध से जातक के कर्म का संरक्षण या घेराबंदी निर्धारित होती है।</text>
+  </g>
+
+  <!-- Down Connector 3 -->
+  <path d="M 500 448 L 500 470" stroke="#34d399" stroke-width="2.5" stroke-dasharray="4,4" />
+  <circle cx="500" cy="460" r="4" fill="#34d399" />
+
+  <!-- Tier 4 -->
+  <g transform="translate(60, 470)" filter="url(#shadow)">
+    <rect width="880" height="98" rx="10" fill="url(#cardGrad)" stroke="#7c3aed" stroke-width="1.5" />
+    <rect width="180" height="98" rx="10" fill="url(#tier4Grad)" />
+    <text x="90" y="42" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="800">स्तर ४ (Level 4)</text>
+    <text x="90" y="66" text-anchor="middle" fill="#ede9fe" font-size="13" font-weight="700">अंश-क्रम व विनिमय</text>
+    
+    <text x="205" y="38" fill="#c084fc" font-size="16" font-weight="800">ग्रह अंश-क्रम, वक्री विनिमय एवं राशि-परिवर्तन (Degree Ordering & Retro Swap)</text>
+    <text x="205" y="62" fill="#e2e8f0" font-size="13.5">• निम्न अंश ग्रह आगे, उच्च अंश ग्रह पीछे (पीछे वाला ग्रह आगे वाले की ओर गतिमान)</text>
+    <text x="205" y="84" fill="#94a3b8" font-size="12.5">नियम: वक्री ग्रह का ५०% अस्तित्व पूर्व राशि में होता है; राशि विनिमय से ग्रह दोनों स्थानों पर फल देते हैं।</text>
+  </g>
+
+  <!-- Down Connector 4 -->
+  <path d="M 500 568 L 500 590" stroke="#c084fc" stroke-width="2.5" stroke-dasharray="4,4" />
+  <circle cx="500" cy="580" r="4" fill="#c084fc" />
+
+  <!-- Tier 5 -->
+  <g transform="translate(60, 590)" filter="url(#shadow)">
+    <rect width="880" height="98" rx="10" fill="url(#cardGrad)" stroke="#e11d48" stroke-width="1.5" />
+    <rect width="180" height="98" rx="10" fill="url(#tier5Grad)" />
+    <text x="90" y="42" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="800">स्तर ५ (Level 5)</text>
+    <text x="90" y="66" text-anchor="middle" fill="#ffe4e6" font-size="13" font-weight="700">गोचर व भृगु बिंदु</text>
+    
+    <text x="205" y="38" fill="#fb7185" font-size="16" font-weight="800">पर्याय काल, वार्षिक प्रगति एवं भृगु बिंदु सक्रियण (Paryaya, Progressions & BB)</text>
+    <text x="205" y="62" fill="#e2e8f0" font-size="13.5">• शनि ३०-वर्षीय पर्याय (४ चरण) • गुरु १ वर्ष प्रति राशि प्रगति • राहु-चन्द्र मध्य बिंदु = भृगु बिंदु (BB)</text>
+    <text x="205" y="84" fill="#94a3b8" font-size="12.5">नियम: जब गोचर का गुरु, शनि या राहु भृगु बिंदु अथवा नेटल त्रिकोण को छूता है, घटना अवश्य घटित होती है।</text>
+  </g>
+
+  <!-- Bottom Summary Card -->
+  <g transform="translate(60, 715)">
+    <rect width="880" height="85" rx="8" fill="#131c2e" stroke="#334155" stroke-width="1" />
+    <text x="25" y="32" fill="#fde047" font-size="14.5" font-weight="750">💡 मुख्य फलित सिद्धांत:</text>
+    <text x="180" y="32" fill="#cbd5e1" font-size="13.5">बी.एन.एन. में विंशोत्तरी दशा की जगह ग्रहों के परस्पर संयोग, दृष्टि अक्ष एवं गोचर पर्याय से फलित होता है।</text>
+    <text x="25" y="60" fill="#94a3b8" font-size="12.5">प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे • तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)</text>
+  </g>
+</svg>

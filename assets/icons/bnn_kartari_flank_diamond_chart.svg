@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 920" width="100%" height="100%" style="background:#090d16; border-radius:12px; font-family:system-ui, -apple-system, 'Segoe UI', 'Noto Sans Devanagari', 'Kohinoor Devanagari', sans-serif;">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" /><stop offset="50%" stop-color="#d97706" /><stop offset="100%" stop-color="#92400e" />
+    </linearGradient>
+    <linearGradient id="greenGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" /><stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="redGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f87171" /><stop offset="100%" stop-color="#dc2626" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="920" fill="#090d16" rx="12" />
+  <rect x="15" y="15" width="970" height="890" fill="none" stroke="url(#goldGrad)" stroke-width="1.8" rx="8" opacity="0.65" />
+
+  <!-- Header -->
+  <text x="500.0" y="52" text-anchor="middle" fill="url(#goldGrad)" font-size="24" font-weight="800">अग्रिम, पृष्ठ एवं कर्तरी वेध डायमंड चक्र</text>
+  <text x="500.0" y="78" text-anchor="middle" fill="#94a3b8" font-size="14">BNN Flank Influences (+1 Next / -1 Rear) &amp; Shubha/Papa Kartari Siege</text>
+
+  <!-- Diamond Kundli Geometry -->
+  <!-- Center: cx=500, cy=460, size=520 -->
+  <g transform="translate(240, 120)" filter="url(#shadow)">
+    <!-- Outer Square -->
+    <rect x="0" y="0" width="520" height="520" fill="#0f172a" stroke="#d97706" stroke-width="2.5" />
+    
+    <!-- Cross Diagonals -->
+    <line x1="0" y1="0" x2="520" y2="520" stroke="#d97706" stroke-width="2" />
+    <line x1="520" y1="0" x2="0" y2="520" stroke="#d97706" stroke-width="2" />
+    
+    <!-- Inner Diamond -->
+    <polygon points="260,0 520,260 260,520 0,260" fill="#131c2e" stroke="#f59e0b" stroke-width="2" />
+
+    <!-- Center House 1 (Jeeva Lagna) -->
+    <polygon points="260,0 390,130 260,260 130,130" fill="#1e293b" stroke="#38bdf8" stroke-width="2" />
+    <text x="260" y="90" text-anchor="middle" fill="#38bdf8" font-size="22" font-weight="800">गुरु / जीव (H1)</text>
+    <text x="260" y="115" text-anchor="middle" fill="#fde047" font-size="14" font-weight="700">केन्द्रीय ग्रह (Jeeva Core)</text>
+    <text x="260" y="140" text-anchor="middle" fill="#94a3b8" font-size="12">वर्तमान स्थिति • आत्म चेतना</text>
+
+    <!-- House 2 (Top-Left Triangle: +1 Next House) -->
+    <polygon points="0,0 260,0 130,130" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="2.2" />
+    <text x="130" y="45" text-anchor="middle" fill="#34d399" font-size="18" font-weight="800">+१ अग्रिम भाव (H2)</text>
+    <text x="130" y="68" text-anchor="middle" fill="#fef3c7" font-size="13" font-weight="700">भावी कदम (Next Step)</text>
+    <text x="130" y="88" text-anchor="middle" fill="#a7f3d0" font-size="11.5">प्रभाव भार: १५%</text>
+    <text x="130" y="106" text-anchor="middle" fill="#94a3b8" font-size="11">शुक्र/बुध = तत्काल सहयोग</text>
+
+    <!-- House 12 (Top-Right Triangle: -1 Rear House) -->
+    <polygon points="260,0 520,0 390,130" fill="rgba(244, 63, 94, 0.15)" stroke="#f43f5e" stroke-width="2.2" />
+    <text x="390" y="45" text-anchor="middle" fill="#fb7185" font-size="18" font-weight="800">-१ पृष्ठ भाव (H12)</text>
+    <text x="390" y="68" text-anchor="middle" fill="#fef3c7" font-size="13" font-weight="700">संचित प्रारब्ध (Rear Foot)</text>
+    <text x="390" y="88" text-anchor="middle" fill="#fecdd3" font-size="11.5">प्रभाव भार: १५%</text>
+    <text x="390" y="106" text-anchor="middle" fill="#94a3b8" font-size="11">राहु/शनि = पूर्व जन्म ऋण</text>
+
+    <!-- House 7 (Bottom Center Diamond) -->
+    <polygon points="260,260 390,390 260,520 130,390" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="260" y="375" text-anchor="middle" fill="#fde047" font-size="18" font-weight="800">१-७ सम्मुख भाव (H7)</text>
+    <text x="260" y="398" text-anchor="middle" fill="#e2e8f0" font-size="13">विपरीत दिशा • ५०% दृष्टि</text>
+    <text x="260" y="418" text-anchor="middle" fill="#94a3b8" font-size="11.5">प्रत्यक्ष आमने-सामने कर्म-साक्षात्कार</text>
+
+    <!-- House 5 (Left Diamond) -->
+    <polygon points="0,260 130,130 260,260 130,390" fill="#131c2e" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="130" y="245" text-anchor="middle" fill="#38bdf8" font-size="16" font-weight="800">५म त्रिकोण (H5)</text>
+    <text x="130" y="268" text-anchor="middle" fill="#cbd5e1" font-size="12">पूर्वपुण्य • ७५% युति</text>
+
+    <!-- House 9 (Right Diamond) -->
+    <polygon points="520,260 390,130 260,260 390,390" fill="#131c2e" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="390" y="245" text-anchor="middle" fill="#38bdf8" font-size="16" font-weight="800">९म त्रिकोण (H9)</text>
+    <text x="390" y="268" text-anchor="middle" fill="#cbd5e1" font-size="12">भाग्य-गुरु • ७५% युति</text>
+
+    <!-- Visual Kartari Arcs -->
+    <!-- Green Flank Arrow from H2 -->
+    <path d="M 170 120 Q 210 150 220 140" fill="none" stroke="#10b981" stroke-width="3" marker-end="url(#arrow)" />
+    <!-- Red Flank Arrow from H12 -->
+    <path d="M 350 120 Q 310 150 300 140" fill="none" stroke="#f43f5e" stroke-width="3" />
+  </g>
+
+  <!-- Left Callout Box: Shubha Kartari -->
+  <g transform="translate(45, 680)" filter="url(#shadow)">
+    <rect width="435" height="195" rx="10" fill="#0f172a" stroke="#10b981" stroke-width="1.8" />
+    <rect width="435" height="38" rx="10" fill="url(#greenGlow)" />
+    <text x="217" y="26" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="800">✨ शुभ-कर्तरी वेध (Shubha-Kartari Protection)</text>
+    
+    <text x="20" y="65" fill="#fde047" font-size="13.5" font-weight="700">• संरचना: ग्रह के २रे भाव में शुक्र एवं १२वें में बुध/गुरु</text>
+    <text x="20" y="90" fill="#e2e8f0" font-size="13">• परिणाम: जीव को दोनों ओर से सुरक्षा, धन एवं सम्बल</text>
+    <text x="20" y="115" fill="#cbd5e1" font-size="12.5">• आगामी मार्ग सुगम होता है, विगत कर्म से रक्षा मिलती है</text>
+    <text x="20" y="140" fill="#34d399" font-size="12.5">• व्यापार एवं जीवन में बाधाएं स्वतः समाप्त हो जाती हैं</text>
+    <text x="20" y="170" fill="#94a3b8" font-size="11.5">सूत्र: "द्वितीये द्वादशे सौम्यैः संरक्षितो जीवः सुखं लभते"</text>
+  </g>
+
+  <!-- Right Callout Box: Papa Kartari -->
+  <g transform="translate(520, 680)" filter="url(#shadow)">
+    <rect width="435" height="195" rx="10" fill="#0f172a" stroke="#f43f5e" stroke-width="1.8" />
+    <rect width="435" height="38" rx="10" fill="url(#redGlow)" />
+    <text x="217" y="26" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="800">⚔️ पाप-कर्तरी वेध (Papa-Kartari Karmic Siege)</text>
+    
+    <text x="20" y="65" fill="#fca5a5" font-size="13.5" font-weight="700">• संरचना: ग्रह के २रे भाव में राहु/मंगल एवं १२वें में केतु/शनि</text>
+    <text x="20" y="90" fill="#e2e8f0" font-size="13">• परिणाम: जीव दोनों ओर से क्रूर ग्रहों से घिर जाता है (घेराबंदी)</text>
+    <text x="20" y="115" fill="#cbd5e1" font-size="12.5">• आगे बढ़ने पर रुकावट (+१), पीछे लौटने पर अपराध-बोध (-१)</text>
+    <text x="20" y="140" fill="#f87171" font-size="12.5">• समाधान: जब गोचर का गुरु २रे या १२वें पापी को पार करता है</text>
+    <text x="20" y="170" fill="#94a3b8" font-size="11.5">सूत्र: "पापैः पाशितो जीवः संकटे भ्रमति यावद् गुरुगोचरः"</text>
+  </g>
+</svg>

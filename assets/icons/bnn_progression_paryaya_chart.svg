@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 880" width="100%" height="100%" style="background:#090d16; border-radius:12px; font-family:system-ui, -apple-system, 'Segoe UI', 'Noto Sans Devanagari', 'Kohinoor Devanagari', sans-serif;">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" /><stop offset="50%" stop-color="#d97706" /><stop offset="100%" stop-color="#92400e" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="880" fill="#090d16" rx="12" />
+  <rect x="15" y="15" width="970" height="850" fill="none" stroke="url(#goldGrad)" stroke-width="1.8" rx="8" opacity="0.65" />
+
+  <!-- Header -->
+  <text x="500.0" y="52" text-anchor="middle" fill="url(#goldGrad)" font-size="24" font-weight="800">शनि ३०-वर्षीय पर्याय एवं गुरु प्रगति काल-चक्र</text>
+  <text x="500.0" y="78" text-anchor="middle" fill="#94a3b8" font-size="14">BNN Saturn 30-Year Paryaya Cycles &amp; Jupiter 1-Year Progression Engine</text>
+
+  <!-- Section 1: Saturn 4 Paryayas (0 to 120 Years) -->
+  <g transform="translate(50, 110)" filter="url(#shadow)">
+    <rect width="900" height="340" rx="10" fill="#0f172a" stroke="#d97706" stroke-width="1.8" />
+    <rect width="900" height="38" rx="10" fill="#b45309" />
+    <text x="450" y="26" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="900">♄ शनि ३०-वर्षीय पर्याय चक्र (४ महा-चरण • Karmic Evolution Waves)</text>
+
+    <!-- Timeline Bar -->
+    <rect x="40" y="65" width="820" height="14" rx="7" fill="#1e293b" />
+    <!-- 4 Phases on Bar -->
+    <rect x="40" y="65" width="205" height="14" rx="7" fill="#3b82f6" />
+    <rect x="245" y="65" width="205" height="14" rx="0" fill="#10b981" />
+    <rect x="450" y="65" width="205" height="14" rx="0" fill="#f59e0b" />
+    <rect x="655" y="65" width="205" height="14" rx="7" fill="#a855f7" />
+
+    <!-- 4 Columns -->
+    <!-- Paryaya 1 -->
+    <g transform="translate(40, 95)">
+      <text x="100" y="22" text-anchor="middle" fill="#60a5fa" font-size="15" font-weight="800">प्रथम पर्याय (1st Round)</text>
+      <text x="100" y="42" text-anchor="middle" fill="#fde047" font-size="13" font-weight="700">० से ३० वर्ष (Years 0-30)</text>
+      <text x="0" y="70" fill="#e2e8f0" font-size="12">• बाल्यावस्था, शिक्षा, प्रारंभिक संघर्ष</text>
+      <text x="0" y="92" fill="#e2e8f0" font-size="12">• माता-पिता पर निर्भरता एवं संस्कार</text>
+      <text x="0" y="114" fill="#cbd5e1" font-size="11.5">• प्रथम आजीविका नींव की स्थापना</text>
+      <text x="0" y="136" fill="#94a3b8" font-size="11.5">• नेटल शनि पर प्रथम गोचर (28-30y)</text>
+    </g>
+
+    <!-- Paryaya 2 -->
+    <g transform="translate(245, 95)">
+      <text x="100" y="22" text-anchor="middle" fill="#34d399" font-size="15" font-weight="800">द्वितीय पर्याय (2nd Round)</text>
+      <text x="100" y="42" text-anchor="middle" fill="#fde047" font-size="13" font-weight="700">३० से ६० वर्ष (Years 30-60)</text>
+      <text x="0" y="70" fill="#e2e8f0" font-size="12">• वास्तविक कर्म उत्थान व आजीविका</text>
+      <text x="0" y="92" fill="#e2e8f0" font-size="12">• विवाह, संतान, गृह, धन संचय</text>
+      <text x="0" y="114" fill="#cbd5e1" font-size="11.5">• समाज में मान-सम्मान व पदवी</text>
+      <text x="0" y="136" fill="#94a3b8" font-size="11.5">• जातक अपने प्रारब्ध का भोग करता है</text>
+    </g>
+
+    <!-- Paryaya 3 -->
+    <g transform="translate(450, 95)">
+      <text x="100" y="22" text-anchor="middle" fill="#fbbf24" font-size="15" font-weight="800">तृतीय पर्याय (3rd Round)</text>
+      <text x="100" y="42" text-anchor="middle" fill="#fde047" font-size="13" font-weight="700">६० से ९० वर्ष (Years 60-90)</text>
+      <text x="0" y="70" fill="#e2e8f0" font-size="12">• संन्यास भाव, कर्म से विरक्ति</text>
+      <text x="0" y="92" fill="#e2e8f0" font-size="12">• सामाजिक मार्गदर्शन, ज्ञान वितरण</text>
+      <text x="0" y="114" fill="#cbd5e1" font-size="11.5">• ऋण-मुक्ति एवं तीर्थ यात्राएं</text>
+      <text x="0" y="136" fill="#94a3b8" font-size="11.5">• आध्यात्मिक चेतना की परिपक्वता</text>
+    </g>
+
+    <!-- Paryaya 4 -->
+    <g transform="translate(655, 95)">
+      <text x="100" y="22" text-anchor="middle" fill="#c084fc" font-size="15" font-weight="800">चतुर्थ पर्याय (4th Round)</text>
+      <text x="100" y="42" text-anchor="middle" fill="#fde047" font-size="13" font-weight="700">९०+ वर्ष (Years 90+)</text>
+      <text x="0" y="70" fill="#e2e8f0" font-size="12">• मोक्ष साधना, पूर्ण अनासक्ति</text>
+      <text x="0" y="92" fill="#e2e8f0" font-size="12">• भौतिक जगत से पूर्ण विच्छेद</text>
+      <text x="0" y="114" fill="#cbd5e1" font-size="11.5">• जीव का परम सत्ता में विलीन होना</text>
+      <text x="0" y="136" fill="#94a3b8" font-size="11.5">• महाप्रयाण एवं शाश्वत शांति</text>
+    </g>
+
+    <text x="450" y="315" text-anchor="middle" fill="#fde047" font-size="13" font-weight="700">💡 बी.एन.एन. सूत्र: जब गोचर का शनि दूसरे पर्याय में नेटल शुक्र/गुरु को पार करता है, तभी सबसे बड़ा भाग्योदय घटित होता है।</text>
+  </g>
+
+  <!-- Section 2: Jupiter 1-Year Progression Engine -->
+  <g transform="translate(50, 480)" filter="url(#shadow)">
+    <rect width="900" height="340" rx="10" fill="#0f172a" stroke="#0284c7" stroke-width="1.8" />
+    <rect width="900" height="38" rx="10" fill="#0369a1" />
+    <text x="450" y="26" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="900">♃ गुरु वार्षिक प्रगति चक्र (Jupiter 1-Year Progression • Event Trigger Engine)</text>
+
+    <!-- Visual 12-Step Circular/Horizontal Track -->
+    <g transform="translate(30, 60)">
+      <text x="20" y="25" fill="#fde047" font-size="14.5" font-weight="800">प्रगति नियम: जन्म-कालीन गुरु से प्रति वर्ष १ राशि आगे बढ़ें (1 Sign Per Year)</text>
+      
+      <!-- Table of 12 Years -->
+      <g transform="translate(0, 45)">
+        <rect width="840" height="135" rx="8" fill="#131c2e" stroke="#334155" stroke-width="1" />
+        
+        <!-- Headers -->
+        <text x="70" y="28" text-anchor="middle" fill="#38bdf8" font-weight="700">वर्ष १ (Age 1)</text>
+        <text x="210" y="28" text-anchor="middle" fill="#38bdf8" font-weight="700">वर्ष ५ (Age 5)</text>
+        <text x="350" y="28" text-anchor="middle" fill="#38bdf8" font-weight="700">वर्ष ७ (Age 7)</text>
+        <text x="490" y="28" text-anchor="middle" fill="#38bdf8" font-weight="700">वर्ष ९ (Age 9)</text>
+        <text x="630" y="28" text-anchor="middle" fill="#38bdf8" font-weight="700">वर्ष १० (Age 10)</text>
+        <text x="770" y="28" text-anchor="middle" fill="#38bdf8" font-weight="700">वर्ष १२ (Age 12)</text>
+
+        <!-- Values -->
+        <text x="70" y="55" text-anchor="middle" fill="#ffffff">१म भाव (H1)</text>
+        <text x="210" y="55" text-anchor="middle" fill="#ffffff">५म भाव (H5)</text>
+        <text x="350" y="55" text-anchor="middle" fill="#ffffff">७म भाव (H7)</text>
+        <text x="490" y="55" text-anchor="middle" fill="#ffffff">९म भाव (H9)</text>
+        <text x="630" y="55" text-anchor="middle" fill="#ffffff">१०म भाव (H10)</text>
+        <text x="770" y="55" text-anchor="middle" fill="#ffffff">१२म भाव (H12)</text>
+
+        <text x="70" y="85" text-anchor="middle" fill="#94a3b8" font-size="11.5">जन्म स्थिति</text>
+        <text x="210" y="85" text-anchor="middle" fill="#34d399" font-size="11.5">त्रिकोण सक्रिय</text>
+        <text x="350" y="85" text-anchor="middle" fill="#f472b6" font-size="11.5">सम्मुख दृष्टि</text>
+        <text x="490" y="85" text-anchor="middle" fill="#34d399" font-size="11.5">भाग्य त्रिकोण</text>
+        <text x="630" y="85" text-anchor="middle" fill="#fbbf24" font-size="11.5">कर्म सक्रिय</text>
+        <text x="770" y="85" text-anchor="middle" fill="#c084fc" font-size="11.5">पर्याय पूर्ण</text>
+
+        <text x="70" y="112" text-anchor="middle" fill="#cbd5e1" font-size="11">आरम्भिक बीज</text>
+        <text x="210" y="112" text-anchor="middle" fill="#cbd5e1" font-size="11">विद्या/संतान</text>
+        <text x="350" y="112" text-anchor="middle" fill="#cbd5e1" font-size="11">साझेदारी/विवाह</text>
+        <text x="490" y="112" text-anchor="middle" fill="#cbd5e1" font-size="11">भाग्योदय/तीर्थ</text>
+        <text x="630" y="112" text-anchor="middle" fill="#cbd5e1" font-size="11">पदोन्नति</text>
+        <text x="770" y="112" text-anchor="middle" fill="#cbd5e1" font-size="11">नया चक्र (Cycle 2)</text>
+      </g>
+    </g>
+
+    <text x="450" y="275" text-anchor="middle" fill="#e2e8f0" font-size="13">नोट: १२ वर्ष पश्चात चक्र पुनः प्रथम भाव से घूमता है (२४वें वर्ष में पुनः H12, २५वें में H1, ३६वें में H12)।</text>
+    <text x="450" y="305" text-anchor="middle" fill="#38bdf8" font-size="12.5">जब प्रगतिशील गुरु जन्म-कालीन शुक्र को छूता है, तब विवाह; जब शनि को छूता है, तब करियर में स्थायी मोड़ आता है।</text>
+  </g>
+</svg>

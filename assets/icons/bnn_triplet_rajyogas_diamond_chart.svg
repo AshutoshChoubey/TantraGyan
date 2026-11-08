@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 920" width="100%" height="100%" style="background:#090d16; border-radius:12px; font-family:system-ui, -apple-system, 'Segoe UI', 'Noto Sans Devanagari', 'Kohinoor Devanagari', sans-serif;">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" /><stop offset="50%" stop-color="#d97706" /><stop offset="100%" stop-color="#92400e" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="920" fill="#090d16" rx="12" />
+  <rect x="15" y="15" width="970" height="890" fill="none" stroke="url(#goldGrad)" stroke-width="1.8" rx="8" opacity="0.65" />
+
+  <!-- Header -->
+  <text x="500.0" y="52" text-anchor="middle" fill="url(#goldGrad)" font-size="24" font-weight="800">बी.एन.एन. त्रि-ग्रहीय एवं बहु-ग्रहीय महायोग डायमंड चक्र</text>
+  <text x="500.0" y="78" text-anchor="middle" fill="#94a3b8" font-size="14">Master Triplet Combinations in Bhrigu Nandi Nadi • २० शीर्ष शास्त्रीय राजयोग</text>
+
+  <!-- 4 Big Strategic Triplet Cards in 2x2 Grid -->
+  <!-- Card 1: Saraswati Yoga (Guru + Budha + Shukra) -->
+  <g transform="translate(50, 110)" filter="url(#shadow)">
+    <rect width="425" height="255" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="2" />
+    <rect width="425" height="42" rx="10" fill="#0369a1" />
+    <text x="212" y="28" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="900">📚 १. सरस्वती महायोग (Guru + Budha + Shukra)</text>
+    
+    <text x="20" y="72" fill="#fde047" font-size="14" font-weight="800">संयोजन: गुरु (ज्ञान) + बुध (बुद्धि) + शुक्र (कला/अभिव्यक्ति)</text>
+    <text x="20" y="98" fill="#e2e8f0" font-size="13">• फल: अप्रतिम विद्वत्ता, अंतरराष्ट्रीय ख्याति, ग्रंथकार, सम्पादक</text>
+    <text x="20" y="122" fill="#e2e8f0" font-size="13">• जातक जो भी लिखता या बोलता है, समाज उसे शास्त्रवत् स्वीकारता है</text>
+    <text x="20" y="146" fill="#cbd5e1" font-size="12.5">• वाक्-सिद्धि एवं विद्या द्वारा अपार धन व प्रतिष्ठा का अर्जन</text>
+    <text x="20" y="174" fill="#67e8f9" font-size="13" font-weight="700">अंश-क्रम वरीयता: बुध (१०°) → शुक्र (१६°) → गुरु (२२°)</text>
+    <text x="20" y="200" fill="#94a3b8" font-size="12">व्यवसाय: प्रोफेसर, सर्वोच्च शोधकर्ता, दार्शनिक, अंतरराष्ट्रीय वक्ता</text>
+    <text x="20" y="232" fill="#fde68a" font-size="12">शास्त्रीय संदर्भ: "बुध-शुक्र-गुरु-संयोगे जातः सर्वज्ञ-सम्मतः"</text>
+  </g>
+
+  <!-- Card 2: Kuber Yoga (Shani + Budha + Shukra) -->
+  <g transform="translate(525, 110)" filter="url(#shadow)">
+    <rect width="425" height="255" rx="10" fill="#0f172a" stroke="#10b981" stroke-width="2" />
+    <rect width="425" height="42" rx="10" fill="#047857" />
+    <text x="212" y="28" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="900">💰 २. कुबेर महायोग (Shani + Budha + Shukra)</text>
+    
+    <text x="20" y="72" fill="#fde047" font-size="14" font-weight="800">संयोजन: शनि (कर्म) + बुध (व्यापार) + शुक्र (स्थायी संपत्ति)</text>
+    <text x="20" y="98" fill="#e2e8f0" font-size="13">• फल: औद्योगिक साम्राज्य, विशाल व्यावसायिक नेटवर्क, स्थायी संपदा</text>
+    <text x="20" y="122" fill="#e2e8f0" font-size="13">• जातक शून्य से शुरुआत करके बहुराष्ट्रीय कंपनी की स्थापना करता है</text>
+    <text x="20" y="146" fill="#cbd5e1" font-size="12.5">• वित्तीय प्रबंधन (Finance/Banking) में अद्वितीय चतुराई</text>
+    <text x="20" y="174" fill="#a7f3d0" font-size="13" font-weight="700">अंश-क्रम वरीयता: शनि (८°) → बुध (१४°) → शुक्र (२०°)</text>
+    <text x="20" y="200" fill="#94a3b8" font-size="12">व्यवसाय: उद्योगपति, रियल एस्टेट टाइकून, वेंचर कैपिटलिस्ट</text>
+    <text x="20" y="232" fill="#fde68a" font-size="12">शास्त्रीय संदर्भ: "शनि-बुध-सित-योगेन कुबेर-सम-वैभवम्"</text>
+  </g>
+
+  <!-- Card 3: Rishi Yoga (Surya + Guru + Ketu) -->
+  <g transform="translate(50, 395)" filter="url(#shadow)">
+    <rect width="425" height="255" rx="10" fill="#1c1917" stroke="#f59e0b" stroke-width="2" />
+    <rect width="425" height="42" rx="10" fill="#b45309" />
+    <text x="212" y="28" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="900">🔱 ३. ऋषि महायोग (Surya + Guru + Ketu)</text>
+    
+    <text x="20" y="72" fill="#fde047" font-size="14" font-weight="800">संयोजन: सूर्य (आत्मा) + गुरु (दिव्य ज्ञान) + केतु (मुक्ति/ध्वज)</text>
+    <text x="20" y="98" fill="#e2e8f0" font-size="13">• फल: ब्रह्मज्ञान, आध्यात्मिक संस्था प्रमुख, मंत्र-सिद्धि, तपोबल</text>
+    <text x="20" y="122" fill="#e2e8f0" font-size="13">• जातक का जीवन समाज के पथ-प्रदर्शन हेतु समर्पित होता है</text>
+    <text x="20" y="146" fill="#cbd5e1" font-size="12.5">• पूर्व जन्म के संचित पुण्यों से जन्मजात आत्म-साक्षात्कार की योग्यता</text>
+    <text x="20" y="174" fill="#fde68a" font-size="13" font-weight="700">अंश-क्रम वरीयता: सूर्य (५°) → गुरु (१५°) → केतु (२५°)</text>
+    <text x="20" y="200" fill="#94a3b8" font-size="12">व्यवसाय: जगद्गुरु, आध्यात्मिक मार्गदर्शक, प्रामाणिक ज्योतिषी</text>
+    <text x="20" y="232" fill="#fde68a" font-size="12">शास्त्रीय संदर्भ: "रवि-गुरु-शिखि-योगे तु ब्रह्मर्षि-तुल्य-मानसः"</text>
+  </g>
+
+  <!-- Card 4: Chakravarti Karmayoga (Guru + Shani + Mangala) -->
+  <g transform="translate(525, 395)" filter="url(#shadow)">
+    <rect width="425" height="255" rx="10" fill="#1e1b4b" stroke="#7c3aed" stroke-width="2" />
+    <rect width="425" height="42" rx="10" fill="#6d28d9" />
+    <text x="212" y="28" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="900">👑 ४. चक्रवर्ती कर्मयोग (Guru + Shani + Mangala)</text>
+    
+    <text x="20" y="72" fill="#fde047" font-size="14" font-weight="800">संयोजन: गुरु (जीव/धर्म) + शनि (कर्म) + मंगल (शौर्य/तकनीकी)</text>
+    <text x="20" y="98" fill="#e2e8f0" font-size="13">• फल: सर्वोच्च प्रशासनिक पद, सेनाध्यक्ष, मुख्य अभियंता, निर्माणकर्ता</text>
+    <text x="20" y="122" fill="#e2e8f0" font-size="13">• जातक के पास कठोर निर्णय लेने की अद्भुत क्षमता व अधिकार होता है</text>
+    <text x="20" y="146" fill="#cbd5e1" font-size="12.5">• कठिन से कठिन परिस्थिति में भी अनुशासन एवं विजय की प्राप्ति</text>
+    <text x="20" y="174" fill="#ddd6fe" font-size="13" font-weight="700">अंश-क्रम वरीयता: गुरु (४°) → शनि (११°) → मंगल (१९°)</text>
+    <text x="20" y="200" fill="#94a3b8" font-size="12">व्यवसाय: कैबिनेट सचिव, चीफ इंजीनियर, सैन्य जनरल, उद्योगपति</text>
+    <text x="20" y="232" fill="#fde68a" font-size="12">शास्त्रीय संदर्भ: "गुरु-मन्द-कुज-संयोगे चक्रवर्ती समो भवेत्"</text>
+  </g>
+
+  <!-- Bottom Synthesis Banner -->
+  <g transform="translate(50, 680)" filter="url(#shadow)">
+    <rect width="900" height="185" rx="10" fill="#0f172a" stroke="#d97706" stroke-width="1.5" />
+    <text x="30" y="32" fill="#fde047" font-size="15" font-weight="800">🎯 बी.एन.एन. त्रि-ग्रहीय योग विश्लेषण विधि (3-Step Practical Evaluation):</text>
+    <text x="30" y="62" fill="#cbd5e1" font-size="13.5">१. तीनों ग्रहों की दिशा (तत्व) का मिलान करें (समान दिशा अथवा १-७ सम्मुख अक्ष)।</text>
+    <text x="30" y="90" fill="#cbd5e1" font-size="13.5">२. मध्यस्थ ग्रह (Middle Planet) का अध्ययन करें — वह दोनों सिरों के ग्रहों को ऊर्जा स्थानांतरित करता है।</text>
+    <text x="30" y="118" fill="#cbd5e1" font-size="13.5">३. यदि कोई पापी ग्रह (राहु/केतु) मध्य में बैठ जाए, तो योग 'खंडित' अथवा 'अवरुद्ध' हो जाता है जब तक कि गोचर का गुरु उसे मुक्त न करे।</text>
+    <text x="30" y="152" fill="#94a3b8" font-size="12.5">प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे • तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)</text>
+  </g>
+</svg>

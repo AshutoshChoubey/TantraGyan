@@ -10,9 +10,9 @@
  * - Complete Self-Purging: Clean cache wiping when user disables offline mode or updates edition
  */
 
-const APP_VERSION = '2.5.0';
+const APP_VERSION = '2.6.0';
 const CACHE_NAME = `tantragyan-v${APP_VERSION}`;
-const FONT_CACHE_NAME = 'tantragyan-fonts-v2.5';
+const FONT_CACHE_NAME = 'tantragyan-fonts-v2.6';
 
 // Essential assets for complete offline functioning
 const PRECACHE_ASSETS = [
@@ -45,8 +45,18 @@ const PRECACHE_ASSETS = [
   'assets/icons/raja_yogas_chart.svg',
   'assets/icons/viparita_chart.svg',
   'assets/icons/medical_astrology_chart.svg',
+  'assets/icons/bnn_philosophy_hierarchy_chart.svg',
   'assets/icons/bnn_directional_diamond_chart.svg',
   'assets/icons/bnn_jeeva_flow_diamond_chart.svg',
+  'assets/icons/bnn_kartari_flank_diamond_chart.svg',
+  'assets/icons/bnn_karaka_relationship_wheel.svg',
+  'assets/icons/bnn_elemental_directional_diamond_chart.svg',
+  'assets/icons/bnn_jeeva_12bhavas_diamond_chart.svg',
+  'assets/icons/bnn_major_conjunctions_diamond_chart.svg',
+  'assets/icons/bnn_triplet_rajyogas_diamond_chart.svg',
+  'assets/icons/bnn_progression_paryaya_chart.svg',
+  'assets/icons/bnn_bhrigu_bindu_diagram.svg',
+  'assets/icons/bnn_protocol_flowchart.svg',
   'assets/images/planets/sun.png',
   'assets/images/planets/moon.png',
   'assets/images/planets/mars.png',

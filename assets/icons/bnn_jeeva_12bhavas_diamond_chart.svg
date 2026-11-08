@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 920" width="100%" height="100%" style="background:#090d16; border-radius:12px; font-family:system-ui, -apple-system, 'Segoe UI', 'Noto Sans Devanagari', 'Kohinoor Devanagari', sans-serif;">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" /><stop offset="50%" stop-color="#d97706" /><stop offset="100%" stop-color="#92400e" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="920" fill="#090d16" rx="12" />
+  <rect x="15" y="15" width="970" height="890" fill="none" stroke="url(#goldGrad)" stroke-width="1.8" rx="8" opacity="0.65" />
+
+  <!-- Header -->
+  <text x="500.0" y="52" text-anchor="middle" fill="url(#goldGrad)" font-size="24" font-weight="800">जीव लग्न (गुरु) द्वादश भाव सम्पूर्ण फलित चक्र</text>
+  <text x="500.0" y="78" text-anchor="middle" fill="#94a3b8" font-size="14">BNN 12 Houses from Jeeva Lagna (Jupiter as Anchor • Zero Ascendant Dependency)</text>
+
+  <!-- Diamond Chart Layout: Center (500, 440), Size 560 -->
+  <g transform="translate(220, 110)" filter="url(#shadow)">
+    <!-- Outer Square -->
+    <rect x="0" y="0" width="560" height="560" fill="#0f172a" stroke="#d97706" stroke-width="2.5" />
+    
+    <!-- Cross Lines -->
+    <line x1="0" y1="0" x2="560" y2="560" stroke="#d97706" stroke-width="2" />
+    <line x1="560" y1="0" x2="0" y2="560" stroke="#d97706" stroke-width="2" />
+    
+    <!-- Inner Diamond -->
+    <polygon points="280,0 560,280 280,560 0,280" fill="#131c2e" stroke="#f59e0b" stroke-width="2" />
+
+    <!-- House 1: Lagna (Center Diamond) -->
+    <polygon points="280,0 420,140 280,280 140,140" fill="#1e1b4b" stroke="#f59e0b" stroke-width="2.2" />
+    <text x="280" y="85" text-anchor="middle" fill="#fde047" font-size="22" font-weight="900">१. जीव लग्न (गुरु)</text>
+    <text x="280" y="112" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">जातक स्वयं • स्वास्थ्य • चेतना</text>
+    <text x="280" y="135" text-anchor="middle" fill="#cbd5e1" font-size="12">जीवन यात्रा का केन्द्र बिंदु</text>
+
+    <!-- House 2: Top-Left Triangle -->
+    <polygon points="0,0 280,0 140,140" fill="rgba(245, 158, 11, 0.15)" stroke="#d97706" stroke-width="1.8" />
+    <text x="140" y="45" text-anchor="middle" fill="#fde68a" font-size="16" font-weight="800">२. धन व कुटुंब</text>
+    <text x="140" y="70" text-anchor="middle" fill="#e2e8f0" font-size="12.5">वाणी, प्रारंभिक संसाधन, संचित कोष</text>
+    <text x="140" y="92" text-anchor="middle" fill="#94a3b8" font-size="11.5">+१ अग्रिम भाव (Next Step 15%)</text>
+
+    <!-- House 12: Top-Right Triangle -->
+    <polygon points="280,0 560,0 420,140" fill="rgba(168, 85, 247, 0.15)" stroke="#a855f7" stroke-width="1.8" />
+    <text x="420" y="45" text-anchor="middle" fill="#e9d5ff" font-size="16" font-weight="800">१२. मोक्ष व व्यय</text>
+    <text x="420" y="70" text-anchor="middle" fill="#e2e8f0" font-size="12.5">विदेश वास, आध्यात्मिक मुक्ति, विरक्ति</text>
+    <text x="420" y="92" text-anchor="middle" fill="#94a3b8" font-size="11.5">-१ पृष्ठ भाव (Past Karma 15%)</text>
+
+    <!-- House 3: Left-Top Triangle -->
+    <polygon points="0,0 140,140 0,280" fill="rgba(56, 189, 248, 0.15)" stroke="#38bdf8" stroke-width="1.8" />
+    <text x="55" y="130" text-anchor="middle" fill="#bae6fd" font-size="15" font-weight="800">३. पराक्रम</text>
+    <text x="55" y="152" text-anchor="middle" fill="#e2e8f0" font-size="12">अनुज, संचार, यात्रा</text>
+
+    <!-- House 4: Left Center Diamond -->
+    <polygon points="0,280 140,140 280,280 140,420" fill="rgba(6, 182, 212, 0.15)" stroke="#06b6d4" stroke-width="1.8" />
+    <text x="140" y="270" text-anchor="middle" fill="#67e8f9" font-size="17" font-weight="800">४. गृह व माता</text>
+    <text x="140" y="295" text-anchor="middle" fill="#e2e8f0" font-size="13">वाहन, भौतिक सुख, विद्या</text>
+    <text x="140" y="318" text-anchor="middle" fill="#94a3b8" font-size="11.5">चन्द्र/शुक्र का नैसर्गिक आश्रय</text>
+
+    <!-- House 5: Left-Bottom Triangle -->
+    <polygon points="0,280 140,420 0,560" fill="rgba(239, 68, 68, 0.15)" stroke="#ef4444" stroke-width="1.8" />
+    <text x="55" y="415" text-anchor="middle" fill="#fca5a5" font-size="15" font-weight="800">५. पूर्वपुण्य</text>
+    <text x="55" y="438" text-anchor="middle" fill="#e2e8f0" font-size="12">मेधा, संतति, ज्ञान</text>
+
+    <!-- House 6: Bottom-Left Triangle -->
+    <polygon points="0,560 280,560 140,420" fill="rgba(245, 158, 11, 0.15)" stroke="#d97706" stroke-width="1.8" />
+    <text x="140" y="505" text-anchor="middle" fill="#fde68a" font-size="16" font-weight="800">६. रोग, ऋण, शत्रु</text>
+    <text x="140" y="528" text-anchor="middle" fill="#e2e8f0" font-size="12.5">दैनिक सेवा, संघर्ष, प्रतियोगिता</text>
+
+    <!-- House 7: Bottom Center Diamond -->
+    <polygon points="280,280 420,420 280,560 140,420" fill="#1e293b" stroke="#38bdf8" stroke-width="2" />
+    <text x="280" y="405" text-anchor="middle" fill="#38bdf8" font-size="18" font-weight="800">७. जाया व साझेदारी</text>
+    <text x="280" y="430" text-anchor="middle" fill="#ffffff" font-size="13.5">जीवनसाथी • सम्मुख दृष्टि (50%)</text>
+    <text x="280" y="452" text-anchor="middle" fill="#94a3b8" font-size="12">लोक-व्यवहार एवं जनसंपर्क</text>
+
+    <!-- House 8: Bottom-Right Triangle -->
+    <polygon points="280,560 560,560 420,420" fill="rgba(225, 29, 72, 0.15)" stroke="#e11d48" stroke-width="1.8" />
+    <text x="420" y="505" text-anchor="middle" fill="#fda4af" font-size="16" font-weight="800">८. आयु व गूढ़ विद्या</text>
+    <text x="420" y="528" text-anchor="middle" fill="#e2e8f0" font-size="12.5">आकस्मिक परिवर्तन, संकट, शोध</text>
+
+    <!-- House 9: Right-Bottom Triangle -->
+    <polygon points="560,280 420,420 560,560" fill="rgba(239, 68, 68, 0.15)" stroke="#ef4444" stroke-width="1.8" />
+    <text x="505" y="415" text-anchor="middle" fill="#fca5a5" font-size="15" font-weight="800">९. भाग्य व धर्म</text>
+    <text x="505" y="438" text-anchor="middle" fill="#e2e8f0" font-size="12">गुरु, पिता, तीर्थ</text>
+
+    <!-- House 10: Right Center Diamond -->
+    <polygon points="560,280 420,140 280,280 420,420" fill="rgba(245, 158, 11, 0.18)" stroke="#f59e0b" stroke-width="2" />
+    <text x="420" y="270" text-anchor="middle" fill="#fde047" font-size="18" font-weight="800">१०. कर्म व पदवी</text>
+    <text x="420" y="295" text-anchor="middle" fill="#ffffff" font-size="13.5">शनि का कारक क्षेत्र • आजीविका</text>
+    <text x="420" y="318" text-anchor="middle" fill="#94a3b8" font-size="12">राजसत्ता, प्रतिष्ठा, सामाजिक प्रभाव</text>
+
+    <!-- House 11: Right-Top Triangle -->
+    <polygon points="560,0 420,140 560,280" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="1.8" />
+    <text x="505" y="130" text-anchor="middle" fill="#6ee7b7" font-size="15" font-weight="800">११. लाभ व सिद्धि</text>
+    <text x="505" y="152" text-anchor="middle" fill="#e2e8f0" font-size="12">इच्छापूर्ति, बड़े भाई</text>
+  </g>
+
+  <!-- Side Annotation -->
+  <g transform="translate(60, 710)" filter="url(#shadow)">
+    <rect width="880" height="150" rx="10" fill="#0f172a" stroke="#d97706" stroke-width="1.5" />
+    <text x="30" y="35" fill="#fde047" font-size="15" font-weight="800">📌 बी.एन.एन. जीव-लग्न द्वादश भाव विवेचन सूत्र:</text>
+    <text x="30" y="65" fill="#e2e8f0" font-size="13.5">१. यह चक्र लग्न-कुंडली के अभाव में भी जन्म-कालीन गुरु को लग्न मानकर सटीक फलित प्रस्तुत करता है।</text>
+    <text x="30" y="92" fill="#e2e8f0" font-size="13.5">२. गुरु से १०वें भाव में जो भी ग्रह होगा, वह जातक के कार्यक्षेत्र (Profession) का निर्धारण करेगा।</text>
+    <text x="30" y="120" fill="#94a3b8" font-size="12.5">३. गुरु से २रे और १२वें भावों में स्थित ग्रह जातक की जीवन-नौका की दिशा एवं गति (Speed &amp; Stability) तय करते हैं।</text>
+  </g>
+
+  <text x="500.0" y="895" text-anchor="middle" fill="#94a3b8" font-size="12.5">प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे • तंत्र ज्ञान शोध संस्थान</text>
+</svg>
