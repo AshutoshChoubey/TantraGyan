@@ -1,0 +1,2649 @@
+<!DOCTYPE html>
+<html lang="hi" data-theme="parchment" data-lang-mode="bilingual">
+<head>
+  <meta charset="utf-8">
+  <!-- Tantra Gyan Session & Online Architecture Initialization -->
+  <script>
+    (function() {
+      try {
+        // Clear any lingering reload / crash markers
+        sessionStorage.removeItem('tg_pwa_reload_ts');
+        sessionStorage.removeItem('tg_pwa_reload_cnt');
+        sessionStorage.removeItem('tg_last_reload');
+
+        // Automatic migration & purge of legacy offline caches
+        var CURRENT_VERSION = '2.4.0';
+        var storedVersion = localStorage.getItem('tantragyan_downloaded_version');
+        if (storedVersion && storedVersion !== CURRENT_VERSION && 'caches' in window) {
+          caches.keys().then(function(names) {
+            names.forEach(function(name) {
+              if (name !== 'tantragyan-v' + CURRENT_VERSION && name !== 'tantragyan-fonts-v2.4') {
+                caches.delete(name);
+              }
+            });
+          }).catch(function() {});
+        }
+
+        // If user has NOT explicitly enabled offline mode, ensure clean online operation
+        var isOfflineEnabled = localStorage.getItem('tantragyan_offline_enabled');
+        if (isOfflineEnabled !== 'true' && 'serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function(regs) {
+            for (var i = 0; i < regs.length; i++) {
+              regs[i].unregister();
+            }
+          }).catch(function() {});
+        }
+
+        // Bounds sanity check for saved page
+        var savedPage = localStorage.getItem('tantra_bnn_flip_page');
+        if (savedPage) {
+          var p = parseInt(savedPage, 10);
+          if (isNaN(p) || p < 1 || p > 40) {
+            localStorage.setItem('tantra_bnn_flip_page', '1');
+          }
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र (3D फ्लिप बुक) • Bhrigu Nandi Nadi 3D Flip Book</title>
+  
+  <!-- Primary SEO Meta Tags -->
+  <meta name="description" content="भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र by ज्योतिषाचार्य Ashutosh Kumar Choubey. सम्पूर्ण 40 पृष्ठों में 12 डायमंड चार्ट्स, 16 सारणियां, ग्रह-संयोग, 1-5-9 त्रिकोण दृष्टि व प्रगति-गोचर सूत्र।">
+  <meta name="keywords" content="Bhrigu Nandi Nadi, BNN, Karma Samyojan Sutra, Nadi Astrology, Ashutosh Kumar Choubey, Jeeva Karaka, Karma Karaka, Planetary Conjunctions, Tantra Gyan">
+  <meta name="author" content="Ashutosh Kumar Choubey">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <!-- Progressive Web App (PWA) & Mobile Application Meta -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#312e81">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="BNN 3D Flip Book">
+  <meta name="application-name" content="BNN 3D Flip Book">
+  <meta name="msapplication-TileColor" content="#312e81">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Canonical & Multi-Language Hreflang Tags (Google & Bing Best Practice) -->
+  <link rel="canonical" href="https://t.worldgyan.com/bnn-reader.html">
+  <link rel="alternate" hreflang="hi" href="https://t.worldgyan.com/bhrigu-nandi-nadi.html">
+  <link rel="alternate" hreflang="x-default" href="https://t.worldgyan.com/bnn-reader.html">
+
+  <!-- OpenGraph Metadata for Social & Search Snippets -->
+  <meta property="og:site_name" content="तंत्र ज्ञान (Tantra Gyan)">
+  <meta property="og:title" content="भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र | Bhrigu Nandi Nadi 3D Flip Book">
+  <meta property="og:description" content="सम्पूर्ण 40 पृष्ठों में 12 डायमंड चार्ट्स, 16 सारणियां, ग्रह-संयोग, 1-5-9 त्रिकोण दृष्टि व प्रगति-गोचर सूत्र। लेखक: ज्योतिषाचार्य Ashutosh Kumar Choubey।">
+  <meta property="og:type" content="book">
+  <meta property="og:url" content="https://t.worldgyan.com/">
+  <meta property="og:image" content="https://t.worldgyan.com/assets/og-image.jpg">
+  <meta property="og:image:secure_url" content="https://t.worldgyan.com/assets/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:image:alt" content="भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र (BNN) - Sacred Sri Yantra & Celestial Astrology Charts">
+  <meta property="og:locale" content="hi_IN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="book:author" content="Ashutosh Kumar Choubey">
+  <meta property="book:release_date" content="2026-01-01">
+  <meta property="book:tag" content="Vedic Astrology">
+  <meta property="book:tag" content="Jyotish Shastra">
+  <meta property="book:tag" content="Medical Astrology">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@TantraGyan108">
+  <meta name="twitter:creator" content="@TantraGyan108">
+  <meta name="twitter:title" content="वैदिक ज्योतिष महाग्रंथ सरलीकृत | Complete Vedic Astrology Compendium">
+  <meta name="twitter:description" content="सम्पूर्ण प्रामाणिक फलित ज्ञानकोश: नवग्रह कारकत्व, 17 शास्त्रीय राजयोग, 27 नक्षत्र, 108 पद, दीप्तादि 9 अवस्थाएं एवं आयुर्-ज्योतिष।">
+  <meta name="twitter:image" content="https://t.worldgyan.com/assets/og-image.jpg">
+
+  <!-- Academic & AI Citation Metadata -->
+  <meta name="ai-content-declaration" content="authentic-vedic-astrology, human-authored, educational-compendium">
+  <meta name="citation_title" content="वैदिक ज्योतिष महाग्रंथ सरलीकृत: Complete Vedic Astrology Compendium">
+  <meta name="citation_author" content="Choubey, Ashutosh Kumar">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_publisher" content="Tantra Gyan Research Center">
+  <meta name="citation_language" content="hi, en">
+  <meta name="citation_fulltext_world_readable" content="https://t.worldgyan.com/llms-full.txt">
+  <meta name="citation_abstract_html_url" content="https://t.worldgyan.com/">
+
+  <!-- AI Search Engine Discovery (llms.txt standard & sitemap) -->
+  <link rel="help" type="text/plain" href="/llms.txt" title="LLM Context Specification">
+  <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full Knowledge Base for AI Models">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- Standard High-Quality Google Fonts for Vedic & Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- Standard CSS Files for Maximum Maintainability -->
+  <link rel="stylesheet" href="css/book.css?v=5.0">
+  <link rel="stylesheet" href="css/tables.css?v=5.0">
+
+  <!-- Ultra-Rich Schema.org JSON-LD Educational Book & Knowledge Graph Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://t.worldgyan.com/#website",
+        "url": "https://t.worldgyan.com/",
+        "name": "तंत्र ज्ञान (Tantra Gyan)",
+        "alternateName": ["Tantra Gyan Vedic Astrology", "Vedic Astrology Compendium"],
+        "publisher": { "@id": "https://t.worldgyan.com/#organization" },
+        "inLanguage": ["hi", "en"],
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://t.worldgyan.com/#search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://t.worldgyan.com/#organization",
+        "name": "तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)",
+        "url": "https://t.worldgyan.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://t.worldgyan.com/assets/icon-512.png",
+          "width": 512,
+          "height": 512
+        },
+        "sameAs": [
+          "https://www.youtube.com/@TantraGyan108",
+          "https://t.worldgyan.com"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+919658476170",
+          "contactType": "Customer Support",
+          "email": "tantraresearchcenter@gmail.com",
+          "availableLanguage": ["Hindi", "English"]
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://t.worldgyan.com/#author",
+        "name": "Ashutosh Kumar Choubey",
+        "alternateName": "आशुतोष कुमार चौबे",
+        "jobTitle": "Vedic Astrologer & Researcher",
+        "url": "https://t.worldgyan.com",
+        "sameAs": [
+          "https://www.youtube.com/@TantraGyan108"
+        ],
+        "email": "tantraresearchcenter@gmail.com",
+        "telephone": "+919658476170",
+        "worksFor": { "@id": "https://t.worldgyan.com/#organization" }
+      },
+      {
+        "@type": "Book",
+        "@id": "https://t.worldgyan.com/#book",
+        "name": "वैदिक ज्योतिष महाग्रंथ सरलीकृत (Complete Vedic Astrology Compendium Simplified)",
+        "alternateName": "Complete Vedic Astrology Compendium Simplified",
+        "url": "https://t.worldgyan.com/",
+        "author": { "@id": "https://t.worldgyan.com/#author" },
+        "publisher": { "@id": "https://t.worldgyan.com/#organization" },
+        "datePublished": "2026-01-01",
+        "inLanguage": ["hi", "en"],
+        "bookFormat": "https://schema.org/EBook",
+        "numberOfPages": 88,
+        "genre": ["Vedic Astrology", "Jyotish Shastra", "Medical Astrology", "Ayur-Jyotish"],
+        "educationalLevel": "Beginner to Advanced Jyotish Practitioner",
+        "citation": "Choubey, Ashutosh Kumar. Tantra Gyan: Complete Vedic Astrology Compendium Simplified. Tantra Gyan Research Center, 2026. Web. https://t.worldgyan.com",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock"
+        },
+        "teaches": [
+          "Navagraha Karakatvas (9 Planetary Significations)",
+          "17 Classical Raja Yogas including Pancha Mahapurusha and Viparita Raja Yogas",
+          "27 Nakshatras and 108 Padas breakdown",
+          "9 Deeptadi Planetary States (Deepta, Swastha, Mudita, Shanta, etc.)",
+          "Ayur-Jyotish Anatomical Rulerships and Cancer Disease Astrological Diagnosis",
+          "Vimshottari Mahadasha 120-year cycle calculations"
+        ],
+        "about": [
+          { "@type": "Thing", "name": "Vedic Astrology" },
+          { "@type": "Thing", "name": "Navagraha Karakatva" },
+          { "@type": "Thing", "name": "Raja Yoga" },
+          { "@type": "Thing", "name": "Medical Astrology" },
+          { "@type": "Thing", "name": "Cancer in Astrology (Arbuda Roga)" },
+          { "@type": "Thing", "name": "Nakshatra Padas" }
+        ],
+        "hasPart": [
+          {
+            "@type": "Chapter",
+            "name": "प्रस्तावना, मंगलाचरण एवं लेखक परिचय",
+            "position": 1,
+            "pageStart": 1,
+            "pageEnd": 5
+          },
+          {
+            "@type": "Chapter",
+            "name": "नवग्रह कारकत्व एवं 17 शास्त्रीय राजयोग",
+            "position": 2,
+            "pageStart": 6,
+            "pageEnd": 20
+          },
+          {
+            "@type": "Chapter",
+            "name": "राशि, नक्षत्र, ग्रह गति एवं विंशोत्तरी महादशा",
+            "position": 3,
+            "pageStart": 21,
+            "pageEnd": 37
+          },
+          {
+            "@type": "Chapter",
+            "name": "भाव एवं राशियों में ग्रह (दीप्तादि 9 अवस्थाएं)",
+            "position": 4,
+            "pageStart": 38,
+            "pageEnd": 47
+          },
+          {
+            "@type": "Chapter",
+            "name": "मेडिकल एस्ट्रोलॉजी एवं कैंसर रोग विश्लेषण",
+            "position": 5,
+            "pageStart": 48,
+            "pageEnd": 74
+          },
+          {
+            "@type": "Chapter",
+            "name": "नक्षत्रों का गहन पद एवं ग्रह विश्लेषण",
+            "position": 6,
+            "pageStart": 75,
+            "pageEnd": 87
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://t.worldgyan.com/#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://t.worldgyan.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Vedic Astrology Compendium",
+            "item": "https://t.worldgyan.com/index.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://t.worldgyan.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र (BNN) क्या है? (What is Tantra Gyan Vedic Astrology Compendium?)",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "तंत्र ज्ञान (Tantra Gyan) ज्योतिषाचार्य आशुतोष कुमार चौबे द्वारा रचित 88 पृष्ठों का एक प्रामाणिक शास्त्रीय फलित ज्ञानकोश है। यह महर्षि पराशर, सारावली, फलदीपिका, जातक पारिजात एवं नाड़ी ज्योतिष के सूत्रों का आधुनिक विश्लेषणात्मक समन्वय प्रस्तुत करता है, जो 100% ऑफ़लाइन PWA तकनीक पर निःशुल्क उपलब्ध है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "वैदिक ज्योतिष में 17 शास्त्रीय राजयोग कौन-से हैं? (What are the 17 Classical Raja Yogas in Vedic Astrology?)",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "इस ग्रंथ के पृष्ठ 20-21 में 5 पंच महापुरुष योग (रुचक, भद्र, हंस, मालव्य, शश), गजकेसरी योग, बुधादित्य योग, धर्म-कर्माधिपति योग, चन्द्र-मंगल योग, नीचभंग राजयोग, तथा त्रिक भावों से निर्मित 3 विपरीत राजयोग (हर्ष, सरल, विमल योग) का विस्तृत शास्त्रीय फलित दिया गया है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "पंच महापुरुष योग (Pancha Mahapurusha Yogas) कैसे बनते हैं?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "जब मंगल (रुचक योग), बुध (भद्र योग), गुरु (हंस योग), शुक्र (मालव्य योग), या शनि (शश योग) अपनी स्वराशि, मूलत्रिकोण या उच्च राशि में होकर केंद्र भाव (1, 4, 7, 10) में स्थित होते हैं, तब पंच महापुरुष योग का निर्माण होता है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "विपरीत राजयोग (हर्ष, सरल, विमल) का क्या नियम है? (How do Viparita Raja Yogas function?)",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "जब त्रिक भावों (6, 8, 12) के स्वामी ग्रह आपस में केवल 6, 8, या 12वें भाव में ही स्थित हों और शुभ भावों के स्वामियों से युक्त न हों: 6ठे भाव का स्वामी 6/8/12 में हो तो हर्ष योग; 8वें भाव का स्वामी 6/8/12 में हो तो सरल योग; तथा 12वें भाव का स्वामी 6/8/12 में हो तो विमल योग बनता है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "आयुर्-ज्योतिष (Medical Astrology) में कैंसर रोग (Arbuda Roga) का ज्योतिषीय विश्लेषण कैसे होता है?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ग्रंथ के पृष्ठ 48 से 74 में कैंसर के ज्योतिषीय योग दिए गए हैं। यह मुख्य रूप से त्रिक भावों (6, 8, 12), जल तत्व व रक्त के कारक ग्रह चन्द्रमा व मंगल, रोगकारक राहु (अनियंत्रित कोशिका विभाजन) तथा शनि (दीर्घकालिक ऊतक क्षय) के अशुभ गठबंधन तथा लग्न व सूर्य (जीवन शक्ति) के पीड़ित होने से उत्पन्न होता है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ग्रहों की दीप्तादि 9 अवस्थाएं (Deeptadi 9 Planetary States) कौन-सी हैं?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "दीप्तादि 9 अवस्थाएं हैं: 1. दीप्त (उच्च राशि), 2. स्वस्थ (स्वराशि), 3. मुदित (अधिमित्र राशि), 4. शांत (मित्र राशि), 5. दीन (सम राशि), 6. दुखित (शत्रु राशि), 7. विकल (अस्त ग्रह), 8. खल (नीच राशि), और 9. कोप (ग्रह युद्ध में पराजित)। यह अवस्थाएं ग्रह के वास्तविक शुभाशुभ फल की तीव्रता निर्धारित करती हैं।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "120 वर्षीय विंशोत्तरी महादशा चक्र का क्रम और अवधि क्या है? (What is the Vimshottari Dasha sequence?)",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "विंशोत्तरी महादशा का क्रम है: केतु (7 वर्ष), शुक्र (20 वर्ष), सूर्य (6 वर्ष), चन्द्रमा (10 वर्ष), मंगल (7 वर्ष), राहु (18 वर्ष), गुरु (16 वर्ष), शनि (19 वर्ष), और बुध (17 वर्ष) — कुल 120 वर्ष।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "27 नक्षत्र और 108 पदों का क्या महत्व है? (What is the role of 27 Nakshatras and 108 Padas?)",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "प्रत्येक नक्षत्र 13°20' का होता है जो 3°20' के 4 नवमांश पदों में विभाजित है। सम्पूर्ण भचक्र में 27 नक्षत्र × 4 = 108 पद होते हैं। प्रत्येक पद का विशिष्ट तत्व, अधिष्ठाता देवता, नवमांश स्वामी व नामाक्षर होता है।"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "क्या तंत्र ज्ञान ग्रंथ बिना इंटरनेट या ऐप डाउनलोड किए पढ़ा जा सकता है? (Is it offline-capable?)",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "हाँ, तंत्र ज्ञान एक अत्याधुनिक Progressive Web App (PWA) है। वेबसाइट https://t.worldgyan.com पर एक बार आने पर ही सम्पूर्ण 88 पृष्ठ, तालिकाएं और ऑडियो स्वतः कैश हो जाते हैं और बिना इंटरनेट या एयरप्लेन मोड में भी पूर्णतः कार्य करते हैं।"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://t.worldgyan.com/#table-of-contents",
+        "name": "तंत्र ज्ञान: विषय-सूची (Table of Contents)",
+        "numberOfItems": 6,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "प्रस्तावना, मंगलाचरण एवं लेखक परिचय (Pages 1–5)",
+            "url": "https://t.worldgyan.com/#page-1"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "नवग्रह कारकत्व एवं 17 शास्त्रीय राजयोग (Pages 6–20)",
+            "url": "https://t.worldgyan.com/#page-6"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "राशि, नक्षत्र, ग्रह गति एवं विंशोत्तरी महादशा चक्र (Pages 21–37)",
+            "url": "https://t.worldgyan.com/#page-21"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "भाव एवं राशियों में ग्रह, दीप्तादि 9 अवस्थाएं (Pages 38–47)",
+            "url": "https://t.worldgyan.com/#page-38"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "मेडिकल एस्ट्रोलॉजी एवं कैंसर रोग विश्लेषण (Pages 48–74)",
+            "url": "https://t.worldgyan.com/#page-48"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "नक्षत्रों का गहन पद एवं ग्रह विश्लेषण (Pages 75–88)",
+            "url": "https://t.worldgyan.com/#page-75"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Floating Book App Header -->
+  <header class="app-header">
+    <div class="header-top-row">
+      <a href="#page-1" class="brand-section" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true); return false;" title="तंत्र ज्ञान (Tantra Gyan) - Home">
+        <div class="brand-logo">
+          <img src="assets/yantra.svg" alt="Tantra Gyan Mandala" width="34" height="34">
+        </div>
+        <div class="brand-titles">
+          <span class="brand-name">तंत्र ज्ञान <span>Tantra Gyan</span></span>
+          <span class="brand-tagline">ज्योतिषाचार्य Ashutosh Kumar Choubey</span>
+        </div>
+      </a>
+
+      <!-- Mobile Search Trigger Pill (Inside header-top-row on mobile, hidden on desktop) -->
+      <button type="button" class="mobile-search-trigger-btn" id="mobile-search-trigger" aria-label="Search">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <span>Search</span>
+      </button>
+
+      <!-- Mobile Header Actions (Home, PDF, Web View, Download/Update, Gear Settings) -->
+      <div class="mobile-header-actions">
+        <!-- Library Home Link -->
+        <a href="index.html" class="tool-btn mobile-action-btn" title="ग्रंथालय मुख्य पृष्ठ • Library Portal Home" aria-label="Library Home" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; color:var(--accent-gold); border-color:rgba(200, 157, 61, 0.45);">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        </a>
+        <!-- PDF Download Icon (Mobile) -->
+        <a href="bhrigu-nandi-nadi-karma-samyojan.pdf" download="Bhrigu-Nandi-Nadi-Karma-Samyojan-Sutra.pdf" class="tool-btn mobile-action-btn" title="सम्पूर्ण ग्रंथ PDF डाउनलोड करें • Tantra Gyan: Vedic Jyotish Maha Granth" aria-label="Download PDF" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; color:var(--accent-gold); border-color:rgba(200, 157, 61, 0.45);">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="12" y2="18"></line><line x1="15" y1="15" x2="12" y2="18"></line></svg>
+        </a>
+        <!-- Web View Icon (Mobile) -->
+        <a href="bhrigu-nandi-nadi.html" class="tool-btn mobile-action-btn" title="डिजिटल वेब पाठक में पढ़ें • Web View" aria-label="Web View" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; color:#38bdf8; border-color:rgba(56, 189, 248, 0.45);">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+        </a>
+        <!-- Offline Download Button -->
+        <button class="tool-btn mobile-action-btn mobile-download-btn" id="mobile-btn-download" title="ग्रंथ ऑफ़लाइन डाउनलोड करें / नया संस्करण अपडेट करें" aria-label="Download or Update Book">
+          <span id="mobile-download-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></span>
+        </button>
+        <!-- Gear Settings Button -->
+        <button class="tool-btn mobile-action-btn mobile-gear-btn" id="btn-settings-toggle" title="Settings & Options (सेटिंग्स और विकल्प)" aria-label="Open Settings">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Input Container with Dropdown Results (Centered on Desktop) -->
+    <div class="search-box" id="search-box-container">
+      <div class="search-input-wrapper">
+        <span class="search-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
+        <input type="text" id="book-search" class="search-input" placeholder="Search / खोजें (e.g. Moon, सूर्य)..." aria-label="Search Book" autocomplete="off">
+        <button type="button" id="search-clear-btn" class="search-clear-btn" title="Clear search" aria-label="Clear search" style="display:none;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <button type="button" id="search-close-mobile-btn" class="search-close-mobile-btn" title="Close search" aria-label="Close search" style="display:none;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <span id="search-counter" class="search-count" style="display:none;" title="Click to view all matching pages"></span>
+      
+      <!-- Live Search Results Dropdown -->
+      <div id="search-dropdown" class="search-dropdown" style="display:none;" role="region" aria-label="Search Results">
+        <div class="search-dropdown-header">
+          <span id="search-dropdown-title" class="search-dropdown-title">Search Results (परिणाम)</span>
+          <button type="button" id="search-dropdown-close" class="search-dropdown-close" title="Close" aria-label="Close search">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+        <div id="search-results-list" class="search-results-list"></div>
+      </div>
+    </div>
+
+    <!-- Toolbar Controls (Desktop Only - Hidden on Mobile) -->
+    <div class="toolbar-controls desktop-tools">
+      <!-- TOC Toggle Button -->
+      <button class="tool-btn" id="btn-toc-toggle" title="विषय-सूची (Table of Contents)">
+        <span>📖</span> <span>Contents</span>
+      </button>
+
+      <!-- Bookmark Button -->
+      <button class="tool-btn" id="btn-bookmark-toggle" title="सहेजे गए बुकमार्क (Saved Bookmarks)">
+        <span>🔖</span> <span id="bookmark-btn-label">Bookmarks</span>
+        <span id="bookmark-count-badge" class="badge-count" style="display:none;">0</span>
+      </button>
+
+      <!-- YouTube Channel Link (Sleek Compact Icon) -->
+      <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="tool-btn yt-header-btn" title="YouTube: @TantraGyan108" aria-label="YouTube Channel @TantraGyan108" style="padding:0.42rem 0.58rem; color:#ef4444; border-color:rgba(239,68,68,0.4); text-decoration:none;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#ef4444" style="vertical-align:middle; display:inline-block;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+
+      <!-- Language Mode Switcher -->
+      <div class="lang-switcher" title="Switch Reading Language">
+        <button class="lang-btn" data-lang="hindi">हिंदी</button>
+        <button class="lang-btn" data-lang="english">English</button>
+        <button class="lang-btn active" data-lang="bilingual">द्विभाषी</button>
+      </div>
+
+      <!-- Theme Switcher -->
+      <button class="tool-btn" id="btn-theme-toggle" title="थीम (Theme: Parchment / Dark / Light)">
+        <span>📜</span> <span>Parchment</span>
+      </button>
+
+      <!-- Dual / Single Spread Toggle -->
+      <button class="tool-btn" id="btn-layout-toggle" title="दृश्य (View: Two Pages / Single Page)">
+        <span>📖</span> <span>Two Pages</span>
+      </button>
+
+      <!-- Sound Mute Toggle -->
+      <button class="tool-btn" id="btn-sound-toggle" title="Page Turn Sound Effect" style="padding:0.45rem 0.55rem;">
+        <span>🔊</span>
+      </button>
+
+      <!-- Font Zoom Segmented Control -->
+      <div class="font-zoom-group" title="Adjust Text Size">
+        <button class="font-zoom-btn" id="btn-font-dec" title="Decrease Font Size">A−</button>
+        <button class="font-zoom-btn" id="btn-font-inc" title="Increase Font Size">A+</button>
+      </div>
+
+      <!-- Fullscreen -->
+      <button class="tool-btn" id="btn-fullscreen" title="Toggle Fullscreen" style="padding:0.45rem 0.6rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>
+
+      <!-- Modern Rich-Text Web Reader Button -->
+      <a href="bhrigu-nandi-nadi.html" class="tool-btn" id="btn-paged-reader" title="✨ डिजिटल वेब पाठक • Modern Web Reader" style="color:#38bdf8; border-color:rgba(56,189,248,0.5); text-decoration:none;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; display:inline-block;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+        <span>Web View</span>
+      </a>
+
+      <!-- Primary Masterwork PDF Download Button (Tantra Gyan: Vedic Jyotish Maha Granth) -->
+      <a href="bhrigu-nandi-nadi-karma-samyojan.pdf" download="Bhrigu-Nandi-Nadi-Karma-Samyojan-Sutra.pdf" class="tool-btn" id="btn-download-pdf-primary" title="📥 सम्पूर्ण वैदिक ज्योतिष महाग्रंथ PDF डाउनलोड करें (Tantra Gyan: Vedic Jyotish Maha Granth)" style="color:var(--accent-gold); border-color:rgba(200,157,61,0.5); text-decoration:none;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; display:inline-block;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="12" y2="18"></line><line x1="15" y1="15" x2="12" y2="18"></line></svg>
+        <span>PDF</span>
+      </a>
+
+      <!-- Download / Update Book Offline Button -->
+      <button class="tool-btn" id="btn-download-offline" title="सम्पूर्ण ग्रंथ ऑफ़लाइन डाउनलोड करें (Download Book Offline)">
+        <span id="btn-download-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></span> <span id="btn-download-label">Download Offline</span>
+      </button>
+
+      <!-- Install PWA App Button -->
+      <button class="tool-btn" id="btn-install-app" title="डिवाइस पर इंस्टॉल करें (Install App to Desktop / Mobile)" style="color:var(--accent-gold); border-color:var(--accent-gold);">
+        <span id="btn-install-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="5" y="2" width="14" height="20" rx="3" ry="3"></rect><path d="M12 18h.01"></path><path d="M12 7v5"></path><polyline points="9 10 12 13 15 10"></polyline></svg></span> <span id="btn-install-label">Install App</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-track">
+    <div class="reading-progress-fill" id="reading-progress-fill"></div>
+  </div>
+
+  <!-- Main Book Reading Stage -->
+  <main class="main-stage">
+    <!-- Cosmic Void & Celestial Singularity Backdrop -->
+    <div class="cosmic-stage-backdrop" aria-hidden="true">
+      <div class="cosmic-singularity-core"></div>
+      <div class="cosmic-accretion-ring"></div>
+      <div class="cosmic-stardust-dust"></div>
+      <div class="cosmic-yantra-halo">
+        <svg class="cosmic-sri-yantra" viewBox="0 0 200 200" fill="none" stroke="currentColor">
+          <circle cx="100" cy="100" r="95" stroke="rgba(217, 119, 6, 0.28)" stroke-width="1.2" stroke-dasharray="3,3"/>
+          <circle cx="100" cy="100" r="82" stroke="rgba(147, 51, 234, 0.3)" stroke-width="1"/>
+          <polygon points="100,18 178,148 22,148" stroke="rgba(217, 119, 6, 0.25)" stroke-width="1.2"/>
+          <polygon points="100,182 178,52 22,52" stroke="rgba(147, 51, 234, 0.25)" stroke-width="1.2"/>
+          <polygon points="100,32 165,140 35,140" stroke="rgba(217, 119, 6, 0.2)" stroke-width="0.9"/>
+          <polygon points="100,168 165,60 35,60" stroke="rgba(147, 51, 234, 0.2)" stroke-width="0.9"/>
+          <circle cx="100" cy="100" r="4" fill="rgba(255, 215, 0, 0.7)"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="book-container cover-closed-front">
+      <!-- Decorative Gilded Corners -->
+      <div class="corner-ornament corner-tl"></div>
+      <div class="corner-ornament corner-tr"></div>
+      <div class="corner-ornament corner-bl"></div>
+      <div class="corner-ornament corner-br"></div>
+
+      <!-- Silk Ribbon Bookmark -->
+      <div class="silk-bookmark" title="Click to bookmark this page"></div>
+
+      <!-- Center Spine Crease & Shadow -->
+      <div class="book-spine-crease"></div>
+
+      <!-- Turn Page Arrow Buttons -->
+      <button class="nav-arrow-btn nav-prev" id="btn-prev-page" title="Previous Page (Left Arrow)">‹</button>
+      <button class="nav-arrow-btn nav-next" id="btn-next-page" title="Next Page (Right Arrow / Spacebar)">›</button>
+
+      <!-- Two-Page Spread Container -->
+      <div class="book-pages-wrapper">
+        <section class="page-sheet left-page" id="left-page-container" aria-label="Left Page">
+
+        </section>
+        <section class="page-sheet right-page" id="right-page-container" aria-label="Right Page">
+
+        <div class="page-body cover-page-wrapper">
+          
+<div class="cover-page-inner">
+  <div class="cover-ornament-corner top-left"></div>
+  <div class="cover-ornament-corner top-right"></div>
+  <div class="cover-ornament-corner bottom-left"></div>
+  <div class="cover-ornament-corner bottom-right"></div>
+
+  <div class="cover-yantra">
+    <img src="assets/yantra.svg" alt="Sacred Sri Yantra Emblem" width="135" height="135">
+  </div>
+
+  <h1 class="cover-title-hindi">वैदिक ज्योतिष महाग्रंथ सरलीकृत</h1>
+  <div class="cover-title-english">Complete Vedic Astrology Compendium Simplified</div>
+
+  <div class="cover-divider-flourish">⚜ ☸ ⚜</div>
+
+  <div class="cover-subtitle-minimal">सम्पूर्ण प्रामाणिक शास्त्रीय फलित ज्ञानकोश</div>
+
+  <div class="cover-open-prompt" title="Click to open the book">
+    <span class="prompt-icon">✧</span>
+    <span class="prompt-text">ग्रंथ का अनावरण करें • Click to Open Book</span>
+    <span class="prompt-icon">✧</span>
+  </div>
+
+  <div class="cover-action-links">
+    <a href="bhrigu-nandi-nadi-karma-samyojan.pdf" download="Bhrigu-Nandi-Nadi-Karma-Samyojan-Sutra.pdf" class="cover-action-pill pill-pdf" title="सम्पूर्ण ग्रंथ PDF डाउनलोड करें • Tantra Gyan: Vedic Jyotish Maha Granth">
+      <span>📥</span> <span>Download PDF</span>
+    </a>
+    <a href="bhrigu-nandi-nadi.html" class="cover-action-pill pill-reader" title="डिजिटल वेब पाठक में पढ़ें • Modern Web Reader">
+      <span>📖</span> <span>Web Reader</span>
+    </a>
+  </div>
+
+  <div class="cover-footer-brand">
+    <div class="cover-tag">तंत्र ज्ञान शोध संस्थान • 2026</div>
+  </div>
+</div>
+
+        </div>
+        
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom Reading Controller Bar (Exact 2-Line Mobile Layout) -->
+  <nav class="bottom-reading-bar" aria-label="Book Navigation Bar">
+    <!-- Line 1: Slider spanning full width across top -->
+    <div class="bottom-slider-row">
+      <input type="range" id="page-slider" class="page-slider" min="1" max="40" value="1" aria-label="Page Position">
+    </div>
+
+    <!-- Line 2: Single combined controls row: [«][‹]  [Counter Badge]  [›][»] -->
+    <div class="bottom-controls-row">
+      <div class="nav-group-left">
+        <button class="tool-btn nav-edge-btn" id="btn-first-bottom" onclick="if(window.bookEngine) window.bookEngine.goToPage(1, true);" title="प्रारंभ (First Page)" disabled>«<span class="nav-btn-text"> First</span></button>
+        <button class="tool-btn nav-step-btn" id="btn-prev-bottom" onclick="if(window.bookEngine) window.bookEngine.prevPage();" title="पिछला (Previous Page)" disabled>‹<span class="nav-btn-text"> Prev</span></button>
+      </div>
+
+      <div class="bottom-counter-container">
+        <span class="page-counter-badge" id="page-counter-badge">Cover • 1 / 100</span>
+      </div>
+
+      <div class="nav-group-right">
+        <button class="tool-btn nav-step-btn" id="btn-next-bottom" onclick="if(window.bookEngine) window.bookEngine.nextPage();" title="अगला (Next Page)"><span class="nav-btn-text">Next </span>›</button>
+        <button class="tool-btn nav-edge-btn" id="btn-last-bottom" onclick="if(window.bookEngine) window.bookEngine.goToPage(88, true);" title="अंतिम (Last Page)"><span class="nav-btn-text">Last </span>»</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Table of Contents Modal Drawer -->
+  <div class="toc-overlay" id="toc-overlay" role="dialog" aria-modal="true" aria-labelledby="toc-modal-title">
+    <div class="toc-modal">
+      <div class="toc-header">
+        <h3 class="toc-title" id="toc-modal-title">
+          <span>📖</span> विषय-सूची (Table of Contents)
+        </h3>
+        <button class="toc-close-btn" id="toc-close-btn" title="Close Index" aria-label="Close Table of Contents">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="toc-body">
+        <div class="toc-list">
+
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 मुखपृष्ठ</span>
+        </div>
+        
+
+    <a href="#page-1" class="toc-item" data-goto="1">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.1</span>
+        <span class="toc-item-title">वैदिक ज्योतिष महाग्रंथ सरलीकृत</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 मंगलाचरण</span>
+        </div>
+        
+
+    <a href="#page-2" class="toc-item" data-goto="2">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.2</span>
+        <span class="toc-item-title">मंगलाचरण — ॐ गं गणपतये नमः</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 लेखक परिचय</span>
+        </div>
+        
+
+    <a href="#page-3" class="toc-item" data-goto="3">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.3</span>
+        <span class="toc-item-title">लेखक परिचय — ज्योतिषाचार्य आशुतोष कुमार चौबे</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 प्रस्तावना</span>
+        </div>
+        
+
+    <a href="#page-4" class="toc-item" data-goto="4">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.4</span>
+        <span class="toc-item-title">ग्रंथ का उद्देश्य एवं आधारभूत संरचना</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अस्वीकरण</span>
+        </div>
+        
+
+    <a href="#page-5" class="toc-item" data-goto="5">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.5</span>
+        <span class="toc-item-title">तांत्रिक अनुशासन, आचार संहिता एवं वैधानिक परामर्श</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 अनुक्रमणिका</span>
+        </div>
+        
+
+    <a href="#page-6" class="toc-item" data-goto="6">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.6</span>
+        <span class="toc-item-title">विषय-सूची (सम्पूर्ण ग्रंथ अनुक्रमणिका)</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 Ch 1: कालपुरुष कुण्डली व भाव व्यवस्था</span>
+        </div>
+        
+
+    <a href="#page-7" class="toc-item" data-goto="7">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.7</span>
+        <span class="toc-item-title">कालपुरुष कुण्डली चक्र — 12 भाव एवं उच्च ग्रह विन्यास</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-8" class="toc-item" data-goto="8">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.8</span>
+        <span class="toc-item-title">कालपुरुष कुण्डली भाव वर्गीकरण महाचक्र — केन्द्र, त्रिकोण, उपचय, त्रिक व मारक भाव</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-9" class="toc-item" data-goto="9">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.9</span>
+        <span class="toc-item-title">उपचय भाव साधन चक्र — 3, 6, 10, 11 भावों की सतत विजय एवं वृद्धि</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-10" class="toc-item" data-goto="10">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.10</span>
+        <span class="toc-item-title">ग्रहीय दृष्टि महाचक्र — 7वीं सार्वभौमिक दृष्टि व विशेष दृष्टि सूत्र</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-11" class="toc-item" data-goto="11">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.11</span>
+        <span class="toc-item-title">द्वादश भाव स्थिर कारकत्व कुण्डली चक्र — महर्षि पाराशर प्रतिपादित स्थिर कारक ग्रह</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 Ch 2: नवग्रह कारकत्व व राजयोग</span>
+        </div>
+        
+
+    <a href="#page-12" class="toc-item" data-goto="12">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.12</span>
+        <span class="toc-item-title">सूर्य देव के संपूर्ण शास्त्रीय कारकत्व</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-13" class="toc-item" data-goto="13">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.13</span>
+        <span class="toc-item-title">चन्द्रमा के संपूर्ण शास्त्रीय कारकत्व</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-14" class="toc-item" data-goto="14">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.14</span>
+        <span class="toc-item-title">चन्द्रमा: शास्त्रीय ग्रंथ संदर्भ व फलित सूत्र</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-15" class="toc-item" data-goto="15">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.15</span>
+        <span class="toc-item-title">चन्द्रमा: आधुनिक व्यावहारिक फलित व मानसिक विश्लेषण</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-16" class="toc-item" data-goto="16">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.16</span>
+        <span class="toc-item-title">मंगल देव के संपूर्ण शास्त्रीय कारकत्व</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-17" class="toc-item" data-goto="17">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.17</span>
+        <span class="toc-item-title">मंगल देव: शास्त्रीय ग्रंथ संदर्भ व पराक्रम सूत्र</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-18" class="toc-item" data-goto="18">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.18</span>
+        <span class="toc-item-title">बृहस्पति (गुरु) के संपूर्ण शास्त्रीय कारकत्व</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-19" class="toc-item" data-goto="19">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.19</span>
+        <span class="toc-item-title">शुक्र देव के संपूर्ण शास्त्रीय कारकत्व</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-20" class="toc-item" data-goto="20">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.20</span>
+        <span class="toc-item-title">शनि देव के संपूर्ण कारकत्व व कर्म सिद्धांत</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-21" class="toc-item" data-goto="21">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.21</span>
+        <span class="toc-item-title">शनि देव: प्रमुख शास्त्रीय एवं आधुनिक दृष्टिकोण</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-22" class="toc-item" data-goto="22">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.22</span>
+        <span class="toc-item-title">बुध देव के संपूर्ण कारकत्व व बुद्धि-विवेक</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-23" class="toc-item" data-goto="23">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.23</span>
+        <span class="toc-item-title">राहु देव के संपूर्ण कारकत्व व मायावी प्रभाव</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-24" class="toc-item" data-goto="24">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.24</span>
+        <span class="toc-item-title">केतु देव के संपूर्ण कारकत्व व मोक्ष मार्ग</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-25" class="toc-item" data-goto="25">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.25</span>
+        <span class="toc-item-title">पंच महापुरुष एवं गजकेसरी राजयोग चक्र — हंस, मालव्य, रुचक, भद्र, शश व गजकेसरी</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-26" class="toc-item" data-goto="26">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.26</span>
+        <span class="toc-item-title">17 शास्त्रीय राजयोग एवं पंच महापुरुष योग (भाग 1)</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-27" class="toc-item" data-goto="27">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.27</span>
+        <span class="toc-item-title">लक्ष्मी-नारायण योग एवं केन्द्र-त्रिकोण चक्र — विष्णु-लक्ष्मी संगम राजयोग</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-28" class="toc-item" data-goto="28">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.28</span>
+        <span class="toc-item-title">विपरीत राजयोग महाचक्र — हर्ष, सरल व विमल योग (6, 8, 12 भाव)</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-29" class="toc-item" data-goto="29">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.29</span>
+        <span class="toc-item-title">17 शास्त्रीय राजयोग एवं विपरीत राजयोग (भाग 2)</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 Ch 3: राशि, नक्षत्र एवं ग्रह गति</span>
+        </div>
+        
+
+    <a href="#page-30" class="toc-item" data-goto="30">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.30</span>
+        <span class="toc-item-title">ग्रह गति, गोचर अवधि एवं विंशोत्तरी महादशा चक्र</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-31" class="toc-item" data-goto="31">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.31</span>
+        <span class="toc-item-title">ग्रह दृष्टि तालिका एवं शास्त्रीय दृष्टि नियम</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-32" class="toc-item" data-goto="32">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.32</span>
+        <span class="toc-item-title">सप्तविंशति नक्षत्र व 108 पद 360° महामण्डल चक्र</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-33" class="toc-item" data-goto="33">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.33</span>
+        <span class="toc-item-title">27 नक्षत्र, विस्तार व राशि सीमा तालिका</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-34" class="toc-item" data-goto="34">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.34</span>
+        <span class="toc-item-title">27 नक्षत्र, अधिष्ठाता देवता व पद नामाक्षर</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-35" class="toc-item" data-goto="35">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.35</span>
+        <span class="toc-item-title">नक्षत्र, अधिष्ठाता देवता और स्वामी तालिका</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-36" class="toc-item" data-goto="36">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.36</span>
+        <span class="toc-item-title">नक्षत्र स्वामी व दशा अधिपति सूत्र</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-37" class="toc-item" data-goto="37">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.37</span>
+        <span class="toc-item-title">27 नक्षत्र एवं स्वामी शास्त्रीय तालिका</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-38" class="toc-item" data-goto="38">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.38</span>
+        <span class="toc-item-title">चतुर्विध महाभूत कुण्डली चक्र — अग्नि (1-5-9), पृथ्वी (2-6-10), वायु (3-7-11) व जल (4-8-12)</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-39" class="toc-item" data-goto="39">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.39</span>
+        <span class="toc-item-title">चतुर्विध पुरुषार्थ कुण्डली चक्र — धर्म (1-5-9), अर्थ (2-6-10), काम (3-7-11) व मोक्ष (4-8-12)</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-40" class="toc-item" data-goto="40">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.40</span>
+        <span class="toc-item-title">12 राशियां, स्वामी व पंचमहाभूत तत्व</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-41" class="toc-item" data-goto="41">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.41</span>
+        <span class="toc-item-title">राशियों के गुण, तत्व एवं स्वभाव वर्गीकरण</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-42" class="toc-item" data-goto="42">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.42</span>
+        <span class="toc-item-title">राशियों का लिंग वर्गीकरण (पुरुष व स्त्री राशियां)</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-43" class="toc-item" data-goto="43">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.43</span>
+        <span class="toc-item-title">राशियों की ध्रुवता (धनात्मक एवं ऋणात्मक स्वभाव)</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-44" class="toc-item" data-goto="44">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.44</span>
+        <span class="toc-item-title">अग्नि तत्व राशियां: मेष, सिंह, धनु</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-45" class="toc-item" data-goto="45">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.45</span>
+        <span class="toc-item-title">पृथ्वी तत्व राशियां: वृषभ, कन्या, मकर</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-46" class="toc-item" data-goto="46">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.46</span>
+        <span class="toc-item-title">वायु तत्व राशियां: मिथुन, तुला, कुंभ</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-47" class="toc-item" data-goto="47">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.47</span>
+        <span class="toc-item-title">जल तत्व राशियां: कर्क, वृश्चिक, मीन</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-48" class="toc-item" data-goto="48">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.48</span>
+        <span class="toc-item-title">तत्व एवं गतिशीलता का संयुक्त वर्गीकरण</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-49" class="toc-item" data-goto="49">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.49</span>
+        <span class="toc-item-title">चर, स्थिर, द्विस्वभाव व तत्व फलित नियम</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 Ch 4: भाव एवं राशियों में ग्रह</span>
+        </div>
+        
+
+    <a href="#page-50" class="toc-item" data-goto="50">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.50</span>
+        <span class="toc-item-title">दीप्तादि 9 अवस्थाएं: ग्रहों की स्थिति व फल</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-51" class="toc-item" data-goto="51">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.51</span>
+        <span class="toc-item-title">ग्रहों की नैसर्गिक व तात्कालिक मैत्री वर्गीकरण</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-52" class="toc-item" data-goto="52">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.52</span>
+        <span class="toc-item-title">दीप्तादि अवस्थाएं, मूलत्रिकोण व स्वराशि तालिका</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-53" class="toc-item" data-goto="53">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.53</span>
+        <span class="toc-item-title">ग्रह अवस्थाओं के व्यावहारिक फलित नियम</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-54" class="toc-item" data-goto="54">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.54</span>
+        <span class="toc-item-title">ग्रहों के पांच प्रकार के संबंध (पंच संबंध)</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-55" class="toc-item" data-goto="55">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.55</span>
+        <span class="toc-item-title">12 भावों के स्थिर कारक ग्रह</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-56" class="toc-item" data-goto="56">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.56</span>
+        <span class="toc-item-title">भाव कारक व भावेश का शास्त्रीय अंतर एवं विश्लेषण</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-57" class="toc-item" data-goto="57">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.57</span>
+        <span class="toc-item-title">सूर्य देव: भाव 1 से 6 फलित विचार</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-58" class="toc-item" data-goto="58">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.58</span>
+        <span class="toc-item-title">सूर्य देव: भाव 7 से 12 फलित विचार</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-59" class="toc-item" data-goto="59">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.59</span>
+        <span class="toc-item-title">सूर्य देव: मेष से कन्या राशि फल</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-60" class="toc-item" data-goto="60">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.60</span>
+        <span class="toc-item-title">सूर्य देव: तुला से मीन राशि फल</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 Ch 5: मेडिकल व स्वास्थ्य ज्योतिष</span>
+        </div>
+        
+
+    <a href="#page-61" class="toc-item" data-goto="61">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.61</span>
+        <span class="toc-item-title">कालपुरुष अंग-प्रत्यंग व आयुर्वेद कुण्डली चक्र — 12 भाव, शारीरिक अंग व त्रिदोष निदान</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-62" class="toc-item" data-goto="62">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.62</span>
+        <span class="toc-item-title">सूर्य देव: शारीरिक अंग व रोग संबंध</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-63" class="toc-item" data-goto="63">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.63</span>
+        <span class="toc-item-title">चन्द्रमा: शारीरिक अंग व रोग संबंध</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-64" class="toc-item" data-goto="64">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.64</span>
+        <span class="toc-item-title">मंगल देव: शारीरिक अंग व रोग संबंध</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-65" class="toc-item" data-goto="65">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.65</span>
+        <span class="toc-item-title">बुध देव: शारीरिक अंग व रोग संबंध</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-66" class="toc-item" data-goto="66">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.66</span>
+        <span class="toc-item-title">बृहस्पति (गुरु): शारीरिक अंग व रोग संबंध</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-67" class="toc-item" data-goto="67">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.67</span>
+        <span class="toc-item-title">शुक्र देव: शारीरिक अंग व रोग संबंध</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-68" class="toc-item" data-goto="68">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.68</span>
+        <span class="toc-item-title">शनि देव: शारीरिक अंग व रोग संबंध</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-69" class="toc-item" data-goto="69">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.69</span>
+        <span class="toc-item-title">राहु देव: शारीरिक अंग व रोग संबंध</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-70" class="toc-item" data-goto="70">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.70</span>
+        <span class="toc-item-title">केतु देव: शारीरिक अंग व रोग संबंध</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-71" class="toc-item" data-goto="71">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.71</span>
+        <span class="toc-item-title">प्रथम भाव (लग्न): शारीरिक अंग व रोग निदान</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-72" class="toc-item" data-goto="72">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.72</span>
+        <span class="toc-item-title">द्वितीय भाव: शारीरिक अंग व रोग निदान</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-73" class="toc-item" data-goto="73">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.73</span>
+        <span class="toc-item-title">तृतीय भाव: शारीरिक अंग व रोग निदान</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-74" class="toc-item" data-goto="74">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.74</span>
+        <span class="toc-item-title">चतुर्थ भाव: शारीरिक अंग व रोग निदान</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-75" class="toc-item" data-goto="75">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.75</span>
+        <span class="toc-item-title">पंचम भाव: शारीरिक अंग व रोग निदान</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-76" class="toc-item" data-goto="76">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.76</span>
+        <span class="toc-item-title">षष्ठ भाव: शारीरिक अंग व रोग निदान</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-77" class="toc-item" data-goto="77">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.77</span>
+        <span class="toc-item-title">सप्तम भाव: शारीरिक अंग व रोग निदान</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-78" class="toc-item" data-goto="78">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.78</span>
+        <span class="toc-item-title">अष्टम भाव: शारीरिक अंग व रोग निदान</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-79" class="toc-item" data-goto="79">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.79</span>
+        <span class="toc-item-title">नवम भाव: शारीरिक अंग व रोग निदान</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-80" class="toc-item" data-goto="80">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.80</span>
+        <span class="toc-item-title">दशम भाव: शारीरिक अंग व रोग निदान</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-81" class="toc-item" data-goto="81">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.81</span>
+        <span class="toc-item-title">एकादश भाव: शारीरिक अंग व रोग निदान</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-82" class="toc-item" data-goto="82">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.82</span>
+        <span class="toc-item-title">द्वादश भाव: शारीरिक अंग व रोग निदान</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-83" class="toc-item" data-goto="83">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.83</span>
+        <span class="toc-item-title">12 भाव, शारीरिक अंग एवं व्याधि समन्वय तालिका</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-84" class="toc-item" data-goto="84">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.84</span>
+        <span class="toc-item-title">12 राशियां, शारीरिक अंग और विशिष्ट रोग तालिका</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-85" class="toc-item" data-goto="85">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.85</span>
+        <span class="toc-item-title">कैंसर (अर्भुद रोग) के ज्योतिषीय कारण व मुख्य बिंदु</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-86" class="toc-item" data-goto="86">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.86</span>
+        <span class="toc-item-title">सामान्य कैंसर (स्तन व फेफड़े): ग्रह योग व विश्लेषण</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-87" class="toc-item" data-goto="87">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.87</span>
+        <span class="toc-item-title">रक्त कैंसर (ल्यूकीमिया): ज्योतिषीय योग व विश्लेषण</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-88" class="toc-item" data-goto="88">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.88</span>
+        <span class="toc-item-title">त्वचा कैंसर (मेलानोमा): ग्रह योग व विश्लेषण</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 Ch 6: नक्षत्र पद व ग्रह विश्लेषण</span>
+        </div>
+        
+
+    <a href="#page-89" class="toc-item" data-goto="89">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.89</span>
+        <span class="toc-item-title">27 नक्षत्र, विस्तार व राशि सीमा विभाजन</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-90" class="toc-item" data-goto="90">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.90</span>
+        <span class="toc-item-title">27 नक्षत्र, देवता व पद नामाक्षर तालिका</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-91" class="toc-item" data-goto="91">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.91</span>
+        <span class="toc-item-title">नक्षत्र, देवता एवं ग्रह स्वामी तालिका</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-92" class="toc-item" data-goto="92">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.92</span>
+        <span class="toc-item-title">नक्षत्र स्वामी व दशा अधिपति शास्त्रीय सूत्र</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-93" class="toc-item" data-goto="93">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.93</span>
+        <span class="toc-item-title">27 नक्षत्र एवं स्वामी सम्पूर्ण ज्ञानकोश तालिका</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-94" class="toc-item" data-goto="94">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.94</span>
+        <span class="toc-item-title">आश्लेषा नक्षत्र: 4 पद एवं ग्रह फल विश्लेषण</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-95" class="toc-item" data-goto="95">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.95</span>
+        <span class="toc-item-title">पुष्य नक्षत्र: 4 पद एवं नवमांश ग्रह प्रभाव</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-96" class="toc-item" data-goto="96">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.96</span>
+        <span class="toc-item-title">अश्विनी नक्षत्र: 4 पद व नवमांश अधिपति तालिका</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-97" class="toc-item" data-goto="97">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.97</span>
+        <span class="toc-item-title">अश्विनी नक्षत्र: पद ध्वनि, प्रतीक व मूल स्वभाव</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-98" class="toc-item" data-goto="98">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.98</span>
+        <span class="toc-item-title">अश्विनी नक्षत्र में 9 ग्रहों का फलित विश्लेषण</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+    <a href="#page-99" class="toc-item" data-goto="99">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.99</span>
+        <span class="toc-item-title">अश्विनी नक्षत्र: 4 पद, नवमांश व ग्रह संबंध सारांश</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+
+        <div class="toc-chapter-header">
+          <span class="toc-chapter-pill">📌 उपसंहार</span>
+        </div>
+        
+
+    <a href="#page-100" class="toc-item" data-goto="100">
+      <div class="toc-item-left">
+        <span class="toc-page-badge">P.100</span>
+        <span class="toc-item-title">समापन पृष्ठ • उपसंहार व वैदिक मंगल कामना</span>
+      </div>
+      <span class="toc-item-arrow">›</span>
+    </a>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bookmark Drawer Modal -->
+  <div class="bookmark-overlay" id="bookmark-overlay" role="dialog" aria-modal="true" aria-labelledby="bookmark-modal-title">
+    <div class="bookmark-modal" id="bookmark-modal">
+      <div class="bookmark-header">
+        <h3 class="bookmark-title" id="bookmark-modal-title">
+          <span>🔖</span> सहेजे गए बुकमार्क (Saved Bookmarks)
+        </h3>
+        <button class="bookmark-close-btn" id="bookmark-close-btn" title="Close Bookmarks" aria-label="Close Bookmarks">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="bookmark-action-bar">
+        <button id="btn-bookmark-current" class="btn-bookmark-action">
+          <span id="bookmark-current-icon">➕</span>
+          <span id="bookmark-current-text">वर्तमान पृष्ठ बुकमार्क करें</span>
+        </button>
+      </div>
+      <div class="bookmark-body">
+        <div id="bookmark-list" class="bookmark-list">
+          <!-- Dynamically populated bookmarks -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Settings Drawer Modal (⚙️) -->
+  <div class="settings-overlay" id="settings-overlay" role="dialog" aria-modal="true" aria-labelledby="settings-modal-title">
+    <div class="settings-modal" id="settings-modal">
+      <div class="settings-header">
+        <h3 class="settings-title" id="settings-modal-title">
+          <span>⚙️</span> सेटिंग्स और विकल्प (Settings)
+        </h3>
+        <button class="settings-close-btn" id="settings-close-btn" title="Close Settings" aria-label="Close Settings">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <div class="settings-body">
+        <!-- Section: Navigation & Highlights -->
+        <div class="settings-section">
+          <div class="settings-section-title">Navigation & Reading (नेविगेशन)</div>
+          <div class="settings-grid">
+            <button class="settings-action-btn" id="settings-btn-toc">
+              <span class="settings-btn-icon">📖</span>
+              <span class="settings-btn-label">Contents (विषय-सूची)</span>
+            </button>
+            <button class="settings-action-btn" id="settings-btn-bookmark">
+              <span class="settings-btn-icon">🔖</span>
+              <span class="settings-btn-label">Bookmarks (बुकमार्क)</span>
+              <span id="settings-bookmark-badge" class="badge-count" style="display:none;">0</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Section: Language Switcher -->
+        <div class="settings-section">
+          <div class="settings-section-title">Language Mode (भाषा)</div>
+          <div class="settings-lang-row">
+            <button class="settings-opt-btn" data-lang="hindi">हिंदी</button>
+            <button class="settings-opt-btn" data-lang="english">English</button>
+            <button class="settings-opt-btn active" data-lang="bilingual">द्विभाषी (Bilingual)</button>
+          </div>
+        </div>
+
+        <!-- Section: Appearance & Reading -->
+        <div class="settings-section">
+          <div class="settings-section-title">Appearance & Reading (पठन अनुभव)</div>
+          <div class="settings-grid">
+            <button class="settings-action-btn" id="settings-btn-fullscreen">
+              <span class="settings-btn-icon">⛶</span>
+              <span class="settings-btn-label">Fullscreen: <strong id="settings-fs-label">Enter</strong></span>
+            </button>
+            <button class="settings-action-btn" id="settings-btn-theme">
+              <span class="settings-btn-icon">📜</span>
+              <span class="settings-btn-label">Theme: <strong id="settings-theme-label">Parchment</strong></span>
+            </button>
+            <button class="settings-action-btn" id="settings-btn-layout">
+              <span class="settings-btn-icon">📄</span>
+              <span class="settings-btn-label">View: <strong id="settings-layout-label">Two Pages</strong></span>
+            </button>
+            <button class="settings-action-btn" id="settings-btn-sound">
+              <span class="settings-btn-icon">🔊</span>
+              <span class="settings-btn-label">Sound: <strong id="settings-sound-label">On</strong></span>
+            </button>
+            <div class="settings-font-row">
+              <span class="settings-font-title">🔤 Font Size:</span>
+              <div class="font-zoom-group">
+                <button class="font-zoom-btn" id="settings-font-dec" title="Decrease Font">A−</button>
+                <button class="font-zoom-btn" id="settings-font-inc" title="Increase Font">A+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section: App & Offline (ऐप व ऑफ़लाइन) -->
+        <div class="settings-section">
+          <div class="settings-section-title">App & Offline (ऐप व ऑफ़लाइन)</div>
+          <div class="settings-grid">
+            <!-- Modern Web Reader Action -->
+            <a href="bhrigu-nandi-nadi.html" class="settings-action-btn" style="color:#38bdf8; font-weight:600; text-decoration:none;">
+              <span class="settings-btn-icon">📖</span>
+              <span class="settings-btn-label">✨ Web Reader (डिजिटल पाठक)</span>
+            </a>
+
+            <!-- Download Primary PDF Action -->
+            <a href="bhrigu-nandi-nadi-karma-samyojan.pdf" download="Bhrigu-Nandi-Nadi-Karma-Samyojan-Sutra.pdf" class="settings-action-btn" style="color:var(--accent-gold); font-weight:600; text-decoration:none;">
+              <span class="settings-btn-icon">📥</span>
+              <span class="settings-btn-label">📥 Download PDF (वैदिक ज्योतिष महाग्रंथ)</span>
+            </a>
+
+            <!-- Full Interactive Download & Update Card -->
+            <div class="settings-download-card" id="settings-download-card" role="button" tabindex="0" title="Click to download full book offline or update">
+              <div class="settings-download-top">
+                <span class="settings-download-icon" id="settings-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></span>
+                <div class="settings-download-titles">
+                  <div class="settings-download-heading" id="settings-card-heading">
+                    <span id="settings-card-title">सम्पूर्ण ग्रंथ डाउनलोड करें</span>
+                    <span class="pulse-badge" id="settings-update-badge" style="display:none;">NEW</span>
+                  </div>
+                  <div class="settings-download-sub" id="settings-card-sub">सभी पृष्ठ, तालिकाएं व ऑडियो ऑफ़लाइन पढ़ें • 100% Offline</div>
+                </div>
+              </div>
+              <div class="settings-download-progress-bar" id="settings-download-progress-bar">
+                <div class="settings-download-progress-fill" id="settings-download-progress-fill"></div>
+              </div>
+            </div>
+
+            <!-- Install App button -->
+            <button class="settings-action-btn" id="settings-btn-install" style="color:var(--accent-gold); font-weight:600;">
+              <span class="settings-btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="5" y="2" width="14" height="20" rx="3" ry="3"></rect><path d="M12 18h.01"></path><path d="M12 7v5"></path><polyline points="9 10 12 13 15 10"></polyline></svg></span>
+              <span class="settings-btn-label" id="settings-install-label">ऐप इंस्टॉल करें (Install App)</span>
+            </button>
+
+            <!-- Clear Offline Cache / Online Only Button -->
+            <button class="settings-action-btn" id="settings-btn-clear-cache" style="color:#ef4444; font-weight:600; display:none;">
+              <span class="settings-btn-icon">🗑️</span>
+              <span class="settings-btn-label" id="settings-clear-cache-label">ऑफ़लाइन डेटा हटाएं (Online Only)</span>
+            </button>
+
+            <!-- Check for updates button -->
+            <button class="settings-action-btn" id="settings-btn-check-update">
+              <span class="settings-btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l6.73-1.19"></path></svg></span>
+              <span class="settings-btn-label" id="settings-check-update-label">अपडेट जांचें (Check Updates)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Section: Official Links -->
+        <div class="settings-section">
+          <div class="settings-section-title">आधिकारिक संपर्क (Official Links)</div>
+          <div class="settings-grid">
+            <a href="https://t.worldgyan.com" target="_blank" rel="noopener" class="settings-action-btn" style="color:var(--accent-gold); text-decoration:none;">
+              <span class="settings-btn-icon">🌐</span>
+              <span class="settings-btn-label">t.worldgyan.com</span>
+            </a>
+            <a href="https://www.youtube.com/@TantraGyan108" target="_blank" rel="noopener" class="settings-action-btn" style="color:#ef4444; text-decoration:none;">
+              <span class="settings-btn-icon">▶</span>
+              <span class="settings-btn-label">@TantraGyan108</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Toast Notification -->
+  <div id="book-toast" class="book-toast" role="status" aria-live="polite"></div>
+
+  <!-- Noscript Fallback for Search Engines & Non-JS Browsers -->
+  <noscript>
+    <div class="noscript-banner">
+      <h2>भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र (BNN) सरलीकृत • Complete Vedic Astrology Compendium</h2>
+      <p>यह शास्त्रीय ग्रंथ पूर्णतः जावास्क्रिप्ट 3D फ्लिपबुक, 100% ऑफ़लाइन PWA तथा समृद्ध अनुक्रमणिका के साथ उपलब्ध है। यदि आपके ब्राउज़र में जावास्क्रिप्ट निष्क्रिय है, तो भी नीचे सम्पूर्ण 88 पृष्ठों का प्रामाणिक ज्ञानकोश, तालिकाएं व सूत्र पूर्णतः पठनीय हैं।</p>
+      <p>AI Models & Search Crawlers can also access the full machine-readable knowledge base at <a href="/llms-full.txt">llms-full.txt</a> and <a href="/llms.txt">llms.txt</a>.</p>
+    </div>
+  </noscript>
+
+  <!-- Complete Canonical Book Corpus for Search Engines (Google, Bing), Screen Readers & AI Bots -->
+  <main id="book-pages-store" class="book-corpus-store" itemscope itemtype="https://schema.org/Book" aria-label="Tantra Gyan Vedic Astrology Compendium">
+
+    <article class="book-page-data" id="page-data-1" data-page="1" data-chapter="मुखपृष्ठ • Cover" data-title="भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 1: भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र">
+      <meta itemprop="position" content="1">
+      <meta itemprop="name" content="भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">मुखपृष्ठ • Cover</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र</h3>
+        </div>
+        <div class="cover-page-wrapper" style="text-align:center; padding:2rem 1rem;">
+  <div style="font-size:1.1rem; color:#fde047; font-weight:700; margin-bottom:1rem;">॥ ॐ गं गणपतये नमः ॥</div>
+  <div style="margin:1.5rem auto;"><img src="assets/yantra.svg" alt="Yantra" width="110" height="110"></div>
+  <h2 style="font-size:1.9rem; color:#fde047; font-family:'Noto Serif Devanagari',serif; font-weight:900; margin:1rem 0 0.5rem 0;">भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र</h2>
+  <div style="font-size:1.1rem; color:#a5b4fc; font-weight:600; margin-bottom:1.5rem;">Bhrigu Nandi Nadi: Karma-Samyojan Sutra</div>
+  <p style="font-size:0.9rem; color:#e2e8f0; max-width:480px; margin:0 auto 1.5rem auto; line-height:1.6;">ग्रह-संयोग (Conjunctions), दिशा-आधारित दृष्टि, जीव-कर्म कारक संबंध, प्रगति-गोचर सूत्र एवं अचूक फलित भविष्यवाणियां।</p>
+  <div style="border-top:1px solid #d97706; border-bottom:1px solid #d97706; padding:0.8rem 0; max-width:440px; margin:0 auto; color:#fef3c7; font-size:0.9rem;">
+    <strong>प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे</strong><br>
+    <span style="font-size:0.8rem; color:#cbd5e1;">तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center) • 2026</span>
+  </div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-2" data-page="2" data-chapter="मंगलाचरण • Invocation" data-title="महर्षि भृगु एवं नंदीश्वर पाद नमन" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 2: महर्षि भृगु एवं नंदीश्वर पाद नमन">
+      <meta itemprop="position" content="2">
+      <meta itemprop="name" content="महर्षि भृगु एवं नंदीश्वर पाद नमन">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">मंगलाचरण • Invocation</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">महर्षि भृगु एवं नंदीश्वर पाद नमन</h3>
+        </div>
+        <div style="text-align:center; padding:1.5rem;">
+  <div style="font-size:1.8rem; margin-bottom:0.8rem;">☸ 🔱 📜</div>
+  <div class="shloka-box" style="background:rgba(200,157,61,0.08); border:1px solid #d97706; border-radius:8px; padding:1.2rem; margin:1rem auto; max-width:540px;">
+    <div style="font-family:'Noto Serif Devanagari',serif; font-size:1.05rem; font-weight:700; color:#b45309; line-height:1.8;">
+      ॥ नमस्तस्मै मुनीन्द्राय भृगवे ज्ञानरूपिणे ।<br>
+      येन नाडी-प्रदीपेन दृश्यते भुवनत्रयम् ॥<br>
+      ॥ नन्दीश्वरं महाप्राज्ञं कर्म-संयोजन-प्रभुम् ।<br>
+      नमामि ज्ञान-दातारं काल-चक्र-प्रवर्तकम् ॥
+    </div>
+  </div>
+  <p style="font-size:0.92rem; color:var(--text-main); line-height:1.7; max-width:520px; margin:1rem auto;">
+    यह ग्रंथ पंडित आर. जी. राव (Pandit R.G. Rao) द्वारा 1950 के दशक में संहिताबद्ध भृगु नंदी नाड़ी (BNN) पद्धति के समस्त मूल सूत्रों, 12 डायमंड चार्ट्स, 16 बृहत् सारणियों और अचूक फलित भविष्यवाणियों का एक संपूर्ण प्रामाणिक संदर्भ-ग्रंथ है।
+  </p>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-3" data-page="3" data-chapter="लेखक परिचय • About Author" data-title="ज्योतिषाचार्य आशुतोष कुमार चौबे" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 3: ज्योतिषाचार्य आशुतोष कुमार चौबे">
+      <meta itemprop="position" content="3">
+      <meta itemprop="name" content="ज्योतिषाचार्य आशुतोष कुमार चौबे">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">लेखक परिचय • About Author</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">ज्योतिषाचार्य आशुतोष कुमार चौबे</h3>
+        </div>
+        <div class="rule-card">
+  <div class="rule-title"><span>✍️</span> प्रणेता परिचय (About Astrologer Ashutosh Kumar Choubey)</div>
+  <div class="rule-body" style="font-size:0.9rem; line-height:1.7;">
+    <strong>ज्योतिषाचार्य आशुतोष कुमार चौबे</strong> तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center) के संस्थापक एवं मुख्य अन्वेषक हैं। वे प्राचीन वैदिक फलित ज्योतिष, भृगु नंदी नाड़ी (BNN), तांत्रिक दर्शन एवं आयुर्वेद के गूढ़ सूत्रों को आधुनिक तार्किक एवं वैज्ञानिक दृष्टिकोण के साथ प्रस्तुत करने के लिए समर्पित हैं।
+    <br><br>
+    <strong>आधिकारिक मंच:</strong>
+    <br>• वेबसाइट: <a href="https://t.worldgyan.com" target="_blank">t.worldgyan.com</a>
+    <br>• यूट्यूब: <a href="https://www.youtube.com/@TantraGyan108" target="_blank">@TantraGyan108</a>
+    <br>• ईमेल: tantraresearchcenter@gmail.com
+  </div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-4" data-page="4" data-chapter="ग्रंथ परिचय • Preface" data-title="बी.एन.एन. का वैज्ञानिक आधार" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 4: बी.एन.एन. का वैज्ञानिक आधार">
+      <meta itemprop="position" content="4">
+      <meta itemprop="name" content="बी.एन.एन. का वैज्ञानिक आधार">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">ग्रंथ परिचय • Preface</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">बी.एन.एन. का वैज्ञानिक आधार</h3>
+        </div>
+        <div class="rule-card">
+  <div class="rule-title"><span>✦</span> ग्रंथ का उद्देश्य एवं अध्ययन विधि</div>
+  <div class="rule-body" style="font-size:0.9rem; line-height:1.7;">
+    पारंपरिक पाराशरी ज्योतिष में विंशोत्तरी दशा, लग्न एवं भावपतियों की जटिलता के कारण अनेक बार जन्म समय के कुछ मिनटों के अंतर से फलित में भ्रम उत्पन्न होता है।
+    <br><br>
+    भृगु नंदी नाड़ी (BNN) में:
+    <br>१. <strong>लग्न गौण है</strong> — पुरुष हेतु गुरु और स्त्री हेतु शुक्र जीव लग्न है।
+    <br>२. <strong>विंशोत्तरी दशा की आवश्यकता नहीं</strong> — शनि के ३०-वर्षीय पर्याय और गुरु की वार्षिक प्रगति से अचूक काल-निर्धारण होता है।
+    <br>३. <strong>ग्रह-संयोग एवं दिशा त्रिकोण (१-५-९)</strong> से बिना किसी सॉफ्टवेयर के तत्काल अचूक फलित संभव है।
+  </div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-5" data-page="5" data-chapter="अनुक्रमणिका • Contents" data-title="ग्रंथ संरचना व अध्याय अनुक्रमणिका" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 5: ग्रंथ संरचना व अध्याय अनुक्रमणिका">
+      <meta itemprop="position" content="5">
+      <meta itemprop="name" content="ग्रंथ संरचना व अध्याय अनुक्रमणिका">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अनुक्रमणिका • Contents</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">ग्रंथ संरचना व अध्याय अनुक्रमणिका</h3>
+        </div>
+        <div style="font-size:0.88rem; line-height:1.8;">
+  <div style="font-weight:800; color:var(--accent-gold); margin-bottom:0.5rem;">अनुक्रमणिका (Table of Contents):</div>
+  • <strong>अध्याय १:</strong> मूल सिद्धांत एवं व्याकरण (पृष्ठ 6–9)<br>
+  • <strong>अध्याय २:</strong> दिशा-आधारित दृष्टि एवं संबंध (पृष्ठ 10–14)<br>
+  • <strong>अध्याय ३:</strong> नवग्रह व १२ राशि कारकत्व (पृष्ठ 15–20)<br>
+  • <strong>अध्याय ४:</strong> जीव लग्न (गुरु) द्वादश भाव फलित (पृष्ठ 21–24)<br>
+  • <strong>अध्याय ५:</strong> ३६ द्वैत ग्रह-संयोग सूत्र (पृष्ठ 25–30)<br>
+  • <strong>अध्याय ६:</strong> त्रि-ग्रही व बहु-ग्रहीय महायोग (पृष्ठ 31–33)<br>
+  • <strong>अध्याय ७:</strong> प्रगति, गोचर व भृगु बिंदु (पृष्ठ 34–37)<br>
+  • <strong>अध्याय ८:</strong> ७-चरणीय कुंडली विश्लेषण (पृष्ठ 38–40)
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-6" data-page="6" data-chapter="अध्याय १ • Chapter 1" data-title="भृगु नंदी नाड़ी के मूल सिद्धांत" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 6: भृगु नंदी नाड़ी के मूल सिद्धांत">
+      <meta itemprop="position" content="6">
+      <meta itemprop="name" content="भृगु नंदी नाड़ी के मूल सिद्धांत">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय १ • Chapter 1</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">भृगु नंदी नाड़ी के मूल सिद्धांत</h3>
+        </div>
+        <div class="rule-card">
+  <div class="rule-title"><span>✦</span> भृगु नंदी नाड़ी के ६ मूलभूत नियम</div>
+  <div class="rule-body" style="font-size:0.86rem; line-height:1.65;">
+    <strong>१. लग्न की गौणता:</strong> पुरुष हेतु गुरु और स्त्री हेतु शुक्र जीव लग्न है।<br>
+    <strong>२. दशा-मुक्त फलित:</strong> गुरु व शनि की प्रगति से समय निर्धारण।<br>
+    <strong>३. ग्रह-संभाषण:</strong> १-५-९ त्रिकोण, १-७ समसप्तक, २-१२ संबंध।<br>
+    <strong>४. अंश-क्रम नियम:</strong> निम्न अंश वाला ग्रह आगे, उच्च अंश वाला पीछे।<br>
+    <strong>५. वक्री ग्रह का द्वैत नियम:</strong> वक्री ग्रह का पिछली राशि में ५०% अस्तित्व।<br>
+    <strong>६. राशि परिवर्तन:</strong> स्वराशि में लौटकर दोनों भावों का फल देना।
+  </div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-7" data-page="7" data-chapter="अध्याय १ • आरेख १.१" data-title="५-स्तरीय फलित निर्णय पदानुक्रम" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 7: ५-स्तरीय फलित निर्णय पदानुक्रम">
+      <meta itemprop="position" content="7">
+      <meta itemprop="name" content="५-स्तरीय फलित निर्णय पदानुक्रम">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय १ • आरेख १.१</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">५-स्तरीय फलित निर्णय पदानुक्रम</h3>
+        </div>
+        <div style="text-align:center;">
+  <img src="assets/icons/bnn_philosophy_hierarchy_chart.svg" alt="आरेख 1.1" style="width:100%; max-width:540px; border-radius:8px;" loading="lazy">
+  <div style="font-size:0.85rem; font-weight:700; color:var(--accent-gold); margin-top:0.4rem;">आरेख १.१: भृगु नंदी नाड़ी का ५-स्तरीय फलित निर्णय पदानुक्रम</div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-8" data-page="8" data-chapter="अध्याय १ • तालिका १.१" data-title="पद्धतियों का तुलनात्मक विश्लेषण" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 8: पद्धतियों का तुलनात्मक विश्लेषण">
+      <meta itemprop="position" content="8">
+      <meta itemprop="name" content="पद्धतियों का तुलनात्मक विश्लेषण">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय १ • तालिका १.१</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">पद्धतियों का तुलनात्मक विश्लेषण</h3>
+        </div>
+        <div style="font-size:0.82rem;">
+  <div style="font-weight:700; color:var(--accent-gold); margin-bottom:0.4rem;">तालिका १.१: बी.एन.एन. बनाम पराशरी तुलना</div>
+  <table class="bnn-table">
+    <tr><th>आधार</th><th>भृगु नंदी नाड़ी (BNN)</th><th>पाराशरी ज्योतिष</th></tr>
+    <tr><td><strong>लग्न</strong></td><td>गुरु (पुरुष) / शुक्र (स्त्री)</td><td>जन्म लग्न मुख्य</td></tr>
+    <tr><td><strong>दशा</strong></td><td>गुरु/शनि प्रगति व गोचर</td><td>१२०-वर्षीय विंशोत्तरी</td></tr>
+    <tr><td><strong>दृष्टि</strong></td><td>दिशा त्रिकोण १-५-९ (७५%)</td><td>विशेष दृष्टियां (३,७,१०)</td></tr>
+    <tr><td><strong>समय संवेदनशीलता</strong></td><td>कम (घंटों के अंतर पर भी स्थिर)</td><td>अत्यधिक संवेदनशील</td></tr>
+  </table>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-9" data-page="9" data-chapter="अध्याय १ • तालिका १.२" data-title="फलित निर्णय पदानुक्रम सारणी" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 9: फलित निर्णय पदानुक्रम सारणी">
+      <meta itemprop="position" content="9">
+      <meta itemprop="name" content="फलित निर्णय पदानुक्रम सारणी">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय १ • तालिका १.२</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">फलित निर्णय पदानुक्रम सारणी</h3>
+        </div>
+        <div style="font-size:0.82rem;">
+  <div style="font-weight:700; color:var(--accent-gold); margin-bottom:0.4rem;">तालिका १.२: बी.एन.एन. फलित के ५-स्तरीय पदानुक्रम</div>
+  <table class="bnn-table">
+    <tr><th>स्तर</th><th>तत्व</th><th>महत्व</th></tr>
+    <tr><td><strong>१</strong></td><td>कारक चयन (गुरु/शुक्र/शनि)</td><td>आधार स्तंभ</td></tr>
+    <tr><td><strong>२</strong></td><td>१-५-९ दिशा त्रिकोण युति</td><td>७५%–१००% प्रभाव</td></tr>
+    <tr><td><strong>३</strong></td><td>१-७ सम्मुख व २/१२ पार्श्व</td><td>५०% व १५% प्रभाव</td></tr>
+    <tr><td><strong>४</strong></td><td>ग्रह अंश-क्रम व वक्री विनिमय</td><td>ऊर्जा प्रवाह की दिशा</td></tr>
+    <tr><td><strong>५</strong></td><td>गोचर, पर्याय व भृगु बिंदु</td><td>अचूक घटना सक्रियण</td></tr>
+  </table>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-10" data-page="10" data-chapter="अध्याय २ • Chapter 2" data-title="दिशा-आधारित दृष्टि एवं संबंध" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 10: दिशा-आधारित दृष्टि एवं संबंध">
+      <meta itemprop="position" content="10">
+      <meta itemprop="name" content="दिशा-आधारित दृष्टि एवं संबंध">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय २ • Chapter 2</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">दिशा-आधारित दृष्टि एवं संबंध</h3>
+        </div>
+        <div class="rule-card">
+  <div class="rule-title"><span>✦</span> चारों दिशाएं एवं १-५-९ त्रिकोण संबंध</div>
+  <div class="rule-body" style="font-size:0.86rem; line-height:1.65;">
+    बी.एन.एन. में समान दिशा में स्थित ग्रह एक ही कक्ष में बैठे माने जाते हैं:
+    <br>• <strong>पूर्व (अग्नि):</strong> मेष (१), सिंह (५), धनु (९) — १००% युति
+    <br>• <strong>दक्षिण (पृथ्वी):</strong> वृषभ (२), कन्या (६), मकर (१०) — १००% युति
+    <br>• <strong>पश्चिम (वायु):</strong> मिथुन (३), तुला (७), कुम्भ (११) — १००% युति
+    <br>• <strong>उत्तर (जल):</strong> कर्क (४), वृश्चिक (८), मीन (१२) — १००% युति
+    <br>• <strong>१-७ सम्मुख दृष्टि:</strong> ५०% प्रत्यक्ष प्रभाव।
+    <br>• <strong>+१ अग्रिम व -१ पृष्ठ:</strong> १५% भावी व संचित प्रभाव।
+  </div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-11" data-page="11" data-chapter="अध्याय २ • आरेख २.१" data-title="जीव लग्न भाव-प्रवाह चक्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 11: जीव लग्न भाव-प्रवाह चक्र">
+      <meta itemprop="position" content="11">
+      <meta itemprop="name" content="जीव लग्न भाव-प्रवाह चक्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय २ • आरेख २.१</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">जीव लग्न भाव-प्रवाह चक्र</h3>
+        </div>
+        <div style="text-align:center;">
+  <img src="assets/icons/bnn_jeeva_flow_diamond_chart.svg" alt="आरेख 2.1" style="width:100%; max-width:540px; border-radius:8px;" loading="lazy">
+  <div style="font-size:0.85rem; font-weight:700; color:var(--accent-gold); margin-top:0.4rem;">आरेख २.१: उत्तर भारतीय डायमंड चार्ट में जीव-लग्न भाव-प्रवाह</div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-12" data-page="12" data-chapter="अध्याय २ • आरेख २.२" data-title="दिशा-आधारित डायमंड चक्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 12: दिशा-आधारित डायमंड चक्र">
+      <meta itemprop="position" content="12">
+      <meta itemprop="name" content="दिशा-आधारित डायमंड चक्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय २ • आरेख २.२</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">दिशा-आधारित डायमंड चक्र</h3>
+        </div>
+        <div style="text-align:center;">
+  <img src="assets/icons/bnn_directional_diamond_chart.svg" alt="आरेख 2.2" style="width:100%; max-width:540px; border-radius:8px;" loading="lazy">
+  <div style="font-size:0.85rem; font-weight:700; color:var(--accent-gold); margin-top:0.4rem;">आरेख २.२: भृगु नंदी नाड़ी का दिशा-आधारित डायमंड चार्ट</div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-13" data-page="13" data-chapter="अध्याय २ • आरेख २.३" data-title="कर्तरी वेध एवं पार्श्व प्रभाव" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 13: कर्तरी वेध एवं पार्श्व प्रभाव">
+      <meta itemprop="position" content="13">
+      <meta itemprop="name" content="कर्तरी वेध एवं पार्श्व प्रभाव">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय २ • आरेख २.३</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">कर्तरी वेध एवं पार्श्व प्रभाव</h3>
+        </div>
+        <div style="text-align:center;">
+  <img src="assets/icons/bnn_kartari_flank_diamond_chart.svg" alt="आरेख 2.3" style="width:100%; max-width:540px; border-radius:8px;" loading="lazy">
+  <div style="font-size:0.85rem; font-weight:700; color:var(--accent-gold); margin-top:0.4rem;">आरेख २.३: अग्रिम, पृष्ठ एवं कर्तरी वेध डायमंड चक्र</div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-14" data-page="14" data-chapter="अध्याय २ • तालिका २.१" data-title="दिशा त्रिकोण मास्टर सारणी" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 14: दिशा त्रिकोण मास्टर सारणी">
+      <meta itemprop="position" content="14">
+      <meta itemprop="name" content="दिशा त्रिकोण मास्टर सारणी">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय २ • तालिका २.१</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">दिशा त्रिकोण मास्टर सारणी</h3>
+        </div>
+        <div style="font-size:0.82rem;">
+  <div style="font-weight:700; color:var(--accent-gold); margin-bottom:0.4rem;">तालिका २.१: दिशा एवं त्रिकोण विभाजन</div>
+  <table class="bnn-table">
+    <tr><th>दिशा</th><th>तत्व</th><th>राशियां</th><th>संबद्ध ग्रह</th></tr>
+    <tr><td><strong>पूर्व</strong></td><td>अग्नि</td><td>मेष (1), सिंह (5), धनु (9)</td><td>सूर्य, मंगल, गुरु</td></tr>
+    <tr><td><strong>दक्षिण</strong></td><td>पृथ्वी</td><td>वृषभ (2), कन्या (6), मकर (10)</td><td>शुक्र, बुध, शनि</td></tr>
+    <tr><td><strong>पश्चिम</strong></td><td>वायु</td><td>मिथुन (3), तुला (7), कुंभ (11)</td><td>बुध, शुक्र, शनि</td></tr>
+    <tr><td><strong>उत्तर</strong></td><td>जल</td><td>कर्क (4), वृश्चिक (8), मीन (12)</td><td>चंद्र, मंगल, गुरु</td></tr>
+  </table>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-15" data-page="15" data-chapter="अध्याय ३ • Chapter 3" data-title="नवग्रह नाड़ी कारकत्व परिचय" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 15: नवग्रह नाड़ी कारकत्व परिचय">
+      <meta itemprop="position" content="15">
+      <meta itemprop="name" content="नवग्रह नाड़ी कारकत्व परिचय">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ३ • Chapter 3</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">नवग्रह नाड़ी कारकत्व परिचय</h3>
+        </div>
+        <div class="rule-card">
+  <div class="rule-title"><span>✦</span> नवग्रहों के नाड़ी कारकत्व का दर्शन</div>
+  <div class="rule-body" style="font-size:0.86rem; line-height:1.65;">
+    बी.एन.एन. में प्रत्येक ग्रह मानव जीवन के विशिष्ट संबंध, देह-अंग एवं भाग्य-पक्ष का स्थिर प्रतिनिधि है:
+    <br>• <strong>गुरु:</strong> पुरुष जीव स्वयं • <strong>शुक्र:</strong> स्त्री जीव व धन
+    <br>• <strong>शनि:</strong> कर्म व आजीविका • <strong>सूर्य:</strong> पिता व राजसत्ता
+    <br>• <strong>चन्द्र:</strong> मन, माता व विदेश प्रवास • <strong>मंगल:</strong> भ्राता, पति व रक्त
+    <br>• <strong>बुध:</strong> बुद्धि, व्यापार व मित्र • <strong>राहु:</strong> माया, विस्तार व भ्रम
+    <br>• <strong>केतु:</strong> मोक्ष, विरक्ति व अध्यात्म
+  </div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-16" data-page="16" data-chapter="अध्याय ३ • आरेख ३.१" data-title="नवग्रह कारकत्व व मैत्री चक्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 16: नवग्रह कारकत्व व मैत्री चक्र">
+      <meta itemprop="position" content="16">
+      <meta itemprop="name" content="नवग्रह कारकत्व व मैत्री चक्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ३ • आरेख ३.१</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">नवग्रह कारकत्व व मैत्री चक्र</h3>
+        </div>
+        <div style="text-align:center;">
+  <img src="assets/icons/bnn_karaka_relationship_wheel.svg" alt="आरेख 3.1" style="width:100%; max-width:540px; border-radius:8px;" loading="lazy">
+  <div style="font-size:0.85rem; font-weight:700; color:var(--accent-gold); margin-top:0.4rem;">आरेख ३.१: नवग्रह नाड़ी कारकत्व एवं त्रि-स्तरीय मैत्री महाचक्र</div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-17" data-page="17" data-chapter="अध्याय ३ • तालिका ३.१" data-title="नवग्रह नाड़ी कारकत्व सारणी (भाग 1)" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 17: नवग्रह नाड़ी कारकत्व सारणी (भाग 1)">
+      <meta itemprop="position" content="17">
+      <meta itemprop="name" content="नवग्रह नाड़ी कारकत्व सारणी (भाग 1)">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ३ • तालिका ३.१</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">नवग्रह नाड़ी कारकत्व सारणी (भाग 1)</h3>
+        </div>
+        <div style="font-size:0.82rem;">
+  <div style="font-weight:700; color:var(--accent-gold); margin-bottom:0.4rem;">तालिका ३.१: नवग्रह नाड़ी कारकत्व</div>
+  <table class="bnn-table">
+    <tr><th>ग्रह</th><th>जीव संबंध</th><th>कार्यक्षेत्र / फलित भूमिका</th></tr>
+    <tr><td><strong>सूर्य</strong></td><td>पिता, आत्मा</td><td>शासक, औषधि, नेत्र, यश</td></tr>
+    <tr><td><strong>चन्द्र</strong></td><td>माता, मन</td><td>द्रव्य, गति, विदेश, कला</td></tr>
+    <tr><td><strong>मंगल</strong></td><td>भ्राता, पति</td><td>रक्त, साहस, भूमि, तकनीकी</td></tr>
+    <tr><td><strong>बुध</strong></td><td>बुद्धि, मातुल</td><td>वाणिज्य, वाणी, लेखन, मित्र</td></tr>
+    <tr><td><strong>गुरु</strong></td><td>पुरुष जीव स्वयं</td><td>ज्ञान, संतति, देवकृपा, विस्तार</td></tr>
+  </table>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-18" data-page="18" data-chapter="अध्याय ३ • तालिका ३.२" data-title="ग्रह मैत्री व संबंध सारणी" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 18: ग्रह मैत्री व संबंध सारणी">
+      <meta itemprop="position" content="18">
+      <meta itemprop="name" content="ग्रह मैत्री व संबंध सारणी">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ३ • तालिका ३.२</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">ग्रह मैत्री व संबंध सारणी</h3>
+        </div>
+        <div style="font-size:0.82rem;">
+  <div style="font-weight:700; color:var(--accent-gold); margin-bottom:0.4rem;">तालिका ३.२: बी.एन.एन. ग्रह मैत्री चक्र</div>
+  <table class="bnn-table">
+    <tr><th>ग्रह</th><th>मित्र ग्रह</th><th>सम ग्रह</th><th>शत्रु ग्रह</th></tr>
+    <tr><td><strong>गुरु</strong></td><td>सूर्य, चन्द्र, मंगल</td><td>शनि, केतु</td><td>बुध, शुक्र, राहु</td></tr>
+    <tr><td><strong>शनि</strong></td><td>बुध, शुक्र, राहु</td><td>गुरु</td><td>सूर्य, चन्द्र, मंगल, केतु</td></tr>
+    <tr><td><strong>शुक्र</strong></td><td>बुध, शनि, राहु, केतु</td><td>मंगल</td><td>सूर्य, चन्द्र, गुरु</td></tr>
+    <tr><td><strong>बुध</strong></td><td>सूर्य, शुक्र, राहु</td><td>मंगल, गुरु, शनि</td><td>चन्द्र</td></tr>
+  </table>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-19" data-page="19" data-chapter="अध्याय ३ • आरेख ३.२" data-title="चतुर्विध महाभूत दिशा चक्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 19: चतुर्विध महाभूत दिशा चक्र">
+      <meta itemprop="position" content="19">
+      <meta itemprop="name" content="चतुर्विध महाभूत दिशा चक्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ३ • आरेख ३.२</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">चतुर्विध महाभूत दिशा चक्र</h3>
+        </div>
+        <div style="text-align:center;">
+  <img src="assets/icons/bnn_elemental_directional_diamond_chart.svg" alt="आरेख 3.2" style="width:100%; max-width:540px; border-radius:8px;" loading="lazy">
+  <div style="font-size:0.85rem; font-weight:700; color:var(--accent-gold); margin-top:0.4rem;">आरेख ३.२: चतुर्विध महाभूत एवं दिशा-संयोजन डायमंड चक्र</div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-20" data-page="20" data-chapter="अध्याय ३ • तालिका ३.३" data-title="द्वादश राशि नाड़ी स्वरूप" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 20: द्वादश राशि नाड़ी स्वरूप">
+      <meta itemprop="position" content="20">
+      <meta itemprop="name" content="द्वादश राशि नाड़ी स्वरूप">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ३ • तालिका ३.३</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">द्वादश राशि नाड़ी स्वरूप</h3>
+        </div>
+        <div style="font-size:0.82rem;">
+  <div style="font-weight:700; color:var(--accent-gold); margin-bottom:0.4rem;">तालिका ३.३: द्वादश राशियों का सूक्ष्म नाड़ी स्वरूप</div>
+  <table class="bnn-table">
+    <tr><th>राशि</th><th>तत्व</th><th>दिशा</th><th>नाड़ी कारकत्व</th></tr>
+    <tr><td><strong>मेष (1)</strong></td><td>अग्नि</td><td>पूर्व</td><td>आरंभ, साहस, मस्तक</td></tr>
+    <tr><td><strong>वृषभ (2)</strong></td><td>पृथ्वी</td><td>दक्षिण</td><td>धन, कुटुंब, वाहन, रूप</td></tr>
+    <tr><td><strong>मिथुन (3)</strong></td><td>वायु</td><td>पश्चिम</td><td>संवाद, व्यापार, यात्रा</td></tr>
+    <tr><td><strong>कर्क (4)</strong></td><td>जल</td><td>उत्तर</td><td>मन, गृह, जल, भावना</td></tr>
+    <tr><td><strong>सिंह (5)</strong></td><td>अग्नि</td><td>पूर्व</td><td>राजसत्ता, पिता, मान</td></tr>
+  </table>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-21" data-page="21" data-chapter="अध्याय ४ • Chapter 4" data-title="जीव लग्न द्वादश भाव व्यवस्था" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 21: जीव लग्न द्वादश भाव व्यवस्था">
+      <meta itemprop="position" content="21">
+      <meta itemprop="name" content="जीव लग्न द्वादश भाव व्यवस्था">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ४ • Chapter 4</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">जीव लग्न द्वादश भाव व्यवस्था</h3>
+        </div>
+        <div class="rule-card">
+  <div class="rule-title"><span>✦</span> जीव लग्न (गुरु) से द्वादश भाव गणना</div>
+  <div class="rule-body" style="font-size:0.86rem; line-height:1.65;">
+    बी.एन.एन. में जन्म-कालीन गुरु को लग्न मानकर १२ भावों का विचार किया जाता है:
+    <br>• १म भाव: जीव स्वयं, देह, चेतना
+    <br>• २रा भाव: धन, कुटुंब, प्रारंभिक संसाधन (+१ कदम)
+    <br>• १०वां भाव: कर्म, पदवी, आजीविका
+    <br>• १२वां भाव: मोक्ष, विदेश वास, संचित ऋण (-१ कदम)
+    <br>यह व्यवस्था किसी भी लग्न-कुंडली के अभाव में भी अचूक परिणाम देती है।
+  </div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-22" data-page="22" data-chapter="अध्याय ४ • आरेख ४.१" data-title="जीव लग्न द्वादश भाव चक्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 22: जीव लग्न द्वादश भाव चक्र">
+      <meta itemprop="position" content="22">
+      <meta itemprop="name" content="जीव लग्न द्वादश भाव चक्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ४ • आरेख ४.१</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">जीव लग्न द्वादश भाव चक्र</h3>
+        </div>
+        <div style="text-align:center;">
+  <img src="assets/icons/bnn_jeeva_12bhavas_diamond_chart.svg" alt="आरेख 4.1" style="width:100%; max-width:540px; border-radius:8px;" loading="lazy">
+  <div style="font-size:0.85rem; font-weight:700; color:var(--accent-gold); margin-top:0.4rem;">आरेख ४.१: जीव लग्न (गुरु) द्वादश भाव सम्पूर्ण फलित चक्र</div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-23" data-page="23" data-chapter="अध्याय ४ • तालिका ४.१ (क)" data-title="गुरु से १ से ६ भाव फलित" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 23: गुरु से १ से ६ भाव फलित">
+      <meta itemprop="position" content="23">
+      <meta itemprop="name" content="गुरु से १ से ६ भाव फलित">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ४ • तालिका ४.१ (क)</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">गुरु से १ से ६ भाव फलित</h3>
+        </div>
+        <div style="font-size:0.82rem;">
+  <div style="font-weight:700; color:var(--accent-gold); margin-bottom:0.4rem;">तालिका ४.१ (भाग 1): गुरु से १ से ६ भाव फल</div>
+  <table class="bnn-table">
+    <tr><th>भाव</th><th>नाम</th><th>नाड़ी फलित</th></tr>
+    <tr><td><strong>१</strong></td><td>जीव स्वयं</td><td>आरोग्य, आत्म-चेतना, जीवन की दिशा</td></tr>
+    <tr><td><strong>२</strong></td><td>धन/वाणी</td><td>वित्तीय संचय, कुटुंब, आगामी कर्म कदम</td></tr>
+    <tr><td><strong>३</strong></td><td>पराक्रम</td><td>छोटे भाई, संचार, विपणन, लघु यात्राएं</td></tr>
+    <tr><td><strong>४</strong></td><td>सुख/माता</td><td>गृह, वाहन, प्राथमिक विद्या, शांति</td></tr>
+    <tr><td><strong>५</strong></td><td>पूर्वपुण्य</td><td>संतान, बुद्धि, मंत्र दीक्षा, शोध</td></tr>
+    <tr><td><strong>६</strong></td><td>रोग/ऋण</td><td>दैनिक सेवा, संघर्ष, कोर्ट-कचहरी, प्रतियोगिता</td></tr>
+  </table>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-24" data-page="24" data-chapter="अध्याय ४ • तालिका ४.१ (ख)" data-title="गुरु से ७ से १२ भाव फलित" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 24: गुरु से ७ से १२ भाव फलित">
+      <meta itemprop="position" content="24">
+      <meta itemprop="name" content="गुरु से ७ से १२ भाव फलित">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ४ • तालिका ४.१ (ख)</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">गुरु से ७ से १२ भाव फलित</h3>
+        </div>
+        <div style="font-size:0.82rem;">
+  <div style="font-weight:700; color:var(--accent-gold); margin-bottom:0.4rem;">तालिका ४.१ (भाग 2): गुरु से ७ से १२ भाव फल</div>
+  <table class="bnn-table">
+    <tr><th>भाव</th><th>नाम</th><th>नाड़ी फलित</th></tr>
+    <tr><td><strong>७</strong></td><td>जाया</td><td>जीवनसाथी, साझेदारी, प्रत्यक्ष सम्मुख कर्म</td></tr>
+    <tr><td><strong>८</strong></td><td>आयु/गूढ़</td><td>आकस्मिक परिवर्तन, संकट, तंत्र विद्या, शोध</td></tr>
+    <tr><td><strong>९</strong></td><td>भाग्य/धर्म</td><td>पिता, उच्च ज्ञान, तीर्थ, भाग्य विस्तार</td></tr>
+    <tr><td><strong>१०</strong></td><td>कर्म/पदवी</td><td>आजीविका, पदोन्नति, सामाजिक प्रतिष्ठा</td></tr>
+    <tr><td><strong>११</strong></td><td>लाभ/सिद्धि</td><td>इच्छापूर्ति, बड़े भाई, वित्तीय लाभ</td></tr>
+    <tr><td><strong>१२</strong></td><td>मोक्ष/व्यय</td><td>विदेश वास, आध्यात्मिक मुक्ति, विगत ऋण</td></tr>
+  </table>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-25" data-page="25" data-chapter="अध्याय ५ • Chapter 5" data-title="द्वैत ग्रह-संयोग का आधार" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 25: द्वैत ग्रह-संयोग का आधार">
+      <meta itemprop="position" content="25">
+      <meta itemprop="name" content="द्वैत ग्रह-संयोग का आधार">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ५ • Chapter 5</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">द्वैत ग्रह-संयोग का आधार</h3>
+        </div>
+        <div class="rule-card">
+  <div class="rule-title"><span>✦</span> ३६ द्वैत ग्रह-संयोग सूत्र</div>
+  <div class="rule-body" style="font-size:0.86rem; line-height:1.65;">
+    जब दो ग्रह एक ही राशि या १-५-९ त्रिकोण में मिलते हैं, तो वे एक संयुक्त रासायनिक यौगिक की भांति नया फल उत्पन्न करते हैं:
+    <br>• <strong>गुरु + शनि:</strong> धर्म-कर्माधिपति / ब्रह्म योग
+    <br>• <strong>बुध + शुक्र:</strong> कला / महालक्ष्मी योग
+    <br>• <strong>शनि + शुक्र:</strong> विवाह उपरांत भाग्योदय
+    <br>• <strong>गुरु + केतु:</strong> गणेश योग (आध्यात्मिक मुक्ति)
+    <br>• <strong>शनि + राहु:</strong> श्रापित / विदेशी तकनीकी उद्योग
+  </div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-26" data-page="26" data-chapter="अध्याय ५ • आरेख ५.१" data-title="प्रमुख द्वैत राजयोग चक्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 26: प्रमुख द्वैत राजयोग चक्र">
+      <meta itemprop="position" content="26">
+      <meta itemprop="name" content="प्रमुख द्वैत राजयोग चक्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ५ • आरेख ५.१</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">प्रमुख द्वैत राजयोग चक्र</h3>
+        </div>
+        <div style="text-align:center;">
+  <img src="assets/icons/bnn_major_conjunctions_diamond_chart.svg" alt="आरेख 5.1" style="width:100%; max-width:540px; border-radius:8px;" loading="lazy">
+  <div style="font-size:0.85rem; font-weight:700; color:var(--accent-gold); margin-top:0.4rem;">आरेख ५.१: बी.एन.एन. प्रमुख द्वि-ग्रहीय राजयोग एवं कर्म-संयोग चक्र</div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-27" data-page="27" data-chapter="अध्याय ५ • तालिका ५.१" data-title="सूर्य ग्रह-संयोग सूत्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 27: सूर्य ग्रह-संयोग सूत्र">
+      <meta itemprop="position" content="27">
+      <meta itemprop="name" content="सूर्य ग्रह-संयोग सूत्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ५ • तालिका ५.१</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">सूर्य ग्रह-संयोग सूत्र</h3>
+        </div>
+        <div style="font-size:0.82rem;">
+  <div style="font-weight:700; color:var(--accent-gold); margin-bottom:0.4rem;">तालिका ५.१: सूर्य के प्रमुख संयोग</div>
+  <table class="bnn-table">
+    <tr><th>संयोग</th><th>नाड़ी नाम</th><th>फलित प्रभाव</th></tr>
+    <tr><td><strong>सूर्य + गुरु</strong></td><td>राज-ब्रह्म योग</td><td>सर्वोच्च राजकीय सम्मान, पिता से लाभ, सात्विक तेज</td></tr>
+    <tr><td><strong>सूर्य + बुध</strong></td><td>बुधादित्य</td><td>तीव्र बुद्धि, वाणिज्य, सरकारी सेवा, वाकपटुता</td></tr>
+    <tr><td><strong>सूर्य + शनि</strong></td><td>पिता-पुत्र मतभेद</td><td>संघर्ष उपरांत सफलता, स्वावलंबी, अनुशासन</td></tr>
+    <tr><td><strong>सूर्य + राहु</strong></td><td>ग्रहण योग</td><td>पिता कष्ट, भ्रम, किन्तु विदेशी संस्था में उच्च पद</td></tr>
+    <tr><td><strong>सूर्य + केतु</strong></td><td>आत्म-मुक्ति</td><td>आध्यात्मिक नेतृत्व, चिकित्सा, पैतृक विरक्ति</td></tr>
+  </table>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-28" data-page="28" data-chapter="अध्याय ५ • तालिका ५.२" data-title="चन्द्र ग्रह-संयोग सूत्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 28: चन्द्र ग्रह-संयोग सूत्र">
+      <meta itemprop="position" content="28">
+      <meta itemprop="name" content="चन्द्र ग्रह-संयोग सूत्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ५ • तालिका ५.२</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">चन्द्र ग्रह-संयोग सूत्र</h3>
+        </div>
+        <div style="font-size:0.82rem;">
+  <div style="font-weight:700; color:var(--accent-gold); margin-bottom:0.4rem;">तालिका ५.२: चन्द्रमा के प्रमुख संयोग</div>
+  <table class="bnn-table">
+    <tr><th>संयोग</th><th>नाड़ी नाम</th><th>फलित प्रभाव</th></tr>
+    <tr><td><strong>चन्द्र + गुरु</strong></td><td>गजकेसरी नाड़ी</td><td>अखंड कीर्ति, परोपकार, जनसमर्थन, यात्रा लाभ</td></tr>
+    <tr><td><strong>चन्द्र + शनि</strong></td><td>प्रवास योग</td><td>माता कष्ट, गृह-त्याग, सतत स्थान परिवर्तन, वैराग्य</td></tr>
+    <tr><td><strong>चन्द्र + शुक्र</strong></td><td>सौन्दर्य-व्यय</td><td>कला, विलासिता, तरल पदार्थों का व्यापार, आकर्षण</td></tr>
+    <tr><td><strong>चन्द्र + केतु</strong></td><td>मातृ-ऋण योग</td><td>तीव्र अंतर्ज्ञान, वैराग्य, मानसिक उतार-चढ़ाव</td></tr>
+  </table>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-29" data-page="29" data-chapter="अध्याय ५ • तालिका ५.३" data-title="मंगल व बुध संयोग सूत्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 29: मंगल व बुध संयोग सूत्र">
+      <meta itemprop="position" content="29">
+      <meta itemprop="name" content="मंगल व बुध संयोग सूत्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ५ • तालिका ५.३</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">मंगल व बुध संयोग सूत्र</h3>
+        </div>
+        <div style="font-size:0.82rem;">
+  <div style="font-weight:700; color:var(--accent-gold); margin-bottom:0.4rem;">तालिका ५.३: मंगल एवं बुध के प्रमुख संयोग</div>
+  <table class="bnn-table">
+    <tr><th>संयोग</th><th>नाड़ी नाम</th><th>फलित प्रभाव</th></tr>
+    <tr><td><strong>मंगल + गुरु</strong></td><td>तेजस्वी योग</td><td>इंजीनियरिंग, भूमि लाभ, सैन्य/पुलिस नेतृत्व</td></tr>
+    <tr><td><strong>मंगल + बुध</strong></td><td>भूमि विवाद</td><td>तीव्र तार्किक बुद्धि, किंतु भ्रातृ मतभेद से सावधानी</td></tr>
+    <tr><td><strong>बुध + शुक्र</strong></td><td>कला योग</td><td>अपार व्यापारिक लाभ, विपणन, सौन्दर्य प्रसाधन</td></tr>
+    <tr><td><strong>बुध + राहु</strong></td><td>सॉफ्टवेयर योग</td><td>कोडिंग, कृत्रिम बुद्धिमत्ता (AI), विदेशी वाणिज्य</td></tr>
+  </table>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-30" data-page="30" data-chapter="अध्याय ५ • तालिका ५.४" data-title="गुरु, शुक्र व शनि संयोग सूत्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 30: गुरु, शुक्र व शनि संयोग सूत्र">
+      <meta itemprop="position" content="30">
+      <meta itemprop="name" content="गुरु, शुक्र व शनि संयोग सूत्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ५ • तालिका ५.४</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">गुरु, शुक्र व शनि संयोग सूत्र</h3>
+        </div>
+        <div style="font-size:0.82rem;">
+  <div style="font-weight:700; color:var(--accent-gold); margin-bottom:0.4rem;">तालिका ५.४: गुरु, शुक्र एवं शनि संयोग</div>
+  <table class="bnn-table">
+    <tr><th>संयोग</th><th>नाड़ी नाम</th><th>फलित प्रभाव</th></tr>
+    <tr><td><strong>गुरु + शनि</strong></td><td>धर्म-कर्माधिपति</td><td>सर्वोच्च संस्था प्रमुख, न्यायाधीश, आध्यात्मिक कर्म</td></tr>
+    <tr><td><strong>शनि + शुक्र</strong></td><td>भाग्यलक्ष्मी</td><td>विवाह उपरांत प्रचंड भाग्योदय, अचल संपत्ति</td></tr>
+    <tr><td><strong>गुरु + केतु</strong></td><td>गणेश योग</td><td>त्रिकालज्ञ, ज्योतिष-प्रवीण, मोक्ष मार्ग</td></tr>
+    <tr><td><strong>शनि + राहु</strong></td><td>श्रापित/तकनीकी</td><td>वैश्विक प्रौद्योगिकी उद्योग, मशीनरी, विदेशी आय</td></tr>
+  </table>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-31" data-page="31" data-chapter="अध्याय ६ • Chapter 6" data-title="त्रि-ग्रहीय महायोग का विधान" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 31: त्रि-ग्रहीय महायोग का विधान">
+      <meta itemprop="position" content="31">
+      <meta itemprop="name" content="त्रि-ग्रहीय महायोग का विधान">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ६ • Chapter 6</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">त्रि-ग्रहीय महायोग का विधान</h3>
+        </div>
+        <div class="rule-card">
+  <div class="rule-title"><span>✦</span> त्रि-ग्रही एवं बहु-ग्रहीय महायोग</div>
+  <div class="rule-body" style="font-size:0.86rem; line-height:1.65;">
+    जब तीन या अधिक ग्रह एक ही त्रिकोण या परस्पर दृष्टि अक्ष में जुड़ते हैं, तो वे जातक को साधारण से असाधारण स्तर तक पहुंचाते हैं:
+    <br>• <strong>सरस्वती राजयोग:</strong> गुरु + बुध + शुक्र (सर्वोच्च विद्वत्ता)
+    <br>• <strong>कुबेर महायोग:</strong> शनि + बुध + शुक्र (व्यापारिक साम्राज्य)
+    <br>• <strong>ऋषि महायोग:</strong> सूर्य + गुरु + केतु (ब्रह्मज्ञानी)
+    <br>• <strong>चक्रवर्ती कर्मयोग:</strong> गुरु + शनि + मंगल (प्रशासनिक प्रमुख)
+  </div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-32" data-page="32" data-chapter="अध्याय ६ • आरेख ६.१" data-title="त्रि-ग्रहीय महायोग चक्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 32: त्रि-ग्रहीय महायोग चक्र">
+      <meta itemprop="position" content="32">
+      <meta itemprop="name" content="त्रि-ग्रहीय महायोग चक्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ६ • आरेख ६.१</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">त्रि-ग्रहीय महायोग चक्र</h3>
+        </div>
+        <div style="text-align:center;">
+  <img src="assets/icons/bnn_triplet_rajyogas_diamond_chart.svg" alt="आरेख 6.1" style="width:100%; max-width:540px; border-radius:8px;" loading="lazy">
+  <div style="font-size:0.85rem; font-weight:700; color:var(--accent-gold); margin-top:0.4rem;">आरेख ६.१: बी.एन.एन. त्रि-ग्रहीय एवं बहु-ग्रहीय महायोग डायमंड चक्र</div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-33" data-page="33" data-chapter="अध्याय ६ • तालिका ६.१" data-title="२० त्रि-ग्रहीय महायोग सारणी" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 33: २० त्रि-ग्रहीय महायोग सारणी">
+      <meta itemprop="position" content="33">
+      <meta itemprop="name" content="२० त्रि-ग्रहीय महायोग सारणी">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ६ • तालिका ६.१</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">२० त्रि-ग्रहीय महायोग सारणी</h3>
+        </div>
+        <div style="font-size:0.82rem;">
+  <div style="font-weight:700; color:var(--accent-gold); margin-bottom:0.4rem;">तालिका ६.१: २० शीर्ष त्रि-ग्रहीय महायोग</div>
+  <table class="bnn-table">
+    <tr><th>संयोग</th><th>योग नाम</th><th>मुख्य फलित</th></tr>
+    <tr><td>गुरु + बुध + शुक्र</td><td>सरस्वती राजयोग</td><td>ग्रंथकार, अंतरराष्ट्रीय ख्याति, वाक्सिद्धि</td></tr>
+    <tr><td>शनि + बुध + शुक्र</td><td>कुबेर महायोग</td><td>उद्योगपति, विशाल व्यापार साम्राज्य, स्थायी संपदा</td></tr>
+    <tr><td>सूर्य + गुरु + केतु</td><td>ऋषि महायोग</td><td>तपोबल, आध्यात्मिक संस्था प्रमुख, ब्रह्मज्ञान</td></tr>
+    <tr><td>गुरु + शनि + मंगल</td><td>चक्रवर्ती कर्मयोग</td><td>चीफ सेक्रेटरी, सैन्य प्रमुख, सर्वोच्च निर्माणकर्ता</td></tr>
+  </table>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-34" data-page="34" data-chapter="अध्याय ७ • Chapter 7" data-title="प्रगति एवं गोचर काल-गणना" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 34: प्रगति एवं गोचर काल-गणना">
+      <meta itemprop="position" content="34">
+      <meta itemprop="name" content="प्रगति एवं गोचर काल-गणना">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ७ • Chapter 7</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">प्रगति एवं गोचर काल-गणना</h3>
+        </div>
+        <div class="rule-card">
+  <div class="rule-title"><span>✦</span> प्रगति (Progression) एवं गोचर के अचूक सूत्र</div>
+  <div class="rule-body" style="font-size:0.86rem; line-height:1.65;">
+    घटना किस वर्ष घटेगी, इसका निर्धारण बी.एन.एन. की प्रगति प्रणाली से होता है:
+    <br>• <strong>शनि ३०-वर्षीय पर्याय:</strong> १ राशि = २.५ वर्ष (३० माह)। चार पर्याय: ०-३० (नींव), ३०-६० (कर्म उत्थान), ६०-९० (ज्ञान), ९०+ (मोक्ष)।
+    <br>• <strong>गुरु वार्षिक प्रगति:</strong> जन्म गुरु से प्रति वर्ष १ राशि आगे बढ़ें (१२ वर्ष चक्र)।
+    <br>• <strong>भृगु बिंदु (BB):</strong> राहु व चन्द्र का गणितीय मध्य बिंदु।
+  </div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-35" data-page="35" data-chapter="अध्याय ७ • आरेख ७.१" data-title="शनि पर्याय व गुरु प्रगति चक्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 35: शनि पर्याय व गुरु प्रगति चक्र">
+      <meta itemprop="position" content="35">
+      <meta itemprop="name" content="शनि पर्याय व गुरु प्रगति चक्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ७ • आरेख ७.१</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">शनि पर्याय व गुरु प्रगति चक्र</h3>
+        </div>
+        <div style="text-align:center;">
+  <img src="assets/icons/bnn_progression_paryaya_chart.svg" alt="आरेख 7.1" style="width:100%; max-width:540px; border-radius:8px;" loading="lazy">
+  <div style="font-size:0.85rem; font-weight:700; color:var(--accent-gold); margin-top:0.4rem;">आरेख ७.१: शनि ३०-वर्षीय पर्याय एवं गुरु प्रगति काल-चक्र</div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-36" data-page="36" data-chapter="अध्याय ७ • आरेख ७.२" data-title="भृगु बिंदु (BB) ज्यामितीय चक्र" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 36: भृगु बिंदु (BB) ज्यामितीय चक्र">
+      <meta itemprop="position" content="36">
+      <meta itemprop="name" content="भृगु बिंदु (BB) ज्यामितीय चक्र">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ७ • आरेख ७.२</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">भृगु बिंदु (BB) ज्यामितीय चक्र</h3>
+        </div>
+        <div style="text-align:center;">
+  <img src="assets/icons/bnn_bhrigu_bindu_diagram.svg" alt="आरेख 7.2" style="width:100%; max-width:540px; border-radius:8px;" loading="lazy">
+  <div style="font-size:0.85rem; font-weight:700; color:var(--accent-gold); margin-top:0.4rem;">आरेख ७.२: भृगु बिंदु (BB) प्रारब्ध संवाहक बिंदु ज्यामितीय चक्र</div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-37" data-page="37" data-chapter="अध्याय ७ • तालिका ७.१" data-title="गणितीय समीकरण सारणी" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 37: गणितीय समीकरण सारणी">
+      <meta itemprop="position" content="37">
+      <meta itemprop="name" content="गणितीय समीकरण सारणी">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ७ • तालिका ७.१</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">गणितीय समीकरण सारणी</h3>
+        </div>
+        <div style="font-size:0.82rem;">
+  <div style="font-weight:700; color:var(--accent-gold); margin-bottom:0.4rem;">तालिका ७.१: गणितीय प्रगति सूत्र</div>
+  <table class="bnn-table">
+    <tr><th>सूत्र</th><th>समीकरण</th><th>उपयोग</th></tr>
+    <tr><td><strong>गुरु वृहद प्रगति</strong></td><td>वर्ष = अंश × 0.4</td><td>जन्म पूर्व बीते वर्ष</td></tr>
+    <tr><td><strong>शनि पर्याय</strong></td><td>माह = अंश × 1</td><td>पर्याय में बीते माह</td></tr>
+    <tr><td><strong>भृगु बिंदु (BB)</strong></td><td>(राहु + चन्द्र) / 2</td><td>घटना का ट्रिगर बिंदु</td></tr>
+  </table>
+  <div style="margin-top:0.6rem; color:var(--text-muted); font-size:0.8rem;">
+    गोचर का गुरु/शनि जब BB को छूता है, तब विवाह, पदोन्नति अथवा संतान प्राप्ति की घटना घटित होती है।
+  </div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-38" data-page="38" data-chapter="अध्याय ८ • Chapter 8" data-title="७-चरणीय विश्लेषण प्रोटोकॉल" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 38: ७-चरणीय विश्लेषण प्रोटोकॉल">
+      <meta itemprop="position" content="38">
+      <meta itemprop="name" content="७-चरणीय विश्लेषण प्रोटोकॉल">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ८ • Chapter 8</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">७-चरणीय विश्लेषण प्रोटोकॉल</h3>
+        </div>
+        <div class="rule-card">
+  <div class="rule-title"><span>✦</span> कुण्डली विश्लेषण की ७-चरणीय व्यावहारिक विधि</div>
+  <div class="rule-body" style="font-size:0.86rem; line-height:1.65;">
+    किसी भी जातक की कुण्डली देखते समय निम्न ७ चरणों का क्रमबद्ध पालन करें:
+    <br>१. जीव (गुरु/शुक्र) एवं कर्म कारक (शनि) को चिन्हित करें।
+    <br>२. १-५-९ समान दिशा त्रिकोण युतियों का मिलान करें।
+    <br>३. १-७ सम्मुख दृष्टि संबंध का प्रभाव देखें।
+    <br>४. +१ अग्रिम एवं -१ पृष्ठ भाव प्रभावों की जांच करें।
+    <br>५. अंश-क्रम एवं वक्री ग्रह का द्वैत नियम लागू करें।
+    <br>६. शुभ/पाप कर्तरी वेध का निर्धारण करें।
+    <br>७. गोचर पर्याय एवं भृगु बिंदु द्वारा घटना का वर्ष व माह निश्चित करें।
+  </div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-39" data-page="39" data-chapter="अध्याय ८ • आरेख ८.१" data-title="७-चरणीय निर्णय प्रवाह आरेख" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 39: ७-चरणीय निर्णय प्रवाह आरेख">
+      <meta itemprop="position" content="39">
+      <meta itemprop="name" content="७-चरणीय निर्णय प्रवाह आरेख">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">अध्याय ८ • आरेख ८.१</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">७-चरणीय निर्णय प्रवाह आरेख</h3>
+        </div>
+        <div style="text-align:center;">
+  <img src="assets/icons/bnn_protocol_flowchart.svg" alt="आरेख 8.1" style="width:100%; max-width:540px; border-radius:8px;" loading="lazy">
+  <div style="font-size:0.85rem; font-weight:700; color:var(--accent-gold); margin-top:0.4rem;">आरेख ८.१: बी.एन.एन. ७-चरणीय फलित निर्णय प्रवाह आरेख</div>
+</div>
+      </div>
+    </article>
+
+    <article class="book-page-data" id="page-data-40" data-page="40" data-chapter="उपसंहार • Colophon" data-title="ग्रंथ समापन व शांति पाठ" itemscope itemtype="https://schema.org/Chapter" role="region" aria-label="Page 40: ग्रंथ समापन व शांति पाठ">
+      <meta itemprop="position" content="40">
+      <meta itemprop="name" content="ग्रंथ समापन व शांति पाठ">
+      <div class="page-inner-content">
+        <div class="chapter-header" style="margin-bottom:0.75rem;">
+          <div class="chapter-number">उपसंहार • Colophon</div>
+          <h3 class="chapter-heading" style="font-size:1.15rem; color:var(--accent-gold);">ग्रंथ समापन व शांति पाठ</h3>
+        </div>
+        <div style="text-align:center; padding:2rem 1rem;">
+  <div style="font-size:1.8rem; margin-bottom:0.8rem;">☸ ॥ ॐ शान्तिः शान्तिः शान्तिः ॥ ☸</div>
+  <h3 style="font-size:1.4rem; color:var(--accent-gold); font-family:'Noto Serif Devanagari',serif; font-weight:800; margin-bottom:1rem;">ग्रंथ समापन एवं मंगल आशीर्वाद</h3>
+  <p style="font-size:0.92rem; color:var(--text-main); line-height:1.7; max-width:500px; margin:0 auto 1.5rem auto;">
+    यह ग्रंथ समस्त सुधी शोधार्थियों, ज्योतिष प्रेमियों एवं साधकों हेतु पूर्णतः निःशुल्क, खुला एवं सत्यापनीय ज्ञानकोश के रूप में तंत्र ज्ञान शोध संस्थान द्वारा समर्पित है।
+  </p>
+  <div style="border-top:1px solid #d97706; padding-top:1rem; max-width:440px; margin:0 auto; font-size:0.85rem; color:var(--text-muted);">
+    <strong>प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे</strong><br>
+    तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)<br>
+    वेबसाइट: <a href="https://t.worldgyan.com" target="_blank">t.worldgyan.com</a> • २०२६ सर्वाधिकार सुरक्षित
+  </div>
+</div>
+      </div>
+    </article>
+
+  </main>
+    
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/sounds-data.js?v=5.1"></script>
+  <script src="js/sound.js?v=5.1"></script>
+  <script src="js/book-engine.js?v=5.1"></script>
+  <script src="js/book-ui.js?v=5.1"></script>
+</body>
+</html>

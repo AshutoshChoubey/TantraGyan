@@ -10,9 +10,9 @@
  * - Complete Self-Purging: Clean cache wiping when user disables offline mode or updates edition
  */
 
-const APP_VERSION = '2.6.0';
+const APP_VERSION = '2.7.0';
 const CACHE_NAME = `tantragyan-v${APP_VERSION}`;
-const FONT_CACHE_NAME = 'tantragyan-fonts-v2.6';
+const FONT_CACHE_NAME = 'tantragyan-fonts-v2.7';
 
 // Essential assets for complete offline functioning
 const PRECACHE_ASSETS = [
@@ -21,6 +21,7 @@ const PRECACHE_ASSETS = [
   'book.html',
   'bhrigu-nandi-nadi.html',
   'bnn.html',
+  'bnn-reader.html',
   'hindi',
   'english',
   'hindi.html',
@@ -45,6 +46,8 @@ const PRECACHE_ASSETS = [
   'assets/icons/raja_yogas_chart.svg',
   'assets/icons/viparita_chart.svg',
   'assets/icons/medical_astrology_chart.svg',
+  'assets/icons/deeptadi_sun_diamond_chart.svg',
+  'assets/icons/navamsha_diamond_chart.svg',
   'assets/icons/bnn_philosophy_hierarchy_chart.svg',
   'assets/icons/bnn_directional_diamond_chart.svg',
   'assets/icons/bnn_jeeva_flow_diamond_chart.svg',
