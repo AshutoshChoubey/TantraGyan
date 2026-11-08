@@ -1,148 +1,117 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 920" width="100%" height="100%" style="background:#090d16; border-radius:12px; font-family:system-ui, -apple-system, 'Segoe UI', 'Noto Sans Devanagari', 'Kohinoor Devanagari', sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%">
+
   <defs>
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#fde047" /><stop offset="50%" stop-color="#d97706" /><stop offset="100%" stop-color="#92400e" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800;900&amp;display=swap");
+    </style>
+    <linearGradient id="plateBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefc"/>
+      <stop offset="50%" stop-color="#fdfbf5"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
     </linearGradient>
-    <filter id="shadow">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    <linearGradient id="goldBannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="kendraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="trikonaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#d1fae5" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="upachayaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#f3e8ff" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="marakaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe4e6" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fecdd3" stop-opacity="0.96"/>
+    </linearGradient>
+    <filter id="cardPlateShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
     </filter>
   </defs>
 
-  <rect width="1000" height="920" fill="#090d16" rx="12" />
-  <rect x="15" y="15" width="970" height="890" fill="none" stroke="url(#goldGrad)" stroke-width="1.8" rx="8" opacity="0.65" />
+  <!-- Outer Plate Frame -->
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
 
-  <!-- Header -->
-  <text x="500.0" y="52" text-anchor="middle" fill="url(#goldGrad)" font-size="24" font-weight="800">चतुर्विध महाभूत एवं दिशा-संयोजन डायमंड चक्र</text>
-  <text x="500.0" y="78" text-anchor="middle" fill="#94a3b8" font-size="14">BNN 4 Elemental Trines &amp; Directional Harmony (1-5-9 Samyoga Matrix)</text>
+  
+  <!-- Top Header Banner -->
+  <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">चतुर्विध महाभूत एवं दिशा-संयोजन डायमंड चक्र</text>
+  <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">BNN 4 Elemental Trines &amp; Directional Harmony (1-5-9 Samyoga Matrix)</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">अग्नि (१,५,९), पृथ्वी (२,६,१०), वायु (३,७,११), जल (४,८,१२) का सम्मिश्रण</text>
 
-  <!-- Diamond Kundli Layout: Center (500, 430), Size 500 -->
-  <g transform="translate(250, 110)" filter="url(#shadow)">
-    <!-- Outer Square -->
-    <rect x="0" y="0" width="500" height="500" fill="#0f172a" stroke="#d97706" stroke-width="2.5" />
-    
-    <!-- Diagonals -->
-    <line x1="0" y1="0" x2="500" y2="500" stroke="#d97706" stroke-width="2" />
-    <line x1="500" y1="0" x2="0" y2="500" stroke="#d97706" stroke-width="2" />
-    
-    <!-- Inner Diamond -->
-    <polygon points="250,0 500,250 250,500 0,250" fill="#131c2e" stroke="#f59e0b" stroke-width="2" />
 
-    <!-- 1. Lagna (Top Center Diamond) -> Aries (1) FIRE / EAST -->
-    <polygon points="250,0 375,125 250,250 125,125" fill="rgba(239, 68, 68, 0.22)" stroke="#ef4444" stroke-width="2" />
-    <text x="250" y="85" text-anchor="middle" fill="#fca5a5" font-size="18" font-weight="800">१. मेष (Aries)</text>
-    <text x="250" y="110" text-anchor="middle" fill="#fde047" font-size="14" font-weight="700">अग्नि तत्व • पूर्व</text>
-    <text x="250" y="132" text-anchor="middle" fill="#cbd5e1" font-size="12">त्रिकोण युति: ५, ९</text>
-
-    <!-- 2. House 2 (Top Left Triangle) -> Taurus (2) EARTH / SOUTH -->
-    <polygon points="0,0 250,0 125,125" fill="rgba(245, 158, 11, 0.18)" stroke="#f59e0b" stroke-width="1.8" />
-    <text x="125" y="45" text-anchor="middle" fill="#fde68a" font-size="15" font-weight="800">२. वृषभ (Taurus)</text>
-    <text x="125" y="68" text-anchor="middle" fill="#fbbf24" font-size="12">पृथ्वी • दक्षिण</text>
-
-    <!-- 12. House 12 (Top Right Triangle) -> Pisces (12) WATER / NORTH -->
-    <polygon points="250,0 500,0 375,125" fill="rgba(6, 182, 212, 0.18)" stroke="#06b6d4" stroke-width="1.8" />
-    <text x="375" y="45" text-anchor="middle" fill="#a5f3fc" font-size="15" font-weight="800">१२. मीन (Pisces)</text>
-    <text x="375" y="68" text-anchor="middle" fill="#22d3ee" font-size="12">जल • उत्तर</text>
-
-    <!-- 3. House 3 (Left-Top Triangle) -> Gemini (3) AIR / WEST -->
-    <polygon points="0,0 125,125 0,250" fill="rgba(56, 189, 248, 0.18)" stroke="#38bdf8" stroke-width="1.8" />
-    <text x="50" y="115" text-anchor="middle" fill="#bae6fd" font-size="14" font-weight="800">३. मिथुन</text>
-    <text x="50" y="135" text-anchor="middle" fill="#38bdf8" font-size="11.5">वायु • पश्चिम</text>
-
-    <!-- 4. House 4 (Left Diamond) -> Cancer (4) WATER / NORTH -->
-    <polygon points="0,250 125,125 250,250 125,375" fill="rgba(6, 182, 212, 0.22)" stroke="#06b6d4" stroke-width="2" />
-    <text x="125" y="240" text-anchor="middle" fill="#67e8f9" font-size="17" font-weight="800">४. कर्क (Cancer)</text>
-    <text x="125" y="265" text-anchor="middle" fill="#22d3ee" font-size="13">जल तत्व • उत्तर</text>
-    <text x="125" y="285" text-anchor="middle" fill="#cbd5e1" font-size="11.5">त्रिकोण युति: ८, १२</text>
-
-    <!-- 5. House 5 (Left-Bottom Triangle) -> Leo (5) FIRE / EAST -->
-    <polygon points="0,250 125,375 0,500" fill="rgba(239, 68, 68, 0.18)" stroke="#ef4444" stroke-width="1.8" />
-    <text x="50" y="365" text-anchor="middle" fill="#fca5a5" font-size="14" font-weight="800">५. सिंह</text>
-    <text x="50" y="385" text-anchor="middle" fill="#ef4444" font-size="11.5">अग्नि • पूर्व</text>
-
-    <!-- 6. House 6 (Bottom Left Triangle) -> Virgo (6) EARTH / SOUTH -->
-    <polygon points="0,500 250,500 125,375" fill="rgba(245, 158, 11, 0.18)" stroke="#f59e0b" stroke-width="1.8" />
-    <text x="125" y="445" text-anchor="middle" fill="#fde68a" font-size="15" font-weight="800">६. कन्या (Virgo)</text>
-    <text x="125" y="468" text-anchor="middle" fill="#fbbf24" font-size="12">पृथ्वी • दक्षिण</text>
-
-    <!-- 7. House 7 (Bottom Center Diamond) -> Libra (7) AIR / WEST -->
-    <polygon points="250,250 375,375 250,500 125,375" fill="rgba(56, 189, 248, 0.22)" stroke="#38bdf8" stroke-width="2" />
-    <text x="250" y="365" text-anchor="middle" fill="#7dd3fc" font-size="17" font-weight="800">७. तुला (Libra)</text>
-    <text x="250" y="390" text-anchor="middle" fill="#38bdf8" font-size="13">वायु तत्व • पश्चिम</text>
-    <text x="250" y="410" text-anchor="middle" fill="#cbd5e1" font-size="11.5">त्रिकोण युति: ३, ११</text>
-
-    <!-- 8. House 8 (Bottom Right Triangle) -> Scorpio (8) WATER / NORTH -->
-    <polygon points="250,500 500,500 375,375" fill="rgba(6, 182, 212, 0.18)" stroke="#06b6d4" stroke-width="1.8" />
-    <text x="375" y="445" text-anchor="middle" fill="#a5f3fc" font-size="15" font-weight="800">८. वृश्चिक (Scorpio)</text>
-    <text x="375" y="468" text-anchor="middle" fill="#22d3ee" font-size="12">जल • उत्तर</text>
-
-    <!-- 9. House 9 (Right-Bottom Triangle) -> Sagittarius (9) FIRE / EAST -->
-    <polygon points="500,250 375,375 500,500" fill="rgba(239, 68, 68, 0.18)" stroke="#ef4444" stroke-width="1.8" />
-    <text x="450" y="365" text-anchor="middle" fill="#fca5a5" font-size="14" font-weight="800">९. धनु</text>
-    <text x="450" y="385" text-anchor="middle" fill="#ef4444" font-size="11.5">अग्नि • पूर्व</text>
-
-    <!-- 10. House 10 (Right Center Diamond) -> Capricorn (10) EARTH / SOUTH -->
-    <polygon points="500,250 375,125 250,250 375,375" fill="rgba(245, 158, 11, 0.22)" stroke="#f59e0b" stroke-width="2" />
-    <text x="375" y="240" text-anchor="middle" fill="#fde68a" font-size="17" font-weight="800">१०. मकर (Capricorn)</text>
-    <text x="375" y="265" text-anchor="middle" fill="#f59e0b" font-size="13">पृथ्वी तत्व • दक्षिण</text>
-    <text x="375" y="285" text-anchor="middle" fill="#cbd5e1" font-size="11.5">त्रिकोण युति: २, ६</text>
-
-    <!-- 11. House 11 (Right-Top Triangle) -> Aquarius (11) AIR / WEST -->
-    <polygon points="500,0 375,125 500,250" fill="rgba(56, 189, 248, 0.18)" stroke="#38bdf8" stroke-width="1.8" />
-    <text x="450" y="115" text-anchor="middle" fill="#bae6fd" font-size="14" font-weight="800">११. कुम्भ</text>
-    <text x="450" y="135" text-anchor="middle" fill="#38bdf8" font-size="11.5">वायु • पश्चिम</text>
+  <g>
+    <polygon points="270,100 395,225 270,350 145,225" fill="url(#kendraGrad)" stroke="#b45309" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="20,100 270,100 145,225" fill="url(#trikonaGrad)" stroke="#059669" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="20,100 145,225 20,350" fill="url(#upachayaGrad)" stroke="#0284c7" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="20,350 145,225 270,350 145,475" fill="url(#waterGrad)" stroke="#7c3aed" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="20,350 145,475 20,600" fill="url(#kendraGrad)" stroke="#b45309" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="20,600 145,475 270,600" fill="url(#trikonaGrad)" stroke="#059669" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="270,350 395,475 270,600 145,475" fill="url(#upachayaGrad)" stroke="#0284c7" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="270,600 395,475 520,600" fill="url(#waterGrad)" stroke="#7c3aed" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="520,600 395,475 520,350" fill="url(#kendraGrad)" stroke="#b45309" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="270,350 395,225 520,350 395,475" fill="url(#trikonaGrad)" stroke="#059669" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="520,350 395,225 520,100" fill="url(#upachayaGrad)" stroke="#0284c7" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="520,100 395,225 270,100" fill="url(#waterGrad)" stroke="#7c3aed" stroke-width="1.8" stroke-linejoin="round"/>
+    <rect x="20" y="100" width="500" height="500" fill="none" stroke="#78350f" stroke-width="2.4"/>
+    <polygon points="270,100 520,350 270,600 20,350" fill="none" stroke="#b45309" stroke-width="1.8"/>
   </g>
 
-  <!-- 4 Elemental Legend Cards at Bottom -->
-  <g transform="translate(50, 650)">
-    <!-- Fire -->
-    <g transform="translate(0, 0)" filter="url(#shadow)">
-      <rect width="205" height="190" rx="8" fill="#1c1917" stroke="#ef4444" stroke-width="1.5" />
-      <rect width="205" height="32" rx="8" fill="#991b1b" />
-      <text x="102" y="22" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="800">🔥 पूर्व दिशा (अग्नि तत्व)</text>
-      <text x="15" y="58" fill="#fde047" font-size="13" font-weight="700">राशियाँ: १ मेष, ५ सिंह, ९ धनु</text>
-      <text x="15" y="82" fill="#cbd5e1" font-size="12">• युति शक्ति: १००%</text>
-      <text x="15" y="104" fill="#cbd5e1" font-size="12">• कारकत्व: ऊर्जा, पराक्रम</text>
-      <text x="15" y="126" fill="#cbd5e1" font-size="12">• नेतृत्व, आत्म-चेतना</text>
-      <text x="15" y="155" fill="#fca5a5" font-size="11">समान दिशा = एक ही कमरा</text>
-    </g>
+  <!-- Labels -->
+  <text x="270" y="195" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#78350f" text-anchor="middle">अग्नि तत्व (१)</text>
+  <text x="270" y="215" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#b45309" text-anchor="middle">मेष • ऊर्जा व धर्म</text>
 
-    <!-- Earth -->
-    <g transform="translate(230, 0)" filter="url(#shadow)">
-      <rect width="205" height="190" rx="8" fill="#1c1917" stroke="#f59e0b" stroke-width="1.5" />
-      <rect width="205" height="32" rx="8" fill="#b45309" />
-      <text x="102" y="22" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="800">🌍 दक्षिण दिशा (पृथ्वी तत्व)</text>
-      <text x="15" y="58" fill="#fde047" font-size="13" font-weight="700">राशियाँ: २ वृषभ, ६ कन्या, १० मकर</text>
-      <text x="15" y="82" fill="#cbd5e1" font-size="12">• युति शक्ति: १००%</text>
-      <text x="15" y="104" fill="#cbd5e1" font-size="12">• कारकत्व: धन, संपत्ति</text>
-      <text x="15" y="126" fill="#cbd5e1" font-size="12">• भौतिक स्थिरता, आजीविका</text>
-      <text x="15" y="155" fill="#fde68a" font-size="11">स्थिर कर्म व संचित संसाधन</text>
-    </g>
+  <text x="70" y="470" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">अग्नि (५)</text>
+  <text x="70" y="490" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#b45309" text-anchor="middle">सिंह राशि</text>
 
-    <!-- Air -->
-    <g transform="translate(460, 0)" filter="url(#shadow)">
-      <rect width="205" height="190" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
-      <rect width="205" height="32" rx="8" fill="#0284c7" />
-      <text x="102" y="22" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="800">💨 पश्चिम दिशा (वायु तत्व)</text>
-      <text x="15" y="58" fill="#fde047" font-size="13" font-weight="700">राशियाँ: ३ मिथुन, ७ तुला, ११ कुम्भ</text>
-      <text x="15" y="82" fill="#cbd5e1" font-size="12">• युति शक्ति: १००%</text>
-      <text x="15" y="104" fill="#cbd5e1" font-size="12">• कारकत्व: बुद्धि, संचार</text>
-      <text x="15" y="126" fill="#cbd5e1" font-size="12">• व्यापार, जनसंपर्क, लाभ</text>
-      <text x="15" y="155" fill="#bae6fd" font-size="11">बौद्धिक गति एवं साझेदारी</text>
-    </g>
+  <text x="470" y="470" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">अग्नि (९)</text>
+  <text x="470" y="490" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#b45309" text-anchor="middle">धनु राशि</text>
 
-    <!-- Water -->
-    <g transform="translate(690, 0)" filter="url(#shadow)">
-      <rect width="205" height="190" rx="8" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5" />
-      <rect width="205" height="32" rx="8" fill="#0e7490" />
-      <text x="102" y="22" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="800">🌊 उत्तर दिशा (जल तत्व)</text>
-      <text x="15" y="58" fill="#fde047" font-size="13" font-weight="700">राशियाँ: ४ कर्क, ८ वृश्चिक, १२ मीन</text>
-      <text x="15" y="82" fill="#cbd5e1" font-size="12">• युति शक्ति: १००%</text>
-      <text x="15" y="104" fill="#cbd5e1" font-size="12">• कारकत्व: भावना, मोक्ष</text>
-      <text x="15" y="126" fill="#cbd5e1" font-size="12">• गूढ़ साधना, विदेश गमन</text>
-      <text x="15" y="155" fill="#a5f3fc" font-size="11">अंतःप्रेरणा एवं आध्यात्मिक मुक्ति</text>
-    </g>
+  <text x="145" y="145" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">पृथ्वी (२)</text>
+  <text x="145" y="165" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#059669" text-anchor="middle">वृषभ • अर्थ</text>
+
+  <text x="145" y="545" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">पृथ्वी (६)</text>
+  <text x="145" y="565" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#059669" text-anchor="middle">कन्या राशि</text>
+
+  <text x="395" y="345" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">पृथ्वी (१०)</text>
+  <text x="395" y="365" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#059669" text-anchor="middle">मकर राशि</text>
+
+  <text x="70" y="225" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#0369a1" text-anchor="middle">वायु (३)</text>
+  <text x="70" y="245" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#0284c7" text-anchor="middle">मिथुन • काम</text>
+
+  <text x="270" y="465" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800" fill="#0369a1" text-anchor="middle">वायु तत्व (७)</text>
+  <text x="270" y="485" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" fill="#0284c7" text-anchor="middle">तुला राशि</text>
+
+  <text x="470" y="225" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#0369a1" text-anchor="middle">वायु (११)</text>
+  <text x="470" y="245" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#0284c7" text-anchor="middle">कुम्भ राशि</text>
+
+  <text x="145" y="345" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">जल (४)</text>
+  <text x="145" y="365" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">कर्क • मोक्ष</text>
+
+  <text x="395" y="545" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">जल (८)</text>
+  <text x="395" y="565" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">वृश्चिक राशि</text>
+
+  <text x="395" y="145" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">जल (१२)</text>
+  <text x="395" y="165" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">मीन राशि</text>
+
+  <!-- Bottom Legend Card -->
+  <g transform="translate(20, 615)">
+    <rect width="520" height="135" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+    <text x="260" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#78350f" text-anchor="middle">★ महाभूत सम्मिश्रण एवं फलित नियम ★</text>
+    <text x="260" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#b45309" text-anchor="middle">• अग्नि + वायु = मित्र सम्मिश्रण (अग्नि को वायु प्रज्वलित करती है: विचार + कर्म = सफलता)</text>
+    <text x="260" y="72" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">• पृथ्वी + जल = मित्र सम्मिश्रण (मिट्टी को जल उर्वर बनाता है: धन + स्थिरता + सिद्धि)</text>
+    <text x="260" y="96" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">• अग्नि + जल = विरोधी सम्मिश्रण (भाप व संघर्ष: क्रोध, मानसिक उथल-पुथल, रुकावट)</text>
+    <text x="260" y="118" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#64748b" text-anchor="middle">• वायु + पृथ्वी = मध्यम सम्मिश्रण (धूल/उदासीनता: कठोर परिश्रम के बाद ही फल)</text>
   </g>
-
-  <!-- Footer Tag -->
-  <text x="500.0" y="885" text-anchor="middle" fill="#94a3b8" font-size="13">प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे • तंत्र ज्ञान शोध संस्थान</text>
 </svg>

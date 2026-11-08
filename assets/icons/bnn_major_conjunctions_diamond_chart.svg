@@ -1,83 +1,128 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 920" width="100%" height="100%" style="background:#090d16; border-radius:12px; font-family:system-ui, -apple-system, 'Segoe UI', 'Noto Sans Devanagari', 'Kohinoor Devanagari', sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%">
+
   <defs>
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#fde047" /><stop offset="50%" stop-color="#d97706" /><stop offset="100%" stop-color="#92400e" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800;900&amp;display=swap");
+    </style>
+    <linearGradient id="plateBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefc"/>
+      <stop offset="50%" stop-color="#fdfbf5"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
     </linearGradient>
-    <filter id="shadow">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    <linearGradient id="goldBannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="kendraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="trikonaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#d1fae5" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="upachayaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#f3e8ff" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="marakaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe4e6" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fecdd3" stop-opacity="0.96"/>
+    </linearGradient>
+    <filter id="cardPlateShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
     </filter>
   </defs>
 
-  <rect width="1000" height="920" fill="#090d16" rx="12" />
-  <rect x="15" y="15" width="970" height="890" fill="none" stroke="url(#goldGrad)" stroke-width="1.8" rx="8" opacity="0.65" />
+  <!-- Outer Plate Frame -->
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
 
-  <!-- Header -->
-  <text x="500.0" y="52" text-anchor="middle" fill="url(#goldGrad)" font-size="24" font-weight="800">बी.एन.एन. प्रमुख द्वि-ग्रहीय राजयोग एवं कर्म-संयोग चक्र</text>
-  <text x="500.0" y="78" text-anchor="middle" fill="#94a3b8" font-size="14">Master Dual Conjunctions in BNN Diamond Architecture • ३६ प्रमुख योगों का प्रामाणिक प्रतिपादन</text>
+  
+  <!-- Top Header Banner -->
+  <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">बी.एन.एन. प्रमुख द्वि-ग्रहीय राजयोग एवं कर्म-संयोग चक्र</text>
+  <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">Master 2-Planet Combinations in Bhrigu Nandi Nadi</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">३६ प्रमुख ग्रहीय संयोगों में से शीर्ष ६ शास्त्रीय राजयोग</text>
 
-  <!-- Diamond Layout: Center (500, 420), Size 520 -->
-  <g transform="translate(240, 110)" filter="url(#shadow)">
-    <rect x="0" y="0" width="520" height="520" fill="#0f172a" stroke="#d97706" stroke-width="2.5" />
-    <line x1="0" y1="0" x2="520" y2="520" stroke="#d97706" stroke-width="2" />
-    <line x1="520" y1="0" x2="0" y2="520" stroke="#d97706" stroke-width="2" />
-    <polygon points="260,0 520,260 260,520 0,260" fill="#131c2e" stroke="#f59e0b" stroke-width="2" />
 
-    <!-- Center H1: Guru + Shani (Dharma-Karmadhipati Yoga / Brahma Yoga) -->
-    <polygon points="260,0 390,130 260,260 130,130" fill="#1e1b4b" stroke="#f59e0b" stroke-width="2.2" />
-    <text x="260" y="75" text-anchor="middle" fill="#fde047" font-size="19" font-weight="900">गुरु + शनि (Guru+Shani)</text>
-    <text x="260" y="100" text-anchor="middle" fill="#38bdf8" font-size="14" font-weight="800">धर्म-कर्माधिपति / ब्रह्म योग</text>
-    <text x="260" y="122" text-anchor="middle" fill="#ffffff" font-size="12.5">आध्यात्मिक कर्म • उच्च संस्था प्रमुख</text>
-    <text x="260" y="142" text-anchor="middle" fill="#cbd5e1" font-size="11">न्यायाधीश, कुलपति, निष्काम कर्मयोगी</text>
+  
+  <g transform="translate(24, 96)">
+    <rect width="512" height="76" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+    <rect width="130" height="76" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="0.8"/>
+    <text x="65" y="32" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="14" font-weight="900" fill="#b45309">गुरु + शनि</text>
+    <text x="65" y="54" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#334155">धर्म-कर्माधिपति योग</text>
 
-    <!-- H4 (Left Diamond): Budha + Shukra (Kala Yoga / Mahalakshmi) -->
-    <polygon points="0,260 130,130 260,260 130,390" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="2" />
-    <text x="130" y="240" text-anchor="middle" fill="#6ee7b7" font-size="16" font-weight="800">बुध + शुक्र</text>
-    <text x="130" y="262" text-anchor="middle" fill="#fde047" font-size="13.5" font-weight="700">कला / महालक्ष्मी योग</text>
-    <text x="130" y="284" text-anchor="middle" fill="#ffffff" font-size="11.5">अपार व्यापारिक संपदा</text>
-    <text x="130" y="304" text-anchor="middle" fill="#cbd5e1" font-size="11">वाक्पटुता, विपणन, सौन्दर्य</text>
-
-    <!-- H5 (Left-Bottom Triangle): Guru + Mangala (Tejasvi Yoga) -->
-    <polygon points="0,260 130,390 0,520" fill="rgba(239, 68, 68, 0.2)" stroke="#ef4444" stroke-width="1.8" />
-    <text x="50" y="375" text-anchor="middle" fill="#fca5a5" font-size="14" font-weight="800">गुरु+मंगल</text>
-    <text x="50" y="398" text-anchor="middle" fill="#fde047" font-size="12">तेजस्वी योग</text>
-    <text x="50" y="418" text-anchor="middle" fill="#cbd5e1" font-size="10.5">इंजीनियरिंग, भूमि</text>
-
-    <!-- H7 (Bottom Diamond): Shani + Shukra (Bhagya-Lakshmi) -->
-    <polygon points="260,260 390,390 260,520 130,390" fill="rgba(244, 114, 182, 0.2)" stroke="#ec4899" stroke-width="2" />
-    <text x="260" y="380" text-anchor="middle" fill="#f472b6" font-size="17" font-weight="800">शनि + शुक्र (Shani+Shukra)</text>
-    <text x="260" y="405" text-anchor="middle" fill="#fde047" font-size="13.5" font-weight="700">भाग्यलक्ष्मी योग (Bhagyalakshmi)</text>
-    <text x="260" y="426" text-anchor="middle" fill="#ffffff" font-size="12">विवाह उपरांत तीव्र भाग्योदय • वाहन-भवन</text>
-    <text x="260" y="446" text-anchor="middle" fill="#cbd5e1" font-size="11">वस्त्र, विलासिता, उद्योग में अचल संपत्ति</text>
-
-    <!-- H9 (Right-Bottom Triangle): Guru + Ketu (Ganesha Yoga / Mukti) -->
-    <polygon points="520,260 390,390 520,520" fill="rgba(168, 85, 247, 0.2)" stroke="#a855f7" stroke-width="1.8" />
-    <text x="465" y="375" text-anchor="middle" fill="#e9d5ff" font-size="14" font-weight="800">गुरु+केतु</text>
-    <text x="465" y="398" text-anchor="middle" fill="#fde047" font-size="12">गणेश/मुक्ति योग</text>
-    <text x="465" y="418" text-anchor="middle" fill="#cbd5e1" font-size="10.5">त्रिकालज्ञ, ज्योतिष</text>
-
-    <!-- H10 (Right Diamond): Shani + Rahu (Foreign Tech / Karma) -->
-    <polygon points="520,260 390,130 260,260 390,390" fill="rgba(99, 102, 241, 0.2)" stroke="#6366f1" stroke-width="2" />
-    <text x="390" y="240" text-anchor="middle" fill="#a5b4fc" font-size="16" font-weight="800">शनि + राहु</text>
-    <text x="390" y="262" text-anchor="middle" fill="#fde047" font-size="13.5" font-weight="700">श्रापित / विदेशी कर्म योग</text>
-    <text x="390" y="284" text-anchor="middle" fill="#ffffff" font-size="11.5">वैश्विक तकनीकी उद्योग</text>
-    <text x="390" y="304" text-anchor="middle" fill="#cbd5e1" font-size="11">सॉफ्टवेयर, विमानन, विदेशी आय</text>
+    <!-- Content -->
+    <text x="145" y="28" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#b45309">धर्म-कर्माधिपति योग (Conjunction Fruit)</text>
+    <text x="145" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• न्यायिक पद, सामाजिक प्रतिष्ठा, उच्च कर्मयोग, कर्तव्यपरायणता</text>
   </g>
 
-  <!-- Bottom Guidelines -->
-  <g transform="translate(60, 670)" filter="url(#shadow)">
-    <rect width="880" height="195" rx="10" fill="#0f172a" stroke="#d97706" stroke-width="1.5" />
-    <text x="30" y="32" fill="#fde047" font-size="15" font-weight="800">⚡ बी.एन.एन. द्वि-ग्रहीय संयोग के ३ स्वर्णिम नियम (Golden Conjunction Rules):</text>
-    
-    <text x="30" y="62" fill="#38bdf8" font-size="13.5" font-weight="700">१. अंश-दूरी नियम (Degree Proximity):</text>
-    <text x="280" y="62" fill="#e2e8f0" font-size="13">दो ग्रहों के मध्य अंश अंतर जितना कम (०°–१५°) होगा, फल उतना ही प्रचंड व अकाट्य होगा।</text>
+  <g transform="translate(24, 182)">
+    <rect width="512" height="76" rx="6" fill="#ffffff" stroke="#d97706" stroke-width="1.4"/>
+    <rect width="130" height="76" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="0.8"/>
+    <text x="65" y="32" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="14" font-weight="900" fill="#d97706">सूर्य + गुरु</text>
+    <text x="65" y="54" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#334155">राजकृपा / प्रतिष्ठा योग</text>
 
-    <text x="30" y="92" fill="#34d399" font-size="13.5" font-weight="700">२. अग्रगामी ग्रह नियम (Leading Planet):</text>
-    <text x="280" y="92" fill="#e2e8f0" font-size="13">निम्न अंश वाला ग्रह आगे होता है; उच्च अंश वाला ग्रह पीछे से उसका अनुसरण करता है।</text>
-
-    <text x="30" y="122" fill="#f472b6" font-size="13.5" font-weight="700">३. त्रिकोण युति नियम (Trine Conjunction):</text>
-    <text x="280" y="122" fill="#e2e8f0" font-size="13">यदि गुरु मेष में और शनि सिंह में हो, तो भी यह पूर्ण गुरु-शनि योग माना जाएगा (समान अग्नि दिशा)।</text>
-
-    <text x="30" y="155" fill="#94a3b8" font-size="12">उदाहरण: गुरु (८°) + शनि (१४°) = गुरु आजीविका की ओर बढ़ रहा है; जातक स्वयं के ज्ञान से कर्म का निर्माण करेगा।</text>
-    <text x="30" y="178" fill="#cbd5e1" font-size="12">प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे • तंत्र ज्ञान शोध संस्थान</text>
+    <!-- Content -->
+    <text x="145" y="28" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#d97706">राजकृपा / प्रतिष्ठा योग (Conjunction Fruit)</text>
+    <text x="145" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• सरकारी सम्मान, उच्च पद, पिता का पूर्ण सहयोग, सात्विक सत्ता</text>
   </g>
+
+  <g transform="translate(24, 268)">
+    <rect width="512" height="76" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.4"/>
+    <rect width="130" height="76" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="0.8"/>
+    <text x="65" y="32" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="14" font-weight="900" fill="#059669">शुक्र + शनि</text>
+    <text x="65" y="54" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#334155">लक्ष्मी-कर्म योग</text>
+
+    <!-- Content -->
+    <text x="145" y="28" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#059669">लक्ष्मी-कर्म योग (Conjunction Fruit)</text>
+    <text x="145" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• स्थिर अचल संपत्ति, विलासिता, व्यापारिक सफलता, ऐश्वर्य</text>
+  </g>
+
+  <g transform="translate(24, 354)">
+    <rect width="512" height="76" rx="6" fill="#ffffff" stroke="#0284c7" stroke-width="1.4"/>
+    <rect width="130" height="76" rx="6" fill="#eff6ff" stroke="#0284c7" stroke-width="0.8"/>
+    <text x="65" y="32" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="14" font-weight="900" fill="#0284c7">बुध + शुक्र</text>
+    <text x="65" y="54" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#334155">सरस्वती-लक्ष्मी योग</text>
+
+    <!-- Content -->
+    <text x="145" y="28" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#0284c7">सरस्वती-लक्ष्मी योग (Conjunction Fruit)</text>
+    <text x="145" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• चतुर व्यापारी, वाक्पटु, कला-संगीत प्रेमी, उच्च एकाउंटिंग/सीए</text>
+  </g>
+
+  <g transform="translate(24, 440)">
+    <rect width="512" height="76" rx="6" fill="#ffffff" stroke="#dc2626" stroke-width="1.4"/>
+    <rect width="130" height="76" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="0.8"/>
+    <text x="65" y="32" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="14" font-weight="900" fill="#dc2626">मंगल + शनि</text>
+    <text x="65" y="54" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#334155">यांत्रिकी / इंजीनियरिंग योग</text>
+
+    <!-- Content -->
+    <text x="145" y="28" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#dc2626">यांत्रिकी / इंजीनियरिंग योग (Conjunction Fruit)</text>
+    <text x="145" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• तकनीकी विशेषज्ञ, उद्योगपति, कठिन परिश्रम से शिखर की प्राप्ति</text>
+  </g>
+
+  <g transform="translate(24, 526)">
+    <rect width="512" height="76" rx="6" fill="#ffffff" stroke="#7c3aed" stroke-width="1.4"/>
+    <rect width="130" height="76" rx="6" fill="#faf5ff" stroke="#7c3aed" stroke-width="0.8"/>
+    <text x="65" y="32" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="14" font-weight="900" fill="#7c3aed">शुक्र + केतु</text>
+    <text x="65" y="54" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#334155">मुक्ति-लक्ष्मी / संन्यास योग</text>
+
+    <!-- Content -->
+    <text x="145" y="28" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#7c3aed">मुक्ति-लक्ष्मी / संन्यास योग (Conjunction Fruit)</text>
+    <text x="145" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• आध्यात्मिक समृद्धि, वस्त्र/रसायन व्यापार, वैराग्य में सुख</text>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="625" width="512" height="120" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.3"/>
+  <text x="280" y="648" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" fill="#78350f" text-anchor="middle">★ नाड़ी ग्रहीय संयोग गणितीय नियम ★</text>
+  <text x="280" y="670" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">• एक ही राशि में युति (०°) अथवा १-५-९ त्रिकोण में स्थिति = समान शक्तिशाली फल</text>
+  <text x="280" y="692" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">• निम्न अंश वाला ग्रह पूर्ववर्ती एवं उच्च अंश वाला ग्रह परवर्ती प्रभाव डालता है</text>
+  <text x="280" y="714" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#6d28d9" text-anchor="middle">• यदि दोनों में से कोई वक्री हो तो पूर्व राशि से भी संयोग प्रभाव की गणना करें</text>
+  <text x="280" y="734" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">स्रोत: भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र • तंत्र ज्ञान शोध संस्थान</text>
 </svg>

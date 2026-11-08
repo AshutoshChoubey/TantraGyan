@@ -1,102 +1,123 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 880" width="100%" height="100%" style="background:#090d16; border-radius:12px; font-family:system-ui, -apple-system, 'Segoe UI', 'Noto Sans Devanagari', 'Kohinoor Devanagari', sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%">
+
   <defs>
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#fde047" /><stop offset="50%" stop-color="#d97706" /><stop offset="100%" stop-color="#92400e" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800;900&amp;display=swap");
+    </style>
+    <linearGradient id="plateBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefc"/>
+      <stop offset="50%" stop-color="#fdfbf5"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
     </linearGradient>
-    <linearGradient id="bbGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ec4899" /><stop offset="100%" stop-color="#8b5cf6" />
+    <linearGradient id="goldBannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
     </linearGradient>
-    <filter id="shadow">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    <linearGradient id="kendraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="trikonaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#d1fae5" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="upachayaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#f3e8ff" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="marakaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe4e6" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fecdd3" stop-opacity="0.96"/>
+    </linearGradient>
+    <filter id="cardPlateShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
     </filter>
   </defs>
 
-  <rect width="1000" height="880" fill="#090d16" rx="12" />
-  <rect x="15" y="15" width="970" height="850" fill="none" stroke="url(#goldGrad)" stroke-width="1.8" rx="8" opacity="0.65" />
+  <!-- Outer Plate Frame -->
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
 
-  <!-- Header -->
-  <text x="500.0" y="52" text-anchor="middle" fill="url(#goldGrad)" font-size="24" font-weight="800">भृगु बिंदु (BB) प्रारब्ध संवाहक बिंदु ज्यामितीय चक्र</text>
-  <text x="500.0" y="78" text-anchor="middle" fill="#94a3b8" font-size="14">Bhrigu Bindu (BB) Destiny Trigger Geometric Model • Rahu-Moon Midpoint Physics</text>
+  
+  <!-- Top Header Banner -->
+  <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">भृगु बिंदु (BB) प्रारब्ध संवाहक बिंदु ज्यामितीय चक्र</text>
+  <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">Bhrigu Bindu (BB) Destiny Trigger &amp; Rahu-Moon Midpoint Physics</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">गणितीय सूत्र: (राहु स्पष्ट अंश + चन्द्र स्पष्ट अंश) ÷ २ = भृगु बिंदु</text>
 
-  <!-- Left: 360° Circular Geometric Dial -->
-  <g transform="translate(60, 110)" filter="url(#shadow)">
-    <rect width="440" height="520" rx="10" fill="#0f172a" stroke="#d97706" stroke-width="1.8" />
-    <text x="220" y="35" text-anchor="middle" fill="#fde047" font-size="16" font-weight="800">भृगु बिंदु ज्यामितीय रेखांकन</text>
 
-    <!-- Circle (cx=220, cy=280, r=160) -->
-    <circle cx="220" cy="280" r="160" fill="#131c2e" stroke="#334155" stroke-width="2" />
+  <!-- Formula Highlight Card -->
+  <g transform="translate(24, 96)">
+    <rect width="512" height="66" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.6"/>
+    <text x="256" y="28" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#78350f" text-anchor="middle">भृगु बिंदु (Bhrigu Bindu - BB) की गणितीय गणना</text>
+    <text x="256" y="50" font-family="'Kohinoor Devanagari', sans-serif" font-size="11" font-weight="700" fill="#dc2626" text-anchor="middle">BB = (राहु के निरयण अंश + चन्द्र के निरयण अंश) / २</text>
+  </g>
+
+  <!-- Geometric Illustration Circle Area -->
+  <g transform="translate(24, 172)">
+    <rect width="512" height="340" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+
+    <!-- Celestial Longitude Line / Arc -->
+    <circle cx="256" cy="170" r="120" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+    <circle cx="256" cy="170" r="120" fill="none" stroke="#b45309" stroke-width="2.8" stroke-dasharray="8,4"/>
+
+    <!-- Center Pivot -->
+    <circle cx="256" cy="170" r="4" fill="#78350f"/>
+    <text x="256" y="195" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#64748b" text-anchor="middle">केन्द्र (३६०° भचक्र)</text>
+
+    <!-- Point 1: Rahu (Top Left) -->
+    <line x1="256" y1="170" x2="160" y2="85" stroke="#4338ca" stroke-width="2"/>
+    <circle cx="160" cy="85" r="14" fill="#4338ca"/>
+    <text x="160" y="90" font-family="'Noto Serif Devanagari', serif" font-size="10" font-weight="900" fill="#ffffff" text-anchor="middle">राहु</text>
+    <text x="160" y="60" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="800" fill="#4338ca" text-anchor="middle">राहु स्पष्ट अंश</text>
+    <text x="160" y="115" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" fill="#64748b" text-anchor="middle">(प्रारब्ध / कर्म बीज)</text>
+
+    <!-- Point 2: Moon (Top Right) -->
+    <line x1="256" y1="170" x2="352" y2="85" stroke="#0284c7" stroke-width="2"/>
+    <circle cx="352" cy="85" r="14" fill="#0284c7"/>
+    <text x="352" y="90" font-family="'Noto Serif Devanagari', serif" font-size="10" font-weight="900" fill="#ffffff" text-anchor="middle">चन्द्र</text>
+    <text x="352" y="60" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="800" fill="#0284c7" text-anchor="middle">चन्द्र स्पष्ट अंश</text>
+    <text x="352" y="115" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" fill="#64748b" text-anchor="middle">(मन / अनुभूति)</text>
+
+    <!-- Point 3: Bhrigu Bindu (Center Top Exact Midpoint) -->
+    <line x1="256" y1="170" x2="256" y2="50" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="4,2"/>
+    <circle cx="256" cy="50" r="18" fill="#fef3c7" stroke="#dc2626" stroke-width="2.5"/>
+    <text x="256" y="55" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#dc2626" text-anchor="middle">BB</text>
+    <text x="256" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#dc2626" text-anchor="middle">★ भृगु बिंदु (BB) ★</text>
+    <text x="256" y="80" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#78350f" text-anchor="middle">प्रारब्ध प्रकटीकरण बिंदु</text>
+
+    <!-- Arc between Rahu and Moon -->
+    <path d="M 160 85 A 120 120 0 0 1 352 85" fill="none" stroke="#dc2626" stroke-width="2"/>
     
-    <!-- 4 Cardinal Spokes -->
-    <line x1="220" y1="120" x2="220" y2="440" stroke="#334155" stroke-width="1.5" stroke-dasharray="4,4" />
-    <line x1="60" y1="280" x2="380" y2="280" stroke="#334155" stroke-width="1.5" stroke-dasharray="4,4" />
-
-    <!-- Rahu Point (At 45°: x=220+113=333, y=280-113=167) -->
-    <circle cx="333" cy="167" r="10" fill="#8b5cf6" />
-    <text x="350" y="160" fill="#c4b5fd" font-size="14" font-weight="800">राहु (Rahu)</text>
-    <text x="350" y="178" fill="#94a3b8" font-size="11">६०° (मिथुन)</text>
-
-    <!-- Moon Point (At 210°: x=220-138=82, y=280+80=360) -->
-    <circle cx="82" cy="360" r="10" fill="#38bdf8" />
-    <text x="25" y="390" fill="#7dd3fc" font-size="14" font-weight="800">चन्द्र (Moon)</text>
-    <text x="25" y="408" fill="#94a3b8" font-size="11">२४०° (धनु)</text>
-
-    <!-- Arc Path Connecting Rahu to Moon -->
-    <path d="M 333 167 A 160 160 0 0 1 82 360" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="6,6" />
-
-    <!-- Midpoint Bhrigu Bindu (At 127.5° approx: x=220-30=190, y=280+157=437) -->
-    <circle cx="190" cy="437" r="14" fill="url(#bbGlow)" filter="url(#shadow)" />
-    <circle cx="190" cy="437" r="6" fill="#ffffff" />
-    <text x="190" y="475" text-anchor="middle" fill="#f43f5e" font-size="16" font-weight="900">भृगु बिंदु (BB)</text>
-    <text x="190" y="495" text-anchor="middle" fill="#fde047" font-size="12" font-weight="700">१५०° (कन्या राशि • Virgo)</text>
+    <!-- Legend inside geometric box -->
+    <rect x="20" y="240" width="472" height="85" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="256" y="260" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#0f172a" text-anchor="middle">उदाहरण गणना (Practical Calculation Example):</text>
+    <text x="256" y="280" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" fill="#334155" text-anchor="middle">यदि राहु मेष १५° (१५°) एवं चन्द्र वृषभ १५° (४५°) हो, तो BB = (१५ + ४५)/२ = ३०° (वृषभ ०°)</text>
+    <text x="256" y="302" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#dc2626" text-anchor="middle">वृषभ ०° वह संवेदनशील बिंदु है जहां गोचर करते ही घटना का विस्फोट होगा।</text>
   </g>
 
-  <!-- Right: Mathematical Formulation & Trigger Rules -->
-  <g transform="translate(530, 110)" filter="url(#shadow)">
-    <rect width="420" height="520" rx="10" fill="#0f172a" stroke="#d97706" stroke-width="1.8" />
-    <text x="210" y="35" text-anchor="middle" fill="#fde047" font-size="16" font-weight="800">गणितीय सूत्र एवं सक्रियण विधान</text>
+  <!-- Transit Activation Rules Card -->
+  <g transform="translate(24, 522)">
+    <rect width="512" height="225" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+    <text x="256" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#78350f" text-anchor="middle">★ भृगु बिंदु पर गोचर सक्रियण के ३ अचूक नियम ★</text>
 
-    <!-- Formula Box -->
-    <g transform="translate(20, 60)">
-      <rect width="380" height="95" rx="8" fill="#131c2e" stroke="#f59e0b" stroke-width="1.5" />
-      <text x="190" y="30" text-anchor="middle" fill="#38bdf8" font-size="14" font-weight="800">📐 भृगु बिंदु (BB) गणितीय सूत्र:</text>
-      <text x="190" y="58" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="800">BB = (राहु स्पष्ट अंश + चन्द्र स्पष्ट अंश) / २</text>
-      <text x="190" y="80" text-anchor="middle" fill="#94a3b8" font-size="12">यदि अंतर १८०° से अधिक हो, तो १८०° जोड़कर मध्य निकालें</text>
-    </g>
+    <!-- Rule 1 -->
+    <text x="20" y="52" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#059669">१. गुरु का BB पर गोचर (Jupiter Transit over BB):</text>
+    <text x="20" y="72" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• जीवन का सबसे बड़ा भाग्योदय; अप्रत्याशित धन लाभ, विवाह, सन्तान प्राप्ति अथवा प्रतिष्ठा की प्राप्ति।</text>
+    <text x="20" y="90" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#64748b">जातक को लगता है कि ईश्वर ने अचानक सारे द्वार खोल दिए हैं।</text>
 
-    <!-- 3 Trigger Milestones -->
-    <g transform="translate(20, 175)">
-      <text x="0" y="20" fill="#34d399" font-size="14.5" font-weight="800">⚡ गोचर सक्रियण के ३ अचूक फलित नियम:</text>
+    <!-- Rule 2 -->
+    <text x="20" y="116" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#dc2626">२. शनि का BB पर गोचर (Saturn Transit over BB):</text>
+    <text x="20" y="136" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• प्रारब्ध कर्म का कठोर शोधन; स्वास्थ्य संकट, कार्यक्षेत्र में भारी परिवर्तन या अत्यधिक दायित्व का भार।</text>
+    <text x="20" y="154" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" fill="#64748b">धैर्य और धर्म के पालन से यही काल स्थायी नींव का निर्माण करता है।</text>
 
-      <g transform="translate(0, 35)">
-        <rect width="380" height="75" rx="6" fill="#1e293b" />
-        <text x="15" y="25" fill="#fde047" font-size="13" font-weight="700">१. गोचर का गुरु जब BB को स्पर्श करे:</text>
-        <text x="15" y="48" fill="#e2e8f0" font-size="12">विवाह, प्रथम संतति, उच्च पद प्राप्ति, तीर्थ यात्रा, अथवा</text>
-        <text x="15" y="65" fill="#a7f3d0" font-size="11.5">जीवन की सबसे बड़ी शुभ घटना घटित होती है।</text>
-      </g>
-
-      <g transform="translate(0, 120)">
-        <rect width="380" height="75" rx="6" fill="#1e293b" />
-        <text x="15" y="25" fill="#60a5fa" font-size="13" font-weight="700">२. गोचर का शनि जब BB को स्पर्श करे:</text>
-        <text x="15" y="48" fill="#e2e8f0" font-size="12">प्रारब्ध का सबसे बड़ा कर्म-हिसाब, आजीविका परिवर्तन,</text>
-        <text x="15" y="65" fill="#93c5fd" font-size="11.5">कठोर अनुशासन एवं स्थायी दायित्व की शुरुआत।</text>
-      </g>
-
-      <g transform="translate(0, 205)">
-        <rect width="380" height="75" rx="6" fill="#1e293b" />
-        <text x="15" y="25" fill="#f87171" font-size="13" font-weight="700">३. गोचर का राहु/केतु जब BB को स्पर्श करे:</text>
-        <text x="15" y="48" fill="#e2e8f0" font-size="12">जीवन में १८०° का अप्रत्याशित मोड़, विदेश गमन,</text>
-        <text x="15" y="65" fill="#fca5a5" font-size="11.5">आकस्मिक आध्यात्मिक क्रांति अथवा भ्रम का निवारण।</text>
-      </g>
-    </g>
-  </g>
-
-  <!-- Bottom Synthesis Box -->
-  <g transform="translate(60, 660)" filter="url(#shadow)">
-    <rect width="890" height="170" rx="10" fill="#0f172a" stroke="#d97706" stroke-width="1.5" />
-    <text x="30" y="32" fill="#fde047" font-size="15" font-weight="800">🌟 भृगु बिंदु (BB) का आध्यात्मिक महत्व:</text>
-    <text x="30" y="60" fill="#e2e8f0" font-size="13.5">राहु जातक की इस जन्म की 'अतृप्त इच्छा' (Future Desire) का प्रतीक है, और चन्द्रमा 'मन एवं पूर्व संचित संस्कार' का।</text>
-    <text x="30" y="85" fill="#e2e8f0" font-size="13.5">इन दोनों का गणितीय मध्य बिंदु वह धुरी है जहां प्रारब्ध और पुरुषार्थ का मिलन होता है। जब भी कोई धीमा ग्रह इस बिंदु को छूता है,</text>
-    <text x="30" y="110" fill="#38bdf8" font-size="13">जातक के जीवन में काल-चक्र की सुई घूम जाती है और वह घटना टल नहीं सकती।</text>
-    <text x="30" y="145" fill="#94a3b8" font-size="12">प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे • तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)</text>
+    <!-- Rule 3 -->
+    <text x="20" y="180" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#7c3aed">३. राहु या केतु का BB पर गोचर (Nodes Transit over BB):</text>
+    <text x="20" y="200" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• आकस्मिक दिशा परिवर्तन, विदेश गमन, पुराने भ्रमों का टूटना अथवा असाधारण आध्यात्मिक अनुभव।</text>
   </g>
 </svg>
