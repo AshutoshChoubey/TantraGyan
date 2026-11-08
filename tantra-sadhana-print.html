@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <title>तंत्र साधना सिद्धि महाग्रंथ • Vivliostyle Masterpiece Edition</title>
+  <style>
+
+    @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap");
+
+    @page {
+      size: A4 portrait;
+      margin-top: 18mm;
+      margin-bottom: 20mm;
+      margin-left: 18mm;
+      margin-right: 18mm;
+      @bottom-center {
+        content: "— " counter(page) " —";
+        font-family: 'Noto Serif Devanagari', serif;
+        font-size: 8.5pt;
+        font-weight: 700;
+        color: #b45309;
+      }
+    }
+
+    @page :left {
+      @top-left {
+        content: "तंत्र साधना सिद्धि महाग्रंथ";
+        font-family: 'Noto Sans Devanagari', sans-serif;
+        font-size: 7.8pt;
+        font-weight: 700;
+        color: #b45309;
+      }
+      @top-right {
+        content: "तंत्र ज्ञान शोध संस्थान • t.worldgyan.com";
+        font-family: 'Poppins', sans-serif;
+        font-size: 7.2pt;
+        font-weight: 600;
+        color: #64748b;
+      }
+    }
+
+    @page :right {
+      @top-left {
+        content: string(ch-title);
+        font-family: 'Noto Sans Devanagari', sans-serif;
+        font-size: 7.8pt;
+        font-weight: 700;
+        color: #78350f;
+      }
+      @top-right {
+        content: "ज्योतिषाचार्य आशुतोष कुमार चौबे";
+        font-family: 'Noto Sans Devanagari', sans-serif;
+        font-size: 7.8pt;
+        font-weight: 600;
+        color: #b45309;
+      }
+    }
+
+    @page cover-page {
+      margin: 0;
+      @top-left { content: none; }
+      @top-right { content: none; }
+      @bottom-center { content: none; }
+    }
+
+    @page toc-page {
+      @top-left { content: "अनुक्रमणिका • TABLE OF CONTENTS"; font-size: 8pt; color: #b45309; }
+      @top-right { content: none; }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', 'Noto Sans Devanagari', -apple-system, sans-serif;
+      font-size: 9.8pt;
+      line-height: 1.65;
+      color: #1c1917;
+      background-color: #ffffff;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    /* Grand Cover Page */
+    .print-cover-sheet {
+      page: cover-page;
+      break-after: page;
+      page-break-after: always;
+      height: 297mm;
+      width: 210mm;
+      padding: 24mm 20mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 40%, #ffedd5 100%);
+      border: 10mm solid #78350f;
+      position: relative;
+    }
+
+    .cover-top-emblem {
+      margin-top: 10mm;
+    }
+
+    .cover-top-emblem img {
+      width: 125px;
+      height: 125px;
+      filter: drop-shadow(0 4px 10px rgba(180,83,9,0.3));
+    }
+
+    .cover-title-group {
+      margin: 8mm 0;
+    }
+
+    .cover-mantra-header {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 13pt;
+      font-weight: 800;
+      color: #991b1b;
+      margin-bottom: 5mm;
+      letter-spacing: 0.05em;
+    }
+
+    .cover-main-title {
+      font-family: 'Noto Serif Devanagari', 'Cinzel', serif;
+      font-size: 26pt;
+      font-weight: 900;
+      color: #78350f;
+      line-height: 1.25;
+      margin-bottom: 4mm;
+      text-shadow: 0 1px 2px rgba(120,53,15,0.15);
+    }
+
+    .cover-sub-title {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 13.5pt;
+      font-weight: 700;
+      color: #b45309;
+      line-height: 1.4;
+      margin-bottom: 5mm;
+    }
+
+    .cover-en-title {
+      font-family: 'Cinzel', serif;
+      font-size: 10pt;
+      font-weight: 700;
+      color: #475569;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .cover-divider {
+      width: 60%;
+      height: 2pt;
+      background: linear-gradient(to right, transparent, #b45309, transparent);
+      margin: 6mm auto;
+    }
+
+    .cover-meta-summary {
+      font-size: 9pt;
+      color: #334155;
+      line-height: 1.6;
+      max-width: 140mm;
+      margin: 0 auto;
+    }
+
+    .cover-bottom-author-block {
+      margin-bottom: 10mm;
+      border-top: 1.5pt solid #ca8a04;
+      padding-top: 6mm;
+      width: 85%;
+    }
+
+    .cover-author-title {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 15pt;
+      font-weight: 900;
+      color: #78350f;
+    }
+
+    .cover-author-sub {
+      font-size: 8.8pt;
+      color: #475569;
+      margin-top: 2mm;
+    }
+
+    /* Dedication Page */
+    .print-dedication-sheet {
+      break-after: page;
+      page-break-after: always;
+      padding: 25mm 15mm;
+      text-align: center;
+    }
+
+    .dedication-box {
+      background: #fffdf5;
+      border: 1.5pt solid #b45309;
+      border-radius: 8pt;
+      padding: 12mm 15mm;
+      margin: 20mm auto;
+      max-width: 150mm;
+      box-shadow: 0 4pt 15pt rgba(180,83,9,0.08);
+    }
+
+    /* Table of Contents */
+    .print-toc-sheet {
+      page: toc-page;
+      break-after: page;
+      page-break-after: always;
+      padding-top: 5mm;
+    }
+
+    .toc-title {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 17pt;
+      font-weight: 800;
+      color: #78350f;
+      text-align: center;
+      margin-bottom: 8mm;
+      border-bottom: 2pt solid #ca8a04;
+      padding-bottom: 3mm;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5mm;
+    }
+
+    .toc-item a {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      text-decoration: none;
+      color: #1e293b;
+      font-size: 9.6pt;
+    }
+
+    .toc-item-title {
+      font-weight: 700;
+      color: #78350f;
+    }
+
+    .toc-dots {
+      flex-grow: 1;
+      border-bottom: 1.2pt dotted #cbd5e1;
+      margin: 0 3mm;
+      height: 1pt;
+    }
+
+    .toc-item a::after {
+      content: target-counter(attr(href), page);
+      font-weight: 800;
+      color: #b45309;
+    }
+
+    /* Chapter Structure */
+    .print-chapter {
+      break-before: page;
+      page-break-before: always;
+      margin-bottom: 10mm;
+    }
+
+    .chapter-header {
+      border-bottom: 2pt solid #ca8a04;
+      padding-bottom: 3.5mm;
+      margin-bottom: 5mm;
+    }
+
+    .chapter-num {
+      display: inline-block;
+      font-size: 8pt;
+      font-weight: 800;
+      color: #b45309;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1.5mm;
+    }
+
+    .chapter-title {
+      string-set: ch-title content();
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 16pt;
+      font-weight: 900;
+      color: #78350f;
+      line-height: 1.3;
+    }
+
+    .chapter-subtitle {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #64748b;
+      margin-top: 1.5mm;
+    }
+
+    /* Headings */
+    h3.subhead {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 11.5pt;
+      font-weight: 800;
+      color: #b45309;
+      margin: 5mm 0 2.5mm;
+      border-left: 3.5pt solid #b45309;
+      padding-left: 2.5mm;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    h4.subhead-small {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 10pt;
+      font-weight: 700;
+      color: #991b1b;
+      margin: 3.5mm 0 1.5mm;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    p {
+      margin-bottom: 2.8mm;
+      text-align: justify;
+      word-break: normal;
+    }
+
+    /* Sanskrit Mantra Cards */
+    .mantra-box {
+      background: linear-gradient(135deg, #fffdf8, #fffbeb);
+      border: 1.5pt solid #d97706;
+      border-left: 4.5pt solid #b45309;
+      border-radius: 4pt;
+      padding: 4mm 5mm;
+      margin: 4.5mm 0;
+      text-align: center;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .mantra-sanskrit {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 11pt;
+      font-weight: 700;
+      color: #991b1b;
+      line-height: 1.8;
+      margin-bottom: 2mm;
+    }
+
+    .mantra-meaning {
+      font-size: 8.5pt;
+      color: #57534e;
+      line-height: 1.55;
+      font-style: italic;
+    }
+
+    /* Rule / Info Cards */
+    .rule-card {
+      border-left: 3.5pt solid #b45309;
+      background: #fffdf5;
+      border-top: 0.5pt solid #fed7aa;
+      border-right: 0.5pt solid #fed7aa;
+      border-bottom: 0.5pt solid #fed7aa;
+      border-radius: 0 4pt 4pt 0;
+      padding: 3.5mm 4.5mm;
+      margin: 4mm 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+      font-size: 9.2pt;
+    }
+
+    .rule-card.warning {
+      border-left-color: #dc2626;
+      background: #fef2f2;
+      border-color: #fecaca;
+    }
+
+    .rule-card.success {
+      border-left-color: #059669;
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+
+    .rule-card.info {
+      border-left-color: #0284c7;
+      background: #f0f9ff;
+      border-color: #bae6fd;
+    }
+
+    /* Table Styles */
+    .table-container {
+      margin: 4mm 0;
+      border: 1pt solid #cbd5e1;
+      border-radius: 4pt;
+      overflow: hidden;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.5pt;
+      line-height: 1.45;
+    }
+
+    table.data-table th {
+      background: #fef3c7;
+      color: #78350f;
+      font-family: 'Noto Serif Devanagari', serif;
+      font-weight: 800;
+      text-align: left;
+      padding: 2.5mm 3.5mm;
+      border-bottom: 1.5pt solid #ca8a04;
+    }
+
+    table.data-table td {
+      padding: 2.2mm 3.5mm;
+      border-bottom: 0.5pt solid #e2e8f0;
+      color: #1e293b;
+    }
+
+    table.data-table tr:nth-child(even) td {
+      background-color: #fafaf9;
+    }
+
+    /* Diagram / Visual Plate Container */
+    .diagram-plate {
+      margin: 5mm 0;
+      text-align: center;
+      background: #ffffff;
+      border: 1pt solid #fed7aa;
+      border-radius: 6pt;
+      padding: 4mm;
+      break-inside: avoid;
+      page-break-inside: avoid;
+      box-shadow: 0 2pt 8pt rgba(180,83,9,0.06);
+    }
+
+    .diagram-img {
+      width: 100%;
+      max-width: 155mm;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .diagram-caption {
+      margin-top: 2.5mm;
+      font-size: 8.4pt;
+      font-weight: 700;
+      color: #78350f;
+      font-style: italic;
+    }
+
+    /* Step List */
+    .step-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5mm;
+      margin: 3.5mm 0;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 3mm;
+      align-items: flex-start;
+      background: #ffffff;
+      border: 1pt solid #e2e8f0;
+      border-radius: 4pt;
+      padding: 2.5mm 3.5mm;
+      break-inside: avoid;
+      page-break-inside: avoid;
+      font-size: 9pt;
+    }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 20pt;
+      height: 20pt;
+      border-radius: 50%;
+      background: #b45309;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 8pt;
+      flex-shrink: 0;
+    }
+
+    .step-content strong {
+      display: block;
+      color: #78350f;
+      font-size: 9.5pt;
+      margin-bottom: 1mm;
+    }
+
+    .step-content p {
+      margin-bottom: 0;
+      font-size: 8.8pt;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- FRONT COVER PAGE -->
+  <section class="print-cover-sheet" id="cover">
+    <div class="cover-top-emblem">
+      <div style="font-size:1.8rem; margin-bottom:2mm;">🔱 卐 🪔</div>
+      <img src="assets/yantra.svg" alt="Sacred Sri Yantra Emblem">
+    </div>
+
+    <div class="cover-title-group">
+      <div class="cover-mantra-header">॥ ॐ नमः शिवाय • ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे ॥</div>
+      <h1 class="cover-main-title">तंत्र साधना सिद्धि महाग्रंथ</h1>
+      <div class="cover-sub-title">41-दिवसीय प्रत्यक्ष प्रयोग, सवा लाख जप एवं सिद्ध कुंजिका गुप्त विधि-विधान</div>
+      <div class="cover-en-title">Tantra Sadhana Siddhi • 41-Day Empirical Sadhana Protocols & Secret Rituals</div>
+      <div class="cover-divider"></div>
+      <p class="cover-meta-summary">
+        सवा लाख (1,25,000) पंचाक्षरी जप, श्री सिद्ध कुंजिका स्तोत्र 21 पाठ, वेदी निर्माण द्वैत दीप विज्ञान, 8:30 PM–10:40 PM मिनट-दर-मिनट अनुष्ठान, स्वास्थ्य प्रबंधन एवं संपुट रहस्य का प्रामाणिक तंत्र कल्प।
+      </p>
+    </div>
+
+    <div class="cover-bottom-author-block">
+      <div class="cover-author-title">ज्योतिषाचार्य आशुतोष कुमार चौबे</div>
+      <div class="cover-author-sub">तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center) • 2026</div>
+      <div style="font-size:8pt; color:#64748b; margin-top:1.5mm;">आधिकारिक शोध मंच: https://t.worldgyan.com • सर्वाधिकार सुरक्षित</div>
+    </div>
+  </section>
+
+  <!-- DEDICATION & MANGALACHARAN -->
+  <section class="print-dedication-sheet" id="dedication">
+    <div style="font-size:2rem; margin-bottom:5mm;">☸ 🔱 📜</div>
+    <div class="dedication-box">
+      <div style="font-family:'Noto Serif Devanagari',serif; font-size:13pt; font-weight:700; color:#78350f; line-height:1.9;">
+        ॥ नमो देव्यै महादेव्यै शिवायै सततं नमः ।<br>
+        नमः प्रकृत्यै भद्रायै नियताः प्रणताः स्म ताम् ॥<br><br>
+        ॥ ॐ ह्रीं बटुकाय आपदुद्धारणाय कुरु कुरु बटुकाय ह्रीं ॐ ॥
+      </div>
+      <div style="width:40%; height:1.5pt; background:#ca8a04; margin:5mm auto;"></div>
+      <p style="font-size:9.5pt; color:#1e293b; line-height:1.75; text-align:center;">
+        यह महाग्रंथ समस्त निष्ठावान साधकों, शोधार्थियों एवं शिव-शक्ति के अनन्य उपासकों के कल्याणार्थ तंत्र ज्ञान शोध संस्थान द्वारा सप्रेम समर्पित है।
+      </p>
+    </div>
+  </section>
+
+  <!-- TABLE OF CONTENTS -->
+  <section class="print-toc-sheet" id="toc">
+    <h2 class="toc-title">ग्रंथ अनुक्रमणिका • Table of Contents</h2>
+    <ul class="toc-list">
+      <li class="toc-item"><a href="#ch1"><span class="toc-item-title">अध्याय 1: 41-दिवसीय पंचाक्षरी महासाधना एवं 1,25,000 जप सिद्धि</span><span class="toc-dots"></span></a></li>
+      <li class="toc-item"><a href="#ch2"><span class="toc-item-title">अध्याय 2: तांत्रिक वेदी निर्माण, द्वैत दीप विज्ञान एवं 7-पद सामग्री क्रम</span><span class="toc-dots"></span></a></li>
+      <li class="toc-item"><a href="#ch3"><span class="toc-item-title">अध्याय 3: दैनिक साधना काल-तालिका (8:30 PM – 10:40 PM मिनट-दर-मिनट)</span><span class="toc-dots"></span></a></li>
+      <li class="toc-item"><a href="#ch4"><span class="toc-item-title">अध्याय 4: स्वास्थ्य प्रबंधन, त्रि-स्तरीय प्रोटोकॉल एवं पोषण दिशानिर्देश</span><span class="toc-dots"></span></a></li>
+      <li class="toc-item"><a href="#ch5"><span class="toc-item-title">अध्याय 5: षड्विध तांत्रिक यम-नियम, प्राणायाम एवं स्वप्न-स्वर विज्ञान</span><span class="toc-dots"></span></a></li>
+      <li class="toc-item"><a href="#ch6"><span class="toc-item-title">अध्याय 6: श्री सिद्ध कुंजिका स्तोत्र संपुट विधान एवं शीघ्र विवाह सिद्धि</span><span class="toc-dots"></span></a></li>
+      <li class="toc-item"><a href="#ch7"><span class="toc-item-title">अध्याय 7: श्री सिद्ध कुंजिका स्तोत्र सम्पूर्ण मूल पाठ एवं न्यास-विधान</span><span class="toc-dots"></span></a></li>
+      <li class="toc-item"><a href="#ch8"><span class="toc-item-title">अध्याय 8: अनुष्ठान समापन, दशांश हवन, आरती एवं आसन-उत्थापन महामंत्र</span><span class="toc-dots"></span></a></li>
+      <li class="toc-item"><a href="#author"><span class="toc-item-title">उपसंहार: प्रणेता परिचय एवं ग्रंथ समर्पण</span><span class="toc-dots"></span></a></li>
+    </ul>
+  </section>
+
+  <section class="print-chapter" id="ch1">
+    
+      <div class="chapter-header">
+        <span class="chapter-num">अध्याय 1 • CHAPTER 1</span>
+        <h2 class="chapter-title">41-दिवसीय पंचाक्षरी महासाधना एवं 1,25,000 जप सिद्धि</h2>
+        <div class="chapter-subtitle">भगवान शिव के 'ॐ नमः शिवाय' महामंत्र द्वारा सवा लाख जप अनुष्ठान, प्रदोष चक्र एवं दैनिक लक्ष्य</div>
+      </div>
+
+      <p>
+        तांत्रिक साधना की आधारशिला साधक की आत्म-शुद्धि, चित्त-स्थिरता और प्राण-ऊर्जा के उर्ध्वगमन पर टिकी होती है। किसी भी उच्च महाविद्या अथवा देवी साधना में प्रवृत्त होने से पूर्व साधक को पंचाक्षरी महामंत्र <strong>'ॐ नमः शिवाय'</strong> का सवा लाख (1,25,000) जप पूर्ण कर अपने सूक्ष्म शरीर को सिद्ध करना शास्त्र सम्मत अनिवार्य नियम है।
+      </p>
+
+      <div class="mantra-box">
+        <div class="mantra-sanskrit">॥ ॐ नमः शिवाय ॥</div>
+        <div class="mantra-meaning">सदाशिव के पंचतत्वीय स्वरूप (पृथ्वी, जल, अग्नि, वायु, आकाश) को वश में करने वाला परम कल्याणकारी महामंत्र।</div>
+      </div>
+
+      <h3 class="subhead">1.1 सवा लाख जप का सटीक गणितीय विभाजन</h3>
+      <p>
+        41 दिनों का काल-खंड एक तांत्रिक 'मंडल काल' कहलाता है। 41 दिनों में 1,25,000 जप पूर्ण करने के लिए प्रतिदिन का सटीक लक्ष्य निम्नलिखित रूप से निर्धारित होता है:
+      </p>
+
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>अनुष्ठान मापदंड</th>
+              <th>सटीक संख्या</th>
+              <th>माला गणना (108 दाने)</th>
+              <th>दैनिक समय</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>कुल संकल्पित जप</strong></td>
+              <td>1,25,000 मंत्र</td>
+              <td>1,158 माला</td>
+              <td>41 दिन का मंडल काल</td>
+            </tr>
+            <tr>
+              <td><strong>प्रतिदिन न्यूनतम लक्ष्य</strong></td>
+              <td>3,049 मंत्र प्रति दिन</td>
+              <td>28 से 31 माला</td>
+              <td>2 से 2.5 घंटे एकनिष्ठ</td>
+            </tr>
+            <tr>
+              <td><strong>गणितीय सिद्धि समीकरण</strong></td>
+              <td colspan="3">3,049 मंत्र × 41 दिन = 1,25,009 मंत्र (सवा लाख जप पूर्णाहुति)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="subhead">1.2 शुभारम्भ तिथि एवं शुभ काल</h3>
+      <ul class="step-list">
+        <li class="step-item">
+          <div class="step-badge">1</div>
+          <div class="step-content">
+            <strong>सर्वोत्तम तिथि: कृष्ण पक्ष त्रयोदशी (प्रदोष काल)</strong>
+            <p>भगवान शिव की तांत्रिक ऊर्जा प्रदोष काल में सर्वाधिक चैतन्य होती है। कृष्ण पक्ष की त्रयोदशी से साधना प्रारंभ करना सिद्धि प्रदायक है।</p>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-badge">2</div>
+          <div class="step-content">
+            <strong>वैकल्पिक शुभ तिथियां</strong>
+            <p>यदि कृष्ण त्रयोदशी दूर हो, तो किसी भी सोमवार अथवा शुक्ल पक्ष की प्रदोष तिथि से भी संकल्प लिया जा सकता है।</p>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-badge">3</div>
+          <div class="step-content">
+            <strong>आरम्भ दिन की प्रातः तैयारी</strong>
+            <p>सूर्योदय पूर्व स्नान, नवीन अथवा शुद्ध धुले वस्त्र, हल्का सात्विक आहार और पूजा कक्ष का गंगाजल छिड़ककर शुद्धिकरण।</p>
+          </div>
+        </li>
+      </ul>
+
+      <!-- SVG Plate 1 -->
+      <div class="diagram-plate">
+        <img src="assets/icons/sadhana_panchakshari_125k_wheel.svg" alt="41-दिवसीय पंचाक्षरी महासाधना एवं 1,25,000 जप सिद्धि चक्र" class="diagram-img">
+        <div class="diagram-caption">आरेख 1.1: 41-दिवसीय पंचाक्षरी महासाधना एवं 1,25,000 जप सिद्धि चक्र</div>
+      </div>
+
+      <h3 class="subhead">1.3 दैनिक पंचोपचार एवं विल्वपत्र अर्पण</h3>
+      <p>
+        नित्य जप प्रारंभ करने से पूर्व भगवान शिव का पंचोपचार पूजन करें: गंध (श्वेत चंदन), पुष्प, धूप, दीप और नैवेद्य (ऋतुफल अथवा मिष्ठान्न)। प्रत्येक विल्वपत्र पर अनामिका उंगली से चंदन लगाकर <strong>'ॐ नमः शिवाय'</strong> बोलते हुए शिवलिंग अथवा शिव प्रतिमा पर उल्टी दिशा में (चिकने भाग की ओर से) अर्पित करें।
+      </p>
+    
+  </section>
+
+  <section class="print-chapter" id="ch2">
+    
+      <div class="chapter-header">
+        <span class="chapter-num">अध्याय 2 • CHAPTER 2</span>
+        <h2 class="chapter-title">तांत्रिक वेदी निर्माण, द्वैत दीप विज्ञान एवं 7-पद सामग्री क्रम</h2>
+        <div class="chapter-subtitle">भौतिक वेदी का वास्तु, घृत-तैल दीपों की द्वैत ऊर्जा एवं शास्त्रीय अर्पण अनुक्रम</div>
+      </div>
+
+      <p>
+        तांत्रिक साधना में भौतिक वातावरण और ऊर्जा-क्षेत्र (Energy Grid) का संतुलन सर्वोपरि है। वेदी वह दिव्य चुंबकीय केंद्र है, जहाँ 41 दिनों तक मंत्रोच्चार से उत्पन्न सूक्ष्म ब्रह्मांडीय किरणें संघनित होती हैं।
+      </p>
+
+      <h3 class="subhead">2.1 वेदी वास्तु एवं दिशा विन्यास</h3>
+      <p>
+        साधना कक्ष में काष्ठ (लकड़ी) की एक स्वच्छ चौकी स्थापित करें। उस पर शुद्ध लाल अथवा पीत (पीला) रेशमी/सूती वस्त्र बिछाएं। साधक का मुख सदैव <strong>उत्तर (North)</strong> अथवा <strong>पूर्व (East)</strong> दिशा की ओर होना चाहिए। उत्तर दिशा भगवान शिव और कुबेर की दिशा है, जो आध्यात्मिक ऊर्जा को उर्ध्वगामी बनाती है।
+      </p>
+
+      <h3 class="subhead">2.2 द्वैत दीप विज्ञान (Dual Diya Physics)</h3>
+      <p>
+        वेदी पर दो दीपकों का एक साथ प्रज्वलित होना तांत्रिक सुरक्षा और सिद्धि का मूल रहस्य है:
+      </p>
+
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>दीपक का प्रकार</th>
+              <th>स्थान (वेदी के सापेक्ष)</th>
+              <th>तत्व एवं प्रभाव</th>
+              <th>कार्य</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>शुद्ध गो-घृत दीपक</strong></td>
+              <td>दाहिनी ओर (साधक के बाईं ओर)</td>
+              <td>सत्व गुण • सात्विक चेतना</td>
+              <td>माँ दुर्गा, भगवान शिव एवं उच्च दिव्य शक्तियों का आवाहन ও कृपा आकर्षण।</td>
+            </tr>
+            <tr>
+              <td><strong>सरसों तैल दीपक</strong></td>
+              <td>बाईं ओर (साधक के दाहिनी ओर)</td>
+              <td>तमस्-रजस् समन • भैरव ऊर्जा</td>
+              <td>बटुक भैरव का रक्षक घेरा, समस्त नकारात्मक शक्तियों, भूत-प्रेत एवं तंद्रा से सुरक्षा।</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- SVG Plate 2 -->
+      <div class="diagram-plate">
+        <img src="assets/icons/sadhana_altar_mandala.svg" alt="तांत्रिक वेदी निर्माण, द्वैत दीप विज्ञान एवं 7-पद सामग्री क्रम" class="diagram-img">
+        <div class="diagram-caption">आरेख 2.1: तांत्रिक वेदी निर्माण, द्वैत दीप विज्ञान एवं 7-पद सामग्री क्रम</div>
+      </div>
+
+      <h3 class="subhead">2.3 शास्त्रीय 7-पद सामग्री अर्पण क्रम</h3>
+      <p>
+        वेदी पर सामग्री मनमाने ढंग से नहीं चढ़ाई जाती; सृष्टि के पंचभूतों के अनुसार उनका शास्त्रीय क्रम इस प्रकार है:
+      </p>
+      <div class="rule-card success">
+        <strong>1. जल (आचमन व पाद्य) ➔ 2. अक्षत (अखंडित चावल) ➔ 3. चंदन (रक्त/श्वेत) ➔ 4. इत्र (सुगंधित अर्क) ➔ 5. धूप (गुग्गुल/लोबान) ➔ 6. दीप (ज्योति दर्शन) ➔ 7. प्रसाद (सात्विक नैवेद्य)</strong>
+      </div>
+
+      <h3 class="subhead">2.4 आचमन / याच्यापान विधि (काया, प्राण व बुद्धि शुद्धि)</h3>
+      <p>
+        साधना में बैठने पर आचमनी से दाहिनी हथेली में तीन बार जल लेकर निम्नलिखित मंत्रों से पान करें:
+      </p>
+      <div class="mantra-box">
+        <p class="mantra-sanskrit">1. ॐ केशवाय नमः स्वाहा। (प्रथम घूंट - काया शुद्धि)</p>
+        <p class="mantra-sanskrit">2. ॐ नारायणाय नमः स्वाहा। (द्वितीय घूंट - प्राण शुद्धि)</p>
+        <p class="mantra-sanskrit">3. ॐ माधवाय नमः स्वाहा। (तृतीय घूंट - मन-बुद्धि शुद्धि)</p>
+        <div class="mantra-meaning">तत्पश्चात 'ॐ हृषीकेशाय नमः' बोलकर दोनों हाथ धोएं।</div>
+      </div>
+    
+  </section>
+
+  <section class="print-chapter" id="ch3">
+    
+      <div class="chapter-header">
+        <span class="chapter-num">अध्याय 3 • CHAPTER 3</span>
+        <h2 class="chapter-title">दैनिक साधना काल-तालिका (8:30 PM – 10:40 PM मिनट-दर-मिनट)</h2>
+        <div class="chapter-subtitle">रात्रि काल में 2 घंटे 10 मिनट का अखंड साधना चक्र एवं विश्राम विज्ञान</div>
+      </div>
+
+      <p>
+        साधना में समय की पाबंदी और क्रमबद्धता (Precision Timing) का सर्वाधिक महत्व है। ठीक 8:30 PM पर वेदी पर उपस्थित होना और 10:40 PM पर सीधे शयन में जाना साधक की चेतना को सुपरचार्ज करता है।
+      </p>
+
+      <!-- SVG Plate 3 -->
+      <div class="diagram-plate">
+        <img src="assets/icons/sadhana_timeline_clock.svg" alt="दैनिक साधना काल-तालिका (8:30 PM – 10:40 PM)" class="diagram-img">
+        <div class="diagram-caption">आरेख 3.1: दैनिक साधना काल-तालिका (8:30 PM – 10:40 PM) मिनट-दर-मिनट अनुक्रम</div>
+      </div>
+
+      <h3 class="subhead">3.1 मिनट-दर-मिनट अनुष्ठान तालिका</h3>
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>समय</th>
+              <th>अवधि</th>
+              <th>साधना क्रिया / मंत्र</th>
+              <th>विधि एवं विवरण</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>8:30 PM</strong></td>
+              <td>5 मिनट</td>
+              <td>वेदी तैयारी व दीप प्रज्वलन</td>
+              <td>घृत व सरसों तैल दीप प्रज्वलित करें, सामग्री व्यवस्थित रखें।</td>
+            </tr>
+            <tr>
+              <td><strong>8:35 PM</strong></td>
+              <td>10 मिनट</td>
+              <td>संकल्प एवं पूर्वांग आचमन</td>
+              <td>हाथ में जल, अक्षत, पुष्प लेकर नाम, गोत्र व उद्देश्य का संकल्प।</td>
+            </tr>
+            <tr>
+              <td><strong>8:45 PM</strong></td>
+              <td>1 मिनट</td>
+              <td>ॐ नमः शिवाय (11 बार)</td>
+              <td>11 बार जप + 1 मिनट गहरा श्वास (Deep Breathing Rest)।</td>
+            </tr>
+            <tr>
+              <td><strong>8:47 PM</strong></td>
+              <td>1 मिनट</td>
+              <td>ॐ गं गणपतये नमः (11 बार)</td>
+              <td>विघ्न विनाशक गणेश आवाहन + 1 मिनट श्वास विश्राम।</td>
+            </tr>
+            <tr>
+              <td><strong>8:49 PM</strong></td>
+              <td>3 मिनट</td>
+              <td>बटुक भैरव रक्षा मंत्र (11 बार)</td>
+              <td>ॐ ह्रीं बटुकाय आपदुद्धारणाय कुरु कुरु बटुकाय ह्रीं ॐ (11 बार) + 1 मिनट विश्राम।</td>
+            </tr>
+            <tr>
+              <td><strong>8:53 PM</strong></td>
+              <td>3 मिनट</td>
+              <td>हरे कृष्ण महामंत्र (11 बार)</td>
+              <td>चित्त में भक्ति व प्रेम का जागरण + 1 मिनट विश्राम।</td>
+            </tr>
+            <tr>
+              <td><strong>8:57 PM</strong></td>
+              <td>5 मिनट</td>
+              <td>श्री हनुमान चालीसा (1 पाठ)</td>
+              <td>अखंड बल, धैर्य व साहस की प्राप्ति + 1 मिनट विश्राम।</td>
+            </tr>
+            <tr>
+              <td><strong>9:03 PM</strong></td>
+              <td>20 मिनट</td>
+              <td>श्री दुर्गा कवच (सम्पूर्ण पाठ)</td>
+              <td>दशों दिशाओं में अभेद्य सुरक्षा चक्र का निर्माण + 1 मिनट विश्राम।</td>
+            </tr>
+            <tr>
+              <td><strong>9:24 PM</strong></td>
+              <td>3 मिनट</td>
+              <td>महामृत्युंजय मंत्र (11 बार)</td>
+              <td>रोग व अकाल मृत्यु से सुरक्षा, संजीवनी शक्ति + 1 मिनट विश्राम।</td>
+            </tr>
+            <tr>
+              <td><strong>9:28 PM</strong></td>
+              <td>65 मिनट</td>
+              <td>★ श्री सिद्ध कुंजिका स्तोत्र (21 पाठ)</td>
+              <td>मुख्य साधना: प्रथम व 21वें पाठ में शिव उवाच; मध्य 19 पाठों में केवल मूल मंत्र।</td>
+            </tr>
+            <tr>
+              <td><strong>10:33 PM</strong></td>
+              <td>2 मिनट</td>
+              <td>क्षमा प्रार्थना</td>
+              <td>अज्ञानाद्विस्मृतेर्भ्रान्त्या यन्न्यूनमधिकं कृतम्... पूर्ण क्षमा याचना।</td>
+            </tr>
+            <tr>
+              <td><strong>10:35 PM</strong></td>
+              <td>5 मिनट</td>
+              <td>आरती एवं आसन उत्थापन</td>
+              <td>कपूर आरती, आसन के नीचे जल त्याग, मस्तक पर तिलक।</td>
+            </tr>
+            <tr>
+              <td><strong>10:40 PM</strong></td>
+              <td>तत्काल</td>
+              <td>मौन शयन (Immediate Sleep)</td>
+              <td>बिना किसी वार्तालाप, भोजन या स्क्रीन के सीधे भूमि शयन।</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="rule-card warning">
+        <strong>★ विश्राम विज्ञान (The 1-Minute Breath Gap):</strong> प्रत्येक मंत्र के पश्चात 1 मिनट का गहरा प्राणायामिक श्वास लेना अनिवार्य है। यह तंत्रिका तंत्र को पूर्व मंत्र के कंपन को अवशोषित करने और अगले उच्चतर कंपन के लिए तैयार होने का अवसर देता है।
+      </div>
+    
+  </section>
+
+  <section class="print-chapter" id="ch4">
+    
+      <div class="chapter-header">
+        <span class="chapter-num">अध्याय 4 • CHAPTER 4</span>
+        <h2 class="chapter-title">स्वास्थ्य प्रबंधन, त्रि-स्तरीय प्रोटोकॉल एवं पोषण दिशानिर्देश</h2>
+        <div class="chapter-subtitle">बीमारी की स्थिति में साधना की निरंतरता, आकस्मिक न्यूनतम एवं विटामिन सप्लीमेंटेशन</div>
+      </div>
+
+      <p>
+        शास्त्रों का स्पष्ट उद्घोष है: <em>"शरीरमाद्यं खलु धर्मसाधनम्"</em> — शरीर ही समस्त साधनाओं का प्राथमिक आधार है। 41 दिनों की तीव्र तांत्रिक साधना में शरीर की ऊर्जा में आमूलचूल परिवर्तन आता है, जिससे कभी-कभी संचित प्रारब्ध रोगों के रूप में उभरता है।
+      </p>
+
+      <!-- SVG Plate 4 -->
+      <div class="diagram-plate">
+        <img src="assets/icons/sadhana_health_emergency_matrix.svg" alt="साधना काल में स्वास्थ्य प्रबंधन एवं आपातकालीन प्रोटोकॉल" class="diagram-img">
+        <div class="diagram-caption">आरेख 4.1: साधना काल में स्वास्थ्य प्रबंधन एवं आपातकालीन त्रि-स्तरीय प्रोटोकॉल</div>
+      </div>
+
+      <h3 class="subhead">4.1 त्रि-स्तरीय बीमारी प्रबंधन प्रोटोकॉल (3-Tier Health Matrix)</h3>
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>बीमारी का स्तर</th>
+              <th>लक्षण</th>
+              <th>साधना प्रोटोकॉल</th>
+              <th>पुनर्प्राप्ति नियम</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>स्तर 1: हल्की बीमारी (Minor)</strong></td>
+              <td>सर्दी, खांसी, हल्का सिरदर्द या सामान्य थकान।</td>
+              <td>तुरंत घरेलू अथवा चिकित्सीय उपचार लें। साधना को <strong>100% पूर्ण रूप से जारी रखें</strong>। समय एवं स्थान में कोई समझौता न करें।</td>
+              <td>साधना का कोई भी पाठ बाधित नहीं होगा।</td>
+            </tr>
+            <tr>
+              <td><strong>स्तर 2: मध्यम समस्या (Moderate)</strong></td>
+              <td>तीव्र ज्वर, चक्कर, असहनीय शारीरिक दर्द अथवा उल्टी।</td>
+              <td>योग्य चिकित्सक से परामर्श लें। उसी स्थान और समय पर <strong>आकस्मिक न्यूनतम अभ्यास: 10:00 से 10:15 PM के मध्य केवल 1 से 3 पाठ करें</strong> तथा क्षमा प्रार्थना करें।</td>
+              <td>स्वस्थ होने पर छूटे हुए पाठों की संख्या को 41 दिन के पश्चात अतिरिक्त दिनों में पूर्ण करें।</td>
+            </tr>
+            <tr>
+              <td><strong>स्तर 3: गंभीर आपात स्थिति (Emergency)</strong></td>
+              <td>अस्पताल में भर्ती, शल्य चिकित्सा अथवा जीवन-रक्षा का प्रश्न।</td>
+              <td>साधना को तुरंत रोकें। माँ भगवती के सम्मुख मानसिक रूप से क्षमा याचना करें।</td>
+              <td>पूर्णतः स्वस्थ होने के उपरांत शुद्ध स्नान कर, नवीन संकल्प लेकर 41 दिन की साधना पुनः नए सिरे से प्रारंभ करें।</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="subhead">4.2 तांत्रिक पोषण एवं तंत्रिका तंत्र मजबूती (Vitamins)</h3>
+      <p>
+        घंटों एक ही आसन में बैठने और उच्च मंत्र-ध्वनियों के स्पंदन को सहन करने के लिए साधक के तंत्रिका तंत्र (Central Nervous System) का पुष्ट होना आवश्यक है:
+      </p>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-badge">B12</div>
+          <div class="step-content">
+            <strong>B-Complex (विशेषकर Vitamin B12)</strong>
+            <p>मस्तिष्क की न्यूरोनल कोशिकाओं की रक्षा करता है, मानसिक एकाग्रता बनाए रखता है और थकान को दूर करता है।</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-badge">D3</div>
+          <div class="step-content">
+            <strong>Vitamin D3</strong>
+            <p>मूड की स्थिरता, डिप्रेशन से बचाव और रात्रि में गहरी सात्विक निद्रा (Deep Sleep) की गुणवत्ता सुनिश्चित करता है।</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-badge">Mg</div>
+          <div class="step-content">
+            <strong>Magnesium (मैग्नीशियम)</strong>
+            <p>मांसपेशियों के तनाव (Muscle Cramps) को शांत करता है और 8 घंटे के भूमि शयन को पीड़ा-रहित व सुगम बनाता है।</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="subhead">4.3 महिला साधक विशेष नियम (Women’s Menstrual Protocol)</h3>
+      <p>
+        मासिक धर्म (Menstruation) के दिनों में महिला साधक शारीरिक रूप से वेदी और पूजा सामग्री का स्पर्श न करें। वे अपने शयन कक्ष में बैठकर मानसिक रूप से प्रतिदिन कम से कम 1 बार सिद्ध कुंजिका स्तोत्र का पाठ करें तथा क्षमा प्रार्थना करें। इन दिनों में अन्य उग्र मंत्रों का जप न करें। 5 दिनों के उपरांत शुद्ध स्नान कर वेदी साधना पुनः प्रारंभ करें तथा छूटे हुए पाठ 41 दिनों के बाद अतिरिक्त दिन जोड़कर पूर्ण करें।
+      </p>
+    
+  </section>
+
+  <section class="print-chapter" id="ch5">
+    
+      <div class="chapter-header">
+        <span class="chapter-num">अध्याय 5 • CHAPTER 5</span>
+        <h2 class="chapter-title">षड्विध तांत्रिक यम-नियम, प्राणायाम एवं स्वप्न-स्वर विज्ञान</h2>
+        <div class="chapter-subtitle">कायिक, वाचिक एवं मानसिक तपस्या के 6 स्तम्भ तथा अचेतन मन का शोधन</div>
+      </div>
+
+      <p>
+        मंत्र केवल शब्दों का समूह नहीं, अपितु प्राण-ऊर्जा की चाबी है। यदि साधक का आचरण, आहार और विचार शुद्ध न हों, तो मंत्र की शक्ति जाग्रत नहीं होती। 41 दिनों तक निम्नलिखित 6 स्तम्भों का अक्षरशः पालन अनिवार्य है:
+      </p>
+
+      <!-- SVG Plate 5 -->
+      <div class="diagram-plate">
+        <img src="assets/icons/sadhana_lifestyle_disciplines_chart.svg" alt="षड्विध तांत्रिक यम-नियम, प्राणायाम एवं स्वप्न-स्वर विज्ञान" class="diagram-img">
+        <div class="diagram-caption">आरेख 5.1: षड्विध तांत्रिक यम-नियम, प्राणायाम एवं स्वप्न-स्वर विज्ञान</div>
+      </div>
+
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>स्तम्भ</th>
+              <th>तपस्या का स्वरूप</th>
+              <th>शास्त्रोक्त नियम</th>
+              <th>प्रभाव एवं फल</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. ब्रह्मचर्य</strong></td>
+              <td>कायिक, मानसिक एवं दृश्य</td>
+              <td>41 दिनों तक वीर्य-रक्षा, कामुक विचारों, रोमांटिक वार्तालाप एवं उत्तेजक दृश्यों से पूर्ण दूरी।</td>
+              <td>मूलाधार की ऊर्जा उर्ध्वगामी होकर आज्ञा व सहस्रार चक्र में संचित होती है।</td>
+            </tr>
+            <tr>
+              <td><strong>2. सात्विक आहार</strong></td>
+              <td>परम पवित्र पोषण</td>
+              <td>लहसुन, प्याज, मांसाहार, अंडा, मदिरा, तंबाकू पूर्ण वर्जित। 3 घंटे से अधिक पुराना भोजन न लें।</td>
+              <td>रक्त शुद्ध होता है, तमस घटता है और सुषुम्ना नाड़ी में प्राण का प्रवाह सुगम होता है।</td>
+            </tr>
+            <tr>
+              <td><strong>3. मौन व वाणी संयम</strong></td>
+              <td>वाक्-सिद्धि का आधार</td>
+              <td>केवल आवश्यक कार्य संबंधी संवाद। फोन दूसरे कमरे में रखें; सोशल मीडिया, संगीत व फिल्म वर्जित।</td>
+              <td>व्यर्थ ऊर्जा का क्षय रुकता है; वाणी में सत्य और मंत्र की शक्ति प्रकट होती है।</td>
+            </tr>
+            <tr>
+              <td><strong>4. भूमि शयन</strong></td>
+              <td>पृथ्वी तत्व से जुड़ाव</td>
+              <td>41 दिनों तक शुद्ध चटाई व स्वच्छ सूती चादर पर फर्श पर शयन करें। गद्देदार पलंग वर्जित।</td>
+              <td>रीढ़ की हड्डी सीधी रहती है, पृथ्वी का चुंबकीय बल शरीर के विषाक्त तत्वों को सोखता है।</td>
+            </tr>
+            <tr>
+              <td><strong>5. प्रातः प्राणायाम</strong></td>
+              <td>7:30 से 8:00 AM</td>
+              <td>10 मिनट कपालभाति (विषाक्त वायु निष्कासन) + 10 मिनट अनुलोम-विलोम (इड़ा-पिंगला संतुलन)।</td>
+              <td>फेफड़े पुष्ट होते हैं, 72,000 नाड़ियों की शुद्धि होती है।</td>
+            </tr>
+            <tr>
+              <td><strong>6. स्वप्न व स्वर विज्ञान</strong></td>
+              <td>अचेतन मन का दर्पण</td>
+              <td>जागते ही स्वप्न डायरी में लिखें। जागते समय कौन सा नथुना (इड़ा/पिंगला) सक्रिय था, नोट करें।</td>
+              <td>देव-संकेतों की पहचान होती है और साधना की प्रगति का प्रत्यक्ष प्रमाण मिलता है।</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="subhead">5.1 8 घंटे की गहरी निद्रा का विज्ञान</h3>
+      <p>
+        साधना के उपरांत रात्रि 10:40 PM से प्रातः 6:40 AM अथवा 7:00 AM तक पूर्ण 8 घंटे की निद्रा लेना अनिवार्य है। शयन कक्ष में पूर्ण अंधकार होना चाहिए (ब्लैकआउट पर्दे या आई-मास्क का उपयोग करें)। तापमान लगभग 20°C रहे तथा गुलाब, चंदन अथवा चमेली का हल्का, सात्विक इत्र वातावरण में हो। निद्रा में जाने से पूर्व पादांगुष्ठ से मस्तक तक शरीर-जागरूकता स्कैन (Body Awareness Scan) करें।
+      </p>
+    
+  </section>
+
+  <section class="print-chapter" id="ch6">
+    
+      <div class="chapter-header">
+        <span class="chapter-num">अध्याय 6 • CHAPTER 6</span>
+        <h2 class="chapter-title">श्री सिद्ध कुंजिका स्तोत्र संपुट विधान एवं शीघ्र विवाह सिद्धि</h2>
+        <div class="chapter-subtitle">मंत्र ऊर्जा को संपुटित करने की गुप्त तांत्रिक चाबी एवं मनोवांछित फल प्राप्ति</div>
+      </div>
+
+      <p>
+        'संपुट' का अर्थ है — किसी विशेष कार्य-सिद्धि हेतु मूल मंत्र के आगे और पीछे विशिष्ट बीज मंत्र अथवा अभीष्ट श्लोक को जोड़कर ऊर्जा को ताले की तरह बंद कर देना। बिना संपुट के किया गया पाठ सामान्य पुण्य देता है, किंतु संपुटित पाठ तीव्र बाण की भांति अभीष्ट लक्ष्य को वेध देता है।
+      </p>
+
+      <!-- SVG Plate 6 -->
+      <div class="diagram-plate">
+        <img src="assets/icons/sadhana_samput_architecture.svg" alt="सिद्ध कुंजिका स्तोत्र संपुट विधान एवं विवाह सिद्धि चक्र" class="diagram-img">
+        <div class="diagram-caption">आरेख 6.1: सिद्ध कुंजिका स्तोत्र संपुट विधान एवं विवाह सिद्धि चक्र</div>
+      </div>
+
+      <h3 class="subhead">6.1 शीघ्र विवाह एवं सुयोग्य जीवनसाथी संपुट श्लोक</h3>
+      <p>
+        यदि साधक विवाह में अनावश्यक विलंब, मांगलिक दोष, वैवाहिक बाधाओं अथवा योग्य जीवनसाथी की प्राप्ति हेतु अनुष्ठान कर रहा है, तो सिद्ध कुंजिका के 21 पाठों में प्रत्येक पाठ का संपुट क्रम इस प्रकार होगा:
+      </p>
+
+      <div class="mantra-box">
+        <div class="mantra-sanskrit">
+          आदि संपुट श्लोक:<br>
+          “पत्नीं मनोरमां देहि मनोवृत्तानुसारिणीम् ।<br>
+          तारिणीं दुर्गसंसारसागरस्य कुलोद्भवाम् ॥”
+        </div>
+        <div class="mantra-meaning">
+          (कन्या साधक इसके स्थान पर: “ॐ कात्यायनि महामाये महायोगिन्यधीश्वरि । नन्दगोपसुतं देवि पतिं मे कुरु ते नमः ॥” का संपुट लगा सकती हैं।)
+        </div>
+      </div>
+
+      <h3 class="subhead">6.2 21 पाठों में प्रत्येक पाठ का सटीक चक्र</h3>
+      <div class="rule-card">
+        <p><strong>1. आदि संपुट:</strong> “पत्नीं मनोरमां देहि मनोवृत्तानुसारिणीम् । तारिणीं दुर्गसंसारसागरस्य कुलोद्भवाम् ॥”</p>
+        <p><strong>2. अथ मन्त्रः:</strong> ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे। ॐ ग्लौं हुं क्लीं जूं सः ज्वालय ज्वालय ज्वल ज्वल प्रज्वल प्रज्वल ऐं ह्रीं क्लीं चामुण्डायै विच्चे ज्वल हं सं लं क्षं फट् स्वाहा॥</p>
+        <p><strong>3. इति मन्त्रः (श्लोक 5 से 11):</strong> नमस्ते रुद्ररूपिण्यै... ऐङ्कारी सृष्टिरूपायै... सां सीं सूं सप्तशती देव्या मंत्रसिद्धिं कुरूष्व मे॥</p>
+        <p><strong>4. अंत संपुट:</strong> “पत्नीं मनोरमां देहि मनोवृत्तानुसारिणीम् । तारिणीं दुर्गसंसारसागरस्य कुलोद्भवाम् ॥”</p>
+      </div>
+
+      <div class="rule-card warning">
+        <strong>★ 'शिव उवाच' एवं 'फलश्रुति' का गोपनीय नियम:</strong><br>
+        स्तोत्र के आरंभ के 4 श्लोक (शिव उवाच: 'शृणु देवि प्रवक्ष्यामि...') केवल <strong>प्रथम (1st)</strong> पाठ में पढ़े जाते हैं। इसके बाद पाठ 2 से 20 तक केवल उपरोक्त 4-चरणीय संपुट चक्र चलता है। अंत में <strong>21वें (21st)</strong> पाठ में पुनः आदि संपुट + अथ मन्त्र + इति मन्त्र + अंत संपुट पढ़ने के बाद फलश्रुति ('इदं तु कुंजिकास्तोत्रं...') पढ़कर स्तोत्र का समापन किया जाता है।
+      </div>
+    
+  </section>
+
+  <section class="print-chapter" id="ch7">
+    
+      <div class="chapter-header">
+        <span class="chapter-num">अध्याय 7 • CHAPTER 7</span>
+        <h2 class="chapter-title">श्री सिद्ध कुंजिका स्तोत्र सम्पूर्ण मूल पाठ एवं न्यास-विधान</h2>
+        <div class="chapter-subtitle">रुद्रयामल तन्त्रोक्त गौरी-संवाद, विनियोग, मूल बीजाक्षर एवं स्तवन</div>
+      </div>
+
+      <h3 class="subhead">7.1 विनियोग</h3>
+      <div class="mantra-box">
+        <p class="mantra-sanskrit">
+          ॐ अस्य श्रीकुञ्जिकास्तोत्रमन्त्रस्य সদাशिव ऋषिः, अनुष्टुप् छन्दः, श्रीत्रिगुणात्मिका देवता,<br>
+          ॐ ऐं बीजम्, ॐ ह्रीं शक्तिः, ॐ क्लीं कीलकम्,<br>
+          मम सर्वाभीष्टसिद्ध्यर्थे जपे विनियोगः ॥
+        </p>
+        <div class="mantra-meaning">दाहिनी हथेली में जल लेकर भूमि पर छोड़ें।</div>
+      </div>
+
+      <h3 class="subhead">7.2 मूल स्तोत्र पाठ (शिव उवाच)</h3>
+      <div class="mantra-box">
+        <p class="mantra-sanskrit">
+          ॥ शिव उवाच ॥<br><br>
+          शृणु देवि प्रवक्ष्यामि कुञ्जिकास्तोत्रमुत्तमम् ।<br>
+          येन मन्त्रप्रभावेण चण्डीजापः शुभो भवेत् ॥ 1 ॥<br><br>
+          न कवचं नार्गलास्तोत्रं कीलकं न रहस्यकम् ।<br>
+          न सूक्तं नापि ध्यानं च न न्यासो न च वाचनम् ॥ 2 ॥<br><br>
+          कुञ्जिकापाठमात्रेण दुर्गापाठफलं लभेत् ।<br>
+          अति गुह्यतरं देवि देवानामपि दुर्लभम् ॥ 3 ॥<br><br>
+          गोपनीयं प्रयत्नेन स्वयोनिरिव पार्वति ।<br>
+          मारणं मोहनं वश्यं स्तम्भनोच्चाटनादिकम् ।<br>
+          पाठमात्रेण संसिद्धयेत् कुञ्जिकास्तोत्रमुत्तमम् ॥ 4 ॥
+        </p>
+      </div>
+
+      <h3 class="subhead">7.3 अथ मन्त्रः</h3>
+      <div class="mantra-box">
+        <p class="mantra-sanskrit" style="font-size:1.3rem; color:#b91c1c;">
+          ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे ।<br>
+          ॐ ग्लौं हुं क्लीं जूं सः ज्वालय ज्वालय ज्वल ज्वल प्रज्वल प्रज्वल<br>
+          ऐं ह्रीं क्लीं चामुण्डायै विच्चे ज्वल हं सं लं क्षं फट् स्वाहा ॥
+        </p>
+      </div>
+
+      <h3 class="subhead">7.4 इति मन्त्रः (बीजाक्षर स्तुति)</h3>
+      <div class="mantra-box">
+        <p class="mantra-sanskrit">
+          नमस्ते रुद्ररूपिण्यै नमस्ते मधुमर्दिनि ।<br>
+          नमः कैटभहारिण्यै नमस्ते महिषार्दिनि ॥ 5 ॥<br><br>
+          नमस्ते शुम्भहन्त्र्यै च निशुम्भासुरघातिनि ।<br>
+          जाग्रतं हि महादेवि जपं सिद्धं कुरुष्व मे ॥ 6 ॥<br><br>
+          ऐङ्कारी सृष्टिरूपायै ह्रीङ्कारी प्रतिपालिका ।<br>
+          क्लीङ्कारी कामरूपिण्यै बीजरूपे नमोऽस्तु ते ॥ 7 ॥<br><br>
+          चामुण्डा चण्डघाती च यैकारी वरदायिनी ।<br>
+          विच्चे चाभयदा नित्यं नमस्ते मन्त्ररूपिणि ॥ 8 ॥<br><br>
+          धां धीं धूं धूर्जटेः पत्नी वां वीं वूं वागधीश्वरी ।<br>
+          क्रां क्रीं क्रूं कालिका देवि शां शीं शूं मे शुभं कुरु ॥ 9 ॥<br><br>
+          हुं हुं हुङ्काररूपिण्यै जं जं जं जम्भनादिनी ।<br>
+          भ्रां भ्रीं भ्रूं भैरवी भद्रे भवान्यै ते नमो नमः ॥ 10 ॥<br><br>
+          अं कं चं टं तं पं यं शं वीं दुं ऐं वीं हं क्षम् ।<br>
+          धिजाग्रं धिजाग्रं त्रोटय त्रोटय दीप्तं कुरु कुरु स्वाहा ॥ 11 ॥<br><br>
+          पां पीं पूं पार्वती पूर्णा खां खीं खूं खेचरी तथा ।<br>
+          सां सीं सूं सप्तशती देव्या मन्त्रसिद्धिं कुरुष्व मे ॥ 12 ॥
+        </p>
+      </div>
+
+      <h3 class="subhead">7.5 फलश्रुति (अंतिम पाठ में)</h3>
+      <div class="mantra-box">
+        <p class="mantra-sanskrit">
+          इदं तु कुञ्जिकास्तोत्रं मन्त्रजागर्तिहेतवे ।<br>
+          अभक्ते नैव दातव्यं गोपितं रक्ष पार्वति ॥ 13 ॥<br><br>
+          यस्तु कुञ्जिकया देवि हीनां सप्तशतीं पठेत् ।<br>
+          न तस्य जायते सिद्धिररण्ये रोदनं यथा ॥ 14 ॥<br><br>
+          ॥ इति श्रीरुद्रयामले गौरीतन्त्रे शिवपार्वतीसंवादे कुञ्जिकास्तोत्रं सम्पूर्णम् ॥
+        </p>
+      </div>
+    
+  </section>
+
+  <section class="print-chapter" id="ch8">
+    
+      <div class="chapter-header">
+        <span class="chapter-num">अध्याय 8 • CHAPTER 8</span>
+        <h2 class="chapter-title">अनुष्ठान समापन, दशांश हवन, आरती एवं आसन-उत्थापन</h2>
+        <div class="chapter-subtitle">41वें दिन की पूर्णाहुति, दशांश हवन, विसर्जन एवं ऊर्जा स्थापन</div>
+      </div>
+
+      <p>
+        41वें दिन साधना की सिद्धि को स्थायित्व प्रदान करने हेतु पूर्णाहुति हवन किया जाता है। यदि साधक पंचाक्षरी साधना कर रहा है, तो सवा लाख जप का दशांश (12,500) अथवा समयाभाव में 108 आहुतियों का विशेष हवन आम की समिधा, शुद्ध घृत, काले तिल, जौ एवं कमलगट्टे से करें।
+      </p>
+
+      <h3 class="subhead">8.1 41वें दिन का समापन क्रम</h3>
+      <ul class="step-list">
+        <li class="step-item">
+          <div class="step-badge">1</div>
+          <div class="step-content">
+            <strong>दशांश हवन एवं आहुति</strong>
+            <p>हवन कुंड में अग्नि प्रज्वलित कर प्रत्येक आहुति के साथ 'ॐ नमः शिवाय स्वाहा' अथवा 'ऐं ह्रीं क्लीं चामुण्डायै विच्चे स्वाहा' बोलकर आहुति दें।</p>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-badge">2</div>
+          <div class="step-content">
+            <strong>मंदिर में प्रसाद वितरण एवं कन्या पूजन</strong>
+            <p>साधना पूर्ण होने पर समीपस्थ शिव/दुर्गा मंदिर में भोग लगाएं, श्रद्धालुओं में प्रसाद वितरित करें तथा संभव हो तो कन्याओं को सात्विक भोजन कराकर आशीर्वाद लें।</p>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-badge">3</div>
+          <div class="step-content">
+            <strong>मंत्र-पत्र एवं ऊर्जा मंजूषा स्थापन</strong>
+            <p>संकल्प पत्र अथवा जिस भोजपत्र पर मंत्र लिखा गया हो, उसे शुद्ध ताम्र अथवा रजत (चांदी) के डिब्बे में रखकर अपने पूजा घर में स्थापित करें।</p>
+          </div>
+        </li>
+      </ul>
+
+      <h3 class="subhead">8.2 गुप्त आसन-उत्थापन महामंत्र (ऊर्जा रक्षा सूत्र)</h3>
+      <p>
+        साधना के उपरांत यदि साधक सीधे आसन से उठ जाता है, तो उस जप का संपूर्ण पुण्य देवराज इन्द्र को प्राप्त हो जाता है। अतः आसन छोड़ने से पूर्व यह क्रिया अनिवार्य रूप से करें:
+      </p>
+
+      <div class="mantra-box" style="border-color:#b45309; background:#fffdf5;">
+        <div class="mantra-sanskrit" style="color:#78350f;">
+          ॥ आसन-उत्थापन मन्त्र ॥<br>
+          ॐ शक्राय नमः । ॐ इन्द्राय नमः ॥
+        </div>
+        <div class="mantra-meaning">
+          <strong>विधि:</strong> आचमनी से दो बूंद जल अपने आसन के नीचे भूमि पर छोड़ें। अनामिका उंगली से उस जल को स्पर्श कर अपने मस्तक, दोनों नेत्रों और कंठ पर लगाएं। इसके बाद ही आसन समेटें।
+        </div>
+      </div>
+
+      <h3 class="subhead">8.3 क्षमा प्रार्थना</h3>
+      <div class="mantra-box">
+        <p class="mantra-sanskrit">
+          अज्ञानाद्विस्मृतेर्भ्रान्त्या यन्न्यूनमधिकं कृतम् ।<br>
+          तत्सर्वं क्षम्यतां देवि प्रसीद परमेश्वरि ॥<br>
+          कामेश्वरि जगन्मातः सच्चिदानन्दविग्रहे ।<br>
+          गृहाणार्चामिमां प्रीत्या प्रसीद परमेश्वरि ॥
+        </p>
+        <div class="mantra-meaning">
+          हे माँ परमेश्वरी! अज्ञान, विस्मृति अथवा भ्रमवश जो कुछ भी न्यून या अधिक हुआ हो, उसे क्षमा करें और मुझ पर अपनी अविरल कृपा बनाए रखें।
+        </div>
+      </div>
+    
+  </section>
+
+</body>
+</html>
