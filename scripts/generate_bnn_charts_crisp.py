@@ -1038,8 +1038,543 @@ def make_protocol_flowchart():
   <text x="280" y="736" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">स्रोत: भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र • तंत्र ज्ञान शोध संस्थान (2026)</text>
 </svg>"""
 
+def make_vakri_parivartana_chart():
+    w, h = 560, 770
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
+{COMMON_DEFS}
+  <rect x="6" y="6" width="548" height="{h-12}" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="{h-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  {header_banner("बी.एन.एन. वक्री ग्रह द्वैत स्थिति एवं राशि परिवर्तन चक्र", "BNN Retrograde Dual Ray Physics &amp; Parivartana Yoga Mutual Exchange", "वक्री ग्रह अपनी वर्तमान राशि एवं 12वें भाव दोनों से पूर्ण त्रिकोण दृष्टि प्रसारित करता है", 66)}
+
+  <!-- Section 1: Retrograde Dual Rays Visual -->
+  <g transform="translate(24, 96)">
+    <rect width="512" height="300" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+    <rect width="512" height="30" rx="8" fill="#0f172a"/>
+    <text x="256" y="20" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" text-anchor="middle">१. वक्री ग्रह का द्वैत स्थिति प्रभाव (Dual Radiant Positions)</text>
+
+    <!-- Visual Box Left: Current Position -->
+    <rect x="25" y="48" width="215" height="110" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.4"/>
+    <text x="132" y="70" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8" text-anchor="middle">वर्तमान प्रत्यक्ष राशि (Direct)</text>
+    {planet_badge_svg("saturn", 92, 80, 80, 24)}
+    <text x="132" y="122" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">मकर राशि (Capricorn)</text>
+    <text x="132" y="142" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#0284c7" text-anchor="middle">दक्षिण त्रिकोण (2-6-10) दृष्टि (50%)</text>
+
+    <!-- Backward Retrograde Arrow -->
+    <path d="M 245,100 Q 256,65 267,100" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="4,3"/>
+    <polygon points="245,100 248,90 255,95" fill="#d97706"/>
+    <text x="256" y="60" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="800" fill="#d97706" text-anchor="middle">वक्री गति</text>
+
+    <!-- Visual Box Right: 12th House Shadow Position -->
+    <rect x="272" y="48" width="215" height="110" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.4" stroke-dasharray="4,2"/>
+    <text x="379" y="70" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#b45309" text-anchor="middle">12वें भाव की छाया स्थिति (12th Shadow)</text>
+    {planet_badge_svg("saturn", 339, 80, 80, 24)}
+    <text x="379" y="122" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#78350f" text-anchor="middle">धनु राशि (Sagittarius - 12th)</text>
+    <text x="379" y="142" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#b45309" text-anchor="middle">पूर्व त्रिकोण (1-5-9) दृष्टि (50%)</text>
+
+    <!-- Explanatory note inside section 1 -->
+    <rect x="20" y="172" width="472" height="112" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="256" y="194" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ वक्री ग्रह के 3 मूलभूत नाड़ी नियम ★</text>
+    <text x="35" y="218" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b">1. द्वैत सक्रियता:</text>
+    <text x="125" y="218" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#334155">वक्री ग्रह अपनी वर्तमान राशि और 12वें भाव दोनों में एक साथ उपस्थित माना जाता है।</text>
+    <text x="35" y="240" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b">2. पूर्व प्रारब्ध:</text>
+    <text x="125" y="240" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#334155">वक्री ग्रह जातक के पूर्व-जन्म के अधूरे कार्यों एवं संचित कर्मों की पूर्ति कराता है।</text>
+    <text x="35" y="262" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b">3. 12वें ग्रह से युति:</text>
+    <text x="125" y="262" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#334155">यदि 12वें भाव में कोई ग्रह हो, तो वक्री ग्रह सीधे उसके साथ 100% युति बना लेता है।</text>
+  </g>
+
+  <!-- Section 2: Parivartana Yoga (Mutual Exchange) -->
+  <g transform="translate(24, 410)">
+    <rect width="512" height="215" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.4"/>
+    <rect width="512" height="30" rx="8" fill="#064e3b"/>
+    <text x="256" y="20" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" text-anchor="middle">२. राशि परिवर्तन योग विनिमय चक्र (Parivartana Exchange)</text>
+
+    <!-- Planet A in Planet B sign -->
+    <rect x="25" y="46" width="185" height="85" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.3"/>
+    <text x="117" y="66" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#78350f" text-anchor="middle">स्थान A: मकर राशि</text>
+    {planet_badge_svg("jupiter", 82, 75, 70, 24)}
+    <text x="117" y="118" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#b45309" text-anchor="middle">(गुरु शनि के घर में - नीच)</text>
+
+    <!-- Bidirectional Golden Arc Exchange -->
+    <path d="M 218,80 L 294,80" stroke="#059669" stroke-width="3"/>
+    <polygon points="218,80 228,75 228,85" fill="#059669"/>
+    <polygon points="294,80 284,75 284,85" fill="#059669"/>
+    <text x="256" y="70" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="900" fill="#059669" text-anchor="middle">परस्पर</text>
+    <text x="256" y="100" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#065f46" text-anchor="middle">विनिमय</text>
+
+    <!-- Planet B in Planet A sign -->
+    <rect x="302" y="46" width="185" height="85" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="394" y="66" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#1d4ed8" text-anchor="middle">स्थान B: धनु राशि</text>
+    {planet_badge_svg("saturn", 359, 75, 70, 24)}
+    <text x="394" y="118" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1d4ed8" text-anchor="middle">(शनि गुरु के घर में)</text>
+
+    <!-- Result Callout -->
+    <rect x="20" y="142" width="472" height="60" rx="6" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+    <text x="256" y="162" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#065f46" text-anchor="middle">अचूक फलित: नीच-भंग एवं प्रबल महाभाग्य राजयोग</text>
+    <text x="256" y="184" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b" text-anchor="middle">विनिमय के उपरांत गुरु और शनि दोनों अपनी स्वराशि में स्थित माने जाते हैं। नीचत्व पूर्णतः समाप्त हो जाता है।</text>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="638" width="512" height="110" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="660" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ नाड़ी अनुसंधान सूत्र: वक्री एवं परिवर्तन योग का समय सक्रियण ★</text>
+  <text x="280" y="682" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">• जीवन के पूर्वार्ध (0-30 वर्ष) में प्रत्यक्ष ग्रह का फल मिलता है</text>
+  <text x="280" y="702" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">• जीवन के उत्तरार्ध (30-60 वर्ष) में 12वें भाव व स्वराशि विनिमय का राजयोग फलित होता है</text>
+  <text x="280" y="722" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">स्रोत: भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र • ज्योतिषाचार्य आशुतोष कुमार चौबे</text>
+</svg>"""
+
+# ==============================================================================
+# 14. Saturn Karma Karaka Career & Profession Matrix
+# ==============================================================================
+def make_career_matrix_chart():
+    w, h = 560, 770
+    professions = [
+        ("saturn", "mercury", "सॉफ्टवेयर, वाणिज्य, बैंकिंग व सीए", "कोडिंग, डेटा एनालिसिस, अकाउंटिंग, वित्तीय प्रबंधन, संवाद व वाणिज्य।", "आईटी, डेटा व वित्तीय क्षेत्र"),
+        ("saturn", "mars", "इंजीनियरिंग, रक्षा व शल्य-चिकित्सा", "मैकेनिकल, सिविल, रक्षा सेना, पुलिस, रियल एस्टेट व भारी मशीनरी।", "तकनीकी, रक्षा व निर्माण"),
+        ("saturn", "sun", "प्रशासनिक सेवा व सरकारी पद", "आईएएस, लोक नीति, सरकारी ठेका, सार्वजनिक उपक्रम व प्रशासनिक नेतृत्व।", "राजकीय व प्रशासनिक सेवा"),
+        ("saturn", "venus", "वास्तुकला, विलासिता, वित्त व कला", "आर्किटेक्चर, ऑटोमोबाइल, आभूषण, फिल्म, होटल व सौंदर्य प्रसाधन।", "विलासिता, कला व वित्त"),
+        ("saturn", "jupiter", "न्यायाधीश, विधि, शिक्षण व परामर्श", "न्यायालय, प्रोफेसर, नीति-निर्माता, आध्यात्मिक गुरु व उच्च सलाहकार।", "शिक्षा, न्याय व धर्म-कर्म"),
+        ("saturn", "moon", "जल-व्यापार, पर्यटन व आयात-निर्यात", "पर्यटन, खाद्य व पेय, नौसेना, विदेशी व्यापार व सतत स्थानांतरण।", "लॉजिस्टिक्स व हॉस्पिटैलिटी"),
+        ("saturn", "rahu", "एआई, रोबोटिक्स व विदेशी बहुराष्ट्रीय", "एआई आर्किटेक्चर, इलेक्ट्रॉनिक्स, बहुराष्ट्रीय कंपनी व विदेशी कार्य।", "अत्याधुनिक उच्च-प्रौद्योगिकी"),
+        ("saturn", "ketu", "सूक्ष्म शोध, तंत्र-ज्योतिष व ऑडिटिंग", "गूढ़ शोध, फॉरेंसिक ऑडिट, बुनकर, वस्त्र उद्योग व आध्यात्मिक संस्थाएं।", "शोध, ऑडिट व गुप्त विद्याएं"),
+    ]
+
+    cards_svg = []
+    card_w, card_h = 250, 115
+    for i, (p1, p2, title, desc, sector) in enumerate(professions):
+        col = i % 2
+        row = i // 2
+        cx = 24 + col * (card_w + 12)
+        cy = 138 + row * (card_h + 8)
+
+        cards_svg.append(f"""
+  <!-- Profession Card {i+1} -->
+  <g transform="translate({cx}, {cy})">
+    <rect width="{card_w}" height="{card_h}" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+    <rect width="{card_w}" height="28" rx="6" fill="#f8fafc"/>
+    <line x1="0" y1="28" x2="{card_w}" y2="28" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Planet Badges -->
+    <g transform="translate(8, 2)">
+      {planet_badge_svg(p1, 0, 0, 56, 22)}
+      <text x="64" y="16" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#d97706">+</text>
+      {planet_badge_svg(p2, 75, 0, 56, 22)}
+    </g>
+
+    <text x="{card_w - 8}" y="19" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#0284c7" text-anchor="end">{sector}</text>
+
+    <!-- Title -->
+    <text x="10" y="47" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#78350f">{title}</text>
+
+    <!-- Description -->
+    <text x="10" y="66" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#334155">{desc[:38]}</text>
+    <text x="10" y="81" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#334155">{desc[38:80]}</text>
+
+    <rect x="8" y="93" width="{card_w - 16}" height="16" rx="3" fill="#fef3c7"/>
+    <text x="{card_w/2}" y="105" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#b45309" text-anchor="middle">शनि से 1-5-9 त्रिकोण अथवा 2रे भाव में युति प्रभाव</text>
+  </g>""")
+
+    cards_str = "\n".join(cards_svg)
+
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
+{COMMON_DEFS}
+  <rect x="6" y="6" width="548" height="{h-12}" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="{h-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  {header_banner("शनि कर्म-कारक आजीविका एवं व्यवसाय निर्धारण महाचक्र", "Saturn (Karma Karaka) Career, Profession &amp; Livelihood Destiny Matrix", "शनि से 1-5-9 त्रिकोण एवं 2रे भाव में स्थित ग्रह जातक का मुख्य पेशा तय करते हैं", 66)}
+
+  <!-- Master Center Callout -->
+  <g transform="translate(24, 94)">
+    <rect width="512" height="34" rx="6" fill="#0f172a"/>
+    <text x="256" y="22" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" text-anchor="middle">★ शनि (Saturn) = संपूर्ण ब्रह्मांड का प्रधान कर्म एवं आजीविका कारक ★</text>
+  </g>
+
+  {cards_str}
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="642" width="512" height="105" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="664" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ बी.एन.एन. आजीविका निर्धारण के 3 अकाट्य नियम ★</text>
+  <text x="280" y="685" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">1. शनि की राशि का तत्व: अग्नि = नेतृत्व, पृथ्वी = उद्योग/निर्माण, वायु = आईटी/बुद्धि, जल = सेवा/विदेश</text>
+  <text x="280" y="705" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">2. शनि के निकटतम अंश वाला ग्रह जातक की कार्यप्रणाली की मूल प्रकृति निश्चित करता है</text>
+  <text x="280" y="725" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">3. शनि से 2रे भाव का ग्रह आजीविका के माध्यम से होने वाले धन आगमन का स्रोत होता है</text>
+</svg>"""
+
+# ==============================================================================
+# 15. Marriage, Relationship & Spouse Karaka Chart
+# ==============================================================================
+def make_marriage_matrix_chart():
+    w, h = 560, 770
+    male_rules = [
+        ("venus", "jupiter", "सुलक्षणा, धर्मपरायण व समृद्ध पत्नी; समय पर सुखद विवाह।"),
+        ("venus", "mercury", "वाक्पटु, व्यापार-कुशल, उच्च शिक्षित व युवा दिखने वाली पत्नी।"),
+        ("venus", "saturn", "परिपक्व, स्वावलंबी; 28-30 वर्ष पर विवाह उपरांत भाग्योदय।"),
+        ("venus", "rahu", "भिन्न संस्कृति/जाति, विदेशी संपर्क, असाधारण रूप-सौंदर्य।"),
+        ("venus", "ketu", "आध्यात्मिक रुचि, विरक्ति; अहंकार त्यागने पर सात्विक शांति।"),
+    ]
+    female_rules = [
+        ("mars", "jupiter", "विद्वान, प्रतिष्ठित, धर्मनिष्ठ, रक्षा/न्याय/शिक्षा से जुड़ा पति।"),
+        ("mars", "sun", "स्वाभिमानी, उच्च प्रशासनिक अधिकारी, सरकारी सेवा में उच्च पद।"),
+        ("mars", "mercury", "तकनीकी इंजीनियर, गणितज्ञ, चतुर व वाक्पटु व्यापारी पति।"),
+        ("mars", "saturn", "कठोर परिश्रमी, अनुशासित, आत्मनिर्मित (Self-made); स्थिर स्वभाव।"),
+        ("mars", "rahu", "अप्रत्याशित प्रारब्ध; गुरु की दृष्टि होने पर समस्त बाधाएं दूर।"),
+    ]
+
+    male_svg = []
+    for idx, (p1, p2, text) in enumerate(male_rules):
+        male_svg.append(f"""
+      <g transform="translate(6, {idx * 68})">
+        <rect width="238" height="62" rx="6" fill="#ffffff" stroke="#fbcfe8" stroke-width="1.2"/>
+        <g transform="translate(6, 4)">
+          {planet_badge_svg(p1, 0, 0, 52, 20)}
+          <text x="59" y="15" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#be185d">+</text>
+          {planet_badge_svg(p2, 69, 0, 52, 20)}
+        </g>
+        <text x="6" y="38" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">{text[:32]}</text>
+        <text x="6" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">{text[32:70]}</text>
+      </g>""")
+
+    female_svg = []
+    for idx, (p1, p2, text) in enumerate(female_rules):
+        female_svg.append(f"""
+      <g transform="translate(6, {idx * 68})">
+        <rect width="238" height="62" rx="6" fill="#ffffff" stroke="#fecaca" stroke-width="1.2"/>
+        <g transform="translate(6, 4)">
+          {planet_badge_svg(p1, 0, 0, 52, 20)}
+          <text x="59" y="15" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#dc2626">+</text>
+          {planet_badge_svg(p2, 69, 0, 52, 20)}
+        </g>
+        <text x="6" y="38" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">{text[:32]}</text>
+        <text x="6" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">{text[32:70]}</text>
+      </g>""")
+
+    male_str = "\n".join(male_svg)
+    female_str = "\n".join(female_svg)
+
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
+{COMMON_DEFS}
+  <rect x="6" y="6" width="548" height="{h-12}" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="{h-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  {header_banner("विवाह, दांपत्य एवं जीवनसाथी कारक महाचक्र", "BNN Marriage, Relationship &amp; Spouse Timing Architecture", "पुरुष कुंडली: शुक्र (पत्नी कारक) • स्त्री कुंडली: मंगल (पति कारक)", 66)}
+
+  <!-- Left Column: Male Chart -->
+  <g transform="translate(24, 96)">
+    <rect width="250" height="400" rx="8" fill="#fdf2f8" stroke="#be185d" stroke-width="1.4"/>
+    <rect width="250" height="30" rx="8" fill="#9d174d"/>
+    <text x="125" y="20" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">पुरुष कुंडली: शुक्र [♀] (पत्नी कारक)</text>
+    <g transform="translate(0, 42)">
+      {male_str}
+    </g>
+  </g>
+
+  <!-- Right Column: Female Chart -->
+  <g transform="translate(286, 96)">
+    <rect width="250" height="400" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.4"/>
+    <rect width="250" height="30" rx="8" fill="#991b1b"/>
+    <text x="125" y="20" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">स्त्री कुंडली: मंगल [♂] (पति कारक)</text>
+    <g transform="translate(0, 42)">
+      {female_str}
+    </g>
+  </g>
+
+  <!-- Timing of Marriage Box -->
+  <g transform="translate(24, 508)">
+    <rect width="512" height="120" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+    <text x="256" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#78350f" text-anchor="middle">★ विवाह का सटीक वर्ष निर्धारण (Timing of Marriage) ★</text>
+    
+    <text x="20" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309">1. गुरु गोचर:</text>
+    <text x="85" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">प्रगतिशील गुरु जब जन्मकालिक शुक्र (पुरुष) या मंगल (स्त्री) के ऊपर या 1-5-9 त्रिकोण में आए।</text>
+
+    <text x="20" y="70" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#0284c7">2. शनि स्वीकृति:</text>
+    <text x="100" y="70" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">गोचर शनि का त्रिकोण संबंध विवाह को दीर्घकालिक सामाजिक व पारिवारिक स्थायित्व देता है।</text>
+
+    <text x="20" y="92" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#dc2626">3. विलंब सूत्र:</text>
+    <text x="90" y="92" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">यदि शुक्र/मंगल पर शनि या केतु की युति/दृष्टि हो तो विवाह 28 वर्ष की आयु के बाद होता है।</text>
+
+    <text x="256" y="112" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#64748b" text-anchor="middle">विशेष: गुरु की त्रिकोण दृष्टि समस्त वैवाहिक दोषों का शमन कर अखंड दांपत्य प्रदान करती है।</text>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="638" width="512" height="110" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="660" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ नाड़ी दांपत्य समन्वय सूत्र ★</text>
+  <text x="280" y="682" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">• वर-वधू की कुंडलियों में गुरु और शुक्र का परस्पर त्रिकोण संबंध सर्वोत्तम माना जाता है</text>
+  <text x="280" y="702" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">• पति-पत्नी के जन्म ग्रहों का 1-5-9 संरेखण आजीवन मानसिक व आत्मिक एकात्मता देता है</text>
+  <text x="280" y="722" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">स्रोत: भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र • ज्योतिषाचार्य आशुतोष कुमार चौबे</text>
+</svg>"""
+
+# ==============================================================================
+# 16. Master Special Yogas Diamond Chart
+# ==============================================================================
+def make_special_yogas_diamond_chart():
+    w, h = 560, 770
+    yogas = [
+        ("jupiter", "saturn", "ब्रह्म / धर्म-कर्माधिपति योग", "सर्वोच्च सामाजिक प्रतिष्ठा, न्यायाधीश, संस्था प्रमुख, निष्काम कर्म व समाज सुधारक।", "#1d4ed8"),
+        ("sun", "mercury", "बुधादित्य एवं मेधा योग", "तीक्ष्ण तार्किक बुद्धि, वित्तीय प्रबंधन, सरकारी सलाहकार, वाणी में प्रखर ओज व यश।", "#c2410c"),
+        ("mercury", "venus", "महालक्ष्मी एवं कला योग", "अपार व्यापारिक लाभ, मीडिया, सौन्दर्य, वाक-चातुर्य, संगीत व अखंड धन-वैभव।", "#047857"),
+        ("moon", "jupiter", "गजकेसरी नाड़ी योग", "अखंड जनसमर्थन, कीर्ति, परोपकार, धार्मिक यात्राएं, उच्च ज्ञान व उत्तम स्वास्थ्य।", "#0369a1"),
+        ("jupiter", "ketu", "गणेश एवं मोक्ष योग", "त्रिकालज्ञ, ज्योतिष-प्रवीण, दिव्य अंतर्ज्ञान, वैराग्य, आध्यात्मिक मुक्ति व तपस्या।", "#78350f"),
+        ("saturn", "venus", "भाग्यलक्ष्मी योग", "विवाह उपरांत प्रचंड भाग्योदय, अचल संपत्ति, वाहन सुख, लग्जरी जीवन व स्थिरता।", "#be185d"),
+    ]
+
+    cards_svg = []
+    card_w, card_h = 250, 160
+    for i, (p1, p2, title, desc, accent) in enumerate(yogas):
+        col = i % 2
+        row = i // 2
+        cx = 24 + col * (card_w + 12)
+        cy = 96 + row * (card_h + 10)
+
+        cards_svg.append(f"""
+  <!-- Special Yoga Card {i+1} -->
+  <g transform="translate({cx}, {cy})">
+    <rect width="{card_w}" height="{card_h}" rx="8" fill="#ffffff" stroke="{accent}" stroke-width="1.4"/>
+    <rect width="{card_w}" height="32" rx="8" fill="#f8fafc"/>
+    <line x1="0" y1="32" x2="{card_w}" y2="32" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Planet Badges -->
+    <g transform="translate(10, 4)">
+      {planet_badge_svg(p1, 0, 0, 60, 24)}
+      <text x="69" y="17" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="{accent}">+</text>
+      {planet_badge_svg(p2, 80, 0, 60, 24)}
+    </g>
+
+    <!-- Yoga Name -->
+    <text x="12" y="54" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="{accent}">{title}</text>
+
+    <!-- Description -->
+    <text x="12" y="76" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b">{desc[:36]}</text>
+    <text x="12" y="93" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b">{desc[36:74]}</text>
+    <text x="12" y="110" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b">{desc[74:110]}</text>
+
+    <!-- Bottom Pill -->
+    <rect x="8" y="128" width="{card_w - 16}" height="22" rx="4" fill="#fef3c7"/>
+    <text x="{card_w/2}" y="143" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="800" fill="#b45309" text-anchor="middle">1-5-9 त्रिकोण अथवा एक ही राशि में युति</text>
+  </g>""")
+
+    cards_str = "\n".join(cards_svg)
+
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
+{COMMON_DEFS}
+  <rect x="6" y="6" width="548" height="{h-12}" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="{h-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  {header_banner("अष्टादश विशिष्ट नाड़ी राजयोग एवं कर्म-संयोग चक्र", "Master Auspicious Yogas &amp; Divine Planetary Conjunctions in BNN", "ग्रहाणां संवादेन जीवस्य प्रारब्धं प्रकाशते • 6 सर्वोच्च फलदायी नाड़ी राजयोग", 66)}
+
+  {cards_str}
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="620" width="512" height="128" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="642" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ नाड़ी योगों के सक्रियण एवं भंग होने के शास्त्रीय नियम ★</text>
+  <text x="280" y="664" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">1. योग सक्रियण: जब संबंधित ग्रहों के 1-5-9 त्रिकोण में गुरु या शनि का गोचर होता है</text>
+  <text x="280" y="684" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#dc2626" text-anchor="middle">2. योग भंग: यदि दो मित्र ग्रहों के बीच राहु या शत्रु ग्रह कम अंशों पर स्थित हो जाए</text>
+  <text x="280" y="704" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">3. दोष भंग: किसी भी नकारात्मक योग पर यदि गुरु की 1-5-9 त्रिकोण दृष्टि पड़ जाए तो दोष शांत हो जाता है</text>
+  <text x="280" y="724" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#64748b" text-anchor="middle">स्रोत: भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र • तंत्र ज्ञान शोध संस्थान (2026)</text>
+</svg>"""
+
+# ==============================================================================
+# 17. Rahu-Ketu Nodal Axis & Bandhana-Moksha Chart
+# ==============================================================================
+def make_rahu_ketu_nodal_axis_chart():
+    w, h = 560, 770
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
+{COMMON_DEFS}
+  <rect x="6" y="6" width="548" height="{h-12}" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="{h-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  {header_banner("राहु-केतु अक्ष, कालसर्प एवं कर्म-बंधन महाचक्र", "Rahu-Ketu 180° Karmic Nodal Axis &amp; Bandhana-Moksha Dynamics", "राहु भविष्य की संचित तृष्णा (Desire) • केतु पूर्व-जन्म की मुक्ति (Dissolution)", 66)}
+
+  <!-- Central Axis Circle Visual -->
+  <g transform="translate(24, 96)">
+    <rect width="512" height="300" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+    <rect width="512" height="28" rx="8" fill="#0f172a"/>
+    <text x="256" y="19" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">180° संपात अक्ष: भविष्य भोगेच्छा बनाम पूर्व-कर्म मुक्ति</text>
+
+    <!-- Center 180 Axis Line -->
+    <line x1="80" y1="160" x2="432" y2="160" stroke="#78350f" stroke-width="2.5" stroke-dasharray="6,4"/>
+    <circle cx="256" cy="160" r="85" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+
+    <!-- Rahu Node (Top North) -->
+    <g transform="translate(60, 80)">
+      <rect width="180" height="65" rx="8" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.4"/>
+      <text x="90" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#4338ca" text-anchor="middle">☊ राहु (Rahu Node)</text>
+      <text x="90" y="42" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#1e293b" text-anchor="middle">भविष्य तृष्णा • माया • तकनीकी विस्तार</text>
+      <text x="90" y="56" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="600" fill="#6d28d9" text-anchor="middle">जातक को खींचने वाला चुंबकीय केंद्र</text>
+    </g>
+
+    <!-- Ketu Node (Bottom South) -->
+    <g transform="translate(272, 175)">
+      <rect width="180" height="65" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.4"/>
+      <text x="90" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#78350f" text-anchor="middle">☋ केतु (Ketu Node)</text>
+      <text x="90" y="42" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#1e293b" text-anchor="middle">अतीत मुक्ति • वैराग्य • सूक्ष्म ज्ञान</text>
+      <text x="90" y="56" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="600" fill="#b45309" text-anchor="middle">कर्म ऋण विसर्जन व मोक्ष का द्वार</text>
+    </g>
+
+    <!-- Dynamic Curved Arrows connecting them -->
+    <path d="M 230,120 Q 256,100 280,120" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <text x="256" y="98" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#dc2626" text-anchor="middle">प्रारब्ध प्रवाह</text>
+
+    <!-- Bottom summary box inside graphic -->
+    <rect x="20" y="250" width="472" height="40" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="256" y="268" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#334155" text-anchor="middle">राहु जातक को भौतिक संसार में उलझाता है • केतु जातक को आत्म-साक्षात्कार की ओर धकेलता है</text>
+    <text x="256" y="282" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle">दोनों का अक्ष 180° पर स्थिर रहकर प्रत्येक कुण्डली का 'कर्म-संतुलन' (Karmic Balance) बनाता है।</text>
+  </g>
+
+  <!-- Section 2: Comparative Cards -->
+  <g transform="translate(24, 408)">
+    <!-- Left Card: Bandhana Yoga -->
+    <g transform="translate(0, 0)">
+      <rect width="250" height="215" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1.4"/>
+      <rect width="250" height="28" rx="8" fill="#991b1b"/>
+      <text x="125" y="19" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">कालसर्प / कर्म-बंधन योग (Karmic Trap)</text>
+
+      <text x="12" y="52" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#991b1b">१. स्वरूप एवं स्थिति:</text>
+      <text x="12" y="70" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">जब समस्त 7 ग्रह राहु और केतु की 180° परिधि</text>
+      <text x="12" y="86" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">के एक ही ओर कैद हो जाएं।</text>
+
+      <text x="12" y="112" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#991b1b">२. जीवन पर प्रभाव:</text>
+      <text x="12" y="130" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">• आयु 0 से 32 वर्ष: कठोर संघर्ष, मानसिक दबाव।</text>
+      <text x="12" y="148" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">• आयु 33 के बाद: असाधारण उत्थान व सफलता।</text>
+
+      <rect x="8" y="172" width="234" height="34" rx="4" fill="#fee2e2"/>
+      <text x="125" y="186" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#991b1b" text-anchor="middle">नाड़ी समाधान: सात्विक साधना एवं</text>
+      <text x="125" y="200" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#991b1b" text-anchor="middle">कुलदेवता/महादेव की नित्य आराधना।</text>
+    </g>
+
+    <!-- Right Card: Moksha Yoga -->
+    <g transform="translate(262, 0)">
+      <rect width="250" height="215" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.4"/>
+      <rect width="250" height="28" rx="8" fill="#065f46"/>
+      <text x="125" y="19" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">अमृता / मोक्ष मुक्ति योग (Liberation)</text>
+
+      <text x="12" y="52" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#065f46">१. स्वरूप एवं स्थिति:</text>
+      <text x="12" y="70" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">जब गुरु (Jupiter) या शुक्र (Venus) केतु के</text>
+      <text x="12" y="86" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">साथ अथवा 1-5-9 त्रिकोण में स्थित हों।</text>
+
+      <text x="12" y="112" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#065f46">२. जीवन पर प्रभाव:</text>
+      <text x="12" y="130" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">• पूर्व-पुण्य जागृति: सिद्धियों की स्वतः प्राप्ति।</text>
+      <text x="12" y="148" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">• वासना क्षय: आत्मिक शांति एवं परमानंद।</text>
+
+      <rect x="8" y="172" width="234" height="34" rx="4" fill="#d1fae5"/>
+      <text x="125" y="186" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#065f46" text-anchor="middle">नाड़ी वरदान: ऐसा जातक समाज के</text>
+      <text x="125" y="200" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#065f46" text-anchor="middle">कल्याण हेतु अवतरित मार्गदर्शक होता है।</text>
+    </g>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="635" width="512" height="112" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="658" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ राहु-केतु को साधने का स्वर्णिम नाड़ी सूत्र ★</text>
+  <text x="280" y="680" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">• राहु जिस ग्रह के साथ हो, उस कारकत्व के प्रति असीम भूख उत्पन्न करता है</text>
+  <text x="280" y="700" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">• केतु जिस ग्रह के साथ हो, उस कारकत्व से भौतिक अलगाव देकर आध्यात्मिक पूर्णता देता है</text>
+  <text x="280" y="720" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">• गुरु की दृष्टि राहु के विष को अमृत में और केतु के वैराग्य को आत्मज्ञान में बदल देती है</text>
+  <text x="280" y="736" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" fill="#64748b" text-anchor="middle">स्रोत: भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र • तंत्र ज्ञान शोध संस्थान (2026)</text>
+</svg>"""
+
+# ==============================================================================
+# 18. Planetary Transit Clocks & Event Activation
+# ==============================================================================
+def make_transits_activation_chart():
+    w, h = 560, 770
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">
+{COMMON_DEFS}
+  <rect x="6" y="6" width="548" height="{h-12}" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="{h-24}" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  {header_banner("गोचर गति एवं जीवन घटना सक्रियण काल-चक्र", "Planetary Transit Clocks &amp; Event Activation Dynamics in BNN", "धीमी गति वाले ग्रह आधार बनाते हैं • तीव्र गति वाले ग्रह घटना को ट्रिगर करते हैं", 66)}
+
+  <!-- Section 1: Master Clocks (Slow Moving) -->
+  <g transform="translate(24, 96)">
+    <rect width="512" height="152" rx="8" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.4"/>
+    <rect width="512" height="28" rx="8" fill="#0f172a"/>
+    <text x="256" y="19" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">१. स्थूल काल प्रवर्तक (Master Clocks - मंद गति ग्रह)</text>
+
+    <!-- Saturn Row -->
+    <g transform="translate(16, 36)">
+      {planet_badge_svg("saturn", 0, 0, 56, 22)}
+      <text x="70" y="15" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#1d4ed8">2.5 वर्ष प्रति राशि (30 वर्ष चक्र)</text>
+      <text x="255" y="15" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">कर्म, आजीविका व सामाजिक प्रतिष्ठा का स्थूल आधार</text>
+    </g>
+
+    <!-- Rahu/Ketu Row -->
+    <g transform="translate(16, 72)">
+      {planet_badge_svg("rahu", 0, 0, 56, 22)}
+      <text x="70" y="15" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#4338ca">1.5 वर्ष प्रति राशि (18 वर्ष चक्र)</text>
+      <text x="255" y="15" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">प्रारब्ध का आकस्मिक मोड़ व कर्म ऋण चुकाने का काल</text>
+    </g>
+
+    <!-- Jupiter Row -->
+    <g transform="translate(16, 108)">
+      {planet_badge_svg("jupiter", 0, 0, 56, 22)}
+      <text x="70" y="15" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#b45309">1.0 वर्ष प्रति राशि (12 वर्ष चक्र)</text>
+      <text x="255" y="15" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">विवाह, सन्तान, पदोन्नति व भाग्योदय का सटीक वर्ष</text>
+    </g>
+  </g>
+
+  <!-- Section 2: Trigger Switches (Fast Moving) -->
+  <g transform="translate(24, 258)">
+    <rect width="512" height="195" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.4"/>
+    <rect width="512" height="28" rx="8" fill="#064e3b"/>
+    <text x="256" y="19" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">२. सूक्ष्म घटना ट्रिगर (Trigger Switches - तीव्र गति ग्रह)</text>
+
+    <!-- Sun Row -->
+    <g transform="translate(16, 36)">
+      {planet_badge_svg("sun", 0, 0, 56, 22)}
+      <text x="70" y="15" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#c2410c">1 माह प्रति राशि (30 दिन)</text>
+      <text x="240" y="15" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">घटना का सटीक माह एवं सरकारी/अधिकारिक स्वीकृति</text>
+    </g>
+
+    <!-- Mars Row -->
+    <g transform="translate(16, 72)">
+      {planet_badge_svg("mars", 0, 0, 56, 22)}
+      <text x="70" y="15" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#dc2626">45 दिन प्रति राशि</text>
+      <text x="240" y="15" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">ऊर्जा, क्रियान्वयन, भूमि क्रय, अनुबंध व सक्रियता</text>
+    </g>
+
+    <!-- Mercury/Venus Row -->
+    <g transform="translate(16, 108)">
+      {planet_badge_svg("mercury", 0, 0, 56, 22)}
+      <text x="70" y="15" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#047857">25-30 दिन प्रति राशि</text>
+      <text x="240" y="15" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">वित्तीय लेन-देन, व्यावसायिक पत्र व्यवहार व यात्रा</text>
+    </g>
+
+    <!-- Moon Row -->
+    <g transform="translate(16, 144)">
+      {planet_badge_svg("moon", 0, 0, 56, 22)}
+      <text x="70" y="15" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#0369a1">2.25 दिन प्रति राशि (54 घंटे)</text>
+      <text x="240" y="15" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">घटना का सटीक दिन एवं जातक का मानसिक संकल्प</text>
+    </g>
+  </g>
+
+  <!-- Section 3: Predictive Trigger Formula -->
+  <g transform="translate(24, 464)">
+    <rect width="512" height="155" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="1.6"/>
+    <text x="256" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#78350f" text-anchor="middle">★ अचूक फलित ट्रिगर समीकरण (Master Timing Formula) ★</text>
+
+    <!-- Equation Row -->
+    <rect x="15" y="38" width="482" height="42" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="256" y="64" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="800" fill="#b45309" text-anchor="middle">
+      [शनि की सहमति] + [गुरु का गोचर] + [सूर्य का संक्रमण] + [चन्द्र का गोचर] = निश्चित घटना
+    </text>
+
+    <text x="20" y="102" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b">• चरण 1 (वर्ष):</text>
+    <text x="95" y="102" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#334155">शनि और गुरु मिलकर घटना का वर्ष तय करते हैं।</text>
+
+    <text x="20" y="122" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b">• चरण 2 (माह):</text>
+    <text x="95" y="122" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#334155">सूर्य जब संबंधित भाव या ग्रह के 1-5-9 त्रिकोण में आए, तो वह माह निश्चित होता है।</text>
+
+    <text x="20" y="142" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b">• चरण 3 (दिन):</text>
+    <text x="95" y="142" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#334155">चन्द्रमा जब उस राशि से गुजरे, ठीक उसी दिन वह घटना घटित होती है।</text>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="630" width="512" height="120" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="652" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ नाड़ी काल-चक्र निर्णय निष्कर्ष ★</text>
+  <text x="280" y="674" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">• मंद ग्रह जीवन के स्थायी अध्याय लिखते हैं</text>
+  <text x="280" y="694" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">• मध्यम ग्रह शुभ अवसरों के द्वार खोलते हैं</text>
+  <text x="280" y="714" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">• शीघ्रगामी ग्रह उस द्वार से जातक को अंदर प्रवेश कराते हैं</text>
+  <text x="280" y="732" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" fill="#64748b" text-anchor="middle">स्रोत: भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र • तंत्र ज्ञान शोध संस्थान (2026)</text>
+</svg>"""
+
 def main():
-    print("🚀 Generating 12 Ultra-Crisp, Vibrantly Colorful HD Sacred Parchment Diamond Charts for BNN...")
+    print("🚀 Generating all 18 Ultra-Crisp HD Sacred Parchment Diamond Charts for BNN...")
     write_and_verify("bnn_philosophy_hierarchy_chart.svg", make_philosophy_hierarchy())
     write_and_verify("bnn_jeeva_flow_diamond_chart.svg", make_jeeva_flow_chart())
     write_and_verify("bnn_directional_diamond_chart.svg", make_directional_diamond_chart())
@@ -1052,7 +1587,14 @@ def main():
     write_and_verify("bnn_progression_paryaya_chart.svg", make_progression_paryaya_chart())
     write_and_verify("bnn_bhrigu_bindu_diagram.svg", make_bhrigu_bindu_diagram())
     write_and_verify("bnn_protocol_flowchart.svg", make_protocol_flowchart())
-    print("🎉 All 12 charts generated, enriched with colorful planet badges and XML validated successfully!")
+    # 6 New Master Explanatory Charts
+    write_and_verify("bnn_vakri_parivartana_chart.svg", make_vakri_parivartana_chart())
+    write_and_verify("bnn_career_matrix_chart.svg", make_career_matrix_chart())
+    write_and_verify("bnn_marriage_matrix_chart.svg", make_marriage_matrix_chart())
+    write_and_verify("bnn_special_yogas_diamond_chart.svg", make_special_yogas_diamond_chart())
+    write_and_verify("bnn_rahu_ketu_nodal_axis_chart.svg", make_rahu_ketu_nodal_axis_chart())
+    write_and_verify("bnn_transits_activation_chart.svg", make_transits_activation_chart())
+    print("🎉 All 18 BNN charts generated, validated 100% XML compliant!")
 
 if __name__ == "__main__":
     main()

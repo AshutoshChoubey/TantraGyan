@@ -10,9 +10,9 @@
  * - Complete Self-Purging: Clean cache wiping when user disables offline mode or updates edition
  */
 
-const APP_VERSION = '3.1.0';
+const APP_VERSION = '3.2.0';
 const CACHE_NAME = `tantragyan-v${APP_VERSION}`;
-const FONT_CACHE_NAME = 'tantragyan-fonts-v3.1';
+const FONT_CACHE_NAME = 'tantragyan-fonts-v3.2';
 
 // Essential assets for complete offline functioning
 const PRECACHE_ASSETS = [
@@ -60,6 +60,12 @@ const PRECACHE_ASSETS = [
   'assets/icons/bnn_progression_paryaya_chart.svg',
   'assets/icons/bnn_bhrigu_bindu_diagram.svg',
   'assets/icons/bnn_protocol_flowchart.svg',
+  'assets/icons/bnn_vakri_parivartana_chart.svg',
+  'assets/icons/bnn_career_matrix_chart.svg',
+  'assets/icons/bnn_marriage_matrix_chart.svg',
+  'assets/icons/bnn_special_yogas_diamond_chart.svg',
+  'assets/icons/bnn_rahu_ketu_nodal_axis_chart.svg',
+  'assets/icons/bnn_transits_activation_chart.svg',
   'assets/images/planets/sun.png',
   'assets/images/planets/moon.png',
   'assets/images/planets/mars.png',
