@@ -1,0 +1,41 @@
+{
+  "devices": [
+    {
+      "name": "iPhone 15 Mobile",
+      "viewport": {"width": 393, "height": 852},
+      "device_scale_factor": 3.0,
+      "is_mobile": true,
+      "has_touch": true,
+      "max_nav_height_px": 52
+    },
+    {
+      "name": "Compact Mobile (iPhone SE)",
+      "viewport": {"width": 375, "height": 667},
+      "device_scale_factor": 2.0,
+      "is_mobile": true,
+      "has_touch": true,
+      "max_nav_height_px": 52
+    },
+    {
+      "name": "Tablet (iPad Air)",
+      "viewport": {"width": 820, "height": 1180},
+      "device_scale_factor": 2.0,
+      "is_mobile": false,
+      "has_touch": true,
+      "max_nav_height_px": 70
+    },
+    {
+      "name": "Desktop Workstation (Full HD)",
+      "viewport": {"width": 1440, "height": 900},
+      "device_scale_factor": 1.0,
+      "is_mobile": false,
+      "has_touch": false,
+      "max_nav_height_px": 80
+    }
+  ],
+  "themes": [
+    {"id": "default", "name": "Vedic Parchment", "attribute": "data-theme", "value": ""},
+    {"id": "dark", "name": "Midnight Celestial", "attribute": "data-theme", "value": "dark"},
+    {"id": "light", "name": "Solar White", "attribute": "data-theme", "value": "light"}
+  ]
+}

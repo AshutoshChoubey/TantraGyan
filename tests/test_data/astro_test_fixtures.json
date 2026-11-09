@@ -1,0 +1,31 @@
+{
+  "planets": [
+    {"id": "sun", "name": "सूर्य", "name_en": "Sun", "karaka": "पिता, आत्मा, तेज, अधिकार", "color": "#f59e0b", "exaltation": "Aries", "debilitation": "Libra"},
+    {"id": "moon", "name": "चन्द्र", "name_en": "Moon", "karaka": "माता, मन, गति, जल", "color": "#38bdf8", "exaltation": "Taurus", "debilitation": "Scorpio"},
+    {"id": "mars", "name": "मंगल", "name_en": "Mars", "karaka": "भ्राता, रक्त, साहस, भूमि", "color": "#ef4444", "exaltation": "Capricorn", "debilitation": "Cancer"},
+    {"id": "mercury", "name": "बुध", "name_en": "Mercury", "karaka": "बुद्धि, व्यापार, वाणी, मित्र", "color": "#10b981", "exaltation": "Virgo", "debilitation": "Pisces"},
+    {"id": "jupiter", "name": "गुरु", "name_en": "Jupiter", "karaka": "जीव, ज्ञान, गुरु, संतान", "color": "#eab308", "exaltation": "Cancer", "debilitation": "Capricorn"},
+    {"id": "venus", "name": "शुक्र", "name_en": "Venus", "karaka": "पत्नी, धन, ऐश्वर्य, कला", "color": "#ec4899", "exaltation": "Pisces", "debilitation": "Virgo"},
+    {"id": "saturn", "name": "शनि", "name_en": "Saturn", "karaka": "कर्म, आयु, सेवक, रोग", "color": "#6366f1", "exaltation": "Libra", "debilitation": "Aries"},
+    {"id": "rahu", "name": "राहु", "name_en": "Rahu", "karaka": "भ्रम, दादा, विदेश, गुप्त", "color": "#8b5cf6", "exaltation": "Taurus/Gemini", "debilitation": "Scorpio/Sagittarius"},
+    {"id": "ketu", "name": "केतु", "name_en": "Ketu", "karaka": "मोक्ष, नाना, त्याग, अध्यात्म", "color": "#64748b", "exaltation": "Scorpio/Sagittarius", "debilitation": "Taurus/Gemini"}
+  ],
+  "directional_trines": {
+    "east_dharma": {"direction": "पूर्व (East)", "tattva": "अग्नि (Fire)", "signs": [1, 5, 9], "names": ["Aries", "Leo", "Sagittarius"]},
+    "south_artha": {"direction": "दक्षिण (South)", "tattva": "पृथ्वी (Earth)", "signs": [2, 6, 10], "names": ["Taurus", "Virgo", "Capricorn"]},
+    "west_kama": {"direction": "पश्चिम (West)", "tattva": "वायु (Air)", "signs": [3, 7, 11], "names": ["Gemini", "Libra", "Aquarius"]},
+    "north_moksha": {"direction": "उत्तर (North)", "tattva": "जल (Water)", "signs": [4, 8, 12], "names": ["Cancer", "Scorpio", "Pisces"]}
+  },
+  "bnn_sutras": [
+    {"rule_id": "BNN_01", "name": "जीव-कर्म योग", "combination": ["Jupiter", "Saturn"], "effect": "धार्मिक कर्म, न्यायप्रियता, आजीविका में स्थिरता"},
+    {"rule_id": "BNN_02", "name": "ज्ञान-अग्नि योग", "combination": ["Jupiter", "Sun"], "effect": "प्रशासनिक पद, उच्च प्रतिष्ठा, पितृ कृपा"},
+    {"rule_id": "BNN_03", "name": "शुक्र-केतु योग", "combination": ["Venus", "Ketu"], "effect": "वैराग्य, आध्यात्मिक संपदा, सांसारिक सुख में त्याग"},
+    {"rule_id": "BNN_04", "name": "बुध-राहु योग", "combination": ["Mercury", "Rahu"], "effect": "कुशाग्र कूटनीतिक बुद्धि, तकनीकी दक्षता, विदेश व्यापार"}
+  ],
+  "boundary_test_cases": [
+    {"case_id": "SANDHI_0_DEG", "sign": 1, "degree": 0.01, "expected_sandhi": true, "note": "Rashi Sandhi beginning"},
+    {"case_id": "SANDHI_29_DEG", "sign": 1, "degree": 29.98, "expected_sandhi": true, "note": "Rashi Sandhi end"},
+    {"case_id": "COMBUST_MERCURY", "planet": "Mercury", "sun_distance": 5.2, "expected_combustion": true},
+    {"case_id": "RETROGRADE_JUPITER", "planet": "Jupiter", "is_retrograde": true, "direction_rule": "Counts influence on previous sign as well"}
+  ]
+}

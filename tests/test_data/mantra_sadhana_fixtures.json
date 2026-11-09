@@ -1,0 +1,50 @@
+{
+  "mathematical_model": {
+    "target_japa": 125000,
+    "total_days": 41,
+    "daily_japa": 3049,
+    "accumulated_japa": 125009,
+    "daily_full_malas": 28,
+    "daily_loose_beads": 25,
+    "beads_per_mala": 108
+  },
+  "hawan_editions": {
+    "vidhi_a_practical": {
+      "name": "संक्षिप्त समापन हवन (विधि A)",
+      "total_ahutis": 108,
+      "shiva_panchakshari_ahutis": 54,
+      "chamunda_kunjika_ahutis": 54,
+      "kund_type": "ताम्र हवन कुंड (Copper Kund)",
+      "target_audience": "गृहस्थ साधक (Household Practitioners)"
+    },
+    "vidhi_b_dashansh": {
+      "name": "पूर्ण पंचाक्षरी दशांश हवन (विधि B)",
+      "total_ahutis": 12500,
+      "percentage_of_japa": 10.0,
+      "kund_type": "यज्ञशाला / वृहद वेदी (Yajnashala / Temple)",
+      "target_audience": "आश्रम / वृहद अनुष्ठान (Temple / Intensive)"
+    },
+    "kunjika_stotra_clarification": {
+      "daily_recitations": 21,
+      "sadhana_days": 41,
+      "total_recitations": 861,
+      "separate_dashansh_required": false,
+      "scriptural_reason": "स्वयंसिद्ध जाग्रत स्तोत्र — 12,500 पंचाक्षरी आहुतियों में न मिलाएं"
+    }
+  },
+  "hawan_ingredients": [
+    {"index": 1, "name": "आम की समिधा", "name_en": "Mango Sticks", "file": "assets/images/hawan/samidha_mango.jpg", "role": "अग्नि प्रज्वलन व काष्ठ आहुति"},
+    {"index": 2, "name": "शुद्ध देशी गाय का घी", "name_en": "Pure Cow Ghee", "file": "assets/images/hawan/cow_ghee.jpg", "role": "घृत आहुति व अग्नि प्रदीप्ति"},
+    {"index": 3, "name": "काले तिल", "name_en": "Black Sesame", "file": "assets/images/hawan/black_sesame.jpg", "role": "प्रधान आहुति व कर्म-दोष भस्म"},
+    {"index": 4, "name": "जौ (यव)", "name_en": "Sacred Barley", "file": "assets/images/hawan/barley_jau.jpg", "role": "आरोग्य, पुष्टि व समृद्धि"},
+    {"index": 5, "name": "कमलगट्टा", "name_en": "Lotus Seeds", "file": "assets/images/hawan/kamalgatta.jpg", "role": "महालक्ष्मी व दुर्गा प्रिय आहुति"},
+    {"index": 6, "name": "शुद्ध हवन सामग्री", "name_en": "Herbal Mixture", "file": "assets/images/hawan/hawan_samagri.jpg", "role": "दिव्य औषधीय सुगंध मिश्रण"}
+  ],
+  "canonical_mantras": {
+    "panchakshari": "॥ ॐ नमः शिवाय स्वाहा ॥",
+    "kunjika_mula": "ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे। ॐ ग्लौं हुं क्लीं जूं सः ज्वालय ज्वालय ज्वल ज्वल प्रज्वल प्रज्वल ऐं ह्रीं क्लीं चामुण्डायै विच्चे ज्वल हं सं लं क्षं फट् स्वाहा॥",
+    "asana_utthapana": "ॐ शक्राय नमः । ॐ इन्द्राय नमः ॥",
+    "purnahuti": "॥ ॐ पूर्णमदः पूर्णमिदं पूर्णात्पूर्णमुदच्यते। पूर्णस्य पूर्णमादाय पूर्णमेवावशिष्यते॥ ॥ ॐ सर्वं वै पूर्णं स्वाहा॥",
+    "svishtakrita": "॥ ॐ अग्नये स्विष्टकृते स्वाहा ॥"
+  }
+}
