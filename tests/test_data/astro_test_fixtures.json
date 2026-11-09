@@ -29,3 +29,4 @@
     {"case_id": "RETROGRADE_JUPITER", "planet": "Jupiter", "is_retrograde": true, "direction_rule": "Counts influence on previous sign as well"}
   ]
 }
+
