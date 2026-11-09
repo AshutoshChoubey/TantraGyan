@@ -560,10 +560,174 @@
       color: var(--text-muted);
     }
 
+    /* ==========================================================================
+       Mobile Responsive Navigation Bar & Layout (iPhone 15 & Viewports <= 768px)
+       Ultra-sleek single-line navigation bar taking < 6% screen height
+       ========================================================================== */
     @media (max-width: 768px) {
-      .chapter-section { padding: 1.4rem; }
-      .book-title-main { font-size: 1.85rem; }
-      .table-title-bar { flex-direction: column; align-items: flex-start; }
+      .reader-navbar {
+        height: 48px;
+        min-height: 48px;
+        max-height: 48px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+      }
+
+      .nav-inner {
+        height: 100%;
+        max-width: 100%;
+        padding: 0 0.5rem;
+        gap: 0.35rem;
+        flex-wrap: nowrap;
+        overflow: hidden;
+      }
+
+      .brand-section {
+        gap: 0.35rem;
+        min-width: 0;
+        flex: 0 1 auto;
+        overflow: hidden;
+      }
+
+      .brand-section .nav-btn {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+
+      .brand-section .nav-btn span:last-child {
+        display: none !important;
+      }
+
+      .brand-badge {
+        gap: 0.35rem;
+        min-width: 0;
+        overflow: hidden;
+      }
+
+      .brand-logo-img {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+      }
+
+      .brand-text {
+        min-width: 0;
+        overflow: hidden;
+      }
+
+      .brand-text h1 {
+        font-size: 0.86rem !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 125px;
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      .brand-text span {
+        display: none !important;
+      }
+
+      .nav-tools {
+        gap: 0.25rem;
+        flex-shrink: 0;
+        flex-wrap: nowrap;
+      }
+
+      .nav-tools .nav-btn {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        flex-shrink: 0;
+      }
+
+      .nav-tools .nav-btn span:last-child {
+        display: none !important;
+      }
+
+      .nav-tools button[onclick*="adjustFont"] {
+        display: none !important;
+      }
+
+      .book-hero-banner {
+        padding: 1.4rem 1rem 1.2rem !important;
+      }
+
+      .volume-pill {
+        font-size: 0.72rem;
+        padding: 0.25rem 0.65rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .book-title-main {
+        font-size: 1.45rem !important;
+        margin-bottom: 0.35rem;
+        line-height: 1.25;
+      }
+
+      .book-title-sub {
+        font-size: 0.92rem !important;
+        margin-bottom: 0.75rem;
+      }
+
+      .book-intro-text {
+        font-size: 0.86rem !important;
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+      }
+
+      .hero-actions {
+        gap: 0.5rem;
+      }
+
+      .hero-actions .hero-btn {
+        padding: 0.55rem 0.95rem;
+        font-size: 0.85rem;
+      }
+
+      .chapter-section {
+        padding: 1.35rem 1rem;
+      }
+
+      .table-title-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .brand-text h1 {
+        max-width: 85px;
+        font-size: 0.78rem !important;
+      }
+      .nav-inner {
+        padding: 0 0.3rem;
+        gap: 0.2rem;
+      }
+      .nav-tools {
+        gap: 0.2rem;
+      }
+      .brand-section .nav-btn,
+      .nav-tools .nav-btn {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        font-size: 0.85rem;
+      }
     }
   </style>
 </head>
@@ -579,14 +743,14 @@
       <button class="toc-close-btn" onclick="toggleTOC()" title="Close TOC">✕</button>
     </div>
     <ul class="toc-list">
-      <li><a href="#ch1" class="toc-link" onclick="toggleTOC()">१. मूल सिद्धांत एवं व्याकरण</a></li>
-      <li><a href="#ch2" class="toc-link" onclick="toggleTOC()">२. डायमंड चार्ट व तीर-आरेख</a></li>
-      <li><a href="#ch3" class="toc-link" onclick="toggleTOC()">३. नवग्रह एवं 12 राशि कारकत्व</a></li>
-      <li><a href="#ch4" class="toc-link" onclick="toggleTOC()">४. जीव लग्न (गुरु) 12 भाव फलित</a></li>
-      <li><a href="#ch5" class="toc-link" onclick="toggleTOC()">५. 36 द्वैत ग्रह-संयोग सूत्र</a></li>
-      <li><a href="#ch6" class="toc-link" onclick="toggleTOC()">६. त्रि-ग्रही व चतुर्ग्रही सूत्र</a></li>
-      <li><a href="#ch7" class="toc-link" onclick="toggleTOC()">७. प्रगति, गोचर व भृगु बिंदु</a></li>
-      <li><a href="#ch8" class="toc-link" onclick="toggleTOC()">८. 7-चरणीय कुंडली विश्लेषण</a></li>
+      <li><a href="#ch1" class="toc-link" onclick="toggleTOC()">1. मूल सिद्धांत एवं व्याकरण</a></li>
+      <li><a href="#ch2" class="toc-link" onclick="toggleTOC()">2. डायमंड चार्ट व तीर-आरेख</a></li>
+      <li><a href="#ch3" class="toc-link" onclick="toggleTOC()">3. नवग्रह एवं 12 राशि कारकत्व</a></li>
+      <li><a href="#ch4" class="toc-link" onclick="toggleTOC()">4. जीव लग्न (गुरु) 12 भाव फलित</a></li>
+      <li><a href="#ch5" class="toc-link" onclick="toggleTOC()">5. 36 द्वैत ग्रह-संयोग सूत्र</a></li>
+      <li><a href="#ch6" class="toc-link" onclick="toggleTOC()">6. त्रि-ग्रही व चतुर्ग्रही सूत्र</a></li>
+      <li><a href="#ch7" class="toc-link" onclick="toggleTOC()">7. प्रगति, गोचर व भृगु बिंदु</a></li>
+      <li><a href="#ch8" class="toc-link" onclick="toggleTOC()">8. 7-चरणीय कुंडली विश्लेषण</a></li>
       <li><a href="#author" class="toc-link" onclick="toggleTOC()">लेखक परिचय व संदर्भ</a></li>
     </ul>
   </aside>
@@ -611,8 +775,11 @@
         <button class="nav-btn" onclick="toggleTOC()" title="विषय-सूची खोलें">
           <span>📑</span> <span>विषय-सूची</span>
         </button>
+        <a href="bnn-reader.html" class="nav-btn primary" title="3D फ्लिप बुक में पढ़ें">
+          <span>📖</span> <span>3D फ्लिप बुक</span>
+        </a>
         <a href="bhrigu-nandi-nadi-karma-samyojan.pdf" download="Bhrigu-Nandi-Nadi-Karma-Samyojan-Sutra.pdf" class="nav-btn" title="संपूर्ण PDF डाउनलोड करें">
-          <span>📄</span> <span>PDF (817 KB)</span>
+          <span>📄</span> <span>PDF डाउनलोड</span>
         </a>
         <button class="nav-btn" id="theme-btn" onclick="toggleTheme()" title="थीम बदलें (दिन / रात)">
           <span id="theme-icon">🌓</span> <span>थीम</span>
@@ -627,7 +794,7 @@
   <header class="book-hero-banner">
     <div class="hero-container">
       <div class="volume-pill">
-        <span>📜</span> तंत्र ज्ञान शोध ग्रंथावली • आधिकारिक खंड २
+        <span>📜</span> तंत्र ज्ञान शोध ग्रंथावली • आधिकारिक खंड 2
       </div>
       <h2 class="book-title-main">भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र</h2>
       <div class="book-title-sub">Bhrigu Nandi Nadi: Karma-Samyojan Sutra</div>
@@ -639,7 +806,7 @@
         <div class="stat-badge"><span>✍️</span> <strong>प्रणेता:</strong> ज्योतिषाचार्य आशुतोष कुमार चौबे</div>
         <div class="stat-badge"><span>🏛️</span> तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)</div>
         <div class="stat-badge"><span>📖</span> <strong>40</strong> प्रामाणिक पृष्ठ</div>
-        <div class="stat-badge"><span>💎</span> <strong>8</strong> गहन अध्याय, 16 सारणियां व 12 कुण्डली महाचक्र</div>
+        <div class="stat-badge"><span>💎</span> <strong>8</strong> गहन अध्याय व 16 बृहत् सारणियां</div>
       </div>
     </div>
   </header>
@@ -706,13 +873,6 @@
         <div class="rule-body">
           जब दो ग्रह एक-दूसरे की राशि में स्थित हों (Exchange of Signs), तो फलित करते समय उन्हें अपनी-अपनी स्वराशि में लौटकर (विशेषकर जीवन के उत्तरार्ध या संबंधित ग्रह के गोचर सक्रियण पर) फल देने वाला माना जाता है; यदि दो नीच ग्रह आपस में राशि परिवर्तन करें तो पूर्ण नीच भंग राजयोग बनता है।
         </div>
-      </div>
-
-            <!-- Diagram 1.1 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_philosophy_hierarchy_chart.svg" alt="आरेख 1.1: भृगु नंदी नाड़ी का 5-स्तरीय फलित निर्णय पदानुक्रम" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख १.१: भृगु नंदी नाड़ी का ५-स्तरीय फलित निर्णय पदानुक्रम एवं कोर आर्किटेक्चर</div>
-        <div class="chart-sub-caption">BNN 5-Tier Hierarchical Decision Model • Karaka, Trine, Opposite, Degree &amp; Timing</div>
       </div>
 
       <!-- Table 1.1 -->
@@ -891,13 +1051,6 @@
         </div>
       </div>
 
-            <!-- Diagram 2.3 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_kartari_flank_diamond_chart.svg" alt="आरेख 2.3: अग्रिम, पृष्ठ एवं कर्तरी वेध डायमंड चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख २.३: अग्रिम, पृष्ठ एवं शुभ/पाप-कर्तरी वेध डायमंड चक्र</div>
-        <div class="chart-sub-caption">Next (+1) &amp; Rear (-1) Flank Influences &amp; Shubha/Papa Kartari Siege Mechanics</div>
-      </div>
-
       <!-- Table 2.1 -->
       <div class="table-title-bar">
         <h4>तालिका २.१: चतुर्दिशा, राशि त्रिकोण, विपरीत दृष्टि एवं वक्री स्थानांतरण की मास्टर सारणी</h4>
@@ -965,13 +1118,6 @@
       <p style="margin-bottom:1.4rem;">
         भृगु नंदी नाड़ी में ग्रह ही व्यक्ति (Living Entities / Jeeva) और वस्तु/परिस्थिति (Non-Living Matters) दोनों का प्रतिनिधित्व करते हैं।
       </p>
-
-            <!-- Diagram 3.1 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_karaka_relationship_wheel.svg" alt="आरेख 3.1: नवग्रह नाड़ी कारकत्व एवं त्रि-स्तरीय मैत्री महाचक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख ३.१: नवग्रह नाड़ी कारकत्व एवं त्रि-स्तरीय मैत्री महाचक्र</div>
-        <div class="chart-sub-caption">Navagraha Nadi Karakatwas &amp; Planetary Synergy Matrix • Friends, Neutral &amp; Enemies</div>
-      </div>
 
       <!-- Table 3.1 -->
       <div class="table-title-bar">
@@ -1096,13 +1242,6 @@
         </table>
       </div>
 
-            <!-- Diagram 3.2 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_elemental_directional_diamond_chart.svg" alt="आरेख 3.2: चतुर्विध महाभूत एवं दिशा-संयोजन डायमंड चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख ३.२: चतुर्विध महाभूत एवं दिशा-संयोजन डायमंड चक्र</div>
-        <div class="chart-sub-caption">BNN 4 Elemental Trines &amp; Directional Harmony (1-5-9 Samyoga Matrix)</div>
-      </div>
-
       <!-- Table 3.3 -->
       <div class="table-title-bar">
         <h4>तालिका ३.३: १२ राशियों की प्रकृति, तत्व, स्वभाव एवं आजीविका पर प्रभाव (12 Rashis in BNN)</h4>
@@ -1149,13 +1288,6 @@
       <p style="margin-bottom:1.4rem;">
         भृगु नंदी नाड़ी के प्रथम नियम (Rule One) के अनुसार जन्म कुंडली में <strong>गुरु (Jupiter)</strong> जिस राशि में स्थित होता है, उसे प्रथम भाव (जीव लग्न) मानकर वामावर्त (Counter-clockwise) १२ भावों का विश्लेषण किया जाता है। यदि कोई भाव रिक्त (Empty) हो, तो उस राशि के स्वामी (Dispositor) की स्थिति से फल निकाला जाता है।
       </p>
-
-            <!-- Diagram 4.1 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_jeeva_12bhavas_diamond_chart.svg" alt="आरेख 4.1: जीव लग्न (गुरु) द्वादश भाव सम्पूर्ण फलित चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख ४.१: जीव लग्न (गुरु) द्वादश भाव सम्पूर्ण फलित चक्र</div>
-        <div class="chart-sub-caption">BNN 12 Houses from Jeeva Lagna (Jupiter as Anchor • Zero Ascendant Dependency)</div>
-      </div>
 
       <!-- Table 4.1 -->
       <div class="table-title-bar">
@@ -1262,13 +1394,6 @@
       <p style="margin-bottom:1.4rem;">
         भृगु नंदी नाड़ी में जब दो ग्रह एक ही राशि (100%), त्रिकोण 1-5-9 (75%), या सप्तम 1-7 (50%) में जुड़ते हैं, तो उनके कारकत्व मिलकर विशिष्ट योग बनाते हैं। नीचे सभी प्रमुख द्वैत ग्रह-संयोगों की संपूर्ण प्रामाणिक सारणियां दी गई हैं:
       </p>
-
-            <!-- Diagram 5.1 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_major_conjunctions_diamond_chart.svg" alt="आरेख 5.1: बी.एन.एन. प्रमुख द्वि-ग्रहीय राजयोग एवं कर्म-संयोग चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख ५.१: बी.एन.एन. प्रमुख द्वि-ग्रहीय राजयोग एवं कर्म-संयोग चक्र</div>
-        <div class="chart-sub-caption">Master Dual Conjunctions in BNN Diamond Architecture • ३६ प्रमुख योगों का प्रामाणिक प्रतिपादन</div>
-      </div>
 
       <!-- Table 5.1: Sun -->
       <div class="table-title-bar">
@@ -1379,13 +1504,6 @@
         भृगु नंदी नाड़ी में किसी भी बड़ी घटना का पूर्ण प्रकटीकरण तीन ग्रहों की श्रृंखला (Planetary Triplets) से होता है, जहां पहला ग्रह मूल कारण (Root), दूसरा ग्रह माध्यम/वातावरण (Carrier) और तीसरा ग्रह अंतिम फल (Fruit) बनता है।
       </p>
 
-            <!-- Diagram 6.1 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_triplet_rajyogas_diamond_chart.svg" alt="आरेख 6.1: बी.एन.एन. त्रि-ग्रहीय एवं बहु-ग्रहीय महायोग डायमंड चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख ६.१: बी.एन.एन. त्रि-ग्रहीय एवं बहु-ग्रहीय महायोग डायमंड चक्र</div>
-        <div class="chart-sub-caption">Master Triplet Combinations in Bhrigu Nandi Nadi • २० शीर्ष शास्त्रीय राजयोग</div>
-      </div>
-
       <!-- Table 6.1 -->
       <div class="table-title-bar">
         <h4>तालिका ६.१: आजीविका, धन, विवाह, शिक्षा एवं स्वास्थ्य के अचूक २० त्रि-ग्रही/चतुर्ग्रही नाड़ी सूत्र</h4>
@@ -1440,13 +1558,6 @@
         भृगु नंदी नाड़ी में किसी भी घटना का सटीक वर्ष और महीना निकालने के लिए प्रगति (Progression), गोचर (Transit) और भृगु बिंदु (Bhrigu Bindu) के गणितीय नियमों का प्रयोग किया जाता है।
       </p>
 
-            <!-- Diagram 7.1 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_progression_paryaya_chart.svg" alt="आरेख 7.1: शनि 30-वर्षीय पर्याय एवं गुरु प्रगति काल-चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख ७.१: शनि ३०-वर्षीय पर्याय एवं गुरु प्रगति काल-चक्र</div>
-        <div class="chart-sub-caption">BNN Saturn 30-Year Paryaya Cycles &amp; Jupiter 1-Year Progression Engine</div>
-      </div>
-
       <!-- Progression Rules Box -->
       <div class="rule-card">
         <div class="rule-title"><span>✦</span> गुरु का सूक्ष्म एवं वृहद प्रगति चक्र (Jupiter Progression Cycles)</div>
@@ -1470,13 +1581,6 @@
           <br>• तृतीय पर्याय: 60 से 90 वर्ष
           <br><code>बीते हुए माह = शनि के अंश (Degree) × 1</code>
         </div>
-      </div>
-
-            <!-- Diagram 7.2 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_bhrigu_bindu_diagram.svg" alt="आरेख 7.2: भृगु बिंदु (BB) प्रारब्ध संवाहक बिंदु ज्यामितीय चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख ७.२: भृगु बिंदु (BB) प्रारब्ध संवाहक बिंदु ज्यामितीय चक्र</div>
-        <div class="chart-sub-caption">Bhrigu Bindu (BB) Destiny Trigger Geometric Model • Rahu-Moon Midpoint Physics</div>
       </div>
 
       <div class="rule-card">
@@ -1608,13 +1712,6 @@
       <p style="margin-bottom:1.4rem;">
         किसी भी जन्म कुंडली का भृगु नंदी नाड़ी पद्धति से संपूर्ण फलित करने के लिए नीचे दिए गए ७ चरणों (7-Step Algorithm) का क्रमशः पालन करें:
       </p>
-
-            <!-- Diagram 8.1 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_protocol_flowchart.svg" alt="आरेख 8.1: बी.एन.एन. 7-चरणीय फलित निर्णय प्रवाह आरेख" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख ८.१: बी.एन.एन. ७-चरणीय फलित निर्णय प्रवाह आरेख</div>
-        <div class="chart-sub-caption">BNN 7-Step Predictive Algorithm Protocol • तार्किक एवं अचूक कुण्डली विश्लेषण विधि</div>
-      </div>
 
       <!-- Table 8.1 -->
       <div class="table-title-bar">

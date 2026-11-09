@@ -365,7 +365,7 @@
     }
 
     .chart-embed-img {
-      max-width: 560px;
+      max-width: 620px;
       width: 100%;
       height: auto;
       display: block;
@@ -560,10 +560,174 @@
       color: var(--text-muted);
     }
 
+    /* ==========================================================================
+       Mobile Responsive Navigation Bar & Layout (iPhone 15 & Viewports <= 768px)
+       Ultra-sleek single-line navigation bar taking < 6% screen height
+       ========================================================================== */
     @media (max-width: 768px) {
-      .chapter-section { padding: 1.4rem; }
-      .book-title-main { font-size: 1.85rem; }
-      .table-title-bar { flex-direction: column; align-items: flex-start; }
+      .reader-navbar {
+        height: 48px;
+        min-height: 48px;
+        max-height: 48px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+      }
+
+      .nav-inner {
+        height: 100%;
+        max-width: 100%;
+        padding: 0 0.5rem;
+        gap: 0.35rem;
+        flex-wrap: nowrap;
+        overflow: hidden;
+      }
+
+      .brand-section {
+        gap: 0.35rem;
+        min-width: 0;
+        flex: 0 1 auto;
+        overflow: hidden;
+      }
+
+      .brand-section .nav-btn {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+
+      .brand-section .nav-btn span:last-child {
+        display: none !important;
+      }
+
+      .brand-badge {
+        gap: 0.35rem;
+        min-width: 0;
+        overflow: hidden;
+      }
+
+      .brand-logo-img {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+      }
+
+      .brand-text {
+        min-width: 0;
+        overflow: hidden;
+      }
+
+      .brand-text h1 {
+        font-size: 0.86rem !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 125px;
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      .brand-text span {
+        display: none !important;
+      }
+
+      .nav-tools {
+        gap: 0.25rem;
+        flex-shrink: 0;
+        flex-wrap: nowrap;
+      }
+
+      .nav-tools .nav-btn {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        flex-shrink: 0;
+      }
+
+      .nav-tools .nav-btn span:last-child {
+        display: none !important;
+      }
+
+      .nav-tools button[onclick*="adjustFont"] {
+        display: none !important;
+      }
+
+      .book-hero-banner {
+        padding: 1.4rem 1rem 1.2rem !important;
+      }
+
+      .volume-pill {
+        font-size: 0.72rem;
+        padding: 0.25rem 0.65rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .book-title-main {
+        font-size: 1.45rem !important;
+        margin-bottom: 0.35rem;
+        line-height: 1.25;
+      }
+
+      .book-title-sub {
+        font-size: 0.92rem !important;
+        margin-bottom: 0.75rem;
+      }
+
+      .book-intro-text {
+        font-size: 0.86rem !important;
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+      }
+
+      .hero-actions {
+        gap: 0.5rem;
+      }
+
+      .hero-actions .hero-btn {
+        padding: 0.55rem 0.95rem;
+        font-size: 0.85rem;
+      }
+
+      .chapter-section {
+        padding: 1.35rem 1rem;
+      }
+
+      .table-title-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .brand-text h1 {
+        max-width: 85px;
+        font-size: 0.78rem !important;
+      }
+      .nav-inner {
+        padding: 0 0.3rem;
+        gap: 0.2rem;
+      }
+      .nav-tools {
+        gap: 0.2rem;
+      }
+      .brand-section .nav-btn,
+      .nav-tools .nav-btn {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        font-size: 0.85rem;
+      }
     }
   </style>
 </head>
@@ -611,8 +775,11 @@
         <button class="nav-btn" onclick="toggleTOC()" title="विषय-सूची खोलें">
           <span>📑</span> <span>विषय-सूची</span>
         </button>
+        <a href="bnn-reader.html" class="nav-btn primary" title="3D फ्लिप बुक में पढ़ें">
+          <span>📖</span> <span>3D फ्लिप बुक</span>
+        </a>
         <a href="bhrigu-nandi-nadi-karma-samyojan.pdf" download="Bhrigu-Nandi-Nadi-Karma-Samyojan-Sutra.pdf" class="nav-btn" title="संपूर्ण PDF डाउनलोड करें">
-          <span>📄</span> <span>मास्टर PDF (12.7 MB)</span>
+          <span>📄</span> <span>PDF डाउनलोड</span>
         </a>
         <button class="nav-btn" id="theme-btn" onclick="toggleTheme()" title="थीम बदलें (दिन / रात)">
           <span id="theme-icon">🌓</span> <span>थीम</span>
@@ -627,7 +794,7 @@
   <header class="book-hero-banner">
     <div class="hero-container">
       <div class="volume-pill">
-        <span>👑</span> तंत्र ज्ञान फ्लैगशिप शोध ग्रंथावली • Flagship Volume 2
+        <span>📜</span> तंत्र ज्ञान शोध ग्रंथावली • आधिकारिक खंड 2
       </div>
       <h2 class="book-title-main">भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र</h2>
       <div class="book-title-sub">Bhrigu Nandi Nadi: Karma-Samyojan Sutra</div>
@@ -639,7 +806,7 @@
         <div class="stat-badge"><span>✍️</span> <strong>प्रणेता:</strong> ज्योतिषाचार्य आशुतोष कुमार चौबे</div>
         <div class="stat-badge"><span>🏛️</span> तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center)</div>
         <div class="stat-badge"><span>📖</span> <strong>40</strong> प्रामाणिक पृष्ठ</div>
-        <div class="stat-badge"><span>💎</span> <strong>8</strong> गहन अध्याय, 16 सारणियां व 12 कुण्डली महाचक्र</div>
+        <div class="stat-badge"><span>💎</span> <strong>8</strong> गहन अध्याय व 16 बृहत् सारणियां</div>
       </div>
     </div>
   </header>
@@ -657,7 +824,7 @@
     <!-- CHAPTER 1 -->
     <section class="chapter-section" id="ch1">
       <div class="chapter-header">
-        <span class="chapter-num">अध्याय 1 • CHAPTER 1</span>
+        <span class="chapter-num">अध्याय १ • CHAPTER 1</span>
         <h3 class="chapter-title">भृगु नंदी नाड़ी के मूल सिद्धांत एवं व्याकरण</h3>
         <div class="chapter-title-en">Core Principles & Grammatical Foundations of BNN</div>
       </div>
@@ -667,64 +834,50 @@
       </p>
 
       <div class="rule-card">
-        <div class="rule-title"><span>✦</span> 1. लग्न की गौणता (No Dynamic Lagna Primary)</div>
+        <div class="rule-title"><span>✦</span> १. लग्न की गौणता (No Dynamic Lagna Primary)</div>
         <div class="rule-body">
           इस पद्धति में जन्म लग्न (Ascendant) को प्राथमिक आधार नहीं माना जाता। पुरुष की कुंडली में <strong>गुरु (Jupiter)</strong> को 'जीव कारक' (प्रथम भाव/स्वयं) और स्त्री की कुंडली में <strong>शुक्र (Venus)</strong> को 'जीव कारक' (प्रथम भाव/स्वयं) मानकर भावों की गणना की जाती है।
         </div>
       </div>
 
       <div class="rule-card">
-        <div class="rule-title"><span>✦</span> 2. दशा-मुक्त फलित (No Vimshottari Dasha Required)</div>
+        <div class="rule-title"><span>✦</span> २. दशा-मुक्त फलित (No Vimshottari Dasha Required)</div>
         <div class="rule-body">
           घटनाओं के समय-निर्धारण (Timing of Events) के लिए विंशोत्तरी दशा के स्थान पर <strong>गुरु, शनि, राहु और केतु की प्रगति (Progression)</strong> एवं गोचर (Transit) का उपयोग किया जाता है।
         </div>
       </div>
 
       <div class="rule-card">
-        <div class="rule-title"><span>✦</span> 3. ग्रह-संभाषण एवं युति सर्वोच्च (Conjunction & Planetary Conversation is King)</div>
+        <div class="rule-title"><span>✦</span> ३. ग्रह-संभाषण एवं युति सर्वोच्च (Conjunction & Planetary Conversation is King)</div>
         <div class="rule-body">
           ग्रह भावपति (House Lords) के बजाय अपने नैसर्गिक कारकत्व (Natural Karakatwas) और आपसी राशि-संबंधों (1-5-9 त्रिकोण, 1-7 समसप्तक, 2-12 एवं 3-11 अक्ष) के माध्यम से फल देते हैं।
         </div>
       </div>
 
       <div class="rule-card">
-        <div class="rule-title"><span>✦</span> 4. अंश (Degree) एवं अनुक्रम नियम (Hierarchy by Degrees)</div>
+        <div class="rule-title"><span>✦</span> ४. अंश (Degree) एवं अनुक्रम नियम (Hierarchy by Degrees)</div>
         <div class="rule-body">
           एक ही राशि में स्थित ग्रहों में कम अंश (Lower Degree) वाला ग्रह संभाषण प्रारंभ करता है और अपने कारकत्व को अधिक अंश (Higher Degree) वाले ग्रह को स्थानांतरित करता है: <code>Planet 1 [Low Degree] ➔ Planet 2 [Mid Degree] ➔ Planet 3 [High Degree]</code>।
         </div>
       </div>
 
       <div class="rule-card">
-        <div class="rule-title"><span>✦</span> 5. वक्री ग्रह का द्वैत नियम (Retrograde Planet Dual Rule)</div>
+        <div class="rule-title"><span>✦</span> ५. वक्री ग्रह का द्वैत नियम (Retrograde Planet Dual Rule)</div>
         <div class="rule-body">
           वक्री ग्रह (Retrograde Planet) पूर्व-जन्म के संचित प्रारब्ध (Karmic Echoes) को दर्शाता है और यह अपनी वर्तमान राशि के साथ-साथ पिछली राशि (12th Sign from itself) तथा उसकी दिशा से भी पूर्ण संबंध बनाता है।
         </div>
       </div>
 
       <div class="rule-card">
-        <div class="rule-title"><span>✦</span> 6. राशि परिवर्तन योग (Parivartana Yoga Rule)</div>
+        <div class="rule-title"><span>✦</span> ६. राशि परिवर्तन योग (Parivartana Yoga Rule)</div>
         <div class="rule-body">
           जब दो ग्रह एक-दूसरे की राशि में स्थित हों (Exchange of Signs), तो फलित करते समय उन्हें अपनी-अपनी स्वराशि में लौटकर (विशेषकर जीवन के उत्तरार्ध या संबंधित ग्रह के गोचर सक्रियण पर) फल देने वाला माना जाता है; यदि दो नीच ग्रह आपस में राशि परिवर्तन करें तो पूर्ण नीच भंग राजयोग बनता है।
         </div>
       </div>
 
-            <!-- Diagram 1.1 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_philosophy_hierarchy_chart.svg?v=3.1" alt="आरेख 1.1: भृगु नंदी नाड़ी का 5-स्तरीय फलित निर्णय पदानुक्रम" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख 1.1: भृगु नंदी नाड़ी का 5-स्तरीय फलित निर्णय पदानुक्रम एवं कोर आर्किटेक्चर</div>
-        <div class="chart-sub-caption">BNN 5-Tier Hierarchical Decision Model • Karaka, Trine, Opposite, Degree &amp; Timing</div>
-      </div>
-
-      <!-- Diagram 1.2 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_vakri_parivartana_chart.svg?v=3.1" alt="आरेख 1.2: बी.एन.एन. वक्री ग्रह द्वैत स्थिति एवं राशि परिवर्तन चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख 1.2: बी.एन.एन. वक्री ग्रह द्वैत स्थिति एवं राशि परिवर्तन चक्र</div>
-        <div class="chart-sub-caption">BNN Retrograde Dual Ray Physics &amp; Parivartana Yoga Mutual Exchange</div>
-      </div>
-
       <!-- Table 1.1 -->
       <div class="table-title-bar">
-        <h4>तालिका 1.1: भृगु नंदी नाड़ी (BNN) बनाम पाराशरी बनाम भृगु संहिता बनाम लाल किताब</h4>
+        <h4>तालिका १.१: भृगु नंदी नाड़ी (BNN) बनाम पाराशरी बनाम भृगु संहिता बनाम लाल किताब</h4>
         <span class="table-tag">तुलनात्मक आधार</span>
       </div>
       <div class="styled-table-wrap">
@@ -787,7 +940,7 @@
 
       <!-- Table 1.2 -->
       <div class="table-title-bar">
-        <h4>तालिका 1.2: आर. जी. राव का पंच-स्तरीय ग्रह-संबंध पदानुक्रम (5-Level Relational Hierarchy Sutra)</h4>
+        <h4>तालिका १.२: आर. जी. राव का पंच-स्तरीय ग्रह-संबंध पदानुक्रम (5-Level Relational Hierarchy Sutra)</h4>
         <span class="table-tag">संबंध शक्ति %</span>
       </div>
       <div class="styled-table-wrap">
@@ -803,35 +956,35 @@
           </thead>
           <tbody>
             <tr>
-              <td class="col-highlight">स्तर 1 (Level 1)</td>
+              <td class="col-highlight">स्तर १ (Level 1)</td>
               <td>एक ही राशि में युति (Same Sign / 1st)</td>
               <td><strong>100%</strong></td>
               <td>समान राशि एवं समान दिशा (Same Sign & Direction)</td>
               <td><strong>पूर्ण संयोग (Full Merger):</strong> दोनों ग्रहों के कारकत्व 100% मिल जाते हैं। कम डिग्री वाला ग्रह अधिक डिग्री वाले ग्रह को निर्देशित करता है।</td>
             </tr>
             <tr>
-              <td class="col-highlight">स्तर 2 (Level 2)</td>
+              <td class="col-highlight">स्तर २ (Level 2)</td>
               <td>त्रिकोण संबंध (Trines: 1 - 5 - 9)</td>
               <td><strong>75%</strong></td>
               <td>समान दिशा समूह (Same Direction Group)</td>
               <td><strong>नाड़ी का मुख्य सूत्र (Signature Trine Rule):</strong> एक ही तत्व/दिशा के त्रिकोण (1, 5, 9) में बैठे ग्रह 75% युति जैसा प्रबल फल देते हैं।</td>
             </tr>
             <tr>
-              <td class="col-highlight">स्तर 3 (Level 3)</td>
+              <td class="col-highlight">स्तर ३ (Level 3)</td>
               <td>समसप्तक / प्रतियुति (Opposition: 1 - 7)</td>
               <td><strong>50%</strong></td>
               <td>विपरीत दिशा दृष्टि (Opposite Direction: E↔W, N↔S)</td>
               <td><strong>प्रत्यक्ष संवाद/टकराव (Direct Axis):</strong> आमने-सामने (7वें) या विपरीत दिशा समूह के ग्रह 50% बल से एक-दूसरे के कारकत्व को बढ़ाते (मित्र) या बाधित (शत्रु) करते हैं।</td>
             </tr>
             <tr>
-              <td class="col-highlight">स्तर 4 (Level 4)</td>
+              <td class="col-highlight">स्तर ४ (Level 4)</td>
               <td>तृतीय-एकादश अक्ष (3 - 11 Axis)</td>
               <td><strong>25%</strong></td>
               <td>सहायक/मित्र अक्ष (Supporting Axis)</td>
               <td><strong>सहायक प्रभाव (Secondary Support):</strong> किसी ग्रह से 3रे और 11वें स्थान के ग्रह 25% सहयोगी ऊर्जा प्रदान करते हैं।</td>
             </tr>
             <tr>
-              <td class="col-highlight">स्तर 5 (Level 5)</td>
+              <td class="col-highlight">स्तर ५ (Level 5)</td>
               <td>द्वितीय-द्वादश अक्ष (2 - 12 Axis)</td>
               <td><strong>15%</strong></td>
               <td>अग्रिम एवं पृष्ठ प्रभाव (Front & Rear / Hemming)</td>
@@ -853,7 +1006,7 @@
     <!-- CHAPTER 2 -->
     <section class="chapter-section" id="ch2">
       <div class="chapter-header">
-        <span class="chapter-num">अध्याय 2 • CHAPTER 2</span>
+        <span class="chapter-num">अध्याय २ • CHAPTER 2</span>
         <h3 class="chapter-title">डायमंड चार्ट (Diamond Chart), दिशा-आधारित दृष्टि एवं तीर-आरेख</h3>
         <div class="chapter-title-en">Directional Diagrams with Arrows & North Indian Diamond Wheels</div>
       </div>
@@ -864,15 +1017,15 @@
 
       <!-- Diagram 2.1 Embed -->
       <div class="chart-embed-box">
-        <img src="assets/icons/bnn_jeeva_flow_diamond_chart.svg?v=3.0" alt="आरेख 2.1: उत्तर भारतीय डायमंड चार्ट में भाव-प्रवाह एवं ग्रह-अनुक्रम" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख 2.1: उत्तर भारतीय डायमंड चार्ट में जीव-लग्न भाव-प्रवाह एवं ग्रह-अनुक्रम</div>
+        <img src="assets/icons/bnn_jeeva_flow_diamond_chart.svg" alt="आरेख 2.1: उत्तर भारतीय डायमंड चार्ट में भाव-प्रवाह एवं ग्रह-अनुक्रम" class="chart-embed-img" loading="lazy">
+        <div class="chart-caption">आरेख २.१: उत्तर भारतीय डायमंड चार्ट में जीव-लग्न भाव-प्रवाह एवं ग्रह-अनुक्रम</div>
         <div class="chart-sub-caption">Guru/Shukra as Jeeva Lagna • 1-12 Counter-Clockwise Momentum • Front & Rear Sequence</div>
       </div>
 
       <div class="rule-card">
         <div class="rule-title"><span>✦</span> अग्र-पृष्ठ नियम (Front-Rear Arrow Rule)</div>
         <div class="rule-body">
-          किसी भी कारक ग्रह से <strong>2रा भाव (आगे की राशि ➔)</strong> बताता है कि वह ग्रह आगे किस ग्रह से मिलने जा रहा है (भविष्य की घटना), और <strong>12वां भाव (पीछे की राशि ⬅)</strong> बताता है कि उस ग्रह को पीछे से किस ग्रह का बल या अवरोध मिल रहा है।
+          किसी भी कारक ग्रह से <strong>२रा भाव (आगे की राशि ➔)</strong> बताता है कि वह ग्रह आगे किस ग्रह से मिलने जा रहा है (भविष्य की घटना), और <strong>१२वां भाव (पीछे की राशि ⬅)</strong> बताता है कि उस ग्रह को पीछे से किस ग्रह का बल या अवरोध मिल रहा है।
         </div>
       </div>
 
@@ -885,8 +1038,8 @@
 
       <!-- Diagram 2.2 Embed -->
       <div class="chart-embed-box">
-        <img src="assets/icons/bnn_directional_diamond_chart.svg?v=3.0" alt="आरेख 2.2: भृगु नंदी नाड़ी का दिशा-आधारित डायमंड चार्ट" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख 2.2: भृगु नंदी नाड़ी का दिशा-आधारित डायमंड चार्ट एवं विपरीत दृष्टि अक्ष</div>
+        <img src="assets/icons/bnn_directional_diamond_chart.svg" alt="आरेख 2.2: भृगु नंदी नाड़ी का दिशा-आधारित डायमंड चार्ट" class="chart-embed-img" loading="lazy">
+        <div class="chart-caption">आरेख २.२: भृगु नंदी नाड़ी का दिशा-आधारित डायमंड चार्ट एवं विपरीत दृष्टि अक्ष</div>
         <div class="chart-sub-caption">East (1,5,9 Fire) ↔ West (3,7,11 Air) • North (4,8,12 Water) ↔ South (2,6,10 Earth)</div>
       </div>
 
@@ -898,16 +1051,9 @@
         </div>
       </div>
 
-            <!-- Diagram 2.3 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_kartari_flank_diamond_chart.svg?v=3.0" alt="आरेख 2.3: अग्रिम, पृष्ठ एवं कर्तरी वेध डायमंड चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख 2.3: अग्रिम, पृष्ठ एवं शुभ/पाप-कर्तरी वेध डायमंड चक्र</div>
-        <div class="chart-sub-caption">Next (+1) &amp; Rear (-1) Flank Influences &amp; Shubha/Papa Kartari Siege Mechanics</div>
-      </div>
-
       <!-- Table 2.1 -->
       <div class="table-title-bar">
-        <h4>तालिका 2.1: चतुर्दिशा, राशि त्रिकोण, विपरीत दृष्टि एवं वक्री स्थानांतरण की मास्टर सारणी</h4>
+        <h4>तालिका २.१: चतुर्दिशा, राशि त्रिकोण, विपरीत दृष्टि एवं वक्री स्थानांतरण की मास्टर सारणी</h4>
         <span class="table-tag">दिशा व तत्व</span>
       </div>
       <div class="styled-table-wrap">
@@ -925,7 +1071,7 @@
           <tbody>
             <tr>
               <td class="col-highlight">पूर्व (East)</td>
-              <td>1 (मेष), 5 (सिंह), 9 (धनु)</td>
+              <td>१ (मेष), ५ (सिंह), ९ (धनु)</td>
               <td>अग्नि तत्व (Fire) / धर्म त्रिकोण</td>
               <td>मेष, सिंह और धनु में बैठे सभी ग्रह एक ही समूह में जुड़ते हैं</td>
               <td>पश्चिम दिशा (3, 7, 11) के ग्रहों के साथ सीधा संबंध बनाता है</td>
@@ -933,7 +1079,7 @@
             </tr>
             <tr>
               <td class="col-highlight">दक्षिण (South)</td>
-              <td>2 (वृषभ), 6 (कन्या), 10 (मकर)</td>
+              <td>२ (वृषभ), ६ (कन्या), १० (मकर)</td>
               <td>पृथ्वी तत्व (Earth) / अर्थ त्रिकोण</td>
               <td>वृषभ, कन्या और मकर में बैठे सभी ग्रह एक ही समूह में जुड़ते हैं</td>
               <td>उत्तर दिशा (4, 8, 12) के ग्रहों के साथ सीधा संबंध बनाता है</td>
@@ -941,7 +1087,7 @@
             </tr>
             <tr>
               <td class="col-highlight">पश्चिम (West)</td>
-              <td>3 (मिथुन), 7 (तुला), 11 (कुंभ)</td>
+              <td>३ (मिथुन), ७ (तुला), ११ (कुंभ)</td>
               <td>वायु तत्व (Air) / काम त्रिकोण</td>
               <td>मिथुन, तुला और कुंभ में बैठे सभी ग्रह एक ही समूह में जुड़ते हैं</td>
               <td>पूर्व दिशा (1, 5, 9) के ग्रहों के साथ सीधा संबंध बनाता है</td>
@@ -949,7 +1095,7 @@
             </tr>
             <tr>
               <td class="col-highlight">उत्तर (North)</td>
-              <td>4 (कर्क), 8 (वृश्चिक), 12 (मीन)</td>
+              <td>४ (कर्क), ८ (वृश्चिक), १२ (मीन)</td>
               <td>जल तत्व (Water) / मोक्ष त्रिकोण</td>
               <td>कर्क, वृश्चिक और मीन में बैठे सभी ग्रह एक ही समूह में जुड़ते हैं</td>
               <td>दक्षिण दिशा (2, 6, 10) के ग्रहों के साथ सीधा संबंध बनाता है</td>
@@ -964,8 +1110,8 @@
     <!-- CHAPTER 3 -->
     <section class="chapter-section" id="ch3">
       <div class="chapter-header">
-        <span class="chapter-num">अध्याय 3 • CHAPTER 3</span>
-        <h3 class="chapter-title">नवग्रहों एवं 12 राशियों के विस्तृत कारकत्व, मित्रता एवं भाग्य-भूमिका</h3>
+        <span class="chapter-num">अध्याय ३ • CHAPTER 3</span>
+        <h3 class="chapter-title">नवग्रहों एवं १२ राशियों के विस्तृत कारकत्व, मित्रता एवं भाग्य-भूमिका</h3>
         <div class="chapter-title-en">Karakatwas, Friendship & Destiny Roles of Planets and Rashis</div>
       </div>
 
@@ -973,16 +1119,9 @@
         भृगु नंदी नाड़ी में ग्रह ही व्यक्ति (Living Entities / Jeeva) और वस्तु/परिस्थिति (Non-Living Matters) दोनों का प्रतिनिधित्व करते हैं।
       </p>
 
-            <!-- Diagram 3.1 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_karaka_relationship_wheel.svg?v=3.0" alt="आरेख 3.1: नवग्रह नाड़ी कारकत्व एवं त्रि-स्तरीय मैत्री महाचक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख 3.1: नवग्रह नाड़ी कारकत्व एवं त्रि-स्तरीय मैत्री महाचक्र</div>
-        <div class="chart-sub-caption">Navagraha Nadi Karakatwas &amp; Planetary Synergy Matrix • Friends, Neutral &amp; Enemies</div>
-      </div>
-
       <!-- Table 3.1 -->
       <div class="table-title-bar">
-        <h4>तालिका 3.1: नवग्रहों के जीव कारकत्व, कर्म/वस्तु कारकत्व, लिंग एवं भाग्य-भूमिका</h4>
+        <h4>तालिका ३.१: नवग्रहों के जीव कारकत्व, कर्म/वस्तु कारकत्व, लिंग एवं भाग्य-भूमिका</h4>
         <span class="table-tag">नवग्रह BNN कारकत्व</span>
       </div>
       <div class="styled-table-wrap">
@@ -1076,7 +1215,7 @@
 
       <!-- Table 3.2 -->
       <div class="table-title-bar">
-        <h4>तालिका 3.2: भृगु नंदी नाड़ी में ग्रहों की नैसर्गिक मित्रता एवं शत्रुता (BNN Friendship Matrix)</h4>
+        <h4>तालिका ३.२: भृगु नंदी नाड़ी में ग्रहों की नैसर्गिक मित्रता एवं शत्रुता (BNN Friendship Matrix)</h4>
         <span class="table-tag">मैत्री चक्र</span>
       </div>
       <div class="styled-table-wrap">
@@ -1103,16 +1242,9 @@
         </table>
       </div>
 
-            <!-- Diagram 3.2 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_elemental_directional_diamond_chart.svg?v=3.0" alt="आरेख 3.2: चतुर्विध महाभूत एवं दिशा-संयोजन डायमंड चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख 3.2: चतुर्विध महाभूत एवं दिशा-संयोजन डायमंड चक्र</div>
-        <div class="chart-sub-caption">BNN 4 Elemental Trines &amp; Directional Harmony (1-5-9 Samyoga Matrix)</div>
-      </div>
-
       <!-- Table 3.3 -->
       <div class="table-title-bar">
-        <h4>तालिका 3.3: 12 राशियों की प्रकृति, तत्व, स्वभाव एवं आजीविका पर प्रभाव (12 Rashis in BNN)</h4>
+        <h4>तालिका ३.३: १२ राशियों की प्रकृति, तत्व, स्वभाव एवं आजीविका पर प्रभाव (12 Rashis in BNN)</h4>
         <span class="table-tag">12 राशियां</span>
       </div>
       <div class="styled-table-wrap">
@@ -1127,18 +1259,18 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td class="col-highlight">1. मेष (Aries)</td><td>मंगल</td><td>पूर्व / अग्नि</td><td>चर (Movable)</td><td>तीव्र गति, नेतृत्व, स्वतंत्र निर्णय, इंजीनियरिंग/रक्षा/प्रशासन, यात्रा-प्रधान कार्य।</td></tr>
-            <tr><td class="col-highlight">2. वृषभ (Taurus)</td><td>शुक्र</td><td>दक्षिण / पृथ्वी</td><td>स्थिर (Fixed)</td><td>एक ही स्थान पर स्थायी कार्य, बैंकिंग, कोष, आभूषण, कृषि, होटल/भोजन, अचल संपत्ति संचय।</td></tr>
-            <tr><td class="col-highlight">3. मिथुन (Gemini)</td><td>बुध</td><td>पश्चिम / वायु</td><td>द्विस्वभाव (Dual)</td><td>बौद्धिक कार्य, आईटी, संचार, पत्रकारिता, शिक्षण, एक साथ दो कार्य या परामर्श व्यवसाय।</td></tr>
-            <tr><td class="col-highlight">4. कर्क (Cancer)</td><td>चंद्रमा</td><td>उत्तर / जल</td><td>चर (Movable)</td><td>निरंतर गतिशीलता, विदेश/सीमा-पार व्यापार, जल/चिकित्सा/हॉस्पिटैलिटी, जनसंपर्क।</td></tr>
-            <tr><td class="col-highlight">5. सिंह (Leo)</td><td>सूर्य</td><td>पूर्व / अग्नि</td><td>स्थिर (Fixed)</td><td>उच्च सरकारी पद, सत्ता, राजनीति, संस्था प्रमुख, आत्मसम्मान एवं स्थायी प्रशासनिक अधिकार।</td></tr>
-            <tr><td class="col-highlight">6. कन्या (Virgo)</td><td>बुध</td><td>दक्षिण / पृथ्वी</td><td>द्विस्वभाव (Dual)</td><td>ऑडिट, अकाउंट्स, वाणिज्य, चिकित्सा/फार्मेसी, डेटा विश्लेषण, कानून एवं सूक्ष्म सेवा कार्य।</td></tr>
-            <tr><td class="col-highlight">7. तुला (Libra)</td><td>शुक्र</td><td>पश्चिम / वायु</td><td>चर (Movable)</td><td>व्यापार, न्यायपालिका, जनसंपर्क, लक्जरी वस्तुएं, कूटनीति, साझेदारी एवं गतिशील वाणिज्य।</td></tr>
-            <tr><td class="col-highlight">8. वृश्चिक (Scorpio)</td><td>मंगल</td><td>उत्तर / जल</td><td>स्थिर (Fixed)</td><td>गूढ़ शोध, खनन, रसायन, सर्जरी, बीमा, गुप्तचर विभाग, ज्योतिष/तंत्र एवं गहन महत्वाकांक्षा।</td></tr>
-            <tr><td class="col-highlight">9. धनु (Sagittarius)</td><td>गुरु</td><td>पूर्व / अग्नि</td><td>द्विस्वभाव (Dual)</td><td>अध्यापन, धर्म-दर्शन, न्याय, वित्त, प्रकाशन, स्थानान्तरणीय व गैर-स्थानान्तरणीय कार्य।</td></tr>
-            <tr><td class="col-highlight">10. मकर (Capricorn)</td><td>शनि</td><td>दक्षिण / पृथ्वी</td><td>चर (Movable)</td><td>कर्मठता, निर्माण (Construction), उद्योग, सरकारी सेवा, प्रबंधन एवं व्यावहारिक कार्यक्षमता।</td></tr>
-            <tr><td class="col-highlight">11. कुंभ (Aquarius)</td><td>शनि</td><td>पश्चिम / वायु</td><td>स्थिर (Fixed)</td><td>स्थिर तकनीकी/वैज्ञानिक कार्य, अनुसंधान, समाज सेवा, बड़े नेटवर्क व इंजीनियरिंग।</td></tr>
-            <tr><td class="col-highlight">12. मीन (Pisces)</td><td>गुरु</td><td>उत्तर / जल</td><td>द्विस्वभाव (Dual)</td><td>आध्यात्मिक संस्थाएं, समुद्र/विदेश यात्रा, उपचार (Healing), शिक्षा, मोक्ष व परोपकारी कार्य।</td></tr>
+            <tr><td class="col-highlight">१. मेष (Aries)</td><td>मंगल</td><td>पूर्व / अग्नि</td><td>चर (Movable)</td><td>तीव्र गति, नेतृत्व, स्वतंत्र निर्णय, इंजीनियरिंग/रक्षा/प्रशासन, यात्रा-प्रधान कार्य।</td></tr>
+            <tr><td class="col-highlight">२. वृषभ (Taurus)</td><td>शुक्र</td><td>दक्षिण / पृथ्वी</td><td>स्थिर (Fixed)</td><td>एक ही स्थान पर स्थायी कार्य, बैंकिंग, कोष, आभूषण, कृषि, होटल/भोजन, अचल संपत्ति संचय।</td></tr>
+            <tr><td class="col-highlight">३. मिथुन (Gemini)</td><td>बुध</td><td>पश्चिम / वायु</td><td>द्विस्वभाव (Dual)</td><td>बौद्धिक कार्य, आईटी, संचार, पत्रकारिता, शिक्षण, एक साथ दो कार्य या परामर्श व्यवसाय।</td></tr>
+            <tr><td class="col-highlight">४. कर्क (Cancer)</td><td>चंद्रमा</td><td>उत्तर / जल</td><td>चर (Movable)</td><td>निरंतर गतिशीलता, विदेश/सीमा-पार व्यापार, जल/चिकित्सा/हॉस्पिटैलिटी, जनसंपर्क।</td></tr>
+            <tr><td class="col-highlight">५. सिंह (Leo)</td><td>सूर्य</td><td>पूर्व / अग्नि</td><td>स्थिर (Fixed)</td><td>उच्च सरकारी पद, सत्ता, राजनीति, संस्था प्रमुख, आत्मसम्मान एवं स्थायी प्रशासनिक अधिकार।</td></tr>
+            <tr><td class="col-highlight">६. कन्या (Virgo)</td><td>बुध</td><td>दक्षिण / पृथ्वी</td><td>द्विस्वभाव (Dual)</td><td>ऑडिट, अकाउंट्स, वाणिज्य, चिकित्सा/फार्मेसी, डेटा विश्लेषण, कानून एवं सूक्ष्म सेवा कार्य।</td></tr>
+            <tr><td class="col-highlight">७. तुला (Libra)</td><td>शुक्र</td><td>पश्चिम / वायु</td><td>चर (Movable)</td><td>व्यापार, न्यायपालिका, जनसंपर्क, लक्जरी वस्तुएं, कूटनीति, साझेदारी एवं गतिशील वाणिज्य।</td></tr>
+            <tr><td class="col-highlight">८. वृश्चिक (Scorpio)</td><td>मंगल</td><td>उत्तर / जल</td><td>स्थिर (Fixed)</td><td>गूढ़ शोध, खनन, रसायन, सर्जरी, बीमा, गुप्तचर विभाग, ज्योतिष/तंत्र एवं गहन महत्वाकांक्षा।</td></tr>
+            <tr><td class="col-highlight">९. धनु (Sagittarius)</td><td>गुरु</td><td>पूर्व / अग्नि</td><td>द्विस्वभाव (Dual)</td><td>अध्यापन, धर्म-दर्शन, न्याय, वित्त, प्रकाशन, स्थानान्तरणीय व गैर-स्थानान्तरणीय कार्य।</td></tr>
+            <tr><td class="col-highlight">१०. मकर (Capricorn)</td><td>शनि</td><td>दक्षिण / पृथ्वी</td><td>चर (Movable)</td><td>कर्मठता, निर्माण (Construction), उद्योग, सरकारी सेवा, प्रबंधन एवं व्यावहारिक कार्यक्षमता।</td></tr>
+            <tr><td class="col-highlight">११. कुंभ (Aquarius)</td><td>शनि</td><td>पश्चिम / वायु</td><td>स्थिर (Fixed)</td><td>स्थिर तकनीकी/वैज्ञानिक कार्य, अनुसंधान, समाज सेवा, बड़े नेटवर्क व इंजीनियरिंग।</td></tr>
+            <tr><td class="col-highlight">१२. मीन (Pisces)</td><td>गुरु</td><td>उत्तर / जल</td><td>द्विस्वभाव (Dual)</td><td>आध्यात्मिक संस्थाएं, समुद्र/विदेश यात्रा, उपचार (Healing), शिक्षा, मोक्ष व परोपकारी कार्य।</td></tr>
           </tbody>
         </table>
       </div>
@@ -1148,26 +1280,19 @@
     <!-- CHAPTER 4 -->
     <section class="chapter-section" id="ch4">
       <div class="chapter-header">
-        <span class="chapter-num">अध्याय 4 • CHAPTER 4</span>
-        <h3 class="chapter-title">जीव लग्न (गुरु) से 12 भावों की गणना एवं फलित सारणी</h3>
+        <span class="chapter-num">अध्याय ४ • CHAPTER 4</span>
+        <h3 class="chapter-title">जीव लग्न (गुरु) से १२ भावों की गणना एवं फलित सारणी</h3>
         <div class="chapter-title-en">12 Houses Counted from Jupiter (Jeeva Lagna)</div>
       </div>
 
       <p style="margin-bottom:1.4rem;">
-        भृगु नंदी नाड़ी के प्रथम नियम (Rule One) के अनुसार जन्म कुंडली में <strong>गुरु (Jupiter)</strong> जिस राशि में स्थित होता है, उसे प्रथम भाव (जीव लग्न) मानकर वामावर्त (Counter-clockwise) 12 भावों का विश्लेषण किया जाता है। यदि कोई भाव रिक्त (Empty) हो, तो उस राशि के स्वामी (Dispositor) की स्थिति से फल निकाला जाता है।
+        भृगु नंदी नाड़ी के प्रथम नियम (Rule One) के अनुसार जन्म कुंडली में <strong>गुरु (Jupiter)</strong> जिस राशि में स्थित होता है, उसे प्रथम भाव (जीव लग्न) मानकर वामावर्त (Counter-clockwise) १२ भावों का विश्लेषण किया जाता है। यदि कोई भाव रिक्त (Empty) हो, तो उस राशि के स्वामी (Dispositor) की स्थिति से फल निकाला जाता है।
       </p>
-
-            <!-- Diagram 4.1 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_jeeva_12bhavas_diamond_chart.svg?v=3.0" alt="आरेख 4.1: जीव लग्न (गुरु) द्वादश भाव सम्पूर्ण फलित चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख 4.1: जीव लग्न (गुरु) द्वादश भाव सम्पूर्ण फलित चक्र</div>
-        <div class="chart-sub-caption">BNN 12 Houses from Jeeva Lagna (Jupiter as Anchor • Zero Ascendant Dependency)</div>
-      </div>
 
       <!-- Table 4.1 -->
       <div class="table-title-bar">
-        <h4>तालिका 4.1: गुरु (जीव कारक) से 12 भावों का कारकत्व एवं ग्रह-प्रभाव</h4>
-        <span class="table-tag">जीव से 12 भाव</span>
+        <h4>तालिका ४.१: गुरु (जीव कारक) से १२ भावों का कारकत्व एवं ग्रह-प्रभाव</h4>
+        <span class="table-tag">जीव से १२ भाव</span>
       </div>
       <div class="styled-table-wrap">
         <table class="bnn-table">
@@ -1181,73 +1306,73 @@
           </thead>
           <tbody>
             <tr>
-              <td class="col-highlight">1ला भाव (गुरु की राशि)</td>
+              <td class="col-highlight">१ला भाव (गुरु की राशि)</td>
               <td><strong>100% (स्वयं जीव)</strong></td>
               <td>जातक का शरीर, प्राण, स्वभाव, मान-सम्मान एवं मूल पहचान</td>
               <td>यहां बैठा ग्रह जातक के पूरे व्यक्तित्व को रंग देता है (जैसे: शनि हो तो गंभीर व कर्मप्रधान; सूर्य हो तो स्वाभिमानी व नेतृत्वकर्ता)।</td>
             </tr>
             <tr>
-              <td class="col-highlight">2रा भाव (गुरु से अगला)</td>
+              <td class="col-highlight">२रा भाव (गुरु से अगला)</td>
               <td><strong>15% (अग्रिम गति / Front)</strong></td>
               <td>वाणी, संचित धन, कुटुंब, तथा जीव का अगला कदम</td>
               <td>जीव (गुरु) आगे बढ़कर सबसे पहले इसी भाव के ग्रहों से मिलता है। शुभ ग्रह धन व परिवार सुख देते हैं; पापी ग्रह वाणी दोष या संघर्ष देते हैं।</td>
             </tr>
             <tr>
-              <td class="col-highlight">3रा भाव</td>
+              <td class="col-highlight">३रा भाव</td>
               <td><strong>25% (सहायक अक्ष)</strong></td>
               <td>साहस, छोटे भाई-बहन, छोटी यात्राएं, संचार एवं कौशल</td>
               <td>यहां स्थित ग्रह जातक के स्वयं के पराक्रम और कौशल विकास में 25% सहयोग देते हैं।</td>
             </tr>
             <tr>
-              <td class="col-highlight">4था भाव</td>
+              <td class="col-highlight">४था भाव</td>
               <td><strong>सुख एवं आधार (Base)</strong></td>
               <td>माता, भूमि, भवन, वाहन, प्रारंभिक शिक्षा एवं मानसिक शांति</td>
               <td>शुक्र/चंद्र/बुध यहां उत्तम सुख व संपत्ति देते हैं; शनि/मंगल/राहु होने पर पैतृक स्थान से दूरी या माता के स्वास्थ्य में कष्ट।</td>
             </tr>
             <tr>
-              <td class="col-highlight">5वां भाव (प्रथम त्रिकोण)</td>
+              <td class="col-highlight">५वां भाव (प्रथम त्रिकोण)</td>
               <td><strong>75% (पूर्व पुण्य व भविष्य)</strong></td>
               <td>इस जन्म का प्रतिज्ञा-पत्र (Promise in this Life), संतान, बुद्धि, प्रेम</td>
               <td>गुरु से 5वें भाव के ग्रह 75% युति में होते हैं और बताते हैं कि जातक को इस जन्म में बिना अत्यधिक संघर्ष के कौन-से प्रारब्ध फल स्वतः प्राप्त होंगे।</td>
             </tr>
             <tr>
-              <td class="col-highlight">6ठा भाव</td>
+              <td class="col-highlight">६ठा भाव</td>
               <td><strong>रोग, ऋण एवं सेवा</strong></td>
               <td>रोग, ऋण (Loans), शत्रु, मुकदमेबाजी एवं प्रतियोगी परीक्षा</td>
               <td>यहां शनि/गुरु से संबंध अचानक उतार-चढ़ाव देता है; केतु/राहु स्वास्थ्य या ऋण संबंधी मामले उठाते हैं।</td>
             </tr>
             <tr>
-              <td class="col-highlight">7वां भाव (समसप्तक)</td>
+              <td class="col-highlight">७वां भाव (समसप्तक)</td>
               <td><strong>50% (प्रत्यक्ष दृष्टि)</strong></td>
               <td>जीवनसाथी, साझेदारी, समाज से सीधा संवाद एवं प्रतिद्वंद्विता</td>
               <td>गुरु के ठीक सामने (7वें) बैठा ग्रह जीव पर 50% सीधा प्रभाव डालता है; मित्र ग्रह भाग्योदय करता है, शत्रु ग्रह स्वास्थ्य व संबंधों में तनाव देता है।</td>
             </tr>
             <tr>
-              <td class="col-highlight">8वां भाव</td>
+              <td class="col-highlight">८वां भाव</td>
               <td><strong>आयु, गुप्त कर्म एवं संकट</strong></td>
               <td>दीर्घायु, आकस्मिक घटनाएं, सर्जरी, उत्तराधिकार एवं गुप्त विद्या</td>
               <td>गुरु और शनि का 6/8 संबंध जीवन में अचानक बड़े बदलाव या स्वास्थ्य बाधा का संकेत देता है।</td>
             </tr>
             <tr>
-              <td class="col-highlight">9वां भाव (द्वितीय त्रिकोण)</td>
+              <td class="col-highlight">९वां भाव (द्वितीय त्रिकोण)</td>
               <td><strong>75% (भाग्य एवं धर्म)</strong></td>
               <td>भाग्य, पिता, गुरु कृपा, उच्च शिक्षा, विदेश यात्रा एवं धर्म</td>
               <td>गुरु से 9वें भाव के ग्रह भी 75% युति का फल देते हैं और जातक के भाग्योदय तथा आध्यात्मिक उत्थान को नियंत्रित करते हैं।</td>
             </tr>
             <tr>
-              <td class="col-highlight">10वां भाव</td>
+              <td class="col-highlight">१०वां भाव</td>
               <td><strong>कर्म एवं सामाजिक प्रतिष्ठा</strong></td>
               <td>कार्यक्षेत्र, पद-प्रतिष्ठा, अधिकार एवं सामाजिक पहचान</td>
               <td>सूर्य, शनि, मंगल या बुध की उपस्थिति कार्यक्षेत्र में उच्च पद व ख्याति प्रदान करती है।</td>
             </tr>
             <tr>
-              <td class="col-highlight">11वां भाव</td>
+              <td class="col-highlight">११वां भाव</td>
               <td><strong>25% (लाभ एवं पूर्ति)</strong></td>
               <td>आय, इच्छा पूर्ति, बड़े भाई-बहन, सामाजिक नेटवर्क एवं सफलता</td>
               <td>गुरु से 11वें स्थान के ग्रह जीव को आर्थिक लाभ और सामाजिक समर्थन प्रदान करते हैं।</td>
             </tr>
             <tr>
-              <td class="col-highlight">12वां भाव (गुरु से पिछला)</td>
+              <td class="col-highlight">१२वां भाव (गुरु से पिछला)</td>
               <td><strong>15% (पृष्ठभूमि / Rear)</strong></td>
               <td>पूर्व जन्म का संचित आधार, व्यय, विदेश वास, शयन सुख एवं मोक्ष</td>
               <td>जीव के ठीक पीछे (12वें) बैठा ग्रह बताता है कि जातक किस पृष्ठभूमि से आया है और गोचर में वक्री ग्रह किस ओर फल मोड़ेगा।</td>
@@ -1261,7 +1386,7 @@
     <!-- CHAPTER 5 -->
     <section class="chapter-section" id="ch5">
       <div class="chapter-header">
-        <span class="chapter-num">अध्याय 5 • CHAPTER 5</span>
+        <span class="chapter-num">अध्याय ५ • CHAPTER 5</span>
         <h3 class="chapter-title">द्वैत ग्रह-संयोग सूत्र (36 Complete 2-Planet Conjunctions Matrix)</h3>
         <div class="chapter-title-en">2-Planet Conjunctions & Trine Combinations Master Matrix</div>
       </div>
@@ -1270,16 +1395,9 @@
         भृगु नंदी नाड़ी में जब दो ग्रह एक ही राशि (100%), त्रिकोण 1-5-9 (75%), या सप्तम 1-7 (50%) में जुड़ते हैं, तो उनके कारकत्व मिलकर विशिष्ट योग बनाते हैं। नीचे सभी प्रमुख द्वैत ग्रह-संयोगों की संपूर्ण प्रामाणिक सारणियां दी गई हैं:
       </p>
 
-            <!-- Diagram 5.1 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_major_conjunctions_diamond_chart.svg?v=3.0" alt="आरेख 5.1: बी.एन.एन. प्रमुख द्वि-ग्रहीय राजयोग एवं कर्म-संयोग चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख 5.1: बी.एन.एन. प्रमुख द्वि-ग्रहीय राजयोग एवं कर्म-संयोग चक्र</div>
-        <div class="chart-sub-caption">Master Dual Conjunctions in BNN Diamond Architecture • 36 प्रमुख योगों का प्रामाणिक प्रतिपादन</div>
-      </div>
-
       <!-- Table 5.1: Sun -->
       <div class="table-title-bar">
-        <h4>तालिका 5.1: सूर्य (Sun) के अन्य ग्रहों के साथ संयोग सूत्र</h4>
+        <h4>तालिका ५.१: सूर्य (Sun) के अन्य ग्रहों के साथ संयोग सूत्र</h4>
         <span class="table-tag">सूर्य संयोग</span>
       </div>
       <div class="styled-table-wrap">
@@ -1302,7 +1420,7 @@
 
       <!-- Table 5.2: Moon -->
       <div class="table-title-bar">
-        <h4>तालिका 5.2: चंद्रमा (Moon) के अन्य ग्रहों के साथ संयोग सूत्र</h4>
+        <h4>तालिका ५.२: चंद्रमा (Moon) के अन्य ग्रहों के साथ संयोग सूत्र</h4>
         <span class="table-tag">चंद्रमा संयोग</span>
       </div>
       <div class="styled-table-wrap">
@@ -1324,7 +1442,7 @@
 
       <!-- Table 5.3: Mars & Mercury -->
       <div class="table-title-bar">
-        <h4>तालिका 5.3: मंगल (Mars) एवं बुध (Mercury) के संयोग सूत्र</h4>
+        <h4>तालिका ५.३: मंगल (Mars) एवं बुध (Mercury) के संयोग सूत्र</h4>
         <span class="table-tag">मंगल व बुध</span>
       </div>
       <div class="styled-table-wrap">
@@ -1350,7 +1468,7 @@
 
       <!-- Table 5.4: Jupiter, Venus, Saturn, Rahu, Ketu -->
       <div class="table-title-bar">
-        <h4>तालिका 5.4: गुरु, शुक्र, शनि, राहु और केतु के संयोग सूत्र</h4>
+        <h4>तालिका ५.४: गुरु, शुक्र, शनि, राहु और केतु के संयोग सूत्र</h4>
         <span class="table-tag">उच्च कारक संयोग</span>
       </div>
       <div class="styled-table-wrap">
@@ -1372,19 +1490,12 @@
         </table>
       </div>
 
-      <!-- Diagram 5.2 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_special_yogas_diamond_chart.svg?v=3.1" alt="आरेख 5.2: अष्टादश विशिष्ट नाड़ी राजयोग एवं कर्म-संयोग चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख 5.2: अष्टादश विशिष्ट नाड़ी राजयोग एवं कर्म-संयोग चक्र</div>
-        <div class="chart-sub-caption">Master Auspicious Yogas &amp; Divine Planetary Conjunctions in BNN</div>
-      </div>
-
     </section>
 
     <!-- CHAPTER 6 -->
     <section class="chapter-section" id="ch6">
       <div class="chapter-header">
-        <span class="chapter-num">अध्याय 6 • CHAPTER 6</span>
+        <span class="chapter-num">अध्याय ६ • CHAPTER 6</span>
         <h3 class="chapter-title">त्रि-ग्रही एवं चतुर्ग्रही कर्म-संयोजन सूत्र</h3>
         <div class="chapter-title-en">Planetary Triplets & Quadruple Combinations Master Matrix</div>
       </div>
@@ -1393,16 +1504,9 @@
         भृगु नंदी नाड़ी में किसी भी बड़ी घटना का पूर्ण प्रकटीकरण तीन ग्रहों की श्रृंखला (Planetary Triplets) से होता है, जहां पहला ग्रह मूल कारण (Root), दूसरा ग्रह माध्यम/वातावरण (Carrier) और तीसरा ग्रह अंतिम फल (Fruit) बनता है।
       </p>
 
-            <!-- Diagram 6.1 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_triplet_rajyogas_diamond_chart.svg?v=3.0" alt="आरेख 6.1: बी.एन.एन. त्रि-ग्रहीय एवं बहु-ग्रहीय महायोग डायमंड चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख 6.1: बी.एन.एन. त्रि-ग्रहीय एवं बहु-ग्रहीय महायोग डायमंड चक्र</div>
-        <div class="chart-sub-caption">Master Triplet Combinations in Bhrigu Nandi Nadi • 20 शीर्ष शास्त्रीय राजयोग</div>
-      </div>
-
       <!-- Table 6.1 -->
       <div class="table-title-bar">
-        <h4>तालिका 6.1: आजीविका, धन, विवाह, शिक्षा एवं स्वास्थ्य के अचूक 20 त्रि-ग्रही/चतुर्ग्रही नाड़ी सूत्र</h4>
+        <h4>तालिका ६.१: आजीविका, धन, विवाह, शिक्षा एवं स्वास्थ्य के अचूक २० त्रि-ग्रही/चतुर्ग्रही नाड़ी सूत्र</h4>
         <span class="table-tag">20 अचूक फलित सूत्र</span>
       </div>
       <div class="styled-table-wrap">
@@ -1416,42 +1520,28 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td class="col-highlight">1</td><td>सूर्य + चंद्रमा + शनि (6ठे/10वें भाव से संबंध)</td><td>आजीविका (Career)</td><td>सरकारी नौकरी, सार्वजनिक सेवा (Public Service) एवं सरकार से स्थायी लाभ; विवाह में थोड़ा विलंब।</td></tr>
-            <tr><td class="col-highlight">2</td><td>सूर्य + मंगल + शनि (6ठे या 10वें भाव से संबंध)</td><td>आजीविका (Career)</td><td>रक्षा, पुलिस, प्रशासनिक सेवा या सरकारी इंजीनियरिंग विभाग में उच्च अधिकार।</td></tr>
-            <tr><td class="col-highlight">3</td><td>सूर्य + गुरु + शनि (9वें/10वें भाव से संबंध)</td><td>राजनीति एवं सत्ता</td><td>प्रबल राजनेता (Politician), न्यायाधिपति, या सरकारी नीति-निर्माता।</td></tr>
-            <tr><td class="col-highlight">4</td><td>सूर्य + बुध + गुरु (9वें/11वें भाव से संबंध)</td><td>शिक्षा एवं वित्त</td><td>उच्च शिक्षा, प्रोफेसर, चार्टर्ड अकाउंटेंट, गणितज्ञ एवं समाज में उच्च प्रतिष्ठा।</td></tr>
-            <tr><td class="col-highlight">5</td><td>सूर्य + गुरु/चंद्र + केतु (12वें भाव से संबंध)</td><td>चिकित्सा (Medicine)</td><td>चिकित्सा विभाग (Medical Department), डॉक्टर, आयुर्वेद या फार्मा क्षेत्र में सफलता।</td></tr>
-            <tr><td class="col-highlight">6</td><td>मंगल + शनि + बुध + राहु</td><td>इंजीनियरिंग व तकनीक</td><td>आधुनिक इंजीनियरिंग, सॉफ्टवेयर/हार्डवेयर आर्किटेक्चर, मशीनरी एवं तकनीकी उद्योग।</td></tr>
-            <tr><td class="col-highlight">7</td><td>गुरु + केतु + बुध</td><td>ज्योतिष एवं गुप्त विद्या</td><td><strong>अचूक ज्योतिषी योग:</strong> शास्त्र ज्ञान (गुरु), गणना (बुध) और दिव्य अंतर्ज्ञान (केतु) का संगम।</td></tr>
-            <tr><td class="col-highlight">8</td><td>गुरु + चंद्रमा + शुक्र</td><td>परामर्श एवं समृद्धि</td><td>लोगों के मनोविज्ञान को समझने वाला उत्कृष्ट काउंसलर/सलाहकार एवं सुख-समृद्धि से युक्त जीवन।</td></tr>
-            <tr><td class="col-highlight">9</td><td>सूर्य + बुध + गुरु + केतु</td><td>आध्यात्मिक गुरु</td><td>घटनाओं के पीछे के सूक्ष्म कर्म-सिद्धांत को समझाने वाला आध्यात्मिक शिक्षक, दार्शनिक या मार्गदर्शक।</td></tr>
-            <tr><td class="col-highlight">10</td><td>शुक्र + गुरु + शनि (विशेषतः 2रे भाव से संबंध)</td><td>महाधन एवं संपत्ति</td><td><strong>अखंड धन-संपत्ति योग:</strong> जातक अपने कर्म (शनि) और ज्ञान (गुरु) से प्रचुर धन व अचल संपत्ति (शुक्र) अर्जित करता है।</td></tr>
-            <tr><td class="col-highlight">11</td><td>शुक्र + चंद्रमा + बुध (5वें भाव से संबंध)</td><td>कला एवं मीडिया</td><td>सिनेमा, कला, मीडिया, रचनात्मक लेखन या मनोरंजन जगत में ख्याति।</td></tr>
-            <tr><td class="col-highlight">12</td><td>गुरु + शुक्र + बुध (7वें/12वें भाव से संबंध)</td><td>शीघ्र विवाह</td><td>कम आयु में या समय पर सुखद विवाह एवं शिक्षित, वाक्पटु जीवनसाथी।</td></tr>
-            <tr><td class="col-highlight">13</td><td>शुक्र + शनि + राहु/केतु (पुरुष) या मंगल + शनि + राहु/केतु (स्त्री)</td><td>विवाह अवरोध योग</td><td>विवाह में अत्यधिक विलंब या बाधा; परंतु यदि गुरु (Jupiter) त्रिकोण या विपरीत दिशा से दृष्टि डाले तो दोष भंग होकर विवाह संपन्न होता है।</td></tr>
-            <tr><td class="col-highlight">14</td><td>मंगल + शुक्र + केतु</td><td>वैवाहिक विवाद</td><td>पति-पत्नी के बीच अहंकार व वैचारिक टकराव; गुरु की दृष्टि होने पर समझौता व बचाव।</td></tr>
-            <tr><td class="col-highlight">15</td><td>मंगल + शुक्र + गुरु (6ठे भाव से संबंध)</td><td>न्यायालय विजय</td><td>कानूनी मामलों एवं मुकदमेबाजी (Court Cases) में निश्चित विजय व समझौता।</td></tr>
-            <tr><td class="col-highlight">16</td><td>गुरु + चंद्रमा + राहु/शनि (9वें/12वें भाव से संबंध)</td><td>विदेश यात्रा एवं प्रवास</td><td>लंबी विदेश यात्राएं एवं जन्मभूमि से दूर जाकर भाग्योदय।</td></tr>
-            <tr><td class="col-highlight">17</td><td>शनि + मंगल + केतु</td><td>लंगोटी योग / साहस</td><td>कठोर अनुशासन, संघर्षशील जीवन एवं तकनीकी/रक्षा क्षेत्र में निडरता।</td></tr>
-            <tr><td class="col-highlight">18</td><td>शनि + चंद्रमा + केतु (त्रिकोण में)</td><td>सहज योग (Sahaj Yoga)</td><td>असीम धैर्य, आध्यात्मिक सहनशीलता; किंतु 2रे भाव से पीड़ित होने पर आर्थिक तंगी से सावधानी।</td></tr>
-            <tr><td class="col-highlight">19</td><td>गुरु + शनि + राहु/केतु (5वें/6ठे भाव से संबंध)</td><td>संतान विलंब योग</td><td>संतान प्राप्ति में विलंब या चिकित्सा सहायता की आवश्यकता।</td></tr>
-            <tr><td class="col-highlight">20</td><td>शनि + सूर्य + शुक्र (1ले/8वें भाव से संबंध)</td><td>पूर्णायु योग</td><td>उत्तम जीवनशक्ति एवं 85–90+ वर्ष की दीर्घायु।</td></tr>
+            <tr><td class="col-highlight">१</td><td>सूर्य + चंद्रमा + शनि (6ठे/10वें भाव से संबंध)</td><td>आजीविका (Career)</td><td>सरकारी नौकरी, सार्वजनिक सेवा (Public Service) एवं सरकार से स्थायी लाभ; विवाह में थोड़ा विलंब।</td></tr>
+            <tr><td class="col-highlight">२</td><td>सूर्य + मंगल + शनि (6ठे या 10वें भाव से संबंध)</td><td>आजीविका (Career)</td><td>रक्षा, पुलिस, प्रशासनिक सेवा या सरकारी इंजीनियरिंग विभाग में उच्च अधिकार।</td></tr>
+            <tr><td class="col-highlight">३</td><td>सूर्य + गुरु + शनि (9वें/10वें भाव से संबंध)</td><td>राजनीति एवं सत्ता</td><td>प्रबल राजनेता (Politician), न्यायाधिपति, या सरकारी नीति-निर्माता।</td></tr>
+            <tr><td class="col-highlight">४</td><td>सूर्य + बुध + गुरु (9वें/11वें भाव से संबंध)</td><td>शिक्षा एवं वित्त</td><td>उच्च शिक्षा, प्रोफेसर, चार्टर्ड अकाउंटेंट, गणितज्ञ एवं समाज में उच्च प्रतिष्ठा।</td></tr>
+            <tr><td class="col-highlight">५</td><td>सूर्य + गुरु/चंद्र + केतु (12वें भाव से संबंध)</td><td>चिकित्सा (Medicine)</td><td>चिकित्सा विभाग (Medical Department), डॉक्टर, आयुर्वेद या फार्मा क्षेत्र में सफलता।</td></tr>
+            <tr><td class="col-highlight">६</td><td>मंगल + शनि + बुध + राहु</td><td>इंजीनियरिंग व तकनीक</td><td>आधुनिक इंजीनियरिंग, सॉफ्टवेयर/हार्डवेयर आर्किटेक्चर, मशीनरी एवं तकनीकी उद्योग।</td></tr>
+            <tr><td class="col-highlight">७</td><td>गुरु + केतु + बुध</td><td>ज्योतिष एवं गुप्त विद्या</td><td><strong>अचूक ज्योतिषी योग:</strong> शास्त्र ज्ञान (गुरु), गणना (बुध) और दिव्य अंतर्ज्ञान (केतु) का संगम।</td></tr>
+            <tr><td class="col-highlight">८</td><td>गुरु + चंद्रमा + शुक्र</td><td>परामर्श एवं समृद्धि</td><td>लोगों के मनोविज्ञान को समझने वाला उत्कृष्ट काउंसलर/सलाहकार एवं सुख-समृद्धि से युक्त जीवन।</td></tr>
+            <tr><td class="col-highlight">९</td><td>सूर्य + बुध + गुरु + केतु</td><td>आध्यात्मिक गुरु</td><td>घटनाओं के पीछे के सूक्ष्म कर्म-सिद्धांत को समझाने वाला आध्यात्मिक शिक्षक, दार्शनिक या मार्गदर्शक।</td></tr>
+            <tr><td class="col-highlight">१०</td><td>शुक्र + गुरु + शनि (विशेषतः 2रे भाव से संबंध)</td><td>महाधन एवं संपत्ति</td><td><strong>अखंड धन-संपत्ति योग:</strong> जातक अपने कर्म (शनि) और ज्ञान (गुरु) से प्रचुर धन व अचल संपत्ति (शुक्र) अर्जित करता है।</td></tr>
+            <tr><td class="col-highlight">११</td><td>शुक्र + चंद्रमा + बुध (5वें भाव से संबंध)</td><td>कला एवं मीडिया</td><td>सिनेमा, कला, मीडिया, रचनात्मक लेखन या मनोरंजन जगत में ख्याति।</td></tr>
+            <tr><td class="col-highlight">१२</td><td>गुरु + शुक्र + बुध (7वें/12वें भाव से संबंध)</td><td>शीघ्र विवाह</td><td>कम आयु में या समय पर सुखद विवाह एवं शिक्षित, वाक्पटु जीवनसाथी।</td></tr>
+            <tr><td class="col-highlight">१३</td><td>शुक्र + शनि + राहु/केतु (पुरुष) या मंगल + शनि + राहु/केतु (स्त्री)</td><td>विवाह अवरोध योग</td><td>विवाह में अत्यधिक विलंब या बाधा; परंतु यदि गुरु (Jupiter) त्रिकोण या विपरीत दिशा से दृष्टि डाले तो दोष भंग होकर विवाह संपन्न होता है।</td></tr>
+            <tr><td class="col-highlight">१४</td><td>मंगल + शुक्र + केतु</td><td>वैवाहिक विवाद</td><td>पति-पत्नी के बीच अहंकार व वैचारिक टकराव; गुरु की दृष्टि होने पर समझौता व बचाव।</td></tr>
+            <tr><td class="col-highlight">१५</td><td>मंगल + शुक्र + गुरु (6ठे भाव से संबंध)</td><td>न्यायालय विजय</td><td>कानूनी मामलों एवं मुकदमेबाजी (Court Cases) में निश्चित विजय व समझौता।</td></tr>
+            <tr><td class="col-highlight">१६</td><td>गुरु + चंद्रमा + राहु/शनि (9वें/12वें भाव से संबंध)</td><td>विदेश यात्रा एवं प्रवास</td><td>लंबी विदेश यात्राएं एवं जन्मभूमि से दूर जाकर भाग्योदय।</td></tr>
+            <tr><td class="col-highlight">१७</td><td>शनि + मंगल + केतु</td><td>लंगोटी योग / साहस</td><td>कठोर अनुशासन, संघर्षशील जीवन एवं तकनीकी/रक्षा क्षेत्र में निडरता।</td></tr>
+            <tr><td class="col-highlight">१८</td><td>शनि + चंद्रमा + केतु (त्रिकोण में)</td><td>सहज योग (Sahaj Yoga)</td><td>असीम धैर्य, आध्यात्मिक सहनशीलता; किंतु 2रे भाव से पीड़ित होने पर आर्थिक तंगी से सावधानी।</td></tr>
+            <tr><td class="col-highlight">१९</td><td>गुरु + शनि + राहु/केतु (5वें/6ठे भाव से संबंध)</td><td>संतान विलंब योग</td><td>संतान प्राप्ति में विलंब या चिकित्सा सहायता की आवश्यकता।</td></tr>
+            <tr><td class="col-highlight">२०</td><td>शनि + सूर्य + शुक्र (1ले/8वें भाव से संबंध)</td><td>पूर्णायु योग</td><td>उत्तम जीवनशक्ति एवं 85–90+ वर्ष की दीर्घायु।</td></tr>
           </tbody>
         </table>
-      </div>
-
-      <!-- Diagram 6.2 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_career_matrix_chart.svg?v=3.1" alt="आरेख 6.2: शनि कर्म-कारक आजीविका निर्धारण चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख 6.2: शनि कर्म-कारक आजीविका एवं व्यवसाय निर्धारण महाचक्र</div>
-        <div class="chart-sub-caption">Saturn (Karma Karaka) Career, Profession &amp; Livelihood Destiny Matrix</div>
-      </div>
-
-      <!-- Diagram 6.3 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_marriage_matrix_chart.svg?v=3.1" alt="आरेख 6.3: विवाह, दांपत्य एवं जीवनसाथी कारक चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख 6.3: विवाह, दांपत्य एवं जीवनसाथी कारक चक्र</div>
-        <div class="chart-sub-caption">BNN Marriage, Relationship &amp; Spouse Timing Architecture</div>
       </div>
 
     </section>
@@ -1459,7 +1549,7 @@
     <!-- CHAPTER 7 -->
     <section class="chapter-section" id="ch7">
       <div class="chapter-header">
-        <span class="chapter-num">अध्याय 7 • CHAPTER 7</span>
+        <span class="chapter-num">अध्याय ७ • CHAPTER 7</span>
         <h3 class="chapter-title">प्रगति (Progression), गोचर (Transit) एवं भृगु बिंदु के गणितीय सूत्र</h3>
         <div class="chapter-title-en">Formulas for Timing of Events & Bhrigu Bindu Trigger Points</div>
       </div>
@@ -1468,21 +1558,14 @@
         भृगु नंदी नाड़ी में किसी भी घटना का सटीक वर्ष और महीना निकालने के लिए प्रगति (Progression), गोचर (Transit) और भृगु बिंदु (Bhrigu Bindu) के गणितीय नियमों का प्रयोग किया जाता है।
       </p>
 
-            <!-- Diagram 7.1 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_progression_paryaya_chart.svg?v=3.0" alt="आरेख 7.1: शनि 30-वर्षीय पर्याय एवं गुरु प्रगति काल-चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख 7.1: शनि 30-वर्षीय पर्याय एवं गुरु प्रगति काल-चक्र</div>
-        <div class="chart-sub-caption">BNN Saturn 30-Year Paryaya Cycles &amp; Jupiter 1-Year Progression Engine</div>
-      </div>
-
       <!-- Progression Rules Box -->
       <div class="rule-card">
         <div class="rule-title"><span>✦</span> गुरु का सूक्ष्म एवं वृहद प्रगति चक्र (Jupiter Progression Cycles)</div>
         <div class="rule-body">
-          <strong>1. सूक्ष्म प्रगति चक्र (Micro Progression):</strong> 1 राशि = 1 वर्ष (12 वर्ष चक्र)। जन्म कालीन गुरु की राशि ➔ 1 वर्ष ➔ 2रा भाव (आयु 2) ➔ 3रा भाव (आयु 3)... 12 वर्ष में 1 चक्र पूर्ण।
-          <br><em>* विशेष नियम (वक्री गुरु):</em> यदि जन्म का गुरु वक्री हो, तो प्रथम वर्ष (0-1 आयु) की गणना गुरु से 1 भाव पीछे (12वें भाव) से प्रारंभ होती है।
+          <strong>१. सूक्ष्म प्रगति चक्र (Micro Progression):</strong> १ राशि = १ वर्ष (१२ वर्ष चक्र)। जन्म कालीन गुरु की राशि ➔ १ वर्ष ➔ २रा भाव (आयु २) ➔ ३रा भाव (आयु ३)... १२ वर्ष में १ चक्र पूर्ण।
+          <br><em>* विशेष नियम (वक्री गुरु):</em> यदि जन्म का गुरु वक्री हो, तो प्रथम वर्ष (0-1 आयु) की गणना गुरु से १ भाव पीछे (१२वें भाव) से प्रारंभ होती है।
           <br><br>
-          <strong>2. वृहद प्रगति चक्र (Macro Progression):</strong> 1 राशि (30°) = 12 वर्ष।
+          <strong>२. वृहद प्रगति चक्र (Macro Progression):</strong> १ राशि (30°) = १२ वर्ष।
           <br><code>बीते हुए वर्ष = गुरु के अंश (Degree) × 0.4 (अर्थात: गुरु अंश × 12 / 30)</code>
           <br><code>शेष वर्ष = 12 - (गुरु के अंश × 0.4)</code>
           <br><em>उदाहरण:</em> यदि जन्म का गुरु 20° पर है ➔ <code>20 × 0.4 = 8 वर्ष</code> जातक के जन्म से पूर्व बीत चुके; अतः जन्म से प्रथम 4 वर्ष (12 - 8 = 4) गुरु अपनी जन्म राशि में फल देगा, फिर अगली राशि में 12 वर्ष चलेगा।
@@ -1492,19 +1575,12 @@
       <div class="rule-card">
         <div class="rule-title"><span>✦</span> शनि का पर्याय / प्रगति चक्र (Saturn Paryaya - 30 Year Cycle)</div>
         <div class="rule-body">
-          1 चक्र = 30 वर्ष (1 राशि = 2.5 वर्ष = 30 माह; अर्थात 1° = 1 माह)।
+          १ चक्र = ३० वर्ष (१ राशि = २.५ वर्ष = ३० माह; अर्थात १° = १ माह)।
           <br>• प्रथम पर्याय: 0 से 30 वर्ष (संघर्ष व नींव)
           <br>• द्वितीय पर्याय: 30 से 60 वर्ष (स्थायित्व व शिखर)
           <br>• तृतीय पर्याय: 60 से 90 वर्ष
           <br><code>बीते हुए माह = शनि के अंश (Degree) × 1</code>
         </div>
-      </div>
-
-            <!-- Diagram 7.2 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_bhrigu_bindu_diagram.svg?v=3.0" alt="आरेख 7.2: भृगु बिंदु (BB) प्रारब्ध संवाहक बिंदु ज्यामितीय चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख 7.2: भृगु बिंदु (BB) प्रारब्ध संवाहक बिंदु ज्यामितीय चक्र</div>
-        <div class="chart-sub-caption">Bhrigu Bindu (BB) Destiny Trigger Geometric Model • Rahu-Moon Midpoint Physics</div>
       </div>
 
       <div class="rule-card">
@@ -1519,7 +1595,7 @@
 
       <!-- Table 7.1: Master Formulas -->
       <div class="table-title-bar">
-        <h4>तालिका 7.1: भृगु नंदी नाड़ी के समस्त गणितीय सूत्र (Master Formula Sheet)</h4>
+        <h4>तालिका ७.१: भृगु नंदी नाड़ी के समस्त गणितीय सूत्र (Master Formula Sheet)</h4>
         <span class="table-tag">गणितीय समीकरण</span>
       </div>
       <div class="styled-table-wrap">
@@ -1534,43 +1610,43 @@
           </thead>
           <tbody>
             <tr>
-              <td class="col-highlight">1. गुरु सूक्ष्म प्रगति (Jupiter Micro)</td>
+              <td class="col-highlight">१. गुरु सूक्ष्म प्रगति (Jupiter Micro)</td>
               <td><code>Progressed Sign = Natal Jupiter Sign + (Age - 1)</code></td>
               <td>1 राशि = 1 वर्ष (1 चक्र = 12 वर्ष; आयु 1, 13, 25, 37, 49, 61 में जन्म राशि पर पुनरागमन)</td>
               <td>प्रत्येक वर्ष की प्रमुख घटना (विवाह, संतान, पदोन्नति) देखने के लिए।</td>
             </tr>
             <tr>
-              <td class="col-highlight">2. वक्री गुरु सूक्ष्म प्रगति</td>
+              <td class="col-highlight">२. वक्री गुरु सूक्ष्म प्रगति</td>
               <td><code>Start Sign (Age 0–1) = Natal Retrograde Jupiter Sign - 1 House</code></td>
               <td>1 राशि = 1 वर्ष (प्रारंभ 12वें भाव से)</td>
               <td>यदि गुरु सप्तम में वक्री है, तो 0–1 वर्ष की गणना 6ठे भाव से शुरू होगी।</td>
             </tr>
             <tr>
-              <td class="col-highlight">3. गुरु वृहद प्रगति (Jupiter Macro)</td>
+              <td class="col-highlight">३. गुरु वृहद प्रगति (Jupiter Macro)</td>
               <td><code>Elapsed Years = (Jupiter Degree × 12) / 30 = Degree × 0.4</code><br><code>Balance Years = 12 - (Jupiter Degree × 0.4)</code></td>
               <td>30° (1 राशि) = 12 वर्ष<br>2.5° = 1 वर्ष<br>1° = 0.4 वर्ष (4.8 माह)</td>
               <td>जीवन के 12-12 वर्षों के बड़े कालखंड (Macro Life Chapters) निर्धारित करने हेतु।</td>
             </tr>
             <tr>
-              <td class="col-highlight">4. शनि प्रगति एवं पर्याय (Saturn Progression)</td>
+              <td class="col-highlight">४. शनि प्रगति एवं पर्याय (Saturn Progression)</td>
               <td><code>Elapsed Months = Saturn Degree × 1</code><br><code>Balance Months = 30 - Saturn Degree</code></td>
               <td>30° (1 राशि) = 2.5 वर्ष (30 माह)<br>1° = 1 माह<br>12 राशियां = 30 वर्ष (1 पर्याय)</td>
               <td>आजीविका (Career) में बड़े बदलाव, संपत्ति निर्माण और कर्म-चक्र के समय निर्धारण हेतु।</td>
             </tr>
             <tr>
-              <td class="col-highlight">5. भृगु बिंदु गणना सूत्र (Bhrigu Bindu)</td>
+              <td class="col-highlight">५. भृगु बिंदु गणना सूत्र (Bhrigu Bindu)</td>
               <td><code>Distance (D) = (Moon Long - Rahu Long) mod 360°</code><br><code>BB = Rahu Longitude + (D / 2)</code></td>
               <td>राहु से चंद्रमा तक वामावर्त चली गई दूरी का ठीक आधा (D / 2)</td>
               <td>कुंडली का सर्वाधिक संवेदनशील प्रारब्ध बिंदु; इस पर गोचर ग्रहों का आना अचूक घटना घटित कराता है।</td>
             </tr>
             <tr>
-              <td class="col-highlight">6. विवाह समय निर्धारण सूत्र (Marriage Transit)</td>
+              <td class="col-highlight">६. विवाह समय निर्धारण सूत्र (Marriage Transit)</td>
               <td><strong>पुरुष:</strong> <code>Transit Jupiter / Saturn ➔ संयोग (1, 5, 7, 9) ➔ Natal Venus</code><br><strong>स्त्री:</strong> <code>Transit Jupiter / Saturn ➔ संयोग (1, 5, 7, 9) ➔ Natal Mars</code></td>
               <td>गुरु गोचर = 12 माह की सटीक विंडो;<br>विलंबित विवाह में शनि गोचर अनिवार्य</td>
               <td>जब गोचर का गुरु और शनि एक साथ विवाह कारक (शुक्र/मंगल) या उसकी दिशा से जुड़ते हैं, तब विवाह संपन्न होता है।</td>
             </tr>
             <tr>
-              <td class="col-highlight">7. आजीविका एवं पदोन्नति गोचर सूत्र (Career Trigger)</td>
+              <td class="col-highlight">७. आजीविका एवं पदोन्नति गोचर सूत्र (Career Trigger)</td>
               <td><code>Transit Jupiter + Transit Saturn ➔ संयोग (1, 5, 7, 9) ➔ Natal Saturn / 10th Lord</code></td>
               <td>गुरु (शुभ अवसर/पदोन्नति), शनि (कार्यभार/स्थानांतरण), राहु/केतु (अचानक परिवर्तन)</td>
               <td>जब गोचर का गुरु जन्म के शनि या दशमस्थ ग्रह से त्रिकोण/युति बनाता है, तो नई नौकरी या पदोन्नति मिलती है।</td>
@@ -1581,7 +1657,7 @@
 
       <!-- Table 7.2: Bhrigu Bindu Transit Outcomes -->
       <div class="table-title-bar">
-        <h4>तालिका 7.2: भृगु बिंदु (Bhrigu Bindu) पर विभिन्न ग्रहों के गोचर (Transit) का फलित</h4>
+        <h4>तालिका ७.२: भृगु बिंदु (Bhrigu Bindu) पर विभिन्न ग्रहों के गोचर (Transit) का फलित</h4>
         <span class="table-tag">BB गोचर फल</span>
       </div>
       <div class="styled-table-wrap">
@@ -1596,45 +1672,31 @@
           <tbody>
             <tr>
               <td class="col-highlight">गोचर गुरु (Transit Jupiter)</td>
-              <td>~1 वर्ष</td>
+              <td>~१ वर्ष</td>
               <td><strong>सर्वोच्च शुभ फल:</strong> विवाह, संतान प्राप्ति, पदोन्नति, उच्च शिक्षा में सफलता, धन लाभ एवं तीर्थयात्रा।</td>
             </tr>
             <tr>
               <td class="col-highlight">गोचर शनि (Transit Saturn)</td>
-              <td>~2.5 वर्ष</td>
+              <td>~२.५ वर्ष</td>
               <td><strong>गहन कर्म-परीक्षा एवं स्थायी निर्माण:</strong> कार्यक्षेत्र में भारी ज़िम्मेदारी, स्थान परिवर्तन, मकान/संपत्ति निर्माण या दीर्घकालिक संघर्ष के बाद स्थायी सफलता।</td>
             </tr>
             <tr>
               <td class="col-highlight">गोचर राहु (Transit Rahu)</td>
-              <td>~1.5 वर्ष</td>
+              <td>~१.५ वर्ष</td>
               <td><strong>आकस्मिक उछाल या उथल-पुथल:</strong> विदेश यात्रा, अचानक बड़ा धन लाभ या शेयर/व्यापार में जोखिम, भ्रमपूर्ण निर्णय अथवा स्वास्थ्य की अचानक समस्या।</td>
             </tr>
             <tr>
               <td class="col-highlight">गोचर केतु (Transit Ketu)</td>
-              <td>~1.5 वर्ष</td>
+              <td>~१.५ वर्ष</td>
               <td><strong>आध्यात्मिक मोड़ एवं विच्छेद:</strong> नौकरी या स्थान का अचानक छूटना, आध्यात्मिक दीक्षा, गूढ़ शास्त्रों में प्रवेश, या शल्य-चिकित्सा।</td>
             </tr>
             <tr>
               <td class="col-highlight">गोचर शुक्र / बुध / सूर्य / मंगल</td>
-              <td>~1 माह</td>
+              <td>~१ माह</td>
               <td><strong>मासिक ट्रिगर (Monthly Pinpointing):</strong> गुरु/शनि द्वारा तय किए गए वर्ष के भीतर सटीक महीना और सप्ताह निर्धारित करते हैं (शुक्र=धन/विवाह उत्सव; मंगल=संपत्ति/विवाद; बुध=अनुबंध/परीक्षा)।</td>
             </tr>
           </tbody>
         </table>
-      </div>
-
-      <!-- Diagram 7.3 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_rahu_ketu_nodal_axis_chart.svg?v=3.1" alt="आरेख 7.3: राहु-केतु अक्ष एवं कर्म-बंधन महाचक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख 7.3: राहु-केतु अक्ष, कालसर्प एवं कर्म-बंधन महाचक्र</div>
-        <div class="chart-sub-caption">Rahu-Ketu 180° Karmic Nodal Axis &amp; Bandhana-Moksha Dynamics</div>
-      </div>
-
-      <!-- Diagram 7.4 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_transits_activation_chart.svg?v=3.1" alt="आरेख 7.4: गोचर गति एवं जीवन घटना सक्रियण चक्र" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख 7.4: गोचर गति एवं जीवन घटना सक्रियण काल-चक्र</div>
-        <div class="chart-sub-caption">Planetary Transit Clocks &amp; Event Activation Dynamics in BNN</div>
       </div>
 
     </section>
@@ -1642,25 +1704,18 @@
     <!-- CHAPTER 8 -->
     <section class="chapter-section" id="ch8">
       <div class="chapter-header">
-        <span class="chapter-num">अध्याय 8 • CHAPTER 8</span>
-        <h3 class="chapter-title">कुंडली विश्लेषण की 7-चरणीय व्यावहारिक कार्यप्रणाली</h3>
+        <span class="chapter-num">अध्याय ८ • CHAPTER 8</span>
+        <h3 class="chapter-title">कुंडली विश्लेषण की ७-चरणीय व्यावहारिक कार्यप्रणाली</h3>
         <div class="chapter-title-en">7-Step Practical BNN Chart Reading Protocol</div>
       </div>
 
       <p style="margin-bottom:1.4rem;">
-        किसी भी जन्म कुंडली का भृगु नंदी नाड़ी पद्धति से संपूर्ण फलित करने के लिए नीचे दिए गए 7 चरणों (7-Step Algorithm) का क्रमशः पालन करें:
+        किसी भी जन्म कुंडली का भृगु नंदी नाड़ी पद्धति से संपूर्ण फलित करने के लिए नीचे दिए गए ७ चरणों (7-Step Algorithm) का क्रमशः पालन करें:
       </p>
-
-            <!-- Diagram 8.1 Embed -->
-      <div class="chart-embed-box">
-        <img src="assets/icons/bnn_protocol_flowchart.svg?v=3.0" alt="आरेख 8.1: बी.एन.एन. 7-चरणीय फलित निर्णय प्रवाह आरेख" class="chart-embed-img" loading="lazy">
-        <div class="chart-caption">आरेख 8.1: बी.एन.एन. 7-चरणीय फलित निर्णय प्रवाह आरेख</div>
-        <div class="chart-sub-caption">BNN 7-Step Predictive Algorithm Protocol • तार्किक एवं अचूक कुण्डली विश्लेषण विधि</div>
-      </div>
 
       <!-- Table 8.1 -->
       <div class="table-title-bar">
-        <h4>तालिका 8.1: कुंडली विश्लेषण की 7-चरणीय कार्यप्रणाली (7-Step Protocol)</h4>
+        <h4>तालिका ८.१: कुंडली विश्लेषण की ७-चरणीय कार्यप्रणाली (7-Step Protocol)</h4>
         <span class="table-tag">7-Step Algorithm</span>
       </div>
       <div class="styled-table-wrap">
@@ -1674,37 +1729,37 @@
           </thead>
           <tbody>
             <tr>
-              <td class="col-highlight">चरण 1</td>
+              <td class="col-highlight">चरण १</td>
               <td><strong>जीव एवं कर्म कारक की पहचान</strong> (Locate Core Karakas)</td>
               <td>पुरुष चार्ट में <strong>गुरु (जीव)</strong> व <strong>शुक्र (पत्नी)</strong>, स्त्री चार्ट में <strong>शुक्र (जीव)</strong> व <strong>मंगल (पति)</strong>, तथा दोनों में <strong>शनि (कर्म कारक)</strong> की राशि व अंश (Degree) नोट करें।</td>
             </tr>
             <tr>
-              <td class="col-highlight">चरण 2</td>
-              <td><strong>जीव लग्न से 12 भावों की गणना</strong> (Count 12 Houses from Jupiter)</td>
-              <td>गुरु की राशि को 1ला भाव मानकर वामावर्त (Counter-clockwise) 1 से 12 भाव अंकित करें और देखें कि 2रे (आगे), 12वें (पीछे), 5वें (पूर्व पुण्य) और 7वें (सामने) भाव में कौन-से ग्रह हैं।</td>
+              <td class="col-highlight">चरण २</td>
+              <td><strong>जीव लग्न से १२ भावों की गणना</strong> (Count 12 Houses from Jupiter)</td>
+              <td>गुरु की राशि को १ला भाव मानकर वामावर्त (Counter-clockwise) १ से १२ भाव अंकित करें और देखें कि २रे (आगे), १२वें (पीछे), ५वें (पूर्व पुण्य) और ७वें (सामने) भाव में कौन-से ग्रह हैं।</td>
             </tr>
             <tr>
-              <td class="col-highlight">चरण 3</td>
+              <td class="col-highlight">चरण ३</td>
               <td><strong>चतुर्दिशा तालिका का निर्माण</strong> (Build the 4-Direction Table)</td>
               <td>पूर्व (1,5,9), दक्षिण (2,6,10), पश्चिम (3,7,11) और उत्तर (4,8,12) की तालिका बनाएं। वक्री (R) ग्रहों को उनकी पिछली राशि की दिशा में भी कोष्ठक (Planet) में लिखें।</td>
             </tr>
             <tr>
-              <td class="col-highlight">चरण 4</td>
+              <td class="col-highlight">चरण ४</td>
               <td><strong>पंच-स्तरीय शक्ति एवं अंश क्रम का निर्धारण</strong> (Apply Hierarchy & Degree Order)</td>
               <td>समान राशि (100%), समान दिशा/त्रिकोण (75%), विपरीत दिशा E↔W व N↔S (50%), 3-11 (25%) और 2-12 (15%) के आधार पर ग्रह-श्रृंखला <code>(Low Degree ➔ High Degree)</code> तैयार करें।</td>
             </tr>
             <tr>
-              <td class="col-highlight">चरण 5</td>
+              <td class="col-highlight">चरण ५</td>
               <td><strong>राशिपति एवं परिवर्तन की जांच</strong> (Check Dispositor & Parivartana)</td>
               <td>यदि कोई मुख्य कारक (जैसे शुक्र या शनि) अकेला हो, तो उसके राशिपति (Dispositor) के संयोग देखें; साथ ही कुंडली में किसी भी राशि-परिवर्तन (Exchange of Signs) को चिन्हित करें।</td>
             </tr>
             <tr>
-              <td class="col-highlight">चरण 6</td>
+              <td class="col-highlight">चरण ६</td>
               <td><strong>प्रगति एवं गोचर का आरोपण</strong> (Overlay Progression & Transit)</td>
               <td>जातक की वर्तमान आयु के अनुसार गुरु की सूक्ष्म/वृहद प्रगति, शनि का पर्याय, भृगु बिंदु (BB) और वर्तमान गोचर (गुरु, शनि, राहु, केतु) को दिशा तालिका पर आरोपित करें।</td>
             </tr>
             <tr>
-              <td class="col-highlight">चरण 7</td>
+              <td class="col-highlight">चरण ७</td>
               <td><strong>समग्र फलित एवं कारकत्व-उपाय</strong> (Final Synthesis & Remedies)</td>
               <td>सभी संकेतों को मिलाकर करियर, विवाह, धन व स्वास्थ्य का सटीक निष्कर्ष निकालें और पीड़ित संयोगों के लिए व्यावहारिक कारकत्व सक्रियण उपाय सुझाएं।</td>
             </tr>
@@ -1788,110 +1843,6 @@
         const icon = document.getElementById('theme-icon');
         if (icon) icon.textContent = savedTheme === 'dark' ? '☀️' : '🌓';
       }
-    })();
-
-    // Initialize Authentic Colorful Planet Badges
-    (function initPlanetBadges() {
-      const PLANETS = [
-        { key: 'sun', symbol: '☉', icon: 'sun.png', names: ['सूर्य', 'रवि', 'आदित्य', 'Sun'] },
-        { key: 'moon', symbol: '☽', icon: 'moon.png', names: ['चन्द्रमा', 'चन्द्र', 'चंद्रमा', 'चंद्र', 'सोम', 'Moon'] },
-        { key: 'mars', symbol: '♂', icon: 'mars.png', names: ['मंगल', 'भौम', 'कुज', 'Mars'] },
-        { key: 'mercury', symbol: '☿', icon: 'mercury.png', names: ['बुध', 'सौम्य', 'Mercury'] },
-        { key: 'jupiter', symbol: '♃', icon: 'jupiter.png', names: ['बृहस्पति', 'गुरु', 'जीव', 'Jupiter'] },
-        { key: 'venus', symbol: '♀', icon: 'venus.png', names: ['शुक्र', 'भार्गव', 'Venus'] },
-        { key: 'saturn', symbol: '♄', icon: 'saturn.png', names: ['शनैश्चर', 'शनि', 'मंद', 'Saturn'] },
-        { key: 'rahu', symbol: '☊', icon: 'rahu.png', names: ['राहु', 'Rahu'] },
-        { key: 'ketu', symbol: '☋', icon: 'ketu.png', names: ['केतु', 'Ketu'] }
-      ];
-
-      function matchPlanet(str) {
-        if (!str) return null;
-        const clean = str.trim();
-        for (const p of PLANETS) {
-          for (const name of p.names) {
-            if (clean === name || clean.startsWith(name + ' ') || clean.startsWith(name + '(')) {
-              return { planet: p, label: name };
-            }
-          }
-        }
-        return null;
-      }
-
-      function renderSingleOrSlash(token) {
-        if (token.includes('/')) {
-          const subParts = token.split('/').map(s => s.trim());
-          const subDecorated = [];
-          for (const sp of subParts) {
-            const m = matchPlanet(sp);
-            if (m) {
-              subDecorated.push(`<span class="planet-badge planet-${m.planet.key}"><img src="assets/images/planets/${m.planet.icon}" class="planet-icon" alt="${m.planet.key}"/> ${m.planet.symbol} ${m.label}</span>`);
-            } else {
-              return null;
-            }
-          }
-          return subDecorated.join('<span style="margin:0 2px; font-weight:bold; color:var(--text-muted,#64748b);">/</span>');
-        }
-        const m = matchPlanet(token);
-        if (m) {
-          return `<span class="planet-badge planet-${m.planet.key}"><img src="assets/images/planets/${m.planet.icon}" class="planet-icon" alt="${m.planet.key}"/> ${m.planet.symbol} ${m.label}</span>`;
-        }
-        return null;
-      }
-
-      function formatConjunctionOrPlanet(text) {
-        if (!text || text.includes('planet-badge')) return text;
-        let extra = '';
-        let base = text.trim();
-        const parenMatch = base.match(/^(.*?)\s*(\([^)]+\))$/);
-        if (parenMatch) {
-          base = parenMatch[1].trim();
-          extra = ' ' + parenMatch[2].trim();
-        }
-
-        if (base.includes('+')) {
-          const parts = base.split('+').map(s => s.trim());
-          const decoratedParts = [];
-          let allMatched = true;
-          for (const part of parts) {
-            const formatted = renderSingleOrSlash(part);
-            if (formatted) {
-              decoratedParts.push(formatted);
-            } else {
-              allMatched = false;
-              break;
-            }
-          }
-          if (allMatched && decoratedParts.length > 0) {
-            return `<span class="planet-conjunction-wrap">${decoratedParts.join('<span class="conjunction-plus">+</span>')}</span>` +
-              (extra ? `<span style="font-size:0.82em; opacity:0.85; margin-left:4px; font-weight:normal;">${extra}</span>` : '');
-          }
-        }
-
-        const single = renderSingleOrSlash(base);
-        if (single) {
-          return single + (extra ? `<span style="font-size:0.82em; opacity:0.85; margin-left:4px; font-weight:normal;">${extra}</span>` : '');
-        }
-        return text;
-      }
-
-      const targetCells = document.querySelectorAll(
-        '.comparison-table td, .content-table td, .bnn-table td, td.col-highlight, .astro-table td'
-      );
-
-      targetCells.forEach(cell => {
-        if (cell.querySelector('.planet-badge') || cell.closest('.planet-badge')) return;
-        const originalText = cell.textContent.trim();
-        if (!originalText) return;
-        const decorated = formatConjunctionOrPlanet(originalText);
-        if (decorated !== originalText) {
-          cell.innerHTML = decorated;
-          const firstToken = originalText.split('+')[0].split('/')[0].trim();
-          const firstPlanet = matchPlanet(firstToken);
-          if (firstPlanet && !cell.classList.contains(`planet-col-${firstPlanet.planet.key}`)) {
-            cell.classList.add(`planet-col-${firstPlanet.planet.key}`);
-          }
-        }
-      });
     })();
   </script>
 </body>

@@ -738,12 +738,173 @@ HTML_CONTENT = """<!DOCTYPE html>
       margin-bottom: 0.4rem;
     }
 
+    /* ==========================================================================
+       Mobile Responsive Navigation Bar & Layout (iPhone 15 & Viewports <= 768px)
+       Ultra-sleek single-line navigation bar taking < 6% screen height
+       ========================================================================== */
     @media (max-width: 768px) {
-      .book-title-main { font-size: 1.75rem; }
-      .chapter-section { padding: 1.5rem 1.2rem; }
-      .chapter-title { font-size: 1.4rem; }
-      .nav-tools .nav-btn span:last-child { display: none; }
-      .brand-text h1 { font-size: 0.98rem; }
+      .reader-navbar {
+        height: 48px;
+        min-height: 48px;
+        max-height: 48px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+      }
+
+      .nav-inner {
+        height: 100%;
+        max-width: 100%;
+        padding: 0 0.5rem;
+        gap: 0.35rem;
+        flex-wrap: nowrap;
+        overflow: hidden;
+      }
+
+      .brand-section {
+        gap: 0.35rem;
+        min-width: 0;
+        flex: 0 1 auto;
+        overflow: hidden;
+      }
+
+      .brand-section .nav-btn {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+
+      .brand-section .nav-btn span:last-child {
+        display: none !important;
+      }
+
+      .brand-badge {
+        gap: 0.35rem;
+        min-width: 0;
+        overflow: hidden;
+      }
+
+      .brand-logo-img {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+      }
+
+      .brand-text {
+        min-width: 0;
+        overflow: hidden;
+      }
+
+      .brand-text h1 {
+        font-size: 0.86rem !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 125px;
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      .brand-text span {
+        display: none !important;
+      }
+
+      .nav-tools {
+        gap: 0.25rem;
+        flex-shrink: 0;
+        flex-wrap: nowrap;
+      }
+
+      .nav-tools .nav-btn {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        flex-shrink: 0;
+      }
+
+      .nav-tools .nav-btn span:last-child {
+        display: none !important;
+      }
+
+      .nav-tools button[onclick*="adjustFont"] {
+        display: none !important;
+      }
+
+      .book-hero-banner {
+        padding: 1.4rem 1rem 1.2rem !important;
+      }
+
+      .volume-pill {
+        font-size: 0.72rem;
+        padding: 0.25rem 0.65rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .book-title-main {
+        font-size: 1.45rem !important;
+        margin-bottom: 0.35rem;
+        line-height: 1.25;
+      }
+
+      .book-title-sub {
+        font-size: 0.92rem !important;
+        margin-bottom: 0.75rem;
+      }
+
+      .book-intro-text {
+        font-size: 0.86rem !important;
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+      }
+
+      .hero-actions {
+        gap: 0.5rem;
+      }
+
+      .hero-actions .hero-btn {
+        padding: 0.55rem 0.95rem;
+        font-size: 0.85rem;
+      }
+
+      .chapter-section {
+        padding: 1.35rem 1rem;
+      }
+
+      .chapter-title {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .brand-text h1 {
+        max-width: 85px;
+        font-size: 0.78rem !important;
+      }
+      .nav-inner {
+        padding: 0 0.3rem;
+        gap: 0.2rem;
+      }
+      .nav-tools {
+        gap: 0.2rem;
+      }
+      .brand-section .nav-btn,
+      .nav-tools .nav-btn {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        font-size: 0.85rem;
+      }
     }
 
     @media print {
