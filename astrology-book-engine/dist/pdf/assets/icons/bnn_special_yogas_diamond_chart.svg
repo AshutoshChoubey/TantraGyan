@@ -1,0 +1,251 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%">
+
+  <defs>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800;900&amp;display=swap");
+    </style>
+    <linearGradient id="plateBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefc"/>
+      <stop offset="50%" stop-color="#fdfbf5"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
+    </linearGradient>
+    <linearGradient id="goldBannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="kendraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="trikonaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#d1fae5" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="upachayaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#f3e8ff" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="marakaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe4e6" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fecdd3" stop-opacity="0.96"/>
+    </linearGradient>
+    <!-- Planetary Radiant Gradients -->
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffedd5"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <linearGradient id="jupGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+    <linearGradient id="venGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#fbcfe8"/></linearGradient>
+    <linearGradient id="satGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#eff6ff"/><stop offset="100%" stop-color="#bfdbfe"/></linearGradient>
+    <linearGradient id="marsGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fee2e2"/><stop offset="100%" stop-color="#fecaca"/></linearGradient>
+    <linearGradient id="mercGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d1fae5"/><stop offset="100%" stop-color="#a7f3d0"/></linearGradient>
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f0f9ff"/><stop offset="100%" stop-color="#e0f2fe"/></linearGradient>
+    <linearGradient id="rahuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ede9fe"/><stop offset="100%" stop-color="#ddd6fe"/></linearGradient>
+    <linearGradient id="ketuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <filter id="cardPlateShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  
+  <!-- Top Header Banner -->
+  <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">अष्टादश विशिष्ट नाड़ी राजयोग एवं कर्म-संयोग चक्र</text>
+  <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">Master Auspicious Yogas &amp; Divine Planetary Conjunctions in BNN</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">ग्रहाणां संवादेन जीवस्य प्रारब्धं प्रकाशते • 6 सर्वोच्च फलदायी नाड़ी राजयोग</text>
+
+
+  
+  <!-- Special Yoga Card 1 -->
+  <g transform="translate(24, 96)">
+    <rect width="250" height="160" rx="8" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.4"/>
+    <rect width="250" height="32" rx="8" fill="#f8fafc"/>
+    <line x1="0" y1="32" x2="250" y2="32" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Planet Badges -->
+    <g transform="translate(10, 4)">
+      
+    <rect x="0" y="0" width="60" height="24" rx="12.0" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.3"/>
+    <text x="30.0" y="16.32" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#b45309">♃ गुरु</text>
+      <text x="69" y="17" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#1d4ed8">+</text>
+      
+    <rect x="80" y="0" width="60" height="24" rx="12.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="110.0" y="16.32" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8">♄ शनि</text>
+    </g>
+
+    <!-- Yoga Name -->
+    <text x="12" y="54" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="#1d4ed8">ब्रह्म / धर्म-कर्माधिपति योग</text>
+
+    <!-- Description -->
+    <text x="12" y="76" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b">सर्वोच्च सामाजिक प्रतिष्ठा, न्यायाधी</text>
+    <text x="12" y="93" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b">श, संस्था प्रमुख, निष्काम कर्म व समाज </text>
+    <text x="12" y="110" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b">सुधारक।</text>
+
+    <!-- Bottom Pill -->
+    <rect x="8" y="128" width="234" height="22" rx="4" fill="#fef3c7"/>
+    <text x="125.0" y="143" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="800" fill="#b45309" text-anchor="middle">1-5-9 त्रिकोण अथवा एक ही राशि में युति</text>
+  </g>
+
+  <!-- Special Yoga Card 2 -->
+  <g transform="translate(286, 96)">
+    <rect width="250" height="160" rx="8" fill="#ffffff" stroke="#c2410c" stroke-width="1.4"/>
+    <rect width="250" height="32" rx="8" fill="#f8fafc"/>
+    <line x1="0" y1="32" x2="250" y2="32" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Planet Badges -->
+    <g transform="translate(10, 4)">
+      
+    <rect x="0" y="0" width="60" height="24" rx="12.0" fill="#ffedd5" stroke="#ea580c" stroke-width="1.3"/>
+    <text x="30.0" y="16.32" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#c2410c">☉ सूर्य</text>
+      <text x="69" y="17" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#c2410c">+</text>
+      
+    <rect x="80" y="0" width="60" height="24" rx="12.0" fill="#d1fae5" stroke="#10b981" stroke-width="1.3"/>
+    <text x="110.0" y="16.32" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#047857">☿ बुध</text>
+    </g>
+
+    <!-- Yoga Name -->
+    <text x="12" y="54" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="#c2410c">बुधादित्य एवं मेधा योग</text>
+
+    <!-- Description -->
+    <text x="12" y="76" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b">तीक्ष्ण तार्किक बुद्धि, वित्तीय प्रब</text>
+    <text x="12" y="93" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b">ंधन, सरकारी सलाहकार, वाणी में प्रखर ओज</text>
+    <text x="12" y="110" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b"> व यश।</text>
+
+    <!-- Bottom Pill -->
+    <rect x="8" y="128" width="234" height="22" rx="4" fill="#fef3c7"/>
+    <text x="125.0" y="143" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="800" fill="#b45309" text-anchor="middle">1-5-9 त्रिकोण अथवा एक ही राशि में युति</text>
+  </g>
+
+  <!-- Special Yoga Card 3 -->
+  <g transform="translate(24, 266)">
+    <rect width="250" height="160" rx="8" fill="#ffffff" stroke="#047857" stroke-width="1.4"/>
+    <rect width="250" height="32" rx="8" fill="#f8fafc"/>
+    <line x1="0" y1="32" x2="250" y2="32" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Planet Badges -->
+    <g transform="translate(10, 4)">
+      
+    <rect x="0" y="0" width="60" height="24" rx="12.0" fill="#d1fae5" stroke="#10b981" stroke-width="1.3"/>
+    <text x="30.0" y="16.32" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#047857">☿ बुध</text>
+      <text x="69" y="17" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#047857">+</text>
+      
+    <rect x="80" y="0" width="60" height="24" rx="12.0" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
+    <text x="110.0" y="16.32" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#be185d">♀ शुक्र</text>
+    </g>
+
+    <!-- Yoga Name -->
+    <text x="12" y="54" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="#047857">महालक्ष्मी एवं कला योग</text>
+
+    <!-- Description -->
+    <text x="12" y="76" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b">अपार व्यापारिक लाभ, मीडिया, सौन्दर्य</text>
+    <text x="12" y="93" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b">, वाक-चातुर्य, संगीत व अखंड धन-वैभव।</text>
+    <text x="12" y="110" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b"></text>
+
+    <!-- Bottom Pill -->
+    <rect x="8" y="128" width="234" height="22" rx="4" fill="#fef3c7"/>
+    <text x="125.0" y="143" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="800" fill="#b45309" text-anchor="middle">1-5-9 त्रिकोण अथवा एक ही राशि में युति</text>
+  </g>
+
+  <!-- Special Yoga Card 4 -->
+  <g transform="translate(286, 266)">
+    <rect width="250" height="160" rx="8" fill="#ffffff" stroke="#0369a1" stroke-width="1.4"/>
+    <rect width="250" height="32" rx="8" fill="#f8fafc"/>
+    <line x1="0" y1="32" x2="250" y2="32" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Planet Badges -->
+    <g transform="translate(10, 4)">
+      
+    <rect x="0" y="0" width="60" height="24" rx="12.0" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.3"/>
+    <text x="30.0" y="16.32" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#0369a1">☽ चन्द्र</text>
+      <text x="69" y="17" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#0369a1">+</text>
+      
+    <rect x="80" y="0" width="60" height="24" rx="12.0" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.3"/>
+    <text x="110.0" y="16.32" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#b45309">♃ गुरु</text>
+    </g>
+
+    <!-- Yoga Name -->
+    <text x="12" y="54" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="#0369a1">गजकेसरी नाड़ी योग</text>
+
+    <!-- Description -->
+    <text x="12" y="76" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b">अखंड जनसमर्थन, कीर्ति, परोपकार, धार्</text>
+    <text x="12" y="93" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b">मिक यात्राएं, उच्च ज्ञान व उत्तम स्वास</text>
+    <text x="12" y="110" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b">्थ्य।</text>
+
+    <!-- Bottom Pill -->
+    <rect x="8" y="128" width="234" height="22" rx="4" fill="#fef3c7"/>
+    <text x="125.0" y="143" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="800" fill="#b45309" text-anchor="middle">1-5-9 त्रिकोण अथवा एक ही राशि में युति</text>
+  </g>
+
+  <!-- Special Yoga Card 5 -->
+  <g transform="translate(24, 436)">
+    <rect width="250" height="160" rx="8" fill="#ffffff" stroke="#78350f" stroke-width="1.4"/>
+    <rect width="250" height="32" rx="8" fill="#f8fafc"/>
+    <line x1="0" y1="32" x2="250" y2="32" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Planet Badges -->
+    <g transform="translate(10, 4)">
+      
+    <rect x="0" y="0" width="60" height="24" rx="12.0" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.3"/>
+    <text x="30.0" y="16.32" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#b45309">♃ गुरु</text>
+      <text x="69" y="17" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#78350f">+</text>
+      
+    <rect x="80" y="0" width="60" height="24" rx="12.0" fill="#fef3c7" stroke="#b45309" stroke-width="1.3"/>
+    <text x="110.0" y="16.32" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#78350f">☋ केतु</text>
+    </g>
+
+    <!-- Yoga Name -->
+    <text x="12" y="54" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="#78350f">गणेश एवं मोक्ष योग</text>
+
+    <!-- Description -->
+    <text x="12" y="76" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b">त्रिकालज्ञ, ज्योतिष-प्रवीण, दिव्य अं</text>
+    <text x="12" y="93" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b">तर्ज्ञान, वैराग्य, आध्यात्मिक मुक्ति व</text>
+    <text x="12" y="110" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b"> तपस्या।</text>
+
+    <!-- Bottom Pill -->
+    <rect x="8" y="128" width="234" height="22" rx="4" fill="#fef3c7"/>
+    <text x="125.0" y="143" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="800" fill="#b45309" text-anchor="middle">1-5-9 त्रिकोण अथवा एक ही राशि में युति</text>
+  </g>
+
+  <!-- Special Yoga Card 6 -->
+  <g transform="translate(286, 436)">
+    <rect width="250" height="160" rx="8" fill="#ffffff" stroke="#be185d" stroke-width="1.4"/>
+    <rect width="250" height="32" rx="8" fill="#f8fafc"/>
+    <line x1="0" y1="32" x2="250" y2="32" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Planet Badges -->
+    <g transform="translate(10, 4)">
+      
+    <rect x="0" y="0" width="60" height="24" rx="12.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="30.0" y="16.32" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8">♄ शनि</text>
+      <text x="69" y="17" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#be185d">+</text>
+      
+    <rect x="80" y="0" width="60" height="24" rx="12.0" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
+    <text x="110.0" y="16.32" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#be185d">♀ शुक्र</text>
+    </g>
+
+    <!-- Yoga Name -->
+    <text x="12" y="54" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="#be185d">भाग्यलक्ष्मी योग</text>
+
+    <!-- Description -->
+    <text x="12" y="76" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b">विवाह उपरांत प्रचंड भाग्योदय, अचल सं</text>
+    <text x="12" y="93" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b">पत्ति, वाहन सुख, लग्जरी जीवन व स्थिरता</text>
+    <text x="12" y="110" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.2" font-weight="600" fill="#1e293b">।</text>
+
+    <!-- Bottom Pill -->
+    <rect x="8" y="128" width="234" height="22" rx="4" fill="#fef3c7"/>
+    <text x="125.0" y="143" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="800" fill="#b45309" text-anchor="middle">1-5-9 त्रिकोण अथवा एक ही राशि में युति</text>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="620" width="512" height="128" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="642" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ नाड़ी योगों के सक्रियण एवं भंग होने के शास्त्रीय नियम ★</text>
+  <text x="280" y="664" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">1. योग सक्रियण: जब संबंधित ग्रहों के 1-5-9 त्रिकोण में गुरु या शनि का गोचर होता है</text>
+  <text x="280" y="684" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#dc2626" text-anchor="middle">2. योग भंग: यदि दो मित्र ग्रहों के बीच राहु या शत्रु ग्रह कम अंशों पर स्थित हो जाए</text>
+  <text x="280" y="704" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">3. दोष भंग: किसी भी नकारात्मक योग पर यदि गुरु की 1-5-9 त्रिकोण दृष्टि पड़ जाए तो दोष शांत हो जाता है</text>
+  <text x="280" y="724" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#64748b" text-anchor="middle">स्रोत: भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र • तंत्र ज्ञान शोध संस्थान (2026)</text>
+</svg>

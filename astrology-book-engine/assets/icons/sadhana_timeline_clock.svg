@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%">
+
+  <defs>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800;900&amp;display=swap");
+    </style>
+    <linearGradient id="parchmentBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefb"/>
+      <stop offset="50%" stop-color="#fdfbf5"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
+    </linearGradient>
+    <linearGradient id="goldHeadGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="shivaBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="durgaRedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef2f2"/>
+      <stop offset="100%" stop-color="#fee2e2"/>
+    </linearGradient>
+    <linearGradient id="bhairavDarkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="tantraShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#parchmentBg)" stroke="#b45309" stroke-width="2" filter="url(#tantraShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  
+  <!-- Top Header Banner -->
+  <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.3"/>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="14.5" font-weight="900" fill="#78350f" text-anchor="middle">दैनिक साधना काल-तालिका (8:30 PM – 10:40 PM)</text>
+  <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">Master Daily Sadhana Timeline Protocol • Minute-by-Minute Sequence</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">प्रत्येक मंत्र के पश्चात 1 मिनट गहरा श्वास (Deep Breathing Rest) अनिवार्य</text>
+
+
+  
+  <!-- Step 1 -->
+  <g transform="translate(24, 96)">
+    <rect width="512" height="42" rx="6" fill="#ffffff" stroke="#1e293b" stroke-width="1.2"/>
+    <rect width="78" height="42" rx="6" fill="#1e293b"/>
+    <text x="39" y="18" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="900" fill="#ffffff" text-anchor="middle">8:30 PM</text>
+    <text x="39" y="32" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#fde047" text-anchor="middle">(5 min)</text>
+
+    <text x="92" y="19" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="#1e293b">वेदी तैयारी व दीप प्रज्वलन</text>
+    <text x="92" y="33" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#64748b">Diya placement &amp; materials ready</text>
+
+    <!-- Rest Pill -->
+    <rect x="445" y="10" width="55" height="22" rx="4" fill="#f1f5f9"/>
+    <text x="472" y="24" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#334155" text-anchor="middle">विश्राम 1m</text>
+  </g>
+
+  <!-- Step 2 -->
+  <g transform="translate(24, 141)">
+    <rect width="512" height="42" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+    <rect width="78" height="42" rx="6" fill="#b45309"/>
+    <text x="39" y="18" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="900" fill="#ffffff" text-anchor="middle">8:35 PM</text>
+    <text x="39" y="32" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#fde047" text-anchor="middle">(10 min)</text>
+
+    <text x="92" y="19" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="#b45309">संकल्प एवं पूर्वांग आह्वान</text>
+    <text x="92" y="33" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#64748b">Sacred vow, Achamana &amp; Invocations</text>
+
+    <!-- Rest Pill -->
+    <rect x="445" y="10" width="55" height="22" rx="4" fill="#f1f5f9"/>
+    <text x="472" y="24" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#334155" text-anchor="middle">विश्राम 1m</text>
+  </g>
+
+  <!-- Step 3 -->
+  <g transform="translate(24, 186)">
+    <rect width="512" height="42" rx="6" fill="#ffffff" stroke="#0284c7" stroke-width="1.2"/>
+    <rect width="78" height="42" rx="6" fill="#0284c7"/>
+    <text x="39" y="18" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="900" fill="#ffffff" text-anchor="middle">8:45 PM</text>
+    <text x="39" y="32" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#fde047" text-anchor="middle">(1 min)</text>
+
+    <text x="92" y="19" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="#0284c7">ॐ नमः शिवाय (11 बार)</text>
+    <text x="92" y="33" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#64748b">11 recitations + 1 min Deep Breathing</text>
+
+    <!-- Rest Pill -->
+    <rect x="445" y="10" width="55" height="22" rx="4" fill="#f1f5f9"/>
+    <text x="472" y="24" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#334155" text-anchor="middle">विश्राम 1m</text>
+  </g>
+
+  <!-- Step 4 -->
+  <g transform="translate(24, 231)">
+    <rect width="512" height="42" rx="6" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+    <rect width="78" height="42" rx="6" fill="#dc2626"/>
+    <text x="39" y="18" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="900" fill="#ffffff" text-anchor="middle">8:47 PM</text>
+    <text x="39" y="32" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#fde047" text-anchor="middle">(1 min)</text>
+
+    <text x="92" y="19" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="#dc2626">ॐ गं गणपतये नमः (11 बार)</text>
+    <text x="92" y="33" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#64748b">Ganesha protection + 1 min Deep Breathing</text>
+
+    <!-- Rest Pill -->
+    <rect x="445" y="10" width="55" height="22" rx="4" fill="#f1f5f9"/>
+    <text x="472" y="24" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#334155" text-anchor="middle">विश्राम 1m</text>
+  </g>
+
+  <!-- Step 5 -->
+  <g transform="translate(24, 276)">
+    <rect width="512" height="42" rx="6" fill="#ffffff" stroke="#4338ca" stroke-width="1.2"/>
+    <rect width="78" height="42" rx="6" fill="#4338ca"/>
+    <text x="39" y="18" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="900" fill="#ffffff" text-anchor="middle">8:49 PM</text>
+    <text x="39" y="32" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#fde047" text-anchor="middle">(3 min)</text>
+
+    <text x="92" y="19" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="#4338ca">बटुक भैरव रक्षा मंत्र (11 बार)</text>
+    <text x="92" y="33" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#64748b">आपदुद्धारणाय बटुकाय + 1 min Deep Breathing</text>
+
+    <!-- Rest Pill -->
+    <rect x="445" y="10" width="55" height="22" rx="4" fill="#f1f5f9"/>
+    <text x="472" y="24" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#334155" text-anchor="middle">विश्राम 1m</text>
+  </g>
+
+  <!-- Step 6 -->
+  <g transform="translate(24, 321)">
+    <rect width="512" height="42" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.2"/>
+    <rect width="78" height="42" rx="6" fill="#059669"/>
+    <text x="39" y="18" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="900" fill="#ffffff" text-anchor="middle">8:53 PM</text>
+    <text x="39" y="32" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#fde047" text-anchor="middle">(3 min)</text>
+
+    <text x="92" y="19" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="#059669">हरे कृष्ण महामंत्र (11 बार)</text>
+    <text x="92" y="33" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#64748b">Bhakti alignment + 1 min Deep Breathing</text>
+
+    <!-- Rest Pill -->
+    <rect x="445" y="10" width="55" height="22" rx="4" fill="#f1f5f9"/>
+    <text x="472" y="24" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#334155" text-anchor="middle">विश्राम 1m</text>
+  </g>
+
+  <!-- Step 7 -->
+  <g transform="translate(24, 366)">
+    <rect width="512" height="42" rx="6" fill="#ffffff" stroke="#ea580c" stroke-width="1.2"/>
+    <rect width="78" height="42" rx="6" fill="#ea580c"/>
+    <text x="39" y="18" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="900" fill="#ffffff" text-anchor="middle">8:57 PM</text>
+    <text x="39" y="32" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#fde047" text-anchor="middle">(5 min)</text>
+
+    <text x="92" y="19" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="#ea580c">श्री हनुमान चालीसा (1 पाठ)</text>
+    <text x="92" y="33" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#64748b">Complete recital + 1 min Deep Breathing</text>
+
+    <!-- Rest Pill -->
+    <rect x="445" y="10" width="55" height="22" rx="4" fill="#f1f5f9"/>
+    <text x="472" y="24" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#334155" text-anchor="middle">विश्राम 1m</text>
+  </g>
+
+  <!-- Step 8 -->
+  <g transform="translate(24, 411)">
+    <rect width="512" height="42" rx="6" fill="#ffffff" stroke="#be185d" stroke-width="1.2"/>
+    <rect width="78" height="42" rx="6" fill="#be185d"/>
+    <text x="39" y="18" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="900" fill="#ffffff" text-anchor="middle">9:03 PM</text>
+    <text x="39" y="32" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#fde047" text-anchor="middle">(20 min)</text>
+
+    <text x="92" y="19" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="#be185d">श्री दुर्गा कवच (सम्पूर्ण पाठ)</text>
+    <text x="92" y="33" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#64748b">Complete Kavach + 1 min Deep Breathing</text>
+
+    <!-- Rest Pill -->
+    <rect x="445" y="10" width="55" height="22" rx="4" fill="#f1f5f9"/>
+    <text x="472" y="24" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#334155" text-anchor="middle">विश्राम 1m</text>
+  </g>
+
+  <!-- Step 9 -->
+  <g transform="translate(24, 456)">
+    <rect width="512" height="42" rx="6" fill="#ffffff" stroke="#047857" stroke-width="1.2"/>
+    <rect width="78" height="42" rx="6" fill="#047857"/>
+    <text x="39" y="18" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="900" fill="#ffffff" text-anchor="middle">9:24 PM</text>
+    <text x="39" y="32" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#fde047" text-anchor="middle">(3 min)</text>
+
+    <text x="92" y="19" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="#047857">महामृत्युंजय मंत्र (11 बार)</text>
+    <text x="92" y="33" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#64748b">Mrityunjaya + 1 min Deep Breathing</text>
+
+    <!-- Rest Pill -->
+    <rect x="445" y="10" width="55" height="22" rx="4" fill="#f1f5f9"/>
+    <text x="472" y="24" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#334155" text-anchor="middle">विश्राम 1m</text>
+  </g>
+
+  <!-- Step 10 -->
+  <g transform="translate(24, 501)">
+    <rect width="512" height="42" rx="6" fill="#ffffff" stroke="#b91c1c" stroke-width="1.2"/>
+    <rect width="78" height="42" rx="6" fill="#b91c1c"/>
+    <text x="39" y="18" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="900" fill="#ffffff" text-anchor="middle">9:28 PM</text>
+    <text x="39" y="32" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#fde047" text-anchor="middle">(65 min)</text>
+
+    <text x="92" y="19" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="#b91c1c">★ सिद्ध कुंजिका स्तोत्र (21 पाठ)</text>
+    <text x="92" y="33" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#64748b">CORE: Shiv Uvacha in 1st &amp; 21st only</text>
+
+    <!-- Rest Pill -->
+    <rect x="445" y="10" width="55" height="22" rx="4" fill="#f1f5f9"/>
+    <text x="472" y="24" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#334155" text-anchor="middle">विश्राम 1m</text>
+  </g>
+
+  <!-- Step 11 -->
+  <g transform="translate(24, 546)">
+    <rect width="512" height="42" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.2"/>
+    <rect width="78" height="42" rx="6" fill="#475569"/>
+    <text x="39" y="18" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="900" fill="#ffffff" text-anchor="middle">10:33 PM</text>
+    <text x="39" y="32" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#fde047" text-anchor="middle">(2 min)</text>
+
+    <text x="92" y="19" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="#475569">क्षमा प्रार्थना (Forgiveness)</text>
+    <text x="92" y="33" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#64748b">अज्ञानाद्विस्मृतेर्भ्रान्त्या यन्न्यूनमधिकं कृतम्</text>
+
+    <!-- Rest Pill -->
+    <rect x="445" y="10" width="55" height="22" rx="4" fill="#f1f5f9"/>
+    <text x="472" y="24" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#334155" text-anchor="middle">विश्राम 1m</text>
+  </g>
+
+  <!-- Step 12 -->
+  <g transform="translate(24, 591)">
+    <rect width="512" height="42" rx="6" fill="#ffffff" stroke="#78350f" stroke-width="1.2"/>
+    <rect width="78" height="42" rx="6" fill="#78350f"/>
+    <text x="39" y="18" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="900" fill="#ffffff" text-anchor="middle">10:35 PM</text>
+    <text x="39" y="32" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#fde047" text-anchor="middle">(5 min)</text>
+
+    <text x="92" y="19" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="900" fill="#78350f">आरती एवं आसन उत्थापन</text>
+    <text x="92" y="33" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#64748b">Aarti, Asana water release &amp; Immediate Sleep</text>
+
+    <!-- Rest Pill -->
+    <rect x="445" y="10" width="55" height="22" rx="4" fill="#f1f5f9"/>
+    <text x="472" y="24" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#334155" text-anchor="middle">विश्राम 1m</text>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="642" width="512" height="105" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="664" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ साधना समाप्ति के उपरांत का अनिवार्य नियम ★</text>
+  <text x="280" y="685" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">• 10:40 PM पर आरती व क्षमा प्रार्थना के तुरंत बाद बिना किसी वार्तालाप या फोन के सीधे शयन करें</text>
+  <text x="280" y="705" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">• साधना में अर्जित ब्रह्मांडीय ऊर्जा निद्रा काल में सूक्ष्म शरीर (Astral Body) में संचित होती है</text>
+  <text x="280" y="725" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">स्रोत: तंत्र साधना सिद्धि महाग्रंथ • प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे</text>
+</svg>

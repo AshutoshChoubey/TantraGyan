@@ -78,7 +78,12 @@ def generate_enterprise_kundli(
     )
 
 
-generate_north_indian_chart = generate_enterprise_kundli
+def generate_north_indian_chart(lagna_rashi=1, title="जन्म कुण्डली", lagna_sign_idx=None, chart_title=None, **kwargs):
+    if lagna_sign_idx is None:
+        lagna_sign_idx = max(0, lagna_rashi - 1)
+    if chart_title is None:
+        chart_title = title
+    return generate_enterprise_kundli(lagna_sign_idx=lagna_sign_idx, chart_title=chart_title, **kwargs)
 
 
 def generate_aspect_wheel(width=500, height=500, theme="parchment"):

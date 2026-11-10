@@ -8,7 +8,11 @@ theme toggles, 3D flipbook page turning, and TOC drawers.
 
 import os
 import unittest
-from playwright.sync_api import sync_playwright
+try:
+    from playwright.sync_api import sync_playwright
+    PLAYWRIGHT_AVAILABLE = True
+except ImportError:
+    PLAYWRIGHT_AVAILABLE = False
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -16,13 +20,16 @@ class PlaywrightE2EPillar(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        if not PLAYWRIGHT_AVAILABLE:
+            raise unittest.SkipTest("Playwright is not installed in the active Python environment.")
         cls.playwright = sync_playwright().start()
         cls.browser = cls.playwright.chromium.launch(headless=True)
 
     @classmethod
     def tearDownClass(cls):
-        cls.browser.close()
-        cls.playwright.stop()
+        if PLAYWRIGHT_AVAILABLE and hasattr(cls, 'browser'):
+            cls.browser.close()
+            cls.playwright.stop()
 
     def test_01_home_portal_journey(self):
         page = self.browser.new_page()

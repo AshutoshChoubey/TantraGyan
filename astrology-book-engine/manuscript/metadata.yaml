@@ -65,4 +65,10 @@ chapters:
     english_number: "Chapter 7"
     title: "चित्रात्मक कुण्डली एटलस — महाभूत, उपचय एवं नक्षत्र मण्डल"
     english_title: "Visual Kundali Atlas — Elements, Upachaya & Nakshatra Mandala"
+  - id: "chapter-08"
+    file: "chapter-08.md"
+    number: "8"
+    english_number: "Chapter 8"
+    title: "सम्पूर्ण पंचांग फलित निर्देशिका — पंचांग तत्व, वार, तिथि, नक्षत्र, योग व करण"
+    english_title: "Comprehensive Panchang Guide — 5 Limbs of Time, Elements, Vaar, Tithi, Nakshatra, Yoga & Karana"
 

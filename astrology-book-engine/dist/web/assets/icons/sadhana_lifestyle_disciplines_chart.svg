@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%">
+
+  <defs>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800;900&amp;display=swap");
+    </style>
+    <linearGradient id="parchmentBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefb"/>
+      <stop offset="50%" stop-color="#fdfbf5"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
+    </linearGradient>
+    <linearGradient id="goldHeadGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="shivaBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="durgaRedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef2f2"/>
+      <stop offset="100%" stop-color="#fee2e2"/>
+    </linearGradient>
+    <linearGradient id="bhairavDarkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="tantraShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#parchmentBg)" stroke="#b45309" stroke-width="2" filter="url(#tantraShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  
+  <!-- Top Header Banner -->
+  <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.3"/>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="14.5" font-weight="900" fill="#78350f" text-anchor="middle">षड्विध तांत्रिक यम-नियम, प्राणायाम एवं स्वप्न-स्वर विज्ञान</text>
+  <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">Six Pillars of Tantric Austerity, Morning Pranayama &amp; Swara-Dream Science</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">मन, वचन, कर्म व आहार की पूर्ण शुद्धि से ही मंत्र चैतन्य और जागृत होता है</text>
+
+
+  
+  <!-- Discipline Card 1 -->
+  <g transform="translate(24, 96)">
+    <rect width="250" height="160" rx="8" fill="#ffffff" stroke="#991b1b" stroke-width="1.3"/>
+    <rect width="250" height="28" rx="8" fill="#fef2f2"/>
+    <line x1="0" y1="28" x2="250" y2="28" stroke="#991b1b" stroke-width="0.8"/>
+
+    <text x="12" y="19" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#991b1b">१. ब्रह्मचर्य (Complete Celibacy)</text>
+
+    <text x="12" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">कायिक, मानसिक व दृश्य ब्रह्मचर्य। कामु</text>
+    <text x="12" y="65" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">क विचारों, रोमांस व उत्तेजक दृश्यों से</text>
+    <text x="12" y="82" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b"> पूर्ण विरक्ति।</text>
+
+    <!-- Specific Golden Tip -->
+    <rect x="8" y="105" width="234" height="44" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="125.0" y="122" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#b45309" text-anchor="middle">★ ४१-दिवसीय यम-नियम साधना स्तम्भ ★</text>
+    <text x="125.0" y="138" font-family="'Kohinoor Devanagari', sans-serif" font-size="7.8" font-weight="600" fill="#64748b" text-anchor="middle">ऊर्जा को क्षय होने से बचाकर सहस्रार में संचित करना</text>
+  </g>
+
+  <!-- Discipline Card 2 -->
+  <g transform="translate(286, 96)">
+    <rect width="250" height="160" rx="8" fill="#ffffff" stroke="#15803d" stroke-width="1.3"/>
+    <rect width="250" height="28" rx="8" fill="#f0fdf4"/>
+    <line x1="0" y1="28" x2="250" y2="28" stroke="#15803d" stroke-width="0.8"/>
+
+    <text x="12" y="19" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#15803d">२. सात्विक आहार (Sattvic Food)</text>
+
+    <text x="12" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">लहसुन, प्याज, मांसाहार, मद्य, तंबाकू प</text>
+    <text x="12" y="65" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">ूर्ण वर्जित। ३ घंटे से अधिक पुराना भोज</text>
+    <text x="12" y="82" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">न न लें।</text>
+
+    <!-- Specific Golden Tip -->
+    <rect x="8" y="105" width="234" height="44" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="125.0" y="122" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#b45309" text-anchor="middle">★ ४१-दिवसीय यम-नियम साधना स्तम्भ ★</text>
+    <text x="125.0" y="138" font-family="'Kohinoor Devanagari', sans-serif" font-size="7.8" font-weight="600" fill="#64748b" text-anchor="middle">ऊर्जा को क्षय होने से बचाकर सहस्रार में संचित करना</text>
+  </g>
+
+  <!-- Discipline Card 3 -->
+  <g transform="translate(24, 266)">
+    <rect width="250" height="160" rx="8" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.3"/>
+    <rect width="250" height="28" rx="8" fill="#eff6ff"/>
+    <line x1="0" y1="28" x2="250" y2="28" stroke="#1d4ed8" stroke-width="0.8"/>
+
+    <text x="12" y="19" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8">३. मौन एवं वाणी संयम (Mauna)</text>
+
+    <text x="12" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">केवल अनिवार्य व्यावसायिक संवाद। फोन दू</text>
+    <text x="12" y="65" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">सरे कमरे में रखें; सोशल मीडिया, संगीत,</text>
+    <text x="12" y="82" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b"> फिल्म वर्जित।</text>
+
+    <!-- Specific Golden Tip -->
+    <rect x="8" y="105" width="234" height="44" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="125.0" y="122" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#b45309" text-anchor="middle">★ ४१-दिवसीय यम-नियम साधना स्तम्भ ★</text>
+    <text x="125.0" y="138" font-family="'Kohinoor Devanagari', sans-serif" font-size="7.8" font-weight="600" fill="#64748b" text-anchor="middle">ऊर्जा को क्षय होने से बचाकर सहस्रार में संचित करना</text>
+  </g>
+
+  <!-- Discipline Card 4 -->
+  <g transform="translate(286, 266)">
+    <rect width="250" height="160" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.3"/>
+    <rect width="250" height="28" rx="8" fill="#fffbeb"/>
+    <line x1="0" y1="28" x2="250" y2="28" stroke="#b45309" stroke-width="0.8"/>
+
+    <text x="12" y="19" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#b45309">४. भूमि शयन (Ground Sleeping)</text>
+
+    <text x="12" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">४१ दिनों तक शुद्ध चटाई व स्वच्छ चादर प</text>
+    <text x="12" y="65" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">र फर्श पर शयन अनिवार्य। रीढ़ सीधी रखें</text>
+    <text x="12" y="82" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">।</text>
+
+    <!-- Specific Golden Tip -->
+    <rect x="8" y="105" width="234" height="44" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="125.0" y="122" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#b45309" text-anchor="middle">★ ४१-दिवसीय यम-नियम साधना स्तम्भ ★</text>
+    <text x="125.0" y="138" font-family="'Kohinoor Devanagari', sans-serif" font-size="7.8" font-weight="600" fill="#64748b" text-anchor="middle">ऊर्जा को क्षय होने से बचाकर सहस्रार में संचित करना</text>
+  </g>
+
+  <!-- Discipline Card 5 -->
+  <g transform="translate(24, 436)">
+    <rect width="250" height="160" rx="8" fill="#ffffff" stroke="#047857" stroke-width="1.3"/>
+    <rect width="250" height="28" rx="8" fill="#ecfdf5"/>
+    <line x1="0" y1="28" x2="250" y2="28" stroke="#047857" stroke-width="0.8"/>
+
+    <text x="12" y="19" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#047857">५. प्रातः प्राणायाम (Pranayama)</text>
+
+    <text x="12" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">प्रातः 7:30–8:00 AM: कपालभाति (10 मिनट</text>
+    <text x="12" y="65" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">) एवं अनुलोम-विलोम (10 मिनट) तंत्रिका </text>
+    <text x="12" y="82" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">शुद्धि हेतु।</text>
+
+    <!-- Specific Golden Tip -->
+    <rect x="8" y="105" width="234" height="44" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="125.0" y="122" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#b45309" text-anchor="middle">★ ४१-दिवसीय यम-नियम साधना स्तम्भ ★</text>
+    <text x="125.0" y="138" font-family="'Kohinoor Devanagari', sans-serif" font-size="7.8" font-weight="600" fill="#64748b" text-anchor="middle">ऊर्जा को क्षय होने से बचाकर सहस्रार में संचित करना</text>
+  </g>
+
+  <!-- Discipline Card 6 -->
+  <g transform="translate(286, 436)">
+    <rect width="250" height="160" rx="8" fill="#ffffff" stroke="#6d28d9" stroke-width="1.3"/>
+    <rect width="250" height="28" rx="8" fill="#faf5ff"/>
+    <line x1="0" y1="28" x2="250" y2="28" stroke="#6d28d9" stroke-width="0.8"/>
+
+    <text x="12" y="19" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#6d28d9">६. स्वप्न-स्वर विज्ञान (Dream &amp; Swara)</text>
+
+    <text x="12" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">जागते ही स्वप्न डायरी में लिखें। जागते</text>
+    <text x="12" y="65" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b"> समय कौन सा नथुना (स्वर: इड़ा/पिंगला) </text>
+    <text x="12" y="82" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">सक्रिय था, नोट करें।</text>
+
+    <!-- Specific Golden Tip -->
+    <rect x="8" y="105" width="234" height="44" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="125.0" y="122" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#b45309" text-anchor="middle">★ ४१-दिवसीय यम-नियम साधना स्तम्भ ★</text>
+    <text x="125.0" y="138" font-family="'Kohinoor Devanagari', sans-serif" font-size="7.8" font-weight="600" fill="#64748b" text-anchor="middle">ऊर्जा को क्षय होने से बचाकर सहस्रार में संचित करना</text>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="622" width="512" height="126" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="644" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ स्वप्न एवं स्वर विज्ञान का गोपनीय उपयोग ★</text>
+  <text x="280" y="665" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">• साधना काल में आने वाले स्वप्न साधक की आंतरिक शुद्धि व देव-संकेत का दर्पण होते हैं</text>
+  <text x="280" y="685" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">• यदि प्रातः जागते ही बायां स्वर (इड़ा) चले तो दिन में ज्ञान-साधना, दायां (पिंगला) चले तो कर्म-साधना फलीभूत होती है</text>
+  <text x="280" y="705" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">• इन ६ नियमों का पालन करने पर ४१वें दिन साधक के आभा-मंडल (Aura) में दिव्य प्रकाश प्रगट होता है</text>
+  <text x="280" y="724" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#64748b" text-anchor="middle">स्रोत: तंत्र साधना सिद्धि महाग्रंथ • प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे</text>
+</svg>

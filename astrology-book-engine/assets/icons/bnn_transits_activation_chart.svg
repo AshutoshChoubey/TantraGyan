@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%">
+
+  <defs>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800;900&amp;display=swap");
+    </style>
+    <linearGradient id="plateBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefc"/>
+      <stop offset="50%" stop-color="#fdfbf5"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
+    </linearGradient>
+    <linearGradient id="goldBannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="kendraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="trikonaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#d1fae5" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="upachayaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#f3e8ff" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="marakaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe4e6" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fecdd3" stop-opacity="0.96"/>
+    </linearGradient>
+    <!-- Planetary Radiant Gradients -->
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffedd5"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <linearGradient id="jupGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+    <linearGradient id="venGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#fbcfe8"/></linearGradient>
+    <linearGradient id="satGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#eff6ff"/><stop offset="100%" stop-color="#bfdbfe"/></linearGradient>
+    <linearGradient id="marsGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fee2e2"/><stop offset="100%" stop-color="#fecaca"/></linearGradient>
+    <linearGradient id="mercGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d1fae5"/><stop offset="100%" stop-color="#a7f3d0"/></linearGradient>
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f0f9ff"/><stop offset="100%" stop-color="#e0f2fe"/></linearGradient>
+    <linearGradient id="rahuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ede9fe"/><stop offset="100%" stop-color="#ddd6fe"/></linearGradient>
+    <linearGradient id="ketuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <filter id="cardPlateShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  
+  <!-- Top Header Banner -->
+  <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">गोचर गति एवं जीवन घटना सक्रियण काल-चक्र</text>
+  <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">Planetary Transit Clocks &amp; Event Activation Dynamics in BNN</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">धीमी गति वाले ग्रह आधार बनाते हैं • तीव्र गति वाले ग्रह घटना को ट्रिगर करते हैं</text>
+
+
+  <!-- Section 1: Master Clocks (Slow Moving) -->
+  <g transform="translate(24, 96)">
+    <rect width="512" height="152" rx="8" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.4"/>
+    <rect width="512" height="28" rx="8" fill="#0f172a"/>
+    <text x="256" y="19" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">१. स्थूल काल प्रवर्तक (Master Clocks - मंद गति ग्रह)</text>
+
+    <!-- Saturn Row -->
+    <g transform="translate(16, 36)">
+      
+    <rect x="0" y="0" width="56" height="22" rx="11.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="28.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8">♄ शनि</text>
+      <text x="70" y="15" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#1d4ed8">2.5 वर्ष प्रति राशि (30 वर्ष चक्र)</text>
+      <text x="255" y="15" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">कर्म, आजीविका व सामाजिक प्रतिष्ठा का स्थूल आधार</text>
+    </g>
+
+    <!-- Rahu/Ketu Row -->
+    <g transform="translate(16, 72)">
+      
+    <rect x="0" y="0" width="56" height="22" rx="11.0" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.3"/>
+    <text x="28.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#4338ca">☊ राहु</text>
+      <text x="70" y="15" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#4338ca">1.5 वर्ष प्रति राशि (18 वर्ष चक्र)</text>
+      <text x="255" y="15" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">प्रारब्ध का आकस्मिक मोड़ व कर्म ऋण चुकाने का काल</text>
+    </g>
+
+    <!-- Jupiter Row -->
+    <g transform="translate(16, 108)">
+      
+    <rect x="0" y="0" width="56" height="22" rx="11.0" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.3"/>
+    <text x="28.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#b45309">♃ गुरु</text>
+      <text x="70" y="15" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#b45309">1.0 वर्ष प्रति राशि (12 वर्ष चक्र)</text>
+      <text x="255" y="15" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">विवाह, सन्तान, पदोन्नति व भाग्योदय का सटीक वर्ष</text>
+    </g>
+  </g>
+
+  <!-- Section 2: Trigger Switches (Fast Moving) -->
+  <g transform="translate(24, 258)">
+    <rect width="512" height="195" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.4"/>
+    <rect width="512" height="28" rx="8" fill="#064e3b"/>
+    <text x="256" y="19" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">२. सूक्ष्म घटना ट्रिगर (Trigger Switches - तीव्र गति ग्रह)</text>
+
+    <!-- Sun Row -->
+    <g transform="translate(16, 36)">
+      
+    <rect x="0" y="0" width="56" height="22" rx="11.0" fill="#ffedd5" stroke="#ea580c" stroke-width="1.3"/>
+    <text x="28.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#c2410c">☉ सूर्य</text>
+      <text x="70" y="15" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#c2410c">1 माह प्रति राशि (30 दिन)</text>
+      <text x="240" y="15" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">घटना का सटीक माह एवं सरकारी/अधिकारिक स्वीकृति</text>
+    </g>
+
+    <!-- Mars Row -->
+    <g transform="translate(16, 72)">
+      
+    <rect x="0" y="0" width="56" height="22" rx="11.0" fill="#fee2e2" stroke="#ef4444" stroke-width="1.3"/>
+    <text x="28.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#dc2626">♂ मंगल</text>
+      <text x="70" y="15" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#dc2626">45 दिन प्रति राशि</text>
+      <text x="240" y="15" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">ऊर्जा, क्रियान्वयन, भूमि क्रय, अनुबंध व सक्रियता</text>
+    </g>
+
+    <!-- Mercury/Venus Row -->
+    <g transform="translate(16, 108)">
+      
+    <rect x="0" y="0" width="56" height="22" rx="11.0" fill="#d1fae5" stroke="#10b981" stroke-width="1.3"/>
+    <text x="28.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#047857">☿ बुध</text>
+      <text x="70" y="15" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#047857">25-30 दिन प्रति राशि</text>
+      <text x="240" y="15" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">वित्तीय लेन-देन, व्यावसायिक पत्र व्यवहार व यात्रा</text>
+    </g>
+
+    <!-- Moon Row -->
+    <g transform="translate(16, 144)">
+      
+    <rect x="0" y="0" width="56" height="22" rx="11.0" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.3"/>
+    <text x="28.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#0369a1">☽ चन्द्र</text>
+      <text x="70" y="15" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#0369a1">2.25 दिन प्रति राशि (54 घंटे)</text>
+      <text x="240" y="15" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">घटना का सटीक दिन एवं जातक का मानसिक संकल्प</text>
+    </g>
+  </g>
+
+  <!-- Section 3: Predictive Trigger Formula -->
+  <g transform="translate(24, 464)">
+    <rect width="512" height="155" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="1.6"/>
+    <text x="256" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#78350f" text-anchor="middle">★ अचूक फलित ट्रिगर समीकरण (Master Timing Formula) ★</text>
+
+    <!-- Equation Row -->
+    <rect x="15" y="38" width="482" height="42" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="256" y="64" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="800" fill="#b45309" text-anchor="middle">
+      [शनि की सहमति] + [गुरु का गोचर] + [सूर्य का संक्रमण] + [चन्द्र का गोचर] = निश्चित घटना
+    </text>
+
+    <text x="20" y="102" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b">• चरण 1 (वर्ष):</text>
+    <text x="95" y="102" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#334155">शनि और गुरु मिलकर घटना का वर्ष तय करते हैं।</text>
+
+    <text x="20" y="122" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b">• चरण 2 (माह):</text>
+    <text x="95" y="122" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#334155">सूर्य जब संबंधित भाव या ग्रह के 1-5-9 त्रिकोण में आए, तो वह माह निश्चित होता है।</text>
+
+    <text x="20" y="142" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b">• चरण 3 (दिन):</text>
+    <text x="95" y="142" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#334155">चन्द्रमा जब उस राशि से गुजरे, ठीक उसी दिन वह घटना घटित होती है।</text>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="630" width="512" height="120" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="652" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ नाड़ी काल-चक्र निर्णय निष्कर्ष ★</text>
+  <text x="280" y="674" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">• मंद ग्रह जीवन के स्थायी अध्याय लिखते हैं</text>
+  <text x="280" y="694" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">• मध्यम ग्रह शुभ अवसरों के द्वार खोलते हैं</text>
+  <text x="280" y="714" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">• शीघ्रगामी ग्रह उस द्वार से जातक को अंदर प्रवेश कराते हैं</text>
+  <text x="280" y="732" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" fill="#64748b" text-anchor="middle">स्रोत: भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र • तंत्र ज्ञान शोध संस्थान (2026)</text>
+</svg>

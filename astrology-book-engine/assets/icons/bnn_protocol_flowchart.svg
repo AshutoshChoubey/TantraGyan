@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%">
+
+  <defs>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800;900&amp;display=swap");
+    </style>
+    <linearGradient id="plateBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefc"/>
+      <stop offset="50%" stop-color="#fdfbf5"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
+    </linearGradient>
+    <linearGradient id="goldBannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="kendraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="trikonaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#d1fae5" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="upachayaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#f3e8ff" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="marakaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe4e6" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fecdd3" stop-opacity="0.96"/>
+    </linearGradient>
+    <!-- Planetary Radiant Gradients -->
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffedd5"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <linearGradient id="jupGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+    <linearGradient id="venGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#fbcfe8"/></linearGradient>
+    <linearGradient id="satGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#eff6ff"/><stop offset="100%" stop-color="#bfdbfe"/></linearGradient>
+    <linearGradient id="marsGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fee2e2"/><stop offset="100%" stop-color="#fecaca"/></linearGradient>
+    <linearGradient id="mercGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d1fae5"/><stop offset="100%" stop-color="#a7f3d0"/></linearGradient>
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f0f9ff"/><stop offset="100%" stop-color="#e0f2fe"/></linearGradient>
+    <linearGradient id="rahuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ede9fe"/><stop offset="100%" stop-color="#ddd6fe"/></linearGradient>
+    <linearGradient id="ketuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <filter id="cardPlateShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  
+  <!-- Top Header Banner -->
+  <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">बी.एन.एन. 7-चरणीय फलित निर्णय प्रवाह आरेख</text>
+  <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">BNN 7-Step Predictive Algorithm Protocol</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">कुण्डली देखते ही 30 सेकंड में सटीक फलादेश करने की शास्त्रीय प्रणाली</text>
+
+
+  
+  <g transform="translate(24, 96)">
+    <rect width="512" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+    <rect width="90" height="66" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="0.8"/>
+    <text x="45" y="38" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#b45309">चरण 1</text>
+
+    <!-- Details -->
+    <text x="105" y="26" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#b45309">जीव कारक (गुरु/शुक्र) की स्थिति व अंश ज्ञात करें</text>
+    <text x="105" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• पुरुष जातक हेतु ♃ गुरु (जीव) एवं स्त्री हेतु ♀ शुक्र की राशि व स्पष्ट अंश देखें।</text>
+  </g>
+
+  <line x1="280" y1="162" x2="280" y2="182" stroke="#b45309" stroke-width="2" stroke-dasharray="3,2"/>
+  <polygon points="276,180 284,180 280,185" fill="#b45309"/>
+
+  <g transform="translate(24, 182)">
+    <rect width="512" height="66" rx="6" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <rect width="90" height="66" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="0.8"/>
+    <text x="45" y="38" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#0284c7">चरण 2</text>
+
+    <!-- Details -->
+    <text x="105" y="26" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#0284c7">1-5-9 त्रिकोण में स्थित ग्रहों का संयोजन बनाएं</text>
+    <text x="105" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• गुरु जिस दिशा (अग्नि, पृथ्वी, वायु, जल) में है, उस दिशा के शेष दो भावों के ग्रह जोड़ें।</text>
+  </g>
+
+  <line x1="280" y1="248" x2="280" y2="268" stroke="#0284c7" stroke-width="2" stroke-dasharray="3,2"/>
+  <polygon points="276,266 284,266 280,271" fill="#0284c7"/>
+
+  <g transform="translate(24, 268)">
+    <rect width="512" height="66" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <rect width="90" height="66" rx="6" fill="#d1fae5" stroke="#059669" stroke-width="0.8"/>
+    <text x="45" y="38" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#059669">चरण 3</text>
+
+    <!-- Details -->
+    <text x="105" y="26" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#059669">2-12 भावों के अग्रिम व पृष्ठ प्रभाव (कर्तरी) का परीक्षण</text>
+    <text x="105" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• अग्र (+1 भाव) से भविष्य व पृष्ठ (-1 भाव) से संचित पृष्ठभूमि का आंकलन करें।</text>
+  </g>
+
+  <line x1="280" y1="334" x2="280" y2="354" stroke="#059669" stroke-width="2" stroke-dasharray="3,2"/>
+  <polygon points="276,352 284,352 280,357" fill="#059669"/>
+
+  <g transform="translate(24, 354)">
+    <rect width="512" height="66" rx="6" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
+    <rect width="90" height="66" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="0.8"/>
+    <text x="45" y="38" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#dc2626">चरण 4</text>
+
+    <!-- Details -->
+    <text x="105" y="26" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#dc2626">7वें भाव (180° प्रत्यक्ष दृष्टि) के ग्रह का फल जोड़ें</text>
+    <text x="105" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• सामने बैठा ग्रह प्रत्यक्ष रूप से जीवनसाथी, साझेदारी व लोक-व्यवहार को प्रभावित करता है।</text>
+  </g>
+
+  <line x1="280" y1="420" x2="280" y2="440" stroke="#dc2626" stroke-width="2" stroke-dasharray="3,2"/>
+  <polygon points="276,438 284,438 280,443" fill="#dc2626"/>
+
+  <g transform="translate(24, 440)">
+    <rect width="512" height="66" rx="6" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+    <rect width="90" height="66" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="0.8"/>
+    <text x="45" y="38" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#7c3aed">चरण 5</text>
+
+    <!-- Details -->
+    <text x="105" y="26" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#7c3aed">अंश-क्रम (Degree Ordering) से ग्रहों का क्रम तय करें</text>
+    <text x="105" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• कम अंश वाला ग्रह आगे एवं अधिक अंश वाला ग्रह पीछे होता है (पीछे वाला आगे की ओर गतिमान)।</text>
+  </g>
+
+  <line x1="280" y1="506" x2="280" y2="526" stroke="#7c3aed" stroke-width="2" stroke-dasharray="3,2"/>
+  <polygon points="276,524 284,524 280,529" fill="#7c3aed"/>
+
+  <g transform="translate(24, 526)">
+    <rect width="512" height="66" rx="6" fill="#ffffff" stroke="#4338ca" stroke-width="1.5"/>
+    <rect width="90" height="66" rx="6" fill="#ede9fe" stroke="#4338ca" stroke-width="0.8"/>
+    <text x="45" y="38" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#4338ca">चरण 6</text>
+
+    <!-- Details -->
+    <text x="105" y="26" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#4338ca">वक्री व राशि-परिवर्तन (Exchange) के प्रभाव को समाहित करें</text>
+    <text x="105" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• वक्री ग्रह पूर्व राशि से भी फल देता है; राशि विनिमय होने पर ग्रह दोनों भावों में फलित होता है।</text>
+  </g>
+
+  <line x1="280" y1="592" x2="280" y2="612" stroke="#4338ca" stroke-width="2" stroke-dasharray="3,2"/>
+  <polygon points="276,610 284,610 280,615" fill="#4338ca"/>
+
+  <g transform="translate(24, 612)">
+    <rect width="512" height="66" rx="6" fill="#ffffff" stroke="#047857" stroke-width="1.5"/>
+    <rect width="90" height="66" rx="6" fill="#d1fae5" stroke="#047857" stroke-width="0.8"/>
+    <text x="45" y="38" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#047857">चरण 7</text>
+
+    <!-- Details -->
+    <text x="105" y="26" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#047857">गुरु प्रगति व शनि-राहु गोचर से अचूक समय (Timing) निकालें</text>
+    <text x="105" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">• प्रगतिशील गुरु व गोचरीय शनि जब संबंधित ग्रहों अथवा भृगु बिंदु (BB) पर आएं, तब घटना घटित होती है।</text>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="700" width="512" height="48" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="720" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#334155" text-anchor="middle">★ नाड़ी निष्कर्ष: इन 7 चरणों का क्रमशः पालन करने पर कभी भविष्यवाणी विफल नहीं होती ★</text>
+  <text x="280" y="736" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">स्रोत: भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र • तंत्र ज्ञान शोध संस्थान (2026)</text>
+</svg>

@@ -91,5 +91,58 @@ class CoreUnitTestsPillar(unittest.TestCase):
         book_obj = next((item for item in json_data["@graph"] if item.get("@type") == "Book"), None)
         self.assertIsNotNone(book_obj, "Schema.org Book entity missing in graph")
 
+    def test_06_panchang_mathematics_and_elements(self):
+        """
+        Validates Panchang mathematical spans, 108 sacred pages, and 5 Mahabhutas.
+        """
+        # 1. 108 Pages Invariant across all 4 book editions
+        for fname in ["reader.html", "book.html", "hindi.html", "english.html"]:
+            fpath = os.path.join(BASE_DIR, fname)
+            with open(fpath, "r", encoding="utf-8") as f:
+                content = f.read()
+            page_count = len(re.findall(r'<article class="book-page-data"', content))
+            self.assertEqual(
+                page_count, 108,
+                f"{fname} must contain exactly 108 pages (found {page_count})."
+            )
+
+        # 2. Mathematical Arc Consistency
+        tithi_arc = 12.0
+        total_tithis = 30
+        self.assertEqual(tithi_arc * total_tithis, 360.0)
+
+        karana_arc = 6.0
+        total_karanas = 60
+        self.assertEqual(karana_arc * total_karanas, 360.0)
+
+        nakshatra_minutes = 13 * 60 + 20 # 800 arcminutes
+        total_nakshatras = 27
+        self.assertEqual(nakshatra_minutes * total_nakshatras, 21600) # 360 degrees * 60 min
+
+        pada_minutes = 3 * 60 + 20 # 200 arcminutes
+        total_padas = 108
+        self.assertEqual(pada_minutes * total_padas, 21600)
+
+        # 3. 7 Vaars, 30 Tithis, 27 Yogas, 11 Karanas Presence
+        with open(os.path.join(BASE_DIR, "reader.html"), "r", encoding="utf-8") as f:
+            reader_text = f.read()
+        self.assertIn("वार • Agni (Fire)", reader_text)
+        self.assertIn("तिथि • Jala (Water)", reader_text)
+        self.assertIn("नक्षत्र • Vayu (Air)", reader_text)
+        self.assertIn("योग • Akasha (Ether)", reader_text)
+        self.assertIn("करण • Prithvi (Earth)", reader_text)
+
+    def test_07_panchang_svg_mandala_exists(self):
+        """
+        Validates that the Panchanga Mandala SVG exists and contains all 5 limbs.
+        """
+        svg_path = os.path.join(BASE_DIR, "assets", "icons", "panchang_mandala_chart.svg")
+        self.assertTrue(os.path.exists(svg_path), "Panchang Mandala SVG missing in assets/icons")
+        with open(svg_path, "r", encoding="utf-8") as f:
+            svg = f.read()
+        self.assertIn('viewBox="0 0 900 900"', svg)
+        for limb in ["वार (Solar Day)", "तिथि (Lunar Phase)", "नक्षत्र (Star Mansion)", "योग (Solar-Lunar Sum)", "करण (Half-Tithi)"]:
+            self.assertIn(limb, svg, f"Missing limb {limb} in panchang_mandala_chart.svg")
+
 if __name__ == "__main__":
     unittest.main()

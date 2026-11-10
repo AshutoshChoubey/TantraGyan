@@ -1,0 +1,254 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%">
+
+  <defs>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800;900&amp;display=swap");
+    </style>
+    <linearGradient id="plateBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefc"/>
+      <stop offset="50%" stop-color="#fdfbf5"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
+    </linearGradient>
+    <linearGradient id="goldBannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="kendraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="trikonaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#d1fae5" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="upachayaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#f3e8ff" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="marakaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe4e6" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fecdd3" stop-opacity="0.96"/>
+    </linearGradient>
+    <!-- Planetary Radiant Gradients -->
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffedd5"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <linearGradient id="jupGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+    <linearGradient id="venGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#fbcfe8"/></linearGradient>
+    <linearGradient id="satGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#eff6ff"/><stop offset="100%" stop-color="#bfdbfe"/></linearGradient>
+    <linearGradient id="marsGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fee2e2"/><stop offset="100%" stop-color="#fecaca"/></linearGradient>
+    <linearGradient id="mercGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d1fae5"/><stop offset="100%" stop-color="#a7f3d0"/></linearGradient>
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f0f9ff"/><stop offset="100%" stop-color="#e0f2fe"/></linearGradient>
+    <linearGradient id="rahuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ede9fe"/><stop offset="100%" stop-color="#ddd6fe"/></linearGradient>
+    <linearGradient id="ketuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <filter id="cardPlateShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  
+  <!-- Top Header Banner -->
+  <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">विवाह, दांपत्य एवं जीवनसाथी कारक महाचक्र</text>
+  <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">BNN Marriage, Relationship &amp; Spouse Timing Architecture</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">पुरुष कुंडली: शुक्र (पत्नी कारक) • स्त्री कुंडली: मंगल (पति कारक)</text>
+
+
+  <!-- Left Column: Male Chart -->
+  <g transform="translate(24, 96)">
+    <rect width="250" height="400" rx="8" fill="#fdf2f8" stroke="#be185d" stroke-width="1.4"/>
+    <rect width="250" height="30" rx="8" fill="#9d174d"/>
+    <text x="125" y="20" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">पुरुष कुंडली: शुक्र [♀] (पत्नी कारक)</text>
+    <g transform="translate(0, 42)">
+      
+      <g transform="translate(6, 0)">
+        <rect width="238" height="62" rx="6" fill="#ffffff" stroke="#fbcfe8" stroke-width="1.2"/>
+        <g transform="translate(6, 4)">
+          
+    <rect x="0" y="0" width="52" height="20" rx="10.0" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
+    <text x="26.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#be185d">♀ शुक्र</text>
+          <text x="59" y="15" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#be185d">+</text>
+          
+    <rect x="69" y="0" width="52" height="20" rx="10.0" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.3"/>
+    <text x="95.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#b45309">♃ गुरु</text>
+        </g>
+        <text x="6" y="38" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">सुलक्षणा, धर्मपरायण व समृद्ध पत्</text>
+        <text x="6" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">नी; समय पर सुखद विवाह।</text>
+      </g>
+
+      <g transform="translate(6, 68)">
+        <rect width="238" height="62" rx="6" fill="#ffffff" stroke="#fbcfe8" stroke-width="1.2"/>
+        <g transform="translate(6, 4)">
+          
+    <rect x="0" y="0" width="52" height="20" rx="10.0" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
+    <text x="26.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#be185d">♀ शुक्र</text>
+          <text x="59" y="15" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#be185d">+</text>
+          
+    <rect x="69" y="0" width="52" height="20" rx="10.0" fill="#d1fae5" stroke="#10b981" stroke-width="1.3"/>
+    <text x="95.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#047857">☿ बुध</text>
+        </g>
+        <text x="6" y="38" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">वाक्पटु, व्यापार-कुशल, उच्च शिक्</text>
+        <text x="6" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">षित व युवा दिखने वाली पत्नी।</text>
+      </g>
+
+      <g transform="translate(6, 136)">
+        <rect width="238" height="62" rx="6" fill="#ffffff" stroke="#fbcfe8" stroke-width="1.2"/>
+        <g transform="translate(6, 4)">
+          
+    <rect x="0" y="0" width="52" height="20" rx="10.0" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
+    <text x="26.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#be185d">♀ शुक्र</text>
+          <text x="59" y="15" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#be185d">+</text>
+          
+    <rect x="69" y="0" width="52" height="20" rx="10.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="95.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8">♄ शनि</text>
+        </g>
+        <text x="6" y="38" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">परिपक्व, स्वावलंबी; 28-30 वर्ष प</text>
+        <text x="6" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">र विवाह उपरांत भाग्योदय।</text>
+      </g>
+
+      <g transform="translate(6, 204)">
+        <rect width="238" height="62" rx="6" fill="#ffffff" stroke="#fbcfe8" stroke-width="1.2"/>
+        <g transform="translate(6, 4)">
+          
+    <rect x="0" y="0" width="52" height="20" rx="10.0" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
+    <text x="26.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#be185d">♀ शुक्र</text>
+          <text x="59" y="15" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#be185d">+</text>
+          
+    <rect x="69" y="0" width="52" height="20" rx="10.0" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.3"/>
+    <text x="95.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#4338ca">☊ राहु</text>
+        </g>
+        <text x="6" y="38" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">भिन्न संस्कृति/जाति, विदेशी संपर</text>
+        <text x="6" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">्क, असाधारण रूप-सौंदर्य।</text>
+      </g>
+
+      <g transform="translate(6, 272)">
+        <rect width="238" height="62" rx="6" fill="#ffffff" stroke="#fbcfe8" stroke-width="1.2"/>
+        <g transform="translate(6, 4)">
+          
+    <rect x="0" y="0" width="52" height="20" rx="10.0" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
+    <text x="26.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#be185d">♀ शुक्र</text>
+          <text x="59" y="15" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#be185d">+</text>
+          
+    <rect x="69" y="0" width="52" height="20" rx="10.0" fill="#fef3c7" stroke="#b45309" stroke-width="1.3"/>
+    <text x="95.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#78350f">☋ केतु</text>
+        </g>
+        <text x="6" y="38" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">आध्यात्मिक रुचि, विरक्ति; अहंकार</text>
+        <text x="6" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b"> त्यागने पर सात्विक शांति।</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Right Column: Female Chart -->
+  <g transform="translate(286, 96)">
+    <rect width="250" height="400" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.4"/>
+    <rect width="250" height="30" rx="8" fill="#991b1b"/>
+    <text x="125" y="20" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">स्त्री कुंडली: मंगल [♂] (पति कारक)</text>
+    <g transform="translate(0, 42)">
+      
+      <g transform="translate(6, 0)">
+        <rect width="238" height="62" rx="6" fill="#ffffff" stroke="#fecaca" stroke-width="1.2"/>
+        <g transform="translate(6, 4)">
+          
+    <rect x="0" y="0" width="52" height="20" rx="10.0" fill="#fee2e2" stroke="#ef4444" stroke-width="1.3"/>
+    <text x="26.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#dc2626">♂ मंगल</text>
+          <text x="59" y="15" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#dc2626">+</text>
+          
+    <rect x="69" y="0" width="52" height="20" rx="10.0" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.3"/>
+    <text x="95.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#b45309">♃ गुरु</text>
+        </g>
+        <text x="6" y="38" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">विद्वान, प्रतिष्ठित, धर्मनिष्ठ, </text>
+        <text x="6" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">रक्षा/न्याय/शिक्षा से जुड़ा पति।</text>
+      </g>
+
+      <g transform="translate(6, 68)">
+        <rect width="238" height="62" rx="6" fill="#ffffff" stroke="#fecaca" stroke-width="1.2"/>
+        <g transform="translate(6, 4)">
+          
+    <rect x="0" y="0" width="52" height="20" rx="10.0" fill="#fee2e2" stroke="#ef4444" stroke-width="1.3"/>
+    <text x="26.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#dc2626">♂ मंगल</text>
+          <text x="59" y="15" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#dc2626">+</text>
+          
+    <rect x="69" y="0" width="52" height="20" rx="10.0" fill="#ffedd5" stroke="#ea580c" stroke-width="1.3"/>
+    <text x="95.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#c2410c">☉ सूर्य</text>
+        </g>
+        <text x="6" y="38" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">स्वाभिमानी, उच्च प्रशासनिक अधिका</text>
+        <text x="6" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">री, सरकारी सेवा में उच्च पद।</text>
+      </g>
+
+      <g transform="translate(6, 136)">
+        <rect width="238" height="62" rx="6" fill="#ffffff" stroke="#fecaca" stroke-width="1.2"/>
+        <g transform="translate(6, 4)">
+          
+    <rect x="0" y="0" width="52" height="20" rx="10.0" fill="#fee2e2" stroke="#ef4444" stroke-width="1.3"/>
+    <text x="26.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#dc2626">♂ मंगल</text>
+          <text x="59" y="15" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#dc2626">+</text>
+          
+    <rect x="69" y="0" width="52" height="20" rx="10.0" fill="#d1fae5" stroke="#10b981" stroke-width="1.3"/>
+    <text x="95.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#047857">☿ बुध</text>
+        </g>
+        <text x="6" y="38" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">तकनीकी इंजीनियर, गणितज्ञ, चतुर व</text>
+        <text x="6" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b"> वाक्पटु व्यापारी पति।</text>
+      </g>
+
+      <g transform="translate(6, 204)">
+        <rect width="238" height="62" rx="6" fill="#ffffff" stroke="#fecaca" stroke-width="1.2"/>
+        <g transform="translate(6, 4)">
+          
+    <rect x="0" y="0" width="52" height="20" rx="10.0" fill="#fee2e2" stroke="#ef4444" stroke-width="1.3"/>
+    <text x="26.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#dc2626">♂ मंगल</text>
+          <text x="59" y="15" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#dc2626">+</text>
+          
+    <rect x="69" y="0" width="52" height="20" rx="10.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="95.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8">♄ शनि</text>
+        </g>
+        <text x="6" y="38" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">कठोर परिश्रमी, अनुशासित, आत्मनिर</text>
+        <text x="6" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">्मित (Self-made); स्थिर स्वभाव।</text>
+      </g>
+
+      <g transform="translate(6, 272)">
+        <rect width="238" height="62" rx="6" fill="#ffffff" stroke="#fecaca" stroke-width="1.2"/>
+        <g transform="translate(6, 4)">
+          
+    <rect x="0" y="0" width="52" height="20" rx="10.0" fill="#fee2e2" stroke="#ef4444" stroke-width="1.3"/>
+    <text x="26.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#dc2626">♂ मंगल</text>
+          <text x="59" y="15" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#dc2626">+</text>
+          
+    <rect x="69" y="0" width="52" height="20" rx="10.0" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.3"/>
+    <text x="95.0" y="13.600000000000001" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#4338ca">☊ राहु</text>
+        </g>
+        <text x="6" y="38" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">अप्रत्याशित प्रारब्ध; गुरु की दृ</text>
+        <text x="6" y="52" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.4" font-weight="600" fill="#1e293b">ष्टि होने पर समस्त बाधाएं दूर।</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Timing of Marriage Box -->
+  <g transform="translate(24, 508)">
+    <rect width="512" height="120" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+    <text x="256" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#78350f" text-anchor="middle">★ विवाह का सटीक वर्ष निर्धारण (Timing of Marriage) ★</text>
+    
+    <text x="20" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309">1. गुरु गोचर:</text>
+    <text x="85" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">प्रगतिशील गुरु जब जन्मकालिक शुक्र (पुरुष) या मंगल (स्त्री) के ऊपर या 1-5-9 त्रिकोण में आए।</text>
+
+    <text x="20" y="70" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#0284c7">2. शनि स्वीकृति:</text>
+    <text x="100" y="70" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">गोचर शनि का त्रिकोण संबंध विवाह को दीर्घकालिक सामाजिक व पारिवारिक स्थायित्व देता है।</text>
+
+    <text x="20" y="92" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#dc2626">3. विलंब सूत्र:</text>
+    <text x="90" y="92" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">यदि शुक्र/मंगल पर शनि या केतु की युति/दृष्टि हो तो विवाह 28 वर्ष की आयु के बाद होता है।</text>
+
+    <text x="256" y="112" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#64748b" text-anchor="middle">विशेष: गुरु की त्रिकोण दृष्टि समस्त वैवाहिक दोषों का शमन कर अखंड दांपत्य प्रदान करती है।</text>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="638" width="512" height="110" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="660" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ नाड़ी दांपत्य समन्वय सूत्र ★</text>
+  <text x="280" y="682" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">• वर-वधू की कुंडलियों में गुरु और शुक्र का परस्पर त्रिकोण संबंध सर्वोत्तम माना जाता है</text>
+  <text x="280" y="702" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">• पति-पत्नी के जन्म ग्रहों का 1-5-9 संरेखण आजीवन मानसिक व आत्मिक एकात्मता देता है</text>
+  <text x="280" y="722" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">स्रोत: भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र • ज्योतिषाचार्य आशुतोष कुमार चौबे</text>
+</svg>

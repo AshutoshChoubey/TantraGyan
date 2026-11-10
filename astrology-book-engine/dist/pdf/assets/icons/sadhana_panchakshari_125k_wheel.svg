@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%">
+
+  <defs>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800;900&amp;display=swap");
+    </style>
+    <linearGradient id="parchmentBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefb"/>
+      <stop offset="50%" stop-color="#fdfbf5"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
+    </linearGradient>
+    <linearGradient id="goldHeadGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="shivaBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="durgaRedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef2f2"/>
+      <stop offset="100%" stop-color="#fee2e2"/>
+    </linearGradient>
+    <linearGradient id="bhairavDarkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="tantraShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#parchmentBg)" stroke="#b45309" stroke-width="2" filter="url(#tantraShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  
+  <!-- Top Header Banner -->
+  <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.3"/>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="14.5" font-weight="900" fill="#78350f" text-anchor="middle">४१-दिवसीय पंचाक्षरी महासाधना एवं १,२५,००० जप सिद्धि चक्र</text>
+  <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">41-Day Panchakshari Sadhana (Om Namah Shivaya) 125,000 Japa Siddhi</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">४१ दिनों में सवा लाख जप सिद्ध कर शिव कृपा, आत्म-शुद्धि व तांत्रिक अधिकार की प्राप्ति</text>
+
+
+  <!-- Mathematical Breakdown Grid -->
+  <g transform="translate(24, 96)">
+    <rect width="512" height="155" rx="8" fill="#ffffff" stroke="#0284c7" stroke-width="1.4"/>
+    <rect width="512" height="28" rx="8" fill="#0369a1"/>
+    <text x="256" y="19" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">★ सवा लाख (1,25,000) जप का सटीक गणितीय विभाजन ★</text>
+
+    <!-- 4 Stats Cards -->
+    <g transform="translate(14, 38)">
+      <!-- Card 1 -->
+      <rect x="0" y="0" width="112" height="70" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+      <text x="56" y="24" font-family="'Noto Serif Devanagari', serif" font-size="14" font-weight="900" fill="#1d4ed8" text-anchor="middle">1,25,000</text>
+      <text x="56" y="44" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#1e293b" text-anchor="middle">कुल जप संख्या</text>
+      <text x="56" y="58" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" fill="#64748b" text-anchor="middle">(सवा लाख अनुष्ठान)</text>
+
+      <!-- Card 2 -->
+      <rect x="124" y="0" width="112" height="70" rx="6" fill="#fefce8" stroke="#ca8a04" stroke-width="1.2"/>
+      <text x="180" y="24" font-family="'Noto Serif Devanagari', serif" font-size="14" font-weight="900" fill="#a16207" text-anchor="middle">41 दिन</text>
+      <text x="180" y="44" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#1e293b" text-anchor="middle">कुल समयावधि</text>
+      <text x="180" y="58" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" fill="#64748b" text-anchor="middle">(एक मंडल काल)</text>
+
+      <!-- Card 3 -->
+      <rect x="248" y="0" width="112" height="70" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.2"/>
+      <text x="304" y="24" font-family="'Noto Serif Devanagari', serif" font-size="14" font-weight="900" fill="#15803d" text-anchor="middle">3,049 जप</text>
+      <text x="304" y="44" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#1e293b" text-anchor="middle">प्रतिदिन जप संख्या</text>
+      <text x="304" y="58" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" fill="#64748b" text-anchor="middle">(Daily Target)</text>
+
+      <!-- Card 4 -->
+      <rect x="372" y="0" width="112" height="70" rx="6" fill="#fdf2f8" stroke="#db2777" stroke-width="1.2"/>
+      <text x="428" y="24" font-family="'Noto Serif Devanagari', serif" font-size="14" font-weight="900" fill="#be185d" text-anchor="middle">28–31 माला</text>
+      <text x="428" y="44" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#1e293b" text-anchor="middle">प्रतिदिन माला गणना</text>
+      <text x="428" y="58" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" fill="#64748b" text-anchor="middle">(रुद्राक्ष माला 108)</text>
+    </g>
+
+    <text x="256" y="135" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#0369a1" text-anchor="middle">सूत्र: 3,049 मंत्र प्रति दिन × 41 दिन = 1,25,009 मंत्र (सवा लाख जप पूर्ण)</text>
+    <text x="256" y="148" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#64748b" text-anchor="middle">समय: प्रातः अथवा संध्या काल में 2 से 2.5 घंटे का एकनिष्ठ अभ्यास।</text>
+  </g>
+
+  <!-- Commencement & Protocol Rules -->
+  <g transform="translate(24, 260)">
+    <rect width="512" height="235" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+    <rect width="512" height="28" rx="8" fill="#78350f"/>
+    <text x="256" y="19" fill="#fde047" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">साधना के ५ अनिवार्य चरण (5 Sacred Protocol Milestones)</text>
+
+    <!-- Phase 1 -->
+    <g transform="translate(14, 38)">
+      <rect width="484" height="34" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+      <text x="12" y="22" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#b45309">१. शुभारम्भ तिथि:</text>
+      <text x="110" y="22" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">अत्यंत शुभ: कृष्ण पक्ष त्रयोदशी (प्रदोष) • विकल्प: सोमवार या शुक्ल प्रदोष।</text>
+    </g>
+
+    <!-- Phase 2 -->
+    <g transform="translate(14, 76)">
+      <rect width="484" height="34" rx="4" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+      <text x="12" y="22" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#1d4ed8">२. संकल्प विधान:</text>
+      <text x="110" y="22" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">हाथ में जल, अक्षत लेकर नाम, गोत्र, स्थान बोलकर 41 दिन का संकल्प लें।</text>
+    </g>
+
+    <!-- Phase 3 -->
+    <g transform="translate(14, 114)">
+      <rect width="484" height="34" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="1"/>
+      <text x="12" y="22" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#15803d">३. नित्य पंचोपचार:</text>
+      <text x="115" y="22" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">धूप, दीप, जल, श्वेत चंदन, नैवेद्य एवं 'ॐ नमः शिवाय' बोलकर विल्वपत्र अर्पण।</text>
+    </g>
+
+    <!-- Phase 4 -->
+    <g transform="translate(14, 152)">
+      <rect width="484" height="34" rx="4" fill="#fdf2f8" stroke="#ec4899" stroke-width="1"/>
+      <text x="12" y="22" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#be185d">४. जप व माला नियम:</text>
+      <text x="125" y="22" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">रुद्राक्ष माला को गोमुखी में रखकर अनामिका-अंगुष्ठ से फेरें, सुमेरु न लांघें।</text>
+    </g>
+
+    <!-- Phase 5 -->
+    <g transform="translate(14, 190)">
+      <rect width="484" height="34" rx="4" fill="#faf5ff" stroke="#a855f7" stroke-width="1"/>
+      <text x="12" y="22" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="900" fill="#7e22ce">५. ४१वें दिन समापन:</text>
+      <text x="125" y="22" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">108 आहुति दशांश हवन, मंदिर में प्रसाद वितरण व ताम्र-पात्र में मंत्र स्थापन।</text>
+    </g>
+  </g>
+
+  <!-- Benefits & Spiritual Fruit -->
+  <g transform="translate(24, 504)">
+    <rect width="512" height="124" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.4"/>
+    <rect width="512" height="26" rx="8" fill="#065f46"/>
+    <text x="256" y="18" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" text-anchor="middle">★ सवा लाख पंचाक्षरी सिद्धि के अलौकिक फल ★</text>
+
+    <text x="25" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#047857">• कुंडलिनी चेतना जागृति:</text>
+    <text x="160" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">मूलाधार से सहस्रार तक ऊर्जा का उर्ध्वगमन एवं चित्त की अखंड एकाग्रता।</text>
+
+    <text x="25" y="70" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#047857">• तांत्रिक साधना अधिकार:</text>
+    <text x="160" y="70" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">पंचाक्षरी सिद्ध होने पर साधक अन्य उच्च महाविद्या साधनाओं का स्वाभाविक पात्र बनता है।</text>
+
+    <text x="25" y="92" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#047857">• अकाल मृत्यु व रोग निवारण:</text>
+    <text x="160" y="92" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">महादेव का अभय कवच साधक को समस्त व्याधियों एवं संकटों से मुक्त करता है।</text>
+
+    <text x="256" y="112" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#64748b" text-anchor="middle">॥ नमस्तस्मै मुनीन्द्राय भृगवे ज्ञानरूपिणे । नमामि ज्ञानदातारं शिवसंकल्पसिद्धिदम् ॥</text>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="638" width="512" height="110" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="660" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ पंचाक्षरी सिद्धि का मूल रहस्य ★</text>
+  <text x="280" y="682" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">• 'ॐ नमः शिवाय' पंचभूतों (पृथ्वी, जल, अग्नि, वायु, आकाश) को वश में करने वाला महामंत्र है</text>
+  <text x="280" y="702" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">• जब सवा लाख जप पूर्ण होता है, तो साधक का प्रत्येक श्वास स्वतः जप रूप बन जाता है</text>
+  <text x="280" y="722" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">स्रोत: तंत्र साधना सिद्धि महाग्रंथ • प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे</text>
+</svg>

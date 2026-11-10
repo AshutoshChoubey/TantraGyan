@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%">
+
+  <defs>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800;900&amp;display=swap");
+    </style>
+    <linearGradient id="plateBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefc"/>
+      <stop offset="50%" stop-color="#fdfbf5"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
+    </linearGradient>
+    <linearGradient id="goldBannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="kendraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="trikonaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#d1fae5" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="upachayaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#f3e8ff" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="marakaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe4e6" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fecdd3" stop-opacity="0.96"/>
+    </linearGradient>
+    <!-- Planetary Radiant Gradients -->
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffedd5"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <linearGradient id="jupGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+    <linearGradient id="venGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#fbcfe8"/></linearGradient>
+    <linearGradient id="satGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#eff6ff"/><stop offset="100%" stop-color="#bfdbfe"/></linearGradient>
+    <linearGradient id="marsGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fee2e2"/><stop offset="100%" stop-color="#fecaca"/></linearGradient>
+    <linearGradient id="mercGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d1fae5"/><stop offset="100%" stop-color="#a7f3d0"/></linearGradient>
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f0f9ff"/><stop offset="100%" stop-color="#e0f2fe"/></linearGradient>
+    <linearGradient id="rahuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ede9fe"/><stop offset="100%" stop-color="#ddd6fe"/></linearGradient>
+    <linearGradient id="ketuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <filter id="cardPlateShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  
+  <!-- Top Header Banner -->
+  <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">भृगु नंदी नाड़ी दिशा-आधारित डायमंड चक्र</text>
+  <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">BNN 4 Directional Trines &amp; 1-5-9 Conjunction Matrix</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">पूर्व (1, 5, 9 अग्नि) • दक्षिण (2, 6, 10 पृथ्वी) • पश्चिम (3, 7, 11 वायु) • उत्तर (4, 8, 12 जल)</text>
+
+
+  <g>
+    <polygon points="270,100 395,225 270,350 145,225" fill="url(#kendraGrad)" stroke="#b45309" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="20,100 270,100 145,225" fill="url(#trikonaGrad)" stroke="#059669" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="20,100 145,225 20,350" fill="url(#upachayaGrad)" stroke="#0284c7" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="20,350 145,225 270,350 145,475" fill="url(#waterGrad)" stroke="#7c3aed" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="20,350 145,475 20,600" fill="url(#kendraGrad)" stroke="#b45309" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="20,600 145,475 270,600" fill="url(#trikonaGrad)" stroke="#059669" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="270,350 395,475 270,600 145,475" fill="url(#upachayaGrad)" stroke="#0284c7" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="270,600 395,475 520,600" fill="url(#waterGrad)" stroke="#7c3aed" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="520,600 395,475 520,350" fill="url(#kendraGrad)" stroke="#b45309" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="270,350 395,225 520,350 395,475" fill="url(#trikonaGrad)" stroke="#059669" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="520,350 395,225 520,100" fill="url(#upachayaGrad)" stroke="#0284c7" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="520,100 395,225 270,100" fill="url(#waterGrad)" stroke="#7c3aed" stroke-width="1.8" stroke-linejoin="round"/>
+    <rect x="20" y="100" width="500" height="500" fill="none" stroke="#78350f" stroke-width="2.4"/>
+    <polygon points="270,100 520,350 270,600 20,350" fill="none" stroke="#b45309" stroke-width="1.8"/>
+  </g>
+
+  <!-- Direction Badges in Kundli -->
+  <!-- H1: East / Mesha -->
+  <text x="270" y="195" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#78350f" text-anchor="middle">1. पूर्व (अग्नि)</text>
+  <text x="270" y="215" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">मेष • धर्म त्रिकोण</text>
+
+  <!-- H5: East / Simha -->
+  <text x="70" y="470" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">5. पूर्व (अग्नि)</text>
+  <text x="70" y="490" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">सिंह राशि</text>
+
+  <!-- H9: East / Dhanu -->
+  <text x="470" y="470" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">9. पूर्व (अग्नि)</text>
+  <text x="470" y="490" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">धनु राशि</text>
+
+  <!-- South: 2, 6, 10 -->
+  <text x="145" y="145" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">2. दक्षिण (पृथ्वी)</text>
+  <text x="145" y="165" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">वृषभ राशि</text>
+
+  <text x="145" y="545" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">6. दक्षिण (पृथ्वी)</text>
+  <text x="145" y="565" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">कन्या राशि</text>
+
+  <text x="395" y="345" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">10. दक्षिण (पृथ्वी)</text>
+  <text x="395" y="365" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">मकर राशि</text>
+
+  <!-- West: 3, 7, 11 -->
+  <text x="70" y="225" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#0369a1" text-anchor="middle">3. पश्चिम (वायु)</text>
+  <text x="70" y="245" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#0284c7" text-anchor="middle">मिथुन राशि</text>
+
+  <text x="270" y="465" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800" fill="#0369a1" text-anchor="middle">7. पश्चिम (वायु)</text>
+  <text x="270" y="485" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700" fill="#0284c7" text-anchor="middle">तुला • काम त्रिकोण</text>
+
+  <text x="470" y="225" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#0369a1" text-anchor="middle">11. पश्चिम (वायु)</text>
+  <text x="470" y="245" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#0284c7" text-anchor="middle">कुम्भ राशि</text>
+
+  <!-- North: 4, 8, 12 -->
+  <text x="145" y="345" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">4. उत्तर (जल)</text>
+  <text x="145" y="365" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#7c3aed" text-anchor="middle">कर्क राशि</text>
+
+  <text x="395" y="545" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">8. उत्तर (जल)</text>
+  <text x="395" y="565" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#7c3aed" text-anchor="middle">वृश्चिक राशि</text>
+
+  <text x="395" y="145" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#6d28d9" text-anchor="middle">12. उत्तर (जल)</text>
+  <text x="395" y="165" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#7c3aed" text-anchor="middle">मीन राशि</text>
+
+  <!-- Bottom Legend Card -->
+  <g transform="translate(20, 615)">
+    <rect width="520" height="135" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+    <text x="260" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#78350f" text-anchor="middle">★ नाड़ी दिशा-त्रिकोण संयोजन सूत्र (Directional Conjunction Law) ★</text>
+    <text x="260" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#b45309" text-anchor="middle">• पूर्व (1, 5, 9): मेष, सिंह, धनु = अग्नि तत्व • आत्मा, धर्म, जीवन ऊर्जा, नेतृत्व</text>
+    <text x="260" y="72" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">• दक्षिण (2, 6, 10): वृषभ, कन्या, मकर = पृथ्वी तत्व • धन, आजीविका, भौतिक स्थिरता</text>
+    <text x="260" y="96" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#0284c7" text-anchor="middle">• पश्चिम (3, 7, 11): मिथुन, तुला, कुम्भ = वायु तत्व • बुद्धि, व्यापार, सामाजिक संबंध</text>
+    <text x="260" y="118" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#7c3aed" text-anchor="middle">• उत्तर (4, 8, 12): कर्क, वृश्चिक, मीन = जल तत्व • भावना, अंतर्ज्ञान, वैराग्य, मोक्ष</text>
+  </g>
+</svg>

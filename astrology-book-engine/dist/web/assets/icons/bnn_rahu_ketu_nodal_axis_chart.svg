@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%">
+
+  <defs>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800;900&amp;display=swap");
+    </style>
+    <linearGradient id="plateBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefc"/>
+      <stop offset="50%" stop-color="#fdfbf5"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
+    </linearGradient>
+    <linearGradient id="goldBannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="kendraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="trikonaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#d1fae5" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="upachayaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#f3e8ff" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="marakaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe4e6" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fecdd3" stop-opacity="0.96"/>
+    </linearGradient>
+    <!-- Planetary Radiant Gradients -->
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffedd5"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <linearGradient id="jupGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+    <linearGradient id="venGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#fbcfe8"/></linearGradient>
+    <linearGradient id="satGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#eff6ff"/><stop offset="100%" stop-color="#bfdbfe"/></linearGradient>
+    <linearGradient id="marsGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fee2e2"/><stop offset="100%" stop-color="#fecaca"/></linearGradient>
+    <linearGradient id="mercGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d1fae5"/><stop offset="100%" stop-color="#a7f3d0"/></linearGradient>
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f0f9ff"/><stop offset="100%" stop-color="#e0f2fe"/></linearGradient>
+    <linearGradient id="rahuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ede9fe"/><stop offset="100%" stop-color="#ddd6fe"/></linearGradient>
+    <linearGradient id="ketuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <filter id="cardPlateShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  
+  <!-- Top Header Banner -->
+  <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">राहु-केतु अक्ष, कालसर्प एवं कर्म-बंधन महाचक्र</text>
+  <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">Rahu-Ketu 180° Karmic Nodal Axis &amp; Bandhana-Moksha Dynamics</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">राहु भविष्य की संचित तृष्णा (Desire) • केतु पूर्व-जन्म की मुक्ति (Dissolution)</text>
+
+
+  <!-- Central Axis Circle Visual -->
+  <g transform="translate(24, 96)">
+    <rect width="512" height="300" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+    <rect width="512" height="28" rx="8" fill="#0f172a"/>
+    <text x="256" y="19" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">180° संपात अक्ष: भविष्य भोगेच्छा बनाम पूर्व-कर्म मुक्ति</text>
+
+    <!-- Center 180 Axis Line -->
+    <line x1="80" y1="160" x2="432" y2="160" stroke="#78350f" stroke-width="2.5" stroke-dasharray="6,4"/>
+    <circle cx="256" cy="160" r="85" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+
+    <!-- Rahu Node (Top North) -->
+    <g transform="translate(60, 80)">
+      <rect width="180" height="65" rx="8" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.4"/>
+      <text x="90" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#4338ca" text-anchor="middle">☊ राहु (Rahu Node)</text>
+      <text x="90" y="42" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#1e293b" text-anchor="middle">भविष्य तृष्णा • माया • तकनीकी विस्तार</text>
+      <text x="90" y="56" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="600" fill="#6d28d9" text-anchor="middle">जातक को खींचने वाला चुंबकीय केंद्र</text>
+    </g>
+
+    <!-- Ketu Node (Bottom South) -->
+    <g transform="translate(272, 175)">
+      <rect width="180" height="65" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.4"/>
+      <text x="90" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#78350f" text-anchor="middle">☋ केतु (Ketu Node)</text>
+      <text x="90" y="42" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#1e293b" text-anchor="middle">अतीत मुक्ति • वैराग्य • सूक्ष्म ज्ञान</text>
+      <text x="90" y="56" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="600" fill="#b45309" text-anchor="middle">कर्म ऋण विसर्जन व मोक्ष का द्वार</text>
+    </g>
+
+    <!-- Dynamic Curved Arrows connecting them -->
+    <path d="M 230,120 Q 256,100 280,120" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <text x="256" y="98" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#dc2626" text-anchor="middle">प्रारब्ध प्रवाह</text>
+
+    <!-- Bottom summary box inside graphic -->
+    <rect x="20" y="250" width="472" height="40" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="256" y="268" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#334155" text-anchor="middle">राहु जातक को भौतिक संसार में उलझाता है • केतु जातक को आत्म-साक्षात्कार की ओर धकेलता है</text>
+    <text x="256" y="282" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle">दोनों का अक्ष 180° पर स्थिर रहकर प्रत्येक कुण्डली का 'कर्म-संतुलन' (Karmic Balance) बनाता है।</text>
+  </g>
+
+  <!-- Section 2: Comparative Cards -->
+  <g transform="translate(24, 408)">
+    <!-- Left Card: Bandhana Yoga -->
+    <g transform="translate(0, 0)">
+      <rect width="250" height="215" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1.4"/>
+      <rect width="250" height="28" rx="8" fill="#991b1b"/>
+      <text x="125" y="19" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">कालसर्प / कर्म-बंधन योग (Karmic Trap)</text>
+
+      <text x="12" y="52" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#991b1b">१. स्वरूप एवं स्थिति:</text>
+      <text x="12" y="70" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">जब समस्त 7 ग्रह राहु और केतु की 180° परिधि</text>
+      <text x="12" y="86" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">के एक ही ओर कैद हो जाएं।</text>
+
+      <text x="12" y="112" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#991b1b">२. जीवन पर प्रभाव:</text>
+      <text x="12" y="130" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">• आयु 0 से 32 वर्ष: कठोर संघर्ष, मानसिक दबाव।</text>
+      <text x="12" y="148" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">• आयु 33 के बाद: असाधारण उत्थान व सफलता।</text>
+
+      <rect x="8" y="172" width="234" height="34" rx="4" fill="#fee2e2"/>
+      <text x="125" y="186" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#991b1b" text-anchor="middle">नाड़ी समाधान: सात्विक साधना एवं</text>
+      <text x="125" y="200" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#991b1b" text-anchor="middle">कुलदेवता/महादेव की नित्य आराधना।</text>
+    </g>
+
+    <!-- Right Card: Moksha Yoga -->
+    <g transform="translate(262, 0)">
+      <rect width="250" height="215" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.4"/>
+      <rect width="250" height="28" rx="8" fill="#065f46"/>
+      <text x="125" y="19" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">अमृता / मोक्ष मुक्ति योग (Liberation)</text>
+
+      <text x="12" y="52" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#065f46">१. स्वरूप एवं स्थिति:</text>
+      <text x="12" y="70" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">जब गुरु (Jupiter) या शुक्र (Venus) केतु के</text>
+      <text x="12" y="86" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">साथ अथवा 1-5-9 त्रिकोण में स्थित हों।</text>
+
+      <text x="12" y="112" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#065f46">२. जीवन पर प्रभाव:</text>
+      <text x="12" y="130" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">• पूर्व-पुण्य जागृति: सिद्धियों की स्वतः प्राप्ति।</text>
+      <text x="12" y="148" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1e293b">• वासना क्षय: आत्मिक शांति एवं परमानंद।</text>
+
+      <rect x="8" y="172" width="234" height="34" rx="4" fill="#d1fae5"/>
+      <text x="125" y="186" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#065f46" text-anchor="middle">नाड़ी वरदान: ऐसा जातक समाज के</text>
+      <text x="125" y="200" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#065f46" text-anchor="middle">कल्याण हेतु अवतरित मार्गदर्शक होता है।</text>
+    </g>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="635" width="512" height="112" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="658" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ राहु-केतु को साधने का स्वर्णिम नाड़ी सूत्र ★</text>
+  <text x="280" y="680" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">• राहु जिस ग्रह के साथ हो, उस कारकत्व के प्रति असीम भूख उत्पन्न करता है</text>
+  <text x="280" y="700" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">• केतु जिस ग्रह के साथ हो, उस कारकत्व से भौतिक अलगाव देकर आध्यात्मिक पूर्णता देता है</text>
+  <text x="280" y="720" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">• गुरु की दृष्टि राहु के विष को अमृत में और केतु के वैराग्य को आत्मज्ञान में बदल देती है</text>
+  <text x="280" y="736" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" fill="#64748b" text-anchor="middle">स्रोत: भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र • तंत्र ज्ञान शोध संस्थान (2026)</text>
+</svg>

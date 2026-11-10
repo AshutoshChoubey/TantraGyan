@@ -1,0 +1,316 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%">
+
+  <defs>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800;900&amp;display=swap");
+    </style>
+    <linearGradient id="plateBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefc"/>
+      <stop offset="50%" stop-color="#fdfbf5"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
+    </linearGradient>
+    <linearGradient id="goldBannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="kendraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="trikonaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#d1fae5" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="upachayaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#f3e8ff" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="marakaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe4e6" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fecdd3" stop-opacity="0.96"/>
+    </linearGradient>
+    <!-- Planetary Radiant Gradients -->
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffedd5"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <linearGradient id="jupGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+    <linearGradient id="venGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#fbcfe8"/></linearGradient>
+    <linearGradient id="satGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#eff6ff"/><stop offset="100%" stop-color="#bfdbfe"/></linearGradient>
+    <linearGradient id="marsGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fee2e2"/><stop offset="100%" stop-color="#fecaca"/></linearGradient>
+    <linearGradient id="mercGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d1fae5"/><stop offset="100%" stop-color="#a7f3d0"/></linearGradient>
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f0f9ff"/><stop offset="100%" stop-color="#e0f2fe"/></linearGradient>
+    <linearGradient id="rahuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ede9fe"/><stop offset="100%" stop-color="#ddd6fe"/></linearGradient>
+    <linearGradient id="ketuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <filter id="cardPlateShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  
+  <!-- Top Header Banner -->
+  <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">शनि कर्म-कारक आजीविका एवं व्यवसाय निर्धारण महाचक्र</text>
+  <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">Saturn (Karma Karaka) Career, Profession &amp; Livelihood Destiny Matrix</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">शनि से 1-5-9 त्रिकोण एवं 2रे भाव में स्थित ग्रह जातक का मुख्य पेशा तय करते हैं</text>
+
+
+  <!-- Master Center Callout -->
+  <g transform="translate(24, 94)">
+    <rect width="512" height="34" rx="6" fill="#0f172a"/>
+    <text x="256" y="22" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" text-anchor="middle">★ शनि (Saturn) = संपूर्ण ब्रह्मांड का प्रधान कर्म एवं आजीविका कारक ★</text>
+  </g>
+
+  
+  <!-- Profession Card 1 -->
+  <g transform="translate(24, 138)">
+    <rect width="250" height="115" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+    <rect width="250" height="28" rx="6" fill="#f8fafc"/>
+    <line x1="0" y1="28" x2="250" y2="28" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Planet Badges -->
+    <g transform="translate(8, 2)">
+      
+    <rect x="0" y="0" width="56" height="22" rx="11.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="28.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8">♄ शनि</text>
+      <text x="64" y="16" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#d97706">+</text>
+      
+    <rect x="75" y="0" width="56" height="22" rx="11.0" fill="#d1fae5" stroke="#10b981" stroke-width="1.3"/>
+    <text x="103.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#047857">☿ बुध</text>
+    </g>
+
+    <text x="242" y="19" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#0284c7" text-anchor="end">आईटी, डेटा व वित्तीय क्षेत्र</text>
+
+    <!-- Title -->
+    <text x="10" y="47" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#78350f">सॉफ्टवेयर, वाणिज्य, बैंकिंग व सीए</text>
+
+    <!-- Description -->
+    <text x="10" y="66" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#334155">कोडिंग, डेटा एनालिसिस, अकाउंटिंग, वित्</text>
+    <text x="10" y="81" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#334155">तीय प्रबंधन, संवाद व वाणिज्य।</text>
+
+    <rect x="8" y="93" width="234" height="16" rx="3" fill="#fef3c7"/>
+    <text x="125.0" y="105" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#b45309" text-anchor="middle">शनि से 1-5-9 त्रिकोण अथवा 2रे भाव में युति प्रभाव</text>
+  </g>
+
+  <!-- Profession Card 2 -->
+  <g transform="translate(286, 138)">
+    <rect width="250" height="115" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+    <rect width="250" height="28" rx="6" fill="#f8fafc"/>
+    <line x1="0" y1="28" x2="250" y2="28" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Planet Badges -->
+    <g transform="translate(8, 2)">
+      
+    <rect x="0" y="0" width="56" height="22" rx="11.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="28.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8">♄ शनि</text>
+      <text x="64" y="16" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#d97706">+</text>
+      
+    <rect x="75" y="0" width="56" height="22" rx="11.0" fill="#fee2e2" stroke="#ef4444" stroke-width="1.3"/>
+    <text x="103.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#dc2626">♂ मंगल</text>
+    </g>
+
+    <text x="242" y="19" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#0284c7" text-anchor="end">तकनीकी, रक्षा व निर्माण</text>
+
+    <!-- Title -->
+    <text x="10" y="47" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#78350f">इंजीनियरिंग, रक्षा व शल्य-चिकित्सा</text>
+
+    <!-- Description -->
+    <text x="10" y="66" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#334155">मैकेनिकल, सिविल, रक्षा सेना, पुलिस, रि</text>
+    <text x="10" y="81" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#334155">यल एस्टेट व भारी मशीनरी।</text>
+
+    <rect x="8" y="93" width="234" height="16" rx="3" fill="#fef3c7"/>
+    <text x="125.0" y="105" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#b45309" text-anchor="middle">शनि से 1-5-9 त्रिकोण अथवा 2रे भाव में युति प्रभाव</text>
+  </g>
+
+  <!-- Profession Card 3 -->
+  <g transform="translate(24, 261)">
+    <rect width="250" height="115" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+    <rect width="250" height="28" rx="6" fill="#f8fafc"/>
+    <line x1="0" y1="28" x2="250" y2="28" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Planet Badges -->
+    <g transform="translate(8, 2)">
+      
+    <rect x="0" y="0" width="56" height="22" rx="11.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="28.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8">♄ शनि</text>
+      <text x="64" y="16" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#d97706">+</text>
+      
+    <rect x="75" y="0" width="56" height="22" rx="11.0" fill="#ffedd5" stroke="#ea580c" stroke-width="1.3"/>
+    <text x="103.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#c2410c">☉ सूर्य</text>
+    </g>
+
+    <text x="242" y="19" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#0284c7" text-anchor="end">राजकीय व प्रशासनिक सेवा</text>
+
+    <!-- Title -->
+    <text x="10" y="47" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#78350f">प्रशासनिक सेवा व सरकारी पद</text>
+
+    <!-- Description -->
+    <text x="10" y="66" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#334155">आईएएस, लोक नीति, सरकारी ठेका, सार्वजनि</text>
+    <text x="10" y="81" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#334155">क उपक्रम व प्रशासनिक नेतृत्व।</text>
+
+    <rect x="8" y="93" width="234" height="16" rx="3" fill="#fef3c7"/>
+    <text x="125.0" y="105" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#b45309" text-anchor="middle">शनि से 1-5-9 त्रिकोण अथवा 2रे भाव में युति प्रभाव</text>
+  </g>
+
+  <!-- Profession Card 4 -->
+  <g transform="translate(286, 261)">
+    <rect width="250" height="115" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+    <rect width="250" height="28" rx="6" fill="#f8fafc"/>
+    <line x1="0" y1="28" x2="250" y2="28" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Planet Badges -->
+    <g transform="translate(8, 2)">
+      
+    <rect x="0" y="0" width="56" height="22" rx="11.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="28.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8">♄ शनि</text>
+      <text x="64" y="16" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#d97706">+</text>
+      
+    <rect x="75" y="0" width="56" height="22" rx="11.0" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3"/>
+    <text x="103.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#be185d">♀ शुक्र</text>
+    </g>
+
+    <text x="242" y="19" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#0284c7" text-anchor="end">विलासिता, कला व वित्त</text>
+
+    <!-- Title -->
+    <text x="10" y="47" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#78350f">वास्तुकला, विलासिता, वित्त व कला</text>
+
+    <!-- Description -->
+    <text x="10" y="66" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#334155">आर्किटेक्चर, ऑटोमोबाइल, आभूषण, फिल्म, </text>
+    <text x="10" y="81" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#334155">होटल व सौंदर्य प्रसाधन।</text>
+
+    <rect x="8" y="93" width="234" height="16" rx="3" fill="#fef3c7"/>
+    <text x="125.0" y="105" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#b45309" text-anchor="middle">शनि से 1-5-9 त्रिकोण अथवा 2रे भाव में युति प्रभाव</text>
+  </g>
+
+  <!-- Profession Card 5 -->
+  <g transform="translate(24, 384)">
+    <rect width="250" height="115" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+    <rect width="250" height="28" rx="6" fill="#f8fafc"/>
+    <line x1="0" y1="28" x2="250" y2="28" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Planet Badges -->
+    <g transform="translate(8, 2)">
+      
+    <rect x="0" y="0" width="56" height="22" rx="11.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="28.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8">♄ शनि</text>
+      <text x="64" y="16" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#d97706">+</text>
+      
+    <rect x="75" y="0" width="56" height="22" rx="11.0" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.3"/>
+    <text x="103.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#b45309">♃ गुरु</text>
+    </g>
+
+    <text x="242" y="19" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#0284c7" text-anchor="end">शिक्षा, न्याय व धर्म-कर्म</text>
+
+    <!-- Title -->
+    <text x="10" y="47" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#78350f">न्यायाधीश, विधि, शिक्षण व परामर्श</text>
+
+    <!-- Description -->
+    <text x="10" y="66" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#334155">न्यायालय, प्रोफेसर, नीति-निर्माता, आध्</text>
+    <text x="10" y="81" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#334155">यात्मिक गुरु व उच्च सलाहकार।</text>
+
+    <rect x="8" y="93" width="234" height="16" rx="3" fill="#fef3c7"/>
+    <text x="125.0" y="105" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#b45309" text-anchor="middle">शनि से 1-5-9 त्रिकोण अथवा 2रे भाव में युति प्रभाव</text>
+  </g>
+
+  <!-- Profession Card 6 -->
+  <g transform="translate(286, 384)">
+    <rect width="250" height="115" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+    <rect width="250" height="28" rx="6" fill="#f8fafc"/>
+    <line x1="0" y1="28" x2="250" y2="28" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Planet Badges -->
+    <g transform="translate(8, 2)">
+      
+    <rect x="0" y="0" width="56" height="22" rx="11.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="28.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8">♄ शनि</text>
+      <text x="64" y="16" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#d97706">+</text>
+      
+    <rect x="75" y="0" width="56" height="22" rx="11.0" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.3"/>
+    <text x="103.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#0369a1">☽ चन्द्र</text>
+    </g>
+
+    <text x="242" y="19" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#0284c7" text-anchor="end">लॉजिस्टिक्स व हॉस्पिटैलिटी</text>
+
+    <!-- Title -->
+    <text x="10" y="47" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#78350f">जल-व्यापार, पर्यटन व आयात-निर्यात</text>
+
+    <!-- Description -->
+    <text x="10" y="66" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#334155">पर्यटन, खाद्य व पेय, नौसेना, विदेशी व्</text>
+    <text x="10" y="81" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#334155">यापार व सतत स्थानांतरण।</text>
+
+    <rect x="8" y="93" width="234" height="16" rx="3" fill="#fef3c7"/>
+    <text x="125.0" y="105" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#b45309" text-anchor="middle">शनि से 1-5-9 त्रिकोण अथवा 2रे भाव में युति प्रभाव</text>
+  </g>
+
+  <!-- Profession Card 7 -->
+  <g transform="translate(24, 507)">
+    <rect width="250" height="115" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+    <rect width="250" height="28" rx="6" fill="#f8fafc"/>
+    <line x1="0" y1="28" x2="250" y2="28" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Planet Badges -->
+    <g transform="translate(8, 2)">
+      
+    <rect x="0" y="0" width="56" height="22" rx="11.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="28.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8">♄ शनि</text>
+      <text x="64" y="16" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#d97706">+</text>
+      
+    <rect x="75" y="0" width="56" height="22" rx="11.0" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.3"/>
+    <text x="103.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#4338ca">☊ राहु</text>
+    </g>
+
+    <text x="242" y="19" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#0284c7" text-anchor="end">अत्याधुनिक उच्च-प्रौद्योगिकी</text>
+
+    <!-- Title -->
+    <text x="10" y="47" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#78350f">एआई, रोबोटिक्स व विदेशी बहुराष्ट्रीय</text>
+
+    <!-- Description -->
+    <text x="10" y="66" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#334155">एआई आर्किटेक्चर, इलेक्ट्रॉनिक्स, बहुरा</text>
+    <text x="10" y="81" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#334155">ष्ट्रीय कंपनी व विदेशी कार्य।</text>
+
+    <rect x="8" y="93" width="234" height="16" rx="3" fill="#fef3c7"/>
+    <text x="125.0" y="105" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#b45309" text-anchor="middle">शनि से 1-5-9 त्रिकोण अथवा 2रे भाव में युति प्रभाव</text>
+  </g>
+
+  <!-- Profession Card 8 -->
+  <g transform="translate(286, 507)">
+    <rect width="250" height="115" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+    <rect width="250" height="28" rx="6" fill="#f8fafc"/>
+    <line x1="0" y1="28" x2="250" y2="28" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Planet Badges -->
+    <g transform="translate(8, 2)">
+      
+    <rect x="0" y="0" width="56" height="22" rx="11.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="28.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8">♄ शनि</text>
+      <text x="64" y="16" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="900" fill="#d97706">+</text>
+      
+    <rect x="75" y="0" width="56" height="22" rx="11.0" fill="#fef3c7" stroke="#b45309" stroke-width="1.3"/>
+    <text x="103.0" y="14.96" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#78350f">☋ केतु</text>
+    </g>
+
+    <text x="242" y="19" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#0284c7" text-anchor="end">शोध, ऑडिट व गुप्त विद्याएं</text>
+
+    <!-- Title -->
+    <text x="10" y="47" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#78350f">सूक्ष्म शोध, तंत्र-ज्योतिष व ऑडिटिंग</text>
+
+    <!-- Description -->
+    <text x="10" y="66" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#334155">गूढ़ शोध, फॉरेंसिक ऑडिट, बुनकर, वस्त्र</text>
+    <text x="10" y="81" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="600" fill="#334155"> उद्योग व आध्यात्मिक संस्थाएं।</text>
+
+    <rect x="8" y="93" width="234" height="16" rx="3" fill="#fef3c7"/>
+    <text x="125.0" y="105" font-family="'Kohinoor Devanagari', sans-serif" font-size="8" font-weight="700" fill="#b45309" text-anchor="middle">शनि से 1-5-9 त्रिकोण अथवा 2रे भाव में युति प्रभाव</text>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="642" width="512" height="105" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="664" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ बी.एन.एन. आजीविका निर्धारण के 3 अकाट्य नियम ★</text>
+  <text x="280" y="685" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">1. शनि की राशि का तत्व: अग्नि = नेतृत्व, पृथ्वी = उद्योग/निर्माण, वायु = आईटी/बुद्धि, जल = सेवा/विदेश</text>
+  <text x="280" y="705" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">2. शनि के निकटतम अंश वाला ग्रह जातक की कार्यप्रणाली की मूल प्रकृति निश्चित करता है</text>
+  <text x="280" y="725" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">3. शनि से 2रे भाव का ग्रह आजीविका के माध्यम से होने वाले धन आगमन का स्रोत होता है</text>
+</svg>

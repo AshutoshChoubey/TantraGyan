@@ -1,0 +1,200 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 700" width="100%" height="100%" class="astro-chart-svg astro-purushartha-chart">
+  <defs>
+    <!-- Background parchment gradient -->
+    <linearGradient id="psParchmentBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefc"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
+    </linearGradient>
+    <!-- Purushartha Trikona Gradients -->
+    <!-- Dharma (1-5-9): Golden Divine Radiance -->
+    <linearGradient id="gradDharma" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fde68a" stop-opacity="0.96"/>
+    </linearGradient>
+    <!-- Artha (2-6-10): Emerald Material Stability -->
+    <linearGradient id="gradArtha" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#a7f3d0" stop-opacity="0.96"/>
+    </linearGradient>
+    <!-- Kama (3-7-11): Azure Vital Ambition -->
+    <linearGradient id="gradKama" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#bfdbfe" stop-opacity="0.96"/>
+    </linearGradient>
+    <!-- Moksha (4-8-12): Mystical Violet Transcendence -->
+    <linearGradient id="gradMoksha" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#e9d5ff" stop-opacity="0.96"/>
+    </linearGradient>
+    <!-- Drop Shadow Filter -->
+    <filter id="psShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Plate Frame -->
+  <rect x="6" y="6" width="548" height="688" rx="12" fill="url(#psParchmentBg)" stroke="#b45309" stroke-width="2" filter="url(#psShadow)"/>
+  <rect x="12" y="12" width="536" height="676" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  <!-- Top Header Banner -->
+  <rect x="24" y="20" width="512" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+  <text x="280" y="42" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Georgia', serif" font-size="16" font-weight="800" fill="#78350f" text-anchor="middle">चतुर्विध पुरुषार्थ कुण्डली चक्र • Purushartha Trikona</text>
+  <text x="280" y="60" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="600" fill="#b45309" text-anchor="middle">धर्म (1-5-9) • अर्थ (2-6-10) • काम (3-7-11) • मोक्ष (4-8-12)</text>
+  <text x="280" y="74" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#78716c" text-anchor="middle">मानव जीवन के चार परम लक्ष्य • पराशर वैदिक त्रिकोण व्यवस्था एवं फलित रहस्य</text>
+
+  <!-- Diamond Kundali Outer Frame (X: 30 to 530, Y: 96 to 596) -->
+  <g transform="translate(10, 0)">
+    <!-- House 1: धर्म त्रिकोण (Lagna) -->
+    <polygon points="270,100 395,225 270,350 145,225" fill="url(#gradDharma)" stroke="#b45309" stroke-width="2.2"/>
+    <!-- House 2: अर्थ त्रिकोण (Dhana) -->
+    <polygon points="20,100 270,100 145,225" fill="url(#gradArtha)" stroke="#047857" stroke-width="1.8"/>
+    <!-- House 3: काम त्रिकोण (Sahaja) -->
+    <polygon points="20,100 145,225 20,350" fill="url(#gradKama)" stroke="#1d4ed8" stroke-width="1.8"/>
+    <!-- House 4: मोक्ष त्रिकोण (Sukha) -->
+    <polygon points="20,350 145,225 270,350 145,475" fill="url(#gradMoksha)" stroke="#7e22ce" stroke-width="2.0"/>
+    <!-- House 5: धर्म त्रिकोण (Putra/Mantra) -->
+    <polygon points="20,350 145,475 20,600" fill="url(#gradDharma)" stroke="#b45309" stroke-width="2.0"/>
+    <!-- House 6: अर्थ त्रिकोण (Ari/Seva) -->
+    <polygon points="20,600 145,475 270,600" fill="url(#gradArtha)" stroke="#047857" stroke-width="1.8"/>
+    <!-- House 7: काम त्रिकोण (Yuvati) -->
+    <polygon points="270,350 395,475 270,600 145,475" fill="url(#gradKama)" stroke="#1d4ed8" stroke-width="2.0"/>
+    <!-- House 8: मोक्ष त्रिकोण (Randhra) -->
+    <polygon points="270,600 395,475 520,600" fill="url(#gradMoksha)" stroke="#7e22ce" stroke-width="1.8"/>
+    <!-- House 9: धर्म त्रिकोण (Dharma/Bhagya) -->
+    <polygon points="520,600 395,475 520,350" fill="url(#gradDharma)" stroke="#b45309" stroke-width="2.2"/>
+    <!-- House 10: अर्थ त्रिकोण (Karma/Adhikara) -->
+    <polygon points="270,350 395,225 520,350 395,475" fill="url(#gradArtha)" stroke="#047857" stroke-width="2.2"/>
+    <!-- House 11: काम त्रिकोण (Labha/Siddhi) -->
+    <polygon points="520,350 395,225 520,100" fill="url(#gradKama)" stroke="#1d4ed8" stroke-width="1.8"/>
+    <!-- House 12: मोक्ष त्रिकोण (Vyaya/Kaivalya) -->
+    <polygon points="520,100 395,225 270,100" fill="url(#gradMoksha)" stroke="#7e22ce" stroke-width="1.8"/>
+
+    <!-- Geometric Accent Inner Lines -->
+    <polygon points="270,100 520,350 270,600 20,350" fill="none" stroke="#78350f" stroke-width="1.2" opacity="0.65"/>
+    <line x1="20" y1="100" x2="520" y2="600" stroke="#78350f" stroke-width="1.0" opacity="0.45"/>
+    <line x1="520" y1="100" x2="20" y2="600" stroke="#78350f" stroke-width="1.0" opacity="0.45"/>
+    <circle cx="270" cy="350" r="4.5" fill="#f59e0b" stroke="#78350f" stroke-width="1.5"/>
+
+    <!-- Rashi Badges (1 to 12) -->
+    <!-- Rashi 1 -->
+    <circle cx="270" cy="318" r="10" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+    <text x="270" y="321.5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#b45309" text-anchor="middle">1</text>
+    <!-- Rashi 2 -->
+    <circle cx="200" cy="128" r="10" fill="#ffffff" stroke="#047857" stroke-width="1.2"/>
+    <text x="200" y="131.5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#047857" text-anchor="middle">2</text>
+    <!-- Rashi 3 -->
+    <circle cx="55" cy="275" r="10" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+    <text x="55" y="278.5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#1d4ed8" text-anchor="middle">3</text>
+    <!-- Rashi 4 -->
+    <circle cx="230" cy="350" r="10" fill="#ffffff" stroke="#7e22ce" stroke-width="1.2"/>
+    <text x="230" y="353.5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#7e22ce" text-anchor="middle">4</text>
+    <!-- Rashi 5 -->
+    <circle cx="55" cy="420" r="10" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+    <text x="55" y="423.5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#b45309" text-anchor="middle">5</text>
+    <!-- Rashi 6 -->
+    <circle cx="200" cy="572" r="10" fill="#ffffff" stroke="#047857" stroke-width="1.2"/>
+    <text x="200" y="575.5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#047857" text-anchor="middle">6</text>
+    <!-- Rashi 7 -->
+    <circle cx="270" cy="382" r="10" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+    <text x="270" y="385.5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#1d4ed8" text-anchor="middle">7</text>
+    <!-- Rashi 8 -->
+    <circle cx="340" cy="572" r="10" fill="#ffffff" stroke="#7e22ce" stroke-width="1.2"/>
+    <text x="340" y="575.5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#7e22ce" text-anchor="middle">8</text>
+    <!-- Rashi 9 -->
+    <circle cx="485" cy="420" r="10" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+    <text x="485" y="423.5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#b45309" text-anchor="middle">9</text>
+    <!-- Rashi 10 -->
+    <circle cx="310" cy="350" r="10" fill="#ffffff" stroke="#047857" stroke-width="1.2"/>
+    <text x="310" y="353.5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#047857" text-anchor="middle">10</text>
+    <!-- Rashi 11 -->
+    <circle cx="485" cy="275" r="10" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+    <text x="485" y="278.5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#1d4ed8" text-anchor="middle">11</text>
+    <!-- Rashi 12 -->
+    <circle cx="340" cy="128" r="10" fill="#ffffff" stroke="#7e22ce" stroke-width="1.2"/>
+    <text x="340" y="131.5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#7e22ce" text-anchor="middle">12</text>
+
+    <!-- House 1 Text (Dharma) -->
+    <text x="270" y="196" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#9a3412" text-anchor="middle">भाव 1 • तनु (धर्म)</text>
+    <text x="270" y="213" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="800" fill="#b45309" text-anchor="middle">धर्म त्रिकोण मूल</text>
+    <text x="270" y="230" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="600" fill="#1e293b" text-anchor="middle">आत्मबल • देह • स्वभाव</text>
+
+    <!-- House 2 Text (Artha) -->
+    <text x="145" y="125" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#065f46" text-anchor="middle">भाव 2 • धन (अर्थ)</text>
+    <text x="145" y="141" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="800" fill="#047857" text-anchor="middle">अर्थ त्रिकोण प्रथम</text>
+    <text x="145" y="157" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#1e293b" text-anchor="middle">संचित कोष • कुटुंब • वाणी</text>
+
+    <!-- House 3 Text (Kama) -->
+    <text x="62" y="208" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#1e40af" text-anchor="middle">भाव 3 • सहज (काम)</text>
+    <text x="62" y="224" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">काम त्रिकोण प्रथम</text>
+    <text x="62" y="240" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#1e293b" text-anchor="middle">पराक्रम • साहस • पुरुषार्थ</text>
+
+    <!-- House 4 Text (Moksha) -->
+    <text x="145" y="334" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="900" fill="#6b21a8" text-anchor="middle">भाव 4 • सुख (मोक्ष)</text>
+    <text x="145" y="350" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="800" fill="#7e22ce" text-anchor="middle">मोक्ष त्रिकोण प्रथम</text>
+    <text x="145" y="366" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#1e293b" text-anchor="middle">मातृ सुख • अंतःकरण शांति</text>
+
+    <!-- House 5 Text (Dharma) -->
+    <text x="62" y="475" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#9a3412" text-anchor="middle">भाव 5 • पुत्र (धर्म)</text>
+    <text x="62" y="491" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="800" fill="#b45309" text-anchor="middle">धर्म त्रिकोण द्वितीय</text>
+    <text x="62" y="507" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#1e293b" text-anchor="middle">मंत्र सिद्धि • पूर्वपुण्य • मेधा</text>
+
+    <!-- House 6 Text (Artha) -->
+    <text x="145" y="535" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#065f46" text-anchor="middle">भाव 6 • शत्रु (अर्थ)</text>
+    <text x="145" y="551" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="800" fill="#047857" text-anchor="middle">अर्थ त्रिकोण द्वितीय</text>
+    <text x="145" y="567" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#1e293b" text-anchor="middle">सेवा • ऋणमुक्ति • विजय</text>
+
+    <!-- House 7 Text (Kama) -->
+    <text x="270" y="468" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="900" fill="#1e40af" text-anchor="middle">भाव 7 • जाया (काम)</text>
+    <text x="270" y="484" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">काम त्रिकोण द्वितीय</text>
+    <text x="270" y="500" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#1e293b" text-anchor="middle">कलत्र • साझेदारी • भोग</text>
+
+    <!-- House 8 Text (Moksha) -->
+    <text x="395" y="535" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#6b21a8" text-anchor="middle">भाव 8 • आयु (मोक्ष)</text>
+    <text x="395" y="551" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="800" fill="#7e22ce" text-anchor="middle">मोक्ष त्रिकोण द्वितीय</text>
+    <text x="395" y="567" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#1e293b" text-anchor="middle">गूढ़ साधना • कुण्डलिनी</text>
+
+    <!-- House 9 Text (Dharma) -->
+    <text x="478" y="475" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#9a3412" text-anchor="middle">भाव 9 • भाग्य (धर्म)</text>
+    <text x="478" y="491" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="800" fill="#b45309" text-anchor="middle">धर्म त्रिकोण सर्वोच्च</text>
+    <text x="478" y="507" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#1e293b" text-anchor="middle">ईश्वरीय कृपा • गुरु • तीर्थ</text>
+
+    <!-- House 10 Text (Artha) -->
+    <text x="395" y="334" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="900" fill="#065f46" text-anchor="middle">भाव 10 • कर्म (अर्थ)</text>
+    <text x="395" y="350" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="800" fill="#047857" text-anchor="middle">अर्थ त्रिकोण सर्वोच्च</text>
+    <text x="395" y="366" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#1e293b" text-anchor="middle">राजसत्ता • आजीविका • यश</text>
+
+    <!-- House 11 Text (Kama) -->
+    <text x="478" y="208" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#1e40af" text-anchor="middle">भाव 11 • लाभ (काम)</text>
+    <text x="478" y="224" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">काम त्रिकोण सर्वोच्च</text>
+    <text x="478" y="240" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#1e293b" text-anchor="middle">समस्त अभिलाषा सिद्धि</text>
+
+    <!-- House 12 Text (Moksha) -->
+    <text x="395" y="125" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#6b21a8" text-anchor="middle">भाव 12 • व्यय (मोक्ष)</text>
+    <text x="395" y="141" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="800" fill="#7e22ce" text-anchor="middle">मोक्ष त्रिकोण सर्वोच्च</text>
+    <text x="395" y="157" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#1e293b" text-anchor="middle">कैवल्य • विसर्जन • त्याग</text>
+  </g>
+
+  <!-- Bottom Legend Bar -->
+  <g transform="translate(24, 618)">
+    <rect x="0" y="0" width="512" height="62" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+    <!-- Dharma Badge -->
+    <rect x="10" y="8" width="116" height="46" rx="4" fill="#fef3c7" stroke="#b45309" stroke-width="1"/>
+    <text x="68" y="26" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#9a3412" text-anchor="middle">धर्म त्रिकोण (1, 5, 9)</text>
+    <text x="68" y="42" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#78350f" text-anchor="middle">सत्य, ज्ञान व पुण्य</text>
+
+    <!-- Artha Badge -->
+    <rect x="136" y="8" width="116" height="46" rx="4" fill="#ecfdf5" stroke="#047857" stroke-width="1"/>
+    <text x="194" y="26" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#065f46" text-anchor="middle">अर्थ त्रिकोण (2, 6, 10)</text>
+    <text x="194" y="42" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#047857" text-anchor="middle">धन, कर्म व समृद्धि</text>
+
+    <!-- Kama Badge -->
+    <rect x="262" y="8" width="116" height="46" rx="4" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+    <text x="320" y="26" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#1e40af" text-anchor="middle">काम त्रिकोण (3, 7, 11)</text>
+    <text x="320" y="42" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#1d4ed8" text-anchor="middle">इच्छा, संबंध व लाभ</text>
+
+    <!-- Moksha Badge -->
+    <rect x="388" y="8" width="116" height="46" rx="4" fill="#faf5ff" stroke="#7e22ce" stroke-width="1"/>
+    <text x="446" y="26" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#6b21a8" text-anchor="middle">मोक्ष त्रिकोण (4, 8, 12)</text>
+    <text x="446" y="42" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#7e22ce" text-anchor="middle">शांति, त्याग व कैवल्य</text>
+  </g>
+</svg>

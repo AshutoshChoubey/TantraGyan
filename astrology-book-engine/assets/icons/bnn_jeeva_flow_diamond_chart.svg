@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%">
+
+  <defs>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800;900&amp;display=swap");
+    </style>
+    <linearGradient id="plateBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefc"/>
+      <stop offset="50%" stop-color="#fdfbf5"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
+    </linearGradient>
+    <linearGradient id="goldBannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="kendraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="trikonaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#d1fae5" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="upachayaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#f3e8ff" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="marakaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe4e6" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fecdd3" stop-opacity="0.96"/>
+    </linearGradient>
+    <!-- Planetary Radiant Gradients -->
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffedd5"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <linearGradient id="jupGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+    <linearGradient id="venGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#fbcfe8"/></linearGradient>
+    <linearGradient id="satGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#eff6ff"/><stop offset="100%" stop-color="#bfdbfe"/></linearGradient>
+    <linearGradient id="marsGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fee2e2"/><stop offset="100%" stop-color="#fecaca"/></linearGradient>
+    <linearGradient id="mercGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d1fae5"/><stop offset="100%" stop-color="#a7f3d0"/></linearGradient>
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f0f9ff"/><stop offset="100%" stop-color="#e0f2fe"/></linearGradient>
+    <linearGradient id="rahuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ede9fe"/><stop offset="100%" stop-color="#ddd6fe"/></linearGradient>
+    <linearGradient id="ketuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <filter id="cardPlateShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  
+  <!-- Top Header Banner -->
+  <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">उत्तर भारतीय डायमंड चार्ट में जीव-लग्न भाव-प्रवाह</text>
+  <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">BNN Jeeva Lagna Counter-Clockwise Momentum &amp; Step-by-Step Flow</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">गुरु (जीव) की केंद्रीय स्थिति, 1-5-9 त्रिकोण, 2-12 पार्श्व एवं 7वीं प्रत्यक्ष दृष्टि</text>
+
+
+  <g>
+    <polygon points="270,100 395,225 270,350 145,225" fill="url(#kendraGrad)" stroke="#b45309" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="20,100 270,100 145,225" fill="url(#upachayaGrad)" stroke="#0284c7" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="20,100 145,225 20,350" fill="#ffffff" stroke="#09090b" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="20,350 145,225 270,350 145,475" fill="#ffffff" stroke="#09090b" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="20,350 145,475 20,600" fill="url(#trikonaGrad)" stroke="#059669" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="20,600 145,475 270,600" fill="#ffffff" stroke="#09090b" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="270,350 395,475 270,600 145,475" fill="url(#marakaGrad)" stroke="#dc2626" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="270,600 395,475 520,600" fill="#ffffff" stroke="#09090b" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="520,600 395,475 520,350" fill="url(#trikonaGrad)" stroke="#059669" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="270,350 395,225 520,350 395,475" fill="#ffffff" stroke="#09090b" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="520,350 395,225 520,100" fill="#ffffff" stroke="#09090b" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="520,100 395,225 270,100" fill="url(#waterGrad)" stroke="#7c3aed" stroke-width="1.8" stroke-linejoin="round"/>
+    <rect x="20" y="100" width="500" height="500" fill="none" stroke="#78350f" stroke-width="2.4"/>
+    <polygon points="270,100 520,350 270,600 20,350" fill="none" stroke="#b45309" stroke-width="1.8"/>
+  </g>
+
+  <!-- H1: Jeeva Badge -->
+  
+    <rect x="225" y="175" width="90" height="26" rx="13.0" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.3"/>
+    <text x="270.0" y="192.68" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#b45309">♃ गुरु</text>
+  <text x="270" y="218" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">1म भाव • जीव लग्न (स्वयं)</text>
+  <text x="270" y="235" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" fill="#451a03" text-anchor="middle">शारीरिक अस्तित्व, बुद्धि व संकल्प</text>
+
+  <!-- H2: Agre -->
+  <text x="145" y="140" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#0369a1" text-anchor="middle">अग्र (+1 भाव)</text>
+  <text x="145" y="160" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">2रा: धन, वाणी, भविष्य</text>
+
+  <!-- H12: Prishta -->
+  <text x="395" y="140" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#6d28d9" text-anchor="middle">पृष्ठ (-1 भाव)</text>
+  <text x="395" y="160" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">12वां: संचित अतीत, व्यय</text>
+
+  <!-- H5: Trikona 1 -->
+  <text x="70" y="465" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">त्रिकोण (5म)</text>
+  <text x="70" y="485" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">पूर्वपुण्य • सन्तान</text>
+
+  <!-- H9: Trikona 2 -->
+  <text x="470" y="465" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">त्रिकोण (9म)</text>
+  <text x="470" y="485" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">भाग्य • धर्म • पिता</text>
+
+  <!-- H7: Samukha -->
+  <text x="270" y="460" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="800" fill="#b91c1c" text-anchor="middle">प्रत्यक्ष दृष्टि (7म भाव)</text>
+  <text x="270" y="480" font-family="'Kohinoor Devanagari', sans-serif" font-size="10.5" font-weight="700" fill="#1e293b" text-anchor="middle">180° समसप्तक • जीवनसाथी, व्यापार</text>
+
+  <!-- Flow Arrows connecting 1-5-9 and 7 -->
+  <path d="M 230 240 Q 140 320 80 430" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="5,3"/>
+  <polygon points="76,432 86,436 82,425" fill="#059669"/>
+
+  <path d="M 310 240 Q 400 320 460 430" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="5,3"/>
+  <polygon points="458,425 454,436 464,432" fill="#059669"/>
+
+  <path d="M 270 245 L 270 435" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="4,3"/>
+  <polygon points="266,435 274,435 270,443" fill="#dc2626"/>
+
+  <!-- Other Bhavas -->
+  <text x="70" y="230" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">3रा: पराक्रम</text>
+  <text x="145" y="355" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">4था: सुख/माता</text>
+  <text x="145" y="550" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">6ठा: रोग/ऋण</text>
+  <text x="395" y="550" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">8वां: संकट/गूढ़</text>
+  <text x="395" y="355" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">10वां: कर्म/पद</text>
+  <text x="470" y="230" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">11वां: लाभ/इच्छा</text>
+
+  <!-- Bottom Legend Card -->
+  <g transform="translate(20, 615)">
+    <rect width="520" height="135" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+    <text x="260" y="24" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" fill="#78350f" text-anchor="middle">★ भृगु नंदी नाड़ी अग्र-पृष्ठ एवं दृष्टि सूत्र ★</text>
+    <text x="260" y="48" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#1e293b" text-anchor="middle">• अग्र नियम (+1 राशि): ग्रह का भविष्य व अगला कदम • पृष्ठ नियम (-1 राशि): संचित अतीत व पृष्ठभूमि बल</text>
+    <text x="260" y="72" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#047857" text-anchor="middle">• 1-5-9 त्रिकोण संबंध: समान दिशा के ग्रह 100% सम्मिश्रित होकर संयुक्त परिणाम देते हैं</text>
+    <text x="260" y="96" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="700" fill="#b91c1c" text-anchor="middle">• 7वां भाव (180°): प्रत्यक्ष दृष्टि — जीवनसाथी, साझेदारी व लोक-व्यवहार में प्रत्यक्ष प्रभाव</text>
+    <text x="260" y="118" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">• 12वें व 2रे में पापी ग्रह = बन्धन योग • 12वें व 2रे में शुभ ग्रह = सुरक्षा कवच (सहज सफलता)</text>
+  </g>
+</svg>

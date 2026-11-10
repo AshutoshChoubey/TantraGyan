@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%">
+
+  <defs>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800;900&amp;display=swap");
+    </style>
+    <linearGradient id="plateBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefc"/>
+      <stop offset="50%" stop-color="#fdfbf5"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
+    </linearGradient>
+    <linearGradient id="goldBannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="kendraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="trikonaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#d1fae5" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="upachayaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#f3e8ff" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="marakaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe4e6" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fecdd3" stop-opacity="0.96"/>
+    </linearGradient>
+    <!-- Planetary Radiant Gradients -->
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffedd5"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <linearGradient id="jupGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+    <linearGradient id="venGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#fbcfe8"/></linearGradient>
+    <linearGradient id="satGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#eff6ff"/><stop offset="100%" stop-color="#bfdbfe"/></linearGradient>
+    <linearGradient id="marsGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fee2e2"/><stop offset="100%" stop-color="#fecaca"/></linearGradient>
+    <linearGradient id="mercGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d1fae5"/><stop offset="100%" stop-color="#a7f3d0"/></linearGradient>
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f0f9ff"/><stop offset="100%" stop-color="#e0f2fe"/></linearGradient>
+    <linearGradient id="rahuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ede9fe"/><stop offset="100%" stop-color="#ddd6fe"/></linearGradient>
+    <linearGradient id="ketuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <filter id="cardPlateShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  
+  <!-- Top Header Banner -->
+  <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">नवग्रह नाड़ी कारकत्व एवं त्रि-स्तरीय मैत्री महाचक्र</text>
+  <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">Navagraha Nadi Karakatwas &amp; Natural Harmony Matrix</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">जीव, कर्म, धन, बुद्धि व मोक्ष के प्राकृतिक नियंत्रक ग्रह</text>
+
+
+  
+  <g transform="translate(24, 96)">
+    <rect width="512" height="58" rx="6" fill="#ffffff" stroke="#ea580c" stroke-width="1.3"/>
+    <rect width="125" height="58" rx="6" fill="#ffedd5" stroke="#ea580c" stroke-width="0.8"/>
+    
+    <!-- Planet Symbol & Name with authentic color -->
+    <text x="62" y="27" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#c2410c">☉ सूर्य</text>
+    <text x="62" y="45" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#475569">Sun</text>
+
+    <!-- Details -->
+    <text x="135" y="23" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="800" fill="#0f172a">कारकत्व: <tspan font-weight="600" fill="#334155">आत्मा • पिता • शासन • अहंकार</tspan></text>
+    <text x="135" y="44" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700">
+      <tspan fill="#059669">मित्र: गुरु, मंगल</tspan> • <tspan fill="#64748b">सम: बुध</tspan> • <tspan fill="#dc2626">शत्रु: शुक्र, शनि, राहु</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(24, 163)">
+    <rect width="512" height="58" rx="6" fill="#ffffff" stroke="#0284c7" stroke-width="1.3"/>
+    <rect width="125" height="58" rx="6" fill="#f0f9ff" stroke="#0284c7" stroke-width="0.8"/>
+    
+    <!-- Planet Symbol & Name with authentic color -->
+    <text x="62" y="27" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#0369a1">☽ चन्द्र</text>
+    <text x="62" y="45" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#475569">Moon</text>
+
+    <!-- Details -->
+    <text x="135" y="23" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="800" fill="#0f172a">कारकत्व: <tspan font-weight="600" fill="#334155">मन • माता • जल • यात्रा • कला</tspan></text>
+    <text x="135" y="44" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700">
+      <tspan fill="#059669">मित्र: सूर्य, गुरु</tspan> • <tspan fill="#64748b">सम: मंगल, बुध, शुक्र, शनि</tspan> • <tspan fill="#dc2626">शत्रु: राहु, केतु</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(24, 230)">
+    <rect width="512" height="58" rx="6" fill="#ffffff" stroke="#ef4444" stroke-width="1.3"/>
+    <rect width="125" height="58" rx="6" fill="#fee2e2" stroke="#ef4444" stroke-width="0.8"/>
+    
+    <!-- Planet Symbol & Name with authentic color -->
+    <text x="62" y="27" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#dc2626">♂ मंगल</text>
+    <text x="62" y="45" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#475569">Mars</text>
+
+    <!-- Details -->
+    <text x="135" y="23" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="800" fill="#0f172a">कारकत्व: <tspan font-weight="600" fill="#334155">पराक्रम • भ्राता • रक्त • भूमि • साहस</tspan></text>
+    <text x="135" y="44" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700">
+      <tspan fill="#059669">मित्र: सूर्य, चन्द्र, गुरु</tspan> • <tspan fill="#64748b">सम: शुक्र, शनि</tspan> • <tspan fill="#dc2626">शत्रु: बुध, राहु</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(24, 297)">
+    <rect width="512" height="58" rx="6" fill="#ffffff" stroke="#10b981" stroke-width="1.3"/>
+    <rect width="125" height="58" rx="6" fill="#d1fae5" stroke="#10b981" stroke-width="0.8"/>
+    
+    <!-- Planet Symbol & Name with authentic color -->
+    <text x="62" y="27" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#047857">☿ बुध</text>
+    <text x="62" y="45" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#475569">Mercury</text>
+
+    <!-- Details -->
+    <text x="135" y="23" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="800" fill="#0f172a">कारकत्व: <tspan font-weight="600" fill="#334155">बुद्धि • व्यापार • वाणी • शिक्षा • मित्र</tspan></text>
+    <text x="135" y="44" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700">
+      <tspan fill="#059669">मित्र: सूर्य, शुक्र, शनि</tspan> • <tspan fill="#64748b">सम: मंगल, गुरु</tspan> • <tspan fill="#dc2626">शत्रु: चन्द्र, राहु</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(24, 364)">
+    <rect width="512" height="58" rx="6" fill="#ffffff" stroke="#f59e0b" stroke-width="1.3"/>
+    <rect width="125" height="58" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+    
+    <!-- Planet Symbol & Name with authentic color -->
+    <text x="62" y="27" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#b45309">♃ गुरु</text>
+    <text x="62" y="45" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#475569">Jupiter</text>
+
+    <!-- Details -->
+    <text x="135" y="23" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="800" fill="#0f172a">कारकत्व: <tspan font-weight="600" fill="#334155">जीव (पुरुष) • ज्ञान • सन्तान • धर्म</tspan></text>
+    <text x="135" y="44" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700">
+      <tspan fill="#059669">मित्र: सूर्य, चन्द्र, मंगल</tspan> • <tspan fill="#64748b">सम: शनि, राहु</tspan> • <tspan fill="#dc2626">शत्रु: शुक्र, बुध</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(24, 431)">
+    <rect width="512" height="58" rx="6" fill="#ffffff" stroke="#ec4899" stroke-width="1.3"/>
+    <rect width="125" height="58" rx="6" fill="#fce7f3" stroke="#ec4899" stroke-width="0.8"/>
+    
+    <!-- Planet Symbol & Name with authentic color -->
+    <text x="62" y="27" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#be185d">♀ शुक्र</text>
+    <text x="62" y="45" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#475569">Venus</text>
+
+    <!-- Details -->
+    <text x="135" y="23" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="800" fill="#0f172a">कारकत्व: <tspan font-weight="600" fill="#334155">जीव (स्त्री) • धन • पत्नी • वाहन • विलास</tspan></text>
+    <text x="135" y="44" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700">
+      <tspan fill="#059669">मित्र: बुध, शनि, राहु</tspan> • <tspan fill="#64748b">सम: मंगल, चन्द्र</tspan> • <tspan fill="#dc2626">शत्रु: सूर्य, गुरु, केतु</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(24, 498)">
+    <rect width="512" height="58" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1.3"/>
+    <rect width="125" height="58" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="0.8"/>
+    
+    <!-- Planet Symbol & Name with authentic color -->
+    <text x="62" y="27" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#1d4ed8">♄ शनि</text>
+    <text x="62" y="45" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#475569">Saturn</text>
+
+    <!-- Details -->
+    <text x="135" y="23" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="800" fill="#0f172a">कारकत्व: <tspan font-weight="600" fill="#334155">कर्म • आजीविका • विलंब • श्रम • आयु</tspan></text>
+    <text x="135" y="44" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700">
+      <tspan fill="#059669">मित्र: बुध, शुक्र, राहु</tspan> • <tspan fill="#64748b">सम: गुरु</tspan> • <tspan fill="#dc2626">शत्रु: सूर्य, चन्द्र, मंगल</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(24, 565)">
+    <rect width="512" height="58" rx="6" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.3"/>
+    <rect width="125" height="58" rx="6" fill="#ede9fe" stroke="#8b5cf6" stroke-width="0.8"/>
+    
+    <!-- Planet Symbol & Name with authentic color -->
+    <text x="62" y="27" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#4338ca">☊ राहु</text>
+    <text x="62" y="45" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#475569">Rahu</text>
+
+    <!-- Details -->
+    <text x="135" y="23" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="800" fill="#0f172a">कारकत्व: <tspan font-weight="600" fill="#334155">भ्रम • विदेश • विस्तार • माया • तकनीक</tspan></text>
+    <text x="135" y="44" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700">
+      <tspan fill="#059669">मित्र: बुध, शुक्र, शनि</tspan> • <tspan fill="#64748b">सम: गुरु</tspan> • <tspan fill="#dc2626">शत्रु: सूर्य, चन्द्र, मंगल, केतु</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(24, 632)">
+    <rect width="512" height="58" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.3"/>
+    <rect width="125" height="58" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="0.8"/>
+    
+    <!-- Planet Symbol & Name with authentic color -->
+    <text x="62" y="27" text-anchor="middle" font-family="'Noto Serif Devanagari', serif" font-size="13" font-weight="900" fill="#78350f">☋ केतु</text>
+    <text x="62" y="45" text-anchor="middle" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700" fill="#475569">Ketu</text>
+
+    <!-- Details -->
+    <text x="135" y="23" font-family="'Kohinoor Devanagari', sans-serif" font-size="10" font-weight="800" fill="#0f172a">कारकत्व: <tspan font-weight="600" fill="#334155">मोक्ष • संन्यास • त्याग • सूक्ष्म ज्ञान • जड़</tspan></text>
+    <text x="135" y="44" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="700">
+      <tspan fill="#059669">मित्र: गुरु, मंगल, सूर्य</tspan> • <tspan fill="#64748b">सम: शुक्र, शनि</tspan> • <tspan fill="#dc2626">शत्रु: बुध, राहु, चन्द्र</tspan>
+    </text>
+  </g>
+
+  <!-- Bottom Summary Footer -->
+  <rect x="24" y="700" width="512" height="48" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+  <text x="280" y="720" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#78350f" text-anchor="middle">★ नाड़ी सूत्र: मित्र ग्रहों की युति भाग्योदय कराती है, शत्रु ग्रहों का योग संघर्ष पैदा करता है ★</text>
+  <text x="280" y="736" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">गुरु-शुक्र दोनों जीव हैं, शनि कर्म है, सूर्य यश है, बुध व्यापार है, राहु भ्रम व केतु मोक्ष है।</text>
+</svg>

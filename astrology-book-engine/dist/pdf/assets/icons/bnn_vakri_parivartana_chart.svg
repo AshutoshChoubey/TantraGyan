@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%">
+
+  <defs>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800;900&amp;display=swap");
+    </style>
+    <linearGradient id="plateBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefc"/>
+      <stop offset="50%" stop-color="#fdfbf5"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
+    </linearGradient>
+    <linearGradient id="goldBannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="kendraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="trikonaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#d1fae5" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="upachayaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#f3e8ff" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="marakaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe4e6" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#fecdd3" stop-opacity="0.96"/>
+    </linearGradient>
+    <!-- Planetary Radiant Gradients -->
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffedd5"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <linearGradient id="jupGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+    <linearGradient id="venGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#fbcfe8"/></linearGradient>
+    <linearGradient id="satGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#eff6ff"/><stop offset="100%" stop-color="#bfdbfe"/></linearGradient>
+    <linearGradient id="marsGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fee2e2"/><stop offset="100%" stop-color="#fecaca"/></linearGradient>
+    <linearGradient id="mercGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d1fae5"/><stop offset="100%" stop-color="#a7f3d0"/></linearGradient>
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f0f9ff"/><stop offset="100%" stop-color="#e0f2fe"/></linearGradient>
+    <linearGradient id="rahuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ede9fe"/><stop offset="100%" stop-color="#ddd6fe"/></linearGradient>
+    <linearGradient id="ketuGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+    <filter id="cardPlateShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#plateBg)" stroke="#b45309" stroke-width="2" filter="url(#cardPlateShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  
+  <!-- Top Header Banner -->
+  <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="15" font-weight="900" fill="#78350f" text-anchor="middle">बी.एन.एन. वक्री ग्रह द्वैत स्थिति एवं राशि परिवर्तन चक्र</text>
+  <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">BNN Retrograde Dual Ray Physics &amp; Parivartana Yoga Mutual Exchange</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">वक्री ग्रह अपनी वर्तमान राशि एवं 12वें भाव दोनों से पूर्ण त्रिकोण दृष्टि प्रसारित करता है</text>
+
+
+  <!-- Section 1: Retrograde Dual Rays Visual -->
+  <g transform="translate(24, 96)">
+    <rect width="512" height="300" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+    <rect width="512" height="30" rx="8" fill="#0f172a"/>
+    <text x="256" y="20" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" text-anchor="middle">१. वक्री ग्रह का द्वैत स्थिति प्रभाव (Dual Radiant Positions)</text>
+
+    <!-- Visual Box Left: Current Position -->
+    <rect x="25" y="48" width="215" height="110" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.4"/>
+    <text x="132" y="70" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8" text-anchor="middle">वर्तमान प्रत्यक्ष राशि (Direct)</text>
+    
+    <rect x="92" y="80" width="80" height="24" rx="12.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="132.0" y="96.32" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8">♄ शनि</text>
+    <text x="132" y="122" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">मकर राशि (Capricorn)</text>
+    <text x="132" y="142" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#0284c7" text-anchor="middle">दक्षिण त्रिकोण (2-6-10) दृष्टि (50%)</text>
+
+    <!-- Backward Retrograde Arrow -->
+    <path d="M 245,100 Q 256,65 267,100" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="4,3"/>
+    <polygon points="245,100 248,90 255,95" fill="#d97706"/>
+    <text x="256" y="60" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="800" fill="#d97706" text-anchor="middle">वक्री गति</text>
+
+    <!-- Visual Box Right: 12th House Shadow Position -->
+    <rect x="272" y="48" width="215" height="110" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.4" stroke-dasharray="4,2"/>
+    <text x="379" y="70" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#b45309" text-anchor="middle">12वें भाव की छाया स्थिति (12th Shadow)</text>
+    
+    <rect x="339" y="80" width="80" height="24" rx="12.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="379.0" y="96.32" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8">♄ शनि</text>
+    <text x="379" y="122" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#78350f" text-anchor="middle">धनु राशि (Sagittarius - 12th)</text>
+    <text x="379" y="142" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="600" fill="#b45309" text-anchor="middle">पूर्व त्रिकोण (1-5-9) दृष्टि (50%)</text>
+
+    <!-- Explanatory note inside section 1 -->
+    <rect x="20" y="172" width="472" height="112" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="256" y="194" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ वक्री ग्रह के 3 मूलभूत नाड़ी नियम ★</text>
+    <text x="35" y="218" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b">1. द्वैत सक्रियता:</text>
+    <text x="125" y="218" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#334155">वक्री ग्रह अपनी वर्तमान राशि और 12वें भाव दोनों में एक साथ उपस्थित माना जाता है।</text>
+    <text x="35" y="240" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b">2. पूर्व प्रारब्ध:</text>
+    <text x="125" y="240" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#334155">वक्री ग्रह जातक के पूर्व-जन्म के अधूरे कार्यों एवं संचित कर्मों की पूर्ति कराता है।</text>
+    <text x="35" y="262" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b">3. 12वें ग्रह से युति:</text>
+    <text x="125" y="262" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#334155">यदि 12वें भाव में कोई ग्रह हो, तो वक्री ग्रह सीधे उसके साथ 100% युति बना लेता है।</text>
+  </g>
+
+  <!-- Section 2: Parivartana Yoga (Mutual Exchange) -->
+  <g transform="translate(24, 410)">
+    <rect width="512" height="215" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.4"/>
+    <rect width="512" height="30" rx="8" fill="#064e3b"/>
+    <text x="256" y="20" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="12" font-weight="800" text-anchor="middle">२. राशि परिवर्तन योग विनिमय चक्र (Parivartana Exchange)</text>
+
+    <!-- Planet A in Planet B sign -->
+    <rect x="25" y="46" width="185" height="85" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.3"/>
+    <text x="117" y="66" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#78350f" text-anchor="middle">स्थान A: मकर राशि</text>
+    
+    <rect x="82" y="75" width="70" height="24" rx="12.0" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.3"/>
+    <text x="117.0" y="91.32" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#b45309">♃ गुरु</text>
+    <text x="117" y="118" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#b45309" text-anchor="middle">(गुरु शनि के घर में - नीच)</text>
+
+    <!-- Bidirectional Golden Arc Exchange -->
+    <path d="M 218,80 L 294,80" stroke="#059669" stroke-width="3"/>
+    <polygon points="218,80 228,75 228,85" fill="#059669"/>
+    <polygon points="294,80 284,75 284,85" fill="#059669"/>
+    <text x="256" y="70" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="900" fill="#059669" text-anchor="middle">परस्पर</text>
+    <text x="256" y="100" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.5" font-weight="700" fill="#065f46" text-anchor="middle">विनिमय</text>
+
+    <!-- Planet B in Planet A sign -->
+    <rect x="302" y="46" width="185" height="85" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="394" y="66" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#1d4ed8" text-anchor="middle">स्थान B: धनु राशि</text>
+    
+    <rect x="359" y="75" width="70" height="24" rx="12.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+    <text x="394.0" y="91.32" text-anchor="middle" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="11" font-weight="900" fill="#1d4ed8">♄ शनि</text>
+    <text x="394" y="118" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#1d4ed8" text-anchor="middle">(शनि गुरु के घर में)</text>
+
+    <!-- Result Callout -->
+    <rect x="20" y="142" width="472" height="60" rx="6" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+    <text x="256" y="162" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#065f46" text-anchor="middle">अचूक फलित: नीच-भंग एवं प्रबल महाभाग्य राजयोग</text>
+    <text x="256" y="184" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b" text-anchor="middle">विनिमय के उपरांत गुरु और शनि दोनों अपनी स्वराशि में स्थित माने जाते हैं। नीचत्व पूर्णतः समाप्त हो जाता है।</text>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="638" width="512" height="110" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="660" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ नाड़ी अनुसंधान सूत्र: वक्री एवं परिवर्तन योग का समय सक्रियण ★</text>
+  <text x="280" y="682" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">• जीवन के पूर्वार्ध (0-30 वर्ष) में प्रत्यक्ष ग्रह का फल मिलता है</text>
+  <text x="280" y="702" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">• जीवन के उत्तरार्ध (30-60 वर्ष) में 12वें भाव व स्वराशि विनिमय का राजयोग फलित होता है</text>
+  <text x="280" y="722" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">स्रोत: भृगु नंदी नाड़ी: कर्म-संयोजन सूत्र • ज्योतिषाचार्य आशुतोष कुमार चौबे</text>
+</svg>

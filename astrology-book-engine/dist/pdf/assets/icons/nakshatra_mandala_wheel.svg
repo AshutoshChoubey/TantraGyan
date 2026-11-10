@@ -18,409 +18,409 @@
   <circle cx="325.0" cy="325.0" r="141.0" fill="#fff7ed" stroke="#c89d3d" stroke-width="1.5"/>
   <!-- Dividing Line for Rashi 1 -->
   <line x1="325.00" y1="149.00" x2="325.00" y2="104.00" stroke="#ea580c" stroke-width="1.4"/>
-  <text x="376.38" y="129.26" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#ea580c" text-anchor="middle" dominant-baseline="central">1. मेष</text>
-  <text x="376.38" y="141.26" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Aries • 30°</text>
+  <text x="376.38" y="129.26" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#ea580c" text-anchor="middle" dominant-baseline="central">1. मेष</text>
+  <text x="376.38" y="141.26" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Aries • 30°</text>
   <!-- Dividing Line for Rashi 2 -->
   <line x1="413.00" y1="172.58" x2="435.50" y2="133.61" stroke="#d97706" stroke-width="1.4"/>
-  <text x="465.36" y="180.64" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#d97706" text-anchor="middle" dominant-baseline="central">2. वृषभ</text>
-  <text x="465.36" y="192.64" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Taurus • 30°</text>
+  <text x="465.36" y="180.64" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#d97706" text-anchor="middle" dominant-baseline="central">2. वृषभ</text>
+  <text x="465.36" y="192.64" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Taurus • 30°</text>
   <!-- Dividing Line for Rashi 3 -->
   <line x1="477.42" y1="237.00" x2="516.39" y2="214.50" stroke="#0284c7" stroke-width="1.4"/>
-  <text x="516.74" y="269.62" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#0284c7" text-anchor="middle" dominant-baseline="central">3. मिथुन</text>
-  <text x="516.74" y="281.62" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Gemini • 30°</text>
+  <text x="516.74" y="269.62" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#0284c7" text-anchor="middle" dominant-baseline="central">3. मिथुन</text>
+  <text x="516.74" y="281.62" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Gemini • 30°</text>
   <!-- Dividing Line for Rashi 4 -->
   <line x1="501.00" y1="325.00" x2="546.00" y2="325.00" stroke="#0d9488" stroke-width="1.4"/>
-  <text x="516.74" y="372.38" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#0d9488" text-anchor="middle" dominant-baseline="central">4. कर्क</text>
-  <text x="516.74" y="384.38" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Cancer • 30°</text>
+  <text x="516.74" y="372.38" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#0d9488" text-anchor="middle" dominant-baseline="central">4. कर्क</text>
+  <text x="516.74" y="384.38" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Cancer • 30°</text>
   <!-- Dividing Line for Rashi 5 -->
   <line x1="477.42" y1="413.00" x2="516.39" y2="435.50" stroke="#ea580c" stroke-width="1.4"/>
-  <text x="465.36" y="461.36" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#ea580c" text-anchor="middle" dominant-baseline="central">5. सिंह</text>
-  <text x="465.36" y="473.36" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Leo • 30°</text>
+  <text x="465.36" y="461.36" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#ea580c" text-anchor="middle" dominant-baseline="central">5. सिंह</text>
+  <text x="465.36" y="473.36" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Leo • 30°</text>
   <!-- Dividing Line for Rashi 6 -->
   <line x1="413.00" y1="477.42" x2="435.50" y2="516.39" stroke="#d97706" stroke-width="1.4"/>
-  <text x="376.38" y="512.74" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#d97706" text-anchor="middle" dominant-baseline="central">6. कन्या</text>
-  <text x="376.38" y="524.74" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Virgo • 30°</text>
+  <text x="376.38" y="512.74" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#d97706" text-anchor="middle" dominant-baseline="central">6. कन्या</text>
+  <text x="376.38" y="524.74" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Virgo • 30°</text>
   <!-- Dividing Line for Rashi 7 -->
   <line x1="325.00" y1="501.00" x2="325.00" y2="546.00" stroke="#0284c7" stroke-width="1.4"/>
-  <text x="273.62" y="512.74" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#0284c7" text-anchor="middle" dominant-baseline="central">7. तुला</text>
-  <text x="273.62" y="524.74" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Libra • 30°</text>
+  <text x="273.62" y="512.74" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#0284c7" text-anchor="middle" dominant-baseline="central">7. तुला</text>
+  <text x="273.62" y="524.74" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Libra • 30°</text>
   <!-- Dividing Line for Rashi 8 -->
   <line x1="237.00" y1="477.42" x2="214.50" y2="516.39" stroke="#0d9488" stroke-width="1.4"/>
-  <text x="184.64" y="461.36" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#0d9488" text-anchor="middle" dominant-baseline="central">8. वृश्चिक</text>
-  <text x="184.64" y="473.36" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Scorpio • 30°</text>
+  <text x="184.64" y="461.36" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#0d9488" text-anchor="middle" dominant-baseline="central">8. वृश्चिक</text>
+  <text x="184.64" y="473.36" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Scorpio • 30°</text>
   <!-- Dividing Line for Rashi 9 -->
   <line x1="172.58" y1="413.00" x2="133.61" y2="435.50" stroke="#ea580c" stroke-width="1.4"/>
-  <text x="133.26" y="372.38" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#ea580c" text-anchor="middle" dominant-baseline="central">9. धनु</text>
-  <text x="133.26" y="384.38" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Sagittarius • 30°</text>
+  <text x="133.26" y="372.38" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#ea580c" text-anchor="middle" dominant-baseline="central">9. धनु</text>
+  <text x="133.26" y="384.38" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Sagittarius • 30°</text>
   <!-- Dividing Line for Rashi 10 -->
   <line x1="149.00" y1="325.00" x2="104.00" y2="325.00" stroke="#d97706" stroke-width="1.4"/>
-  <text x="133.26" y="269.62" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#d97706" text-anchor="middle" dominant-baseline="central">10. मकर</text>
-  <text x="133.26" y="281.62" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Capricorn • 30°</text>
+  <text x="133.26" y="269.62" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#d97706" text-anchor="middle" dominant-baseline="central">10. मकर</text>
+  <text x="133.26" y="281.62" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Capricorn • 30°</text>
   <!-- Dividing Line for Rashi 11 -->
   <line x1="172.58" y1="237.00" x2="133.61" y2="214.50" stroke="#0284c7" stroke-width="1.4"/>
-  <text x="184.64" y="180.64" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#0284c7" text-anchor="middle" dominant-baseline="central">11. कुंभ</text>
-  <text x="184.64" y="192.64" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Aquarius • 30°</text>
+  <text x="184.64" y="180.64" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#0284c7" text-anchor="middle" dominant-baseline="central">11. कुंभ</text>
+  <text x="184.64" y="192.64" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Aquarius • 30°</text>
   <!-- Dividing Line for Rashi 12 -->
   <line x1="237.00" y1="172.58" x2="214.50" y2="133.61" stroke="#0d9488" stroke-width="1.4"/>
-  <text x="273.62" y="129.26" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#0d9488" text-anchor="middle" dominant-baseline="central">12. मीन</text>
-  <text x="273.62" y="141.26" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Pisces • 30°</text>
+  <text x="273.62" y="129.26" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="900" fill="#0d9488" text-anchor="middle" dominant-baseline="central">12. मीन</text>
+  <text x="273.62" y="141.26" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle" dominant-baseline="central">Pisces • 30°</text>
   <line x1="325.00" y1="104.00" x2="325.00" y2="52.00" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(353.67, 79.67) rotate(6.7)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#52525b" text-anchor="middle" dominant-baseline="central">अश्विनी</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#52525b" text-anchor="middle" dominant-baseline="central">स्वामी: Ke • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#52525b" text-anchor="middle" dominant-baseline="central">अश्विनी</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#52525b" text-anchor="middle" dominant-baseline="central">स्वामी: Ke • 3.7%</text>
   </g>
   <line x1="375.97" y1="109.96" x2="387.96" y2="59.36" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(409.48, 92.90) rotate(20.0)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#be185d" text-anchor="middle" dominant-baseline="central">भरणी</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#be185d" text-anchor="middle" dominant-baseline="central">स्वामी: Ve • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#be185d" text-anchor="middle" dominant-baseline="central">भरणी</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#be185d" text-anchor="middle" dominant-baseline="central">स्वामी: Ve • 3.7%</text>
   </g>
   <line x1="424.18" y1="127.51" x2="447.52" y2="81.04" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(460.73, 118.63) rotate(33.3)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#c2410c" text-anchor="middle" dominant-baseline="central">कृत्तिका</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#c2410c" text-anchor="middle" dominant-baseline="central">स्वामी: Su • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#c2410c" text-anchor="middle" dominant-baseline="central">कृत्तिका</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#c2410c" text-anchor="middle" dominant-baseline="central">स्वामी: Su • 3.7%</text>
   </g>
   <line x1="467.06" y1="155.70" x2="500.48" y2="115.87" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(504.66, 155.50) rotate(46.7)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#334155" text-anchor="middle" dominant-baseline="central">रोहिणी</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#334155" text-anchor="middle" dominant-baseline="central">स्वामी: Mo • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#334155" text-anchor="middle" dominant-baseline="central">रोहिणी</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#334155" text-anchor="middle" dominant-baseline="central">स्वामी: Mo • 3.7%</text>
   </g>
   <line x1="502.27" y1="193.03" x2="543.98" y2="161.98" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(538.91, 201.50) rotate(60.0)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#dc2626" text-anchor="middle" dominant-baseline="central">मृगशिरा</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#dc2626" text-anchor="middle" dominant-baseline="central">स्वामी: Ma • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#dc2626" text-anchor="middle" dominant-baseline="central">मृगशिरा</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#dc2626" text-anchor="middle" dominant-baseline="central">स्वामी: Ma • 3.7%</text>
   </g>
   <line x1="527.93" y1="237.47" x2="575.67" y2="216.87" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(561.62, 254.16) rotate(73.3)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#09090b" text-anchor="middle" dominant-baseline="central">आर्द्रा</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#09090b" text-anchor="middle" dominant-baseline="central">स्वामी: Ra • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#09090b" text-anchor="middle" dominant-baseline="central">आर्द्रा</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#09090b" text-anchor="middle" dominant-baseline="central">स्वामी: Ra • 3.7%</text>
   </g>
   <line x1="542.64" y1="286.62" x2="593.85" y2="277.59" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(571.58, 310.64) rotate(86.7)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#b45309" text-anchor="middle" dominant-baseline="central">पुनर्वसु</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#b45309" text-anchor="middle" dominant-baseline="central">स्वामी: Ju • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#b45309" text-anchor="middle" dominant-baseline="central">पुनर्वसु</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#b45309" text-anchor="middle" dominant-baseline="central">स्वामी: Ju • 3.7%</text>
   </g>
   <line x1="545.63" y1="337.85" x2="597.54" y2="340.87" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(568.25, 367.89) rotate(280.0)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#1d4ed8" text-anchor="middle" dominant-baseline="central">पुष्य</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#1d4ed8" text-anchor="middle" dominant-baseline="central">स्वामी: Sa • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#1d4ed8" text-anchor="middle" dominant-baseline="central">पुष्य</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#1d4ed8" text-anchor="middle" dominant-baseline="central">स्वामी: Sa • 3.7%</text>
   </g>
   <line x1="536.72" y1="388.38" x2="586.53" y2="403.30" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(551.80, 422.83) rotate(293.3)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#047857" text-anchor="middle" dominant-baseline="central">आश्लेषा</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#047857" text-anchor="middle" dominant-baseline="central">स्वामी: Me • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#047857" text-anchor="middle" dominant-baseline="central">आश्लेषा</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#047857" text-anchor="middle" dominant-baseline="central">स्वामी: Me • 3.7%</text>
   </g>
   <line x1="516.39" y1="435.50" x2="561.42" y2="461.50" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(523.12, 472.50) rotate(306.7)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#52525b" text-anchor="middle" dominant-baseline="central">मघा</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#52525b" text-anchor="middle" dominant-baseline="central">स्वामी: Ke • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#52525b" text-anchor="middle" dominant-baseline="central">मघा</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#52525b" text-anchor="middle" dominant-baseline="central">स्वामी: Ke • 3.7%</text>
   </g>
   <line x1="485.75" y1="476.66" x2="523.57" y2="512.34" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(483.77, 514.21) rotate(320.0)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#be185d" text-anchor="middle" dominant-baseline="central">पूर्वाफाल्गुनी</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#be185d" text-anchor="middle" dominant-baseline="central">स्वामी: Ve • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#be185d" text-anchor="middle" dominant-baseline="central">पूर्वाफाल्गुनी</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#be185d" text-anchor="middle" dominant-baseline="central">स्वामी: Ve • 3.7%</text>
   </g>
   <line x1="446.44" y1="509.64" x2="475.02" y2="553.09" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(435.85, 545.73) rotate(333.3)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#c2410c" text-anchor="middle" dominant-baseline="central">उत्तराफाल्गुनी</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#c2410c" text-anchor="middle" dominant-baseline="central">स्वामी: Su • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#c2410c" text-anchor="middle" dominant-baseline="central">उत्तराफाल्गुनी</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#c2410c" text-anchor="middle" dominant-baseline="central">स्वामी: Su • 3.7%</text>
   </g>
   <line x1="400.59" y1="532.67" x2="418.37" y2="581.54" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(381.96, 565.34) rotate(346.7)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#334155" text-anchor="middle" dominant-baseline="central">हस्त</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#334155" text-anchor="middle" dominant-baseline="central">स्वामी: Mo • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#334155" text-anchor="middle" dominant-baseline="central">हस्त</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#334155" text-anchor="middle" dominant-baseline="central">स्वामी: Mo • 3.7%</text>
   </g>
   <line x1="350.66" y1="544.51" x2="356.69" y2="596.15" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(325.00, 572.00) rotate(360.0)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#dc2626" text-anchor="middle" dominant-baseline="central">चित्रा</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#dc2626" text-anchor="middle" dominant-baseline="central">स्वामी: Ma • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#dc2626" text-anchor="middle" dominant-baseline="central">चित्रा</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#dc2626" text-anchor="middle" dominant-baseline="central">स्वामी: Ma • 3.7%</text>
   </g>
   <line x1="299.34" y1="544.51" x2="293.31" y2="596.15" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(268.04, 565.34) rotate(373.3)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#09090b" text-anchor="middle" dominant-baseline="central">स्वाति</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#09090b" text-anchor="middle" dominant-baseline="central">स्वामी: Ra • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#09090b" text-anchor="middle" dominant-baseline="central">स्वाति</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#09090b" text-anchor="middle" dominant-baseline="central">स्वामी: Ra • 3.7%</text>
   </g>
   <line x1="249.41" y1="532.67" x2="231.63" y2="581.54" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(214.15, 545.73) rotate(386.7)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#b45309" text-anchor="middle" dominant-baseline="central">विशाखा</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#b45309" text-anchor="middle" dominant-baseline="central">स्वामी: Ju • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#b45309" text-anchor="middle" dominant-baseline="central">विशाखा</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#b45309" text-anchor="middle" dominant-baseline="central">स्वामी: Ju • 3.7%</text>
   </g>
   <line x1="203.56" y1="509.64" x2="174.98" y2="553.09" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(166.23, 514.21) rotate(400.0)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#1d4ed8" text-anchor="middle" dominant-baseline="central">अनुराधा</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#1d4ed8" text-anchor="middle" dominant-baseline="central">स्वामी: Sa • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#1d4ed8" text-anchor="middle" dominant-baseline="central">अनुराधा</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#1d4ed8" text-anchor="middle" dominant-baseline="central">स्वामी: Sa • 3.7%</text>
   </g>
   <line x1="164.25" y1="476.66" x2="126.43" y2="512.34" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(126.88, 472.50) rotate(413.3)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#047857" text-anchor="middle" dominant-baseline="central">ज्येष्ठा</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#047857" text-anchor="middle" dominant-baseline="central">स्वामी: Me • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#047857" text-anchor="middle" dominant-baseline="central">ज्येष्ठा</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#047857" text-anchor="middle" dominant-baseline="central">स्वामी: Me • 3.7%</text>
   </g>
   <line x1="133.61" y1="435.50" x2="88.58" y2="461.50" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(98.20, 422.83) rotate(426.7)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#52525b" text-anchor="middle" dominant-baseline="central">मूल</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#52525b" text-anchor="middle" dominant-baseline="central">स्वामी: Ke • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#52525b" text-anchor="middle" dominant-baseline="central">मूल</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#52525b" text-anchor="middle" dominant-baseline="central">स्वामी: Ke • 3.7%</text>
   </g>
   <line x1="113.28" y1="388.38" x2="63.47" y2="403.30" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(81.75, 367.89) rotate(440.0)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#be185d" text-anchor="middle" dominant-baseline="central">पूर्वाषाढ़ा</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#be185d" text-anchor="middle" dominant-baseline="central">स्वामी: Ve • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#be185d" text-anchor="middle" dominant-baseline="central">पूर्वाषाढ़ा</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#be185d" text-anchor="middle" dominant-baseline="central">स्वामी: Ve • 3.7%</text>
   </g>
   <line x1="104.37" y1="337.85" x2="52.46" y2="340.87" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(78.42, 310.64) rotate(273.3)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#c2410c" text-anchor="middle" dominant-baseline="central">उत्तराषाढ़ा</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#c2410c" text-anchor="middle" dominant-baseline="central">स्वामी: Su • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#c2410c" text-anchor="middle" dominant-baseline="central">उत्तराषाढ़ा</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#c2410c" text-anchor="middle" dominant-baseline="central">स्वामी: Su • 3.7%</text>
   </g>
   <line x1="107.36" y1="286.62" x2="56.15" y2="277.59" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(88.38, 254.16) rotate(286.7)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#334155" text-anchor="middle" dominant-baseline="central">श्रवण</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#334155" text-anchor="middle" dominant-baseline="central">स्वामी: Mo • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#334155" text-anchor="middle" dominant-baseline="central">श्रवण</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#334155" text-anchor="middle" dominant-baseline="central">स्वामी: Mo • 3.7%</text>
   </g>
   <line x1="122.07" y1="237.47" x2="74.33" y2="216.87" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(111.09, 201.50) rotate(300.0)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#dc2626" text-anchor="middle" dominant-baseline="central">धनिष्ठा</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#dc2626" text-anchor="middle" dominant-baseline="central">स्वामी: Ma • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#dc2626" text-anchor="middle" dominant-baseline="central">धनिष्ठा</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#dc2626" text-anchor="middle" dominant-baseline="central">स्वामी: Ma • 3.7%</text>
   </g>
   <line x1="147.73" y1="193.03" x2="106.02" y2="161.98" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(145.34, 155.50) rotate(313.3)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#09090b" text-anchor="middle" dominant-baseline="central">शतभिषा</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#09090b" text-anchor="middle" dominant-baseline="central">स्वामी: Ra • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#09090b" text-anchor="middle" dominant-baseline="central">शतभिषा</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#09090b" text-anchor="middle" dominant-baseline="central">स्वामी: Ra • 3.7%</text>
   </g>
   <line x1="182.94" y1="155.70" x2="149.52" y2="115.87" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(189.27, 118.63) rotate(326.7)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#b45309" text-anchor="middle" dominant-baseline="central">पूर्वाभाद्रपद</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#b45309" text-anchor="middle" dominant-baseline="central">स्वामी: Ju • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#b45309" text-anchor="middle" dominant-baseline="central">पूर्वाभाद्रपद</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#b45309" text-anchor="middle" dominant-baseline="central">स्वामी: Ju • 3.7%</text>
   </g>
   <line x1="225.82" y1="127.51" x2="202.48" y2="81.04" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(240.52, 92.90) rotate(340.0)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#1d4ed8" text-anchor="middle" dominant-baseline="central">उत्तराभाद्रपद</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#1d4ed8" text-anchor="middle" dominant-baseline="central">स्वामी: Sa • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#1d4ed8" text-anchor="middle" dominant-baseline="central">उत्तराभाद्रपद</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#1d4ed8" text-anchor="middle" dominant-baseline="central">स्वामी: Sa • 3.7%</text>
   </g>
   <line x1="274.03" y1="109.96" x2="262.04" y2="59.36" stroke="#d97706" stroke-width="1.1"/>
   <g transform="translate(296.33, 79.67) rotate(353.3)">
-    <text x="0" y="-5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#047857" text-anchor="middle" dominant-baseline="central">रेवती</text>
-    <text x="0" y="5" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#047857" text-anchor="middle" dominant-baseline="central">स्वामी: Me • 3.7%</text>
+    <text x="0" y="-5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="8.8" font-weight="800" fill="#047857" text-anchor="middle" dominant-baseline="central">रेवती</text>
+    <text x="0" y="5" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#047857" text-anchor="middle" dominant-baseline="central">स्वामी: Me • 3.7%</text>
   </g>
   <line x1="325.00" y1="52.00" x2="325.00" y2="30.00" stroke="#b45309" stroke-width="1.5"/>
-  <text x="333.26" y="41.12" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="333.26" y="41.12" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="340.87" y1="52.46" x2="342.15" y2="30.50" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="349.75" y="42.08" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="349.75" y="42.08" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="356.69" y1="53.85" x2="359.25" y2="31.99" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="366.16" y="44.00" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="366.16" y="44.00" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="372.41" y1="56.15" x2="376.23" y2="34.48" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="382.43" y="46.87" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="382.43" y="46.87" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="387.96" y1="59.36" x2="393.03" y2="37.95" stroke="#b45309" stroke-width="1.5"/>
-  <text x="398.50" y="50.68" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="398.50" y="50.68" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="403.30" y1="63.47" x2="409.61" y2="42.39" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="414.33" y="55.42" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="414.33" y="55.42" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="418.37" y1="68.46" x2="425.90" y2="47.79" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="429.85" y="61.07" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="429.85" y="61.07" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="433.13" y1="74.33" x2="441.84" y2="54.13" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="445.02" y="67.61" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="445.02" y="67.61" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="447.52" y1="81.04" x2="457.40" y2="61.38" stroke="#b45309" stroke-width="1.5"/>
-  <text x="459.79" y="75.02" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="459.79" y="75.02" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="461.50" y1="88.58" x2="472.50" y2="69.52" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="474.09" y="83.28" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="474.09" y="83.28" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="475.02" y1="96.91" x2="487.11" y2="78.53" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="487.90" y="92.36" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="487.90" y="92.36" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="488.02" y1="106.02" x2="501.16" y2="88.37" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="501.15" y="102.23" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="501.15" y="102.23" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="500.48" y1="115.87" x2="514.62" y2="99.02" stroke="#b45309" stroke-width="1.5"/>
-  <text x="513.80" y="112.84" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="513.80" y="112.84" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="512.34" y1="126.43" x2="527.44" y2="110.42" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="525.82" y="124.18" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="525.82" y="124.18" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="523.57" y1="137.66" x2="539.58" y2="122.56" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="537.16" y="136.20" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="537.16" y="136.20" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="534.13" y1="149.52" x2="550.98" y2="135.38" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="547.77" y="148.85" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="547.77" y="148.85" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="543.98" y1="161.98" x2="561.63" y2="148.84" stroke="#b45309" stroke-width="1.5"/>
-  <text x="557.64" y="162.10" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="557.64" y="162.10" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="553.09" y1="174.98" x2="571.47" y2="162.89" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="566.72" y="175.91" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="566.72" y="175.91" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="561.42" y1="188.50" x2="580.48" y2="177.50" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="574.98" y="190.21" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="574.98" y="190.21" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="568.96" y1="202.48" x2="588.62" y2="192.60" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="582.39" y="204.98" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="582.39" y="204.98" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="575.67" y1="216.87" x2="595.87" y2="208.16" stroke="#b45309" stroke-width="1.5"/>
-  <text x="588.93" y="220.15" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="588.93" y="220.15" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="581.54" y1="231.63" x2="602.21" y2="224.10" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="594.58" y="235.67" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="594.58" y="235.67" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="586.53" y1="246.70" x2="607.61" y2="240.39" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="599.32" y="251.50" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="599.32" y="251.50" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="590.64" y1="262.04" x2="612.05" y2="256.97" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="603.13" y="267.57" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="603.13" y="267.57" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="593.85" y1="277.59" x2="615.52" y2="273.77" stroke="#b45309" stroke-width="1.5"/>
-  <text x="606.00" y="283.84" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="606.00" y="283.84" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="596.15" y1="293.31" x2="618.01" y2="290.75" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="607.92" y="300.25" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="607.92" y="300.25" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="597.54" y1="309.13" x2="619.50" y2="307.85" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="608.88" y="316.74" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="608.88" y="316.74" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="598.00" y1="325.00" x2="620.00" y2="325.00" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="608.88" y="333.26" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="608.88" y="333.26" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="597.54" y1="340.87" x2="619.50" y2="342.15" stroke="#b45309" stroke-width="1.5"/>
-  <text x="607.92" y="349.75" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="607.92" y="349.75" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="596.15" y1="356.69" x2="618.01" y2="359.25" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="606.00" y="366.16" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="606.00" y="366.16" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="593.85" y1="372.41" x2="615.52" y2="376.23" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="603.13" y="382.43" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="603.13" y="382.43" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="590.64" y1="387.96" x2="612.05" y2="393.03" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="599.32" y="398.50" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="599.32" y="398.50" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="586.53" y1="403.30" x2="607.61" y2="409.61" stroke="#b45309" stroke-width="1.5"/>
-  <text x="594.58" y="414.33" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="594.58" y="414.33" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="581.54" y1="418.37" x2="602.21" y2="425.90" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="588.93" y="429.85" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="588.93" y="429.85" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="575.67" y1="433.13" x2="595.87" y2="441.84" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="582.39" y="445.02" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="582.39" y="445.02" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="568.96" y1="447.52" x2="588.62" y2="457.40" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="574.98" y="459.79" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="574.98" y="459.79" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="561.42" y1="461.50" x2="580.48" y2="472.50" stroke="#b45309" stroke-width="1.5"/>
-  <text x="566.72" y="474.09" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="566.72" y="474.09" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="553.09" y1="475.02" x2="571.47" y2="487.11" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="557.64" y="487.90" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="557.64" y="487.90" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="543.98" y1="488.02" x2="561.63" y2="501.16" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="547.77" y="501.15" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="547.77" y="501.15" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="534.13" y1="500.48" x2="550.98" y2="514.62" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="537.16" y="513.80" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="537.16" y="513.80" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="523.57" y1="512.34" x2="539.58" y2="527.44" stroke="#b45309" stroke-width="1.5"/>
-  <text x="525.82" y="525.82" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="525.82" y="525.82" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="512.34" y1="523.57" x2="527.44" y2="539.58" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="513.80" y="537.16" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="513.80" y="537.16" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="500.48" y1="534.13" x2="514.62" y2="550.98" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="501.15" y="547.77" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="501.15" y="547.77" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="488.02" y1="543.98" x2="501.16" y2="561.63" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="487.90" y="557.64" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="487.90" y="557.64" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="475.02" y1="553.09" x2="487.11" y2="571.47" stroke="#b45309" stroke-width="1.5"/>
-  <text x="474.09" y="566.72" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="474.09" y="566.72" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="461.50" y1="561.42" x2="472.50" y2="580.48" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="459.79" y="574.98" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="459.79" y="574.98" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="447.52" y1="568.96" x2="457.40" y2="588.62" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="445.02" y="582.39" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="445.02" y="582.39" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="433.13" y1="575.67" x2="441.84" y2="595.87" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="429.85" y="588.93" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="429.85" y="588.93" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="418.37" y1="581.54" x2="425.90" y2="602.21" stroke="#b45309" stroke-width="1.5"/>
-  <text x="414.33" y="594.58" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="414.33" y="594.58" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="403.30" y1="586.53" x2="409.61" y2="607.61" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="398.50" y="599.32" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="398.50" y="599.32" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="387.96" y1="590.64" x2="393.03" y2="612.05" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="382.43" y="603.13" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="382.43" y="603.13" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="372.41" y1="593.85" x2="376.23" y2="615.52" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="366.16" y="606.00" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="366.16" y="606.00" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="356.69" y1="596.15" x2="359.25" y2="618.01" stroke="#b45309" stroke-width="1.5"/>
-  <text x="349.75" y="607.92" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="349.75" y="607.92" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="340.87" y1="597.54" x2="342.15" y2="619.50" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="333.26" y="608.88" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="333.26" y="608.88" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="325.00" y1="598.00" x2="325.00" y2="620.00" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="316.74" y="608.88" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="316.74" y="608.88" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="309.13" y1="597.54" x2="307.85" y2="619.50" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="300.25" y="607.92" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="300.25" y="607.92" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="293.31" y1="596.15" x2="290.75" y2="618.01" stroke="#b45309" stroke-width="1.5"/>
-  <text x="283.84" y="606.00" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="283.84" y="606.00" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="277.59" y1="593.85" x2="273.77" y2="615.52" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="267.57" y="603.13" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="267.57" y="603.13" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="262.04" y1="590.64" x2="256.97" y2="612.05" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="251.50" y="599.32" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="251.50" y="599.32" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="246.70" y1="586.53" x2="240.39" y2="607.61" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="235.67" y="594.58" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="235.67" y="594.58" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="231.63" y1="581.54" x2="224.10" y2="602.21" stroke="#b45309" stroke-width="1.5"/>
-  <text x="220.15" y="588.93" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="220.15" y="588.93" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="216.87" y1="575.67" x2="208.16" y2="595.87" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="204.98" y="582.39" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="204.98" y="582.39" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="202.48" y1="568.96" x2="192.60" y2="588.62" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="190.21" y="574.98" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="190.21" y="574.98" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="188.50" y1="561.42" x2="177.50" y2="580.48" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="175.91" y="566.72" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="175.91" y="566.72" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="174.98" y1="553.09" x2="162.89" y2="571.47" stroke="#b45309" stroke-width="1.5"/>
-  <text x="162.10" y="557.64" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="162.10" y="557.64" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="161.98" y1="543.98" x2="148.84" y2="561.63" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="148.85" y="547.77" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="148.85" y="547.77" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="149.52" y1="534.13" x2="135.38" y2="550.98" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="136.20" y="537.16" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="136.20" y="537.16" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="137.66" y1="523.57" x2="122.56" y2="539.58" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="124.18" y="525.82" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="124.18" y="525.82" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="126.43" y1="512.34" x2="110.42" y2="527.44" stroke="#b45309" stroke-width="1.5"/>
-  <text x="112.84" y="513.80" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="112.84" y="513.80" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="115.87" y1="500.48" x2="99.02" y2="514.62" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="102.23" y="501.15" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="102.23" y="501.15" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="106.02" y1="488.02" x2="88.37" y2="501.16" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="92.36" y="487.90" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="92.36" y="487.90" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="96.91" y1="475.02" x2="78.53" y2="487.11" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="83.28" y="474.09" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="83.28" y="474.09" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="88.58" y1="461.50" x2="69.52" y2="472.50" stroke="#b45309" stroke-width="1.5"/>
-  <text x="75.02" y="459.79" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="75.02" y="459.79" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="81.04" y1="447.52" x2="61.38" y2="457.40" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="67.61" y="445.02" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="67.61" y="445.02" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="74.33" y1="433.13" x2="54.13" y2="441.84" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="61.07" y="429.85" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="61.07" y="429.85" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="68.46" y1="418.37" x2="47.79" y2="425.90" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="55.42" y="414.33" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="55.42" y="414.33" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="63.47" y1="403.30" x2="42.39" y2="409.61" stroke="#b45309" stroke-width="1.5"/>
-  <text x="50.68" y="398.50" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="50.68" y="398.50" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="59.36" y1="387.96" x2="37.95" y2="393.03" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="46.87" y="382.43" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="46.87" y="382.43" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="56.15" y1="372.41" x2="34.48" y2="376.23" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="44.00" y="366.16" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="44.00" y="366.16" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="53.85" y1="356.69" x2="31.99" y2="359.25" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="42.08" y="349.75" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="42.08" y="349.75" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="52.46" y1="340.87" x2="30.50" y2="342.15" stroke="#b45309" stroke-width="1.5"/>
-  <text x="41.12" y="333.26" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="41.12" y="333.26" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="52.00" y1="325.00" x2="30.00" y2="325.00" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="41.12" y="316.74" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="41.12" y="316.74" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="52.46" y1="309.13" x2="30.50" y2="307.85" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="42.08" y="300.25" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="42.08" y="300.25" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="53.85" y1="293.31" x2="31.99" y2="290.75" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="44.00" y="283.84" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="44.00" y="283.84" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="56.15" y1="277.59" x2="34.48" y2="273.77" stroke="#b45309" stroke-width="1.5"/>
-  <text x="46.87" y="267.57" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="46.87" y="267.57" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="59.36" y1="262.04" x2="37.95" y2="256.97" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="50.68" y="251.50" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="50.68" y="251.50" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="63.47" y1="246.70" x2="42.39" y2="240.39" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="55.42" y="235.67" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="55.42" y="235.67" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="68.46" y1="231.63" x2="47.79" y2="224.10" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="61.07" y="220.15" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="61.07" y="220.15" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="74.33" y1="216.87" x2="54.13" y2="208.16" stroke="#b45309" stroke-width="1.5"/>
-  <text x="67.61" y="204.98" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="67.61" y="204.98" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="81.04" y1="202.48" x2="61.38" y2="192.60" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="75.02" y="190.21" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="75.02" y="190.21" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="88.58" y1="188.50" x2="69.52" y2="177.50" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="83.28" y="175.91" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="83.28" y="175.91" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="96.91" y1="174.98" x2="78.53" y2="162.89" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="92.36" y="162.10" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="92.36" y="162.10" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="106.02" y1="161.98" x2="88.37" y2="148.84" stroke="#b45309" stroke-width="1.5"/>
-  <text x="102.23" y="148.85" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="102.23" y="148.85" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="115.87" y1="149.52" x2="99.02" y2="135.38" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="112.84" y="136.20" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="112.84" y="136.20" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="126.43" y1="137.66" x2="110.42" y2="122.56" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="124.18" y="124.18" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="124.18" y="124.18" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="137.66" y1="126.43" x2="122.56" y2="110.42" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="136.20" y="112.84" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="136.20" y="112.84" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="149.52" y1="115.87" x2="135.38" y2="99.02" stroke="#b45309" stroke-width="1.5"/>
-  <text x="148.85" y="102.23" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="148.85" y="102.23" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="161.98" y1="106.02" x2="148.84" y2="88.37" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="162.10" y="92.36" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="162.10" y="92.36" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="174.98" y1="96.91" x2="162.89" y2="78.53" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="175.91" y="83.28" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="175.91" y="83.28" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="188.50" y1="88.58" x2="177.50" y2="69.52" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="190.21" y="75.02" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="190.21" y="75.02" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="202.48" y1="81.04" x2="192.60" y2="61.38" stroke="#b45309" stroke-width="1.5"/>
-  <text x="204.98" y="67.61" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="204.98" y="67.61" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="216.87" y1="74.33" x2="208.16" y2="54.13" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="220.15" y="61.07" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="220.15" y="61.07" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="231.63" y1="68.46" x2="224.10" y2="47.79" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="235.67" y="55.42" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="235.67" y="55.42" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="246.70" y1="63.47" x2="240.39" y2="42.39" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="251.50" y="50.68" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="251.50" y="50.68" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <line x1="262.04" y1="59.36" x2="256.97" y2="37.95" stroke="#b45309" stroke-width="1.5"/>
-  <text x="267.57" y="46.87" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="267.57" y="46.87" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">1</text>
   <line x1="277.59" y1="56.15" x2="273.77" y2="34.48" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="283.84" y="44.00" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="283.84" y="44.00" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">2</text>
   <line x1="293.31" y1="53.85" x2="290.75" y2="31.99" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="300.25" y="42.08" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="300.25" y="42.08" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">3</text>
   <line x1="309.13" y1="52.46" x2="307.85" y2="30.50" stroke="#cbd5e1" stroke-width="0.5"/>
-  <text x="316.74" y="41.12" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="316.74" y="41.12" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="6.8" font-weight="700" fill="#475569" text-anchor="middle" dominant-baseline="central">4</text>
   <!-- Sacred Center Circle (Yantra Halo) -->
   <circle cx="325.0" cy="325.0" r="119.85" fill="#ffffff" stroke="#c89d3d" stroke-width="1.2"/>
   <polygon points="325.0,297.0 349.0,343.0 301.0,343.0" fill="none" stroke="#ea580c" stroke-width="1.2"/>
   <polygon points="325.0,353.0 349.0,307.0 301.0,307.0" fill="none" stroke="#2563eb" stroke-width="1.2"/>
   <circle cx="325.0" cy="325.0" r="6" fill="#f59e0b" stroke="#78350f" stroke-width="1"/>
-  <text x="325.0" y="363.0" font-family="'Noto Serif Devanagari', 'Georgia', serif" font-size="10" font-weight="900" fill="#78350f" text-anchor="middle">सप्तविंशति नक्षत्र चक्र</text>
-  <text x="325.0" y="375.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" fill="#92400e" text-anchor="middle">360° = 27 नक्षत्र • 108 पद</text>
-  <text x="325.0" y="386.0" font-family="'Noto Sans Devanagari', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" fill="#64748b" text-anchor="middle">1 पद = 3°20' (0.926%)</text>
+  <text x="325.0" y="363.0" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Georgia', serif" font-size="10" font-weight="900" fill="#78350f" text-anchor="middle">सप्तविंशति नक्षत्र चक्र</text>
+  <text x="325.0" y="375.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" fill="#92400e" text-anchor="middle">360° = 27 नक्षत्र • 108 पद</text>
+  <text x="325.0" y="386.0" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7" fill="#64748b" text-anchor="middle">1 पद = 3°20' (0.926%)</text>
 </svg>

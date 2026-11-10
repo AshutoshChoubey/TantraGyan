@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 770" width="100%" height="100%">
+
+  <defs>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;family=Noto+Serif+Devanagari:wght@700;800;900&amp;display=swap");
+    </style>
+    <linearGradient id="parchmentBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffefb"/>
+      <stop offset="50%" stop-color="#fdfbf5"/>
+      <stop offset="100%" stop-color="#faf5ea"/>
+    </linearGradient>
+    <linearGradient id="goldHeadGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="shivaBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="durgaRedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef2f2"/>
+      <stop offset="100%" stop-color="#fee2e2"/>
+    </linearGradient>
+    <linearGradient id="bhairavDarkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="tantraShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="548" height="758" rx="12" fill="url(#parchmentBg)" stroke="#b45309" stroke-width="2" filter="url(#tantraShadow)"/>
+  <rect x="12" y="12" width="536" height="746" rx="8" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="6,3" opacity="0.6"/>
+
+  
+  <!-- Top Header Banner -->
+  <rect x="20" y="16" width="520" height="66" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.3"/>
+  <text x="280" y="38" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', Georgia, serif" font-size="14.5" font-weight="900" fill="#78350f" text-anchor="middle">सिद्ध कुंजिका स्तोत्र संपुट विधान एवं विवाह सिद्धि चक्र</text>
+  <text x="280" y="55" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', sans-serif" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="middle">Siddha Kunjika Samput Architecture &amp; Vivaha Blessing Engine</text>
+  <text x="280" y="70" font-family="'Kohinoor Devanagari', 'Noto Sans Devanagari', sans-serif" font-size="9" font-weight="600" fill="#78716c" text-anchor="middle">संपुट श्लोक मंत्र के आदि और अंत में जुड़कर अभीष्ट फल को लाख गुना तीव्र करता है</text>
+
+
+  <!-- Step-by-Step Samput Visual Flow -->
+  <g transform="translate(24, 96)">
+    <rect width="512" height="360" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+    <rect width="512" height="28" rx="8" fill="#0f172a"/>
+    <text x="256" y="19" fill="#f8fafc" font-family="'Noto Serif Devanagari', serif" font-size="11.5" font-weight="800" text-anchor="middle">२१ पाठों में प्रत्येक पाठ का संपूर्ण संपुट चक्र (Full Cycle for Each Recital)</text>
+
+    <!-- Part 1: Initial Samput Verse -->
+    <g transform="translate(20, 38)">
+      <rect width="472" height="60" rx="6" fill="#fdf2f8" stroke="#f43f5e" stroke-width="1.2"/>
+      <text x="236" y="22" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#be185d" text-anchor="middle">१. आदि संपुट श्लोक (Opening Samput Verse)</text>
+      <text x="236" y="40" font-family="'Noto Serif Devanagari', serif" font-size="10" font-weight="700" fill="#1e293b" text-anchor="middle">“पत्नीं मनोरमां देहि मनोवृत्तानुसारिणीम् ।</text>
+      <text x="236" y="54" font-family="'Noto Serif Devanagari', serif" font-size="10" font-weight="700" fill="#1e293b" text-anchor="middle">तारिणीं दुर्गसंसारसागरस्य कुलोद्भवाम् ॥”</text>
+    </g>
+
+    <!-- Arrow Down -->
+    <text x="256" y="112" font-size="14" font-weight="900" fill="#b45309" text-anchor="middle">⬇</text>
+
+    <!-- Part 2: Core Ath Mantra (Navarna & Beeja Sparks) -->
+    <g transform="translate(20, 118)">
+      <rect width="472" height="75" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1.4"/>
+      <text x="236" y="20" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#b91c1c" text-anchor="middle">२. अथ मन्त्रः (Core Kunjika Navarna Beeja Mantras)</text>
+      <text x="236" y="38" font-family="'Noto Serif Devanagari', serif" font-size="10.5" font-weight="800" fill="#78350f" text-anchor="middle">ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे।</text>
+      <text x="236" y="53" font-family="'Noto Serif Devanagari', serif" font-size="9" font-weight="700" fill="#1e293b" text-anchor="middle">ॐ ग्लौं हुं क्लीं जूं सः ज्वालय ज्वालय ज्वल ज्वल प्रज्वल प्रज्वल</text>
+      <text x="236" y="68" font-family="'Noto Serif Devanagari', serif" font-size="9" font-weight="700" fill="#dc2626" text-anchor="middle">ऐं ह्रीं क्लीं चामुण्डायै विच्चे ज्वल हं सं लं क्षं फट् स्वाहा॥</text>
+    </g>
+
+    <!-- Arrow Down -->
+    <text x="256" y="205" font-size="14" font-weight="900" fill="#b45309" text-anchor="middle">⬇</text>
+
+    <!-- Part 3: Iti Mantra & Stotra Verses -->
+    <g transform="translate(20, 212)">
+      <rect width="472" height="60" rx="6" fill="#fefce8" stroke="#ca8a04" stroke-width="1.2"/>
+      <text x="236" y="20" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#854d0e" text-anchor="middle">३. इति मन्त्रः (स्तवन एवं बीज स्तुति - श्लोक 5 से 11)</text>
+      <text x="236" y="38" font-family="'Noto Serif Devanagari', serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">नमस्ते रुद्ररूपिण्यै... ऐङ्कारी सृष्टिरूपायै... धां धीं धूं धूर्जटेः पत्नी...</text>
+      <text x="236" y="52" font-family="'Noto Serif Devanagari', serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">पां पीं पूं पार्वती पूर्णा... सां सीं सूं सप्तशती देव्या मंत्रसिद्धिं कुरूष्व मे॥</text>
+    </g>
+
+    <!-- Arrow Down -->
+    <text x="256" y="284" font-size="14" font-weight="900" fill="#b45309" text-anchor="middle">⬇</text>
+
+    <!-- Part 4: Closing Samput Verse -->
+    <g transform="translate(20, 290)">
+      <rect width="472" height="60" rx="6" fill="#fdf2f8" stroke="#f43f5e" stroke-width="1.2"/>
+      <text x="236" y="22" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="900" fill="#be185d" text-anchor="middle">४. अंत संपुट श्लोक (Closing Samput Verse)</text>
+      <text x="236" y="40" font-family="'Noto Serif Devanagari', serif" font-size="10" font-weight="700" fill="#1e293b" text-anchor="middle">“पत्नीं मनोरमां देहि मनोवृत्तानुसारिणीम् ।</text>
+      <text x="236" y="54" font-family="'Noto Serif Devanagari', serif" font-size="10" font-weight="700" fill="#1e293b" text-anchor="middle">तारिणीं दुर्गसंसारसागरस्य कुलोद्भवाम् ॥”</text>
+    </g>
+  </g>
+
+  <!-- Marriage Sankalpa Focus Box -->
+  <g transform="translate(24, 468)">
+    <rect width="512" height="160" rx="8" fill="#ffffff" stroke="#e11d48" stroke-width="1.4"/>
+    <rect width="512" height="26" rx="8" fill="#9f1239"/>
+    <text x="256" y="18" fill="#ffffff" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" text-anchor="middle">★ शीघ्र विवाह एवं सुयोग्य जीवनसाथी संकल्प सूत्र (Marriage Siddhi Sankalpa) ★</text>
+
+    <text x="20" y="46" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#9f1239">उद्देश्य:</text>
+    <text x="65" y="46" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">माँ भगवती की कृपा से शीघ्र, अनुकूल, सुलक्षणा एवं धर्मपरायण जीवनसाथी की प्राप्ति।</text>
+
+    <text x="20" y="68" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#9f1239">अवधि विकल्प:</text>
+    <text x="100" y="68" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">२१ पाठ नित्य • ७ दिन का लघु अनुष्ठान अथवा ४१ दिन का पूर्ण महा-अनुष्ठान।</text>
+
+    <text x="20" y="90" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#9f1239">शिव उवाच नियम:</text>
+    <text x="115" y="90" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">‘शिव उवाच’ एवं ‘फलश्रुति’ केवल प्रथम (1st) व अंतिम (21st) पाठ में ही पढ़ें।</text>
+
+    <text x="20" y="112" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#9f1239">मध्यवर्ती १९ पाठ:</text>
+    <text x="115" y="112" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="600" fill="#1e293b">पाठ २ से २० तक केवल संपुट + अथ मन्त्र + इति मन्त्र + संपुट का आवर्तन करें।</text>
+
+    <rect x="15" y="125" width="482" height="26" rx="4" fill="#fff1f2"/>
+    <text x="256" y="142" font-family="'Kohinoor Devanagari', sans-serif" font-size="8.8" font-weight="700" fill="#be185d" text-anchor="middle">आसन उत्थापन: पाठोपरांत ॐ शक्राय नमः। ॐ इन्द्राय नमः बोलकर जल माथे पर लगाएं।</text>
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="24" y="638" width="512" height="110" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="660" font-family="'Noto Serif Devanagari', serif" font-size="11" font-weight="800" fill="#334155" text-anchor="middle">★ संपुट साधना का गोपनीय तंत्र विज्ञान ★</text>
+  <text x="280" y="680" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">• जैसे दोनों ओर से ढक्कन बंद करने पर पात्र में रखी वस्तु सुरक्षित रहती है, वैसे ही संपुट से मंत्र-ऊर्जा बंधी रहती है</text>
+  <text x="280" y="700" font-family="'Kohinoor Devanagari', sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">• यह प्रयोग वैवाहिक बाधा, मांगलिक दोष एवं विवाह में अनावश्यक विलंब का शत-प्रतिशत निवारण करता है</text>
+  <text x="280" y="720" font-family="'Kohinoor Devanagari', sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">स्रोत: तंत्र साधना सिद्धि महाग्रंथ • प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे</text>
+</svg>

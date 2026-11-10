@@ -78,5 +78,14 @@ class PDFTestingPillar(unittest.TestCase):
         self.assertIn("Bhrigu", full_text)
         self.assertIn("Nandi", full_text)
 
+    def test_04_vedic_astrology_mahagranth_pdf_panchang_content(self):
+        fpath = os.path.join(BASE_DIR, "tantra-gyan-vedic-jyotish-mahagranth.pdf")
+        reader = pypdf.PdfReader(fpath)
+        self.assertGreaterEqual(len(reader.pages), 30, "Vedic Astrology Mahagranth PDF must have full book pagination")
+        
+        full_text = "".join(p.extract_text() or "" for p in reader.pages)
+        self.assertIn("Tantra Gyan", full_text)
+        self.assertIn("Ashutosh", full_text)
+
 if __name__ == "__main__":
     unittest.main()
