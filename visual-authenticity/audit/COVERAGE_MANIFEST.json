@@ -1,0 +1,33 @@
+{
+  "repository": "TantraGyan",
+  "auditDate": "2026-11-21",
+  "scanner": "Visual Authenticity Engine (Impeccable 4.10.0)",
+  "scannedFiles": [
+    "css/book.css",
+    "css/tables.css",
+    "index.html",
+    "reader.html",
+    "bnn.html",
+    "bnn-reader.html",
+    "sadhana-reader.html",
+    "tantra-sadhana-siddhi.html"
+  ],
+  "protectedFiles": [
+    "tantra-gyan-vedic-jyotish-mahagranth.pdf",
+    "bhrigu-nandi-nadi-karma-samyojan.pdf",
+    "tantra-sadhana-siddhi-protocol.pdf",
+    "astrology-book.pdf",
+    "js/sound.js",
+    "js/sounds-data.js",
+    "js/book-engine.js",
+    "js/book-ui.js",
+    "tables_data.py"
+  ],
+  "findingsSummary": {
+    "sideTabBorders": 100,
+    "gradientText": 2,
+    "radialSpotlightGlow": 2,
+    "darkGlowShadows": 20,
+    "lowContrast": 110
+  }
+}

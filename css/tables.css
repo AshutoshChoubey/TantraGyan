@@ -211,7 +211,6 @@
 .rule-card {
   background: var(--page-bg);
   border: 1px solid var(--page-border);
-  border-left: 4px solid var(--accent-gold);
   border-radius: 8px;
   padding: 1.25rem 1.35rem;
   margin: 1.25rem 0;
@@ -550,9 +549,8 @@
    6. Medical Astrology Diagnosis & Organ Anatomy Callouts
    -------------------------------------------------------------------------- */
 .med-diagnosis-box {
-  background: rgba(220, 38, 38, 0.04);
-  border: 1px solid rgba(220, 38, 38, 0.25);
-  border-left: 4px solid var(--accent-crimson);
+  background: rgba(220, 38, 38, 0.05);
+  border: 1px solid rgba(220, 38, 38, 0.35);
   border-radius: 8px;
   padding: 1.25rem 1.35rem;
   margin: 1.35rem 0;
