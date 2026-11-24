@@ -21,6 +21,7 @@ READER_TEMPLATE_SRC = PROJECT_ROOT / "reader.html"
 OUTPUT_READER = PROJECT_ROOT / "kundali-ganita-reader.html"
 OUTPUT_WEB = PROJECT_ROOT / "kundali-ganita.html"
 OUTPUT_PRINT = PROJECT_ROOT / "kundali-ganita-print.html"
+OUTPUT_PDF = PROJECT_ROOT / "kundali-ganita-vichar-mahagranth.pdf"
 
 print("=" * 80)
 print("🕉️ Building Flagship Vol 4: वैदिक कुण्डली विचार एवं गणित महाग्रंथ")
@@ -1288,307 +1289,78 @@ def build_pages():
 
     return pages
 
-pages_list = build_pages()
-print(f"Generated {len(pages_list)} rich pages for Kundali Ganita Vichar Mahagranth.")
+def main():
+    pages_list = build_pages()
+    print(f"Generated {len(pages_list)} rich pages for Kundali Ganita Vichar Mahagranth.")
 
-# 1. Assemble kundali-ganita-reader.html using exact structure from reader.html
-with open(READER_TEMPLATE_SRC, "r", encoding="utf-8") as f:
-    template_lines = f.readlines()
+    # 1. Assemble kundali-ganita-reader.html using exact structure from reader.html
+    with open(READER_TEMPLATE_SRC, "r", encoding="utf-8") as f:
+        template_lines = f.readlines()
 
-first_art_idx = next(i for i, l in enumerate(template_lines) if '<article class="book-page-data"' in l)
-last_art_idx = next(i for i in range(len(template_lines)-1, -1, -1) if '</article>' in template_lines[i])
+    first_art_idx = next(i for i, l in enumerate(template_lines) if '<article class="book-page-data"' in l)
+    last_art_idx = next(i for i in range(len(template_lines)-1, -1, -1) if '</article>' in template_lines[i])
 
-reader_top = "".join(template_lines[:first_art_idx])
-reader_bot = "".join(template_lines[last_art_idx+1:])
+    reader_top = "".join(template_lines[:first_art_idx])
+    reader_bot = "".join(template_lines[last_art_idx+1:])
 
-# Customize reader top metadata
-reader_top = reader_top.replace(
-    "<title>वैदिक ज्योतिष महाग्रंथ सरलीकृत | Complete Vedic Astrology Compendium Simplified</title>",
-    "<title>वैदिक कुण्डली विचार एवं गणित महाग्रंथ (3D फ्लिप बुक) • The Cosmic Algorithm 3D Reader</title>"
-)
-reader_top = reader_top.replace(
-    'title="वैदिक ज्योतिष महाग्रंथ मुखपृष्ठ"',
-    'title="वैदिक कुण्डली विचार एवं गणित महाग्रंथ"'
-)
-reader_top = reader_top.replace(
-    'तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ',
-    'वैदिक कुण्डली विचार एवं गणित महाग्रंथ (The Cosmic Algorithm)'
-)
-reader_top = reader_top.replace('p > 88', 'p > 40')
-reader_top = reader_top.replace("localStorage.getItem('tantra_book_page')", "localStorage.getItem('tantra_ganita_flip_page')")
-reader_top = reader_top.replace("localStorage.setItem('tantra_book_page'", "localStorage.setItem('tantra_ganita_flip_page'")
-reader_top = reader_top.replace('max="100"', 'max="40"')
-reader_top = reader_top.replace('href="astrology-book-engine/dist/web/index.html"', 'href="kundali-ganita.html"')
-reader_top = reader_top.replace('href="tantra-gyan-vedic-jyotish-mahagranth.pdf"', 'href="kundali-ganita-vichar-mahagranth.pdf"')
-reader_top = reader_top.replace('download="Tantra-Gyan-Vedic-Jyotish-Maha-Granth.pdf"', 'download="Kundali-Ganita-Vichar-Mahagranth.pdf"')
-reader_top = reader_top.replace("Page 1 of 100", "Page 1 of 40")
+    # Customize reader top metadata
+    reader_top = reader_top.replace(
+        "<title>वैदिक ज्योतिष महाग्रंथ सरलीकृत | Complete Vedic Astrology Compendium Simplified</title>",
+        "<title>वैदिक कुण्डली विचार एवं गणित महाग्रंथ (3D फ्लिप बुक) • The Cosmic Algorithm 3D Reader</title>"
+    )
+    reader_top = reader_top.replace(
+        'title="वैदिक ज्योतिष महाग्रंथ मुखपृष्ठ"',
+        'title="वैदिक कुण्डली विचार एवं गणित महाग्रंथ"'
+    )
+    reader_top = reader_top.replace(
+        'तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ',
+        'वैदिक कुण्डली विचार एवं गणित महाग्रंथ (The Cosmic Algorithm)'
+    )
+    reader_top = reader_top.replace('p > 88', 'p > 40')
+    reader_top = reader_top.replace("localStorage.getItem('tantra_book_page')", "localStorage.getItem('tantra_ganita_flip_page')")
+    reader_top = reader_top.replace("localStorage.setItem('tantra_book_page'", "localStorage.setItem('tantra_ganita_flip_page'")
+    reader_top = reader_top.replace('max="100"', 'max="40"')
+    reader_top = reader_top.replace('href="astrology-book-engine/dist/web/index.html"', 'href="kundali-ganita.html"')
+    reader_top = reader_top.replace('href="tantra-gyan-vedic-jyotish-mahagranth.pdf"', 'href="kundali-ganita-vichar-mahagranth.pdf"')
+    reader_top = reader_top.replace('download="Tantra-Gyan-Vedic-Jyotish-Maha-Granth.pdf"', 'download="Kundali-Ganita-Vichar-Mahagranth.pdf"')
+    reader_top = reader_top.replace("Page 1 of 100", "Page 1 of 40")
 
-# Write out kundali-ganita-reader.html
-with open(OUTPUT_READER, "w", encoding="utf-8") as f:
-    f.write(reader_top)
-    for p in pages_list:
-        f.write(p)
-    f.write(reader_bot)
+    # Inject prominent navigation buttons into the 3D Reader header
+    custom_nav = '''
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-left:auto;">
+            <a href="kundali-ganita.html" class="reader-nav-btn" title="सम्पूर्ण वेब संस्करण पढ़ें" style="background:#059669; color:#fff; padding:0.35rem 0.85rem; border-radius:6px; font-size:0.78rem; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:0.3rem;">🌐 वेब संस्करण</a>
+            <a href="kundali-ganita-vichar-mahagranth.pdf" class="reader-nav-btn" download title="मास्टर PDF डाउनलोड करें" style="background:#0284c7; color:#fff; padding:0.35rem 0.85rem; border-radius:6px; font-size:0.78rem; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:0.3rem;">📥 मास्टर PDF</a>
+            <a href="media/concept_animations/3d_ephemeris_simulation.html" target="_blank" class="reader-nav-btn" title="3D खगोलीय सिमुलेशन" style="background:rgba(255,255,255,0.12); color:#e2e8f0; border:1px solid #10b981; padding:0.35rem 0.85rem; border-radius:6px; font-size:0.78rem; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:0.3rem;">🌌 3D सिमुलेशन</a>
+          </div>
+    '''
+    if '<button id="btn-toggle-sound"' in reader_top:
+        reader_top = reader_top.replace('<button id="btn-toggle-sound"', custom_nav + '\n      <button id="btn-toggle-sound"')
 
-print(f"✓ Created 3D Interactive Flipbook Reader: {OUTPUT_READER}")
+    # Write out kundali-ganita-reader.html
+    with open(OUTPUT_READER, "w", encoding="utf-8") as f:
+        f.write(reader_top)
+        for p in pages_list:
+            f.write(p)
+        f.write(reader_bot)
 
-# 2. Assemble kundali-ganita.html (Standalone Web Presentation Edition)
-web_content = f'''<!DOCTYPE html>
-<html lang="hi" data-theme="parchment">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>वैदिक कुण्डली विचार एवं गणित महाग्रंथ: खगोलीय सूत्र, 16 वर्ग चक्र एवं फलित संयोजन • The Cosmic Algorithm</title>
-  
-  <meta name="description" content="वैदिक कुण्डली विचार एवं गणित महाग्रंथ (The Cosmic Algorithm) by ज्योतिषाचार्य आशुतोष कुमार चौबे। स्विस एफेमेरिस, 120-वर्षीय विंशोत्तरी दशा, 337 अष्टकवर्ग बिंदु एवं 85 विवाह नियमों का सम्पूर्ण संदर्भ-ग्रंथ।">
-  <meta name="keywords" content="Vedic Kundali Ganita, Cosmic Algorithm, Vedic Astrology Calculations, Ephemeris, Vimshottari Dasha, Ashtakavarga, 16 Varga Charts, Jaimini, BNN, Ashutosh Kumar Choubey, Tantra Gyan">
-  <meta name="author" content="Ashutosh Kumar Choubey">
-  <meta name="robots" content="index, follow">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="canonical" href="https://t.worldgyan.com/kundali-ganita.html">
+    print(f"✓ Created 3D Interactive Flipbook Reader: {OUTPUT_READER}")
 
-  <meta property="og:site_name" content="तंत्र ज्ञान (Tantra Gyan)">
-  <meta property="og:title" content="वैदिक कुण्डली विचार एवं गणित महाग्रंथ • The Cosmic Algorithm">
-  <meta property="og:description" content="स्विस एफेमेरिस, 120-वर्षीय विंशोत्तरी दशा, 337 अष्टकवर्ग बिंदु एवं 85 विवाह नियमों का सम्पूर्ण ग्रंथ। लेखक: ज्योतिषाचार्य आशुतोष कुमार चौबे।">
-  <meta property="og:type" content="book">
-  <meta property="og:url" content="https://t.worldgyan.com/kundali-ganita.html">
+    # 2. Build Massive Web Presentation Edition, Print Media Layout & Vector PDF
+    sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
+    from build_exhaustive_kundali_ganita_content import build_master_publications
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@500;600;700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/tables.css?v=5.0">
+    build_master_publications(
+        output_web=OUTPUT_WEB,
+        output_print=OUTPUT_PRINT,
+        output_pdf=OUTPUT_PDF,
+        output_reader=OUTPUT_READER,
+        reader_src=READER_TEMPLATE_SRC,
+        pages_list=pages_list
+    )
 
-  <style>
-    :root {{
-      --bg-base: #faf6ee;
-      --bg-surface: #ffffff;
-      --bg-card: #fffdf9;
-      --page-bg: #faf6ee;
-      --page-border: #ded2b2;
-      --border-emerald: #10b981;
-      --accent-emerald: #059669;
-      --accent-cyan: #0284c7;
-      --accent-gold: #c89d3d;
-      --text-main: #1c1917;
-      --text-muted: #57534e;
-      --text-heading: #065f46;
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 10px 30px rgba(5, 150, 105, 0.08);
-      --font-body: 'Poppins', 'Noto Sans Devanagari', -apple-system, sans-serif;
-      --font-heading: 'Noto Serif Devanagari', 'Cinzel', Georgia, serif;
-    }}
-    body {{
-      margin: 0;
-      padding: 0;
-      background: var(--bg-base);
-      color: var(--text-main);
-      font-family: var(--font-body);
-      line-height: 1.7;
-    }}
-    .site-header {{
-      background: #090d16;
-      color: #fff;
-      padding: 1rem 1.5rem;
-      border-bottom: 2px solid var(--border-emerald);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }}
-    .site-logo {{
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: #34d399;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }}
-    .btn-action {{
-      background: linear-gradient(135deg, #059669, #0284c7);
-      color: #fff;
-      padding: 0.5rem 1.2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }}
-    .hero-banner {{
-      background: radial-gradient(circle at center, #0f291e 0%, #090d16 100%);
-      color: #fff;
-      text-align: center;
-      padding: 3.5rem 1.5rem 2.5rem 1.5rem;
-      border-bottom: 1px solid rgba(16, 185, 129, 0.3);
-    }}
-    .hero-title {{
-      font-family: var(--font-heading);
-      font-size: 2.3rem;
-      font-weight: 900;
-      color: #34d399;
-      margin: 0.8rem 0 0.4rem 0;
-      line-height: 1.3;
-    }}
-    .container {{
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem;
-    }}
-    .chapter-card {{
-      background: var(--bg-surface);
-      border: 1px solid var(--page-border);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
-      box-shadow: var(--shadow-sm);
-    }}
-    .chapter-title {{
-      font-family: var(--font-heading);
-      font-size: 1.45rem;
-      color: var(--accent-emerald);
-      margin-top: 0;
-      border-bottom: 2px solid rgba(16, 185, 129, 0.2);
-      padding-bottom: 0.6rem;
-    }}
-    .story-callout {{
-      background: rgba(2, 132, 199, 0.08);
-      border-left: 4px solid var(--accent-cyan);
-      padding: 1rem 1.2rem;
-      border-radius: 6px;
-      margin: 1.2rem 0;
-    }}
-    .takeaway-box {{
-      background: rgba(5, 150, 105, 0.08);
-      border: 1px solid var(--border-emerald);
-      border-radius: 8px;
-      padding: 1rem 1.2rem;
-      margin: 1.2rem 0;
-    }}
-  </style>
-</head>
-<body>
-  <header class="site-header">
-    <a href="index.html" class="site-logo">
-      <img src="assets/yantra.svg" width="28" height="28" alt="Yantra">
-      तंत्र ज्ञान • Tantra Gyan
-    </a>
-    <div style="display:flex; gap:0.8rem;">
-      <a href="kundali-ganita-reader.html" class="btn-action">📖 3D फ्लिप बुक खोलें</a>
-      <a href="index.html" class="btn-action" style="background:#1e293b;">🏠 मुख्य पृष्ठ</a>
-    </div>
-  </header>
+    print("=" * 80)
+    print("🎉 Flagship Vol 4 Exhaustive Generation Successfully Completed!")
+    print("=" * 80)
 
-  <section class="hero-banner">
-    <div style="display:inline-block; padding:0.3rem 1rem; background:rgba(5, 150, 105, 0.25); border:1px solid #10b981; border-radius:20px; color:#34d399; font-size:0.85rem; font-weight:700;">
-      👑 FLAGSHIP VOL 4 • THE MASTER COMPENDIUM
-    </div>
-    <h1 class="hero-title">वैदिक कुण्डली विचार एवं गणित महाग्रंथ</h1>
-    <div style="font-size:1.2rem; color:#7dd3fc; font-weight:600; margin-bottom:0.5rem;">The Cosmic Algorithm: Vedic Horoscope Mathematics & Destiny Decoded</div>
-    <p style="font-size:0.95rem; color:#cbd5e1; max-width:680px; margin:0 auto 1.5rem auto; line-height:1.7;">
-      खगोलीय सूत्र, 16 वर्ग चक्र, 337 अष्टकवर्ग बिंदु, 120-वर्षीय विंशोत्तरी दशा एवं 85 विवाह नियमों का सम्पूर्ण प्रामाणिक संदर्भ-ग्रंथ।
-    </p>
-    <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
-      <a href="kundali-ganita-reader.html" class="btn-action" style="font-size:1rem; padding:0.7rem 1.8rem;">📖 3D डिजिटल पाठक में पढ़ें</a>
-      <a href="kundali-ganita-vichar-mahagranth.pdf" download class="btn-action" style="font-size:1rem; padding:0.7rem 1.8rem; background:rgba(255,255,255,0.15); border:1px solid #10b981;">📥 सम्पूर्ण PDF डाउनलोड</a>
-    </div>
-  </section>
-
-  <main class="container">
-    <!-- Chapter 1 -->
-    <article class="chapter-card" id="ch1">
-      <h2 class="chapter-title">अध्याय १: खगोलीय आधार, लग्न स्थिति एवं अयनांश गणित</h2>
-      <div class="story-callout">
-        <strong style="color:#0369a1;">📖 रोचक कथा: ब्रह्मांड की कभी न रुकने वाली घड़ी</strong>
-        <p style="margin:0.4rem 0 0 0; font-size:0.92rem; color:#334155;">
-          मानव कैलेंडरों में लीप वर्ष और विभिन्न महीनों के दिन बदलते रहते हैं, लेकिन खगोलशास्त्र 4713 ईसा पूर्व से हर दिन को निरंतर गिनता है जिसे 'जूलियन डे' (Julian Day) कहा जाता है। आपके जन्म का समय उस महा-घड़ी पर ठीक 24,49,653 दिन 10 घंटे था!
-        </p>
-      </div>
-      <p>
-        वैदिक ज्योतिष सायन (पश्चिमी) के स्थान पर निरयण (Sidereal) चक्र पर आधारित है। पृथ्वी की धुरी के धीमे झुकाव (Precession) के कारण उत्पन्न अयनांश (Lahiri Ayanamsha) को घटाकर शुद्ध आकाशीय स्थिति प्राप्त की जाती है।
-      </p>
-      {get_diamond_chart_svg()}
-      <div class="takeaway-box">
-        <strong style="color:#065f46;">✨ फलित निष्कर्ष:</strong>
-        <p style="margin:0.4rem 0 0 0; font-size:0.92rem; color:#334155;">
-          लग्न पूर्व क्षितिज की वह खिड़की है जिससे नवजात शिशु ब्रह्मांड को देखता है। जातक का कन्या लग्न (09°21') में बुध अपनी उच्च राशि में बैठकर भद्र महापुरुष योग का निर्माण कर रहा है।
-        </p>
-      </div>
-    </article>
-
-    <!-- Chapter 2 -->
-    <article class="chapter-card" id="ch2">
-      <h2 class="chapter-title">अध्याय २: पंचांग रहस्य — काल के पांच दिव्य अंग</h2>
-      {get_panchanga_svg()}
-      <div class="story-callout">
-        <strong style="color:#0369a1;">📖 रोचक कथा: काल-पुरुष के पांच पावन हाथ</strong>
-        <p style="margin:0.4rem 0 0 0; font-size:0.92rem; color:#334155;">
-          पंचांग पांच तत्वों का समन्वय है—तिथि (जल), वार (अग्नि), नक्षत्र (वायु), योग (आकाश) और करण (पृथ्वी)। जब ये पांचों संतुलित होते हैं, तो साधारण कार्य भी महान सिद्धि में बदल जाता है।
-        </p>
-      </div>
-    </article>
-
-    <!-- Chapter 3 -->
-    <article class="chapter-card" id="ch3">
-      <h2 class="chapter-title">अध्याय ३: 120-वर्षीय विंशोत्तरी दशा चक्र</h2>
-      {get_dasha_tree_svg()}
-      <div class="story-callout">
-        <strong style="color:#0369a1;">📖 रोचक कथा: 9 ग्रहों की रिले दौड़</strong>
-        <p style="margin:0.4rem 0 0 0; font-size:0.92rem; color:#334155;">
-          120 वर्ष की मानव आयु 9 ग्रहों के मंत्रालयों में बंटी है। जन्म समय चंद्रमा पुष्य नक्षत्र में होने से जातक के बचपन की कमान न्यायधीश शनि देव के हाथों में 4 वर्ष 11 माह रही, जिसके बाद 17 वर्ष बुध महादशा का विद्या-साम्राज्य प्रारंभ हुआ।
-        </p>
-      </div>
-    </article>
-
-    <!-- Chapter 4 -->
-    <article class="chapter-card" id="ch4">
-      <h2 class="chapter-title">अध्याय ४: पराशरी महायोग एवं नीचभंग राजयोग</h2>
-      <p>
-        केंद्र (विष्णु स्तंभ 1, 4, 7, 10) और त्रिकोण (लक्ष्मी स्थान 1, 5, 9) का संगम ही राजयोग कहलाता है। जातक की कुण्डली में तुला राशि में नीच का सूर्य बैठा है, लेकिन उसकी राशि का स्वामी शुक्र चंद्रमा से केंद्र में उच्च के गुरु से दृष्ट होने के कारण पूर्ण नीचभंग राजयोग सिद्ध करता है।
-      </p>
-    </article>
-
-    <!-- Chapter 5 -->
-    <article class="chapter-card" id="ch5">
-      <h2 class="chapter-title">अध्याय ५: अष्टकवर्ग 337 बिंदु एवं कक्षी गोचर विज्ञान</h2>
-      {get_ashtakavarga_svg()}
-      <p>
-        337 शुभ बिंदुओं का 12 भावों में औसत 28 बिंदु होता है। 28 या अधिक बिंदु वाले भाव में जब कोई ग्रह गोचर करता है, तो बिना किसी बाधा के प्रचुर लाभ और सफलता मिलती है।
-      </p>
-    </article>
-
-    <!-- Chapter 6 -->
-    <article class="chapter-card" id="ch6">
-      <h2 class="chapter-title">अध्याय ६: 16 वर्ग कुण्डलियाँ (D1 से D60)</h2>
-      <p>
-        D9 नवांश दांपत्य व धर्म का सूक्ष्म चक्र है, D10 दशमांश आजीविका का चक्र है, और D60 षष्ट्यंश पूर्वजन्म के संचित कर्मों का अंतिम निर्णायक है।
-      </p>
-    </article>
-
-    <!-- Chapter 7-13 Summary -->
-    <article class="chapter-card" id="ch7-13">
-      <h2 class="chapter-title">अध्याय ७ से १३: जैमिनी, गोचर, विवाह एवं मुहूर्त महा-संग्रह</h2>
-      <p>
-        जैमिनी के 7 चर कारक, भृगु नंदी नाड़ी के 4 दिशा त्रिकोण, शनि की साढ़े साती के 3 चरण, विवाह के 85 पराशरी नियम, 16 मांगलिक परिहार, 36 गुण मिलान एवं 100-अंक अरिष्ट भंग सुरक्षा कवच का संपूर्ण वैज्ञानिक विवेचन।
-      </p>
-      <div style="text-align:center; margin-top:2rem;">
-        <a href="kundali-ganita-reader.html" class="btn-action" style="font-size:1.1rem; padding:0.8rem 2.2rem;">
-          📖 3D इंटरैक्टिव फ्लिप बुक में संपूर्ण 40 पृष्ठ पढ़ें
-        </a>
-      </div>
-    </article>
-  </main>
-</body>
-</html>'''
-
-with open(OUTPUT_WEB, "w", encoding="utf-8") as f:
-    f.write(web_content)
-
-print(f"✓ Created Complete Web Presentation Edition: {OUTPUT_WEB}")
-
-print("=" * 80)
-print("🎉 Flagship Vol 4 Generation Successfully Completed!")
-print("=" * 80)
+if __name__ == "__main__":
+    main()

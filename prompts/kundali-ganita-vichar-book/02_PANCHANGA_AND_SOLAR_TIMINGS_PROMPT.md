@@ -36,7 +36,7 @@
 - **Point-to-Point Steps:**
   - Why is Tithi 12 degrees? Because the Moon runs faster than the Sun; every time the Moon pulls 12 degrees ahead, one lunar day is born!
   - What happens during Vishti (Bhadra) Karana? Why do ancient texts advise pausing major financial celebrations during Bhadra?
-  - Step-by-step calculation for Native Ashutosh: Moon at $103.17^\circ$, Sun at $190.48^\circ \implies \theta = 272.70^\circ \implies$ Krishna Ashtami (Jaya Tithi, ruled by Shiva/Rudra).
+  - Step-by-step calculation for Benchmark Native 'Alpha' (जातक 'क'): Moon at $103.17^\circ$, Sun at $190.48^\circ \implies \theta = 272.70^\circ \implies$ Krishna Ashtami (Jaya Tithi, ruled by Shiva/Rudra).
 
 ---
 

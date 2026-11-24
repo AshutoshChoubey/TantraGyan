@@ -16,7 +16,7 @@
    - **Part 1: The Real-Life Story / Parable (रोचक कथा एवं लौकिक दृष्टांत):** A vivid real-world metaphor (e.g. 12 rooms of a royal palace, travelers carrying baggage, clockwork pendulums) establishing the core concept.
    - **Part 2: The Cosmic Rule in Plain Words (सरल शब्दों में ब्रह्मांडीय नियम):** Plain, conversational explanation without jargon.
    - **Part 3: Step-by-Step Simple Math (कदम-दर-कदम सरल अंकगणित):** Elementary school addition, subtraction, division, and modulo operations. No intimidating Greek letters without immediate simple translations.
-   - **Part 4: Real Worked Kundali Example (सटीक कुण्डली गणना उदाहरण):** Concrete calculation demonstrated using the benchmark native chart (Ashutosh: 28 Oct 1994, 03:45 AM IST, Garhwa Jharkhand).
+   - **Part 4: Real Worked Kundali Example (सटीक कुण्डली गणना उदाहरण):** Concrete calculation demonstrated using the benchmark native chart (जातक 'क' / Reference Native Alpha: 28 Oct 1994, 03:45 AM IST, Garhwa Jharkhand).
    - **Part 5: Visual SVG Diagram / Chart (सटीक वैदिक डायग्राम एवं सारणी):** Visual mapping, North Indian diamond chart, or comparison matrix.
    - **Part 6: Life Application & Predictive Takeaway (जीवन में फलित प्रभाव एवं उपयोग):** How this formula directly influences career, wealth, health, marriage, and timing of events.
 

@@ -34,7 +34,7 @@
   1. What is Julian Day? Simply counting every single day continuously since 4713 BCE so astronomers never get confused by leap years and changing calendars!
   2. What is Ayanamsha? The slow, gentle wobble of Earth's axis (precession) like a spinning top, slipping roughly $1^\circ$ every 72 years.
   3. What is Lagna? The exact eastern zodiac sign rising on the horizon at the first breath of life—the lens through which the native views the universe.
-  4. Worked calculations using Native Ashutosh ($JD = 2449653.427$, Lahiri $= 23^\circ 47'$, Virgo Lagna at $09^\circ 21'$ Uttara Phalguni Pada 4).
+  4. Worked calculations using Benchmark Native 'Alpha' (जातक 'क': $JD = 2449653.427$, Lahiri $= 23^\circ 47'$, Virgo Lagna at $09^\circ 21'$ Uttara Phalguni Pada 4).
 
 ---
 

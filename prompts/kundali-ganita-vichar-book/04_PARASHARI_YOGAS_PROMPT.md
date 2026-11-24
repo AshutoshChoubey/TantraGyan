@@ -34,7 +34,7 @@
   Explain Neechabhanga: An emperor disguised in rags who encounters an old friend in the royal square—the disguise falls away and the hidden authority shines ten times brighter!
 - **Point-to-Point Steps:**
   1. How to spot a Mahapurusha Yoga in 5 seconds without a calculator.
-  2. Worked example from Native Ashutosh: Mercury in Virgo in 1st house $\implies$ **Bhadra Yoga**; Sun debilitated in Libra in 2nd house cancelled by Venus exalted in Pisces in Kendra (7th from Moon) $\implies$ **Neechabhanga Raja Yoga**!
+  2. Worked example from Benchmark Native 'Alpha' (जातक 'क'): Mercury in Virgo in 1st house $\implies$ **Bhadra Yoga**; Sun debilitated in Libra in 2nd house cancelled by Venus exalted in Pisces in Kendra (7th from Moon) $\implies$ **Neechabhanga Raja Yoga**!
 
 ---
 

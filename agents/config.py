@@ -38,10 +38,10 @@ class BookConfig:
     output_html_web: str = "kundali-ganita.html"
     output_pdf_file: str = "kundali-ganita-vichar-mahagranth.pdf"
 
-    # Reference Native Profile for Worked Examples
+    # Reference Native Profile for Worked Examples (Anonymized Benchmark Case Study)
     reference_native: Dict[str, Any] = field(
         default_factory=lambda: {
-            "name": "Ashutosh",
+            "name": "जातक 'क' (आदर्श शोध केस स्टडी / Benchmark Native Alpha)",
             "dob": "28 October 1994",
             "tob": "03:45:00 AM IST",
             "pob": "Garhwa, Jharkhand, India",

@@ -23,7 +23,7 @@
   Picture your 120-year human life journey as a grand relay race passing through 9 different planetary kingdoms. When you take your first breath, the Moon is already midway through a particular constellation—so you inherit whatever time remains on that planet's clock!
 - **Point-to-Point Steps:**
   1. The Moon is your emotional clock: why the exact minute of birth matters so deeply.
-  2. How Pushya Nakshatra puts Saturn in charge of Native Ashutosh's infancy:
+  2. How Pushya Nakshatra puts Saturn in charge of Benchmark Native 'Alpha's (जातक 'क') infancy:
      - Pushya span: $93^\circ 20'$ to $106^\circ 40'$.
      - Moon at $103^\circ 10' 17''$ has traversed $9.838^\circ$ ($73.79\%$), leaving $3.495^\circ$ ($26.21\%$).
      - Remaining balance: $0.2621 \times 19\text{ years} = 4.9806\text{ years} \approx 4\text{ years}, 11\text{ months}, 23\text{ days}$ of Saturn Mahadasha!
