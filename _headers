@@ -18,6 +18,10 @@
   Cache-Control: public, max-age=0, must-revalidate
 /english.html
   Cache-Control: public, max-age=0, must-revalidate
+/kundali-ganita.html
+  Cache-Control: public, max-age=0, must-revalidate
+/kundali-ganita-reader.html
+  Cache-Control: public, max-age=0, must-revalidate
 
 # 2. Service Worker (Never cache long term, allow root scope)
 /sw.js

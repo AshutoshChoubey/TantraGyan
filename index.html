@@ -521,6 +521,36 @@
       box-shadow: 0 4px 10px rgba(220, 38, 38, 0.5);
     }
 
+    /* Ganita Book 3D Style Variations (Vol 4) */
+    .book-front-cover.ganita-cover {
+      background: linear-gradient(135deg, #064e3b 0%, #022c22 55%, #051c14 100%);
+      border: 2px solid #10b981;
+      box-shadow: 
+        inset 0 0 40px rgba(0, 0, 0, 0.9),
+        inset 0 0 14px rgba(16, 185, 129, 0.45),
+        -5px 10px 30px rgba(0, 0, 0, 0.6);
+    }
+    .book-front-cover.ganita-cover .cover-gold-frame {
+      border: 1px dashed rgba(52, 211, 153, 0.6);
+    }
+    .book-front-cover.ganita-cover .cover-top-emblem {
+      color: #a7f3d0;
+    }
+    .book-front-cover.ganita-cover .cover-en-title {
+      color: #38bdf8;
+    }
+    .book-spine-side.ganita-spine {
+      background: linear-gradient(90deg, #022c22 0%, #064e3b 60%, #041f17 100%);
+      border: 1px solid #059669;
+    }
+    .book-spine-side.ganita-spine .spine-rib {
+      background: #10b981;
+    }
+    .silk-ribbon.ganita-ribbon {
+      background: linear-gradient(to right, #047857, #10b981, #065f46);
+      box-shadow: 0 4px 10px rgba(16, 185, 129, 0.5);
+    }
+
     /* Book Thickness Pages Block */
     .book-pages-side {
       position: absolute;
@@ -1330,6 +1360,12 @@
       border-top-color: #fed7aa;
       border-bottom-color: #450a0a;
     }
+    .flagship-corner-ribbon.emerald {
+      background: linear-gradient(135deg, #065f46 0%, #059669 50%, #34d399 100%);
+      color: #022c22;
+      border-top-color: #a7f3d0;
+      border-bottom-color: #022c22;
+    }
 
     /* 3D Floating Levitation Animations */
     .float-anim-1 {
@@ -1340,6 +1376,9 @@
     }
     .float-anim-3 {
       animation: floatBook3 7.2s ease-in-out 1.6s infinite;
+    }
+    .float-anim-4 {
+      animation: floatBook4 7.6s ease-in-out 2.2s infinite;
     }
 
     @keyframes floatBook1 {
@@ -1366,6 +1405,15 @@
       }
       50% {
         transform: rotateY(-20deg) rotateX(5deg) translateY(-14px);
+      }
+    }
+
+    @keyframes floatBook4 {
+      0%, 100% {
+        transform: rotateY(-18deg) rotateX(7deg) translateY(0px);
+      }
+      50% {
+        transform: rotateY(-21deg) rotateX(4deg) translateY(-15px);
       }
     }
 
@@ -1578,7 +1626,7 @@
         <span class="crest-icon">👑</span>
       </div>
       <h2 class="flagship-main-heading">
-        त्रिविध शास्त्रीय फ्लैगशिप महाग्रंथालय
+        चतुर्विध शास्त्रीय फ्लैगशिप महाग्रंथालय
       </h2>
       <p class="flagship-main-sub">
         ऋषि-परंपरा (पाराशर, भृगु, नंदीश्वर व शिव-शक्ति तंत्र) के सर्वोच्च प्रामाणिक शोध ग्रंथ। प्रत्येक ग्रंथ <strong>3D इंटरएक्टिव फ्लिप बुक</strong>, <strong>Vivliostyle मास्टरपीस वेक्टर PDF</strong>, तथा <strong>डिजिटल वेब पाठक</strong> तीनों प्रारूपों में 100% निःशुल्क एवं खुले अध्ययन हेतु उपलब्ध हैं।
@@ -1609,6 +1657,14 @@
             <span class="tab-title">तंत्र साधना सिद्धि</span>
           </div>
           <span class="tab-badge crimson">36 पृष्ठ • 6 चक्र</span>
+        </a>
+        <a href="#book-ganita" class="flagship-nav-tab" data-target="book-ganita">
+          <span class="tab-icon">📐</span>
+          <div class="tab-info">
+            <span class="tab-vol">FLAGSHIP VOL 4</span>
+            <span class="tab-title">कुण्डली गणित महाग्रंथ</span>
+          </div>
+          <span class="tab-badge emerald">40 पृष्ठ • 13 सूत्र</span>
         </a>
       </div>
     </div>
@@ -2093,6 +2149,166 @@
 
     </article>
 
+    <!-- Featured Hardcover Book Showcase Card 4: Vedic Kundali Ganita Vichar Mahagranth -->
+    <article class="featured-book-card" id="book-ganita" aria-label="वैदिक कुण्डली विचार एवं गणित महाग्रंथ">
+      <div class="flagship-corner-ribbon emerald">👑 FLAGSHIP VOL 4</div>
+      
+      <!-- Left Column: Realistic 3D Hardcover Book Mockup -->
+      <div class="book-3d-wrap">
+        <div class="book-aura-glow emerald-aura"></div>
+        <div class="hardcover-bundle ganita-bundle float-anim-4" onclick="window.location.href='kundali-ganita-reader.html';" title="3D फ्लिप बुक खोलने के लिए क्लिक करें • Click to Open 3D Flip Book">
+          
+          <!-- Book Front Cover -->
+          <div class="book-front-cover ganita-cover">
+            <div class="cover-gold-frame"></div>
+            
+            <div class="cover-top-emblem">॥ श्री गणेशाय नमः • ॐ नमः शिवाय ॥</div>
+            
+            <div class="cover-center-yantra">
+              <svg viewBox="0 0 100 100" width="84" height="84" style="margin:0 auto; display:block; filter: drop-shadow(0 0 10px rgba(16,185,129,0.7));">
+                <circle cx="50" cy="50" r="46" fill="none" stroke="#10b981" stroke-width="2"/>
+                <rect x="22" y="22" width="56" height="56" fill="none" stroke="#38bdf8" stroke-width="1.8"/>
+                <polygon points="50,22 78,50 50,78 22,50" fill="none" stroke="#34d399" stroke-width="2"/>
+                <circle cx="50" cy="50" r="14" fill="#064e3b" stroke="#fde047" stroke-width="1.8"/>
+                <text x="50" y="54" text-anchor="middle" font-size="10.5" fill="#fde047" font-weight="bold">गणित</text>
+              </svg>
+            </div>
+
+            <div>
+              <h3 class="cover-main-title" style="font-size:1.15rem;">कुण्डली विचार एवं गणित महाग्रंथ</h3>
+              <div class="cover-en-title">The Cosmic Algorithm • Equations Decoded</div>
+            </div>
+
+            <div class="cover-author-seal">
+              <span style="color:#6ee7b7;">16 वर्ग चक्र, 337 बिंदु अष्टकवर्ग व दशा</span>
+              <strong style="color:#fef08a;">आचार्य Ashutosh Kumar Choubey</strong>
+              <span style="font-size:0.65rem; color:#a7f3d0; display:block; margin-top:2px;">तंत्र ज्ञान शोध संस्थान • 2026</span>
+            </div>
+          </div>
+
+          <!-- 3D Spine -->
+          <div class="book-spine-side ganita-spine">
+            <div class="spine-rib"></div>
+            <div style="writing-mode:vertical-rl; text-orientation:mixed; color:#6ee7b7; font-size:0.65rem; font-weight:700; letter-spacing:0.1em;">
+              कुण्डली विचार एवं गणित महाग्रंथ
+            </div>
+            <div class="spine-rib"></div>
+          </div>
+
+          <!-- Emerald Silk Bookmark -->
+          <div class="silk-ribbon ganita-ribbon"></div>
+        </div>
+
+        <div class="book-shadow-floor"></div>
+      </div>
+
+      <!-- Right Column: Book Details & The Three Primary Actions -->
+      <div class="book-info-hub">
+        <div class="book-badge-row">
+          <span class="badge-chip gold" style="border-color:#10b981; color:#a7f3d0; background:rgba(5,150,105,0.18);">📐 गणित व फलित मास्टरवर्क • 40 पृष्ठ</span>
+          <span class="badge-chip green">✅ पूर्णतः उपलब्ध • 13 खगोलीय सूत्र</span>
+          <span class="badge-chip gold" style="border-color:#0284c7; color:#bae6fd; background:rgba(2,132,199,0.2);">💎 16 वर्ग चक्र व 337 अष्टकवर्ग</span>
+        </div>
+
+        <h3 class="book-hub-title">वैदिक कुण्डली विचार एवं गणित महाग्रंथ</h3>
+        <div class="book-hub-subtitle">The Cosmic Algorithm • लेखक: ज्योतिषाचार्य आशुतोष कुमार चौबे • तंत्र ज्ञान शोध संस्थान (2026)</div>
+
+        <p class="book-hub-desc">
+          स्विस एफेमेरिस के जूलियन डे से लेकर 16 वर्ग कुण्डलियाँ, 337 बिंदु अष्टकवर्ग, 120-वर्षीय विंशोत्तरी दशा, 85 विवाह नियम एवं 23 जीवन क्षेत्रों के सभी गणना सूत्रों का सरल, प्रामाणिक एवं रोचक मानव व्याख्यान। गणित के गूढ़ सूत्रों को सरल कहानियों, दृष्टांतों एवं बिंदुवार विश्लेषण में ढालकर प्रस्तुत किया गया अद्वितीय ग्रंथ।
+        </p>
+
+        <div class="features-bullet-grid">
+          <div class="bullet-item"><span class="bullet-icon">✦</span> <div><strong>13 खगोलीय एवं ज्योतिषीय गणना इंजन</strong> — जूलियन डे, निरयण अयनांश, लग्न उदय व ग्रह अवस्थाएं</div></div>
+          <div class="bullet-item"><span class="bullet-icon">✦</span> <div><strong>120-वर्षीय विंशोत्तरी दशा व 4-स्तरीय सूक्ष्म वृक्ष</strong> — महादशा से सूक्ष्म दशा तक का सटीक समय गणित</div></div>
+          <div class="bullet-item"><span class="bullet-icon">✦</span> <div><strong>अष्टकवर्ग 337 बिंदु व 8-कक्षी गोचर टाइमर</strong> — 28 बिंदु कसौटी, त्रिकोण शोधन व 3°45' कक्षी गोचर</div></div>
+          <div class="bullet-item"><span class="bullet-icon">✦</span> <div><strong>16 वर्ग कुण्डलियाँ (D1 से D60 षष्ट्यंश)</strong> — सूक्ष्मदर्शी विभाजन, D9 नवांश, D10 व इन्दु लग्न रहस्य</div></div>
+          <div class="bullet-item"><span class="bullet-icon">✦</span> <div><strong>विवाह फलित, 85 नियम व 16 मांगलिक परिहार</strong> — 36 गुण मिलान, नाड़ी-भकूट परिहार व दोहरा गोचर</div></div>
+          <div class="bullet-item"><span class="bullet-icon">✦</span> <div><strong>100-अंक अरिष्ट भंग सुरक्षा कवच</strong> — 17 अरिष्ट संकलन, कालसर्प-पितृदोष वैज्ञानिक परिहार व मुहूर्त</div></div>
+        </div>
+
+        <!-- The 3 Action Buttons -->
+        <div class="primary-action-group">
+          
+          <!-- Option 1: Open 3D Flip Book -->
+          <a href="kundali-ganita-reader.html" class="action-btn-main btn-flip-book" style="border-left:4px solid #10b981;" title="3D फ्लिप बुक खोलें • Read Interactive 3D Flip Book">
+            <div class="action-btn-left">
+              <div class="action-btn-icon">📖</div>
+              <div class="action-btn-text">
+                <h4>3D फ्लिप बुक में पढ़ें (Open 3D Flip Book)</h4>
+                <p>सम्पूर्ण 40 पृष्ठ, सचित्र डायमंड चार्ट्स, ध्वनि प्रभाव, 13 अध्याय व गणितीय सूत्र</p>
+              </div>
+            </div>
+            <div class="action-btn-arrow">→</div>
+          </a>
+
+          <!-- Option 2: Download PDF -->
+          <a href="kundali-ganita-vichar-mahagranth.pdf" download="Kundali-Ganita-Vichar-Mahagranth.pdf" class="action-btn-main btn-download-pdf" title="सम्पूर्ण ग्रंथ PDF डाउनलोड करें • Download Masterpiece PDF">
+            <div class="action-btn-left">
+              <div class="action-btn-icon">📄</div>
+              <div class="action-btn-text">
+                <h4>सम्पूर्ण PDF डाउनलोड करें (Download Masterpiece PDF)</h4>
+                <p>उच्च-रेज़ोल्यूशन प्रिंट क्वालिटी Masterpiece Vector PDF (सचित्र 13 अध्याय व सूत्र)</p>
+              </div>
+            </div>
+            <div class="action-btn-arrow">↓</div>
+          </a>
+
+          <!-- Option 3: Modern Web Reader -->
+          <a href="kundali-ganita.html" class="action-btn-main btn-web-reader" title="डिजिटल वेब पाठक में पढ़ें • Web Reader">
+            <div class="action-btn-left">
+              <div class="action-btn-icon">🌐</div>
+              <div class="action-btn-text">
+                <h4>डिजिटल वेब पाठक में पढ़ें (Modern Rich-Text Web Reader)</h4>
+                <p>13 अध्याय, संपूर्ण सूत्र तालिका, डायमंड चार्ट्स एवं मोबाइल-अनुकूलित इंटरफ़ेस</p>
+              </div>
+            </div>
+            <div class="action-btn-arrow">↗</div>
+          </a>
+
+        </div>
+
+        <div class="language-pill-row">
+          <span>संस्करण:</span>
+          <a href="kundali-ganita.html" class="lang-pill-link">📐 सम्पूर्ण गणित ग्रंथ (Web Reader)</a>
+          <span>•</span>
+          <a href="kundali-ganita-reader.html" class="lang-pill-link">📖 इंटरएक्टिव 3D संस्करण</a>
+        </div>
+
+        <!-- Animated Flagship Specifications Bar Under Book -->
+        <div class="flagship-spec-deck">
+          <div class="spec-card">
+            <div class="spec-icon">📐</div>
+            <div class="spec-text">
+              <strong>13 खगोलीय इंजन</strong>
+              <span>स्विस एफेमेरिस, अयनांश व लग्न गणित</span>
+            </div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-icon">⏳</div>
+            <div class="spec-text">
+              <strong>120-वर्षीय दशा वृक्ष</strong>
+              <span>महादशा से सूक्ष्म दशा तक काल गणना</span>
+            </div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-icon">🎯</div>
+            <div class="spec-text">
+              <strong>337 बिंदु अष्टकवर्ग</strong>
+              <span>28-बिंदु कसौटी व कक्षी गोचर टाइमर</span>
+            </div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-icon">🛡️</div>
+            <div class="spec-text">
+              <strong>100-अंक सुरक्षा कवच</strong>
+              <span>17 अरिष्ट संकलन व सम्पूर्ण दोष परिहार</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </article>
+
     <!-- Multiple Books Library Catalog Section -->
     <section class="catalog-section" aria-label="तंत्र ज्ञान शोध ग्रंथावली">
       <div class="section-title-wrap">
@@ -2173,6 +2389,30 @@
             <a href="sadhana-reader.html" class="card-btn primary">📖 3D पढ़ें</a>
             <a href="tantra-sadhana-siddhi-protocol.pdf" download="Tantra-Sadhana-Siddhi-Protocol.pdf" class="card-btn secondary">📄 PDF</a>
             <a href="tantra-sadhana-siddhi.html" class="card-btn secondary">🌐 वेब</a>
+          </div>
+        </div>
+
+        <!-- Book 4: Vedic Kundali Ganita Vichar Mahagranth (Published) -->
+        <div class="library-book-card">
+          <div>
+            <div class="card-cover-thumb" style="background: radial-gradient(circle at 30% 30%, #064e3b 0%, #022c22 60%, #051c14 100%); border-color: rgba(16,185,129,0.6);">
+              <span style="font-size:1.8rem;">📐</span>
+              <div class="thumb-title">कुण्डली गणित महाग्रंथ</div>
+              <span class="thumb-tag" style="color:#6ee7b7;">Vol 4 • 40 Pages • Formulas</span>
+            </div>
+            <div class="card-meta-status">
+              <span class="badge-chip green">उपलब्ध (Available)</span>
+              <span style="color:var(--text-muted); font-size:0.75rem;">40 पृष्ठ • 13 अध्याय • 16 वर्ग चक्र • 337 बिंदु अष्टकवर्ग</span>
+            </div>
+            <h4 class="card-book-title">वैदिक कुण्डली विचार एवं गणित महाग्रंथ</h4>
+            <p class="card-book-desc">
+              स्विस एफेमेरिस, जूलियन डे, 120-वर्षीय विंशोत्तरी दशा, 337 अष्टकवर्ग बिंदु, 16 वर्ग कुण्डलियाँ (D1-D60), 85 विवाह नियम व 100-अंक अरिष्ट भंग का संपूर्ण गणित।
+            </p>
+          </div>
+          <div class="card-action-bar">
+            <a href="kundali-ganita-reader.html" class="card-btn primary">📖 3D पढ़ें</a>
+            <a href="kundali-ganita-vichar-mahagranth.pdf" download="Kundali-Ganita-Vichar-Mahagranth.pdf" class="card-btn secondary">📄 PDF</a>
+            <a href="kundali-ganita.html" class="card-btn secondary">🌐 वेब</a>
           </div>
         </div>
 

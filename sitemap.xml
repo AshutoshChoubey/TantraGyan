@@ -63,6 +63,25 @@
     </image:image>
   </url>
 
+  <!-- 5. Flagship Vol 4: Vedic Kundali Ganita Vichar Mahagranth -->
+  <url>
+    <loc>https://t.worldgyan.com/kundali-ganita.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://t.worldgyan.com/assets/og-image.jpg</image:loc>
+      <image:title>वैदिक कुण्डली विचार एवं गणित महाग्रंथ - The Cosmic Algorithm</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://t.worldgyan.com/kundali-ganita-reader.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
   <!-- 4. AI & LLM Machine-Readable Knowledge Base Endpoints -->
   <url>
     <loc>https://t.worldgyan.com/llms.txt</loc>

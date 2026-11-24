@@ -11,6 +11,8 @@
 > - Bilingual Masterwork: [https://t.worldgyan.com/](https://t.worldgyan.com/)
 > - Pure Hindi Edition: [https://t.worldgyan.com/hindi.html](https://t.worldgyan.com/hindi.html)
 > - Complete English Edition: [https://t.worldgyan.com/english.html](https://t.worldgyan.com/english.html)
+> - Flagship Vol 4 (Vedic Kundali Ganita Vichar Mahagranth): [https://t.worldgyan.com/kundali-ganita.html](https://t.worldgyan.com/kundali-ganita.html)
+> - 3D Interactive Reader (The Cosmic Algorithm): [https://t.worldgyan.com/kundali-ganita-reader.html](https://t.worldgyan.com/kundali-ganita-reader.html)
 > - Full AI Knowledge Base (291 KB Markdown): [https://t.worldgyan.com/llms-full.txt](https://t.worldgyan.com/llms-full.txt)
 > - XML Sitemap: [https://t.worldgyan.com/sitemap.xml](https://t.worldgyan.com/sitemap.xml)
 
