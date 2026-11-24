@@ -61,48 +61,33 @@ $$\\lambda_{\\text{Nirayana}} = (\\lambda_{\\text{Sayana}} - \\Delta\\psi_{\\tex
   वैदिक ज्योतिष में महर्षि पराशर ने <strong>सम्पूर्ण राशि भाव (Whole Sign Houses)</strong> को प्रधानता दी है, जिसमें जिस राशि में लग्न उदित होता है, वह पूरी ३० अंश की राशि प्रथम भाव बन जाती है। वहीं भाव-चलित (Bhava Chalit) की सूक्ष्म गणना के लिए श्रीपति पद्धति का प्रयोग किया जाता है, जिसमें लग्न बिंदु को प्रथम भाव का मध्य मानकर भाव संधियों की गणना की जाती है।
 </p>
 
-<h4>१.४ प्रोडक्शन कोड: खगोलीय एफेमेरिस एवं लग्न गणना इंजन (Python 3)</h4>
-<pre><code class="language-python"># app/core/astronomical_ephemeris_engine.py
-import math
-from typing import Dict, Any, Tuple
+<h4>१.४ खगोलीय लग्न एवं अयनांश की चरणबद्ध कलन विधि (Step-by-Step Hindi Algorithm)</h4>
+<div class="formula-box">
+  <div class="formula-title">📐 खगोलीय लग्न साधन के शुद्ध गणितीय समीकरण</div>
+  <p><strong>समीकरण १ (जूलियन डे):</strong></p>
+  $$JD = \lfloor 365.25 \times (Y + 4716) \rfloor + \lfloor 30.6001 \times (M + 1) \rfloor + D + B - 1524.5$$
+  <p><strong>समीकरण २ (ग्रीनविच मध्याह्न नाक्षत्र समय GMST):</strong></p>
+  $$T = (JD - 2451545.0) / 36525.0$$
+  $$GMST = 280.46061837 + 360.98564736629 \times (JD - 2451545.0) + 0.000387933 \times T^2$$
+  <p><strong>समीकरण ३ (स्थानीय नाक्षत्र समय LST एवं RAMC):</strong></p>
+  $$LST = (GMST + \lambda_{\\text{स्थानीय देशांतर}} / 15.0) \\pmod{24.0}$$
+  $$RAMC = (LST \times 15.0) \\pmod{360.0}$$
+  <p><strong>समीकरण ४ (गोलीय त्रिकोणमितीय लग्न स्पष्ट Ascendant):</strong></p>
+  $$\\tan(\\lambda_{\\text{Asc}}) = \\frac{-\\cos(RAMC)}{\\sin(RAMC) \\times \\cos(\\varepsilon) + \\tan(\\phi) \\times \\sin(\\varepsilon)}$$
+  <p><strong>समीकरण ५ (निरयण लग्न स्पष्ट):</strong></p>
+  $$\\lambda_{\\text{निरयण}} = (\\lambda_{\\text{सायन}} - \\text{अयनांश}) \\pmod{360.0}$$
+</div>
 
-class EphemerisAstronomicalCalculator:
-    # Astronomical Ephemeris & House Cusps Calculator (BPHS & IAU Standards)
-    def __init__(self, lat: float, lon: float, ayanamsha_deg: float = 23.7866):
-        self.lat = lat
-        self.lon = lon
-        self.ayanamsha = ayanamsha_deg
-
-    def calculate_julian_day(self, year: int, month: int, day: int, ut_hours: float) -> float:
-        # Standard IAU algorithm for Julian Day number (Gregorian calendar)
-        if month <= 2:
-            year -= 1
-            month += 12
-        a = math.floor(year / 100)
-        b = 2 - a + math.floor(a / 4)
-        jd = math.floor(365.25 * (year + 4716)) + math.floor(30.6001 * (month + 1)) + day + (ut_hours / 24.0) + b - 1524.5
-        return jd
-
-    def calculate_gmst_and_ramc(self, jd: float, ut_hours: float) -> Tuple[float, float]:
-        # Calculates Greenwich Mean Sidereal Time (GMST) and RAMC
-        t = (jd - 2451545.0) / 36525.0  # Julian centuries from J2000.0
-        gmst_sec = 24110.54841 + 8640184.812866 * t + 0.093104 * (t**2) - 6.2e-6 * (t**3)
-        gmst_hours = (gmst_sec / 3600.0 + ut_hours * 1.00273790935) % 24.0
-        lst_hours = (gmst_hours + (self.lon / 15.0)) % 24.0
-        ramc_deg = (lst_hours * 15.0) % 360.0
-        return gmst_hours, ramc_deg
-
-    def calculate_ascendant(self, ramc_deg: float) -> float:
-        # Derives Ecliptic Ascendant (Lagna) using spherical trigonometry
-        eps = math.radians(23.4392911)  # Mean obliquity of ecliptic J2000
-        lat_rad = math.radians(self.lat)
-        ramc_rad = math.radians(ramc_deg)
-        numerator = math.cos(ramc_rad)
-        denominator = -(math.sin(ramc_rad) * math.cos(eps) + math.tan(lat_rad) * math.sin(eps))
-        asc_tropical = math.degrees(math.atan2(numerator, denominator)) % 360.0
-        asc_sidereal = (asc_tropical - self.ayanamsha) % 360.0
-        return asc_sidereal
-</code></pre>
+<div class="algorithm-box" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:1.2rem; margin:1.2rem 0;">
+  <h4 style="color:#0284c7; margin-top:0;">📋 हस्त-साधन कलन विधि (Manual Hindi Algorithm):</h4>
+  <ol style="line-height:1.7; padding-left:1.3rem;">
+    <li><strong>चरण १ (दिनांक व समय रूपांतरण):</strong> जन्म समय को भारतीय मानक समय (IST) से सार्वभौमिक समय (UTC) में बदलें ($UTC = IST - ५\\text{ घंटा } ३०\\text{ मिनट}$)।</li>
+    <li><strong>चरण २ (जूलियन डे साधन):</strong> उपरोक्त समीकरण १ द्वारा जन्म क्षण का जूलियन दिन संख्या ($JD$) ज्ञात करें।</li>
+    <li><strong>चरण ३ (नाक्षत्र काल साधन):</strong> समीकरण २ व ३ का प्रयोग कर स्थानीय नाक्षत्र समय ($LST$) एवं विषुवांश कोण ($RAMC$) निकालें।</li>
+    <li><strong>चरण ४ (लग्न स्पर्शज्या गणना):</strong> स्थानीय अक्षांश ($\\phi = २४.०५^\\circ$) एवं क्रांतिवृत्त झुकाव ($\\varepsilon = २३.४४^\\circ$) का मान समीकरण ४ में रखकर सायन लग्न ज्ञात करें। चतुर्थांश (Quadrant) संशोधन अवश्य करें।</li>
+    <li><strong>चरण ५ (अयनांश घटाना):</strong> सायन लग्न में से चित्रापक्ष लहिरी अयनांश ($२३^\\circ ४८' १३''$) घटाकर शुद्ध निरयण लग्न प्राप्त करें।</li>
+  </ol>
+</div>
 
 <h4>१.५ आदर्श शोध जातक 'क' पर प्रत्यक्ष गणना उदाहरण</h4>
 <table class="data-table">
@@ -255,55 +240,28 @@ $$\\text{दिनमान (Dinamana)} = \\frac{2 H_0}{15^\\circ} \\text{ घ�
   <li><strong>जन्म के समय शनि की शेष महादशा:</strong> $0.262135 \\times 19 = \\mathbf{4.9805\\text{ वर्ष}} \\approx 4\\text{ वर्ष}, 11\\text{ माह}, 23\\text{ दिन}$।</li>
 </ul>
 
-<h4>३.४ प्रोडक्शन कोड: ४-स्तरीय विंशोत्तरी दशा इंजन (Python Engine)</h4>
-<pre><code class="language-python"># app/core/vimshottari_dasha_engine.py
-from datetime import datetime, timedelta
-from typing import List, Dict, Any
+<h4>३.४ विंशोत्तरी दशा कलन विधि एवं पदानुक्रम सूत्र (Vimshottari Dasha Hierarchy)</h4>
+<div class="formula-box">
+  <div class="formula-title">📐 ४-स्तरीय दशा पदानुक्रम के सटीक गणितीय सूत्र</div>
+  <p><strong>सूत्र १ (जन्म समय दशा भोग्य शेष):</strong></p>
+  $$\\text{दशा भोग्य (वर्ष)} = \\left(\\frac{800 - (\\text{चंद्र देशांतर (कला)} \\pmod{800})}{800}\\right) \\times \\text{महादशा वर्ष}$$
+  <p><strong>सूत्र २ (अंतर्दशा / भुक्ति अवधि):</strong></p>
+  $$\\text{अंतर्दशा (वर्ष)} = \\frac{\\text{महादशा वर्ष} \\times \\text{अंतर्दशा नाथ के वर्ष}}{120}$$
+  <p><strong>सूत्र ३ (प्रत्यंतर्दशा अवधि):</strong></p>
+  $$\\text{प्रत्यंतर्दशा (दिन)} = \\frac{\\text{अंतर्दशा (दिन)} \\times \\text{प्रत्यंतर्दशा नाथ के वर्ष}}{120}$$
+  <p><strong>सूत्र ४ (सूक्ष्म दशा अवधि):</strong></p>
+  $$\\text{सूक्ष्म दशा (घंटे)} = \\frac{\\text{प्रत्यंतर्दशा (घंटे)} \\times \\text{सूक्ष्म नाथ के वर्ष}}{120}$$
+</div>
 
-DASHA_YEARS = {
-    "Ketu": 7, "Venus": 20, "Sun": 6, "Moon": 10,
-    "Mars": 7, "Rahu": 18, "Jupiter": 16, "Saturn": 19, "Mercury": 17
-}
-PLANET_ORDER = ["Ketu", "Venus", "Sun", "Moon", "Mars", "Rahu", "Jupiter", "Saturn", "Mercury"]
-
-class VimshottariDashaTree:
-    # Computes complete 4-tier Vimshottari Dasha hierarchy with exact dates
-    def __init__(self, moon_deg: float, dob: datetime):
-        self.moon_deg = moon_deg
-        self.dob = dob
-        self.nak_span = 40.0 / 3.0  # 13°20' = 13.33333°
-
-    def get_birth_balance(self) -> Dict[str, Any]:
-        nak_idx = int(self.moon_deg / self.nak_span)
-        lord = PLANET_ORDER[nak_idx % 9]
-        traversed = self.moon_deg - (nak_idx * self.nak_span)
-        remaining = self.nak_span - traversed
-        fraction = remaining / self.nak_span
-        balance_years = fraction * DASHA_YEARS[lord]
-        return {{"lord": lord, "balance_years": balance_years, "fraction": fraction}}
-
-    def generate_timeline(self) -> List[Dict[str, Any]]:
-        birth = self.get_birth_balance()
-        timeline = []
-        curr_date = self.dob
-        
-        # Initial remaining Mahadasha
-        first_lord = birth["lord"]
-        first_days = birth["balance_years"] * 365.25
-        end_date = curr_date + timedelta(days=first_days)
-        timeline.append({{"planet": first_lord, "start": curr_date, "end": end_date, "type": "MD_BALANCE"}})
-        curr_date = end_date
-
-        # Subsequent Mahadashas
-        start_idx = (PLANET_ORDER.index(first_lord) + 1) % 9
-        for i in range(start_idx, start_idx + 8):
-            p = PLANET_ORDER[i % 9]
-            dur_days = DASHA_YEARS[p] * 365.25
-            end_date = curr_date + timedelta(days=dur_days)
-            timeline.append({{"planet": p, "start": curr_date, "end": end_date, "type": "MD_FULL"}})
-            curr_date = end_date
-        return timeline
-</code></pre>
+<div class="algorithm-box" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:1.2rem; margin:1.2rem 0;">
+  <h4 style="color:#0284c7; margin-top:0;">📋 हस्त-साधन कलन विधि (Manual Hindi Algorithm):</h4>
+  <ol style="line-height:1.7; padding-left:1.3rem;">
+    <li><strong>चरण १ (नक्षत्र व नक्षत्रेश):</strong> चंद्रमा के स्पष्ट देशांतर को ८०० कला ($१३^\\circ २०'$) से भाग देकर जन्म नक्षत्र एवं महादशा स्वामी ज्ञात करें।</li>
+    <li><strong>चरण २ (भुक्त व भोग्य कला):</strong> चंद्रमा द्वारा नक्षत्र में तय की गई दूरी भुक्त कला है, तथा शेष भाग भोग्य कला है।</li>
+    <li><strong>चरण ३ (जन्मकालीन शेष दशा):</strong> सूत्र १ द्वारा जन्म समय पर प्रथम महादशा का भोग्य काल निकालें और जन्म तिथि में जोड़कर महादशा समाप्ति तिथि प्राप्त करें।</li>
+    <li><strong>चरण ४ (अंतर्दशा तालिका निर्माण):</strong> सूत्र २ के अनुसार ९ ग्रहों की अंतर्दशा अवधि निकालें और क्रमिक रूप से तिथियों को आगे बढ़ाते जाएं।</li>
+  </ol>
+</div>
 
 <div class="takeaway-box">
   <strong>🌟 जीवन सूत्र:</strong> जातक का बाल्यकाल शनि की दशा में बीता, जिससे अनुशासन और संयम की नींव पड़ी। इसके बाद १७ वर्ष की बुध महादशा (लग्नेश की दशा) ने बौद्धिक प्रखरता, विश्लेषण क्षमता और उच्च विद्या का विस्तार किया।
@@ -1081,9 +1039,28 @@ def build_master_publications(output_web: Path, output_print: Path, output_pdf: 
     print(f"✓ Created Massive Web Presentation Edition: {output_web} ({len(web_html.splitlines())} lines)")
 
     # 2. BUILD PRINT MEDIA LAYOUT (kundali-ganita-print.html)
-    print_pages_html = []
-    for idx, (ch_num, ch_title, ch_body) in enumerate(chapters, 1):
-        print_pages_html.append(f'''
+    if pages_list:
+        print_pages_html = pages_list
+        cover_html = ""
+    else:
+        cover_html = '''  <div class="print-cover">
+    <div style="font-size:12pt; color:#10b981; font-weight:700;">॥ श्री गणेशाय नमः • ॐ नमः शिवाय ॥</div>
+    <div style="margin:8mm 0;"><img src="assets/yantra.svg" width="95" height="95" alt="Yantra"></div>
+    <div style="font-size:9pt; font-weight:700; color:#10b981; letter-spacing:0.08em;">FLAGSHIP VOLUME IV • THE MASTER COMPENDIUM</div>
+    <h1>वैदिक कुण्डली विचार एवं गणित महाग्रंथ</h1>
+    <div class="sub">खगोलीय सूत्र, 16 वर्ग चक्र एवं फलित संयोजन</div>
+    <div class="en">The Cosmic Algorithm: Vedic Horoscope Mathematics & Destiny Decoded</div>
+    <p style="font-size:9.5pt; color:#475569; max-width:140mm; margin:0 auto 12mm auto; line-height:1.6;">
+      स्विस एफेमेरिस, 120-वर्षीय विंशोत्तरी दशा, 337 अष्टकवर्ग बिंदु, 85 विवाह नियम एवं 23 जीवन क्षेत्रों के सभी गणना सूत्रों का संपूर्ण प्रामाणिक ग्रंथ।
+    </p>
+    <div style="border-top:1pt solid #10b981; border-bottom:1pt solid #10b981; padding:4mm 0; max-width:120mm; margin:0 auto; font-size:9.5pt;">
+      <strong>प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे</strong><br>
+      <span style="font-size:8pt; color:#64748b;">तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center) • https://t.worldgyan.com</span>
+    </div>
+  </div>'''
+        print_pages_html = []
+        for idx, (ch_num, ch_title, ch_body) in enumerate(chapters, 1):
+            print_pages_html.append(f'''
     <div class="print-chapter" id="print-chapter-{idx}">
       <div class="print-chapter-header">
         <div class="print-chapter-num">{ch_num}</div>
@@ -1105,12 +1082,9 @@ def build_master_publications(output_web: Path, output_print: Path, output_pdf: 
 
     @page {{
       size: A4 portrait;
-      margin-top: 18mm;
-      margin-bottom: 20mm;
-      margin-left: 18mm;
-      margin-right: 18mm;
+      margin: 12mm 15mm 15mm 15mm;
       @bottom-center {{
-        content: "— " counter(page) " —";
+        content: "— " counter(page) " / 108 —";
         font-family: 'Noto Serif Devanagari', serif;
         font-size: 8.5pt;
         font-weight: 700;
@@ -1134,12 +1108,45 @@ def build_master_publications(output_web: Path, output_print: Path, output_pdf: 
 
     body {{
       font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
-      font-size: 9.5pt;
-      line-height: 1.6;
-      color: #1c1917;
+      font-size: 8.5pt;
+      line-height: 1.5;
+      color: #1e293b;
       background: #fff;
       margin: 0;
       padding: 0;
+    }}
+
+    .book-page-data {{
+      page-break-after: always;
+      break-after: page;
+      page-break-inside: avoid;
+      break-inside: avoid;
+      display: block;
+      width: 100%;
+      min-height: 250mm;
+      max-height: 260mm;
+      box-sizing: border-box;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }}
+    .page-inner {{
+      padding: 4mm 2mm !important;
+      font-family: 'Noto Sans Devanagari', -apple-system, sans-serif;
+      line-height: 1.5;
+      color: #1e293b;
+      box-sizing: border-box;
+    }}
+    .page-header {{
+      border-bottom: 1.5pt solid #d4af37 !important;
+      padding-bottom: 2mm !important;
+      margin-bottom: 3mm !important;
+    }}
+    .page-footer {{
+      border-top: 1pt solid #cbd5e1 !important;
+      padding-top: 2mm !important;
+      margin-top: 3mm !important;
+      font-size: 7pt !important;
     }}
 
     .print-cover {{
@@ -1265,22 +1272,7 @@ def build_master_publications(output_web: Path, output_print: Path, output_pdf: 
   </style>
 </head>
 <body>
-  <div class="print-cover">
-    <div style="font-size:12pt; color:#10b981; font-weight:700;">॥ श्री गणेशाय नमः • ॐ नमः शिवाय ॥</div>
-    <div style="margin:8mm 0;"><img src="assets/yantra.svg" width="95" height="95" alt="Yantra"></div>
-    <div style="font-size:9pt; font-weight:700; color:#10b981; letter-spacing:0.08em;">FLAGSHIP VOLUME IV • THE MASTER COMPENDIUM</div>
-    <h1>वैदिक कुण्डली विचार एवं गणित महाग्रंथ</h1>
-    <div class="sub">खगोलीय सूत्र, 16 वर्ग चक्र एवं फलित संयोजन</div>
-    <div class="en">The Cosmic Algorithm: Vedic Horoscope Mathematics & Destiny Decoded</div>
-    <p style="font-size:9.5pt; color:#475569; max-width:140mm; margin:0 auto 12mm auto; line-height:1.6;">
-      स्विस एफेमेरिस, 120-वर्षीय विंशोत्तरी दशा, 337 अष्टकवर्ग बिंदु, 85 विवाह नियम एवं 23 जीवन क्षेत्रों के सभी गणना सूत्रों का संपूर्ण प्रामाणिक ग्रंथ।
-    </p>
-    <div style="border-top:1pt solid #10b981; border-bottom:1pt solid #10b981; padding:4mm 0; max-width:120mm; margin:0 auto; font-size:9.5pt;">
-      <strong>प्रणेता: ज्योतिषाचार्य आशुतोष कुमार चौबे</strong><br>
-      <span style="font-size:8pt; color:#64748b;">तंत्र ज्ञान शोध संस्थान (Tantra Gyan Research Center) • https://t.worldgyan.com</span>
-    </div>
-  </div>
-
+  {cover_html}
   {"".join(print_pages_html)}
 </body>
 </html>'''
@@ -1332,11 +1324,14 @@ def build_master_publications(output_web: Path, output_print: Path, output_pdf: 
         'तंत्र ज्ञान: वैदिक ज्योतिष महाग्रंथ',
         'वैदिक कुण्डली विचार एवं गणित महाग्रंथ (The Cosmic Algorithm)'
     )
-    reader_top = reader_top.replace('p > 88', 'p > 40')
+    reader_top = reader_top.replace('p > 88', 'p > 108')
+    reader_top = reader_top.replace('p > 40', 'p > 108')
     reader_top = reader_top.replace("localStorage.getItem('tantra_book_page')", "localStorage.getItem('tantra_ganita_flip_page')")
     reader_top = reader_top.replace("localStorage.setItem('tantra_book_page'", "localStorage.setItem('tantra_ganita_flip_page'")
-    reader_top = reader_top.replace('max="100"', 'max="40"')
-    reader_top = reader_top.replace("Page 1 of 100", "Page 1 of 40")
+    reader_top = reader_top.replace('max="100"', 'max="108"')
+    reader_top = reader_top.replace('max="40"', 'max="108"')
+    reader_top = reader_top.replace("Page 1 of 100", "Page 1 of 108")
+    reader_top = reader_top.replace("Page 1 of 40", "Page 1 of 108")
     reader_top = reader_top.replace('href="astrology-book-engine/dist/web/index.html"', 'href="kundali-ganita.html"')
     reader_top = reader_top.replace('href="tantra-gyan-vedic-jyotish-mahagranth.pdf"', 'href="kundali-ganita-vichar-mahagranth.pdf"')
     reader_top = reader_top.replace('download="Tantra-Gyan-Vedic-Jyotish-Maha-Granth.pdf"', 'download="Kundali-Ganita-Vichar-Mahagranth.pdf"')

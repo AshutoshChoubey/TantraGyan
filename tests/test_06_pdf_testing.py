@@ -87,5 +87,31 @@ class PDFTestingPillar(unittest.TestCase):
         self.assertIn("Tantra Gyan", full_text)
         self.assertIn("Ashutosh", full_text)
 
+    def test_05_kundali_ganita_vichar_mahagranth_108_pages(self):
+        fpath = os.path.join(BASE_DIR, "kundali-ganita-vichar-mahagranth.pdf")
+        self.assertTrue(os.path.exists(fpath), "Missing Flagship Vol 4 PDF: kundali-ganita-vichar-mahagranth.pdf")
+        size = os.path.getsize(fpath)
+        self.assertGreater(size, 1024 * 1024 * 2, f"PDF smaller than expected: {size} bytes")
+
+        reader = pypdf.PdfReader(fpath)
+        total_pages = len(reader.pages)
+        self.assertEqual(total_pages, 108, f"Expected exactly 108 sacred pages in Flagship Vol 4 PDF, got {total_pages}")
+
+        full_text = "".join(p.extract_text() or "" for p in reader.pages)
+        clean_text = full_text.replace(" ", "").replace("\x00", "")
+
+        # Verify Vedic Mathematical terms and chapters
+        self.assertIn("कुण्डली", clean_text)
+        self.assertIn("अयनांश", clean_text)
+        self.assertIn("षड्बल", clean_text)
+        self.assertIn("VIMSHOTTARI", full_text)
+        self.assertIn("ASHTAKAVARGA", full_text)
+        self.assertIn("Cosmic Algorithm", full_text)
+        self.assertIn("जातक'क'", clean_text, "Benchmark case study must use anonymous label जातक 'क'")
+
+        # Ensure NO raw programming code snippets
+        self.assertNotIn("def calculate_", full_text)
+        self.assertNotIn("import swisseph", full_text)
+
 if __name__ == "__main__":
     unittest.main()

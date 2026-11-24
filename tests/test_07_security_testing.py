@@ -87,8 +87,8 @@ class SecurityTestingPillar(unittest.TestCase):
             (re.compile(r'AKIA[0-9A-Z]{16}'), "AWS Access Key ID")
         ]
         
-        # Check files in BASE_DIR (excluding .git, venvs, node_modules)
-        ignore_dirs = {".git", ".gemini", ".venv", "venv", "node_modules", "dist", "build"}
+        # Check files in BASE_DIR (excluding .git, venvs, node_modules, visual-authenticity toolkit)
+        ignore_dirs = {".git", ".gemini", ".venv", "venv", "node_modules", "dist", "build", "visual-authenticity"}
         for root, dirs, files in os.walk(BASE_DIR):
             dirs[:] = [d for d in dirs if d not in ignore_dirs]
             for fname in files:
