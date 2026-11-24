@@ -6,7 +6,14 @@ Covers: 16 Divisional Charts (Shodashavarga D1-D60), Ashtakavarga (337 Bindus, S
 Zero raw Python code - pure mathematical formulas, Hindi algorithms, and worked examples for जातक 'क'.
 """
 
-from page_common import make_page, get_diamond_chart_svg
+from page_common import (
+    make_page, get_diamond_chart_svg, get_circular_zodiac_svg,
+    get_ayanamsha_shift_svg, get_lagna_horizon_svg, get_panchanga_star_svg,
+    get_vimshottari_tree_svg, get_ashtakavarga_wheel_svg, get_shadbala_pillars_svg,
+    get_shodashavarga_tree_svg, get_jaimini_ladder_svg, get_bnn_trines_svg,
+    get_sade_sati_wave_svg, get_ashtakoot_gauge_svg, get_pipeline_flow_svg,
+    get_navamsha_grid_svg
+)
 
 def get_pages_part3():
     pages = []
@@ -28,11 +35,13 @@ def get_pages_part3():
   • <strong>षोडशवर्ग (१६ वर्ग):</strong> पूर्ण सूक्ष्म फलित हेतु D1 से D60 तक के सभी १६ वर्ग।
 </div>
 '''
+    p55 += get_shodashavarga_tree_svg()
+
     pages.append(make_page(55, "षोडशवर्ग • Divisional Charts", "षोडशवर्ग का महत्व: वृक्ष एवं शाखाओं का सिद्धांत", p55))
 
     # Page 56: होरा चक्र (D2)
     p56 = '''
-<p>प्रत्येक राशि को दो बराबर भागों ($१५^\circ-१५^\circ$) में विभाजित करके धन एवं संपत्ति का विश्लेषण <strong>होरा चक्र (D2)</strong> कहलाता है:</p>
+<p>प्रत्येक राशि को दो बराबर भागों (१५°-१५°) में विभाजित करके धन एवं संपत्ति का विश्लेषण <strong>होरा चक्र (D2)</strong> कहलाता है:</p>
 
 <div style="background:#0f172a; color:#f8fafc; padding:0.7rem; border-radius:6px; font-size:0.82rem; margin:0.6rem 0;">
   <strong style="color:#38bdf8;">📐 होरा विभाजन नियम (सूर्य एवं चंद्र होरा):</strong><br>
@@ -46,8 +55,8 @@ def get_pages_part3():
 
 <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.6rem; font-size:0.8rem;">
   <strong style="color:#166534;">जातक 'क' कुण्डली में होरा स्थिति:</strong><br>
-  • सूर्य ($१०^\circ २५'$ तुला - विषम): प्रथम १५° $\implies$ <strong>सूर्य होरा (सिंह)</strong><br>
-  • चंद्रमा ($१६^\circ ३७'$ कर्क - सम): द्वितीय १५° $\implies$ <strong>सूर्य होरा (सिंह)</strong><br>
+  • सूर्य (१०° २५' तुला - विषम): प्रथम १५° ➔ <strong>सूर्य होरा (सिंह)</strong><br>
+  • चंद्रमा (१६° ३७' कर्क - सम): द्वितीय १५° ➔ <strong>सूर्य होरा (सिंह)</strong><br>
   • <em>फल:</em> अधिकांश ग्रह सूर्य होरा में होने से जातक का धन स्व-अर्जित, स्वावलंबी एवं साहसिक कार्यों से आएगा।
 </div>
 '''
@@ -55,19 +64,19 @@ def get_pages_part3():
 
     # Page 57: द्रेष्काण चक्र (D3)
     p57 = '''
-<p>राशि को ३ समान भागों ($१०^\circ-१०^\circ$) में विभाजित करने पर <strong>द्रेष्काण चक्र (D3)</strong> बनता है, जो भाई-बहन एवं पराक्रम दर्शाता है:</p>
+<p>राशि को ३ समान भागों (१०°-१०°) में विभाजित करने पर <strong>द्रेष्काण चक्र (D3)</strong> बनता है, जो भाई-बहन एवं पराक्रम दर्शाता है:</p>
 
 <div style="background:#f1f5f9; border-left:4px solid #0284c7; padding:0.7rem; font-size:0.82rem; margin:0.6rem 0;">
   <strong>द्रेष्काण निर्धारण नियम:</strong><br>
-  • प्रथम १०° ($०^\circ - १०^\circ$): वही राशि स्वयं (१म भाव)<br>
-  • द्वितीय १०° ($१०^\circ - २०^\circ$): उस राशि से ५वीं राशि (त्रिकोण १)<br>
-  • तृतीय १०° ($२०^\circ - ३०^\circ$): उस राशि से ९वीं राशि (त्रिकोण २)
+  • प्रथम १०° (०° - १०°): वही राशि स्वयं (१म भाव)<br>
+  • द्वितीय १०° (१०° - २०°): उस राशि से ५वीं राशि (त्रिकोण १)<br>
+  • तृतीय १०° (२०° - ३०°): उस राशि से ९वीं राशि (त्रिकोण २)
 </div>
 
 <div style="background:#fefce8; border:1px solid #fef08a; padding:0.6rem; border-radius:6px; font-size:0.8rem;">
   <strong>२२वां द्रेष्काण (खगोलीय छिद्र):</strong><br>
   लग्न के अंश जिस द्रेष्काण में पड़ते हैं, उससे ठीक २२वां द्रेष्काण (८वें भाव का द्रेष्काण) अत्यंत अनिष्टकारी माना जाता है। उसका अधिपति 'ख्रेश' कहलाता है।<br>
-  जातक 'क' का लग्न कन्या १४° ४२' (द्वितीय द्रेष्काण $\implies$ मकर) है। २२वां द्रेष्काण <strong>सिंह राशि</strong> में पड़ता है, जिसका स्वामी सूर्य है।
+  जातक 'क' का लग्न कन्या १४° ४२' (द्वितीय द्रेष्काण ➔ मकर) है। २२वां द्रेष्काण <strong>सिंह राशि</strong> में पड़ता है, जिसका स्वामी सूर्य है।
 </div>
 '''
     pages.append(make_page(57, "षोडशवर्ग • Divisional Charts", "द्रेष्काण चक्र (D3) एवं २२वां द्रेष्काण रहस्य", p57))
@@ -86,13 +95,13 @@ def get_pages_part3():
   <tbody>
     <tr>
       <td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>चतुर्थांश (D4)</strong></td>
-      <td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">$७^\circ ३०'$</td>
+      <td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">७° ३०'</td>
       <td style="padding:0.35rem; border:1px solid #cbd5e1;">१, ४, ७, १०वीं राशि का क्रम (केंद्र क्रम)।</td>
       <td style="padding:0.35rem; border:1px solid #cbd5e1;">भूमि, भवन, अचल संपत्ति, भाग्य।</td>
     </tr>
     <tr style="background:#f8fafc;">
       <td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>सप्तांश (D7)</strong></td>
-      <td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">$४^\circ १७' ०८''$</td>
+      <td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">४° १७' ०८''</td>
       <td style="padding:0.35rem; border:1px solid #cbd5e1;">विषम राशि में उसी राशि से, सम राशि में ७वीं राशि से निरंतर।</td>
       <td style="padding:0.35rem; border:1px solid #cbd5e1;">संतान सुख, वंश वृद्धि, पौत्र-पौत्री।</td>
     </tr>
@@ -103,6 +112,8 @@ def get_pages_part3():
   <strong>जातक 'क' चतुर्थांश (D4):</strong> चतुर्थेश गुरु उच्च नवांश में होने एवं D4 में शुभ स्थित होने से प्रचुर भू-संपत्ति एवं गृह-सुख का योग बनता है।
 </div>
 '''
+    p58 += get_navamsha_grid_svg()
+
     pages.append(make_page(58, "षोडशवर्ग • Divisional Charts", "चतुर्थांश (D4) एवं सप्तांश (D7) साधन विधि", p58))
 
     # Page 59: नवमांश चक्र (D9) निर्माण विधि
@@ -112,7 +123,7 @@ def get_pages_part3():
   <em>"मेषादिषु चरे ज्ञेयं सिंहादि स्थिरराशिषु । धनुराद्ये द्विस्वभावे नवांशक्रम ईरितः ॥"</em>
 </div>
 
-<p>राशि के ९वें भाग ($३^\circ २०' = २००\text{ कला}$) को <strong>नवमांश (Navamsha - D9)</strong> कहते हैं। यह कुण्डली का हृदय है:</p>
+<p>राशि के ९वें भाग (३° २०' = २०० कला) को <strong>नवमांश (Navamsha - D9)</strong> कहते हैं। यह कुण्डली का हृदय है:</p>
 
 <div style="background:#0f172a; color:#f8fafc; padding:0.7rem; border-radius:6px; font-size:0.82rem; margin:0.6rem 0;">
   <strong style="color:#38bdf8;">📐 नवमांश गणना का सार्वभौमिक सूत्र:</strong><br>
@@ -124,8 +135,8 @@ def get_pages_part3():
 <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.6rem; font-size:0.8rem;">
   <strong style="color:#166534;">जातक 'क' लग्न का नवमांश:</strong><br>
   • लग्न: कन्या १४° ४२' (द्विस्वभाव राशि)<br>
-  • नवमांश संख्या $= \lfloor १४^\circ ४२' / ३^\circ २०' \rfloor + १ = \lfloor १४.७ / ३.३३३ \rfloor + १ = \mathbf{५}$वां नवमांश।<br>
-  • कन्या (६) से ५वीं राशि $= १०$ (मकर)। मकर से ५वीं $= \mathbf{वृषभ (२)}$।<br>
+  • नवमांश संख्या =  १४° ४२' / ३° २०'  + १ =  १४.७ / ३.३३३  + १ = ५वां नवमांश।<br>
+  • कन्या (६) से ५वीं राशि = १० (मकर)। मकर से ५वीं = वृषभ (२)।<br>
   • <strong>परिणाम:</strong> जातक 'क' का नवमांश लग्न <strong>वृषभ</strong> है (स्थिर, शुक्र शासित)।
 </div>
 '''
@@ -142,7 +153,7 @@ def get_pages_part3():
 
 <div style="background:#fefce8; border:1px solid #fef08a; padding:0.6rem; border-radius:6px; font-size:0.8rem;">
   <strong style="color:#854d0e;">जातक 'क' कुण्डली में वर्गोत्तम ग्रह परीक्षण:</strong><br>
-  • <strong>चंद्रमा:</strong> D1 में कर्क १६° ३७' (स्वक्षेत्री) तथा D9 में भी कर्क राशि $\implies$ <strong>स्वक्षेत्री वर्गोत्तम</strong> (अत्यंत दुर्लभ वरदान; अगाध स्मृति एवं अंतर्दृष्टि)।<br>
+  • <strong>चंद्रमा:</strong> D1 में कर्क १६° ३७' (स्वक्षेत्री) तथा D9 में भी कर्क राशि ➔ <strong>स्वक्षेत्री वर्गोत्तम</strong> (अत्यंत दुर्लभ वरदान; अगाध स्मृति एवं अंतर्दृष्टि)।<br>
   • <strong>पुष्कर नवमांश:</strong> चंद्रमा पुष्य नक्षत्र के चतुर्थ चरण में होने से पुष्कर नवमांश में भी स्थित हैं, जो कुण्डली को दिव्य सुरक्षा प्रदान करता है।
 </div>
 '''
@@ -154,7 +165,7 @@ def get_pages_part3():
 
 <div style="background:#0f172a; color:#f8fafc; padding:0.7rem; border-radius:6px; font-size:0.82rem; margin:0.6rem 0;">
   <strong style="color:#38bdf8;">📐 दशमांश (D10) साधन सूत्र:</strong><br>
-  • १ भाग का मान $= ३०^\circ / १० = ३^\circ ००'$ (१८० कला)<br>
+  • १ भाग का मान = ३०° / १० = ३° ००' (१८० कला)<br>
   • <strong>विषम राशियों में:</strong> उसी राशि से निरंतर गणना करें।<br>
   • <strong>सम राशियों में:</strong> उस राशि से ९वीं राशि से गणना आरंभ करें।
 </div>
@@ -181,13 +192,13 @@ def get_pages_part3():
   <tbody>
     <tr>
       <td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>द्वादशांश (D12)</strong></td>
-      <td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">$२^\circ ३०'$</td>
+      <td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">२° ३०'</td>
       <td style="padding:0.35rem; border:1px solid #cbd5e1;">उसी राशि से निरंतर १२ राशियां।</td>
       <td style="padding:0.35rem; border:1px solid #cbd5e1;">माता-पिता का सुख, पितृ ऋण, पूर्व जन्म कर्म।</td>
     </tr>
     <tr style="background:#f8fafc;">
       <td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>षोडशांश (D16)</strong></td>
-      <td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">$१^\circ ५२' ३०''$</td>
+      <td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">१° ५२' ३०''</td>
       <td style="padding:0.35rem; border:1px solid #cbd5e1;">मेष, सिंह, धनु से चक्रवत गणना।</td>
       <td style="padding:0.35rem; border:1px solid #cbd5e1;">वाहन सुख, आंतरिक शांति, यात्रा कष्ट।</td>
     </tr>
@@ -213,9 +224,9 @@ def get_pages_part3():
     </tr>
   </thead>
   <tbody>
-    <tr><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>विंशांश (D20)</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">$१^\circ ३०'$</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">इष्टदेव की पहचान, मंत्र साधना में सिद्धि, गुप्त आध्यात्मिक ज्ञान।</td></tr>
-    <tr style="background:#f8fafc;"><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>चतुर्विंशांश (D24)</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">$१^\circ १५'$</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">उच्चतर विद्या, मेधा शक्ति, अकादमिक शोध एवं प्रज्ञा।</td></tr>
-    <tr><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>सप्तविंशांश (D27)</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">$१^\circ ०६' ४०''$</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">शारीरिक शक्ति, जीवनी शक्ति (Vitality) एवं अंतर्निहित प्रतिरोधक क्षमता।</td></tr>
+    <tr><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>विंशांश (D20)</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">१° ३०'</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">इष्टदेव की पहचान, मंत्र साधना में सिद्धि, गुप्त आध्यात्मिक ज्ञान।</td></tr>
+    <tr style="background:#f8fafc;"><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>चतुर्विंशांश (D24)</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">१° १५'</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">उच्चतर विद्या, मेधा शक्ति, अकादमिक शोध एवं प्रज्ञा।</td></tr>
+    <tr><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>सप्तविंशांश (D27)</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">१° ०६' ४०''</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">शारीरिक शक्ति, जीवनी शक्ति (Vitality) एवं अंतर्निहित प्रतिरोधक क्षमता।</td></tr>
   </tbody>
 </table>
 
@@ -238,11 +249,11 @@ def get_pages_part3():
   <thead>
     <tr style="background:#e2e8f0; color:#0f172a;">
       <th style="padding:0.4rem; border:1px solid #cbd5e1;">राशि प्रकार</th>
-      <th style="padding:0.4rem; border:1px solid #cbd5e1;">मंगल ($५^\circ$)</th>
-      <th style="padding:0.4rem; border:1px solid #cbd5e1;">शनि ($५^\circ$)</th>
-      <th style="padding:0.4rem; border:1px solid #cbd5e1;">गुरु ($८^\circ$)</th>
-      <th style="padding:0.4rem; border:1px solid #cbd5e1;">बुध ($७^\circ$)</th>
-      <th style="padding:0.4rem; border:1px solid #cbd5e1;">शुक्र ($५^\circ$)</th>
+      <th style="padding:0.4rem; border:1px solid #cbd5e1;">मंगल (५°)</th>
+      <th style="padding:0.4rem; border:1px solid #cbd5e1;">शनि (५°)</th>
+      <th style="padding:0.4rem; border:1px solid #cbd5e1;">गुरु (८°)</th>
+      <th style="padding:0.4rem; border:1px solid #cbd5e1;">बुध (७°)</th>
+      <th style="padding:0.4rem; border:1px solid #cbd5e1;">शुक्र (५°)</th>
     </tr>
   </thead>
   <tbody>
@@ -273,8 +284,8 @@ def get_pages_part3():
 
 <div style="background:#0f172a; color:#f8fafc; padding:0.7rem; border-radius:6px; font-size:0.82rem; margin:0.6rem 0;">
   <strong style="color:#38bdf8;">📐 षष्ट्यंश (D60) साधन सूत्र:</strong><br>
-  • १ षष्ट्यंश का मान $= ३०^\circ / ६० = ०^\circ ३०'$ (३० कला)<br>
-  • $$\text{D60 Index} = \lfloor \text{ग्रह देशांतर (कला)} / ३० \rfloor + १$$<br>
+  • १ षष्ट्यंश का मान = ३०° / ६० = ०° ३०' (३० कला)<br>
+  • D60 Index =  ग्रह देशांतर (कला) / ३०  + १<br>
   • कुल ६० षष्ट्यंशों के विशिष्ट देवता/प्रकृति होती है (घोर, राक्षस, देव, अमृत, आदि)।
 </div>
 
@@ -322,11 +333,13 @@ def get_pages_part3():
 
 <div style="background:#f1f5f9; border-left:4px solid #10b981; padding:0.6rem; font-size:0.8rem; margin:0.6rem 0;">
   <strong>बिंदु प्रणाली:</strong><br>
-  • दक्षिण भारतीय परंपरा: शुभ अंक $= \text{बिंदु}$<br>
-  • उत्तर भारतीय परंपरा: शुभ अंक $= \text{रेखा}$, अशुभ $= \text{करण / बिंदु}$<br>
+  • दक्षिण भारतीय परंपरा: शुभ अंक = बिंदु<br>
+  • उत्तर भारतीय परंपरा: शुभ अंक = रेखा, अशुभ = करण / बिंदु<br>
   इस महाग्रंथ में सर्वमान्य <strong>शुभ बिंदु (Auspicious Points)</strong> का प्रयोग किया गया है।
 </div>
 '''
+    p67 += get_ashtakavarga_wheel_svg()
+
     pages.append(make_page(67, "अष्टकवर्ग • Ashtakavarga", "अष्टकवर्ग का तात्विक आधार एवं बिंदु प्रणाली", p67))
 
     # Page 68: सूर्य, चंद्र, मंगल का BAV
@@ -395,7 +408,7 @@ def get_pages_part3():
   • शुक्र से: ६, ११, १२ (३ बिंदु)<br>
   • शनि से: ३, ५, ६, ११ (४ बिंदु)<br>
   • लग्न से: १, ३, ४, ६, १०, ११ (६ बिंदु)<br>
-  $$\text{कुल योग} = ७ + ३ + ६ + ६ + ४ + ३ + ४ + ६ = \mathbf{३९\text{ बिंदु}}$$
+  कुल योग = ७ + ३ + ६ + ६ + ४ + ३ + ४ + ६ = ३९ बिंदु
 </div>
 '''
     pages.append(make_page(70, "अष्टकवर्ग • Ashtakavarga", "शनि का भिन्नाष्टकवर्ग एवं लग्न का अष्टकवर्ग", p70))
@@ -414,7 +427,7 @@ def get_pages_part3():
 
 <div style="background:#f0fdf4; border-left:4px solid #10b981; padding:0.7rem; font-size:0.82rem; margin:0.6rem 0;">
   <strong>२८-बिंदु स्वर्ण नियम (Golden Threshold):</strong><br>
-  • $३३७ / १२ = २८.०८\text{ बिंदु प्रति भाव}$ (औसत)।<br>
+  • ३३७ / १२ = २८.०८ बिंदु प्रति भाव (औसत)।<br>
   • <strong>२८ बिंदु:</strong> तटस्थ (Neutral)<br>
   • <strong>२८ से अधिक बिंदु (२९ - ४०+):</strong> अत्यंत शुभ, बलवान, जीवन में समृद्धि व सफलता।<br>
   • <strong>२८ से कम बिंदु (२० - २७):</strong> संघर्ष, अल्प फल, देरी।<br>
@@ -462,25 +475,25 @@ def get_pages_part3():
 <div style="background:#0f172a; color:#f8fafc; padding:0.7rem; border-radius:6px; font-size:0.82rem; margin:0.6rem 0;">
   <strong style="color:#38bdf8;">📐 राशिपिंड एवं ग्रहपिंड सूत्र:</strong><br>
   १. <strong>राशि गुणक:</strong> मेष (७), वृषभ (१०), मिथुन (८), कर्क (४), सिंह (१०), कन्या (५), तुला (७), वृश्चिक (८), धनु (९), मकर (५), कुंभ (११), मीन (१२)।<br>
-  $$\text{राशिपिंड} = \sum (\text{शोधित बिंदु} \times \text{राशि गुणक})$$<br>
+  राशिपिंड = \sum (शोधित बिंदु × राशि गुणक)<br>
   २. <strong>ग्रह गुणक:</strong> सूर्य (५), चंद्र (५), मंगल (८), बुध (५), गुरु (१०), शुक्र (७), शनि (५)।<br>
-  $$\text{ग्रहपिंड} = \sum (\text{ग्रह युक्त राशि के बिंदु} \times \text{ग्रह गुणक})$$<br>
-  $$\mathbf{\text{शोधपिंड}} = \text{राशिपिंड} + \text{ग्रहपिंड}$$
+  ग्रहपिंड = \sum (ग्रह युक्त राशि के बिंदु × ग्रह गुणक)<br>
+  शोधपिंड = राशिपिंड + ग्रहपिंड
 </div>
 '''
     pages.append(make_page(74, "अष्टकवर्ग • Ashtakavarga", "शोधपिंड, राशिपिंड एवं ग्रहपिंड साधन सूत्र", p74))
 
     # Page 75: कक्षी गोचर प्रणाली
     p75 = '''
-<p>अष्टकवर्ग में किसी घटना के घटने का सटीक समय निकालने के लिए प्रत्येक राशि ($३०^\circ$) को ८ भागों में बांटा जाता है, जिसे <strong>कक्षी (Kakshya)</strong> कहते हैं:</p>
+<p>अष्टकवर्ग में किसी घटना के घटने का सटीक समय निकालने के लिए प्रत्येक राशि (३०°) को ८ भागों में बांटा जाता है, जिसे <strong>कक्षी (Kakshya)</strong> कहते हैं:</p>
 
 <div style="background:#f1f5f9; border-left:4px solid #10b981; padding:0.7rem; font-size:0.82rem; margin:0.6rem 0;">
-  <strong>कक्षी का विभाजन मान:</strong> $३०^\circ / ८ = ३^\circ ४५'$ (२२५ कला)<br>
+  <strong>कक्षी का विभाजन मान:</strong> ३०° / ८ = ३° ४५' (२२५ कला)<br>
   <strong>कक्षी क्रम (मंद से तीव्र):</strong><br>
-  १. शनि ($०^\circ - ३^\circ ४५'$) • २. गुरु ($३^\circ ४५' - ७^\circ ३०'$)<br>
-  ३. मंगल ($७^\circ ३०' - ११^\circ १५'$) • ४. सूर्य ($११^\circ १५' - १५^\circ ००'$)<br>
-  ५. शुक्र ($१५^\circ ००' - १८^\circ ४५'$) • ६. बुध ($१८^\circ ४५' - २२^\circ ३०'$)<br>
-  ७. चंद्र ($२२^\circ ३०' - २६^\circ १५'$) • ८. लग्न ($२६^\circ १५' - ३०^\circ ००'$)
+  १. शनि (०° - ३° ४५') • २. गुरु (३° ४५' - ७° ३०')<br>
+  ३. मंगल (७° ३०' - ११° १५') • ४. सूर्य (११° १५' - १५° ००')<br>
+  ५. शुक्र (१५° ००' - १८° ४५') • ६. बुध (१८° ४५' - २२° ३०')<br>
+  ७. चंद्र (२२° ३०' - २६° १५') • ८. लग्न (२६° १५' - ३०° ००')
 </div>
 
 <div style="background:#fefce8; padding:0.5rem; border-radius:6px; font-size:0.8rem;">
@@ -525,7 +538,7 @@ def get_pages_part3():
   <em>"स्थानदिक्कालचेष्टाश्च नैसर्गो दृग्बलं तथा । षडेतानि बलान्याहुर्ग्रहाणां सूक्ष्मवेदिनः ॥"</em>
 </div>
 
-<p>ग्रहों के ६-आयामी सामर्थ्य को <strong>षड्बल (Shadbala)</strong> कहते हैं। इसकी माप <strong>रूपा (Rupa)</strong> अथवा <strong>विरूपा (Virupa)</strong> में की जाती है ($१\text{ रूपा} = ६०\text{ विरूपा}$):</p>
+<p>ग्रहों के ६-आयामी सामर्थ्य को <strong>षड्बल (Shadbala)</strong> कहते हैं। इसकी माप <strong>रूपा (Rupa)</strong> अथवा <strong>विरूपा (Virupa)</strong> में की जाती है (१ रूपा = ६० विरूपा):</p>
 
 <ol style="font-size:0.8rem; line-height:1.6; padding-left:1.2rem;">
   <li><strong>स्थान बल (Positional):</strong> उच्च, सप्तवर्गज, ओझ-युग्म, केंद्र, द्रेष्काण बल।</li>
@@ -536,6 +549,8 @@ def get_pages_part3():
   <li><strong>दृग्बल (Aspectual):</strong> शुभ एवं पापी ग्रहों की दृष्टि से प्राप्त बल।</li>
 </ol>
 '''
+    p77 += get_shadbala_pillars_svg()
+
     pages.append(make_page(77, "षड्बल • Shadbala", "षड्बल की अवधारणा एवं ६ प्रकार के बल", p77))
 
     # Page 78: स्थान बल
@@ -544,8 +559,8 @@ def get_pages_part3():
 
 <div style="background:#0f172a; color:#f8fafc; padding:0.7rem; border-radius:6px; font-size:0.82rem; margin:0.6rem 0;">
   <strong style="color:#38bdf8;">📐 उच्च बल (Uchcha Bala) साधन सूत्र:</strong><br>
-  $$\text{उच्च बल (विरूपा)} = \frac{|\text{ग्रह देशांतर} - \text{परमनीच बिंदु}|}{३}$$<br>
-  (अधिकतम मान $= ६०\text{ विरूपा} = १\text{ रूपा}$ उच्च बिंदु पर, नीच पर $= ०$)
+  उच्च बल (विरूपा) = \fउच्च बल (विरूपा) = |ग्रह देशांतर - परमनीच बिंदु| ÷ ३<br>
+  (अधिकतम मान = ६० विरूपा = १ रूपा उच्च बिंदु पर, नीच पर = ०)
 </div>
 
 <div style="background:#f1f5f9; padding:0.6rem; border-radius:6px; font-size:0.8rem;">
@@ -576,7 +591,7 @@ def get_pages_part3():
 </table>
 
 <div style="background:#0f172a; color:#f8fafc; padding:0.6rem; border-radius:6px; font-size:0.8rem;">
-  $$\text{दिक् बल} = \frac{|\text{ग्रह देशांतर} - \text{दिक् बल शून्य बिंदु}|}{३}$$ (अधिकतम ६० विरूपा)
+  दिक् बल = \fदिक् बल (विरूपा) = |ग्रह देशांतर - दिक् बल शून्य बिंदु| ÷ ३ (अधिकतम ६० विरूपा)
 </div>
 '''
     pages.append(make_page(79, "षड्बल • Shadbala", "दिक् बल: दिशा बल साधन एवं भाव स्थिति", p79))
@@ -635,7 +650,7 @@ def get_pages_part3():
     <tr style="background:#f8fafc;">
       <td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>दृग्बल (Aspectual)</strong></td>
       <td style="padding:0.35rem; border:1px solid #cbd5e1;">शुभ ग्रहों की दृष्टि से धनात्मक (+), तथा पाप ग्रहों की दृष्टि से ऋणात्मक (-) विरूपा प्राप्त होते हैं।</td>
-      <td style="padding:0.35rem; border:1px solid #cbd5e1;">दृष्टि कोण अनुसार अधिकतम $\pm १५$ से $\pm ६०$ विरूपा।</td>
+      <td style="padding:0.35rem; border:1px solid #cbd5e1;">दृष्टि कोण अनुसार अधिकतम ± १५ से ± ६० विरूपा।</td>
     </tr>
   </tbody>
 </table>

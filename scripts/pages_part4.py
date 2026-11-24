@@ -6,7 +6,14 @@ Covers: Jaimini Chara Karakas, Bhrigu Nandi Nadi (BNN), Transits & Sade Sati, Ku
 Zero raw Python code - pure mathematical formulas, Hindi algorithms, and worked examples for जातक 'क'.
 """
 
-from page_common import make_page, get_diamond_chart_svg
+from page_common import (
+    make_page, get_diamond_chart_svg, get_circular_zodiac_svg,
+    get_ayanamsha_shift_svg, get_lagna_horizon_svg, get_panchanga_star_svg,
+    get_vimshottari_tree_svg, get_ashtakavarga_wheel_svg, get_shadbala_pillars_svg,
+    get_shodashavarga_tree_svg, get_jaimini_ladder_svg, get_bnn_trines_svg,
+    get_sade_sati_wave_svg, get_ashtakoot_gauge_svg, get_pipeline_flow_svg,
+    get_navamsha_grid_svg
+)
 
 def get_pages_part4():
     pages = []
@@ -27,11 +34,13 @@ def get_pages_part4():
   ३. <strong>द्विस्वभाव राशियां (३, ६, ९, १२):</strong> परस्पर एक दूसरे को पूर्ण दृष्टि से देखती हैं।
 </div>
 '''
+    p85 += get_jaimini_ladder_svg()
+
     pages.append(make_page(85, "जैमिनी सूत्र • Jaimini", "जैमिनी ज्योतिष के मूल सिद्धांत एवं राशि दृष्टि सूत्र", p85))
 
     # Page 86: ७ चर कारक साधन
     p86 = '''
-<p>राहु और केतु को छोड़कर शेष ७ ग्रहों के अंशों को अवरोही क्रम (Descending Order: $३०^\circ$ से $०^\circ$) में व्यवस्थित करने पर <strong>७ चर कारक (Chara Karakas)</strong> प्राप्त होते हैं:</p>
+<p>राहु और केतु को छोड़कर शेष ७ ग्रहों के अंशों को अवरोही क्रम (Descending Order: ३०° से ०°) में व्यवस्थित करने पर <strong>७ चर कारक (Chara Karakas)</strong> प्राप्त होते हैं:</p>
 
 <table style="width:100%; border-collapse:collapse; margin:0.7rem 0; font-size:0.78rem;">
   <thead>
@@ -42,7 +51,7 @@ def get_pages_part4():
     </tr>
   </thead>
   <tbody>
-    <tr><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>१. आत्मकारक (AK)</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">सर्वोच्च अंश ($२९^\circ - २२^\circ$)</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">आत्मा, जीवन का अंतिम लक्ष्य, मुक्ति।</td></tr>
+    <tr><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>१. आत्मकारक (AK)</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">सर्वोच्च अंश (२९° - २२°)</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">आत्मा, जीवन का अंतिम लक्ष्य, मुक्ति।</td></tr>
     <tr style="background:#f8fafc;"><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>२. अमात्यकारक (AmK)</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">द्वितीय सर्वोच्च अंश</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">करियर, बुद्धि, कर्म, आजीविका।</td></tr>
     <tr><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>३. भ्रातृकारक (BK)</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">तृतीय अंश</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">भाई-बहन, सहकर्मी, गुरु, मित्र।</td></tr>
     <tr style="background:#f8fafc;"><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>४. मातृकारक (MK)</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">चतुर्थ अंश</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">माता, आंतरिक सुख, गृह, वाहन।</td></tr>
@@ -67,7 +76,7 @@ def get_pages_part4():
   <strong style="color:#854d0e;">जातक 'क' कुण्डली में आत्मकारक:</strong><br>
   • ग्रहों के अंश: <strong>गुरु: २४° ०९'</strong>, बुध: २२° २६', मंगल: २१° ४१', चंद्र: १६° ३७', शुक्र: १२° ०७', सूर्य: १०° २५', शनि: ०८° ३४'।<br>
   • <strong>आत्मकारक (AK) = देवगुरु बृहस्पति (Jupiter)</strong>।<br>
-  • गुरु नवांश (D9) में <strong>कर्क राशि (उच्च)</strong> में हैं $\implies$ <strong>कारकांश लग्न = कर्क</strong>।<br>
+  • गुरु नवांश (D9) में <strong>कर्क राशि (उच्च)</strong> में हैं ➔ <strong>कारकांश लग्न = कर्क</strong>।<br>
   • <em>फल:</em> आत्मा का मूल स्वभाव अध्यात्म, वेदांत, ग्रंथ-रचना एवं ज्ञान का प्रसार है।
 </div>
 '''
@@ -79,7 +88,7 @@ def get_pages_part4():
 
 <div style="background:#0f172a; color:#f8fafc; padding:0.7rem; border-radius:6px; font-size:0.82rem; margin:0.6rem 0;">
   <strong style="color:#38bdf8;">📐 आरूढ़ पद प्रक्षेपण सूत्र:</strong><br>
-  $$\text{पद} = (\text{भावेश की राशि} + (\text{भावेश की दूरी} - १)) \pmod{१२}$$<br>
+  आरूढ़ पद = (भावेश की राशि + भावेश की दूरी - १) को १२ से भाग देने पर प्राप्त शेष राशि<br>
   • <strong>अपवाद नियम:</strong> यदि पद उसी भाव में या ७वें भाव में पड़े, तो १०वां भाव पद माना जाता है।<br>
   • <strong>आरूढ़ लग्न (AL):</strong> प्रथम भाव का पद (संसार में जातक की सामाजिक छवि)।<br>
   • <strong>उपपद लग्न (UL):</strong> द्वादश भाव का पद (वैवाहिक जीवन का वास्तविक यथार्थ)।
@@ -87,8 +96,8 @@ def get_pages_part4():
 
 <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.6rem; font-size:0.8rem;">
   <strong style="color:#166534;">जातक 'क' का आरूढ़ लग्न (AL):</strong><br>
-  • लग्न: कन्या (६)। लग्नेश बुध द्वितीय भाव (तुला - ७) में है (दूरी $= २$ भाव)।<br>
-  • तुला से २ भाव आगे $= \mathbf{वृश्चिक (८)}$। अतः <strong>आरूढ़ लग्न (AL) = वृश्चिक</strong>।
+  • लग्न: कन्या (६)। लग्नेश बुध द्वितीय भाव (तुला - ७) में है (दूरी = २ भाव)।<br>
+  • तुला से २ भाव आगे = वृश्चिक (८)। अतः <strong>आरूढ़ लग्न (AL) = वृश्चिक</strong>।
 </div>
 '''
     pages.append(make_page(88, "जैमिनी सूत्र • Jaimini", "आरूढ़ पद (AL) एवं उपपद लग्न (UL) प्रक्षेपण सूत्र", p88))
@@ -100,7 +109,7 @@ def get_pages_part4():
   <em>"पूर्वे धर्मो भवेत् ज्ञातो दक्षिणे चार्थसंज्ञकः । पश्चिमे काम इत्युक्त उत्तरे मोक्ष उच्यते ॥"</em>
 </div>
 
-<p>भृगु नंदी नाड़ी (BNN) में १२ राशियों को ४ दिशा त्रिकोणों में विभाजित किया गया है। एक ही त्रिकोण की राशियां परस्पर $१००\%$ युत मानी जाती हैं:</p>
+<p>भृगु नंदी नाड़ी (BNN) में १२ राशियों को ४ दिशा त्रिकोणों में विभाजित किया गया है। एक ही त्रिकोण की राशियां परस्पर १००\% युत मानी जाती हैं:</p>
 
 <table style="width:100%; border-collapse:collapse; margin:0.7rem 0; font-size:0.78rem;">
   <thead>
@@ -148,8 +157,8 @@ def get_pages_part4():
 
 <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.6rem; font-size:0.8rem;">
   <strong style="color:#166534;">जातक 'क' पर नाड़ी योग:</strong><br>
-  • <strong>गुरु (उत्तर - जल त्रिकोण / वृश्चिक):</strong> इसके त्रिकोण (कर्क) में <strong>चंद्रमा</strong> स्थित है $\implies$ <strong>गुरु + चंद्र नाड़ी योग</strong> (अत्यंत पवित्र हृदय, ज्ञान का प्रकाशक)।<br>
-  • <strong>शनि (पश्चिम - वायु त्रिकोण / कुंभ):</strong> इसके त्रिकोण (तुला) में <strong>बुध, शुक्र, राहु</strong> स्थित हैं $\implies$ <strong>शनि + बुध + शुक्र योग</strong> (तकनीकी, लेखन, कला एवं बड़े बौद्धिक प्रोजेक्ट्स का स्वामी)।
+  • <strong>गुरु (उत्तर - जल त्रिकोण / वृश्चिक):</strong> इसके त्रिकोण (कर्क) में <strong>चंद्रमा</strong> स्थित है ➔ <strong>गुरु + चंद्र नाड़ी योग</strong> (अत्यंत पवित्र हृदय, ज्ञान का प्रकाशक)।<br>
+  • <strong>शनि (पश्चिम - वायु त्रिकोण / कुंभ):</strong> इसके त्रिकोण (तुला) में <strong>बुध, शुक्र, राहु</strong> स्थित हैं ➔ <strong>शनि + बुध + शुक्र योग</strong> (तकनीकी, लेखन, कला एवं बड़े बौद्धिक प्रोजेक्ट्स का स्वामी)।
 </div>
 '''
     pages.append(make_page(91, "भृगु नंदी नाड़ी • BNN", "कर्माधिपति शनि एवं जीवकारक गुरु का नाड़ी संयोजन", p91))
@@ -190,6 +199,8 @@ def get_pages_part4():
 
 <p><strong>सिद्धांत:</strong> जन्म कुण्डली जन्म समय का स्थिर बीज है, जबकि <strong>गोचर (Transit)</strong> वर्तमान में चल रहा ऋतु चक्र है। जब तक गोचर अनुकूल न हो, जन्मकालीन दशा का फल फलीभूत नहीं हो सकता। गोचर सदा <strong>जन्मकालीन चंद्र राशि</strong> से देखा जाता है।</p>
 '''
+    p93 += get_bnn_trines_svg()
+
     pages.append(make_page(93, "गोचर वेधशाला • Transits", "गोचर का शास्त्रीय सिद्धांत: चंद्र लग्न से भ्रमण", p93))
 
     # Page 94: गोचर वेध एवं विपरीत वेध
@@ -233,20 +244,20 @@ def get_pages_part4():
 
     # Page 96: शनि साढ़े साती के ३ चरण
     p96 = '''
-<p>जब शनि देव जन्मकालीन चंद्रमा से १२वें, प्रथम (चंद्र राशि) अथवा द्वितीय भाव में गोचर करते हैं, तो इसे <strong>शनि साढ़े साती ($७.५\text{ वर्ष}$)</strong> कहते हैं:</p>
+<p>जब शनि देव जन्मकालीन चंद्रमा से १२वें, प्रथम (चंद्र राशि) अथवा द्वितीय भाव में गोचर करते हैं, तो इसे <strong>शनि साढ़े साती (७.५ वर्ष)</strong> कहते हैं:</p>
 
 <div style="background:#f1f5f9; border-left:4px solid #b45309; padding:0.7rem; font-size:0.82rem; margin:0.6rem 0;">
-  <strong>साढ़े साती के ३ चरण ($४५^\circ$ कक्षा):</strong><br>
+  <strong>साढ़े साती के ३ चरण (४५° कक्षा):</strong><br>
   • <strong>प्रथम चरण (१२वां भाव):</strong> मानसिक चिंता, व्यर्थ व्यय, अनिद्रा, सिर पर प्रभाव।<br>
   • <strong>द्वितीय चरण (जन्म चंद्र पर):</strong> शारीरिक कष्ट, कार्य में अत्यधिक संघर्ष, हृदय/छाती पर प्रभाव।<br>
   • <strong>तृतीय चरण (द्वितीय भाव):</strong> आर्थिक दबाव, पारिवारिक मतभेद, वाणी पर प्रभाव, पैर से प्रस्थान।
 </div>
 
 <div style="background:#fefce8; border:1px solid #fef08a; padding:0.6rem; border-radius:6px; font-size:0.8rem;">
-  <strong>शनि की ढैय्या ($२.५\text{ वर्ष}$):</strong> चंद्र राशि से चौथे (कंटक शनि) या आठवें (अष्टम शनि) भाव में शनि का गोचर ढैय्या कहलाता है।
+  <strong>शनि की ढैय्या (२.५ वर्ष):</strong> चंद्र राशि से चौथे (कंटक शनि) या आठवें (अष्टम शनि) भाव में शनि का गोचर ढैय्या कहलाता है।
 </div>
 '''
-    pages.append(make_page(96, "गोचर वेधशाला • Transits", "शनि साढ़े साती: ३ चरण ($४५^\circ$ कक्षा) एवं ढैय्या", p96))
+    pages.append(make_page(96, "गोचर वेधशाला • Transits", "शनि साढ़े साती: ३ चरण (४५° कक्षा) एवं ढैय्या", p96))
 
     # Page 97: साढ़े साती फल कथन के अपवाद
     p97 = '''
@@ -259,6 +270,8 @@ def get_pages_part4():
   <li><strong>लग्नेश मित्रता:</strong> वृषभ, तुला, मकर, कुंभ लग्नों के लिए शनि परम मित्र हैं, अतः शुभ फल देते हैं।</li>
 </ol>
 '''
+    p97 += get_sade_sati_wave_svg()
+
     pages.append(make_page(97, "गोचर वेधशाला • Transits", "साढ़े साती फल कथन के शास्त्रीय अपवाद एवं नियम", p97))
 
     # Page 98: जातक 'क' वर्तमान गोचर विश्लेषण
@@ -268,7 +281,7 @@ def get_pages_part4():
 <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.7rem; font-size:0.82rem;">
   <strong style="color:#166534;">जातक 'क' गोचर स्थिति:</strong><br>
   • जन्म चंद्र: <strong>कर्क राशि</strong><br>
-  • वर्तमान में शनि कुंभ राशि (कर्क से अष्टम भाव) में गोचररत हैं $\implies$ <strong>अष्टम शनि ढैय्या</strong>।<br>
+  • वर्तमान में शनि कुंभ राशि (कर्क से अष्टम भाव) में गोचररत हैं ➔ <strong>अष्टम शनि ढैय्या</strong>।<br>
   • <strong>कवच एवं सुरक्षा:</strong> जन्म कुण्डली में शनि कुंभ में स्वक्षेत्री (३४ SAV बिंदु) हैं। जातक पर वर्तमान में <strong>भाग्येश शुक्र की महादशा</strong> चल रही है। अतः यह ढैय्या कष्ट देने के स्थान पर गहन आध्यात्मिक शोध, ग्रंथ-रचना एवं दीर्घकालिक ज्ञान की सिद्धि करा रही है।
 </div>
 '''
@@ -319,6 +332,8 @@ def get_pages_part4():
   </tbody>
 </table>
 '''
+    p101 += get_ashtakoot_gauge_svg()
+
     pages.append(make_page(101, "विवाह मिलान • Matrimony", "अष्टकूट मिलान १: वर्ण, वश्य, तारा एवं योनि कूट", p101))
 
     # Page 102: अष्टकूट मिलान २: कूट ५-८
@@ -340,7 +355,7 @@ def get_pages_part4():
   </tbody>
 </table>
 <div style="text-align:center; font-weight:bold; font-size:0.9rem; margin-top:0.4rem;">
-  कुल योग $= १ + २ + ३ + ४ + ५ + ६ + ७ + ८ = \mathbf{३६\text{ गुण}}$ (१८+ शुभ, २४+ उत्तम)
+  कुल योग = १ + २ + ३ + ४ + ५ + ६ + ७ + ८ = ३६ गुण (१८+ शुभ, २४+ उत्तम)
 </div>
 '''
     pages.append(make_page(102, "विवाह मिलान • Matrimony", "अष्टकूट मिलान २: ग्रहमैत्री, गण, भकूट एवं नाड़ी", p102))
@@ -377,12 +392,14 @@ def get_pages_part4():
     p105 = '''
 <div style="background:#0f172a; color:#f8fafc; padding:0.8rem; border-radius:6px; font-size:0.82rem; margin-bottom:0.7rem;">
   <strong style="color:#38bdf8;">🌟 १५-चरणीय संपूर्ण कुण्डली विवेचन महा-पाइपलाइन:</strong><br>
-  १. पंचांग शुद्धि $\to$ २. लग्न व लग्नेश बल $\to$ ३. चंद्र राशि व मन $\to$ ४. सूर्य व आत्मा $\to$<br>
-  ५. भाव स्पष्ट $\to$ ६. षोडशवर्ग (D9, D10) $\to$ ७. षड्बल मापन $\to$ ८. अष्टकवर्ग (SAV) $\to$<br>
-  ९. पराशरी राजयोग $\to$ १०. जैमिनी चर कारक $\to$ ११. भृगु नंदी नाड़ी $\to$ १२. विंशोत्तरी दशा $\to$<br>
-  १३. गोचर वेध $\to$ १४. अरिष्ट भंग $\to$ <strong>१५. सात्विक समाधान।</strong>
+  १. पंचांग शुद्धि ➔ २. लग्न व लग्नेश बल ➔ ३. चंद्र राशि व मन ➔ ४. सूर्य व आत्मा ➔<br>
+  ५. भाव स्पष्ट ➔ ६. षोडशवर्ग (D9, D10) ➔ ७. षड्बल मापन ➔ ८. अष्टकवर्ग (SAV) ➔<br>
+  ९. पराशरी राजयोग ➔ १०. जैमिनी चर कारक ➔ ११. भृगु नंदी नाड़ी ➔ १२. विंशोत्तरी दशा ➔<br>
+  १३. गोचर वेध ➔ १४. अरिष्ट भंग ➔ <strong>१५. सात्विक समाधान।</strong>
 </div>
 '''
+    p105 += get_pipeline_flow_svg()
+
     pages.append(make_page(105, "महा-पाइपलाइन • Synthesis", "१५-चरणीय संपूर्ण कुण्डली विवेचन महा-पाइपलाइन", p105))
 
     # Page 106: जातक 'क' समग्र कुण्डली विवेचन

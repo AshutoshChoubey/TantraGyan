@@ -6,7 +6,14 @@ Covers: Panchanga (5 Tattvas), Vimshottari Dasha Allocation & Hierarchy, Parasha
 Zero raw Python code - pure mathematical formulas, Hindi algorithms, and worked examples for जातक 'क'.
 """
 
-from page_common import make_page, get_diamond_chart_svg
+from page_common import (
+    make_page, get_diamond_chart_svg, get_circular_zodiac_svg,
+    get_ayanamsha_shift_svg, get_lagna_horizon_svg, get_panchanga_star_svg,
+    get_vimshottari_tree_svg, get_ashtakavarga_wheel_svg, get_shadbala_pillars_svg,
+    get_shodashavarga_tree_svg, get_jaimini_ladder_svg, get_bnn_trines_svg,
+    get_sade_sati_wave_svg, get_ashtakoot_gauge_svg, get_pipeline_flow_svg,
+    get_navamsha_grid_svg
+)
 
 def get_pages_part2():
     pages = []
@@ -31,35 +38,36 @@ def get_pages_part2():
     </tr>
   </thead>
   <tbody>
-    <tr><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>१. तिथि</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">जल (Water)</td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">सूर्य-चंद्र अंतर ($१२^\circ$)</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">धन, समृद्धि, मानसिक तृप्ति।</td></tr>
+    <tr><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>१. तिथि</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">जल (Water)</td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">सूर्य-चंद्र अंतर (१२°)</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">धन, समृद्धि, मानसिक तृप्ति।</td></tr>
     <tr style="background:#f8fafc;"><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>२. वार</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">अग्नि (Fire)</td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">सौर दिवस / वारेश</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">आयु, जीवन शक्ति, तेजस्विता।</td></tr>
-    <tr><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>३. नक्षत्र</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">वायु (Air)</td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">चंद्र स्पष्ट ($१३^\circ २०'$)</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">कर्म फल, पाप-नाश, प्रारब्ध।</td></tr>
-    <tr style="background:#f8fafc;"><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>४. योग</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">आकाश (Ether)</td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">सूर्य + चंद्र योग ($१३^\circ २०'$)</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">आरोग्य, संबंध, चित्त शुद्धि।</td></tr>
-    <tr><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>५. करण</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">पृथ्वी (Earth)</td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">अर्ध-तिथि ($६^\circ$)</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">कर्म सिद्धि, भौतिक सफलता।</td></tr>
+    <tr><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>३. नक्षत्र</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">वायु (Air)</td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">चंद्र स्पष्ट (१३° २०')</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">कर्म फल, पाप-नाश, प्रारब्ध।</td></tr>
+    <tr style="background:#f8fafc;"><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>४. योग</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">आकाश (Ether)</td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">सूर्य + चंद्र योग (१३° २०')</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">आरोग्य, संबंध, चित्त शुद्धि।</td></tr>
+    <tr><td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>५. करण</strong></td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">पृथ्वी (Earth)</td><td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">अर्ध-तिथि (६°)</td><td style="padding:0.35rem; border:1px solid #cbd5e1;">कर्म सिद्धि, भौतिक सफलता।</td></tr>
   </tbody>
 </table>
 '''
+    p29 += get_panchanga_star_svg()
+
     pages.append(make_page(29, "पंचांग रहस्य • Panchanga", "पंचांग का तात्विक रहस्य एवं काल-पुरुष का शरीर", p29))
 
     # Page 30: तिथि साधन सूत्र
     p30 = '''
-<p>सूर्य और चंद्रमा के कोणीय देशांतर के अंतर को $१२^\circ$ से विभाजित करने पर <strong>तिथि (Tithi)</strong> प्राप्त होती है:</p>
+<p>सूर्य और चंद्रमा के कोणीय देशांतर के अंतर को १२° से विभाजित करने पर <strong>तिथि (Tithi)</strong> प्राप्त होती है:</p>
 
-<div style="background:#0f172a; color:#f8fafc; padding:0.7rem; border-radius:6px; font-size:0.82rem; margin:0.6rem 0;">
-  <strong style="color:#38bdf8;">📐 तिथि साधन का बीजगणितीय सूत्र:</strong><br>
-  $$\Delta\lambda = (\lambda_{\text{चंद्र}} - \lambda_{\text{सूर्य}}) \pmod{३६०^\circ}$$<br>
-  $$\text{Tithi Number} = \lfloor \Delta\lambda / १२^\circ \rfloor + १$$<br>
-  • यदि तिथि संख्या १ से १५ हो: <strong>शुक्ल पक्ष</strong> (१ प्रतिपदा से १५ पूर्णिमा)।<br>
-  • यदि तिथि संख्या १६ से ३० हो: <strong>कृष्ण पक्ष</strong> (१६ प्रतिपदा से ३० अमावस्या)।
+<div style="background:#0f172a; color:#f8fafc; padding:0.7rem; border-radius:6px; font-size:0.82rem; margin:0.6rem 0; line-height:1.65;">
+  <strong style="color:#38bdf8;">📐 तिथि साधन की सरल विधि:</strong><br>
+  • <strong>कोणीय अंतर:</strong> चंद्र भोगांश में से सूर्य भोगांश घटाएं (ऋणात्मक होने पर ३६०° जोड़ें)।<br>
+  • <strong>तिथि क्रमांक:</strong> कोणीय अंतर को १२° से भाग देकर १ जोड़ें।<br>
+  • १ से १५: <strong>शुक्ल पक्ष</strong> (१ प्रतिपदा से १५ पूर्णिमा)<br>
+  • १६ से ३०: <strong>कृष्ण पक्ष</strong> (१६ प्रतिपदा से ३० अमावस्या)
 </div>
 
-<div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.6rem; font-size:0.82rem;">
+<div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.7rem; font-size:0.82rem; line-height:1.65;">
   <strong style="color:#166534;">जातक 'क' पर प्रत्यक्ष तिथि गणना:</strong><br>
-  • चंद्र स्पष्ट $= १०६^\circ ३७' १२''$ (कर्क १६° ३७')<br>
-  • सूर्य स्पष्ट $= १९०^\circ २५' ३६''$ (तुला १०° २५')<br>
-  • अंतर $\Delta\lambda = (१०६.६२० - १९०.४२७) + ३६०^\circ = २७६.१९३^\circ$<br>
-  • तिथि संख्या $= \lfloor २७६.१९३ / १२ \rfloor + १ = २३ + १ = \mathbf{२४}$<br>
-  • <strong>परिणाम:</strong> कृष्ण पक्ष नवमी (२४वीं तिथि)।
+  • चंद्र स्पष्ट = १०३° १०' (कर्क राशि), सूर्य स्पष्ट = १९०° २९' (तुला राशि)<br>
+  • कोणीय अंतर = (१०३.१७° - १९०.४८°) + ३६०° = २७२.६९°<br>
+  • तिथि भाग = २७२.६९° ÷ १२° = २२.७२ ➔ २२ पूर्ण + १ = <strong>२३वीं तिथि</strong><br>
+  • <strong>परिणाम:</strong> कृष्ण पक्ष अष्टमी (२३वीं तिथि, काल भैरव एवं शिव उपासना के लिए श्रेष्ठ)।
 </div>
 '''
     pages.append(make_page(30, "पंचांग रहस्य • Panchanga", "तिथि साधन सूत्र: सूर्य-चंद्र अंतर एवं क्षय/वृद्धि", p30))
@@ -71,14 +79,14 @@ def get_pages_part2():
 <div style="background:#f1f5f9; border-left:4px solid #10b981; padding:0.7rem; font-size:0.82rem; margin:0.6rem 0;">
   <strong>अहर्गण (Ahargana) द्वारा वार साधन:</strong><br>
   कैलेंडर के कुल बीते दिनों (Ahargana) को ७ से भाग देने पर शेषफल वार बताता है:<br>
-  $$\text{वार संख्या} = (JD + १.५) \pmod{७}$$<br>
+  वार संख्या = (जूलियन डे + १.५) को ७ से भाग देने पर प्राप्त शेषफल<br>
   (० = रविवार, १ = सोमवार, २ = मंगलवार, ३ = बुधवार, ४ = गुरुवार, <strong>५ = शुक्रवार</strong>, ६ = शनिवार)
 </div>
 
 <div style="background:#fefce8; border:1px solid #fef08a; padding:0.6rem; border-radius:6px; font-size:0.82rem;">
   <strong>होरा चक्र (Hourly Planetary Lord):</strong><br>
   प्रत्येक दिन सूर्योदय से आरंभ होकर प्रत्येक घंटे का स्वामी मंदतम से तीव्रतम गति क्रम में होता है:<br>
-  <strong>शनि $\to$ गुरु $\to$ मंगल $\to$ सूर्य $\to$ शुक्र $\to$ बुध $\to$ चंद्र</strong> (पुनरावृत्ति २४ घंटे)<br>
+  <strong>शनि ➔ गुरु ➔ मंगल ➔ सूर्य ➔ शुक्र ➔ बुध ➔ चंद्र</strong> (पुनरावृत्ति २४ घंटे)<br>
   जातक 'क' का जन्म शुक्रवार की रात्रि में (सूर्योदय से २१.८ घंटे बाद) हुआ। उस समय <strong>बुध की होरा</strong> चल रही थी (बौद्धिक एवं तार्किक बल)।
 </div>
 '''
@@ -90,19 +98,19 @@ def get_pages_part2():
 
 <div style="background:#0f172a; color:#f8fafc; padding:0.7rem; border-radius:6px; font-size:0.82rem; margin:0.6rem 0;">
   <strong style="color:#38bdf8;">📐 नक्षत्र एवं चरण साधन सूत्र:</strong><br>
-  • संपूर्ण भचक्र $= ३६०^\circ = २१६००\text{ कला}$<br>
-  • १ नक्षत्र का मान $= ३६०^\circ / २७ = १३^\circ २०' = ८००\text{ कला}$<br>
-  • १ चरण का मान $= ८०० / ४ = २००\text{ कला} = ३^\circ २०'$<br>
-  $$\text{Nakshatra Index} = \lfloor \text{चंद्र देशांतर (कला)} / ८०० \rfloor + १$$<br>
-  $$\text{Pada Index} = \lfloor (\text{चंद्र देशांतर} \pmod{८००}) / २०० \rfloor + १$$
+  • संपूर्ण भचक्र = ३६०° = २१६०० कला<br>
+  • १ नक्षत्र का मान = ३६०° / २७ = १३° २०' = ८०० कला<br>
+  • १ चरण का मान = ८०० / ४ = २०० कला = ३° २०'<br>
+  • नक्षत्र क्रमांक = चंद्र देशांतर (कला) ÷ ८०० + १<br>
+  • चरण क्रमांक = (८०० से भाग देने पर शेष कला) ÷ २०० + १
 </div>
 
 <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.6rem; font-size:0.82rem;">
   <strong style="color:#166534;">जातक 'क' पर प्रत्यक्ष नक्षत्र गणना:</strong><br>
-  • चंद्र स्पष्ट $= कर्क १६^\circ ३७' १२'' = (३ \times ३० + १६.६२०) \times ६० = ६३९७.२\text{ कला}$<br>
-  • नक्षत्र संख्या $= \lfloor ६३९७.२ / ८०० \rfloor + १ = ७ + १ = \mathbf{८\text{ (पुष्य नक्षत्र)}}$<br>
-  • शेष कला $= ६३९७.२ - ५६०० = ७९७.२\text{ कला}$<br>
-  • चरण संख्या $= \lfloor ७९७.२ / २०० \rfloor + १ = ३ + १ = \mathbf{४\text{था चरण}}$<br>
+  • चंद्र स्पष्ट = कर्क १६° ३७' १२'' = (३ × ३० + १६.६२०) × ६० = ६३९७.२ कला<br>
+  • नक्षत्र संख्या =  ६३९७.२ / ८००  + १ = ७ + १ = ८ (पुष्य नक्षत्र)<br>
+  • शेष कला = ६३९७.२ - ५६०० = ७९७.२ कला<br>
+  • चरण संख्या =  ७९७.२ / २००  + १ = ३ + १ = ४था चरण<br>
   • <strong>परिणाम:</strong> पुष्य नक्षत्र (स्वामी: शनि देव), चतुर्थ चरण (नवांश: वृश्चिक, नवांशेश: मंगल)।
 </div>
 '''
@@ -110,19 +118,19 @@ def get_pages_part2():
 
     # Page 33: २७ नित्य योग
     p33 = '''
-<p>सूर्य और चंद्रमा के निरयण देशांतरों के योग को $१३^\circ २०'$ (८०० कला) से विभाजित करने पर <strong>नित्य योग (Nitya Yoga)</strong> प्राप्त होता है:</p>
+<p>सूर्य और चंद्रमा के निरयण देशांतरों के योग को १३° २०' (८०० कला) से विभाजित करने पर <strong>नित्य योग (Nitya Yoga)</strong> प्राप्त होता है:</p>
 
 <div style="background:#f1f5f9; border-left:4px solid #0284c7; padding:0.7rem; font-size:0.82rem; margin:0.6rem 0;">
   <strong>नित्य योग साधन सूत्र:</strong><br>
-  $$\text{Yoga Longitude} = (\lambda_{\text{सूर्य}} + \lambda_{\text{चंद्र}}) \pmod{३६०^\circ}$$<br>
-  $$\text{Yoga Number} = \lfloor \text{Yoga Longitude (कला)} / ८०० \rfloor + १$$
+  • योग भोगांश = (सूर्य भोगांश + चंद्र भोगांश) को ३६०° चक्र में समायोजित करें<br>
+  • योग क्रमांक = योग भोगांश (कला) ÷ ८०० + १
 </div>
 
 <div style="background:#fefce8; border:1px solid #fef08a; padding:0.6rem; border-radius:6px; font-size:0.82rem;">
   <strong style="color:#854d0e;">जातक 'क' पर प्रत्यक्ष योग गणना:</strong><br>
-  • सूर्य स्पष्ट $= १९०^\circ २५' ३६''$, चंद्र स्पष्ट $= १०६^\circ ३७' १२''$<br>
-  • योग देशांतर $= १९०.४२६७^\circ + १०६.६२००^\circ = २९७.०४६७^\circ = १७८२२.८\text{ कला}$<br>
-  • योग संख्या $= \lfloor १७८२२.८ / ८०० \rfloor + १ = २२ + १ = \mathbf{२३}$<br>
+  • सूर्य स्पष्ट = १९०° २५' ३६'', चंद्र स्पष्ट = १०६° ३७' १२''<br>
+  • योग देशांतर = १९०.४२६७° + १०६.६२००° = २९७.०४६७° = १७८२२.८ कला<br>
+  • योग संख्या =  १७८२२.८ / ८००  + १ = २२ + १ = २३<br>
   • <strong>परिणाम:</strong> २३वां योग = <strong>शुभ योग (Shubha Yoga)</strong>।<br>
   • <em>फल:</em> जातक धार्मिक, विद्यावान, परोपकारी एवं समाज में सम्मानित होता है।
 </div>
@@ -131,7 +139,7 @@ def get_pages_part2():
 
     # Page 34: ११ करण साधन
     p34 = '''
-<p>एक तिथि के आधे भाग ($६^\circ$ सूर्य-चंद्र अंतर) को <strong>करण (Karana)</strong> कहते हैं। कुल ११ करण होते हैं:</p>
+<p>एक तिथि के आधे भाग (६° सूर्य-चंद्र अंतर) को <strong>करण (Karana)</strong> कहते हैं। कुल ११ करण होते हैं:</p>
 
 <table style="width:100%; border-collapse:collapse; margin:0.7rem 0; font-size:0.78rem;">
   <thead>
@@ -157,9 +165,9 @@ def get_pages_part2():
 
 <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.6rem; font-size:0.8rem;">
   <strong style="color:#166534;">जातक 'क' पर प्रत्यक्ष करण गणना:</strong><br>
-  • $\Delta\lambda = २७६.१९३^\circ \implies \lfloor २७६.१९३ / ६ \rfloor + १ = ४६ + १ = ४७$वां अर्ध-भाग।<br>
-  • ४७वां भाग $= \mathbf{गर करण (Gara Karana)}$ (स्वामी: भूमि/पृथ्वी)।<br>
-  • <em>फल:</em> जातक परिश्रमी, कृषि/भूमि अथवा स्थिर संपत्ति में कुशल होता है।
+  • चंद्र-सूर्य कोणीय अंतर = २७२.७° ➔ २७२.७° ÷ ६° = ४५.४५ ➔ ४५ + १ = ४६वां भाग (कौलव करण)।<br>
+  • ४६वां भाग = कौलव करण (स्वामी: मित्र देव)<br>
+  • <em>फल:</em> जातक सौम्य, संवेदनशील, सर्वप्रिय एवं तंत्र साधना में स्थिर चित्त होता है।
 </div>
 '''
     pages.append(make_page(34, "पंचांग रहस्य • Panchanga", "११ करण साधन: चर एवं स्थिर करणों का गणित", p34))
@@ -235,9 +243,11 @@ def get_pages_part2():
   <strong>९ ग्रहों के महादशा वर्ष:</strong><br>
   • केतु: ७ वर्ष • शुक्र: २० वर्ष • सूर्य: ६ वर्ष • चंद्रमा: १० वर्ष<br>
   • मंगल: ७ वर्ष • राहु: १८ वर्ष • गुरु: १६ वर्ष • शनि: १९ वर्ष • बुध: १७ वर्ष<br>
-  $$\text{कुल योग} = ७ + २० + ६ + १० + ७ + १८ + १६ + १९ + १७ = \mathbf{१२०\text{ वर्ष}}$$
+  कुल योग = ७ + २० + ६ + १० + ७ + १८ + १६ + १९ + १७ = १२० वर्ष
 </div>
 '''
+    p37 += get_vimshottari_tree_svg()
+
     pages.append(make_page(37, "दशा तंत्र • Vimshottari Dasha", "विंशोत्तरी दशा का मूल दर्शन एवं १२० वर्षीय चक्र", p37))
 
     # Page 38: दशा वर्ष आवंटन एवं नक्षत्र त्रिकोण
@@ -275,10 +285,10 @@ def get_pages_part2():
 
 <div style="background:#0f172a; color:#f8fafc; padding:0.7rem; border-radius:6px; font-size:0.82rem; margin:0.6rem 0;">
   <strong style="color:#38bdf8;">📐 भुक्त एवं भोग्य दशा का बीजगणितीय सूत्र:</strong><br>
-  १. नक्षत्र का कुल मान $= ८००\text{ कला} = १३^\circ २०'$<br>
-  २. भुक्त कला $= \text{चंद्र देशांतर} \pmod{८००}$<br>
-  ३. भोग्य कला $= ८०० - \text{भुक्त कला}$<br>
-  $$\text{दशा भोग्य शेष (वर्ष)} = \left(\frac{\text{भोग्य कला}}{८००}\right) \times \text{दशा स्वामी के कुल वर्ष}$$
+  १. नक्षत्र का कुल मान = ८०० कला = १३° २०'<br>
+  २. भुक्त कला = चंद्र देशांतर को ८०० से भाग देने पर शेष कला<br>
+  ३. भोग्य कला = ८०० - भुक्त कला<br>
+  ४. दशा भोग्य शेष (वर्ष) = (भोग्य कला ÷ ८०० कला) × दशा स्वामी के कुल वर्ष
 </div>
 
 <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.6rem; font-size:0.8rem;">
@@ -293,15 +303,15 @@ def get_pages_part2():
 
 <div style="background:#f1f5f9; border-left:4px solid #b45309; padding:0.7rem; font-size:0.82rem; margin:0.6rem 0;">
   <strong>चरण १: चंद्र देशांतर एवं पुष्य नक्षत्र का आरंभ:</strong><br>
-  • पुष्य नक्षत्र का विस्तार: कर्क ३° २०' ($९३^\circ २०'$) से कर्क १६° ४०' ($१०६^\circ ४०'$)<br>
-  • चंद्र स्पष्ट $= कर्क १६^\circ ३७' १२'' = १०६^\circ ३७' १२''$<br>
+  • पुष्य नक्षत्र का विस्तार: कर्क ३° २०' (९३° २०') से कर्क १६° ४०' (१०६° ४०')<br>
+  • चंद्र स्पष्ट = कर्क १६° ३७' १२'' = १०६° ३७' १२''<br>
   <strong>चरण २: भुक्त एवं भोग्य कला निकालना:</strong><br>
-  • पुष्य का आरंभ $= ९३^\circ २०' = ५६००\text{ कला}$<br>
-  • चंद्र स्थिति $= १०६^\circ ३७' १२'' = ६३९७.२\text{ कला}$<br>
-  • भुक्त कला $= ६३९७.२ - ५६०० = ७९७.२\text{ कला}$<br>
-  • भोग्य कला $= ८०० - ७९७.२ = \mathbf{२.८\text{ कला}}$<br>
+  • पुष्य का आरंभ = ९३° २०' = ५६०० कला<br>
+  • चंद्र स्थिति = १०६° ३७' १२'' = ६३९७.२ कला<br>
+  • भुक्त कला = ६३९७.२ - ५६०० = ७९७.२ कला<br>
+  • भोग्य कला = ८०० - ७९७.२ = २.८ कला<br>
   <strong>चरण ३: शनि दशा भोग्य अनुपात:</strong><br>
-  $$\text{भोग्य वर्ष} = \left(\frac{२.८}{८००}\right) \times १९\text{ वर्ष} = ०.०६६५\text{ वर्ष} = \mathbf{२४\text{ दिन}}$$
+  भोग्य वर्ष = (२.८ ÷ ८००) × १९ वर्ष = ०.०६६५ वर्ष = २४ दिन
 </div>
 
 <div style="background:#fefce8; border:1px solid #fef08a; padding:0.6rem; border-radius:6px; font-size:0.8rem;">
@@ -317,17 +327,17 @@ def get_pages_part2():
 
 <div style="background:#0f172a; color:#f8fafc; padding:0.7rem; border-radius:6px; font-size:0.82rem; margin:0.6rem 0;">
   <strong style="color:#38bdf8;">📐 अंतर्दशा साधन का सार्वभौमिक सूत्र:</strong><br>
-  $$\text{अंतर्दशा अवधि (वर्ष)} = \frac{\text{महादशा वर्ष} \times \text{अंतर्दशा नाथ के वर्ष}}{१२०}$$<br>
-  • <strong>माह निकालने का नियम:</strong> (महादशा वर्ष $\times$ अंतर्दशा वर्ष) में १२ का भाग दें, जो भागफल आए वह माह है।<br>
+  अंतर्दशा अवधि (वर्ष) = (महादशा वर्ष × अंतर्दशा नाथ के वर्ष) ÷ १२०<br>
+  • <strong>माह निकालने का नियम:</strong> (महादशा वर्ष × अंतर्दशा वर्ष) में १२ का भाग दें, जो भागफल आए वह माह है।<br>
   • <strong>दिन निकालने का नियम:</strong> शेषफल को ३ से गुणा करें, वह दिन होगा।
 </div>
 
 <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.6rem; font-size:0.8rem;">
   <strong style="color:#166534;">उदाहरण: बुध महादशा (१७ वर्ष) में शुक्र अंतर्दशा (२० वर्ष):</strong><br>
-  • गुणनफल $= १७ \times २० = ३४०$<br>
-  • ३४० में १२ का भाग: भागफल $= २८\text{ माह}$, शेषफल $= ४$<br>
-  • दिन $= ४ \times ३ = १२\text{ दिन}$<br>
-  • <strong>अवधि:</strong> २८ माह १२ दिन $= \mathbf{२\text{ वर्ष } ४\text{ माह } १२\text{ दिन}}$।
+  • गुणनफल = १७ × २० = ३४०<br>
+  • ३४० में १२ का भाग: भागफल = २८ माह, शेषफल = ४<br>
+  • दिन = ४ × ३ = १२ दिन<br>
+  • <strong>अवधि:</strong> २८ माह १२ दिन = २ वर्ष  ४ माह  १२ दिन।
 </div>
 '''
     pages.append(make_page(41, "दशा तंत्र • Vimshottari Dasha", "अंतर्दशा (भुक्ति) उप-विभाजन का आनुपातिक सूत्र", p41))
@@ -348,19 +358,19 @@ def get_pages_part2():
   <tbody>
     <tr>
       <td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>१. प्रत्यंतर्दशा (PD)</strong></td>
-      <td style="padding:0.35rem; border:1px solid #cbd5e1;">$\frac{\text{MD} \times \text{AD} \times \text{PD}}{१२० \times १२०}$ वर्ष</td>
+      <td style="padding:0.35rem; border:1px solid #cbd5e1;">(MD × AD × PD) ÷ (१२० × १२०) वर्ष</td>
       <td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">सप्ताह से माह</td>
       <td style="padding:0.35rem; border:1px solid #cbd5e1;">घटना का माह सुनिश्चित करना।</td>
     </tr>
     <tr style="background:#f8fafc;">
       <td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>२. सूक्ष्म दशा (SD)</strong></td>
-      <td style="padding:0.35rem; border:1px solid #cbd5e1;">$\frac{\text{PD अवधि} \times \text{SD वर्ष}}{१२०}$</td>
+      <td style="padding:0.35rem; border:1px solid #cbd5e1;">(PD अवधि × SD वर्ष) ÷ १२०</td>
       <td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">दिन से सप्ताह</td>
       <td style="padding:0.35rem; border:1px solid #cbd5e1;">सटीक सप्ताह एवं दिन।</td>
     </tr>
     <tr>
       <td style="padding:0.35rem; border:1px solid #cbd5e1;"><strong>३. प्राण दशा (PrD)</strong></td>
-      <td style="padding:0.35rem; border:1px solid #cbd5e1;">$\frac{\text{SD अवधि} \times \text{PrD वर्ष}}{१२०}$</td>
+      <td style="padding:0.35rem; border:1px solid #cbd5e1;">(SD अवधि × PrD वर्ष) ÷ १२०</td>
       <td style="padding:0.35rem; border:1px solid #cbd5e1; text-align:center;">घंटे से दिन</td>
       <td style="padding:0.35rem; border:1px solid #cbd5e1;">घंटे एवं सूक्ष्म मुहूर्त।</td>
     </tr>
@@ -432,6 +442,8 @@ def get_pages_part2():
   • जब केंद्र और त्रिकोण के स्वामियों का संबंध बनता है, तो <strong>महालक्ष्मी-नारायण योग (राजयोग)</strong> उत्पन्न होता है।
 </div>
 '''
+    p45 += get_diamond_chart_svg()
+
     pages.append(make_page(45, "पराशरी योग • Parashari Yogas", "योग की परिभाषा एवं पराशरी केंद्र-त्रिकोण सिद्धांत", p45))
 
     # Page 46: धर्माधिपति-कर्माधिपति योग
@@ -562,9 +574,9 @@ def get_pages_part2():
 <p>त्रिक भावों (६, ८, १२) के स्वामी जब आपस में ही ६, ८, १२ में बैठें और किसी शुभ भाव के स्वामी से युति न करें, तो <strong>विपरीत राजयोग</strong> बनता है:</p>
 
 <ol style="font-size:0.8rem; line-height:1.6; padding-left:1.2rem;">
-  <li><strong>हर्ष योग:</strong> षष्ठेश ६, ८ या १२वें भाव में हो $\to$ शत्रुओं पर विजय, अजेयता, स्वास्थ्य।</li>
-  <li><strong>सरल योग:</strong> अष्टमेश ६, ८ या १२वें भाव में हो $\to$ दीर्घायु, गुप्त ज्ञान, संकट में अकूत लाभ।</li>
-  <li><strong>विमल योग:</strong> द्वादशेश ६, ८ या १२वें भाव में हो $\to$ स्वतंत्र विचार, परोपकारी, मितव्ययी।</li>
+  <li><strong>हर्ष योग:</strong> षष्ठेश ६, ८ या १२वें भाव में हो ➔ शत्रुओं पर विजय, अजेयता, स्वास्थ्य।</li>
+  <li><strong>सरल योग:</strong> अष्टमेश ६, ८ या १२वें भाव में हो ➔ दीर्घायु, गुप्त ज्ञान, संकट में अकूत लाभ।</li>
+  <li><strong>विमल योग:</strong> द्वादशेश ६, ८ या १२वें भाव में हो ➔ स्वतंत्र विचार, परोपकारी, मितव्ययी।</li>
 </ol>
 
 <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.5rem; font-size:0.8rem;">

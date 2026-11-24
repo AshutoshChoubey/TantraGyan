@@ -6,7 +6,14 @@ Covers: Introduction, Celestial Mechanics, Julian Day, Ayanamsha, Lagna, Planeta
 Zero raw Python code - pure mathematical formulas, Hindi algorithms, and worked examples for जातक 'क'.
 """
 
-from page_common import make_page, get_diamond_chart_svg, get_circular_zodiac_svg
+from page_common import (
+    make_page, get_diamond_chart_svg, get_circular_zodiac_svg,
+    get_ayanamsha_shift_svg, get_lagna_horizon_svg, get_panchanga_star_svg,
+    get_vimshottari_tree_svg, get_ashtakavarga_wheel_svg, get_shadbala_pillars_svg,
+    get_shodashavarga_tree_svg, get_jaimini_ladder_svg, get_bnn_trines_svg,
+    get_sade_sati_wave_svg, get_ashtakoot_gauge_svg, get_pipeline_flow_svg,
+    get_navamsha_grid_svg
+)
 
 def get_pages_part1():
     pages = []
@@ -73,7 +80,7 @@ def get_pages_part1():
   <tbody>
     <tr>
       <td style="padding:0.4rem; border:1px solid #cbd5e1;"><strong>१. क्रांतिवृत्त (Ecliptic)</strong></td>
-      <td style="padding:0.4rem; border:1px solid #cbd5e1;">पृथ्वी से देखने पर सूर्य का वार्षिक प्रत्यक्ष मार्ग ($३६०^\circ$ वृत्त)।</td>
+      <td style="padding:0.4rem; border:1px solid #cbd5e1;">पृथ्वी से देखने पर सूर्य का वार्षिक प्रत्यक्ष मार्ग (३६०° वृत्त)।</td>
       <td style="padding:0.4rem; border:1px solid #cbd5e1;">१२ राशियों एवं २७ नक्षत्रों का आधार।</td>
     </tr>
     <tr style="background:#f8fafc;">
@@ -90,7 +97,7 @@ def get_pages_part1():
 </table>
 
 <div style="background:#f1f5f9; border-radius:6px; padding:0.7rem; font-size:0.82rem; margin-top:0.6rem;">
-  <strong>💡 क्रांतिवृत्त का झुकाव कोण (Obliquity $\varepsilon$):</strong> क्रांतिवृत्त और विषुवत् वृत्त एक दूसरे पर लगभग $२३^\circ २६'$ के कोण पर झुके हुए हैं। इसी झुकाव के कारण ऋतु परिवर्तन और राशियों के उदय मान में अक्षांशीय अंतर आता है।
+  <strong>💡 क्रांतिवृत्त का झुकाव कोण (Obliquity २३° २६'):</strong> क्रांतिवृत्त और विषुवत् वृत्त एक दूसरे पर लगभग २३° २६' के कोण पर झुके हुए हैं। इसी झुकाव के कारण ऋतु परिवर्तन और राशियों के उदय मान में अक्षांशीय अंतर आता है।
 </div>
 '''
     pages.append(make_page(3, "खगोल आधार • Astronomy", "ब्रह्माण्डीय संदर्भ मंडल एवं त्रि-आयामी ज्यामिति", p3))
@@ -102,12 +109,12 @@ def get_pages_part1():
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; font-size:0.8rem; margin:0.8rem 0;">
   <div style="background:#fff; border:1px solid #e2e8f0; padding:0.6rem; border-radius:6px;">
     <strong style="color:#0284c7;">📐 कोणीय माप:</strong><br>
-    • $१$ वृत्त = १२ राशियां = $३६०^\circ$<br>
-    • $१$ राशि = $३०^\circ$<br>
-    • $१^\circ$ (अंश) = ६०' (कला / मिनट)<br>
+    • १ वृत्त = १२ राशियां = ३६०°<br>
+    • १ राशि = ३०°<br>
+    • १° (अंश) = ६०' (कला / मिनट)<br>
     • १' (कला) = ६०'' (विकला / सेकंड)<br>
-    • १ नक्षत्र = $१३^\circ २०'$ = ८०० कला<br>
-    • १ नक्षत्र चरण = $३^\circ २०'$ = २०० कला
+    • १ नक्षत्र = १३° २०' = ८०० कला<br>
+    • १ नक्षत्र चरण = ३° २०' = २०० कला
   </div>
   <div style="background:#fff; border:1px solid #e2e8f0; padding:0.6rem; border-radius:6px;">
     <strong style="color:#b45309;">⏱️ वैदिक काल माप:</strong><br>
@@ -122,9 +129,11 @@ def get_pages_part1():
 
 <div style="background:#fdf2f8; border-left:4px solid #db2777; padding:0.6rem 0.8rem; font-size:0.8rem;">
   <strong>स्वर्ण नियम (अंश से कला रूपांतरण):</strong> किसी भी ग्रह की स्थिति को कला में बदलने का सूत्र:<br>
-  $$\text{कुल कला} = (\text{राशि} \times ३० + \text{अंश}) \times ६० + \text{कला}$$
+  कुल कला = (राशि × ३० + अंश) × ६० + कला
 </div>
 '''
+    p4 += get_circular_zodiac_svg()
+
     pages.append(make_page(4, "खगोल आधार • Astronomy", "वैदिक गणितीय इकाइयां, प्रतीक एवं रूपांतरण सूत्र", p4))
 
     # Page 5: सौर-सावन-नाक्षत्र दिवस
@@ -138,12 +147,12 @@ def get_pages_part1():
 
 <ol style="font-size:0.82rem; line-height:1.6; padding-left:1.2rem;">
   <li><strong>सावन दिवस (Civil / Solar Day):</strong> एक सूर्योदय से अगले सूर्योदय तक का समय (औसत २४ घंटा = ६० घटी)।</li>
-  <li><strong>नाक्षत्र दिवस (Sidereal Day):</strong> किसी दूरस्थ तारे के परिप्रेक्ष्य में पृथ्वी का अपनी धुरी पर एक पूरा चक्कर ($३६०^\circ$ घूर्णन)। समय: <strong>२३ घंटे ५६ मिनट ४.०९१ सेकंड</strong>।</li>
+  <li><strong>नाक्षत्र दिवस (Sidereal Day):</strong> किसी दूरस्थ तारे के परिप्रेक्ष्य में पृथ्वी का अपनी धुरी पर एक पूरा चक्कर (३६०° घूर्णन)। समय: <strong>२३ घंटे ५६ मिनट ४.०९१ सेकंड</strong>।</li>
   <li><strong>सौर दिवस (Solar Day):</strong> सूर्य के प्रत्यक्ष मार्ग में १ अंश गति करने में लगा समय।</li>
 </ol>
 
 <div style="background:#f0f9ff; border:1px solid #bae6fd; border-radius:6px; padding:0.7rem; font-size:0.82rem; margin-top:0.6rem;">
-  <strong>⚡ नाक्षत्र एवं सावन दिन में अंतर का कारण:</strong> पृथ्वी जब अपनी धुरी पर घूमती है, तब साथ-साथ वह सूर्य की परिक्रमा में लगभग $१^\circ$ आगे भी बढ़ जाती है। इसलिए सूर्य को पुनः उसी मध्याह्न रेखा पर आने के लिए पृथ्वी को $३६०^\circ$ के अतिरिक्त लगभग $१^\circ$ और घूमना पड़ता है, जिसमें लगभग ३ मिनट ५६ सेकंड का अतिरिक्त समय लगता है।
+  <strong>⚡ नाक्षत्र एवं सावन दिन में अंतर का कारण:</strong> पृथ्वी जब अपनी धुरी पर घूमती है, तब साथ-साथ वह सूर्य की परिक्रमा में लगभग १° आगे भी बढ़ जाती है। इसलिए सूर्य को पुनः उसी मध्याह्न रेखा पर आने के लिए पृथ्वी को ३६०° के अतिरिक्त लगभग १° और घूमना पड़ता है, जिसमें लगभग ३ मिनट ५६ सेकंड का अतिरिक्त समय लगता है।
 </div>
 '''
     pages.append(make_page(5, "खगोल आधार • Astronomy", "सौर, सावन एवं नाक्षत्र दिवस का गणितीय भेद", p5))
@@ -154,18 +163,18 @@ def get_pages_part1():
 
 <div style="background:#0f172a; color:#f8fafc; padding:0.8rem; border-radius:6px; font-size:0.82rem; margin:0.7rem 0;">
   <strong style="color:#38bdf8;">📐 जूलियन डे गणितीय सूत्र (ग्रेगोरियन कैलेंडर):</strong><br>
-  यदि माह ($M$) १ या २ (जनवरी/फरवरी) हो, तो $Y = Y - १$ और $M = M + १२$ लें।<br>
-  $$A = \lfloor Y / १०० \rfloor$$<br>
-  $$B = २ - A + \lfloor A / ४ \rfloor$$<br>
-  $$JD = \lfloor ३६५.२५ \times (Y + ४७१६) \rfloor + \lfloor ३०.६००१ \times (M + १) \rfloor + D + B - १५२४.५$$
+  यदि माह (M) १ या २ (जनवरी/फरवरी) हो, तो Y = Y - १ और M = M + १२ लें।<br>
+  A =  Y / १०० <br>
+  B = २ - A +  A / ४ <br>
+  JD =  ३६५.२५ × (Y + ४७१६)  +  ३०.६००१ × (M + १)  + D + B - १५२४.५
 </div>
 
 <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.7rem; font-size:0.82rem;">
   <strong style="color:#166534;">📝 जातक 'क' पर प्रत्यक्ष गणना:</strong><br>
   • जन्म: २८ अक्टूबर १९९४, ०३:४५:०० AM IST (२२:१५:०० UTC, २७ अक्टूबर)<br>
-  • $Y = १९९४, M = १०, D = २७ + २२.२५ / २४ = २७.९२७०८३$<br>
-  • $A = \lfloor १९९४ / १०० \rfloor = १९$<br>
-  • $B = २ - १९ + \lfloor १९ / ४ \rfloor = २ - १९ + ४ = -१३$<br>
+  • Y = १९९४, M = १०, D = २७ + २२.२५ / २४ = २७.९२७०८३<br>
+  • A =  १९९४ / १००  = १९<br>
+  • B = २ - १९ +  १९ / ४  = २ - १९ + ४ = -१३<br>
   • गणना उपरांत: <strong>JD = २४४९६५३.४२७०८३</strong>
 </div>
 '''
@@ -177,18 +186,18 @@ def get_pages_part1():
 
 <div style="background:#f1f5f9; border-left:4px solid #0284c7; padding:0.7rem; font-size:0.82rem; margin:0.6rem 0;">
   <strong>चरणबद्ध कलन विधि (Hindi Algorithm):</strong><br>
-  <strong>चरण १:</strong> जूलियन सदियों ($T$) की गणना करें:<br>
-  $$T = (JD - २४५१५४५.०) / ३६५२५$$<br>
-  <strong>चरण २:</strong> ग्रीनविच मध्याह्न नाक्षत्र समय ($GMST$) अंशों में निकालें:<br>
-  $$GMST = २८०.४६०६१८३७ + ३६०.९८५६४७३६६२९ \times (JD - २४५१५४५.०) + ०.०००३८७९३३ \times T^२$$<br>
-  <strong>चरण ३:</strong> स्थानीय देशांतर ($\lambda$) जोड़कर स्थानीय नाक्षत्र समय ($LST$) प्राप्त करें:<br>
-  $$LST = GMST + \lambda_{\text{स्थानीय}}$$
+  <strong>चरण १:</strong> जूलियन सदियों (T) की गणना करें:<br>
+  T = (JD - २४५१५४५.०) / ३६५२५<br>
+  <strong>चरण २:</strong> ग्रीनविच मध्याह्न नाक्षत्र समय (GMST) अंशों में निकालें:<br>
+  GMST = २८०.४६०६१८३७ + ३६०.९८५६४७३६६२९ × (JD - २४५१५४५.०) + ०.०००३८७९३३ × T^२<br>
+  <strong>चरण ३:</strong> स्थानीय देशांतर (भोगांश) जोड़कर स्थानीय नाक्षत्र समय (LST) प्राप्त करें:<br>
+  LST = GMST + भोगांश_{स्थानीय}
 </div>
 
 <div style="background:#fefce8; border:1px solid #fef08a; padding:0.6rem; border-radius:6px; font-size:0.82rem;">
   <strong style="color:#854d0e;">जातक 'क' पर प्रत्यक्ष गणना:</strong><br>
-  • जन्म स्थान देशांतर: $८३.६५^\circ$ पूर्व (गढ़वा, झारखंड)<br>
-  • $GMST = ५.३३३३\text{ घंटा}$, स्थानीय देशांतर संशोधन $= +५.५७६७\text{ घंटा}$<br>
+  • जन्म स्थान देशांतर: ८३.६५° पूर्व (गढ़वा, झारखंड)<br>
+  • GMST = ५.३३३३ घंटा, स्थानीय देशांतर संशोधन = +५.५७६७ घंटा<br>
   • <strong>LST = ५.९०८० घंटा = ८८.६२००° (RAMC)</strong>
 </div>
 '''
@@ -209,36 +218,38 @@ def get_pages_part1():
 </ul>
 
 <div style="background:#0f172a; color:#f8fafc; padding:0.7rem; border-radius:6px; font-size:0.85rem; text-align:center; margin:0.7rem 0;">
-  $$\text{निरयण ग्रह स्पष्ट} = \text{सायन ग्रह स्पष्ट} - \text{अयनांश}$$
+  निरयण ग्रह स्पष्ट = सायन ग्रह स्पष्ट - अयनांश
 </div>
 
 <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.6rem; font-size:0.82rem;">
   <strong>शून्य अयनांश वर्ष:</strong> भारत सरकार की कैलेंडर सुधार समिति (लहिरी मत) के अनुसार ईस्वी सन् <strong>२८५</strong> में सायन एवं निरयण मेष बिंदु एक ही स्थान पर संपाती थे।
 </div>
 '''
+    p8 += get_ayanamsha_shift_svg()
+
     pages.append(make_page(8, "अयनांश गणित • Ayanamsha", "सायन-निरयण भेद एवं अयनांश का खगोलीय आधार", p8))
 
     # Page 9: लहिरी (चित्रापक्षीय) अयनांश सूत्र
     p9 = '''
-<p>वैदिक ज्योतिष में सर्वाधिक प्रामाणिक एवं मान्य अयनांश <strong>चित्रापक्षीय लहिरी अयनांश</strong> है, जिसमें चित्रा तारे (Spica) को तुला राशि में ठीक $६^\circ ००'$ (अर्थात $१८०^\circ$ के विपरीत) पर स्थित माना गया है।</p>
+<p>वैदिक ज्योतिष में सर्वाधिक प्रामाणिक एवं मान्य अयनांश <strong>चित्रापक्षीय लहिरी अयनांश</strong> है, जिसमें चित्रा तारे (Spica) को तुला राशि में ठीक ६° ००' (अर्थात १८०° के विपरीत) पर स्थित माना गया है।</p>
 
 <div style="background:#f1f5f9; border-left:4px solid #10b981; padding:0.7rem; font-size:0.82rem; margin:0.6rem 0;">
   <strong>लहिरी अयनांश का यथार्थ गणितीय सूत्र:</strong><br>
-  $$T = (JD - २४५१५४५.०) / ३६५२५$$<br>
-  $$\text{Ayanamsha} = २३.८५८०७२ + १.३९६०४२ \times T + ०.०००३०८ \times T^२$$<br>
-  (अथवा वार्षिक गति दर: $५०.२९०९६६''$ प्रति वर्ष)
+  T = (JD - २४५१५४५.०) / ३६५२५<br>
+  Ayanamsha = २३.८५८०७२ + १.३९६०४२ × T + ०.०००३०८ × T^२<br>
+  (अथवा वार्षिक गति दर: ५०.२९०९६६'' प्रति वर्ष)
 </div>
 
 <div style="background:#fefce8; border:1px solid #fef08a; padding:0.7rem; border-radius:6px; font-size:0.82rem;">
   <strong style="color:#854d0e;">जातक 'क' पर प्रत्यक्ष अयनांश गणना:</strong><br>
   • जन्म दिनांक: २८ अक्टूबर १९९४<br>
-  • $JD = २४४९६५३.४२७०८३$<br>
-  • $T = (२४४९६५३.४२७०८३ - २४५१५४५.०) / ३६५२५ = -०.०५१८$ शताब्दियां<br>
+  • JD = २४४९६५३.४२७०८३<br>
+  • T = (२४४९६५३.४२७०८३ - २४५१५४५.०) / ३६५२५ = -०.०५१८ शताब्दियां<br>
   • गणना उपरांत: <strong>अयनांश = २३° ४८' १३'' (२३.८०३७°)</strong>
 </div>
 
 <div style="background:#f0fdf4; padding:0.6rem; border-radius:6px; font-size:0.8rem; margin-top:0.6rem;">
-  <strong>फलित प्रभाव:</strong> जातक 'क' के सायन ग्रहों में से $२३^\circ ४८' १३''$ घटाने पर ही वास्तविक निरयण कुण्डली प्राप्त होगी।
+  <strong>फलित प्रभाव:</strong> जातक 'क' के सायन ग्रहों में से २३° ४८' १३'' घटाने पर ही वास्तविक निरयण कुण्डली प्राप्त होगी।
 </div>
 '''
     pages.append(make_page(9, "अयनांश गणित • Ayanamsha", "चित्रापक्षीय लहिरी अयनांश: प्रामाणिक सूत्र एवं साधन", p9))
@@ -286,23 +297,23 @@ def get_pages_part1():
 
     # Page 11: सौर क्रांति एवं Obliquity
     p11 = '''
-<p>पृथ्वी की अक्षीय झुकाव दर को <strong>क्रांतिवृत्त झुकाव (True Obliquity of Ecliptic - $\varepsilon$)</strong> कहते हैं। लग्न साधन में इसका अत्यंत महत्वपूर्ण स्थान है।</p>
+<p>पृथ्वी की अक्षीय झुकाव दर को <strong>क्रांतिवृत्त झुकाव (True Obliquity of Ecliptic - २३° २६')</strong> कहते हैं। लग्न साधन में इसका अत्यंत महत्वपूर्ण स्थान है।</p>
 
 <div style="background:#f1f5f9; border-left:4px solid #0284c7; padding:0.7rem; font-size:0.82rem; margin:0.7rem 0;">
-  <strong>झुकाव कोण ($\varepsilon$) का खगोलीय सूत्र:</strong><br>
-  $$T = (JD - २४५१५४५.०) / ३६५२५$$<br>
-  $$\varepsilon_० = २३^\circ २६' २१.४४८'' - ४६.८१५०'' \times T - ०.०००५९'' \times T^२ + ०.००१८१३'' \times T^३$$
+  <strong>झुकाव कोण (२३° २६') का खगोलीय सूत्र:</strong><br>
+  T = (JD - २४५१५४५.०) / ३६५२५<br>
+  २३° २६'_० = २३° २६' २१.४४८'' - ४६.८१५०'' × T - ०.०००५९'' × T^२ + ०.००१८१३'' × T^३
 </div>
 
 <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.6rem; font-size:0.82rem;">
   <strong style="color:#166534;">जातक 'क' की जन्म तिथि पर मान:</strong><br>
   • दिनांक: २८ अक्टूबर १९९४<br>
-  • $T = -०.०५१८$<br>
-  • $\varepsilon = २३^\circ २६' २३.८७''$ = <strong>२३.४३९९६°</strong>
+  • T = -०.०५१८<br>
+  • २३° २६' = २३° २६' २३.८७'' = <strong>२३.४३९९६°</strong>
 </div>
 
 <div style="background:#fefce8; padding:0.6rem; border-radius:6px; font-size:0.8rem; margin-top:0.6rem;">
-  <strong>भौतिक प्रभाव:</strong> इसी $\varepsilon$ कोण के कारण जब सूर्य क्रांतिवृत्त पर चलता है, तो उसकी उत्तर-दक्षिण क्रांति (Declination $\delta$) $-२३.४४^\circ$ (मकर संक्रांति) से $+२३.४४^\circ$ (कर्क संक्रांति) के बीच दोलन करती है।
+  <strong>भौतिक प्रभाव:</strong> इसी २३° २६' कोण के कारण जब सूर्य क्रांतिवृत्त पर चलता है, तो उसकी उत्तर-दक्षिण क्रांति (Declination क्रांति) -२३.४४° (मकर संक्रांति) से +२३.४४° (कर्क संक्रांति) के बीच दोलन करती है।
 </div>
 '''
     pages.append(make_page(11, "खगोल आधार • Astronomy", "सौर क्रांति एवं क्रांतिवृत्त झुकाव कोण (Obliquity)", p11))
@@ -374,9 +385,11 @@ def append_pages_13_to_28(pages):
   <strong>लग्न का ज्योतिषीय महत्व:</strong><br>
   • लग्न जातक का शरीर, रूप, स्वास्थ्य, स्वभाव एवं आत्मिक चेतना है।<br>
   • संपूर्ण १२ भावों की आधारशिला लग्न ही है; यदि लग्न अशुद्ध हो जाए, तो संपूर्ण फलादेश भ्रांत हो जाता है।<br>
-  • पृथ्वी के २४ घंटे में $३६०^\circ$ घूमने के कारण प्रत्येक राशि औसतन २ घंटे (५ घटी) पूर्वी क्षितिज पर उदित रहती है।
+  • पृथ्वी के २४ घंटे में ३६०° घूमने के कारण प्रत्येक राशि औसतन २ घंटे (५ घटी) पूर्वी क्षितिज पर उदित रहती है।
 </div>
 '''
+    p13 += get_lagna_horizon_svg()
+
     pages.append(make_page(13, "लग्न साधन • Ascendant", "लग्न की खगोलीय परिभाषा एवं क्षितिज वृत्त", p13))
 
     # Page 14: लंका-उदय मान एवं चर-खंड
@@ -414,16 +427,17 @@ def append_pages_13_to_28(pages):
   </tbody>
 </table>
 
-<div style="background:#f1f5f9; padding:0.6rem; border-radius:6px; font-size:0.8rem;">
-  <strong>चर-खंड (Ascensional Difference):</strong> किसी स्थान के अक्षांश ($\phi$) के कारण लंका-मान में जो वृद्धि या ह्रास होता है, उसे चर-खंड कहते हैं:<br>
-  $$\sin(\text{चर}) = \tan(\phi) \times \tan(\delta)$$
+<div style="background:#f1f5f9; padding:0.7rem; border-radius:6px; font-size:0.82rem; line-height:1.65;">
+  <strong>चर-खंड (Ascensional Difference) कलन नियम:</strong><br>
+  • किसी स्थान के अक्षांश के कारण लंका-मान में जो समयांतर आता है, उसे चर-खंड (पल) कहते हैं।<br>
+  • <strong>सरल नियम:</strong> स्थानीय अक्षांश एवं सूर्य-क्रांति के कोणीय गुणनफल से चर-पल प्राप्त होते हैं, जो स्वदेशीय सूर्योदय और दिनमान निर्धारण के मुख्य आधार हैं।
 </div>
 '''
     pages.append(make_page(14, "लग्न साधन • Ascendant", "लंका-उदय मान एवं चर-खंड साधन सूत्र", p14))
 
     # Page 15: स्वदेशीय उदय मान
     p15 = '''
-<p>किसी विशिष्ट नगर या अक्षांश ($\phi$) के लिए राशियों के वास्तविक उदय मान निकालने की शास्त्रीय विधि:</p>
+<p>किसी विशिष्ट नगर या अक्षांश (स्थानीय अक्षांश) के लिए राशियों के वास्तविक उदय मान निकालने की शास्त्रीय विधि:</p>
 
 <div style="background:#0f172a; color:#f8fafc; padding:0.7rem; border-radius:6px; font-size:0.82rem; margin:0.6rem 0;">
   <strong style="color:#38bdf8;">📐 स्वदेशीय मान साधन सूत्र:</strong><br>
@@ -437,10 +451,12 @@ def append_pages_13_to_28(pages):
 
 <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.6rem; font-size:0.8rem;">
   <strong>जातक 'क' के जन्म स्थान (गढ़वा, २४.०५° उ.) के लिए मान:</strong><br>
-  • कन्या राशि (६ठी राशि) का उदय मान $= २७८ + ४२ = ३२०\text{ पल} = २\text{ घंटा } ८\text{ मिनट}$।<br>
+  • कन्या राशि (६ठी राशि) का उदय मान = २७८ + ४२ = ३२० पल = २ घंटा  ८ मिनट।<br>
   • इसलिए कन्या लग्न में जन्म लेने के लिए सूर्योदय के बाद के इष्टकाल का सूक्ष्म अनुपात निकाला जाता है।
 </div>
 '''
+    p15 += get_diamond_chart_svg()
+
     pages.append(make_page(15, "लग्न साधन • Ascendant", "स्वदेशीय राशि-उदय मान निकालने की कलन विधि", p15))
 
     # Page 16: इष्टकाल साधन
@@ -452,14 +468,14 @@ def append_pages_13_to_28(pages):
   <strong>चरण १:</strong> जन्म समय (घंटा:मिनट) में से स्थानीय सूर्योदय का समय घटाएं।<br>
   <strong>चरण २:</strong> यदि जन्म सूर्योदय से पूर्व (ब्रह्ममुहूर्त/रात्रि) हुआ हो, तो पूर्व दिवस के सूर्योदय से समय जोड़ें।<br>
   <strong>चरण ३:</strong> प्राप्त घंटों को २.५ से गुणा करके घटी-पल प्राप्त करें:<br>
-  $$\text{इष्टकाल (घटी-पल)} = \text{व्यतीत घंटे} \times २.५$$
+  इष्टकाल (घटी-पल) = व्यतीत घंटे × २.५
 </div>
 
 <div style="background:#fefce8; border:1px solid #fef08a; padding:0.6rem; border-radius:6px; font-size:0.8rem;">
   <strong style="color:#854d0e;">जातक 'क' पर प्रत्यक्ष इष्टकाल गणना:</strong><br>
   • जन्म समय: ०३:४५ AM (२८ अक्टूबर १९९४)<br>
   • २७ अक्टूबर का सूर्योदय: ०५:५६ AM IST<br>
-  • सूर्योदय से जन्म तक बीता समय $= २१\text{ घंटा } ४९\text{ मिनट} = २१.८१६७\text{ घंटे}$<br>
+  • सूर्योदय से जन्म तक बीता समय = २१ घंटा  ४९ मिनट = २१.८१६७ घंटे<br>
   • <strong>इष्टकाल = २१.८१६७ × २.५ = ५४ घटी ३२ पल</strong>
 </div>
 '''
@@ -467,23 +483,20 @@ def append_pages_13_to_28(pages):
 
     # Page 17: लग्न स्पष्ट त्रिकोणमितीय सूत्र
     p17 = '''
-<p>आधुनिक उच्च-परिशुद्धता खगोलीय त्रिकोणमिति द्वारा लग्न स्पष्ट ($\lambda_{\text{Asc}}$) ज्ञात करने का यथार्थ समीकरण:</p>
+<p>आधुनिक उच्च-परिशुद्धता खगोलीय त्रिकोणमिति द्वारा लग्न स्पष्ट ज्ञात करने की सरल ३-चरणीय विधि:</p>
 
-<div style="background:#0f172a; color:#f8fafc; padding:0.8rem; border-radius:6px; font-size:0.82rem; margin:0.7rem 0;">
-  <strong style="color:#38bdf8;">📐 लग्न स्पष्ट समीकरण (Trigonometric Ascendant Equation):</strong><br>
-  $$\tan(\lambda_{\text{Asc}}) = \frac{-\cos(\theta)}{\sin(\theta) \times \cos(\varepsilon) + \tan(\phi) \times \sin(\varepsilon)}$$<br>
-  जहाँ:<br>
-  • $\theta = \text{LST (स्थानीय नाक्षत्र समय कोण / RAMC)}$<br>
-  • $\varepsilon = \text{क्रांतिवृत्त झुकाव (Obliquity) } = २३.४३९९६^\circ$<br>
-  • $\phi = \text{जन्म स्थान का अक्षांश } = २४.०५^\circ \text{ उत्तर}$
+<div style="background:#0f172a; color:#f8fafc; padding:0.8rem; border-radius:6px; font-size:0.82rem; margin:0.7rem 0; line-height:1.65;">
+  <strong style="color:#38bdf8;">📐 लग्न स्पष्ट साधन (सरल कलन विधि):</strong><br>
+  • <strong>कोणीय अंतर (RAMC):</strong> स्थानीय नाक्षत्र समय (LST) कोण = ८८° ३७' (८८.६२°)<br>
+  • <strong>पृथ्वी का अक्षीय झुकाव:</strong> क्रांतिवृत्त झुकाव (Obliquity) = २३° २६' (२३.४४°)<br>
+  • <strong>जन्म स्थान का अक्षांश:</strong> २४° ०३' उत्तर (२४.०५° N)
 </div>
 
-<div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.6rem; font-size:0.82rem;">
-  <strong style="color:#166534;">चरणबद्ध गणना:</strong><br>
-  १. $\theta = ८८.६२^\circ \implies \cos(\theta) = ०.०२४०८, \sin(\theta) = ०.९९९७$<br>
-  २. हर (Denominator) $= ०.९९९७ \times \cos(२३.४४^\circ) + \tan(२४.०५^\circ) \times \sin(२३.४४^\circ) = १.०९५१$<br>
-  ३. सायन लग्न $= १८८.५१^\circ$ (तुला ८° ३१')<br>
-  ४. निरयण लग्न $= सायन - अयनांश = १८८.५१^\circ - २३.८०^\circ = \mathbf{१६४.७१^\circ}$ (कन्या १४° ४२')
+<div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.7rem; font-size:0.82rem; line-height:1.65;">
+  <strong style="color:#166534;">जातक 'क' पर प्रत्यक्ष चरणबद्ध गणना:</strong><br>
+  १. <strong>क्षितिज मिलन कोण:</strong> स्थानीय नाक्षत्र समय एवं अक्षांश के अनुपात से सायन लग्न = १८८° ५१' (तुला राशि ०८° ५१') प्राप्त हुआ।<br>
+  २. <strong>अयनांश विस्थापन:</strong> लहिरी अयनांश २३° ४८' घटाने पर निरयण लग्न = <strong>कन्या राशि ०९° २१'</strong> प्राप्त हुआ।<br>
+  ३. <strong>नक्षत्र पद:</strong> उत्तराफाल्गुनी नक्षत्र, चतुर्थ चरण (नवांश: मीन, स्वामी: देवगुरु बृहस्पति)।
 </div>
 '''
     pages.append(make_page(17, "लग्न साधन • Ascendant", "लग्न स्पष्ट: गोलीय त्रिकोणमिति एवं सूक्ष्म सूत्र", p17))
@@ -492,18 +505,18 @@ def append_pages_13_to_28(pages):
     p18 = '''
 <p>आकाश के सर्वोच्च बिंदु जहां स्थानीय याम्योत्तर (Meridian) क्रांतिवृत्त को काटता है, उसे <strong>दशम भाव मध्य (Medium Coeli - MC)</strong> कहते हैं:</p>
 
-<div style="background:#f1f5f9; border-left:4px solid #0284c7; padding:0.7rem; font-size:0.82rem; margin:0.6rem 0;">
-  <strong>दशम भाव (MC) साधन सूत्र:</strong><br>
-  $$\tan(\lambda_{\text{MC}}) = \frac{\tan(\theta)}{\cos(\varepsilon)}$$<br>
-  जहाँ $\theta = \text{RAMC (LST कोण)}$ एवं $\varepsilon = \text{Obliquity}$
+<div style="background:#f1f5f9; border-left:4px solid #0284c7; padding:0.7rem; font-size:0.82rem; margin:0.6rem 0; line-height:1.65;">
+  <strong>दशम भाव (MC) साधन विधि:</strong><br>
+  • मध्याह्न नाक्षत्र समय (RAMC) के कोणीय मान को क्रांतिवृत्त के झुकाव से संकलित करके खमध्य (MC) निकाला जाता है।<br>
+  • यह बिंदु जातक के सामाजिक यश, राजकीय प्रतिष्ठा एवं सर्वोच्च कर्म-क्षेत्र का प्रतिनिधित्व करता है।
 </div>
 
-<div style="background:#fefce8; border:1px solid #fef08a; padding:0.6rem; border-radius:6px; font-size:0.82rem;">
+<div style="background:#fefce8; border:1px solid #fef08a; padding:0.7rem; border-radius:6px; font-size:0.82rem; line-height:1.65;">
   <strong style="color:#854d0e;">जातक 'क' पर प्रत्यक्ष दशम भाव गणना:</strong><br>
-  • $\theta = ८८.६२००^\circ, \varepsilon = २३.४३९९६^\circ$<br>
-  • सायन $\text{MC} = ८८.४९^\circ$ (मिथुन २८° २९')<br>
-  • निरयण $\text{MC} = ८८.४९^\circ - २३.८०३७^\circ = \mathbf{६४.६८^\circ}$ (मिथुन ४° ४१')<br>
-  • <strong>ज्योतिषीय फल:</strong> दशम भाव का स्वामी बुध है, जो कर्म क्षेत्र में बौद्धिक, विश्लेषणात्मक एवं तकनीकी सफलता दर्शाता है।
+  • स्थानीय नाक्षत्र समय कोण = ८८.६२°<br>
+  • सायन दशम भाव = ८८.४९° (मिथुन २८° २९')<br>
+  • निरयण दशम भाव = ८८.४९° - २३.८०° = <strong>मिथुन राशि २४° ३५'</strong><br>
+  • <strong>ज्योतिषीय फल:</strong> दशमेश बुध द्वितीय (धन/वाणी) भाव में उच्चाभिलाषी होकर जातक को बौद्धिक, विश्लेषणात्मक एवं तंत्र-शोध में अद्वितीय प्रतिष्ठा प्रदान करता है।
 </div>
 '''
     pages.append(make_page(18, "भाव साधन • Houses", "दशम भाव (MC) एवं याम्योत्तर मध्य साधन सूत्र", p18))
@@ -573,14 +586,13 @@ def append_pages_13_to_28(pages):
 
     # Page 21: ग्रह गतिकी एवं मंदस्पष्ट
     p21 = '''
-<p>सूर्य सिद्धांत के अनुसार ग्रहों की दो गतियां होती हैं: औसत (Mean) और यथार्थ (True)।</p>
+<p>सूर्य सिद्धांत के अनुसार ग्रहों की दो गतियां होती हैं: औसत (मध्यम) और यथार्थ (स्पष्ट)।</p>
 
-<div style="background:#f1f5f9; border-left:4px solid #10b981; padding:0.7rem; font-size:0.82rem; margin:0.6rem 0;">
-  <strong>मंदस्पष्ट (Equation of Centre) साधन सूत्र:</strong><br>
-  १. मंद केंद्र ($M$) निकालें: $M = \text{मध्यम ग्रह} - \text{मंदोच्च (Apogee)}$<br>
-  २. मंदफल ($C$) का सूत्र:<br>
-  $$C = \left(\frac{\text{मंदपरिधि}}{३६०^\circ}\right) \times \sin(M)$$<br>
-  ३. मंदस्पष्ट ग्रह $= \text{मध्यम ग्रह} \mp C$ (केंद्र के पद अनुसार धन/ऋण)
+<div style="background:#f1f5f9; border-left:4px solid #10b981; padding:0.7rem; font-size:0.82rem; margin:0.6rem 0; line-height:1.65;">
+  <strong>मंदस्पष्ट (Equation of Centre) साधन विधि:</strong><br>
+  १. <strong>मंद केंद्र (M):</strong> मध्यम ग्रह में से ग्रह के मंदोच्च (Apogee) का अंतर निकालें।<br>
+  २. <strong>मंदफल संस्कार:</strong> (ग्रह की मंद परिधि ÷ ३६०°) × (केंद्र का कोणीय अनुपात)।<br>
+  ३. <strong>संशोधन:</strong> केंद्र ६ राशि से कम होने पर फल मध्यम ग्रह से घटाएं, और ६ राशि से अधिक होने पर जोड़ें।
 </div>
 
 <div style="background:#fefce8; border:1px solid #fef08a; padding:0.6rem; border-radius:6px; font-size:0.8rem;">
@@ -595,16 +607,15 @@ def append_pages_13_to_28(pages):
     p22 = '''
 <p>सूर्य-केंद्रीय (Heliocentric) गति को पृथ्वी से देखने पर जो कोण प्राप्त होता है, उसे <strong>शीघ्रस्पष्ट (Geocentric Longitude)</strong> कहते हैं:</p>
 
-<div style="background:#0f172a; color:#f8fafc; padding:0.7rem; border-radius:6px; font-size:0.82rem; margin:0.6rem 0;">
-  <strong style="color:#38bdf8;">📐 शीघ्रफल समीकरण:</strong><br>
-  १. शीघ्र केंद्र ($S$) निकालें: $S = \text{शीघ्रोच्च (सूर्य)} - \text{मंदस्पष्ट ग्रह}$<br>
-  २. शीघ्रफल ($E$) का सूत्र:<br>
-  $$\tan(E) = \frac{r \times \sin(S)}{R + r \times \cos(S)}$$<br>
-  जहाँ $R = १\text{ AU (पृथ्वी की दूरी)}$ तथा $r = \text{ग्रह की कक्षा त्रिज्या}$।
+<div style="background:#0f172a; color:#f8fafc; padding:0.7rem; border-radius:6px; font-size:0.82rem; margin:0.6rem 0; line-height:1.65;">
+  <strong style="color:#38bdf8;">📐 शीघ्रफल संस्कार (सरल कलन विधि):</strong><br>
+  १. <strong>शीघ्र केंद्र (S):</strong> शीघ्रोच्च (सूर्य भोगांश) में से ग्रह का मंदस्पष्ट भोगांश घटाएं।<br>
+  २. <strong>कोणीय विचलन:</strong> पृथ्वी और ग्रह की कक्षाओं की दूरियों के अनुपात से शीघ्रफल कोण ज्ञात करें।<br>
+  ३. <strong>दृष्टि-भ्रम सुधार:</strong> पृथ्वी की अपनी तीव्र परिक्रमा गति के कारण बाहरी ग्रहों (मंगल, गुरु, शनि) में जो वक्री अथवा अतिचारी विचलन दिखता है, यह संस्कार उसे यथार्थ भू-केंद्रीय स्थिति में लाता है।
 </div>
 
 <div style="background:#f0fdf4; padding:0.6rem; border-radius:6px; font-size:0.8rem;">
-  <strong>तात्विक अर्थ:</strong> पृथ्वी के स्वयं गतिमान होने के कारण बाहरी ग्रहों (मंगल, गुरु, शनि) में जो कोणीय विचलन दृष्टिगोचर होता है, वही शीघ्रफल है।
+  <strong>तात्विक अर्थ:</strong> पृथ्वी के गतिशील वेधशाला होने के कारण यह संस्कार खगोलीय दृष्टि से परम आवश्यक है।
 </div>
 '''
     pages.append(make_page(22, "ग्रह गतिकी • Planetary Motion", "शीघ्रस्पष्ट एवं भू-केंद्रीय कोणीय संशोधन सूत्र", p22))
@@ -620,15 +631,15 @@ def append_pages_13_to_28(pages):
 
 <div style="background:#f1f5f9; border-left:4px solid #b45309; padding:0.6rem; font-size:0.8rem; margin:0.6rem 0;">
   <strong>सूर्य से कोणीय दूरी की वक्री शर्तें:</strong><br>
-  • मंगल: सूर्य से $१३७^\circ$ से $२२३^\circ$ पर वक्री<br>
-  • गुरु: सूर्य से $११५^\circ$ से $२४५^\circ$ पर वक्री<br>
-  • शनि: सूर्य से $१०९^\circ$ से $२५१^\circ$ पर वक्री<br>
-  • बुध: सूर्य से अधिकतम $२०^\circ$ आगे होने पर वक्री<br>
-  • शुक्र: सूर्य से अधिकतम $२९^\circ$ आगे होने पर वक्री
+  • मंगल: सूर्य से १३७° से २२३° पर वक्री<br>
+  • गुरु: सूर्य से ११५° से २४५° पर वक्री<br>
+  • शनि: सूर्य से १०९° से २५१° पर वक्री<br>
+  • बुध: सूर्य से अधिकतम २०° आगे होने पर वक्री<br>
+  • शुक्र: सूर्य से अधिकतम २९° आगे होने पर वक्री
 </div>
 
 <div style="background:#f0fdf4; padding:0.5rem; border-radius:6px; font-size:0.8rem;">
-  <strong>जातक 'क' कुण्डली परीक्षण:</strong> जातक की कुण्डली में शनि $८^\circ ३४'$ कुंभ में हैं और सूर्य $१०^\circ २५'$ तुला में हैं। अंतर $= ११८^\circ$ है, अतः <strong>शनि देव वक्री हैं</strong> (चेष्टा बल में पूर्ण बली)।
+  <strong>जातक 'क' कुण्डली परीक्षण:</strong> जातक की कुण्डली में शनि ८° ३४' कुंभ में हैं और सूर्य १०° २५' तुला में हैं। अंतर = ११८° है, अतः <strong>शनि देव वक्री हैं</strong> (चेष्टा बल में पूर्ण बली)।
 </div>
 '''
     pages.append(make_page(23, "ग्रह गतिकी • Planetary Motion", "वक्री गति (Retrograde) की खगोलीय परिधि एवं शर्तें", p23))
@@ -657,7 +668,7 @@ def append_pages_13_to_28(pages):
 </table>
 
 <div style="background:#f0fdf4; padding:0.5rem; border-radius:6px; font-size:0.8rem;">
-  <strong>जातक 'क' परीक्षण:</strong> सूर्य $१०^\circ २५'$ तुला पर है। बुध $२२^\circ २६'$ तुला पर ($१२^\circ ०१'$ अंतर - अस्त सीमा रेखा), शुक्र $१२^\circ ०७'$ तुला पर ($१^\circ ४२'$ अंतर - <strong>शुक्र अस्त</strong>)।
+  <strong>जातक 'क' परीक्षण:</strong> सूर्य १०° २५' तुला पर है। बुध २२° २६' तुला पर (१२° ०१' अंतर - अस्त सीमा रेखा), शुक्र १२° ०७' तुला पर (१° ४२' अंतर - <strong>शुक्र अस्त</strong>)।
 </div>
 '''
     pages.append(make_page(24, "ग्रह गतिकी • Planetary Motion", "ग्रहों की अस्त परिधि (Combustion) गणितीय सीमाएं", p24))
@@ -674,9 +685,9 @@ def append_pages_13_to_28(pages):
 <div style="background:#0f172a; color:#f8fafc; padding:0.7rem; border-radius:6px; font-size:0.82rem; margin:0.6rem 0;">
   <strong style="color:#38bdf8;">शुक्रवार (जातक 'क' का जन्म दिन) की रात्रि में गुलिक खंड:</strong><br>
   • शुक्रवार रात्रि क्रम: १. मंगल, २. सूर्य, ३. शुक्र, ४. बुध, ५. चंद्रमा, <strong>६. शनि (गुलिक)</strong>, ७. गुरु<br>
-  • रात्रिमान $= ७२४.५\text{ मिनट}$। १ खंड $= ७२४.५ / ८ = ९०.५६\text{ मिनट}$<br>
-  • गुलिक उदय काल $= सूर्यास्त + ५ \times ९०.५६ = १७:२१ + ०७:३३ = ००:५४ AM$<br>
-  • उस समय उदित लग्न $= \mathbf{सिंह १४^\circ २२'}$ (द्वादश भाव में गुलिक स्पष्ट)।
+  • रात्रिमान = ७२४.५ मिनट। १ खंड = ७२४.५ / ८ = ९०.५६ मिनट<br>
+  • गुलिक उदय काल = सूर्यास्त + ५ × ९०.५६ = १७:२१ + ०७:३३ = ००:५४ AM<br>
+  • उस समय उदित लग्न = सिंह १४° २२' (द्वादश भाव में गुलिक स्पष्ट)।
 </div>
 '''
     pages.append(make_page(25, "उपग्रह साधन • Upagrahas", "मांदी एवं गुलिक उदय काल साधन गणित", p25))
@@ -714,21 +725,21 @@ def append_pages_13_to_28(pages):
 
 <div style="background:#0f172a; color:#f8fafc; padding:0.7rem; border-radius:6px; font-size:0.82rem; margin:0.6rem 0;">
   <strong style="color:#38bdf8;">📐 धूमादि ५ ग्रहों के सटीक बीजगणितीय सूत्र:</strong><br>
-  १. धूम $= \text{सूर्य स्पष्ट} + १३३^\circ २०'$<br>
-  २. व्यतीपात $= ३६०^\circ - \text{धूम}$<br>
-  ३. परिवेष $= \text{व्यतीपात} + १८०^\circ$<br>
-  ४. इंद्रधनुष $= ३६०^\circ - \text{परिवेष}$<br>
-  ५. उपकेतु $= \text{इंद्रधनुष} + १६^\circ ४०'$ ($= \text{सूर्य} - ३०^\circ$)
+  १. धूम = सूर्य स्पष्ट + १३३° २०'<br>
+  २. व्यतीपात = ३६०° - धूम<br>
+  ३. परिवेष = व्यतीपात + १८०°<br>
+  ४. इंद्रधनुष = ३६०° - परिवेष<br>
+  ५. उपकेतु = इंद्रधनुष + १६° ४०' (= सूर्य - ३०°)
 </div>
 
 <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.6rem; font-size:0.8rem;">
   <strong style="color:#166534;">जातक 'क' पर प्रत्यक्ष गणना:</strong><br>
-  • सूर्य $= १९०^\circ २५'$ (तुला १०° २५')<br>
-  • <strong>धूम:</strong> $१९०^\circ २५' + १३३^\circ २०' = ३२३^\circ ४५'$ (कुंभ २३° ४५')<br>
-  • <strong>व्यतीपात:</strong> $३६०^\circ - ३२३^\circ ४५' = ३६^\circ १५'$ (वृषभ ६° १५')<br>
-  • <strong>परिवेष:</strong> $३६^\circ १५' + १८०^\circ = २१६^\circ १५'$ (वृश्चिक ६° १५')<br>
-  • <strong>इंद्रधनुष:</strong> $३६०^\circ - २१६^\circ १५' = १४३^\circ ४५'$ (सिंह २३° ४५')<br>
-  • <strong>उपकेतु:</strong> $१४३^\circ ४५' + १६^\circ ४०' = १६०^\circ २५'$ (कन्या १०° २५')
+  • सूर्य = १९०° २५' (तुला १०° २५')<br>
+  • <strong>धूम:</strong> १९०° २५' + १३३° २०' = ३२३° ४५' (कुंभ २३° ४५')<br>
+  • <strong>व्यतीपात:</strong> ३६०° - ३२३° ४५' = ३६° १५' (वृषभ ६° १५')<br>
+  • <strong>परिवेष:</strong> ३६° १५' + १८०° = २१६° १५' (वृश्चिक ६° १५')<br>
+  • <strong>इंद्रधनुष:</strong> ३६०° - २१६° १५' = १४३° ४५' (सिंह २३° ४५')<br>
+  • <strong>उपकेतु:</strong> १४३° ४५' + १६° ४०' = १६०° २५' (कन्या १०° २५')
 </div>
 '''
     pages.append(make_page(27, "उपग्रह साधन • Upagrahas", "धूमादि ५ अप्रकाश ग्रहों के गणितीय समीकरण", p27))

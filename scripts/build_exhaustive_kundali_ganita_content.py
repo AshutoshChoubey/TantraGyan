@@ -8,8 +8,34 @@ import os
 import subprocess
 from pathlib import Path
 
+from page_common import (
+    get_diamond_chart_svg, get_circular_zodiac_svg,
+    get_ayanamsha_shift_svg, get_lagna_horizon_svg, get_panchanga_star_svg,
+    get_vimshottari_tree_svg, get_ashtakavarga_wheel_svg, get_shadbala_pillars_svg,
+    get_shodashavarga_tree_svg, get_jaimini_ladder_svg, get_bnn_trines_svg,
+    get_sade_sati_wave_svg, get_ashtakoot_gauge_svg, get_pipeline_flow_svg,
+    get_navamsha_grid_svg
+)
+
 def get_chapters():
-    """Generates all 13 massive, deeply elaborated chapters."""
+    """Generates all 13 massive, deeply elaborated chapters with visual diagrams."""
+    svgs = {
+        'SVG_ZODIAC': get_circular_zodiac_svg(),
+        'SVG_AYANA': get_ayanamsha_shift_svg(),
+        'SVG_LAGNA': get_lagna_horizon_svg(),
+        'SVG_PANCHANGA': get_panchanga_star_svg(),
+        'SVG_VIMSHOTTARI': get_vimshottari_tree_svg(),
+        'SVG_DIAMOND': get_diamond_chart_svg(),
+        'SVG_ASHTAKAVARGA': get_ashtakavarga_wheel_svg(),
+        'SVG_SHODASHAVARGA': get_shodashavarga_tree_svg(),
+        'SVG_NAVAMSHA': get_navamsha_grid_svg(),
+        'SVG_JAIMINI': get_jaimini_ladder_svg(),
+        'SVG_BNN': get_bnn_trines_svg(),
+        'SVG_SADE_SATI': get_sade_sati_wave_svg(),
+        'SVG_ASHTAKOOT': get_ashtakoot_gauge_svg(),
+        'SVG_SHADBALA': get_shadbala_pillars_svg(),
+        'SVG_PIPELINE': get_pipeline_flow_svg(),
+    }
     chapters = []
 
     # CHAPTER 1
@@ -31,18 +57,23 @@ def get_chapters():
   आधुनिक गणितीय ज्योतिष में किसी भी जन्म कुण्डली की प्रथम ईंट है — स्थानीय मानक समय (Local Standard Time) को सार्वभौमिक समय (Universal Time, UTC) में बदलना। भारत में प्रमाणिक समय <code>IST = UTC + 05:30</code> माना जाता है। जब तक हम जन्म समय को ग्रीनविच समय में नहीं लाते, तब तक स्विस एफेमेरिस (Swiss Ephemeris C-Kernel) या खगोलीय ग्रहीय निर्देशांक सही नहीं आ सकते।
 </p>
 
-<div class="math-formula-box">
-  <div class="math-title">गणितीय सूत्र ১: सार्वभौमिक समय (Universal Time) एवं जूलियन डे (JD)</div>
-  $$\\text{UT} = \\text{Local Hour} - \\text{Timezone Offset} = 03.75 - 5.5 = -1.75 \\implies 22.25\\text{ hours (Previous UTC Day)}$$
-  $$\\text{Julian Day (JD)} = \\left\\lfloor 365.25 \\times (Y + 4716) \\right\\rfloor + \\left\\lfloor 30.6001 \\times (M + 1) \\right\\rfloor + D + \\frac{\\text{UT}}{24} + B - 1524.5$$
-  $$\\text{जहाँ } B = 2 - A + \\lfloor A / 4 \\rfloor, \\quad A = \\lfloor Y / 100 \\rfloor$$
+<!-- SVG_ZODIAC -->
+<div style="background:#090d16; border:1px solid #10b981; border-radius:8px; padding:1.2rem; margin:1rem 0; color:#f8fafc;">
+  <div style="color:#38bdf8; font-weight:800; font-size:1.05rem; margin-bottom:0.5rem;">📐 खगोलीय समय एवं जूलियन डे साधन (सरल कलन विधि)</div>
+  <ul style="margin:0; padding-left:1.2rem; line-height:1.7; font-size:0.9rem; color:#cbd5e1;">
+    <li><strong>सार्वभौमिक समय (UT):</strong> भारतीय मानक समय (IST) से ५ घंटा ३० मिनट घटाने पर ग्रीनविच समय प्राप्त होता है। (प्रातः ०३:४५ IST - ०५:३० = पूर्व रात्रि २२:१५ UT)।</li>
+    <li><strong>जूलियन डे (JD):</strong> खगोल विज्ञान में समय की निरंतर गणना के लिए ४७१३ ईसा पूर्व से दिनों की संख्या गिनी जाती है। जातक 'क' का जन्म जूलियन डे = <strong>२४४९६५३.४२७०८३</strong> है।</li>
+  </ul>
 </div>
 
 <h4>१.२ सायन से निरयण: अयनांश (Lahiri Ayanamsha) का गणित</h4>
 <p>
   पाश्चात्य ज्योतिष गतिशील विषुव (Equinoxes) पर आधारित <strong>सायन (Tropical)</strong> चक्र का प्रयोग करता है, जबकि सनातन वैदिक ज्योतिष स्थिर तारा-मंडल पर आधारित <strong>निरयण (Sidereal)</strong> पद्धति पर टिका है। पृथ्वी के घूर्णन अक्ष में लट्टू जैसी डगमगाहट (Axial Precession) के कारण विषुव बिंदु प्रति वर्ष लगभग 50.29 विकला पीछे हटता है। इस अंतर को घटाना ही <strong>अयनांश शुद्धि</strong> कहलाता है:
 </p>
-$$\\lambda_{\\text{Nirayana}} = (\\lambda_{\\text{Sayana}} - \\Delta\\psi_{\\text{Lahiri}}) \\pmod{360^\\circ}$$
+<!-- SVG_AYANA -->
+<div style="background:#f0fdf4; border-left:4px solid #10b981; padding:0.8rem; margin:0.8rem 0; font-size:0.9rem; color:#166534;">
+  <strong>अयनांश नियम:</strong> वैदिक निरयण भोगांश = पाश्चात्य सायन भोगांश - २४° (चित्रापक्ष लहिरी अयनांश विस्थापन)।
+</div>
 
 <table class="data-table">
   <thead>
@@ -62,30 +93,26 @@ $$\\lambda_{\\text{Nirayana}} = (\\lambda_{\\text{Sayana}} - \\Delta\\psi_{\\tex
 </p>
 
 <h4>१.४ खगोलीय लग्न एवं अयनांश की चरणबद्ध कलन विधि (Step-by-Step Hindi Algorithm)</h4>
-<div class="formula-box">
-  <div class="formula-title">📐 खगोलीय लग्न साधन के शुद्ध गणितीय समीकरण</div>
-  <p><strong>समीकरण १ (जूलियन डे):</strong></p>
-  $$JD = \lfloor 365.25 \times (Y + 4716) \rfloor + \lfloor 30.6001 \times (M + 1) \rfloor + D + B - 1524.5$$
-  <p><strong>समीकरण २ (ग्रीनविच मध्याह्न नाक्षत्र समय GMST):</strong></p>
-  $$T = (JD - 2451545.0) / 36525.0$$
-  $$GMST = 280.46061837 + 360.98564736629 \times (JD - 2451545.0) + 0.000387933 \times T^2$$
-  <p><strong>समीकरण ३ (स्थानीय नाक्षत्र समय LST एवं RAMC):</strong></p>
-  $$LST = (GMST + \lambda_{\\text{स्थानीय देशांतर}} / 15.0) \\pmod{24.0}$$
-  $$RAMC = (LST \times 15.0) \\pmod{360.0}$$
-  <p><strong>समीकरण ४ (गोलीय त्रिकोणमितीय लग्न स्पष्ट Ascendant):</strong></p>
-  $$\\tan(\\lambda_{\\text{Asc}}) = \\frac{-\\cos(RAMC)}{\\sin(RAMC) \\times \\cos(\\varepsilon) + \\tan(\\phi) \\times \\sin(\\varepsilon)}$$
-  <p><strong>समीकरण ५ (निरयण लग्न स्पष्ट):</strong></p>
-  $$\\lambda_{\\text{निरयण}} = (\\lambda_{\\text{सायन}} - \\text{अयनांश}) \\pmod{360.0}$$
+<!-- SVG_LAGNA -->
+<div style="background:#090d16; border:1px solid #10b981; border-radius:8px; padding:1.2rem; margin:1rem 0; color:#f8fafc;">
+  <div style="color:#38bdf8; font-weight:800; font-size:1.05rem; margin-bottom:0.5rem;">🌟 लग्न साधन का भौतिक व खगोलीय रहस्य</div>
+  <p style="font-size:0.9rem; line-height:1.65; color:#cbd5e1; margin-bottom:0.6rem;">
+    पृथ्वी अपनी धुरी पर पश्चिम से पूर्व की ओर २४ घंटे में ३६०° घूमती है, जिससे औसतन प्रत्येक २ घंटे में पूर्व दिशा के क्षितिज पर आकाश की एक नई राशि (३०°) उदित होती है।
+  </p>
+  <ul style="margin:0; padding-left:1.2rem; font-size:0.88rem; line-height:1.65; color:#e2e8f0;">
+    <li><strong>पूर्वी क्षितिज का मिलन:</strong> जन्म क्षण में पूर्व दिशा के क्षितिज और क्रांतिवृत्त का जो मिलन बिंदु होता है, वही जातक का <strong>उदय लग्न</strong> बनता है।</li>
+    <li><strong>जातक 'क' का लग्न:</strong> २८ अक्टूबर १९९४, प्रातः ०३:४५ बजे (गढ़वा, झारखंड) पूर्व दिशा में कन्या राशि ०९° २१' उदित हो रही थी, अतः जातक का जन्म लग्न कन्या बना।</li>
+  </ul>
 </div>
 
 <div class="algorithm-box" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:1.2rem; margin:1.2rem 0;">
   <h4 style="color:#0284c7; margin-top:0;">📋 हस्त-साधन कलन विधि (Manual Hindi Algorithm):</h4>
   <ol style="line-height:1.7; padding-left:1.3rem;">
-    <li><strong>चरण १ (दिनांक व समय रूपांतरण):</strong> जन्म समय को भारतीय मानक समय (IST) से सार्वभौमिक समय (UTC) में बदलें ($UTC = IST - ५\\text{ घंटा } ३०\\text{ मिनट}$)।</li>
-    <li><strong>चरण २ (जूलियन डे साधन):</strong> उपरोक्त समीकरण १ द्वारा जन्म क्षण का जूलियन दिन संख्या ($JD$) ज्ञात करें।</li>
-    <li><strong>चरण ३ (नाक्षत्र काल साधन):</strong> समीकरण २ व ३ का प्रयोग कर स्थानीय नाक्षत्र समय ($LST$) एवं विषुवांश कोण ($RAMC$) निकालें।</li>
-    <li><strong>चरण ४ (लग्न स्पर्शज्या गणना):</strong> स्थानीय अक्षांश ($\\phi = २४.०५^\\circ$) एवं क्रांतिवृत्त झुकाव ($\\varepsilon = २३.४४^\\circ$) का मान समीकरण ४ में रखकर सायन लग्न ज्ञात करें। चतुर्थांश (Quadrant) संशोधन अवश्य करें।</li>
-    <li><strong>चरण ५ (अयनांश घटाना):</strong> सायन लग्न में से चित्रापक्ष लहिरी अयनांश ($२३^\\circ ४८' १३''$) घटाकर शुद्ध निरयण लग्न प्राप्त करें।</li>
+    <li><strong>चरण १ (दिनांक व समय रूपांतरण):</strong> जन्म समय को भारतीय मानक समय (IST) से सार्वभौमिक समय (UTC) में बदलें (UTC = IST से ५ घंटा ३० मिनट घटाकर)।</li>
+    <li><strong>चरण २ (जूलियन डे साधन):</strong> उपरोक्त समीकरण १ द्वारा जन्म क्षण का जूलियन दिन संख्या (जूलियन डे संख्या) ज्ञात करें।</li>
+    <li><strong>चरण ३ (नाक्षत्र काल साधन):</strong> समीकरण २ व ३ का प्रयोग कर स्थानीय नाक्षत्र समय (स्थानीय नाक्षत्र समय) एवं विषुवांश कोण (विषुवांश कोण) निकालें।</li>
+    <li><strong>चरण ४ (लग्न स्पर्शज्या गणना):</strong> स्थानीय अक्षांश (अक्षांश २४.०५° उत्तर) एवं क्रांतिवृत्त झुकाव (क्रांतिवृत्त झुकाव २३.४४°) का मान समीकरण ४ में रखकर सायन लग्न ज्ञात करें। चतुर्थांश (Quadrant) संशोधन अवश्य करें।</li>
+    <li><strong>चरण ५ (अयनांश घटाना):</strong> सायन लग्न में से चित्रापक्ष लहिरी अयनांश (२३° ४८' १३") घटाकर शुद्ध निरयण लग्न प्राप्त करें।</li>
   </ol>
 </div>
 
@@ -129,11 +156,11 @@ $$\\lambda_{\\text{Nirayana}} = (\\lambda_{\\text{Sayana}} - \\Delta\\psi_{\\tex
     <tr><th>अंग (Limb)</th><th>तत्व (Element)</th><th>नियंत्रक ग्रह</th><th>गणना सूत्र (Mathematical Formula)</th><th>फल प्रभाव</th></tr>
   </thead>
   <tbody>
-    <tr><td><strong>१. तिथि (Tithi)</strong></td><td>जल तत्व (Jala)</td><td>शुक्र (Shukra)</td><td>$$\\theta = (\\lambda_{\\text{Moon}} - \\lambda_{\\text{Sun}}) \\pmod{360^\\circ} \\div 12^\\circ$$</td><td>मानसिक तृप्ति, धन, संबंध</td></tr>
+    <tr><td><strong>१. तिथि (Tithi)</strong></td><td>जल तत्व (Jala)</td><td>शुक्र (Shukra)</td><td>(चंद्रमा - सूर्य देशांतर अंतर) ÷ १२°</td><td>मानसिक तृप्ति, धन, संबंध</td></tr>
     <tr><td><strong>२. वार (Vaara)</strong></td><td>अग्नि तत्व (Agni)</td><td>मंगल/सूर्य</td><td>स्थानीय सूर्योदय से सूर्योदय तक दिन का स्वामी</td><td>प्राण ऊर्जा, स्वास्थ्य, साहस</td></tr>
-    <tr><td><strong>३. नक्षत्र (Nakshatra)</strong></td><td>वायु तत्व (Vayu)</td><td>शनि (Shani)</td><td>$$\\lambda_{\\text{Moon}} \\div (13^\\circ 20') = \\lambda_{\\text{Moon}} \\div 13.3333^\\circ$$</td><td>कर्म संस्कार, मानसिक वृत्ति</td></tr>
-    <tr><td><strong>४. योग (Yoga)</strong></td><td>आकाश तत्व (Akasha)</td><td>गुरु (Brihaspati)</td><td>$$(\\lambda_{\\text{Sun}} + \\lambda_{\\text{Moon}}) \\pmod{360^\\circ} \\div 13.3333^\\circ$$</td><td>आत्मिक समन्वय, आरोग्य</td></tr>
-    <tr><td><strong>५. करण (Karana)</strong></td><td>पृथ्वी तत्व (Prithvi)</td><td>बुध (Budha)</td><td>आधी तिथि (Half of Tithi = $6^\\circ$)</td><td>भौतिक कार्य सिद्धि, पुरुषार्थ</td></tr>
+    <tr><td><strong>३. नक्षत्र (Nakshatra)</strong></td><td>वायु तत्व (Vayu)</td><td>शनि (Shani)</td><td>चंद्र देशांतर ÷ १३° २०' (८०० कला)</td><td>कर्म संस्कार, मानसिक वृत्ति</td></tr>
+    <tr><td><strong>४. योग (Yoga)</strong></td><td>आकाश तत्व (Akasha)</td><td>गुरु (Brihaspati)</td><td>(सूर्य + चंद्रमा देशांतर योग) ÷ १३° २०'</td><td>आत्मिक समन्वय, आरोग्य</td></tr>
+    <tr><td><strong>५. करण (Karana)</strong></td><td>पृथ्वी तत्व (Prithvi)</td><td>बुध (Budha)</td><td>आधी तिथि (६° सूर्य-चंद्र अंतर)</td><td>भौतिक कार्य सिद्धि, पुरुषार्थ</td></tr>
   </tbody>
 </table>
 
@@ -153,10 +180,12 @@ $$\\lambda_{\\text{Nirayana}} = (\\lambda_{\\text{Sayana}} - \\Delta\\psi_{\\tex
 
 <h4>२.३ सूर्योदय, सूर्यास्त एवं दिनमान/रात्रिमान का गणित</h4>
 <p>
-  वैदिक वार का निर्धारण अर्धरात्रि (12:00 AM) से नहीं, बल्कि स्थानीय वास्तविक सूर्योदय (Local Sunrise) से होता है। स्थानीय क्षितिज पर सूर्य बिम्ब के ऊपरी किनारे के दर्शन में वायुमंडलीय अपवर्तन (Atmospheric Refraction = 34') तथा सूर्य का अर्धव्यास (Semidiameter = 16') मिलकर कुल $50' = 0.833^\circ$ का उन्नयन करते हैं:
+  वैदिक वार का निर्धारण अर्धरात्रि (12:00 AM) से नहीं, बल्कि स्थानीय वास्तविक सूर्योदय (Local Sunrise) से होता है। स्थानीय क्षितिज पर सूर्य बिम्ब के ऊपरी किनारे के दर्शन में वायुमंडलीय अपवर्तन (Atmospheric Refraction = 34') तथा सूर्य का अर्धव्यास (Semidiameter = 16') मिलकर कुल ५० कला (०.८३३°) का उन्नयन करते हैं:
 </p>
-$$\\cos H_0 = \\frac{\\sin(-0.833^\\circ) - \\sin\\phi \\sin\\delta}{\\cos\\phi \\cos\\delta}$$
-$$\\text{दिनमान (Dinamana)} = \\frac{2 H_0}{15^\\circ} \\text{ घंटे}, \\quad \\text{रात्रिमान (Ratrimana)} = 24 - \\text{दिनमान}$$
+<div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:0.8rem; font-size:0.85rem; line-height:1.65; margin:0.8rem 0;">
+  • <strong>दिनमान साधन:</strong> सूर्योदय से सूर्यास्त तक का समय दिनमान (घंटे अथवा घटी-पल) कहलाता है।<br>
+  • <strong>रात्रिमान साधन:</strong> २४ घंटे में से दिनमान घटाने पर रात्रिमान प्राप्त होता है।
+</div>
 
 <h4>२.४ राहु काल (Rahu Kaal) गणना एल्गोरिद्म</h4>
 <p>दिनमान को ८ समान भागों में विभाजित करने पर प्रत्येक वार को एक विशिष्ट भाग राहु काल कहलाता है:</p>
@@ -176,11 +205,16 @@ $$\\text{दिनमान (Dinamana)} = \\frac{2 H_0}{15^\\circ} \\text{ घ�
 </table>
 
 <h4>२.५ आदर्श शोध जातक 'क' की पंचांग तालिका</h4>
-<div class="math-formula-box">
-  $$\\theta = (103.1715 - 190.4759 + 360) = 272.6956^\\circ$$
-  $$\\text{Tithi} = \\lfloor 272.6956 / 12 \\rfloor + 1 = 22 + 1 = \\mathbf{23} \\implies \\text{\\textbf{कृष्ण पक्ष अष्टमी (Krishna Ashtami)}}$$
-  $$\\text{Nakshatra} = \\lfloor 103.1715 / 13.3333 \\rfloor = 7 \\implies \\text{\\textbf{पुष्य नक्षत्र (Pushya Pada 3)}}$$
-  $$\\text{Yoga} = (190.4759 + 103.1715) / 13.3333 = 293.6474 / 13.3333 = 22.02 \\implies \\text{\\textbf{साध्य योग (Sadhya Yoga)}}$$
+<!-- SVG_PANCHANGA -->
+<div style="background:#090d16; border:1px solid #10b981; border-radius:8px; padding:1.2rem; margin:1rem 0; color:#f8fafc;">
+  <div style="color:#38bdf8; font-weight:800; font-size:1.05rem; margin-bottom:0.5rem;">🌟 जातक 'क' के ५ पंचांग अंगों का प्रत्यक्ष परिणाम</div>
+  <ul style="margin:0; padding-left:1.2rem; line-height:1.7; font-size:0.9rem; color:#cbd5e1;">
+    <li><strong>तिथि (जल तत्व):</strong> चंद्रमा और सूर्य का अंतर २७२.७° ➔ १२° से भाग देने पर २३वीं तिथि = <strong>कृष्ण पक्ष अष्टमी</strong>।</li>
+    <li><strong>नक्षत्र (वायु तत्व):</strong> चंद्रमा का कर्क में भोगांश १०३.२° ➔ १३° २०' से भाग देने पर ८वां नक्षत्र = <strong>पुष्य नक्षत्र (तृतीय चरण)</strong>।</li>
+    <li><strong>वार (अग्नि तत्व):</strong> सूर्योदय कालीन वार = <strong>शुक्रवार</strong> (अधिपति: भृगु-पुत्र शुक्र देव)।</li>
+    <li><strong>योग (आकाश तत्व):</strong> सूर्य और चंद्रमा के भोगांशों का योग २९३.६° ➔ २३वां योग = <strong>साध्य योग</strong>।</li>
+    <li><strong>करण (पृथ्वी तत्व):</strong> २३वीं तिथि का प्रथम अर्ध-भाग = <strong>कौलव करण</strong> (मित्र देव आधिपत्य)।</li>
+  </ul>
 </div>
 
 <div class="takeaway-box">
@@ -222,41 +256,41 @@ $$\\text{दिनमान (Dinamana)} = \\frac{2 H_0}{15^\\circ} \\text{ घ�
   </tbody>
 </table>
 
-<h4>३.२ जन्म समय दशा भुक्त एवं भोग्य गणित (Balance of Dasha Formula)</h4>
-<div class="math-formula-box">
-  <div class="math-title">दशा भोग्य गणितीय समीकरण</div>
-  $$\\Delta\\Theta = 13^\\circ 20' = 13.33333^\\circ = 800'$$
-  $$\\theta_{\\text{traversed}} = \\lambda_{\\text{Moon}} - \\text{Nakshatra Start Angle}$$
-  $$\\theta_{\\text{remaining}} = \\Delta\\Theta - \\theta_{\\text{traversed}}$$
-  $$\\text{Balance of Dasha (Years)} = \\left( \\frac{\\theta_{\\text{remaining}}}{\\Delta\\Theta} \\right) \\times \\text{Total Planet Years}$$
+<!-- SVG_VIMSHOTTARI -->
+<div style="background:#090d16; border:1px solid #10b981; border-radius:8px; padding:1.2rem; margin:1rem 0; color:#f8fafc;">
+  <div style="color:#38bdf8; font-weight:800; font-size:1.05rem; margin-bottom:0.5rem;">📐 दशा भोग्य साधन का सरल नियम</div>
+  <ul style="margin:0; padding-left:1.2rem; line-height:1.7; font-size:0.9rem; color:#cbd5e1;">
+    <li><strong>१ नक्षत्र का संपूर्ण मान:</strong> १३° २०' = ८०० कला।</li>
+    <li><strong>भुक्त अंश:</strong> चंद्रमा द्वारा उस नक्षत्र में अब तक तय किया गया अंश-विस्तार।</li>
+    <li><strong>भोग्य अंश:</strong> नक्षत्र के अंत तक शेष बचा अंश-विस्तार = (८०० - भुक्त कला)।</li>
+    <li><strong>जन्मकालीन शेष महादशा:</strong> (भोग्य कला ÷ ८०० कला) × महादशा के कुल वर्ष।</li>
+  </ul>
+</div>
 </div>
 
 <h4>३.३ आदर्श शोध जातक 'क' की जन्मकालीन दशा गणना</h4>
 <ul>
   <li>जन्म चंद्रमा: <code>103.1715°</code> (पुष्य नक्षत्र, 93° 20' से 106° 40' तक)।</li>
-  <li>पुष्य का आरंभ: <code>93.3333°</code> $\implies \\theta_{\\text{traversed}} = 103.1715 - 93.3333 = 9.8382^\circ$ (73.79% भुक्त)।</li>
-  <li>अवशिष्ट अंश: $\\theta_{\\text{remaining}} = 13.3333 - 9.8382 = 3.4951^\circ$ (26.21% भोग्य)।</li>
+  <li>पुष्य का आरंभ: <code>93.3333°</code> ➔ भुक्त अंश = १०३.१७१५° - ९३.३३३३° = ९.८३८२° (७३.७९% भुक्त)।</li>
+  <li>अवशिष्ट अंश: भोग्य अंश = १३.३३३३° - ९.८३८२° = ३.४९५१° (२६.२१% भोग्य)।</li>
   <li>शनि की महादशा कुल: 19 वर्ष।</li>
-  <li><strong>जन्म के समय शनि की शेष महादशा:</strong> $0.262135 \\times 19 = \\mathbf{4.9805\\text{ वर्ष}} \\approx 4\\text{ वर्ष}, 11\\text{ माह}, 23\\text{ दिन}$।</li>
+  <li><strong>जन्म के समय शनि की शेष महादशा:</strong> ०.२६२१३५ × १९ वर्ष = ४.९८०५ वर्ष (लगभग ४ वर्ष, ११ माह, २३ दिन)।</li>
 </ul>
 
 <h4>३.४ विंशोत्तरी दशा कलन विधि एवं पदानुक्रम सूत्र (Vimshottari Dasha Hierarchy)</h4>
-<div class="formula-box">
-  <div class="formula-title">📐 ४-स्तरीय दशा पदानुक्रम के सटीक गणितीय सूत्र</div>
-  <p><strong>सूत्र १ (जन्म समय दशा भोग्य शेष):</strong></p>
-  $$\\text{दशा भोग्य (वर्ष)} = \\left(\\frac{800 - (\\text{चंद्र देशांतर (कला)} \\pmod{800})}{800}\\right) \\times \\text{महादशा वर्ष}$$
-  <p><strong>सूत्र २ (अंतर्दशा / भुक्ति अवधि):</strong></p>
-  $$\\text{अंतर्दशा (वर्ष)} = \\frac{\\text{महादशा वर्ष} \\times \\text{अंतर्दशा नाथ के वर्ष}}{120}$$
-  <p><strong>सूत्र ३ (प्रत्यंतर्दशा अवधि):</strong></p>
-  $$\\text{प्रत्यंतर्दशा (दिन)} = \\frac{\\text{अंतर्दशा (दिन)} \\times \\text{प्रत्यंतर्दशा नाथ के वर्ष}}{120}$$
-  <p><strong>सूत्र ४ (सूक्ष्म दशा अवधि):</strong></p>
-  $$\\text{सूक्ष्म दशा (घंटे)} = \\frac{\\text{प्रत्यंतर्दशा (घंटे)} \\times \\text{सूक्ष्म नाथ के वर्ष}}{120}$$
+<div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:1.2rem; margin:1rem 0; font-size:0.88rem; line-height:1.7;">
+  <div style="color:#0284c7; font-weight:800; font-size:1.02rem; margin-bottom:0.5rem;">📐 ४-स्तरीय दशा पदानुक्रम कलन विधि</div>
+  • <strong>स्तर १ (महादशा):</strong> १२० वर्ष के चक्र में संबंधित ग्रह के आवंटित वर्ष।<br>
+  • <strong>स्तर २ (अंतर्दशा):</strong> (महादशा वर्ष × अंतर्दशा नाथ के वर्ष) ÷ १२० वर्ष।<br>
+  • <strong>स्तर ३ (प्रत्यंतर्दशा):</strong> (अंतर्दशा के दिन × प्रत्यंतर्दशा नाथ के वर्ष) ÷ १२० वर्ष।<br>
+  • <strong>स्तर ४ (सूक्ष्म दशा):</strong> (प्रत्यंतर्दशा के घंटे × सूक्ष्म नाथ के वर्ष) ÷ १२० वर्ष।
 </div>
+  <p><strong>सूत्र १ (जन्म समय दशा भोग्य शेष):</strong></p>
 
 <div class="algorithm-box" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:1.2rem; margin:1.2rem 0;">
   <h4 style="color:#0284c7; margin-top:0;">📋 हस्त-साधन कलन विधि (Manual Hindi Algorithm):</h4>
   <ol style="line-height:1.7; padding-left:1.3rem;">
-    <li><strong>चरण १ (नक्षत्र व नक्षत्रेश):</strong> चंद्रमा के स्पष्ट देशांतर को ८०० कला ($१३^\\circ २०'$) से भाग देकर जन्म नक्षत्र एवं महादशा स्वामी ज्ञात करें।</li>
+    <li><strong>चरण १ (नक्षत्र व नक्षत्रेश):</strong> चंद्रमा के स्पष्ट देशांतर को ८०० कला (१३° २०') से भाग देकर जन्म नक्षत्र एवं महादशा स्वामी ज्ञात करें।</li>
     <li><strong>चरण २ (भुक्त व भोग्य कला):</strong> चंद्रमा द्वारा नक्षत्र में तय की गई दूरी भुक्त कला है, तथा शेष भाग भोग्य कला है।</li>
     <li><strong>चरण ३ (जन्मकालीन शेष दशा):</strong> सूत्र १ द्वारा जन्म समय पर प्रथम महादशा का भोग्य काल निकालें और जन्म तिथि में जोड़कर महादशा समाप्ति तिथि प्राप्त करें।</li>
     <li><strong>चरण ४ (अंतर्दशा तालिका निर्माण):</strong> सूत्र २ के अनुसार ९ ग्रहों की अंतर्दशा अवधि निकालें और क्रमिक रूप से तिथियों को आगे बढ़ाते जाएं।</li>
@@ -311,17 +345,21 @@ $$\\text{दिनमान (Dinamana)} = \\frac{2 H_0}{15^\\circ} \\text{ घ�
 </ol>
 
 <h4>४.३ विपरीत राजयोग (Viparita Raja Yoga Matrix)</h4>
-<div class="math-formula-box">
-  $$\\text{हर्ष योग (Harsha)}: \\text{६ठे भाव का स्वामी ६, ८ या १२वें भाव में हो।} \\implies \\text{शत्रुओं पर अजेय विजय, उत्तम स्वास्थ्य।}$$
-  $$\\text{सरल योग (Sarala)}: \\text{८वें भाव का स्वामी ६, ८ या १२वें भाव में हो।} \\implies \\text{दीर्घायु, निर्भयता, अकस्मात विपुल धन।}$$
-  $$\\text{विमल योग (Vimala)}: \\text{१२वें भाव का स्वामी ६, ८ या १२वें भाव में हो।} \\implies \\text{स्वायत्तता, सात्विक जीवन, मोक्ष मार्ग।}$$
+<!-- SVG_DIAMOND -->
+<div style="background:#090d16; border:1px solid #10b981; border-radius:8px; padding:1.2rem; margin:1rem 0; color:#f8fafc;">
+  <div style="color:#38bdf8; font-weight:800; font-size:1.05rem; margin-bottom:0.5rem;">🌟 विपरीत राजयोग के ३ प्रमुख शास्त्रीय भेद</div>
+  <ul style="margin:0; padding-left:1.2rem; line-height:1.7; font-size:0.9rem; color:#cbd5e1;">
+    <li><strong>हर्ष योग:</strong> ६ठे भाव का स्वामी ६, ८ या १२वें भाव में हो ➔ शत्रुओं पर अजेय विजय एवं उत्तम स्वास्थ्य।</li>
+    <li><strong>सरल योग:</strong> ८वें भाव का स्वामी ६, ८ या १२वें भाव में हो ➔ दीर्घायु, निर्भयता एवं अकस्मात विपुल धन प्राप्ति।</li>
+    <li><strong>विमल योग:</strong> १२वें भाव का स्वामी ६, ८ या १२वें भाव में हो ➔ स्वायत्तता, सात्विक जीवन एवं मोक्ष मार्ग की प्राप्ति।</li>
+  </ul>
 </div>
 
 <h4>४.४ आदर्श शोध जातक 'क' की कुण्डली में योग विश्लेषण</h4>
 <ul>
-  <li><strong>भद्र महापुरुष योग:</strong> लग्नेश बुध अपनी स्व एवं उच्च राशि कन्या में लग्न में ही <code>09°21'</code> पर स्थित हैं $\implies$ तीक्ष्ण बुद्धि, वाक्पटुता एवं गणितीय मेधा।</li>
-  <li><strong>सूर्य का नीचभंग राजयोग:</strong> सूर्य तुला में नीच के हैं, किन्तु तुला के स्वामी शुक्र लग्न से ३रे तथा चंद्रमा से ५वें त्रिकोण में स्थित हैं तथा सूर्य पर उच्चाभिलाषी गुरु की युति है $\implies$ प्रबल नीचभंग।</li>
-  <li><strong>मंगल का नीचभंग राजयोग:</strong> मंगल कर्क में नीच के हैं, किन्तु कर्क के स्वामी चंद्रमा स्वराशि में साथ ही बैठे हैं (चन्द्र-मंगल योग) $\implies$ पूर्ण नीचभंग धन योग।</li>
+  <li><strong>भद्र महापुरुष योग:</strong> लग्नेश बुध अपनी स्व एवं उच्च राशि कन्या में लग्न में ही <code>09°21'</code> पर स्थित हैं ➔ तीक्ष्ण बुद्धि, वाक्पटुता एवं गणितीय मेधा।</li>
+  <li><strong>सूर्य का नीचभंग राजयोग:</strong> सूर्य तुला में नीच के हैं, किन्तु तुला के स्वामी शुक्र लग्न से ३रे तथा चंद्रमा से ५वें त्रिकोण में स्थित हैं तथा सूर्य पर उच्चाभिलाषी गुरु की युति है ➔ प्रबल नीचभंग।</li>
+  <li><strong>मंगल का नीचभंग राजयोग:</strong> मंगल कर्क में नीच के हैं, किन्तु कर्क के स्वामी चंद्रमा स्वराशि में साथ ही बैठे हैं (चन्द्र-मंगल योग) ➔ पूर्ण नीचभंग धन योग।</li>
   <li><strong>शश महापुरुष योग:</strong> शनि अपनी मूलत्रिकोण राशि कुम्भ में छठे भाव में स्थित हैं, जो रोग-शत्रु नाशक और अजेय संकल्प शक्ति देता है।</li>
 </ul>
 
@@ -380,7 +418,16 @@ $$\\text{दिनमान (Dinamana)} = \\frac{2 H_0}{15^\\circ} \\text{ घ�
 <p>
   प्रत्येक राशि (३०°) को आठ समान खंडों में बांटा जाता है, जिसे <strong>कक्षी (Kakshya = 3° 45')</strong> कहते हैं। प्रत्येक कक्षी का स्वामी एक ग्रह होता है:
 </p>
-$$\\text{कक्षी क्रम:} \\quad \\text{१. शनि} \\to \\text{२. गुरु} \\to \\text{३. मंगल} \\to \\text{४. सूर्य} \\to \\text{५. शुक्र} \\to \\text{६. बुध} \\to \\text{७. चन्द्र} \\to \\text{८. लग्न}$$
+<!-- SVG_ASHTAKAVARGA -->
+<div style="background:#090d16; border:1px solid #10b981; border-radius:8px; padding:1.2rem; margin:1rem 0; color:#f8fafc;">
+  <div style="color:#38bdf8; font-weight:800; font-size:1.05rem; margin-bottom:0.5rem;">📐 कक्षी क्रम (Kakshya Sequence - ३° ४५' प्रति भाग)</div>
+  <div style="font-size:0.92rem; color:#cbd5e1; line-height:1.7;">
+    <strong>१. शनि</strong> ➔ <strong>२. गुरु</strong> ➔ <strong>३. मंगल</strong> ➔ <strong>४. सूर्य</strong> ➔ <strong>५. शुक्र</strong> ➔ <strong>६. बुध</strong> ➔ <strong>७. चन्द्र</strong> ➔ <strong>८. लग्न</strong>
+  </div>
+  <div style="font-size:0.85rem; color:#94a3b8; margin-top:0.4rem;">
+    गोचरस्थ ग्रह जब उस कक्षी में प्रवेश करता है जहाँ मूल कुण्डली में बिंदु मिला हुआ है, केवल तभी वह उस समय-खंड में अभीष्ट शुभ फल प्रदान करता है।
+  </div>
+</div>
 <p>
   जब कोई गोचरस्थ ग्रह उस कक्षी में भ्रमण करता है जहाँ मूल कुण्डली में बिंदु मिला हुआ है, केवल तभी वह उस समय खंड में शुभ फल देता है।
 </p>
@@ -431,9 +478,15 @@ $$\\text{कक्षी क्रम:} \\quad \\text{१. शनि} \\to \\tex
 </table>
 
 <h4>६.२ नवमांश (D9) का गणितीय एल्गोरिद्म</h4>
-<div class="math-formula-box">
-  $$\\text{Total Padas from Aries} = \\left\\lfloor \\frac{\\lambda_{\\text{Sidereal}}}{3^\\circ 20'} \\right\\rfloor = \\left\\lfloor \\frac{\\lambda}{3.3333^\\circ} \\right\\rfloor$$
-  $$\\text{Navamsha Sign} = (\\text{Total Padas} \\pmod{12}) + 1$$
+<!-- SVG_SHODASHAVARGA -->
+<!-- SVG_NAVAMSHA -->
+<div style="background:#090d16; border:1px solid #10b981; border-radius:8px; padding:1.2rem; margin:1rem 0; color:#f8fafc;">
+  <div style="color:#38bdf8; font-weight:800; font-size:1.05rem; margin-bottom:0.5rem;">📐 नवमांश (D9) साधन की सरल विधि</div>
+  <ul style="margin:0; padding-left:1.2rem; line-height:1.7; font-size:0.9rem; color:#cbd5e1;">
+    <li><strong>कुल पद संख्या:</strong> ग्रह के निरयण भोगांश को ३° २०' (२०० कला) से भाग दें।</li>
+    <li><strong>नवांश राशि:</strong> प्राप्त पद संख्या में मेष राशि से गणना आरंभ करके नवांश राशि निर्धारित करें।</li>
+    <li><strong>तत्व चक्र नियम:</strong> अग्नि राशियों (१, ५, ९) का नवांश मेष से, पृथ्वी राशियों (२, ६, १०) का मकर से, वायु राशियों (३, ७, ११) का तुला से, एवं जल राशियों (४, ८, १२) का कर्क से आरंभ होता है।</li>
+  </ul>
 </div>
 
 <p>
@@ -480,8 +533,16 @@ $$\\text{कक्षी क्रम:} \\quad \\text{१. शनि} \\to \\tex
 <p>
   भौतिक संसार में लोग आपको किस रूप में देखते हैं (सार्वजनिक छवि), यह <strong>आरूढ़ लग्न</strong> से जाना जाता है:
 </p>
-$$\\text{Distance} = (\\text{Lagna Lord} - \\text{Lagna House}) \\pmod{12}$$
-$$\\text{Arudha Lagna (AL)} = (\\text{Lagna Lord} + \\text{Distance}) \\pmod{12}$$
+<!-- SVG_JAIMINI -->
+<!-- SVG_BNN -->
+<div style="background:#090d16; border:1px solid #10b981; border-radius:8px; padding:1.2rem; margin:1rem 0; color:#f8fafc;">
+  <div style="color:#38bdf8; font-weight:800; font-size:1.05rem; margin-bottom:0.5rem;">📐 आरूढ़ लग्न (AL) एवं उपपद (UL) साधन नियम</div>
+  <ul style="margin:0; padding-left:1.2rem; line-height:1.7; font-size:0.9rem; color:#cbd5e1;">
+    <li><strong>दूरी साधन:</strong> भाव के स्वामी की उस भाव से जितनी दूरी (भावों की संख्या) हो, स्वामी से उतनी ही दूरी आगे गिनें।</li>
+    <li><strong>आरूढ़ लग्न (AL):</strong> लग्नेश लग्न से जितने भाव दूर हो, लग्नेश से उतने ही भाव आगे गिनने पर आरूढ़ लग्न प्राप्त होता है।</li>
+    <li><strong>शास्त्रीय अपवाद:</strong> यदि गणना उसी भाव या सातवें भाव पर आए, तो उससे १०वां भाव वास्तविक आरूढ़ बनता है।</li>
+  </ul>
+</div>
 <p><em>(अपवाद: यदि आरूढ़ उसी भाव या ७वें भाव में आए, तो १०वां भाव आरूढ़ बनता है।)</em></p>
 
 <h4>७.३ भृगु नंदी नाड़ी (BNN) का त्रिकोणीय दृष्टि सूत्र</h4>
@@ -509,6 +570,7 @@ $$\\text{Arudha Lagna (AL)} = (\\text{Lagna Lord} + \\text{Distance}) \\pmod{12}
   <div class="shloka-meaning"><strong>मंत्रेश्वर उवाच:</strong> जन्म राशि से ३, ६, ११वें भाव में शनि का गोचर शुभ संपत्ति देता है, किन्तु यदि वेध हो तो वह निष्फल हो जाता है। जन्म चंद्र से १२वें, जन्म राशि पर और द्वितीय भाव में शनि का परिभ्रमण 'साढ़े साती' कहलाता है, जो मनुष्य के संस्कारों का परीक्षण करता है।</div>
 </div>
 
+<!-- SVG_SADE_SATI -->
 <h4>८.१ शनि की साढ़े साती (Sade Sati) के तीन चरण एवं कालावधि</h4>
 <table class="data-table">
   <thead>
@@ -579,6 +641,7 @@ $$\\text{Arudha Lagna (AL)} = (\\text{Lagna Lord} + \\text{Distance}) \\pmod{12}
   <div class="shloka-meaning"><strong>मुहूर्त चिंतामणि प्रमाण:</strong> वर्ण (१), वश्य (२), तारा (३), योनि (४), ग्रहमैत्री (५), गण (६), भकूट (७) और नाड़ी (८) मिलकर ३६ गुणों का निर्माण करते हैं। यद्यपि एक नाड़ी कुलनाशक मानी गई है, किन्तु चरण भेद या नक्षत्र भेद होने पर नाड़ी दोष का शास्त्रीय परिहार हो जाता है।</div>
 </div>
 
+<!-- SVG_ASHTAKOOT -->
 <h4>१०.१ अष्टकूट ३६ गुणों की विस्तृत अंक तालिका</h4>
 <table class="data-table">
   <thead>
@@ -652,6 +715,7 @@ $$\\text{Arudha Lagna (AL)} = (\\text{Lagna Lord} + \\text{Distance}) \\pmod{12}
   <div class="shloka-meaning"><strong>जातक पारिजात प्रमाण:</strong> अकेला बलवान देवगुरु बृहस्पति लग्न में अथवा किसी भी केन्द्र में स्थित हो जाए, तो वह समस्त अरिष्टों का नाश कर देता है, जैसे सूर्य अंधकार को मिटाता है। जल-अग्नि संधि पर होने वाले गंडांत दोष का भी विधिपूर्वक शांति अनुष्ठान करने से संपूर्ण दोष शांत हो जाता है।</div>
 </div>
 
+<!-- SVG_SHADBALA -->
 <h4>१२.१ बालारिष्ट एवं अरिष्ट भंग के नियम</h4>
 <p>
   शिशु के जन्म से लेकर ८ वर्ष की आयु तक चंद्रमा पर पाप ग्रहों की दृष्टि बालारिष्ट उत्पन्न कर सकती है, किन्तु शुभ ग्रहों की केन्द्र स्थिति समस्त अरिष्टों को भंग कर देती है।
@@ -685,6 +749,7 @@ $$\\text{Arudha Lagna (AL)} = (\\text{Lagna Lord} + \\text{Distance}) \\pmod{12}
   <div class="shloka-meaning"><strong>ऋषि वाक्य:</strong> देश, काल और पात्र (व्यक्ति की सामाजिक, आर्थिक एवं आध्यात्मिक पृष्ठभूमि) को भलीभांति परखकर ही कुण्डली का फल कथन करना चाहिए। जिस प्रकार बीज में ही वृक्ष, पुष्प और फल निहित होते हैं, उसी प्रकार कुण्डली में कर्मफल संचित होते हैं। ज्योतिष किसी का भाग्य बदलने वाला विधाता नहीं, बल्कि मार्ग दिखाने वाला दिव्य दीपक है।</div>
 </div>
 
+<!-- SVG_PIPELINE -->
 <h4>१३.१ दस-चरणीय प्रामाणिक फलादेश कार्यप्रणाली (10-Tier Algorithmic Protocol)</h4>
 <ol>
   <li><strong>प्रथम चरण:</strong> लग्न एवं लग्नेश की स्थिति, षड्बल और तत्वीय संतुलन की जांच।</li>
@@ -705,7 +770,13 @@ $$\\text{Arudha Lagna (AL)} = (\\text{Lagna Lord} + \\text{Distance}) \\pmod{12}
 """
     ))
 
-    return chapters
+    # Inject SVG diagrams into all chapter placeholders
+    processed_chapters = []
+    for ch_num, ch_title, ch_body in chapters:
+        for placeholder, svg_code in svgs.items():
+            ch_body = ch_body.replace(f'<!-- {placeholder} -->', svg_code)
+        processed_chapters.append((ch_num, ch_title, ch_body))
+    return processed_chapters
 
 def build_master_publications(output_web: Path, output_print: Path, output_pdf: Path, output_reader: Path, reader_src: Path, pages_list: list = None):
     chapters = get_chapters()

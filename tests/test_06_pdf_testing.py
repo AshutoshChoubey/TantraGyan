@@ -113,5 +113,32 @@ class PDFTestingPillar(unittest.TestCase):
         self.assertNotIn("def calculate_", full_text)
         self.assertNotIn("import swisseph", full_text)
 
+    def test_06_kundali_ganita_html_and_reader_audit(self):
+        import re
+        web_path = os.path.join(BASE_DIR, "kundali-ganita.html")
+        reader_path = os.path.join(BASE_DIR, "kundali-ganita-reader.html")
+        
+        self.assertTrue(os.path.exists(web_path), "Missing kundali-ganita.html")
+        self.assertTrue(os.path.exists(reader_path), "Missing kundali-ganita-reader.html")
+
+        # 1. Audit kundali-ganita.html
+        with open(web_path, "r", encoding="utf-8") as f:
+            web_body = re.sub(r'<script[\s\S]*?</script>', '', f.read())
+        
+        self.assertEqual(web_body.count("$"), 0, "kundali-ganita.html must have 0 dollar signs in content")
+        self.assertNotIn("±od", web_body)
+        self.assertNotIn("rac{", web_body)
+        self.assertGreaterEqual(web_body.count("<svg"), 15, "kundali-ganita.html must have at least 15 SVG diagrams")
+
+        # 2. Audit kundali-ganita-reader.html
+        with open(reader_path, "r", encoding="utf-8") as f:
+            reader_body = re.sub(r'<script[\s\S]*?</script>', '', f.read())
+
+        self.assertEqual(reader_body.count("$"), 0, "kundali-ganita-reader.html must have 0 dollar signs in content")
+        self.assertNotIn("±od", reader_body)
+        self.assertNotIn("rac{", reader_body)
+        self.assertGreaterEqual(reader_body.count("<svg"), 35, "kundali-ganita-reader.html must have at least 35 SVG diagrams")
+        self.assertEqual(reader_body.count('class="book-page-data"'), 108, "kundali-ganita-reader.html must contain 108 pages")
+
 if __name__ == "__main__":
     unittest.main()
