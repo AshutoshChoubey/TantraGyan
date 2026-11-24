@@ -22,6 +22,8 @@ from agents.layman_storyteller import LaymanStorytellerAgent
 from agents.chart_diagram_generator import ChartDiagramGeneratorAgent
 from agents.visual_authenticity_auditor import VisualAuthenticityAuditorAgent
 from agents.chrome_qa_monitor import ChromeQAMonitorAgent
+from agents.canva_asset_agent import CanvaAssetAgent
+from agents.video_concept_agent import VideoConceptAgent
 
 
 def main():
@@ -30,6 +32,8 @@ def main():
     parser.add_argument("--plan", action="store_true", help="Print orchestrator execution plan")
     parser.add_argument("--audit", action="store_true", help="Run visual authenticity audit")
     parser.add_argument("--qa", action="store_true", help="Run Chrome QA inspector on readers")
+    parser.add_argument("--canva", action="store_true", help="Export Canva bulk datasets and specs")
+    parser.add_argument("--video", action="store_true", help="Generate video blueprints and 3D simulation")
     args = parser.parse_args()
 
     config = BookConfig()
@@ -45,6 +49,8 @@ def main():
     diagrammer = ChartDiagramGeneratorAgent()
     auditor = VisualAuthenticityAuditorAgent(config.project_root)
     qa_monitor = ChromeQAMonitorAgent(config.project_root)
+    canva_agent = CanvaAssetAgent()
+    video_agent = VideoConceptAgent()
 
     if args.plan or args.all or len(sys.argv) == 1:
         print("\n[Stage 1] Master Orchestrator Planning...")
@@ -62,11 +68,25 @@ def main():
 
     if args.qa or args.all:
         print("\n[Stage 3] Chrome QA & Asset Inspection...")
-        for page in ["index.html", "reader.html", "bnn-reader.html", "sadhana-reader.html"]:
+        for page in ["index.html", "reader.html", "bnn-reader.html", "sadhana-reader.html", "kundali-ganita.html", "kundali-ganita-reader.html"]:
             res = qa_monitor.inspect_html_file(page)
             print(f"  ✓ {page}: {res.get('status')} ({res.get('file_size_kb', 0)} KB)")
 
-    print("\n[Pipeline Complete] Ready for book generation and reader assembly.")
+    if args.canva or args.all:
+        print("\n[Stage 4] Canva Asset & Bulk Dataset Agent...")
+        csv_file = canva_agent.generate_bulk_dataset()
+        canva_spec = canva_agent.get_canva_spec()
+        print(f"  ✓ Canva Folder: {canva_spec['canva_folder_name']} (ID: {canva_spec['canva_folder_id']})")
+        print(f"  ✓ Bulk Dataset: {csv_file}")
+
+    if args.video or args.all:
+        print("\n[Stage 5] Video Concept & 3D Animation Agent...")
+        bp_file = video_agent.generate_video_blueprints()
+        anim_file = video_agent.generate_interactive_3d_animation()
+        print(f"  ✓ Video Blueprints: {bp_file}")
+        print(f"  ✓ 3D Simulation: {anim_file}")
+
+    print("\n[Pipeline Complete] Multi-agent workflow execution verified.")
     print("=" * 80)
 
 

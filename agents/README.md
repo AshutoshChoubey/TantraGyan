@@ -12,8 +12,10 @@ flowchart TD
     BO["1. Book Orchestrator Agent<br/>(book_orchestrator.py)"] --> FS["2. Formula Simplifier Agent<br/>(formula_simplifier.py)"]
     BO --> LS["3. Layman Storyteller Agent<br/>(layman_storyteller.py)"]
     BO --> CD["4. Chart Diagram Generator<br/>(chart_diagram_generator.py)"]
+    BO --> CA["7. Canva Asset Agent<br/>(canva_asset_agent.py)"]
+    BO --> VC["8. Video Concept & 3D Agent<br/>(video_concept_agent.py)"]
     
-    FS & LS & CD --> PUB["Book Publishing Engines<br/>(HTML Readers, Web & PDF)"]
+    FS & LS & CD & CA & VC --> PUB["Book Publishing Engines<br/>(HTML Readers, Web, 3D Canvas & PDF)"]
     
     PUB --> VA["5. Visual Authenticity Auditor<br/>(visual_authenticity_auditor.py)"]
     PUB --> QA["6. Chrome QA Monitor<br/>(chrome_qa_monitor.py)"]
@@ -42,6 +44,14 @@ flowchart TD
 ### 6. `ChromeQAMonitorAgent` (`chrome_qa_monitor.py`)
 - **Role:** Browser QA inspector and frontend verifier.
 - **Responsibilities:** Inspects rendered HTML for viewport responsiveness, encoding integrity, missing image paths, anchor validation, and accessibility (a11y) standards.
+
+### 7. `CanvaAssetAgent` (`canva_asset_agent.py`)
+- **Role:** Canva project folder and design asset synchronizer.
+- **Responsibilities:** Connects to Canva folder (`FAHbySExszs`), manages brand kits, and produces structured CSV datasets for Canva bulk creation of presentation cards.
+
+### 8. `VideoConceptAgent` (`video_concept_agent.py`)
+- **Role:** 3D Video blueprint director and animation synthesizer.
+- **Responsibilities:** Generates InVideo timeline blueprints with scene cues, duration, camera angles, and dual-language (Hindi/English) narrations, and renders standalone 3D interactive Canvas orbital simulations.
 
 ---
 
